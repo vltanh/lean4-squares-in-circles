@@ -1,0 +1,109 @@
+{
+  "schema": "A_c744_complete_component1_original_consequence_v1",
+  "original_id": "positive-c744bc031d40ee64",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        4
+      ]
+    ]
+  ],
+  "original_mask": "001/00",
+  "squared_radius": "1105/256",
+  "component": 1,
+  "component_parent": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/a_c744_five_complements/component_1.json",
+    "sha256": "19f47ebf7e4dc603af97f3dce7682fa3e19b816633394b7af27d5b6d606d61a2",
+    "schema": "AC_named_closed_two_link_complement_bound_discovery_v1"
+  },
+  "whole_original_parent": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/a_c744_whole_support_caps/record.json",
+    "sha256": "68aae2029165b1148d0b719ac962e7c50c649afd8fcee6bfba4af99f50f85893"
+  },
+  "excluded_closed_domain": {
+    "name": "two_link_actual_AB_escape_1",
+    "coefficients": [
+      [
+        3,
+        "1"
+      ],
+      [
+        7,
+        "-1"
+      ]
+    ],
+    "rhs": "-3/5"
+  },
+  "necessary_weak_row": {
+    "coefficients": [
+      [
+        3,
+        "-1"
+      ],
+      [
+        7,
+        "1"
+      ]
+    ],
+    "rhs": "3/5"
+  },
+  "source_tree": {
+    "folder": "/workspace/scratch/f9f48fcfb253/ac_work/tree/a_c744_component1_complete_candidate",
+    "manifest_sha256": "cfa406d4df6aaf9ac2d52b7b0ef9a4d9edf30819fddb7991406441914bbfbec7",
+    "nodes": 757
+  },
+  "source_checker": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_ac_two_link_consequence_four_lazy_tree.py",
+    "sha256": "6cb9e209b3285e4fcc522cb4ffa93eff95b63f13281040464dc22eeea10092e6"
+  },
+  "independent_source_files": {
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_ac_two_link_unit_corner_lazy_tree.py": "bc6f20ebe8cfc09f5a599a4b5884bff1bda003dcfe2da6e0a4882069486f2ca1",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_c887_unit_corner_tree.py": "b1d006fd6ef54aba81d6224dc8da1cbcea584b03095d60ffed272ba4ec261eb3",
+    "/workspace/scratch/f9f48fcfb253/ac_work/unit_frame_corner/independent_physical_unit_corner_rows.py": "8be92fbab72d6761fd51fc75be705b00354e5e14311ca5125693c3f1ee42c2f4",
+    "/workspace/scratch/f9f48fcfb253/ac_work/unit_frame_corner/PREMISE_BINDINGS.json": "c49138469a346f35281023548bcf66a50eb3690ba84296478d206fb7bd25409d",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_ac_two_link_complement.py": "b19d8b39168283488515b999ac7dfdfb691869dd47ecd4e6380f2a4374e4f8c8",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_physical_sat_diagonal_replay.py": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_physical_proxy_cover.py": "3b46b8a966c712e23894ae4cd7964355730f2bfe3c58a04871ade9d35ddf1277",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_ac_two_link_consequence_tree.py": "bfd9de8e8a37c59bd63e92eb0b2753593c0855ec079f258bc85288f20ef781ee",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_a_c744_complement_consequences.py": "9936b84c489a3ff6b08fa9cdc8937f07aa69fe2c976f256b7af633a8d4b518a4",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/A_C744_COMPLEMENT_CONSEQUENCES_BINDING.json": "905634da0a82c25cd25e2d13d31d9a91be4d2556e1d2a38458a233e627108b7f",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_ac_two_link_consequence_four_tree.py": "d219e467982e53cecea2b38c445677919a70db875998e98d6a2719db3d2760b9",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_c887_unit_four_corner_tree.py": "b06b754193bdab0f01e250cd4378e751337ef6039a40db27b97e6aba3e82eb87",
+    "/workspace/scratch/f9f48fcfb253/ac_work/four_product_corner_rows_v1/independent_physical_unit_four_corner_rows.py": "bfb6dc614269eaaa2c9f087cc7295c2598648d9349d76006b1e4aa08e66380a6",
+    "/workspace/scratch/f9f48fcfb253/ac_work/four_product_corner_rows_v1/PREMISE_BINDINGS.json": "de2a53541969a1083aa002b4d663a6010deacbdbca53fd4e80b01b8094a892f1",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_ac_two_link_consequence_four_lazy_tree.py": "6cb9e209b3285e4fcc522cb4ffa93eff95b63f13281040464dc22eeea10092e6",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_ac_two_link_unit_corner_tree.py": "8c12942c8134f7ed57239a095630cb351ea503552fd2aea254c3365720647696"
+  },
+  "first_fresh_replay": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/A_C744_COMPONENT1_COMPLETE_EXACT_REPLAY.json",
+    "sha256": "1f69c94f0028cabd28817b351553be0a5e4f3a30d790472255ea7ff556979240"
+  },
+  "saved_replay_report_is_not_a_premise": true,
+  "all_nine_originals_required": true,
+  "all_original_corners_and_pairs_required": true,
+  "strict_original_CD_required": true,
+  "actual_AB_BC_EF_FG_required": true,
+  "closed_shared_faces_retained": true,
+  "no_child_SAT_or_interval_transport": true,
+  "source_checker_precedes_new_consequence": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

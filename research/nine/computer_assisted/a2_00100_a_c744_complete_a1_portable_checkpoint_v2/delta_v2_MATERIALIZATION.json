@@ -1,0 +1,12 @@
+{
+  "status": "PASS_IMMUTABLE_A1_DIAGNOSTIC_TRANSPORT_REVISION",
+  "delta": "/workspace/scratch/f9f48fcfb253/ac_work/compact_A1_publication/delta_v2",
+  "packet": "/tmp/a1_complete_consequence_packet_v2",
+  "input_files": 2249,
+  "input_manifest_sha256": "d8ca6d465aa3831e26d6d0149b8ce734a1043c51694f81a9ce9b9a4e3baaf965",
+  "delta_manifest_sha256": "70c971d00fb804d0765cce66ef540b3c79e18a0eed29b08d5f63793b94eedf4d",
+  "unchanged_mathematical_payload_files": 2238,
+  "old_inputs_rehashed_and_unchanged": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

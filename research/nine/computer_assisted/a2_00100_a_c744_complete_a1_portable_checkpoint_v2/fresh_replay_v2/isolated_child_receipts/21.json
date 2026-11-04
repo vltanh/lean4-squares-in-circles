@@ -1,0 +1,24 @@
+{
+  "status": "PASS_PORTABLE_ISOLATED_EXACT_A1_CHILD",
+  "original_ids": [
+    "positive-c744bc031d40ee64"
+  ],
+  "packet_manifest_sha256": "d8ca6d465aa3831e26d6d0149b8ce734a1043c51694f81a9ce9b9a4e3baaf965",
+  "input_files": 2249,
+  "input_bytes": 1091622669,
+  "exact_mathematical_sources_unchanged": true,
+  "explicit_path_aliases": 2375,
+  "filesystem_reference_transport_only": true,
+  "frozen_archived_read_guards_unchanged": true,
+  "all_packet_writes_and_mutations_forbidden": true,
+  "logical_and_resolved_paths_checked": true,
+  "bytecode_probes_redirected_to_output": true,
+  "explicit_archived_diagnostic_output_aliases": 10,
+  "archived_diagnostic_outputs_disjoint_from_inputs": true,
+  "external_workspace_reads_forbidden_in_every_child": true,
+  "numerical_imports_forbidden": true,
+  "all_inputs_rehashed_at_completion": true,
+  "lean_lake_ci_run": false,
+  "seconds": 26.387220248998347,
+  "script": "payload/ac_work/tree/replay_a_c744_prefix.py"
+}

@@ -1,0 +1,5958 @@
+{
+  "status": "PASS_COMPLETE_DECLARATION_WITH_OPEN_COMPLEMENTS",
+  "original_id": "positive-c744bc031d40ee64",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        4
+      ]
+    ]
+  ],
+  "excluded_complement_domains": 2,
+  "open_complement_domains": 3,
+  "all_five_closed_complements_present": true,
+  "all_shared_faces_retained": true,
+  "ancestor_replay": {
+    "ancestor": {
+      "schema": "independently_replayed_same_original_state_v1",
+      "status": "PASS_CERTIFIED_WHOLE_ORIGINAL_A_C744_STATE_OPEN",
+      "state": {
+        "id": "positive-c744bc031d40ee64",
+        "path": [
+          [
+            "angle",
+            3,
+            1
+          ],
+          [
+            "angle_cut",
+            [
+              0,
+              "0"
+            ],
+            0
+          ],
+          [
+            "inward_row_escape",
+            [
+              7,
+              8
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "angles": [
+          [
+            "-8147395338831/70368744177664",
+            "0"
+          ],
+          [
+            "-20549052571207/281474976710656",
+            "20549052571207/281474976710656"
+          ],
+          [
+            "-50972326778557/70368744177664",
+            "207937738032711/281474976710656"
+          ],
+          [
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "1"
+          ],
+          [
+            "-104201981535703/281474976710656",
+            "104201981535703/281474976710656"
+          ],
+          [
+            "-1",
+            "1"
+          ],
+          [
+            "-1",
+            "1"
+          ],
+          [
+            "-1",
+            "1"
+          ]
+        ],
+        "positions": [
+          [
+            "-91/60",
+            "-1501615/1048576"
+          ],
+          [
+            "-277489/1048576",
+            "201431/1048576"
+          ],
+          [
+            "-31/60",
+            "-453039/1048576"
+          ],
+          [
+            "-1326065/1048576",
+            "18547/65536"
+          ],
+          [
+            "29/60",
+            "715749/1048576"
+          ],
+          [
+            "-1304523/1048576",
+            "-77/120"
+          ],
+          [
+            "6684432029724121/5000000000000000",
+            "91/60"
+          ],
+          [
+            "-387839/1048576",
+            "292539/1048576"
+          ],
+          [
+            "-1345805/1048576",
+            "-47/64"
+          ],
+          [
+            "723791/1048576",
+            "328569/262144"
+          ],
+          [
+            "-109551/524288",
+            "17/64"
+          ],
+          [
+            "-211439/1048576",
+            "91/60"
+          ],
+          [
+            "834291/1048576",
+            "91581/65536"
+          ],
+          [
+            "567421/1048576",
+            "1262441/1048576"
+          ],
+          [
+            "-1472789/1048576",
+            "5/4"
+          ],
+          [
+            "-91/60",
+            "7371983528137207/5000000000000000"
+          ],
+          [
+            "-1472789/1048576",
+            "5/4"
+          ],
+          [
+            "-387839/1048576",
+            "91/60"
+          ]
+        ],
+        "scalar": [
+          [
+            "279607100993237/281474976710656",
+            "1"
+          ],
+          [
+            "280727871017723/281474976710656",
+            "1"
+          ],
+          [
+            "226397353907045/281474976710656",
+            "1"
+          ],
+          [
+            "99516432383215/140737488355328",
+            "1"
+          ],
+          [
+            "99516432383215/140737488355328",
+            "1"
+          ],
+          [
+            "263967471536327/281474976710656",
+            "1"
+          ],
+          [
+            "99516432383215/140737488355328",
+            "1"
+          ],
+          [
+            "99516432383215/140737488355328",
+            "1"
+          ],
+          [
+            "99516432383215/140737488355328",
+            "1"
+          ],
+          [
+            "-15075/131072",
+            "0"
+          ],
+          [
+            "-19087/262144",
+            "19087/262144"
+          ],
+          [
+            "-153781/262144",
+            "623053/1048576"
+          ],
+          [
+            "0",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "-199032864766431/281474976710656",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "-182019/524288",
+            "182019/524288"
+          ],
+          [
+            "-199032864766431/281474976710656",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "-199032864766431/281474976710656",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "-199032864766431/281474976710656",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "0",
+            "15075/131072"
+          ],
+          [
+            "0",
+            "19087/262144"
+          ],
+          [
+            "0",
+            "623053/1048576"
+          ],
+          [
+            "0",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "0",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "0",
+            "182019/524288"
+          ],
+          [
+            "0",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "0",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "0",
+            "199032864766431/281474976710656"
+          ],
+          [
+            "126976178952935/281474976710656",
+            "1/2"
+          ],
+          [
+            "131511081937823/281474976710656",
+            "1/2"
+          ],
+          [
+            "93727/262144",
+            "1/2"
+          ],
+          [
+            "49758216191607/140737488355328",
+            "1/2"
+          ],
+          [
+            "49758216191607/140737488355328",
+            "1/2"
+          ],
+          [
+            "109525507493147/281474976710656",
+            "1/2"
+          ],
+          [
+            "49758216191607/140737488355328",
+            "1/2"
+          ],
+          [
+            "49758216191607/140737488355328",
+            "1/2"
+          ],
+          [
+            "49758216191607/140737488355328",
+            "1/2"
+          ]
+        ],
+        "differences": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "intervals": [
+              [
+                "1048575/1048576",
+                "280527/262144"
+              ],
+              [
+                "-280527/262144",
+                "450371/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              0,
+              2
+            ],
+            "intervals": [
+              [
+                "2097151/1048576",
+                "576489/262144"
+              ],
+              [
+                "-1304523/1048576",
+                "-472981/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              0,
+              3
+            ],
+            "intervals": [
+              [
+                "2992167/1048576",
+                "3145729/1048576"
+              ],
+              [
+                "-192239/524288",
+                "521823/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              0,
+              4
+            ],
+            "intervals": [
+              [
+                "77905/524288",
+                "751/960"
+              ],
+              [
+                "906043/1048576",
+                "175737/131072"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              0,
+              5
+            ],
+            "intervals": [
+              [
+                "641257/524288",
+                "1711/960"
+              ],
+              [
+                "-114697/1048576",
+                "1867829/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              0,
+              6
+            ],
+            "intervals": [
+              [
+                "1169713/524288",
+                "3054961/1048576"
+              ],
+              [
+                "555193/1048576",
+                "769965/524288"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              0,
+              7
+            ],
+            "intervals": [
+              [
+                "28827/1048576",
+                "83/30"
+              ],
+              [
+                "-1791771/1048576",
+                "779509/524288"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              0,
+              8
+            ],
+            "intervals": [
+              [
+                "28827/1048576",
+                "83/30"
+              ],
+              [
+                "-192239/524288",
+                "1867829/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "intervals": [
+              [
+                "1048575/1048576",
+                "314345/262144"
+              ],
+              [
+                "-1226895/1048576",
+                "575595/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "intervals": [
+              [
+                "1943591/1048576",
+                "2097153/1048576"
+              ],
+              [
+                "-124985/262144",
+                "1570399/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "intervals": [
+              [
+                "-446383/524288",
+                "-209/960"
+              ],
+              [
+                "216871/262144",
+                "306809/131072"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              1,
+              5
+            ],
+            "intervals": [
+              [
+                "116969/524288",
+                "751/960"
+              ],
+              [
+                "470729/524288",
+                "2916405/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              1,
+              6
+            ],
+            "intervals": [
+              [
+                "645425/524288",
+                "2006385/1048576"
+              ],
+              [
+                "234989/524288",
+                "1294253/524288"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              1,
+              7
+            ],
+            "intervals": [
+              [
+                "-1019749/1048576",
+                "53/30"
+              ],
+              [
+                "-471773/262144",
+                "2580063/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              1,
+              8
+            ],
+            "intervals": [
+              [
+                "-1019749/1048576",
+                "53/30"
+              ],
+              [
+                "-304875/524288",
+                "2916405/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "intervals": [
+              [
+                "774321/1048576",
+                "1048577/1048576"
+              ],
+              [
+                "349525/524288",
+                "1048577/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "intervals": [
+              [
+                "-1972025/1048576",
+                "-1169/960"
+              ],
+              [
+                "735181/524288",
+                "1309399/524288"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              2,
+              5
+            ],
+            "intervals": [
+              [
+                "-420695/524288",
+                "-209/960"
+              ],
+              [
+                "856477/1048576",
+                "2894863/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              2,
+              6
+            ],
+            "intervals": [
+              [
+                "103593/524288",
+                "957809/1048576"
+              ],
+              [
+                "1543845/1048576",
+                "2289945/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              2,
+              7
+            ],
+            "intervals": [
+              [
+                "-1046215/524288",
+                "23/30"
+              ],
+              [
+                "-7/8",
+                "1425159/524288"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              2,
+              8
+            ],
+            "intervals": [
+              [
+                "-1046215/524288",
+                "23/30"
+              ],
+              [
+                "418537/1048576",
+                "2894863/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "intervals": [
+              [
+                "-44042179/15728640",
+                "-2180383/1048576"
+              ],
+              [
+                "479967/1048576",
+                "1702115/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              3,
+              5
+            ],
+            "intervals": [
+              [
+                "-904721/524288",
+                "-1131807/1048576"
+              ],
+              [
+                "-24661/1048576",
+                "1978179/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              3,
+              6
+            ],
+            "intervals": [
+              [
+                "-753459/1048576",
+                "1553/32768"
+              ],
+              [
+                "417071/524288",
+                "172055/131072"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              3,
+              7
+            ],
+            "intervals": [
+              [
+                "-3063129/1048576",
+                "-434432029724121/5000000000000000"
+              ],
+              [
+                "-1882879/1048576",
+                "1933635/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              3,
+              8
+            ],
+            "intervals": [
+              [
+                "-3063129/1048576",
+                "-434432029724121/5000000000000000"
+              ],
+              [
+                "-453151/1048576",
+                "1978179/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              4,
+              5
+            ],
+            "intervals": [
+              [
+                "1",
+                "186707/131072"
+              ],
+              [
+                "-325309/262144",
+                "431761/524288"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              4,
+              6
+            ],
+            "intervals": [
+              [
+                "2097151/1048576",
+                "1327931/524288"
+              ],
+              [
+                "-662193/1048576",
+                "259635/524288"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              4,
+              7
+            ],
+            "intervals": [
+              [
+                "-515775/1048576",
+                "2656525/1048576"
+              ],
+              [
+                "-10892311/3932160",
+                "308677/524288"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              4,
+              8
+            ],
+            "intervals": [
+              [
+                "-515775/1048576",
+                "2656525/1048576"
+              ],
+              [
+                "-1702115/1048576",
+                "866549/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              5,
+              6
+            ],
+            "intervals": [
+              [
+                "1048575/1048576",
+                "182537/131072"
+              ],
+              [
+                "-1011519/1048576",
+                "1203363/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              5,
+              7
+            ],
+            "intervals": [
+              [
+                "-24443/16384",
+                "764911/524288"
+              ],
+              [
+                "-91/30",
+                "340667/262144"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              5,
+              8
+            ],
+            "intervals": [
+              [
+                "-1564351/1048576",
+                "764911/524288"
+              ],
+              [
+                "-1978179/1048576",
+                "1801779/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              6,
+              7
+            ],
+            "intervals": [
+              [
+                "-2726039/1048576",
+                "476429/1048576"
+              ],
+              [
+                "-2852781/1048576",
+                "489187/524288"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              6,
+              8
+            ],
+            "intervals": [
+              [
+                "-2726039/1048576",
+                "476429/1048576"
+              ],
+              [
+                "-94679/65536",
+                "1022919/1048576"
+              ]
+            ]
+          },
+          {
+            "pair": [
+              7,
+              8
+            ],
+            "intervals": [
+              [
+                "0",
+                "2783509/1048576"
+              ],
+              [
+                "-1/1048576",
+                "91/30"
+              ]
+            ]
+          }
+        ],
+        "diagonal": []
+      },
+      "prefix_report": {
+        "schema": "independent_complete_central_cover_bound_replay_v1",
+        "id": "positive-c744bc031d40ee64",
+        "status": "PASS_CERTIFIED_COMPLETE_COVER_PARENT_STATE_OPEN",
+        "whole_original_parent_closed": false,
+        "new_originals_closed": 0,
+        "whole_mask_closed": false,
+        "new_refinement_nodes": 0,
+        "rounds": 2,
+        "new_deductions": 18,
+        "printed_rows_checked": 1817,
+        "reserve": "None",
+        "complete_cover_checked_independently": true,
+        "conditional_rows_promoted_without_complete_cover": false,
+        "unsupported_rules_accepted": false,
+        "prior_report": {
+          "id": "positive-c744bc031d40ee64",
+          "status": "PASS_CERTIFIED_PARENT_STATE_OPEN",
+          "whole_original_parent_closed": false,
+          "bound_induction_branch_nodes": 0,
+          "prior_coordinate_deductions": 31,
+          "new_deductions": 548,
+          "rounds": 11,
+          "printed_rows_checked": 1775,
+          "terminal_rows": 0,
+          "reserve": "None",
+          "center_cover": null,
+          "independently_rebuilt_new_rules": [
+            "physical_inset_perspective_tangent_0_0",
+            "physical_inset_perspective_secant_0_0_24260374932670/138630713900969",
+            "physical_inset_reciprocal_upper_0_1_82498931643999/70368744177664",
+            "physical_inset_reciprocal_tangent_0_1",
+            "physical_inset_reciprocal_tangent_0_152867675821663/140737488355328",
+            "physical_folded_arc_chord_0_0_12130187466335/70368744177664",
+            "physical_inset_perspective_tangent_1_0",
+            "physical_inset_perspective_secant_1_0_24260374932670/138630713900969",
+            "physical_inset_reciprocal_tangent_1_1",
+            "physical_inset_reciprocal_tangent_1_152867675821663/140737488355328",
+            "physical_folded_arc_chord_1_0_12130187466335/70368744177664",
+            "physical_inset_perspective_tangent_2_0",
+            "physical_inset_perspective_secant_2_0_1",
+            "physical_inset_reciprocal_upper_2_1_99/70",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_199032864766431/281474976710656",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_inset_reciprocal_tangent_3_99/70",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_4_0",
+            "physical_inset_perspective_secant_4_0_1",
+            "physical_inset_reciprocal_upper_4_1_99/70",
+            "physical_inset_reciprocal_tangent_4_1",
+            "physical_inset_reciprocal_tangent_4_169/140",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_5_0",
+            "physical_inset_perspective_secant_5_0_1",
+            "physical_inset_reciprocal_upper_5_1_99/70",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_inset_reciprocal_tangent_5_169/140",
+            "physical_folded_arc_chord_5_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_6_0",
+            "physical_inset_perspective_secant_6_0_1",
+            "physical_inset_reciprocal_upper_6_1_99/70",
+            "physical_inset_reciprocal_tangent_6_1",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_7_3/4",
+            "physical_inset_perspective_secant_8_0_1",
+            "physical_inset_reciprocal_tangent_8_1",
+            "physical_folded_arc_chord_8_0_199032864766431/281474976710656",
+            "original_support_height_radius_0_4_-1_-72283551865583/1125899906842624",
+            "original_support_height_radius_1_4_-1_-72283551865583/1125899906842624",
+            "original_support_height_radius_1_5_-1_-72283551865583/1125899906842624",
+            "original_support_height_radius_2_3_-1_0",
+            "original_support_height_radius_2_3_1_0",
+            "directional_support_gap_0_4_4_0_1_1_1/5",
+            "directional_support_gap_2_3_2_10_1_1_0",
+            "directional_support_gap_2_5_2_10_1_1_1/5",
+            "original_point_incircle_3_6_3_1_1_0_1",
+            "physical_inset_perspective_tangent_0_0",
+            "physical_inset_perspective_secant_0_0_36469372616704/279102395860745",
+            "physical_inset_reciprocal_tangent_0_1",
+            "physical_folded_arc_chord_0_0_135859/1048576",
+            "physical_inset_perspective_tangent_1_0",
+            "physical_inset_perspective_secant_1_0_23092696973312/280526094794695",
+            "physical_inset_reciprocal_tangent_1_1",
+            "physical_inset_reciprocal_tangent_1_1134603/1048576",
+            "physical_folded_arc_chord_1_0_86027/1048576",
+            "physical_inset_perspective_tangent_2_0",
+            "physical_inset_perspective_secant_2_0_260958248343043/281474976710656",
+            "physical_inset_reciprocal_upper_2_1_99/70",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_712901/1048576",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_inset_reciprocal_tangent_3_99/70",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_4_0",
+            "physical_inset_perspective_secant_4_0_1",
+            "physical_inset_reciprocal_tangent_4_169/140",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_5_0",
+            "physical_inset_perspective_secant_5_0_219502530720987/281474976710656",
+            "physical_inset_reciprocal_upper_5_1_99/70",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_inset_reciprocal_tangent_5_169/140",
+            "physical_folded_arc_chord_5_0_161205/262144",
+            "physical_inset_perspective_tangent_6_0",
+            "physical_inset_perspective_secant_6_0_1",
+            "physical_inset_reciprocal_tangent_6_1",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "physical_folded_arc_chord_7_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_8_0",
+            "original_support_height_radius_0_4_-1_-20623490263853/281474976710656",
+            "original_support_height_radius_0_4_-1_0",
+            "original_support_height_radius_1_4_-1_0",
+            "original_support_height_radius_1_5_-1_-91435763360989/1125899906842624",
+            "original_support_height_radius_2_3_1_0",
+            "original_support_height_radius_2_5_-1_0",
+            "original_support_height_radius_2_5_1_340842447365/140737488355328",
+            "original_support_height_radius_2_8_-1_-284434824945/1125899906842624",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "original_support_height_radius_3_8_1_0",
+            "directional_support_gap_0_4_4_0_1_1_0",
+            "directional_support_gap_3_6_6_0_1_-1_0",
+            "directional_support_gap_3_8_8_3_1_1_0",
+            "directional_support_gap_3_6_6_9_1_1_0",
+            "original_point_incircle_3_6_3_1_1_0_1",
+            "physical_inset_perspective_tangent_0_0",
+            "physical_inset_perspective_secant_0_0_8319687196672/69875195613973",
+            "physical_inset_reciprocal_upper_0_1_1172549/1048576",
+            "physical_inset_reciprocal_tangent_0_1",
+            "physical_inset_reciprocal_tangent_0_2221125/2097152",
+            "physical_inset_reciprocal_tangent_0_1172549/1048576",
+            "physical_folded_arc_chord_0_0_123973/1048576",
+            "physical_inset_perspective_tangent_1_0",
+            "physical_inset_perspective_secant_1_0_20737444282368/280710029957783",
+            "physical_inset_reciprocal_tangent_1_1",
+            "physical_folded_arc_chord_1_0_77253/1048576",
+            "physical_inset_perspective_tangent_2_0",
+            "physical_inset_perspective_secant_2_0_122090299365477/140737488355328",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_687123/1048576",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_inset_reciprocal_upper_4_1_99/70",
+            "physical_inset_reciprocal_tangent_4_169/140",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_5_0",
+            "physical_inset_perspective_secant_5_0_125609271361536/251893774163411",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_inset_reciprocal_tangent_5_169/140",
+            "physical_folded_arc_chord_5_0_467931/1048576",
+            "physical_inset_perspective_secant_6_0_1",
+            "physical_inset_reciprocal_upper_6_1_99/70",
+            "physical_inset_reciprocal_tangent_6_1",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_7_0_1",
+            "physical_folded_arc_chord_7_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_8_0_1",
+            "physical_inset_reciprocal_upper_8_1_99/70",
+            "physical_inset_reciprocal_tangent_8_99/70",
+            "physical_folded_arc_chord_8_0_199032864766431/281474976710656",
+            "original_support_height_radius_0_4_-1_-85286198290281/1125899906842624",
+            "original_support_height_radius_0_4_-1_0",
+            "original_support_height_radius_1_4_-1_-48309127646355/562949953421312",
+            "original_support_height_radius_1_4_-1_0",
+            "original_support_height_radius_1_5_-1_-19013892821199/281474976710656",
+            "original_support_height_radius_2_3_1_0",
+            "original_support_height_radius_2_5_-1_0",
+            "original_support_height_radius_2_5_1_4891146504355/281474976710656",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "directional_support_gap_0_4_4_0_1_1_0",
+            "directional_support_gap_0_8_8_0_1_1_1/5",
+            "directional_support_gap_3_6_6_0_1_-1_1/5",
+            "directional_support_gap_3_6_6_7_1_1_0",
+            "directional_support_gap_3_6_6_9_1_1_0",
+            "directional_support_gap_7_8_8_9_1_1_1/5",
+            "directional_support_gap_3_6_6_10_1_1_0",
+            "directional_support_gap_7_8_8_10_1_1_1/5",
+            "original_point_incircle_1_4_1_-1_1_0_1",
+            "original_point_incircle_3_6_3_1_1_0_1",
+            "physical_inset_perspective_tangent_0_0",
+            "physical_inset_perspective_secant_0_0_32586453745664/279582341263795",
+            "physical_inset_reciprocal_upper_0_1_584985/524288",
+            "physical_inset_reciprocal_tangent_0_1",
+            "physical_inset_reciprocal_tangent_0_1109273/1048576",
+            "physical_inset_reciprocal_tangent_0_584985/524288",
+            "physical_folded_arc_chord_0_0_60697/524288",
+            "physical_inset_perspective_tangent_1_0",
+            "physical_inset_perspective_secant_1_0_20494510194688/280727871017723",
+            "physical_inset_reciprocal_tangent_1_1",
+            "physical_inset_reciprocal_tangent_1_543375/524288",
+            "physical_folded_arc_chord_1_0_19087/262144",
+            "physical_inset_perspective_tangent_2_0",
+            "physical_inset_perspective_secant_2_0_226243923711/274877906944",
+            "physical_inset_reciprocal_upper_2_1_99/70",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_333183/524288",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_inset_reciprocal_tangent_3_99/70",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_inset_reciprocal_tangent_4_1",
+            "physical_inset_reciprocal_tangent_4_169/140",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_5_0_52820715765760/130449272188689",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_inset_reciprocal_tangent_5_2490697/2097152",
+            "physical_folded_arc_chord_5_0_393545/1048576",
+            "physical_inset_perspective_secant_6_0_1",
+            "physical_inset_reciprocal_tangent_6_1",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "physical_inset_reciprocal_tangent_7_99/70",
+            "physical_folded_arc_chord_8_0_199032864766431/281474976710656",
+            "original_support_height_radius_0_4_-1_-42948467261701/562949953421312",
+            "original_support_height_radius_0_4_-1_0",
+            "original_support_height_radius_1_4_-1_-48421674160225/562949953421312",
+            "original_support_height_radius_1_4_-1_0",
+            "original_support_height_radius_1_5_-1_-106388537224453/562949953421312",
+            "original_support_height_radius_1_5_-1_-65317594696487/1125899906842624",
+            "original_support_height_radius_2_3_1_0",
+            "original_support_height_radius_2_5_-1_0",
+            "original_support_height_radius_2_5_1_29664253310863/1125899906842624",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "directional_support_gap_0_4_4_0_1_1_0",
+            "directional_support_gap_3_6_6_0_1_-1_0",
+            "directional_support_gap_3_6_6_5_1_1_0",
+            "directional_support_gap_2_3_2_9_1_1_0",
+            "directional_support_gap_2_3_2_10_1_1_0",
+            "original_point_incircle_1_4_1_-1_1_0_1",
+            "physical_inset_perspective_tangent_0_0",
+            "physical_inset_perspective_secant_0_0_32373315993600/279607100993237",
+            "physical_inset_reciprocal_upper_0_1_146147/131072",
+            "physical_inset_reciprocal_tangent_0_1",
+            "physical_folded_arc_chord_0_0_15075/131072",
+            "physical_inset_perspective_tangent_1_0",
+            "physical_inset_perspective_secant_1_0_20494510194688/280727871017723",
+            "physical_inset_reciprocal_tangent_1_1",
+            "physical_inset_reciprocal_tangent_1_543375/524288",
+            "physical_folded_arc_chord_1_0_19087/262144",
+            "physical_inset_perspective_secant_2_0_55742685011039/70368744177664",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_651099/1048576",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_inset_reciprocal_tangent_4_1",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_5_0_99722161291264/263217881348633",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_folded_arc_chord_5_0_185747/524288",
+            "physical_inset_perspective_secant_6_0_1",
+            "physical_inset_reciprocal_upper_6_1_99/70",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_8_0_1",
+            "physical_inset_reciprocal_tangent_8_99/70",
+            "original_support_height_radius_0_4_-1_-10760664068253/140737488355328",
+            "original_support_height_radius_0_4_-1_0",
+            "original_support_height_radius_1_4_-1_-48421674160225/562949953421312",
+            "original_support_height_radius_1_4_-1_0",
+            "original_support_height_radius_1_5_-1_-30858830713743/562949953421312",
+            "original_support_height_radius_2_3_1_0",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "directional_support_gap_0_8_8_0_1_1_1/5",
+            "directional_support_gap_3_6_6_0_1_-1_0",
+            "directional_support_gap_2_3_3_1_1_1_1/5",
+            "directional_support_gap_3_6_6_3_1_1_0",
+            "directional_support_gap_3_6_6_5_1_1_0",
+            "directional_support_gap_2_3_2_9_1_1_0",
+            "directional_support_gap_3_6_6_9_1_1_0",
+            "directional_support_gap_2_3_2_10_1_1_0",
+            "original_point_incircle_1_4_1_-1_1_0_1",
+            "physical_inset_perspective_tangent_0_0",
+            "physical_inset_perspective_secant_0_0_32373315993600/279607100993237",
+            "physical_inset_reciprocal_upper_0_1_146147/131072",
+            "physical_inset_reciprocal_tangent_0_1",
+            "physical_folded_arc_chord_0_0_15075/131072",
+            "physical_inset_perspective_tangent_1_0",
+            "physical_inset_reciprocal_tangent_1_543375/524288",
+            "physical_folded_arc_chord_1_0_19087/262144",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_640587/1048576",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_inset_reciprocal_tangent_3_99/70",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_inset_reciprocal_tangent_4_1",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_5_0_32706981265408/87939652857831",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_folded_arc_chord_5_0_365529/1048576",
+            "physical_inset_perspective_secant_6_0_1",
+            "physical_inset_reciprocal_upper_6_1_99/70",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "physical_inset_reciprocal_upper_7_1_99/70",
+            "physical_inset_reciprocal_upper_8_1_99/70",
+            "physical_inset_reciprocal_tangent_8_99/70",
+            "original_support_height_radius_0_4_-1_-10760664068253/140737488355328",
+            "original_support_height_radius_0_4_-1_0",
+            "original_support_height_radius_1_4_-1_-48421674160225/562949953421312",
+            "original_support_height_radius_1_4_-1_0",
+            "original_support_height_radius_2_3_1_0",
+            "original_support_height_radius_2_8_-1_-408251234323/140737488355328",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "directional_support_gap_0_4_4_0_1_1_0",
+            "directional_support_gap_3_6_6_0_1_-1_0",
+            "directional_support_gap_2_3_3_1_1_1_1/5",
+            "directional_support_gap_3_6_6_1_1_1_0",
+            "directional_support_gap_2_3_2_9_1_1_0",
+            "directional_support_gap_2_3_2_10_1_1_0",
+            "original_point_incircle_1_4_1_-1_1_0_1",
+            "physical_inset_perspective_tangent_0_0",
+            "physical_inset_reciprocal_upper_0_1_146147/131072",
+            "physical_inset_reciprocal_tangent_0_1",
+            "physical_folded_arc_chord_0_0_15075/131072",
+            "physical_inset_perspective_secant_1_0_20494510194688/280727871017723",
+            "physical_inset_reciprocal_tangent_1_1",
+            "physical_inset_reciprocal_tangent_1_543375/524288",
+            "physical_folded_arc_chord_1_0_19087/262144",
+            "physical_inset_perspective_tangent_2_0",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_158417/262144",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_inset_reciprocal_tangent_4_1",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_5_0_97720706531328/263967471536327",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_folded_arc_chord_5_0_182019/524288",
+            "physical_inset_reciprocal_tangent_6_1",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "original_support_height_radius_0_4_-1_0",
+            "original_support_height_radius_0_8_-1_-10760664068253/140737488355328",
+            "original_support_height_radius_1_4_-1_-48421674160225/562949953421312",
+            "original_support_height_radius_1_4_-1_0",
+            "original_support_height_radius_2_3_1_0",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "directional_support_gap_0_4_4_0_1_1_0",
+            "directional_support_gap_2_3_3_1_1_1_1/5",
+            "original_point_incircle_1_4_1_-1_1_0_0",
+            "original_point_incircle_1_4_1_-1_1_0_1",
+            "physical_inset_perspective_secant_0_0_32373315993600/279607100993237",
+            "physical_inset_reciprocal_tangent_0_1",
+            "physical_folded_arc_chord_0_0_15075/131072",
+            "physical_folded_arc_chord_1_0_19087/262144",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_629247/1048576",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_5_0_97720706531328/263967471536327",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "original_support_height_radius_1_4_-1_-48421674160225/562949953421312",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "directional_support_gap_2_3_3_1_1_1_1/5",
+            "directional_support_gap_3_6_6_9_1_1_0",
+            "directional_support_gap_3_6_6_11_1_1_0",
+            "original_point_incircle_1_4_1_-1_1_0_0",
+            "original_point_incircle_1_4_1_-1_1_0_1",
+            "physical_inset_perspective_tangent_0_0",
+            "physical_inset_perspective_secant_0_0_32373315993600/279607100993237",
+            "physical_folded_arc_chord_0_0_15075/131072",
+            "physical_folded_arc_chord_1_0_19087/262144",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_626475/1048576",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_5_0",
+            "physical_inset_perspective_secant_5_0_97720706531328/263967471536327",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_folded_arc_chord_5_0_182019/524288",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_7_0_1",
+            "physical_inset_reciprocal_upper_7_1_99/70",
+            "physical_inset_perspective_secant_8_0_1",
+            "physical_inset_reciprocal_upper_8_1_99/70",
+            "original_support_height_radius_1_4_-1_-48421674160225/562949953421312",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "directional_support_gap_3_6_6_0_1_-1_0",
+            "directional_support_gap_2_3_3_1_1_1_1/5",
+            "original_point_incircle_1_4_1_-1_1_0_0",
+            "original_point_incircle_1_4_1_-1_1_0_1",
+            "physical_inset_perspective_tangent_0_0",
+            "physical_inset_perspective_secant_0_0_32373315993600/279607100993237",
+            "physical_inset_reciprocal_upper_0_1_146147/131072",
+            "physical_folded_arc_chord_0_0_15075/131072",
+            "physical_inset_perspective_secant_1_0_20494510194688/280727871017723",
+            "physical_folded_arc_chord_1_0_19087/262144",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_624757/1048576",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_4_0_1",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_secant_5_0_97720706531328/263967471536327",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_folded_arc_chord_5_0_182019/524288",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "physical_inset_reciprocal_tangent_7_99/70",
+            "physical_folded_arc_chord_7_0_199032864766431/281474976710656",
+            "original_support_height_radius_0_4_-1_-10760664068253/140737488355328",
+            "original_support_height_radius_1_4_-1_-48421674160225/562949953421312",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "original_support_height_radius_7_8_1_0",
+            "directional_support_gap_3_6_6_0_1_-1_0",
+            "directional_support_gap_2_3_2_9_1_1_0",
+            "directional_support_gap_2_3_2_10_1_1_0",
+            "original_point_incircle_1_4_1_-1_1_0_0",
+            "original_point_incircle_1_4_1_-1_1_0_1",
+            "physical_inset_perspective_tangent_0_0",
+            "physical_folded_arc_chord_0_0_15075/131072",
+            "physical_folded_arc_chord_1_0_19087/262144",
+            "physical_inset_reciprocal_tangent_2_1",
+            "physical_inset_reciprocal_tangent_2_169/140",
+            "physical_inset_reciprocal_tangent_2_99/70",
+            "physical_folded_arc_chord_2_0_155925/262144",
+            "physical_inset_reciprocal_tangent_3_169/140",
+            "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+            "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+            "physical_inset_perspective_tangent_5_0",
+            "physical_inset_perspective_secant_5_0_97720706531328/263967471536327",
+            "physical_inset_reciprocal_tangent_5_1",
+            "physical_inset_reciprocal_tangent_6_169/140",
+            "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+            "original_support_height_radius_1_4_-1_-48421674160225/562949953421312",
+            "original_support_height_radius_1_4_-1_0",
+            "original_support_height_radius_3_6_-1_0",
+            "original_support_height_radius_3_6_1_0",
+            "directional_support_gap_3_6_6_0_1_-1_0",
+            "directional_support_gap_2_3_2_9_1_1_0",
+            "directional_support_gap_2_3_2_10_1_1_0"
+          ],
+          "unsupported_rules_accepted": false,
+          "certificate_sha256": "dd000f67337d106196c99b283a7f0fc2fec61c6373e5afa6e0ac3b7dfaa6679a",
+          "reviewer_sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460",
+          "independent_rules_sha256": "a156f54bf7600a8a743e54083c80b4f7de6faac276774d2e9fd6ff156b6ed84e",
+          "verified_source_bindings": 11,
+          "seconds": 25.503811688002315,
+          "whole_mask_closed": false,
+          "human_or_kernel_verification": false,
+          "independent_central_reconstructor_sha256": "d769b3337046e8e5c05b65953470825e720f911ff5a49b834f3f04563ba6d512",
+          "central_adapter_sha256": "b0dccc3bb8712926284388c0c72fdda851536c4a16f4438650095be6af2f6cf6"
+        },
+        "source_sha256": "ccd730436715dff158a6d99fad5c9b55729c26d111c9b7ba25a78b24808e4638",
+        "checker_sha256": "99f11f7a71de8528f9d3a7b2b7b2429ac07c2c5b22f421d673fcaee62ad1e0f3",
+        "seconds": 32.24102973200206
+      },
+      "certificate_sha256": "ccd730436715dff158a6d99fad5c9b55729c26d111c9b7ba25a78b24808e4638",
+      "archive_manifest_sha256": "bc92960d4b59bac7f37184fa160f6184137856c6acab7b52d50706ef3887485d",
+      "checker_sha256": "d4465d650820d9594232269644f7ce90574e9fb4ebd73eb0490b2d154291ff7c",
+      "new_original_cells": 0,
+      "new_masks": 0,
+      "all_nine_original_squares_retained": true,
+      "original_corner_predicates": 36,
+      "original_pair_predicates": 36,
+      "original_mask": "001/00",
+      "numerical_producer_imported": false,
+      "lean_lake_ci_run": false,
+      "seconds": 33.54369412199958
+    },
+    "whole_parent": {
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 6,
+      "deductions": 458,
+      "printed_rows_checked": 1109,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    "certificate_sha256": "68aae2029165b1148d0b719ac962e7c50c649afd8fcee6bfba4af99f50f85893"
+  },
+  "component_audits": [
+    {
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 6,
+      "deductions": 271,
+      "printed_rows_checked": 1096,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0,
+      "component": 0,
+      "closed_domain": {
+        "name": "two_link_actual_AB_escape_0",
+        "coefficients": [
+          [
+            16,
+            "1"
+          ],
+          [
+            2,
+            "-1"
+          ]
+        ],
+        "rhs": "0"
+      }
+    },
+    {
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 5,
+      "deductions": 30,
+      "printed_rows_checked": 235,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0,
+      "component": 1,
+      "closed_domain": {
+        "name": "two_link_actual_AB_escape_1",
+        "coefficients": [
+          [
+            3,
+            "1"
+          ],
+          [
+            7,
+            "-1"
+          ]
+        ],
+        "rhs": "-3/5"
+      }
+    },
+    {
+      "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+      "rounds": 0,
+      "deductions": 0,
+      "printed_rows_checked": 2,
+      "reserve": "666553/10485760",
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0,
+      "component": 2,
+      "closed_domain": {
+        "name": "two_link_actual_AB_escape_2",
+        "coefficients": [
+          [
+            3,
+            "-1"
+          ],
+          [
+            7,
+            "1"
+          ]
+        ],
+        "rhs": "-3/5"
+      }
+    },
+    {
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 5,
+      "deductions": 30,
+      "printed_rows_checked": 321,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0,
+      "component": 3,
+      "closed_domain": {
+        "name": "two_link_actual_AB_escape_3",
+        "coefficients": [
+          [
+            3,
+            "1"
+          ],
+          [
+            7,
+            "1"
+          ],
+          [
+            17,
+            "-2"
+          ]
+        ],
+        "rhs": "-3/5"
+      }
+    },
+    {
+      "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+      "rounds": 1,
+      "deductions": 283,
+      "printed_rows_checked": 249,
+      "reserve": "111661307214776913054236367909263820531696563/100451354715061034414388184113857976021811200",
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0,
+      "component": 4,
+      "closed_domain": {
+        "name": "two_link_actual_AB_escape_4",
+        "coefficients": [
+          [
+            3,
+            "-1"
+          ],
+          [
+            7,
+            "-1"
+          ],
+          [
+            17,
+            "2"
+          ]
+        ],
+        "rhs": "-3/5"
+      }
+    }
+  ],
+  "final_states": [
+    {
+      "id": "positive-c744bc031d40ee64",
+      "path": [
+        [
+          "angle",
+          3,
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "inward_row_escape",
+          [
+            7,
+            8
+          ],
+          [
+            4
+          ]
+        ]
+      ],
+      "angles": [
+        [
+          "-14135711443321/140737488355328",
+          "0"
+        ],
+        [
+          "-20333955864759/281474976710656",
+          "20333955864759/281474976710656"
+        ],
+        [
+          "-92973141383493/140737488355328",
+          "207937738032711/281474976710656"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "-101150538894867/281474976710656",
+          "101150538894867/281474976710656"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "-1",
+          "1"
+        ]
+      ],
+      "positions": [
+        [
+          "-91/60",
+          "-1501615/1048576"
+        ],
+        [
+          "-277489/1048576",
+          "99867/524288"
+        ],
+        [
+          "-31/60",
+          "-453039/1048576"
+        ],
+        [
+          "-1326065/1048576",
+          "282071/1048576"
+        ],
+        [
+          "29/60",
+          "715749/1048576"
+        ],
+        [
+          "-1304523/1048576",
+          "-77/120"
+        ],
+        [
+          "6684432029724121/5000000000000000",
+          "91/60"
+        ],
+        [
+          "-387839/1048576",
+          "292539/1048576"
+        ],
+        [
+          "-336285/262144",
+          "-47/64"
+        ],
+        [
+          "724537/1048576",
+          "328569/262144"
+        ],
+        [
+          "-54615/262144",
+          "17/64"
+        ],
+        [
+          "-105331/524288",
+          "91/60"
+        ],
+        [
+          "834291/1048576",
+          "1462295/1048576"
+        ],
+        [
+          "71473/131072",
+          "1261881/1048576"
+        ],
+        [
+          "-1472789/1048576",
+          "-453039/1048576"
+        ],
+        [
+          "-409215552732509/281474976710656",
+          "300241/524288"
+        ],
+        [
+          "-1472789/1048576",
+          "-453039/1048576"
+        ],
+        [
+          "-387839/1048576",
+          "409215552732509/281474976710656"
+        ]
+      ],
+      "scalar": [
+        [
+          "280065834935651/281474976710656",
+          "1"
+        ],
+        [
+          "140371684586417/140737488355328",
+          "1"
+        ],
+        [
+          "226397353907045/281474976710656",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "132445170446825/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "-13099/131072",
+          "0"
+        ],
+        [
+          "-75553/1048576",
+          "75553/1048576"
+        ],
+        [
+          "-288987/524288",
+          "623053/1048576"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-354613/1048576",
+          "354613/1048576"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "13099/131072"
+        ],
+        [
+          "0",
+          "75553/1048576"
+        ],
+        [
+          "0",
+          "623053/1048576"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "354613/1048576"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "16066933392429/35184372088832",
+          "1/2"
+        ],
+        [
+          "131597543676935/281474976710656",
+          "1/2"
+        ],
+        [
+          "93727/262144",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "110014348157141/281474976710656",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ]
+      ],
+      "differences": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "intervals": [
+            [
+              "1048575/1048576",
+              "1121375/1048576"
+            ],
+            [
+              "-1121375/1048576",
+              "433423/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "intervals": [
+            [
+              "2097151/1048576",
+              "576489/262144"
+            ],
+            [
+              "-1304523/1048576",
+              "-472981/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "intervals": [
+            [
+              "2992167/1048576",
+              "3145729/1048576"
+            ],
+            [
+              "-192239/524288",
+              "521823/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "intervals": [
+            [
+              "39119/262144",
+              "751/960"
+            ],
+            [
+              "908719/1048576",
+              "700447/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            5
+          ],
+          "intervals": [
+            [
+              "320789/262144",
+              "1711/960"
+            ],
+            [
+              "-112979/1048576",
+              "1867829/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            6
+          ],
+          "intervals": [
+            [
+              "1169713/524288",
+              "45789529/15728640"
+            ],
+            [
+              "139811/262144",
+              "769685/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            7
+          ],
+          "intervals": [
+            [
+              "28827/1048576",
+              "70057/65536"
+            ],
+            [
+              "-1715357/1048576",
+              "11427/16384"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            8
+          ],
+          "intervals": [
+            [
+              "28827/1048576",
+              "70057/65536"
+            ],
+            [
+              "-192239/524288",
+              "483703438982493/281474976710656"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "intervals": [
+            [
+              "1048575/1048576",
+              "314345/262144"
+            ],
+            [
+              "-1223863/1048576",
+              "575595/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "intervals": [
+            [
+              "1943591/1048576",
+              "2097153/1048576"
+            ],
+            [
+              "-247613/524288",
+              "1570399/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "intervals": [
+            [
+              "-223025/262144",
+              "-209/960"
+            ],
+            [
+              "444579/524288",
+              "1224735/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "intervals": [
+            [
+              "58645/262144",
+              "751/960"
+            ],
+            [
+              "471167/524288",
+              "2916405/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            6
+          ],
+          "intervals": [
+            [
+              "645425/524288",
+              "30060889/15728640"
+            ],
+            [
+              "240429/524288",
+              "1293973/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            7
+          ],
+          "intervals": [
+            [
+              "-1019749/1048576",
+              "0"
+            ],
+            [
+              "-1781175/1048576",
+              "27811/16384"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            8
+          ],
+          "intervals": [
+            [
+              "-1019749/1048576",
+              "0"
+            ],
+            [
+              "508523/1048576",
+              "765178415693149/281474976710656"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "intervals": [
+            [
+              "774321/1048576",
+              "1048577/1048576"
+            ],
+            [
+              "349525/524288",
+              "1048577/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "intervals": [
+            [
+              "-985379/524288",
+              "-1169/960"
+            ],
+            [
+              "1471115/1048576",
+              "1309399/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "intervals": [
+            [
+              "-840793/1048576",
+              "-209/960"
+            ],
+            [
+              "429139/524288",
+              "2894863/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            6
+          ],
+          "intervals": [
+            [
+              "207783/1048576",
+              "14332249/15728640"
+            ],
+            [
+              "387063/262144",
+              "2289945/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            7
+          ],
+          "intervals": [
+            [
+              "-1046215/524288",
+              "-1048575/1048576"
+            ],
+            [
+              "-411435/524288",
+              "1901029/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            8
+          ],
+          "intervals": [
+            [
+              "-1046215/524288",
+              "-1048575/1048576"
+            ],
+            [
+              "418537/1048576",
+              "2800345/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "intervals": [
+            [
+              "-366935/131072",
+              "-545641/262144"
+            ],
+            [
+              "120179/262144",
+              "1702115/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            5
+          ],
+          "intervals": [
+            [
+              "-56525/32768",
+              "-283497/262144"
+            ],
+            [
+              "-17905/1048576",
+              "1978179/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            6
+          ],
+          "intervals": [
+            [
+              "-753459/1048576",
+              "36697/1048576"
+            ],
+            [
+              "837553/1048576",
+              "172055/131072"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            7
+          ],
+          "intervals": [
+            [
+              "-3063129/1048576",
+              "-1943591/1048576"
+            ],
+            [
+              "-903443/524288",
+              "984369/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            8
+          ],
+          "intervals": [
+            [
+              "-3063129/1048576",
+              "-1943591/1048576"
+            ],
+            [
+              "-453151/1048576",
+              "941971/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "intervals": [
+            [
+              "1",
+              "1489371/1048576"
+            ],
+            [
+              "-649649/524288",
+              "862953/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "intervals": [
+            [
+              "2097151/1048576",
+              "1326551/524288"
+            ],
+            [
+              "-655661/1048576",
+              "518595/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            7
+          ],
+          "intervals": [
+            [
+              "-510057/1048576",
+              "111469/131072"
+            ],
+            [
+              "-703425/262144",
+              "-68953/131072"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            8
+          ],
+          "intervals": [
+            [
+              "-510057/1048576",
+              "111469/131072"
+            ],
+            [
+              "-1702115/1048576",
+              "214724132748637/281474976710656"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "intervals": [
+            [
+              "1048575/1048576",
+              "1458421/1048576"
+            ],
+            [
+              "-1006603/1048576",
+              "1203363/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            7
+          ],
+          "intervals": [
+            [
+              "-1558633/1048576",
+              "-234859/1048576"
+            ],
+            [
+              "-12541789011155059/4222124650659840",
+              "334859/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            8
+          ],
+          "intervals": [
+            [
+              "-1558633/1048576",
+              "-234859/1048576"
+            ],
+            [
+              "-1978179/1048576",
+              "214549/131072"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "intervals": [
+            [
+              "-681041/262144",
+              "-1291333/1048576"
+            ],
+            [
+              "-747949154385245/281474976710656",
+              "-50119/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "intervals": [
+            [
+              "-681041/262144",
+              "-1291333/1048576"
+            ],
+            [
+              "-94679/65536",
+              "462019/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "intervals": [
+            [
+              "0",
+              "1019749/1048576"
+            ],
+            [
+              "5903/16384",
+              "409215552732509/140737488355328"
+            ]
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "intervals": [
+            [
+              "0",
+              "1481999/1048576"
+            ],
+            [
+              "615153/1048576",
+              "1121075/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "intervals": [
+            [
+              "198157/262144",
+              "1624267/1048576"
+            ],
+            [
+              "642533/262144",
+              "1702787/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "intervals": [
+            [
+              "2607689/1048576",
+              "904281/262144"
+            ],
+            [
+              "2570133/1048576",
+              "1702787/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "intervals": [
+            [
+              "1227403/1048576",
+              "32495/16384"
+            ],
+            [
+              "-503773/524288",
+              "-108543/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            5
+          ],
+          "intervals": [
+            [
+              "1469233/1048576",
+              "3449983/1048576"
+            ],
+            [
+              "-268787/524288",
+              "940033/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            6
+          ],
+          "intervals": [
+            [
+              "1641035/524288",
+              "2014093/524288"
+            ],
+            [
+              "219883/262144",
+              "1210317/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            7
+          ],
+          "intervals": [
+            [
+              "-918391/1048576",
+              "1768343/1048576"
+            ],
+            [
+              "-9243/65536",
+              "2799639/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            8
+          ],
+          "intervals": [
+            [
+              "489573/1048576",
+              "178157/65536"
+            ],
+            [
+              "-512477/524288",
+              "718607/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "intervals": [
+            [
+              "0",
+              "1624267/1048576"
+            ],
+            [
+              "118245/262144",
+              "611849/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "intervals": [
+            [
+              "1517455/1048576",
+              "904281/262144"
+            ],
+            [
+              "472981/1048576",
+              "1261961/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "intervals": [
+            [
+              "107/32768",
+              "32495/16384"
+            ],
+            [
+              "-1552349/524288",
+              "-1207349/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "intervals": [
+            [
+              "1283017/1048576",
+              "3449983/1048576"
+            ],
+            [
+              "-1317363/524288",
+              "-228417/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            6
+          ],
+          "intervals": [
+            [
+              "538731/262144",
+              "2014093/524288"
+            ],
+            [
+              "-304405/262144",
+              "727091/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            7
+          ],
+          "intervals": [
+            [
+              "-2018785/1048576",
+              "1768343/1048576"
+            ],
+            [
+              "-2300249/1048576",
+              "1781175/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            8
+          ],
+          "intervals": [
+            [
+              "-233075/524288",
+              "765178415693149/281474976710656"
+            ],
+            [
+              "-1561053/524288",
+              "-10889/16384"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "intervals": [
+            [
+              "46627/32768",
+              "1048577/524288"
+            ],
+            [
+              "0",
+              "349527/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "intervals": [
+            [
+              "-396767/1048576",
+              "1255569/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "-191239/65536"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "intervals": [
+            [
+              "75697/524288",
+              "2602053/1048576"
+            ],
+            [
+              "-3341907/1048576",
+              "-1276993/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            6
+          ],
+          "intervals": [
+            [
+              "244819/131072",
+              "3037403/1048576"
+            ],
+            [
+              "-896261/524288",
+              "-760085/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            7
+          ],
+          "intervals": [
+            [
+              "-1054587/524288",
+              "104251/131072"
+            ],
+            [
+              "-3475023/1048576",
+              "-112853/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            8
+          ],
+          "intervals": [
+            [
+              "-1054635/1048576",
+              "1751769/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "-1499969/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "intervals": [
+            [
+              "-298297/131072",
+              "-283431/524288"
+            ],
+            [
+              "-4060549/1048576",
+              "-3223007/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            5
+          ],
+          "intervals": [
+            [
+              "-1755167/1048576",
+              "390431/524288"
+            ],
+            [
+              "-3341907/1048576",
+              "-1348251/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            6
+          ],
+          "intervals": [
+            [
+              "234649/1048576",
+              "153179/131072"
+            ],
+            [
+              "-896261/524288",
+              "-980243/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            7
+          ],
+          "intervals": [
+            [
+              "-257521/65536",
+              "-984593/1048576"
+            ],
+            [
+              "-3475023/1048576",
+              "-61591/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            8
+          ],
+          "intervals": [
+            [
+              "-3042989/1048576",
+              "-15037/262144"
+            ],
+            [
+              "-4060549/1048576",
+              "-1578467/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "intervals": [
+            [
+              "0",
+              "66807/32768"
+            ],
+            [
+              "249057/1048576",
+              "649649/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "intervals": [
+            [
+              "1632505/1048576",
+              "1400391/524288"
+            ],
+            [
+              "1693007/1048576",
+              "192491/65536"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            7
+          ],
+          "intervals": [
+            [
+              "-2707073/1048576",
+              "10629/32768"
+            ],
+            [
+              "11691/32768",
+              "1657233/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            8
+          ],
+          "intervals": [
+            [
+              "-1556213/1048576",
+              "1622921/1048576"
+            ],
+            [
+              "-7923/16384",
+              "1051839/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "intervals": [
+            [
+              "142309/1048576",
+              "1203363/524288"
+            ],
+            [
+              "0",
+              "1173883/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            7
+          ],
+          "intervals": [
+            [
+              "-4053557/1048576",
+              "27215/524288"
+            ],
+            [
+              "-483867/262144",
+              "2832877/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            8
+          ],
+          "intervals": [
+            [
+              "-1461763/524288",
+              "1152971/1048576"
+            ],
+            [
+              "-649649/262144",
+              "96841/65536"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "intervals": [
+            [
+              "-2249081/524288",
+              "-1849847/1048576"
+            ],
+            [
+              "-2475757/1048576",
+              "353963/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "intervals": [
+            [
+              "-3455637/1048576",
+              "-747631/1048576"
+            ],
+            [
+              "-192491/65536",
+              "7647/65536"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "intervals": [
+            [
+              "642905/1048576",
+              "415061/131072"
+            ],
+            [
+              "-409215552732509/140737488355328",
+              "17833/32768"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "positive-c744bc031d40ee64",
+      "path": [
+        [
+          "angle",
+          3,
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "inward_row_escape",
+          [
+            7,
+            8
+          ],
+          [
+            4
+          ]
+        ]
+      ],
+      "angles": [
+        [
+          "-14135711443321/140737488355328",
+          "0"
+        ],
+        [
+          "-20333955864759/281474976710656",
+          "20333955864759/281474976710656"
+        ],
+        [
+          "-92973141383493/140737488355328",
+          "207937738032711/281474976710656"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "-101150538894867/281474976710656",
+          "101150538894867/281474976710656"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "-1",
+          "1"
+        ]
+      ],
+      "positions": [
+        [
+          "-91/60",
+          "-1501615/1048576"
+        ],
+        [
+          "-277489/1048576",
+          "99867/524288"
+        ],
+        [
+          "-31/60",
+          "-453039/1048576"
+        ],
+        [
+          "-1326065/1048576",
+          "-337123/1048576"
+        ],
+        [
+          "29/60",
+          "715749/1048576"
+        ],
+        [
+          "-1304523/1048576",
+          "-77/120"
+        ],
+        [
+          "6684432029724121/5000000000000000",
+          "91/60"
+        ],
+        [
+          "-387839/1048576",
+          "292539/1048576"
+        ],
+        [
+          "-336285/262144",
+          "-47/64"
+        ],
+        [
+          "724537/1048576",
+          "328569/262144"
+        ],
+        [
+          "-54615/262144",
+          "17/64"
+        ],
+        [
+          "-198783/1048576",
+          "91/60"
+        ],
+        [
+          "834291/1048576",
+          "1462295/1048576"
+        ],
+        [
+          "71473/131072",
+          "1261881/1048576"
+        ],
+        [
+          "-1472789/1048576",
+          "5/4"
+        ],
+        [
+          "-91/60",
+          "7371983528137207/5000000000000000"
+        ],
+        [
+          "-1472789/1048576",
+          "5/4"
+        ],
+        [
+          "-387839/1048576",
+          "91/60"
+        ]
+      ],
+      "scalar": [
+        [
+          "280065834935651/281474976710656",
+          "1"
+        ],
+        [
+          "140371684586417/140737488355328",
+          "1"
+        ],
+        [
+          "226397353907045/281474976710656",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "132445170446825/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "-13099/131072",
+          "0"
+        ],
+        [
+          "-75553/1048576",
+          "75553/1048576"
+        ],
+        [
+          "-288987/524288",
+          "623053/1048576"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-354613/1048576",
+          "354613/1048576"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "13099/131072"
+        ],
+        [
+          "0",
+          "75553/1048576"
+        ],
+        [
+          "0",
+          "623053/1048576"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "354613/1048576"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "16066933392429/35184372088832",
+          "1/2"
+        ],
+        [
+          "131597543676935/281474976710656",
+          "1/2"
+        ],
+        [
+          "93727/262144",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "110014348157141/281474976710656",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ]
+      ],
+      "differences": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "intervals": [
+            [
+              "1048575/1048576",
+              "1121375/1048576"
+            ],
+            [
+              "-1121375/1048576",
+              "-107323/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "intervals": [
+            [
+              "2097151/1048576",
+              "576489/262144"
+            ],
+            [
+              "-1304523/1048576",
+              "-472981/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "intervals": [
+            [
+              "2992167/1048576",
+              "3145729/1048576"
+            ],
+            [
+              "-192239/524288",
+              "521823/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "intervals": [
+            [
+              "39119/262144",
+              "751/960"
+            ],
+            [
+              "908719/1048576",
+              "700447/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            5
+          ],
+          "intervals": [
+            [
+              "320789/262144",
+              "1711/960"
+            ],
+            [
+              "-112979/1048576",
+              "1867829/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            6
+          ],
+          "intervals": [
+            [
+              "1169713/524288",
+              "45789529/15728640"
+            ],
+            [
+              "139811/262144",
+              "769685/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            7
+          ],
+          "intervals": [
+            [
+              "28827/1048576",
+              "83/30"
+            ],
+            [
+              "-13425557/7864320",
+              "779509/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            8
+          ],
+          "intervals": [
+            [
+              "28827/1048576",
+              "83/30"
+            ],
+            [
+              "-192239/524288",
+              "1867829/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "intervals": [
+            [
+              "1048575/1048576",
+              "314345/262144"
+            ],
+            [
+              "-419431/1048576",
+              "575595/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "intervals": [
+            [
+              "1943591/1048576",
+              "2097153/1048576"
+            ],
+            [
+              "629145/1048576",
+              "1570399/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "intervals": [
+            [
+              "-223025/262144",
+              "-209/960"
+            ],
+            [
+              "554973/524288",
+              "1224735/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "intervals": [
+            [
+              "58645/262144",
+              "751/960"
+            ],
+            [
+              "471167/524288",
+              "2916405/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            6
+          ],
+          "intervals": [
+            [
+              "645425/524288",
+              "30060889/15728640"
+            ],
+            [
+              "183353/131072",
+              "1293973/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            7
+          ],
+          "intervals": [
+            [
+              "-1019749/1048576",
+              "53/30"
+            ],
+            [
+              "-18798259/15728640",
+              "2580063/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            8
+          ],
+          "intervals": [
+            [
+              "-1019749/1048576",
+              "53/30"
+            ],
+            [
+              "175995/1048576",
+              "2916405/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "intervals": [
+            [
+              "774321/1048576",
+              "1048577/1048576"
+            ],
+            [
+              "349525/524288",
+              "1048577/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "intervals": [
+            [
+              "-985379/524288",
+              "-1169/960"
+            ],
+            [
+              "1471115/1048576",
+              "1309399/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "intervals": [
+            [
+              "-840793/1048576",
+              "-209/960"
+            ],
+            [
+              "429139/524288",
+              "2894863/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            6
+          ],
+          "intervals": [
+            [
+              "207783/1048576",
+              "14332249/15728640"
+            ],
+            [
+              "387063/262144",
+              "2289945/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            7
+          ],
+          "intervals": [
+            [
+              "-1046215/524288",
+              "23/30"
+            ],
+            [
+              "-7/8",
+              "1425159/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            8
+          ],
+          "intervals": [
+            [
+              "-1046215/524288",
+              "23/30"
+            ],
+            [
+              "418537/1048576",
+              "2894863/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "intervals": [
+            [
+              "-366935/131072",
+              "-545641/262144"
+            ],
+            [
+              "120179/262144",
+              "1702115/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            5
+          ],
+          "intervals": [
+            [
+              "-56525/32768",
+              "-283497/262144"
+            ],
+            [
+              "-17905/1048576",
+              "1978179/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            6
+          ],
+          "intervals": [
+            [
+              "-753459/1048576",
+              "36697/1048576"
+            ],
+            [
+              "837553/1048576",
+              "172055/131072"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            7
+          ],
+          "intervals": [
+            [
+              "-3063129/1048576",
+              "-434432029724121/5000000000000000"
+            ],
+            [
+              "-1882879/1048576",
+              "1933635/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            8
+          ],
+          "intervals": [
+            [
+              "-3063129/1048576",
+              "-434432029724121/5000000000000000"
+            ],
+            [
+              "-453151/1048576",
+              "1978179/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "intervals": [
+            [
+              "1",
+              "1489371/1048576"
+            ],
+            [
+              "-649649/524288",
+              "862953/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "intervals": [
+            [
+              "2097151/1048576",
+              "1326551/524288"
+            ],
+            [
+              "-655661/1048576",
+              "518595/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            7
+          ],
+          "intervals": [
+            [
+              "-510057/1048576",
+              "663965/262144"
+            ],
+            [
+              "-10892311/3932160",
+              "308345/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            8
+          ],
+          "intervals": [
+            [
+              "-510057/1048576",
+              "663965/262144"
+            ],
+            [
+              "-1702115/1048576",
+              "865803/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "intervals": [
+            [
+              "1048575/1048576",
+              "1458421/1048576"
+            ],
+            [
+              "-1006603/1048576",
+              "1203363/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            7
+          ],
+          "intervals": [
+            [
+              "-1558633/1048576",
+              "382295/262144"
+            ],
+            [
+              "-91/30",
+              "340667/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            8
+          ],
+          "intervals": [
+            [
+              "-1558633/1048576",
+              "382295/262144"
+            ],
+            [
+              "-1978179/1048576",
+              "1789123/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "intervals": [
+            [
+              "-681041/262144",
+              "476429/1048576"
+            ],
+            [
+              "-2852221/1048576",
+              "974011/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "intervals": [
+            [
+              "-681041/262144",
+              "476429/1048576"
+            ],
+            [
+              "-94679/65536",
+              "254639/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "intervals": [
+            [
+              "0",
+              "2783509/1048576"
+            ],
+            [
+              "-1/1048576",
+              "91/30"
+            ]
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "intervals": [
+            [
+              "0",
+              "941253/1048576"
+            ],
+            [
+              "1155899/1048576",
+              "1121075/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "intervals": [
+            [
+              "198157/262144",
+              "1624267/1048576"
+            ],
+            [
+              "642533/262144",
+              "1702787/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "intervals": [
+            [
+              "2607689/1048576",
+              "904281/262144"
+            ],
+            [
+              "2570133/1048576",
+              "1702787/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "intervals": [
+            [
+              "1227403/1048576",
+              "32495/16384"
+            ],
+            [
+              "-503773/524288",
+              "-108543/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            5
+          ],
+          "intervals": [
+            [
+              "1469233/1048576",
+              "3449983/1048576"
+            ],
+            [
+              "-268787/524288",
+              "940033/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            6
+          ],
+          "intervals": [
+            [
+              "1641035/524288",
+              "2014093/524288"
+            ],
+            [
+              "219883/262144",
+              "1210317/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            7
+          ],
+          "intervals": [
+            [
+              "-918391/1048576",
+              "3657851/1048576"
+            ],
+            [
+              "-512477/524288",
+              "1001367/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            8
+          ],
+          "intervals": [
+            [
+              "13433/1048576",
+              "2014093/524288"
+            ],
+            [
+              "-512477/524288",
+              "1627303/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "intervals": [
+            [
+              "629145/1048576",
+              "1624267/1048576"
+            ],
+            [
+              "118245/262144",
+              "1468007/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "intervals": [
+            [
+              "2572737/1048576",
+              "904281/262144"
+            ],
+            [
+              "472981/1048576",
+              "1468007/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "intervals": [
+            [
+              "286337/1048576",
+              "32495/16384"
+            ],
+            [
+              "-1552349/524288",
+              "-922187/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "intervals": [
+            [
+              "1283017/1048576",
+              "3449983/1048576"
+            ],
+            [
+              "-1317363/524288",
+              "-228417/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            6
+          ],
+          "intervals": [
+            [
+              "2890113/1048576",
+              "2014093/524288"
+            ],
+            [
+              "-304405/262144",
+              "358895/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            7
+          ],
+          "intervals": [
+            [
+              "-713725/524288",
+              "3657851/1048576"
+            ],
+            [
+              "-1561053/524288",
+              "2396467/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            8
+          ],
+          "intervals": [
+            [
+              "-265167/524288",
+              "2014093/524288"
+            ],
+            [
+              "-1561053/524288",
+              "1508325/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "intervals": [
+            [
+              "46627/32768",
+              "1048577/524288"
+            ],
+            [
+              "0",
+              "349527/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "intervals": [
+            [
+              "-396767/1048576",
+              "1255569/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "-191239/65536"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "intervals": [
+            [
+              "75697/524288",
+              "2602053/1048576"
+            ],
+            [
+              "-3341907/1048576",
+              "-1276993/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            6
+          ],
+          "intervals": [
+            [
+              "244819/131072",
+              "3037403/1048576"
+            ],
+            [
+              "-896261/524288",
+              "-760085/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            7
+          ],
+          "intervals": [
+            [
+              "-1054587/524288",
+              "2700975/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "1069183/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            8
+          ],
+          "intervals": [
+            [
+              "-710763/524288",
+              "1523329/524288"
+            ],
+            [
+              "-4060549/1048576",
+              "189131/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "intervals": [
+            [
+              "-298297/131072",
+              "-283431/524288"
+            ],
+            [
+              "-4060549/1048576",
+              "-3223007/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            5
+          ],
+          "intervals": [
+            [
+              "-1755167/1048576",
+              "390431/524288"
+            ],
+            [
+              "-3341907/1048576",
+              "-1348251/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            6
+          ],
+          "intervals": [
+            [
+              "234649/1048576",
+              "153179/131072"
+            ],
+            [
+              "-896261/524288",
+              "-980243/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            7
+          ],
+          "intervals": [
+            [
+              "-257521/65536",
+              "888089/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "498891/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            8
+          ],
+          "intervals": [
+            [
+              "-3384835/1048576",
+              "1233773/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "80275/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "intervals": [
+            [
+              "0",
+              "66807/32768"
+            ],
+            [
+              "249057/1048576",
+              "649649/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "intervals": [
+            [
+              "1632505/1048576",
+              "1400391/524288"
+            ],
+            [
+              "1693007/1048576",
+              "192491/65536"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            7
+          ],
+          "intervals": [
+            [
+              "-2707073/1048576",
+              "2403021/1048576"
+            ],
+            [
+              "-7923/16384",
+              "2249081/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            8
+          ],
+          "intervals": [
+            [
+              "-497259/262144",
+              "1400391/524288"
+            ],
+            [
+              "-7923/16384",
+              "488577/131072"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "intervals": [
+            [
+              "142309/1048576",
+              "1203363/524288"
+            ],
+            [
+              "0",
+              "1173883/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            7
+          ],
+          "intervals": [
+            [
+              "-4053557/1048576",
+              "2061043/1048576"
+            ],
+            [
+              "-649649/262144",
+              "2005391/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            8
+          ],
+          "intervals": [
+            [
+              "-3335661/1048576",
+              "1203363/524288"
+            ],
+            [
+              "-649649/262144",
+              "1634405/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "intervals": [
+            [
+              "-2249081/524288",
+              "152365/1048576"
+            ],
+            [
+              "-192491/65536",
+              "2594129/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "intervals": [
+            [
+              "-956045/262144",
+              "498049/1048576"
+            ],
+            [
+              "-192491/65536",
+              "1828003/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "intervals": [
+            [
+              "345683/1048576",
+              "2249081/524288"
+            ],
+            [
+              "-91/30",
+              "2648155/1048576"
+            ]
+          ]
+        }
+      ]
+    },
+    null,
+    {
+      "id": "positive-c744bc031d40ee64",
+      "path": [
+        [
+          "angle",
+          3,
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "inward_row_escape",
+          [
+            7,
+            8
+          ],
+          [
+            4
+          ]
+        ]
+      ],
+      "angles": [
+        [
+          "-14135711443321/140737488355328",
+          "0"
+        ],
+        [
+          "-20333955864759/281474976710656",
+          "20333955864759/281474976710656"
+        ],
+        [
+          "-92973141383493/140737488355328",
+          "207937738032711/281474976710656"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "-101150538894867/281474976710656",
+          "101150538894867/281474976710656"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "-1",
+          "1"
+        ]
+      ],
+      "positions": [
+        [
+          "-91/60",
+          "-1501615/1048576"
+        ],
+        [
+          "-277489/1048576",
+          "99867/524288"
+        ],
+        [
+          "-31/60",
+          "-453039/1048576"
+        ],
+        [
+          "-1326065/1048576",
+          "282071/1048576"
+        ],
+        [
+          "29/60",
+          "715749/1048576"
+        ],
+        [
+          "-1304523/1048576",
+          "-77/120"
+        ],
+        [
+          "6684432029724121/5000000000000000",
+          "91/60"
+        ],
+        [
+          "-387839/1048576",
+          "292539/1048576"
+        ],
+        [
+          "-336285/262144",
+          "-47/64"
+        ],
+        [
+          "724537/1048576",
+          "328569/262144"
+        ],
+        [
+          "-54615/262144",
+          "17/64"
+        ],
+        [
+          "-105331/524288",
+          "91/60"
+        ],
+        [
+          "834291/1048576",
+          "1462295/1048576"
+        ],
+        [
+          "71473/131072",
+          "1261881/1048576"
+        ],
+        [
+          "-1472789/1048576",
+          "5/4"
+        ],
+        [
+          "-91/60",
+          "7371983528137207/5000000000000000"
+        ],
+        [
+          "-1472789/1048576",
+          "5/4"
+        ],
+        [
+          "-387839/1048576",
+          "91/60"
+        ]
+      ],
+      "scalar": [
+        [
+          "280065834935651/281474976710656",
+          "1"
+        ],
+        [
+          "140371684586417/140737488355328",
+          "1"
+        ],
+        [
+          "226397353907045/281474976710656",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "132445170446825/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "99516432383215/140737488355328",
+          "1"
+        ],
+        [
+          "-13099/131072",
+          "0"
+        ],
+        [
+          "-75553/1048576",
+          "75553/1048576"
+        ],
+        [
+          "-288987/524288",
+          "623053/1048576"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-354613/1048576",
+          "354613/1048576"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "-199032864766431/281474976710656",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "13099/131072"
+        ],
+        [
+          "0",
+          "75553/1048576"
+        ],
+        [
+          "0",
+          "623053/1048576"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "354613/1048576"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "0",
+          "199032864766431/281474976710656"
+        ],
+        [
+          "16066933392429/35184372088832",
+          "1/2"
+        ],
+        [
+          "131597543676935/281474976710656",
+          "1/2"
+        ],
+        [
+          "93727/262144",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "110014348157141/281474976710656",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ],
+        [
+          "49758216191607/140737488355328",
+          "1/2"
+        ]
+      ],
+      "differences": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "intervals": [
+            [
+              "1048575/1048576",
+              "1121375/1048576"
+            ],
+            [
+              "-1121375/1048576",
+              "433423/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "intervals": [
+            [
+              "2097151/1048576",
+              "576489/262144"
+            ],
+            [
+              "-1304523/1048576",
+              "-472981/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "intervals": [
+            [
+              "2992167/1048576",
+              "3145729/1048576"
+            ],
+            [
+              "-192239/524288",
+              "521823/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "intervals": [
+            [
+              "39119/262144",
+              "751/960"
+            ],
+            [
+              "908719/1048576",
+              "700447/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            5
+          ],
+          "intervals": [
+            [
+              "320789/262144",
+              "1711/960"
+            ],
+            [
+              "-112979/1048576",
+              "1867829/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            6
+          ],
+          "intervals": [
+            [
+              "1169713/524288",
+              "45789529/15728640"
+            ],
+            [
+              "139811/262144",
+              "769685/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            7
+          ],
+          "intervals": [
+            [
+              "28827/1048576",
+              "83/30"
+            ],
+            [
+              "-13425557/7864320",
+              "779509/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            8
+          ],
+          "intervals": [
+            [
+              "28827/1048576",
+              "83/30"
+            ],
+            [
+              "-192239/524288",
+              "1867829/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "intervals": [
+            [
+              "1048575/1048576",
+              "314345/262144"
+            ],
+            [
+              "-1223863/1048576",
+              "575595/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "intervals": [
+            [
+              "1943591/1048576",
+              "2097153/1048576"
+            ],
+            [
+              "-247613/524288",
+              "1570399/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "intervals": [
+            [
+              "-223025/262144",
+              "-209/960"
+            ],
+            [
+              "444579/524288",
+              "1224735/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "intervals": [
+            [
+              "58645/262144",
+              "751/960"
+            ],
+            [
+              "471167/524288",
+              "2916405/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            6
+          ],
+          "intervals": [
+            [
+              "645425/524288",
+              "30060889/15728640"
+            ],
+            [
+              "240429/524288",
+              "1293973/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            7
+          ],
+          "intervals": [
+            [
+              "-1019749/1048576",
+              "53/30"
+            ],
+            [
+              "-28086169/15728640",
+              "2580063/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            8
+          ],
+          "intervals": [
+            [
+              "-1019749/1048576",
+              "53/30"
+            ],
+            [
+              "66857/1048576",
+              "2916405/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "intervals": [
+            [
+              "774321/1048576",
+              "1048577/1048576"
+            ],
+            [
+              "349525/524288",
+              "1048577/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "intervals": [
+            [
+              "-985379/524288",
+              "-1169/960"
+            ],
+            [
+              "1471115/1048576",
+              "1309399/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "intervals": [
+            [
+              "-840793/1048576",
+              "-209/960"
+            ],
+            [
+              "429139/524288",
+              "2894863/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            6
+          ],
+          "intervals": [
+            [
+              "207783/1048576",
+              "14332249/15728640"
+            ],
+            [
+              "387063/262144",
+              "2289945/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            7
+          ],
+          "intervals": [
+            [
+              "-1046215/524288",
+              "23/30"
+            ],
+            [
+              "-7/8",
+              "1425159/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            8
+          ],
+          "intervals": [
+            [
+              "-1046215/524288",
+              "23/30"
+            ],
+            [
+              "418537/1048576",
+              "2894863/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "intervals": [
+            [
+              "-366935/131072",
+              "-545641/262144"
+            ],
+            [
+              "120179/262144",
+              "1702115/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            5
+          ],
+          "intervals": [
+            [
+              "-56525/32768",
+              "-283497/262144"
+            ],
+            [
+              "-17905/1048576",
+              "1978179/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            6
+          ],
+          "intervals": [
+            [
+              "-753459/1048576",
+              "36697/1048576"
+            ],
+            [
+              "837553/1048576",
+              "172055/131072"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            7
+          ],
+          "intervals": [
+            [
+              "-3063129/1048576",
+              "-434432029724121/5000000000000000"
+            ],
+            [
+              "-1882879/1048576",
+              "1933635/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            8
+          ],
+          "intervals": [
+            [
+              "-3063129/1048576",
+              "-434432029724121/5000000000000000"
+            ],
+            [
+              "-453151/1048576",
+              "1978179/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "intervals": [
+            [
+              "1",
+              "1489371/1048576"
+            ],
+            [
+              "-649649/524288",
+              "862953/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "intervals": [
+            [
+              "2097151/1048576",
+              "1326551/524288"
+            ],
+            [
+              "-655661/1048576",
+              "518595/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            7
+          ],
+          "intervals": [
+            [
+              "-510057/1048576",
+              "663965/262144"
+            ],
+            [
+              "-10892311/3932160",
+              "308345/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            8
+          ],
+          "intervals": [
+            [
+              "-510057/1048576",
+              "663965/262144"
+            ],
+            [
+              "-1702115/1048576",
+              "865803/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "intervals": [
+            [
+              "1048575/1048576",
+              "1458421/1048576"
+            ],
+            [
+              "-1006603/1048576",
+              "1203363/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            7
+          ],
+          "intervals": [
+            [
+              "-1558633/1048576",
+              "382295/262144"
+            ],
+            [
+              "-91/30",
+              "340667/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            8
+          ],
+          "intervals": [
+            [
+              "-1558633/1048576",
+              "382295/262144"
+            ],
+            [
+              "-1978179/1048576",
+              "900501/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "intervals": [
+            [
+              "-681041/262144",
+              "476429/1048576"
+            ],
+            [
+              "-2852221/1048576",
+              "974011/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "intervals": [
+            [
+              "-681041/262144",
+              "476429/1048576"
+            ],
+            [
+              "-94679/65536",
+              "254639/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "intervals": [
+            [
+              "0",
+              "2783509/1048576"
+            ],
+            [
+              "-1/1048576",
+              "91/30"
+            ]
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "intervals": [
+            [
+              "0",
+              "1481999/1048576"
+            ],
+            [
+              "615153/1048576",
+              "1121075/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "intervals": [
+            [
+              "198157/262144",
+              "1624267/1048576"
+            ],
+            [
+              "642533/262144",
+              "1702787/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "intervals": [
+            [
+              "2607689/1048576",
+              "904281/262144"
+            ],
+            [
+              "2570133/1048576",
+              "1702787/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "intervals": [
+            [
+              "1227403/1048576",
+              "32495/16384"
+            ],
+            [
+              "-503773/524288",
+              "-108543/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            5
+          ],
+          "intervals": [
+            [
+              "1469233/1048576",
+              "3449983/1048576"
+            ],
+            [
+              "-268787/524288",
+              "940033/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            6
+          ],
+          "intervals": [
+            [
+              "1641035/524288",
+              "2014093/524288"
+            ],
+            [
+              "219883/262144",
+              "1210317/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            7
+          ],
+          "intervals": [
+            [
+              "-918391/1048576",
+              "3657851/1048576"
+            ],
+            [
+              "-512477/524288",
+              "1001367/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            8
+          ],
+          "intervals": [
+            [
+              "13433/1048576",
+              "2014093/524288"
+            ],
+            [
+              "-512477/524288",
+              "1627303/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "intervals": [
+            [
+              "0",
+              "1624267/1048576"
+            ],
+            [
+              "118245/262144",
+              "611849/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "intervals": [
+            [
+              "1517455/1048576",
+              "904281/262144"
+            ],
+            [
+              "472981/1048576",
+              "1261961/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "intervals": [
+            [
+              "107/32768",
+              "32495/16384"
+            ],
+            [
+              "-1552349/524288",
+              "-1207349/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "intervals": [
+            [
+              "1283017/1048576",
+              "3449983/1048576"
+            ],
+            [
+              "-1317363/524288",
+              "-228417/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            6
+          ],
+          "intervals": [
+            [
+              "538731/262144",
+              "2014093/524288"
+            ],
+            [
+              "-304405/262144",
+              "727091/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            7
+          ],
+          "intervals": [
+            [
+              "-2018785/1048576",
+              "3657851/1048576"
+            ],
+            [
+              "-1561053/524288",
+              "3072259/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            8
+          ],
+          "intervals": [
+            [
+              "-84985/131072",
+              "2014093/524288"
+            ],
+            [
+              "-1561053/524288",
+              "892747/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "intervals": [
+            [
+              "46627/32768",
+              "1048577/524288"
+            ],
+            [
+              "0",
+              "349527/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "intervals": [
+            [
+              "-396767/1048576",
+              "1255569/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "-191239/65536"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "intervals": [
+            [
+              "75697/524288",
+              "2602053/1048576"
+            ],
+            [
+              "-3341907/1048576",
+              "-1276993/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            6
+          ],
+          "intervals": [
+            [
+              "244819/131072",
+              "3037403/1048576"
+            ],
+            [
+              "-896261/524288",
+              "-760085/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            7
+          ],
+          "intervals": [
+            [
+              "-1054587/524288",
+              "2700975/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "1069183/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            2,
+            8
+          ],
+          "intervals": [
+            [
+              "-710763/524288",
+              "1523329/524288"
+            ],
+            [
+              "-4060549/1048576",
+              "189131/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "intervals": [
+            [
+              "-298297/131072",
+              "-283431/524288"
+            ],
+            [
+              "-4060549/1048576",
+              "-3223007/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            5
+          ],
+          "intervals": [
+            [
+              "-1755167/1048576",
+              "390431/524288"
+            ],
+            [
+              "-3341907/1048576",
+              "-1348251/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            6
+          ],
+          "intervals": [
+            [
+              "234649/1048576",
+              "153179/131072"
+            ],
+            [
+              "-896261/524288",
+              "-980243/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            7
+          ],
+          "intervals": [
+            [
+              "-257521/65536",
+              "888089/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "498891/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            3,
+            8
+          ],
+          "intervals": [
+            [
+              "-3384835/1048576",
+              "1233773/1048576"
+            ],
+            [
+              "-4060549/1048576",
+              "80275/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "intervals": [
+            [
+              "0",
+              "66807/32768"
+            ],
+            [
+              "249057/1048576",
+              "649649/262144"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "intervals": [
+            [
+              "1632505/1048576",
+              "1400391/524288"
+            ],
+            [
+              "1693007/1048576",
+              "192491/65536"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            7
+          ],
+          "intervals": [
+            [
+              "-2707073/1048576",
+              "2403021/1048576"
+            ],
+            [
+              "-7923/16384",
+              "2249081/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            4,
+            8
+          ],
+          "intervals": [
+            [
+              "-497259/262144",
+              "1400391/524288"
+            ],
+            [
+              "-7923/16384",
+              "488577/131072"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "intervals": [
+            [
+              "142309/1048576",
+              "1203363/524288"
+            ],
+            [
+              "0",
+              "1173883/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            7
+          ],
+          "intervals": [
+            [
+              "-4053557/1048576",
+              "2061043/1048576"
+            ],
+            [
+              "-649649/262144",
+              "2005391/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            5,
+            8
+          ],
+          "intervals": [
+            [
+              "-3335661/1048576",
+              "1203363/524288"
+            ],
+            [
+              "-649649/262144",
+              "1634405/524288"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "intervals": [
+            [
+              "-2249081/524288",
+              "152365/1048576"
+            ],
+            [
+              "-192491/65536",
+              "2594129/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "intervals": [
+            [
+              "-956045/262144",
+              "498049/1048576"
+            ],
+            [
+              "-192491/65536",
+              "1828003/1048576"
+            ]
+          ]
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "intervals": [
+            [
+              "345683/1048576",
+              "2249081/524288"
+            ],
+            [
+              "-91/30",
+              "2648155/1048576"
+            ]
+          ]
+        }
+      ]
+    },
+    null
+  ],
+  "two_link_scalar_replay": {
+    "domains": 28,
+    "leaves": 103,
+    "bernstein_coefficients": 12875,
+    "frontier": 0,
+    "strict_except_all_zero": true
+  },
+  "accepted_physical_premise_binding_sha256": "3261f48cec76aae54ee9a920dbf0176cadfa3d90194f9cd2dd6c54d4a143e6ac",
+  "source_sha256": {
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_two_link_complement_pass.py": "6e177cef289236b1b51c12ddd347eb944836161f5058f55505fe94d72bf4cea4",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py": "ec1b7de7b15bcc9d89d12087bff974c68e6d056bdaae26b482d514027ec97993",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/review_tight_bounds_independent.py": "fc4afd4c1fa2ae2fabae656f1d55e1289b1cb92212ebd153b9cc20a3f79e7c3a",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/independent_v4_rows.py": "deec1bd3e5bba3a895f69cd824e5ca8dcfad8eaf98515544f592752ef3696efc",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/verify_shared_bound.py": "8ab01fdffa3b8e2404036e8a92adb8c5b63da381c7e4e96b09da477c25e9d1c7",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/altitude_capacity_v2.py": "37860e07b58a12eda6b64f26645d8d1bb0873b01c8751e99b98c0a7ab0ee94cf",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/sharp_strip_rows.py": "4a4147260a8a209f5831e55df6990dda4a566bc6d55b52488fe6077540368542",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/support_height_rows.py": "b1aadbae8111d5395b864b06dc97d59eab8bc8e86e85c6972cea6ab0e7463383",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/b_macro/frame_perspective_rows.py": "d355d9cf651909a159bdf6b7b657160fb1b9744c3d3caf20d1c88f07327e4418",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/b_macro/directional_support_rows.py": "283e4294298b2ff4f3458addb6c5479f02dcbb816bb15beb8d6f6fdd8c5b9be7",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/rounded_support/point_disk_rows.py": "5ddcbcb0b9cc55480e6db86e0ba78860dc89245d9fd50ddfcf512f75b69639bc",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/sources/review_guarded_frame_bounds_independent.py": "9d7fc3680ad1b8bb1035d74deb9ade8501e3ef9989b37a019323f66a92a710e3",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/v3_whole_parent_pass.py": "d7efd0ac9ddcd5a3575e4cfea02348171e42fb7af7e88a11a83381abef147f2c",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/cd_family/diagonal_rows.py": "577bebfd53247f4059420ad0f3f97e0c81c6100f0331c1eadc0292f7a429fd7f",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/cd_family/correlated_capacity_rows.py": "343ef92666381cc82a36086655041812704464a51e8ccf78d83d2b96abff48d3",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/new_producers/four_center_rows.py": "d7f73724af109be932783a0c090f3c8856296e7cb05196f82ccac3c8f88b6f35",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/new_producers/square_area_moment_rows.py": "d4d4b7a9bda2595693ea10e15821eedfb5681b9f1be32381179b20512d2700d1",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/energy_proof/three_square_energy_rows.py": "712f594cfd4ec93f57d5c75c4f768592d1a70063fa2573959bfce4b674495547",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/coupled_three_square_energy.py": "693f5bb65c3d2b9930cf4f0d705ed7987ea0465f1da53b1c029289ae03903d2b",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/physical_sat_engine_snapshot.py": "38d1162c40cd6494579f7793c6b10a54432ce999994f86b6726d2ca9e8022bc4",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/active_highs.py": "2ff5cd15804f77e4f394f65b3e5c5b3de419f0e5c1b2809cad6ff4577ade98fe",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_physical_context.py": "0f415e077c8afef5f078fd0f1da5f9af3739b3306c4717815fa32d9e68471c84",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/tightened_sat_products.py": "d9a44a0929989c9c1926e73b10d33e05c7662f09ef7a6c8f4000dd73300e557a",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/shared_frame_triangle_products.py": "da7fa7d71a166a8807798651c58923b7df836ce18283201ed825f64e925eb691",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_physical_context_tight.py": "d7676630397b4b01520982ec04ff036938b46510b1afdf7bc1e3a365f80131e6",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/physical_sat_diagonal_engine.py": "6157eb67662b97f8e13beaa3d3d726e68b8a3871a95cb991825596f47aa9fac5",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_physical_context_diag.py": "4cce42cc4950d4903e3aa558f5c4a2d9e81d8d36452ace699e139f469cb956cc",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/relative_frame_arc_rows.py": "fbcfdfa3d253fdd109613ada16b42b8f46ef94426801ed3d78720fdbeb7a3f3a",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/c887/c887_whole_eight_checkpoint_package/opposite_tilt_theorem/opposite_tilt_four_row_guard.py": "3d1a74e8108f9eb02e431e2e25f9f24aa7bffd55aac8f3a956d2f54a11886c0d",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_physical_context_complete.py": "dfb7baef4ae2e92697fbad15a28eff5082d02db1e2edf94c29b816d055f0d753",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/physical_proxy_branch.py": "4059e490b40df8b712e256f57b423e09cb375e2c4a8d6958aacd1f8ce166a495",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_physical_context_proxy.py": "06675c0b2f98b1826ad959e4549320dda47308ecb85553ed777f0378500f8e03",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/owner_free_relative_support_snapshot.py": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_physical_context_ownerfree.py": "5e32b752cbd21f50708122c1378b8dd2510c0cf531cf2cdcd85d02fb53dad712",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/active_highs_checked_warning_snapshot.py": "a625f0c0c4aa40e51deb662e60a733b2c5ccd738c199ffe5f6487e3a3418114b",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_physical_context_ownerfree_v2.py": "51499c525e01cdd88d9f8e951be0ed86a0b83a8ee6c2beb06998a037b24e62f8",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_physical_context_caps.py": "f0efbdb2ffd559c69a5fc6344031450b279c229c8d3a938d7f0b2b2d48fd84ec",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/physical_pair_frame_squares.py": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/physical_frame_square_separation.py": "fdd4bbf142be1cff2c27688b5fd79950e0f105d09dad34a453dcbae50116b39c",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/physical_projection_squares.py": "0a33acc6990ccc5f35439f0f641de987a08466b0e53a3bfa38de1dd2c2c8901d",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/physical_projection_square_separation.py": "6f8ede5eb0853b2615bf27b099017293bf909094364938736f00bf7184b04f87",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_physical_gram_runtime.py": "dcb8adb6a8e11f52c44f565e9752b7444d996495c03044b150b45c740ebcd3cf",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/ac_two_link_complement_runtime.py": "d594646cf287581a120547d0157891afa50203a5012765d2e8ab299dcf1b3657",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/actual_AB_two_link_row_v1/two_link_actual_ab_guard.py": "3a965bdcc8fc0f4de55fc5e3a5fef945f584710fa5ff6c339de44abcea640c19",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/actual_AB_two_link_row_v1/PREMISE_BINDINGS.json": "3261f48cec76aae54ee9a920dbf0176cadfa3d90194f9cd2dd6c54d4a143e6ac"
+  },
+  "input_sha256": {
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/a_c744_whole_support_caps/record.json": "68aae2029165b1148d0b719ac962e7c50c649afd8fcee6bfba4af99f50f85893",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/a_c744_five_complements/manifest.json": "67cbfabf9ee9a7e5cfc135c66bcba6f7a9d573c1e48814e9e110483dd15b843e",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/a_c744_five_complements/component_0.json": "950cea87084d3f4f615b4d227a13cf0da454b4f3835e8d6ae0d60bb66a456b1c",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/a_c744_five_complements/component_1.json": "19f47ebf7e4dc603af97f3dce7682fa3e19b816633394b7af27d5b6d606d61a2",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/a_c744_five_complements/component_2.json": "2b9eb2a543b911acbdae2f3265efafa2c5bc761ec40b3165bc4c5eb2df93a2a0",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/a_c744_five_complements/component_3.json": "170686e1f4cfa0a85ca6616492630326a4096001c0662e207827e820c01dc4b7",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/a_c744_five_complements/component_4.json": "b9654a9966e0d7e540a82ea9a65c76f91d57b5e27c719a4cc51f42938123f010"
+  },
+  "checker_dependency_sha256": {
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/verify_ac_two_link_complement.py": "b19d8b39168283488515b999ac7dfdfb691869dd47ecd4e6380f2a4374e4f8c8",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/verify_c887_gram_physical_tree.py": "dc1b0d6be3e65914a49e43de18651a73e212c98f3b09776f4004677752630faf",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/verify_ac_original_bound_pass.py": "b94bec13de27c549428fabfb7fb1965da2518825631fa011588c1b8b67416fd2",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/tree/independent_physical_sat_diagonal_replay.py": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/actual_AB_two_link_row_v1/check_two_link_actual_ab_guard.py": "4e7205db61c797ebfce283826dba6782351582d6342151d208b52ff0028edbce",
+    "/tmp/a1_complete_consequence_packet_v2/payload/ac_work/actual_AB_two_link_row_v1/check_three_angle_cover.py": "2ee4a2ed4f1fa82f49b3e02393f3e9634444332db4892be48e1fd3198c29900c"
+  },
+  "owner_free_occurrences": 112,
+  "oriented_cap_occurrences": 34,
+  "frame_square_occurrences": 0,
+  "projection_square_occurrences": 0,
+  "all_nine_original_squares_retained": true,
+  "original_corner_predicates": 36,
+  "original_pair_predicates": 36,
+  "original_mask": "001/00",
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "numerical_producer_imported": false,
+  "lean_lake_ci_run": false,
+  "seconds": 81.84692023900061
+}

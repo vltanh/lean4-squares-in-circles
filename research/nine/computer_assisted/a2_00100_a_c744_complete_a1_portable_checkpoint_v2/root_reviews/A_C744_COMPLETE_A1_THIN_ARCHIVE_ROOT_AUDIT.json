@@ -1,0 +1,59 @@
+{
+  "actual_component3_use": {
+    "completed_component1_consequence_occurrences_checked": 2,
+    "deductions": 565,
+    "excluded_leaves": 0,
+    "leaf_domains": 1,
+    "nodes": 1,
+    "open_leaves": 1,
+    "printed_rows_checked": 1436,
+    "report_sha256": "c1766b6dc98ef41dfc05d6499ed257100fa5cf1d634e26c361aee989abd0a17b",
+    "rounds": 7,
+    "unit_four_corner_row_occurrences_checked": 204
+  },
+  "archive_bytes": 63425472,
+  "archive_sha256": "8378b765edebbba407e394ed98743193a556255687f7ddb8480bafe31d5710f2",
+  "component1_status": "CLOSED",
+  "fresh_receipt_arithmetic_counts": {
+    "deductions": 74846,
+    "excluded_leaves": 566,
+    "leaf_domains": 566,
+    "nodes": 757,
+    "open_leaves": 0,
+    "printed_rows_checked": 134855,
+    "report_sha256": "16cf7ecdaed399633ca3c72d926a5587599686eed18f7dd7a5f6770bba9c5ec1",
+    "rounds": 230
+  },
+  "members_rehashed": true,
+  "new_masks": 0,
+  "new_original_cells": 0,
+  "no_new_arithmetic_replay_claimed": true,
+  "outer_bound_files": 69,
+  "pinned_metadata": {
+    "PUBLICATION_READY.json": "aeb210d0092f77ce33f3a0c10505cd0d8d30bd90e363e67da502f59f7fb446bf",
+    "TRANSPORT_SOURCE_BINDINGS.json": "5d8bf21b128699cfedeba6d3873dfeeadcce5dc31a41ad1119a67260e60ea019",
+    "delta_v2/DELTA_MANIFEST.json": "70c971d00fb804d0765cce66ef540b3c79e18a0eed29b08d5f63793b94eedf4d",
+    "delta_v2/INPUT_MANIFEST.json": "d8ca6d465aa3831e26d6d0149b8ce734a1043c51694f81a9ce9b9a4e3baaf965",
+    "fresh_replay_v2/A1_CONSEQUENCE_LITERAL_SCOPE_CONTROLS.json": "28273c40c1aabc1cff29406c2dceda0e8dfcf00db723325d60dbbc580c2d8774",
+    "fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY.json": "c1766b6dc98ef41dfc05d6499ed257100fa5cf1d634e26c361aee989abd0a17b",
+    "fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay.json": "16cf7ecdaed399633ca3c72d926a5587599686eed18f7dd7a5f6770bba9c5ec1",
+    "fresh_replay_v2/PORTABLE_RECEIPT.json": "b4803409d7b163a8b4f8704ebfe4fd90d2f7edf9f7034b33cd1133cdf1d94d36"
+  },
+  "regular_members": 859,
+  "required_published_base": {
+    "archive_sha256": "e7ddb4f4e5b943a6f69a0aa861f6721ca49835311fa595ef40a10881b62e4343",
+    "base_included_in_delta_archive": false,
+    "input_manifest_sha256": "6b730ae5e0dabed264d7e71ba6de72bc15f744d7bba619ed8f6c27a86b9097cf",
+    "repository_path": "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint",
+    "reused_aliases": 1392
+  },
+  "seconds": 20.052909903999534,
+  "source_members_rehashed_before_and_after": true,
+  "source_sha256": "8f9f288768976c5a04137499e6e9c72fb4a0704022dd88ae0e7c64df6cd54766",
+  "status": "PASS_ROOT_COMPLETE_A1_THIN_ARCHIVE_AND_RECEIPT_AUDIT",
+  "transport_scripts": 6,
+  "uncompressed_bytes": 607136233,
+  "unsafe_paths_links_duplicates_or_extra_members": 0,
+  "whole_original_status": "OPEN",
+  "xz_integrity_passed": true
+}

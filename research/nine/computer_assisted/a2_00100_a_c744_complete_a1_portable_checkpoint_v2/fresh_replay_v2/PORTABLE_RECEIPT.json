@@ -1,0 +1,72 @@
+{
+  "status": "PASS_FRESH_PORTABLE_COMPLETE_A1_CONSEQUENCE_AND_ACTUAL_A3_USE",
+  "original_ids": [
+    "positive-c744bc031d40ee64"
+  ],
+  "packet_manifest_sha256": "d8ca6d465aa3831e26d6d0149b8ce734a1043c51694f81a9ce9b9a4e3baaf965",
+  "input_files": 2249,
+  "input_bytes": 1091622669,
+  "exact_mathematical_sources_unchanged": true,
+  "explicit_path_aliases": 2375,
+  "filesystem_reference_transport_only": true,
+  "frozen_archived_read_guards_unchanged": true,
+  "all_packet_writes_and_mutations_forbidden": true,
+  "logical_and_resolved_paths_checked": true,
+  "bytecode_probes_redirected_to_output": true,
+  "explicit_archived_diagnostic_output_aliases": 10,
+  "archived_diagnostic_outputs_disjoint_from_inputs": true,
+  "external_workspace_reads_forbidden_in_every_child": true,
+  "numerical_imports_forbidden": true,
+  "all_inputs_rehashed_at_completion": true,
+  "lean_lake_ci_run": false,
+  "seconds": 1587.8737929620002,
+  "complete_component1": {
+    "nodes": 757,
+    "leaf_domains": 566,
+    "excluded_leaves": 566,
+    "open_leaves": 0,
+    "rounds": 230,
+    "deductions": 74846,
+    "printed_rows_checked": 134855,
+    "report_sha256": "16cf7ecdaed399633ca3c72d926a5587599686eed18f7dd7a5f6770bba9c5ec1"
+  },
+  "actual_component3_use": {
+    "nodes": 1,
+    "leaf_domains": 1,
+    "excluded_leaves": 0,
+    "open_leaves": 1,
+    "rounds": 7,
+    "deductions": 565,
+    "printed_rows_checked": 1436,
+    "completed_component1_consequence_occurrences_checked": 2,
+    "unit_four_corner_row_occurrences_checked": 204,
+    "report_sha256": "c1766b6dc98ef41dfc05d6499ed257100fa5cf1d634e26c361aee989abd0a17b"
+  },
+  "repeated_literal_scope_controls": {
+    "positives": 4,
+    "rejected_damages": 17,
+    "report_sha256": "28273c40c1aabc1cff29406c2dceda0e8dfcf00db723325d60dbbc580c2d8774"
+  },
+  "original_necessary_row": {
+    "coefficients": [
+      [
+        3,
+        "-1"
+      ],
+      [
+        7,
+        "1"
+      ]
+    ],
+    "rhs": "3/5"
+  },
+  "conditional_A3_order_not_claimed_on_whole_original": true,
+  "fresh_complete_source_repeated_once_by_guarded_consumer": true,
+  "native_saved_reports_used_as_arithmetic_premises": false,
+  "reference_commit": "ec6b94cb69ef994fcaf44961de7005faaca8a84c",
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "original_status": "OPEN",
+  "component1_status": "CLOSED",
+  "whole_original_exclusion_not_claimed": true
+}

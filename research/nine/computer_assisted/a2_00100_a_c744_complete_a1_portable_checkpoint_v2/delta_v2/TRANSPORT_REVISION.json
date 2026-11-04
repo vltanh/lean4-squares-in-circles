@@ -1,0 +1,18 @@
+{
+  "schema": "A1_exact_diagnostic_output_transport_revision_v2",
+  "preceding_delta_manifest_sha256": "e51a4f1a50a287a17a5a17a5311a8850412f520ea130693947d8bd1ba687becf",
+  "preceding_assembled_input_manifest_sha256": "42791666d3cc1d38104f959ef10b08c2d3c3d5801b6a17b39ee51353295bcd8b",
+  "previous_runner_sha256": "ea95b9c4f7ed10f6ecfb99e9e5058d8845089c5686e2ce8fe5c99396fae970d5",
+  "new_runner_sha256": "81436050b187d9085522a4175f85eed0334b5ad7c906186a6fa7a4a82638a06f",
+  "added_exact_output_route": {
+    "source_basename": "verify_central_cover_bounds.py",
+    "directory": "cover_reviews"
+  },
+  "full_output_subtree_disjoint_from_all_inputs_required": true,
+  "all_mathematical_source_and_literal_bytes_unchanged": true,
+  "old_roots_unchanged": true,
+  "unchanged_files_hard_linked": true,
+  "original_failure": "The strict packet guard correctly rejected an archived diagnostic mkdir in cover_reviews.",
+  "new_original_cells": 0,
+  "new_masks": 0
+}

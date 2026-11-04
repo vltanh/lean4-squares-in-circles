@@ -15,6 +15,22 @@ equality remain OPEN. No Lean, Lake or CI.
 [Source-bound packet and fresh portable replay](computer_assisted/a2_00100_b340_complete_original_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
+## A-c744 complete component 1: portable consequence accepted
+
+The [complete A1 portable checkpoint](computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/README.md)
+excludes every one of 566 terminal domains in the 757-node component 1
+tree. Fresh exact replay checks 230 rounds, 74,846 deductions and 134,855
+premise rows. Its original-wide necessary consequence `y_D-y_B<=3/5`
+is then used twice in the independently checked component 3 source record.
+The older source checker cannot consume that consequence.
+
+The isolated replay rehashes all 2,249 assembled inputs. Root separately
+checks xz integrity, all 859 archive members, every outer source binding
+and the exact fresh receipt. The thin archive reuses only hash-identical
+members of the accepted A OPEN packet. Component 3 remains OPEN; no whole
+original or mask is newly closed. Counts remain **221 CLOSED / 10 OPEN**
+and **8 CLOSED / 24 OPEN**. The full-mask target remains strict-radius.
+
 ## D821 complete native proof; portable acceptance pending
 
 The [native proof and complete literal-table checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md)

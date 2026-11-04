@@ -18,6 +18,15 @@ accepted counts were **220/231 original cells and 8/32 masks closed**.
 
 ## Read first
 
+The [complete A1 portable consequence checkpoint](computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/README.md)
+freshly excludes all 566 terminal domains of component 1 of A-c744 and
+verifies its original-wide consequence `y_D-y_B<=3/5` in the actual
+component 3 consumer. The isolated replay checks 757 nodes, 74,846 source
+deductions and all 2,249 assembled inputs. Root verifies xz integrity and
+all 859 thin-archive members. Component 3 remains unfinished, so the whole
+original stays OPEN and this checkpoint earns **zero cells or masks**.
+The previously published A packet is an explicit byte-pinned dependency.
+
 The [independent B340 continuation review](computer_assisted/a2_00100_b340_independent_review_20261104/README.md)
 freshly replays every bound and complete cover and independently checks all
 181 rational contradiction sums, all 279 table leaves and the unchanged

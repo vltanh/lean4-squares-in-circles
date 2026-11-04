@@ -1,0 +1,71 @@
+{
+  "schema": "complete_A1_checkpoint_live_register_reference_v1",
+  "repository": "vltanh/lean4-squares-in-circles",
+  "commit": "ec6b94cb69ef994fcaf44961de7005faaca8a84c",
+  "files": {
+    "research/nine/gates/A2_00100_FIXED_FRONTIER.json": {
+      "path": "/workspace/scratch/f9f48fcfb253/ac_work/compact_A1_publication/reference_ec6b94cb/research/nine/gates/A2_00100_FIXED_FRONTIER.json",
+      "sha256": "6ddc611baf22570e70438c7b5efbd861169d13e1f04d3c40d14a5a8d4d05c92e",
+      "git_blob": "8550afc5bff2254e4791346fa8901b519150d3b7"
+    },
+    "research/nine/gates/A2_MASK_FRONTIER.json": {
+      "path": "/workspace/scratch/f9f48fcfb253/ac_work/compact_A1_publication/reference_ec6b94cb/research/nine/gates/A2_MASK_FRONTIER.json",
+      "sha256": "c25e3c95b3f6c71463bc21d59a714a7e417bbd366176f8d06f73cb7c45f3f5ed",
+      "git_blob": "b5e99146af47323f4192416eed8491487f8b1133"
+    },
+    "research/nine/A2_COVERAGE_AND_CLOSURE_CONTRACT.md": {
+      "path": "/workspace/scratch/f9f48fcfb253/ac_work/compact_A1_publication/reference_ec6b94cb/research/nine/A2_COVERAGE_AND_CLOSURE_CONTRACT.md",
+      "sha256": "6ad5bd6d8e7cfc43de252db2e8954d0951d6fe0ebf77823f865e196215da5102",
+      "git_blob": "fee00892707c15f65ec09bec697962eae2843e95"
+    },
+    "research/nine/A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md": {
+      "path": "/workspace/scratch/f9f48fcfb253/ac_work/compact_A1_publication/reference_ec6b94cb/research/nine/A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
+      "sha256": "8c3b394f7ceebd9e15f3ad01bdd72b5950d30e86f7945172d7d77d5889a6cf58",
+      "git_blob": "056571a9ae0daaac2006caf465637448d312a882"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/ARCHIVE_MANIFEST.json": {
+      "path": "/workspace/scratch/f9f48fcfb253/ac_work/compact_A1_publication/reference_ec6b94cb/research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/ARCHIVE_MANIFEST.json",
+      "sha256": "343731ca252568a3032fe584cf5d389b4be7ae443869d700b842ecc7179a55f6",
+      "git_blob": "7060d566fc96e7d09c41d7872361ff3ebf287d72"
+    }
+  },
+  "original_cell": {
+    "id": "positive-c744bc031d40ee64",
+    "sign": "positive",
+    "baseline_frontier_index": 88,
+    "path": [
+      [
+        "angle",
+        3,
+        1
+      ],
+      [
+        "angle_cut",
+        [
+          0,
+          "0"
+        ],
+        0
+      ],
+      [
+        "inward_row_escape",
+        [
+          7,
+          8
+        ],
+        [
+          4
+        ]
+      ]
+    ],
+    "status": "OPEN",
+    "evidence": {
+      "archive_attempt_summary": "bounded_trial_summary.json",
+      "record_id": "positive-c744bc031d40ee64",
+      "whole_cell_exclusion": null
+    }
+  },
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "original_stays_open": true
+}

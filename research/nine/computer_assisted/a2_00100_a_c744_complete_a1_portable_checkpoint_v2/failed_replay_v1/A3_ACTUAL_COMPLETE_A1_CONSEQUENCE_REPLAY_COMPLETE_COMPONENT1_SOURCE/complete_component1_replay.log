@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/tmp/a1_complete_consequence_packet_v1/replay_portable_a1_checkpoint_v1.py", line 424, in <module>
+    main()
+  File "/tmp/a1_complete_consequence_packet_v1/replay_portable_a1_checkpoint_v1.py", line 242, in main
+    runpy.run_path(str(script), run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/verify_ac_two_link_consequence_four_lazy_tree.py", line 22, in <module>
+    args=parser.parse_args();replay(args.folder,args.output)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/verify_ac_two_link_consequence_four_lazy_tree.py", line 14, in replay
+    result=FOUR.replay(folder,output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/verify_ac_two_link_consequence_four_tree.py", line 29, in replay
+    result=BASE.replay(folder,output);checker=BASE._checker;assert checker is not None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/verify_ac_two_link_consequence_tree.py", line 34, in replay
+    _source_report=CONSEQUENCE.replay_source_exclusions(output.with_name(output.stem+'_SOURCE_EXCLUSIONS'))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/independent_a_c744_complement_consequences.py", line 70, in replay_source_exclusions
+    subprocess.run([sys.executable,'-B','-S',str(HERE/checker),folder,str(report_path)],
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-S', '/tmp/a1_complete_consequence_packet_v1/replay_portable_a1_checkpoint_v1.py', '--packet', '/tmp/a1_complete_consequence_packet_v1', '--output', '/tmp/a1_complete_consequence_fresh_replay_v1', '--worker-script', '/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/verify_ac_two_link_complement.py', '--', '/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/a_c744_five_complements', '/tmp/a1_complete_consequence_fresh_replay_v1/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay_SOURCE_EXCLUSIONS/five_declaration.json']' returned non-zero exit status 1.

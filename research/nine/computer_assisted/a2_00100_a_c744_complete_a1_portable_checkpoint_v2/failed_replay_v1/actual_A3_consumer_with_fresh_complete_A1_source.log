@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/tmp/a1_complete_consequence_packet_v1/replay_portable_a1_checkpoint_v1.py", line 424, in <module>
+    main()
+  File "/tmp/a1_complete_consequence_packet_v1/replay_portable_a1_checkpoint_v1.py", line 242, in main
+    runpy.run_path(str(script), run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/verify_a_c744_component3_a1_consequence_lazy_tree.py", line 76, in <module>
+    args=parser.parse_args();replay(args.tree,args.output)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/verify_a_c744_component3_a1_consequence_lazy_tree.py", line 54, in replay
+    source=ROWS.replay_source(output.with_name(output.stem+'_COMPLETE_COMPONENT1_SOURCE'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/independent_a_c744_component1_consequence.py", line 74, in replay_source
+    subprocess.run([sys.executable,'-B','-S',binding['source_checker']['path'],
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-S', '/tmp/a1_complete_consequence_packet_v1/replay_portable_a1_checkpoint_v1.py', '--packet', '/tmp/a1_complete_consequence_packet_v1', '--output', '/tmp/a1_complete_consequence_fresh_replay_v1', '--worker-script', '/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/verify_ac_two_link_consequence_four_lazy_tree.py', '--', '/tmp/a1_complete_consequence_packet_v1/payload/ac_work/tree/a_c744_component1_complete_candidate', '/tmp/a1_complete_consequence_fresh_replay_v1/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay.json']' returned non-zero exit status 1.
