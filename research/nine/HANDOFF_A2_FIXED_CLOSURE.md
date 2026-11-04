@@ -1,5 +1,38 @@
 # Current A.2 handoff: 221/231 current-mask cells closed; 10 OPEN
 
+## 4 November continuation: D821 portable-source staging (no new closure)
+
+The complete D821 native proof remains accepted at the native-checker level
+but not as a *published, portable* complete-original closure. The missing
+step is not another proof search inside D821's already excluded five
+complementary domains; it is source restoration and independent replay.
+
+Two new sources are committed at
+[the D821 native checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md):
+the SHA-256-pinned **stage_d821_portable_sources.py** and its six
+**test_stage_d821_portable_sources.py** tests (all pass locally).
+A computer-assisted inspection of the 1,514,532-byte published native
+report found 889 source input SHA records plus six exact-checker SHA
+records: 895 unique paths with no conflicting digest and none outside
+the recorded original workspace. All 272 structured hash/path references
+are consistent with those same 895 records. No raw source has been
+invented from its hash or counted as present in this publication.
+
+**Execute on a workspace with the actual original source bytes:**
+follow the exact CLI in that checkpoint README, recheck the resulting
+source manifest, relocate every dependency, then run a fresh isolated
+no-numerics exact replay with forbidden reads enforced and rehash all
+inputs. Audit all compressed package members. Only after that may
+D821 change from OPEN to CLOSED_STRICT (222/231; 9 still open), and
+the mask ledger stays 8/32 until the other originals close.
+
+The source-only packet is not available in this chat's execution
+filesystem; a synthetic staging test is not a source proof. Do not
+promote D821 from the published native receipt alone. No change was
+made to the 231-cell definition or status register, 32-mask register,
+positional roots, or roadmap. No Lean, Lake or CI.
+
+
 November 4, 2026. The [complete B340 proof](A2_00100_B340_COMPLETE_ORIGINAL_CLOSURE.md) advances
 the unchanged original register from **220 CLOSED / 11 OPEN to 221 CLOSED / 10 OPEN**.
 The full-mask ledger remains **8 CLOSED / 24 OPEN**. `001/00`, reversal
