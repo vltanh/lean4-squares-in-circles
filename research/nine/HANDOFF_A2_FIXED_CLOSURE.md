@@ -12,6 +12,12 @@ The [explicit aligned B/H boundary-family theorem](A2_00100_TWO_FREE_ALIGNED_BOU
 is available as a checked conditional input. It contributes zero original
 cells and zero masks; every future caller must still prove its hypotheses.
 
+The [three-square center-energy theorem](THREE_SQUARE_CENTER_ENERGY_HAND_PROOF.md)
+is now a separately reviewed universal input for any three retained
+original squares. Two exact evaluators and root relocated replay pass.
+It gives energy at least 7/2 and earns zero original or mask closures;
+affine and lifted expansions require their own independent row check.
+
 1. [Current complete proof and scope](A2_00100_B4CE_FIXED_CENTER_BOUND_PSD_CLOSURE.md).
 2. [Same 231 original IDs, paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
 3. [Immutable packet and fresh independent replay](computer_assisted/a2_00100_b_4ce_bound_psd_manifest.json).

@@ -30,6 +30,15 @@ frozen inputs unchanged. All 231 original IDs and paths are retained.
 
 No whole mask, positional root or roadmap gate is newly closed.
 
+## Shared three-square energy theorem — zero closure credit
+
+The [complete arbitrary-frame theorem](THREE_SQUARE_CENTER_ENERGY_HAND_PROOF.md) proves
+that three pairwise interior-disjoint unit squares have squared center
+distances summing to at least 7/2. A separate mathematical review and both
+exact evaluators pass the complete 128-triangle/384-inequality table.
+Root relocated replay and all ten frozen source hashes pass. This shared
+input changes no original cell, mask, positional root or roadmap status.
+
 ### Preceding checkpoint: 209 CLOSED / 22 OPEN
 
 The [preceding complete assembly](A2_00100_C618_PROVED_STATE_H_COVER_CLOSURE.md) and its immutable
