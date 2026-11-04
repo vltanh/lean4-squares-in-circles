@@ -1,0 +1,196 @@
+{
+  "status": "PASS",
+  "scope": "continuous conditional physical theorem plus exact arithmetic; no whole original cell closure",
+  "first_vertical_interval": [
+    "0",
+    "2/5"
+  ],
+  "last_vertical_absolute_bound": "1/10",
+  "checks": [
+    {
+      "kind": "polynomial_identity",
+      "name": "upward signed pair squared difference",
+      "coefficients": [
+        "0",
+        "4/5",
+        "9/25",
+        "-6/5",
+        "9/25"
+      ]
+    },
+    {
+      "kind": "polynomial_identity",
+      "name": "concave cubic second derivative",
+      "coefficients": [
+        "-60",
+        "54"
+      ]
+    },
+    {
+      "kind": "positive_rational",
+      "name": "cubic at zero",
+      "reserve": "20"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "cubic at one",
+      "reserve": "8"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "negative cubic second derivative on unit interval",
+      "reserve": "6"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "steep signed owner squared comparison",
+      "reserve": "1/25"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "first-link incircle comparison",
+      "reserve": "17/25"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "last-link incircle comparison",
+      "reserve": "49/50"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "w exceeds nine tenths squared",
+      "reserve": "3/100"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "k less than one half squared",
+      "reserve": "5/84"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "sqrt2 exceeds seven fifths squared",
+      "reserve": "1/25"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "last gap below accepted one eighth",
+      "reserve": "1/40"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "middle endpoint coefficient",
+      "reserve": "3/20"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "middle endpoint reserve",
+      "reserve": "3/40"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "last endpoint reserve",
+      "reserve": "3/40"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "steep last-link reserve",
+      "reserve": "1/5"
+    },
+    {
+      "kind": "rational_identity",
+      "name": "positive-D total variation",
+      "value": "1/2"
+    },
+    {
+      "kind": "polynomial_identity",
+      "name": "derivative of cosine-cube plus sine-cube",
+      "coefficients": [
+        "0",
+        "-3",
+        "3",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "kind": "polynomial_identity",
+      "name": "strict A-plus-r derivative numerator remainder",
+      "coefficients": [
+        "0",
+        "1",
+        "-1",
+        "2"
+      ]
+    },
+    {
+      "kind": "positive_rational",
+      "name": "one minus t plus two t squared discriminant",
+      "reserve": "7"
+    },
+    {
+      "kind": "polynomial_identity",
+      "name": "first concavity derivative z=0",
+      "coefficients": [
+        "0",
+        "-3",
+        "3",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "kind": "polynomial_identity",
+      "name": "first concavity derivative z=1",
+      "coefficients": [
+        "-1/2",
+        "-3/2",
+        "4",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "kind": "positive_rational",
+      "name": "z=1 concavity endpoint zero",
+      "reserve": "1/2"
+    },
+    {
+      "kind": "positive_rational",
+      "name": "z=1 concavity endpoint one half",
+      "reserve": "1/4"
+    },
+    {
+      "kind": "polynomial_identity",
+      "name": "zero-X endpoint radical comparison",
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "2",
+        "0"
+      ]
+    },
+    {
+      "kind": "positive_rational",
+      "name": "last-gap versus retained transverse gap",
+      "reserve": "17/30"
+    },
+    {
+      "kind": "polynomial_identity",
+      "name": "original C-X equality comparison",
+      "coefficients": [
+        "1",
+        "-2",
+        "2"
+      ]
+    }
+  ],
+  "check_count": 27,
+  "whole_mask_closed": false,
+  "new_original_cells_closed": 0,
+  "new_masks_closed": 0,
+  "source_sha256": {
+    "weak_outer_wide_asymmetric_row_arithmetic.py": "f1b09755245d13e6bacb80806fbdb9d0af7564ae8a999dc9bb390507654fd4d9",
+    "WEAK_OUTER_TWO_FIFTHS_ONE_TENTH_ROW_HAND_TERMINAL.md": "5ed6141db404b9876721505736d58a152fa15584837985a88eeea2ce4e506afc"
+  }
+}

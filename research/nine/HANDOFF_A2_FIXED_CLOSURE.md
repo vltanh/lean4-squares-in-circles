@@ -8,6 +8,16 @@ No Lean, Lake or CI.
 
 ## Read first
 
+Two full-angle conditional row improvements are available. The
+[positive-D row](A2_00100_POSITIVE_D_THREE_FIFTHS_ROW.md) permits total
+vertical variation at most `3/5`. The independently reviewed
+[asymmetric row for either D sign](WEAK_OUTER_TWO_FIFTHS_ONE_TENTH_ROW_HAND_TERMINAL.md)
+permits `0<=y_X-y_B<=2/5` and `|y_D-y_X|<=1/10`, for either original
+extra X between B and D. Its 27 exact arithmetic checks and
+[independent physical review](WEAK_OUTER_WIDE_ASYMMETRIC_ROW_INDEPENDENT_REVIEW.md)
+pass. Each theorem retains its complete closed complementary cover and
+adds **zero cells and zero masks** until a complete original caller closes.
+
 The [explicit aligned B/H boundary-family theorem](A2_00100_TWO_FREE_ALIGNED_BOUNDARY_FAMILY.md)
 is available as a checked conditional input. It contributes zero original
 cells and zero masks; every future caller must still prove its hypotheses.
