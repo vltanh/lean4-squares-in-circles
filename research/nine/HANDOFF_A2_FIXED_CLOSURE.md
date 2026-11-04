@@ -542,6 +542,16 @@ square-area occurrence, with the underlying hand theorems retained.
 The root reviewed the exact master and full hand/table and checked all
 259 portable archive members. No whole B16a or mask closure is inferred.
 
+## D6c5: complete fresh I16 base checkpoint
+
+The [fresh D6c5 checkpoint](A2_00100_D6C5_FRESH_I16_CHECKPOINT.md) records
+the original-path whole prefix and all 16 closed I rectangles. Ten are
+excluded. I11, I12, I13, I21, I22 and I23 retain independently checked
+six-round necessary states. The base is immutable; subsequent H covers
+must attach to these exact state hashes. The root accepted the complete
+source, physical hand proof and composition and checked all 316 archived
+members. This checkpoint gives no whole-original or whole-mask credit.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

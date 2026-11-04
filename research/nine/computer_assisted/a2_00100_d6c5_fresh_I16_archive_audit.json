@@ -1,0 +1,20 @@
+{
+  "schema": "D6c5_I16_root_all_member_archive_audit_v1",
+  "status": "PASS_ALL_316_MEMBERS_AND_SOURCE_BYTES",
+  "archive_sha256": "30d0cac1a30ad29dee3155fe2e42d0e425cfc143e8e0f904e0da28f57e739ee2",
+  "archive_bytes": 8532316,
+  "archive_root": "d6c5_fresh_I16_checkpoint",
+  "regular_payloads": 253,
+  "internal_hardlinks": 63,
+  "external_links": false,
+  "archive_manifest_sha256": "d1fb60b47594f567c2490c37c498ff18fc290baad07beb8971c6cbdb38a9cae4",
+  "build_receipt_sha256": "031a31a6f2552ad23db3f5fe14bc5e9b8f9190fed252f7f675d402a423803126",
+  "all_source_and_member_hashes_checked": true,
+  "default_output_absent_after_extraction": true,
+  "independent_root_source_hand_composition_review_sha256": "790d3ce39a1d6729f0d580d18e3b5d53b78d2024271f1ff946013fa36391ade7",
+  "root_exact_batches_previously_completed": true,
+  "whole_original_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 1.1999639160057995
+}

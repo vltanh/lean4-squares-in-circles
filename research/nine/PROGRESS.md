@@ -55,6 +55,17 @@ terminal rows, with the complete hand table and independent assembly review.
 All 174 portable archive members match their frozen bytes. This is a whole
 fixed-rectangle proof; the B16a original remains OPEN and no ledger changes.
 
+## D6c5: fresh whole-prefix and complete I16 checkpoint
+
+The [D6c5 complete partition](A2_00100_D6C5_FRESH_I16_CHECKPOINT.md) starts
+from the literal original path. Its independently reconstructed five-round
+whole prefix has 519 deductions and 873 rows. The complete closed I4-by-4
+partition excludes ten rectangles and retains six OPEN rectangles after
+six local rounds. The selected records contain 5,172 deductions, 8,637
+premise rows and 56 terminal rows. All three exact arithmetic batches,
+the physical hand/table, the complete union gate and the 316-member archive
+are preserved. The original and all fixed ledgers remain unchanged.
+
 ## B16a: three further complete fixed-I rectangles
 
 The [three complete H covers](A2_00100_B16A_THREE_COMPLETE_H_COVERS.md)

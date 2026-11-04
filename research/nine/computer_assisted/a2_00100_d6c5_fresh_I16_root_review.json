@@ -1,0 +1,79 @@
+{
+  "schema": "D6c5_fresh_I16_checkpoint_root_source_hand_composition_review_v1",
+  "status": "PASS_COMPLETE_SOURCE_HAND_AND_PINNED_EXACT_ATTACHMENT",
+  "checker_sha256": "ff0ea54860e068f60e6eabe74fce0e948d96cc42c707763c8693ca9fea7608a2",
+  "hand_sha256": "e489d7ec3d31a102175424ed6f19d86288f7ac5f1df3d14d815bd40ab3a5c4ff",
+  "table_sha256": "f799dcf9310f8758dac4b722ed416c088ef001e6caf6d1fc2011044e63baa80b",
+  "manifest_sha256": "7cbfd49b0bcfffd7aaaac72699db2a484cee1bbaeacba6988c224d154663b4ee",
+  "core_manifest_sha256": "535d6a7117e421711951556c2421df98bf83b1000333b737a3296e37d3e6f6fc",
+  "root_composition_report_sha256": "8031f67b678bec88ca9c26fdab8a3402abb6ac1b9a311883ffc0c41537ddc536",
+  "root_read_entire_source_and_hand": true,
+  "root_replayed_complete_union_and_accounting": true,
+  "root_previously_replayed_all_pinned_arithmetic_components": true,
+  "whole_prefix_reconstructed_from_original_path_only": true,
+  "source_manifest_rehash_at_start_and_end": true,
+  "exact_common_I4x4_partition_with_all_closed_faces": true,
+  "selected_local_counts": {
+    "rounds": 41,
+    "deductions": 5172,
+    "premise_rows": 8637,
+    "terminal_rows": 56,
+    "all_printed_rows": 8693
+  },
+  "retained_prefix_counts": {
+    "rounds": 18,
+    "deductions": 2559,
+    "premise_rows": 4034
+  },
+  "appended_counts": {
+    "rounds": 18,
+    "deductions": 1314,
+    "premise_rows": 3548
+  },
+  "selected_energy_occurrences": {
+    "three_square": 37
+  },
+  "original_whole_prefix_counts": {
+    "rounds": 5,
+    "deductions": 519,
+    "premise_rows": 873
+  },
+  "accepted_independent_arithmetic_hashes": {
+    "first_I16": "047f7f7dc5c0ffc0c0a1a7a4241d19d764ac5712adfc34919a527043221cc722",
+    "continued_I6": "c141492621af200e98762f3b774268378c85af2715b44529d745cd60275ce7b4",
+    "whole": "e24d8e99b4b548e29b1f203b1d303f349850d5230a07ab16864886b9789f4734"
+  },
+  "fresh_full_arithmetic_repeated_by_this_review": false,
+  "portable_fresh_replay_available": true,
+  "complete_I_rectangles": 10,
+  "open_I_rectangles": [
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "whole_original_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "scope": "Base I16 checkpoint only; later H-cover results are separate."
+}

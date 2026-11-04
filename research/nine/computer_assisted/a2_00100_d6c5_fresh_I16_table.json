@@ -1,0 +1,529 @@
+{
+  "schema": "D6c5_fresh_I16_checkpoint_hand_table_v1",
+  "id": "positive-6c5f13d07e5538df",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        1
+      ]
+    ]
+  ],
+  "original_prefix_sha256": "d247d7e09ee9366a29164a26c3a776a36fd6dc1fbaa6c88e30190dfd8d9fa1df",
+  "original_I_box": [
+    [
+      "-1472789/1048576",
+      "5/4"
+    ],
+    [
+      "-91/60",
+      "91/60"
+    ]
+  ],
+  "members": [
+    {
+      "tile": [
+        0,
+        0
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/0_0.json",
+      "certificate_sha256": "ad8e8ab55a602e1837acc3a8e59680d74b53795dcd548a704263128f2bc8e2c3",
+      "rectangle": [
+        [
+          "-1472789/1048576",
+          "-3107647/4194304"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "rounds": 0,
+      "deductions": 0,
+      "premise_rows": 0,
+      "terminal_rows": 0,
+      "terminal_kind": "exact_interval_terminal",
+      "terminal_label": "all four original inset separation options impossible: (0, 7)",
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        0,
+        1
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/0_1.json",
+      "certificate_sha256": "cb20e83f2aea4ad05a3955fef0e0366697bca879af9efeeb62319bd8c89a8c51",
+      "rectangle": [
+        [
+          "-1472789/1048576",
+          "-3107647/4194304"
+        ],
+        [
+          "-91/120",
+          "0"
+        ]
+      ],
+      "rounds": 0,
+      "deductions": 0,
+      "premise_rows": 0,
+      "terminal_rows": 0,
+      "terminal_kind": "exact_interval_terminal",
+      "terminal_label": "all four original inset separation options impossible: (7, 8)",
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        0,
+        2
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/0_2.json",
+      "certificate_sha256": "51253bfa13cc02cec3049424b4024f1a0c6617d2287abe42567c21d04f4c7275",
+      "rectangle": [
+        [
+          "-1472789/1048576",
+          "-3107647/4194304"
+        ],
+        [
+          "0",
+          "91/120"
+        ]
+      ],
+      "rounds": 0,
+      "deductions": 0,
+      "premise_rows": 0,
+      "terminal_rows": 0,
+      "terminal_kind": "exact_interval_terminal",
+      "terminal_label": "empty propagated original center interval",
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        0,
+        3
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/0_3.json",
+      "certificate_sha256": "8c619b7fdc06fdbc1ccafd738cff3fb720250e0a354c9b06d10b98fa5f717747",
+      "rectangle": [
+        [
+          "-1472789/1048576",
+          "-3107647/4194304"
+        ],
+        [
+          "91/120",
+          "91/60"
+        ]
+      ],
+      "rounds": 0,
+      "deductions": 0,
+      "premise_rows": 0,
+      "terminal_rows": 0,
+      "terminal_kind": "exact_interval_terminal",
+      "terminal_label": "empty propagated original center interval",
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        1,
+        0
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/1_0.json",
+      "certificate_sha256": "52e2c453cffd31d30df5420f99594d1af585c32390eaa7cb18d4adf9286e6270",
+      "rectangle": [
+        [
+          "-3107647/4194304",
+          "-162069/2097152"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "rounds": 0,
+      "deductions": 0,
+      "premise_rows": 0,
+      "terminal_rows": 0,
+      "terminal_kind": "exact_interval_terminal",
+      "terminal_label": "all four original inset separation options impossible: (1, 8)",
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        1,
+        1
+      ],
+      "status": "PASS_CERTIFIED_TILE_STATE_OPEN",
+      "certificate": "data_d6c5_I6/1_1.json",
+      "certificate_sha256": "84d39764ade18f82f4a413fe6658ce398c7a173de9be8f690dc84afd6a7713fa",
+      "rectangle": [
+        [
+          "-3107647/4194304",
+          "-162069/2097152"
+        ],
+        [
+          "-91/120",
+          "0"
+        ]
+      ],
+      "rounds": 6,
+      "deductions": 753,
+      "premise_rows": 1415,
+      "terminal_rows": 0,
+      "terminal_kind": null,
+      "terminal_label": null,
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        1,
+        2
+      ],
+      "status": "PASS_CERTIFIED_TILE_STATE_OPEN",
+      "certificate": "data_d6c5_I6/1_2.json",
+      "certificate_sha256": "789af011c24fd409742872dab26eb0777e177a858c09fbbdb5315c06af2bbcd3",
+      "rectangle": [
+        [
+          "-3107647/4194304",
+          "-162069/2097152"
+        ],
+        [
+          "0",
+          "91/120"
+        ]
+      ],
+      "rounds": 6,
+      "deductions": 539,
+      "premise_rows": 1208,
+      "terminal_rows": 0,
+      "terminal_kind": null,
+      "terminal_label": null,
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        1,
+        3
+      ],
+      "status": "PASS_CERTIFIED_TILE_STATE_OPEN",
+      "certificate": "data_d6c5_I6/1_3.json",
+      "certificate_sha256": "071e31e88adc2bf6356097c7f9ca55955e510dad4fb0c54c876b0cc96eaa1a46",
+      "rectangle": [
+        [
+          "-3107647/4194304",
+          "-162069/2097152"
+        ],
+        [
+          "91/120",
+          "91/60"
+        ]
+      ],
+      "rounds": 6,
+      "deductions": 591,
+      "premise_rows": 1282,
+      "terminal_rows": 0,
+      "terminal_kind": null,
+      "terminal_label": null,
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        2,
+        0
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/2_0.json",
+      "certificate_sha256": "8d8b847be691c58ed826d2cb6e2ca514d280a45e7d154660a32d421fa293f23d",
+      "rectangle": [
+        [
+          "-162069/2097152",
+          "2459371/4194304"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "rounds": 0,
+      "deductions": 0,
+      "premise_rows": 0,
+      "terminal_rows": 4,
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": null,
+      "reserve": "1085327589430919014887247228144139013551599999/937545977340569654534289718396007776203571200",
+      "positive_reserve_floor": "9261/8000"
+    },
+    {
+      "tile": [
+        2,
+        1
+      ],
+      "status": "PASS_CERTIFIED_TILE_STATE_OPEN",
+      "certificate": "data_d6c5_I6/2_1.json",
+      "certificate_sha256": "3a87c44054bfeb734c0a37bada922d99b4f906a52edc08d6138616bfa282a4dc",
+      "rectangle": [
+        [
+          "-162069/2097152",
+          "2459371/4194304"
+        ],
+        [
+          "-91/120",
+          "0"
+        ]
+      ],
+      "rounds": 6,
+      "deductions": 1033,
+      "premise_rows": 1505,
+      "terminal_rows": 0,
+      "terminal_kind": null,
+      "terminal_label": null,
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        2,
+        2
+      ],
+      "status": "PASS_CERTIFIED_TILE_STATE_OPEN",
+      "certificate": "data_d6c5_I6/2_2.json",
+      "certificate_sha256": "5f6aa880a485b530226832274772ad28ab5760185d3a0b3597b19a302de05969",
+      "rectangle": [
+        [
+          "-162069/2097152",
+          "2459371/4194304"
+        ],
+        [
+          "0",
+          "91/120"
+        ]
+      ],
+      "rounds": 6,
+      "deductions": 445,
+      "premise_rows": 1037,
+      "terminal_rows": 0,
+      "terminal_kind": null,
+      "terminal_label": null,
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        2,
+        3
+      ],
+      "status": "PASS_CERTIFIED_TILE_STATE_OPEN",
+      "certificate": "data_d6c5_I6/2_3.json",
+      "certificate_sha256": "6fee8930a39f6c732fb642a98fcb33dfa502f162f9203db62773fad57a131f74",
+      "rectangle": [
+        [
+          "-162069/2097152",
+          "2459371/4194304"
+        ],
+        [
+          "91/120",
+          "91/60"
+        ]
+      ],
+      "rounds": 6,
+      "deductions": 512,
+      "premise_rows": 1135,
+      "terminal_rows": 0,
+      "terminal_kind": null,
+      "terminal_label": null,
+      "reserve": null,
+      "positive_reserve_floor": null
+    },
+    {
+      "tile": [
+        3,
+        0
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/3_0.json",
+      "certificate_sha256": "b76bcc126ea8f5bd43d84c9c888b28b1fc4c99998b3e01a5f53dfb4882a84619",
+      "rectangle": [
+        [
+          "2459371/4194304",
+          "5/4"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "rounds": 0,
+      "deductions": 0,
+      "premise_rows": 0,
+      "terminal_rows": 20,
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": null,
+      "reserve": "5071031971886998939578827647068846832482937386152444226043226210557/62545514633503008531156160381214045856897973855082631531012028366848",
+      "positive_reserve_floor": "81077/1000000"
+    },
+    {
+      "tile": [
+        3,
+        1
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/3_1.json",
+      "certificate_sha256": "aae6934c3fb6185b9a64423c7673ee3e0bca0390ae8a38d15414c9a3bd5d59d7",
+      "rectangle": [
+        [
+          "2459371/4194304",
+          "5/4"
+        ],
+        [
+          "-91/120",
+          "0"
+        ]
+      ],
+      "rounds": 1,
+      "deductions": 204,
+      "premise_rows": 228,
+      "terminal_rows": 3,
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": null,
+      "reserve": "74284097566161799837143028709/69634127209802640463075737600",
+      "positive_reserve_floor": "1066777/1000000"
+    },
+    {
+      "tile": [
+        3,
+        2
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/3_2.json",
+      "certificate_sha256": "8c09f8fc7c6afc2419d05691e59ce14d65440d22cff7e813041fe16fbd293ca9",
+      "rectangle": [
+        [
+          "2459371/4194304",
+          "5/4"
+        ],
+        [
+          "0",
+          "91/120"
+        ]
+      ],
+      "rounds": 2,
+      "deductions": 542,
+      "premise_rows": 422,
+      "terminal_rows": 13,
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": null,
+      "reserve": "21396198075567557243357177037670503036181819258439/903387087656643946946973663940236026525881183764480",
+      "positive_reserve_floor": "5921/250000"
+    },
+    {
+      "tile": [
+        3,
+        3
+      ],
+      "status": "PASS_COMPLETE_PHYSICAL_TILE",
+      "certificate": "data_d6c5_I16/3_3.json",
+      "certificate_sha256": "bc19d499e227a158c830e71be0e6a9e0da0bb2f1b0988c45d4c2f46e5c3cf5bc",
+      "rectangle": [
+        [
+          "2459371/4194304",
+          "5/4"
+        ],
+        [
+          "91/120",
+          "91/60"
+        ]
+      ],
+      "rounds": 2,
+      "deductions": 553,
+      "premise_rows": 405,
+      "terminal_rows": 16,
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": null,
+      "reserve": "179184335435465987435096542095426263/75392150385925697166262806700275793920",
+      "positive_reserve_floor": "297/125000"
+    }
+  ],
+  "open_tiles": [
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "selected_local_counts": {
+    "rounds": 41,
+    "deductions": 5172,
+    "premise_rows": 8637,
+    "terminal_rows": 56,
+    "all_printed_rows": 8693
+  },
+  "retained_three_round_prefix_counts": {
+    "rounds": 18,
+    "deductions": 2559,
+    "premise_rows": 4034
+  },
+  "new_three_round_continuation_counts": {
+    "rounds": 18,
+    "deductions": 1314,
+    "premise_rows": 3548
+  },
+  "selected_energy_row_occurrences": {
+    "three_square": 37
+  },
+  "original_whole_prefix_counts": {
+    "rounds": 5,
+    "deductions": 519,
+    "premise_rows": 873
+  },
+  "exact_closed_I_rectangles": 10,
+  "open_I_rectangles": 6,
+  "new_original_cells": 0,
+  "new_masks": 0
+}
