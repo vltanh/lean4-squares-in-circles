@@ -1,0 +1,22 @@
+{
+  "status": "PASS_LITERAL_ACTUAL_AB_BOTH_EXTRAS_GUARDS",
+  "guard_states": 12150,
+  "positive_guards": 1512,
+  "correlated_translation_controls": 54,
+  "damaged_literals_rejected": 3024,
+  "original_path_and_choices_unchanged": true,
+  "unchanged_scalar_domains": 28,
+  "unchanged_scalar_leaves": 103,
+  "inherited_coefficients": 12875,
+  "scalar_replay_required_on_actual_use": true,
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/d_work/actual_ab_extra_guard/check_actual_ab_any_extra_guard.py": "2af29b528d814709afe8b86e56ad65baca2056c3c6187660bbecdc5608a0e722",
+    "/workspace/scratch/f9f48fcfb253/d_work/actual_ab_extra_guard/actual_ab_any_extra_guard.py": "600763e67222e28451fed47e87c04283be1fa1869fbcf8cc8537e265e2727402",
+    "/workspace/scratch/f9f48fcfb253/d_work/actual_ab_extra_guard/independent_actual_ab_any_extra_guard.py": "de0123de0071222760abdb8f942a3119ebbb0209574a1cfc22fb511d620b7fbf",
+    "/workspace/scratch/f9f48fcfb253/d_work/actual_ab_extra_guard/accepted_actual_ab_guard.py": "3a965bdcc8fc0f4de55fc5e3a5fef945f584710fa5ff6c339de44abcea640c19",
+    "/workspace/scratch/f9f48fcfb253/d_work/actual_ab_extra_guard/ACCEPTED_ACTUAL_AB_HAND_PROOF.md": "5573dff780b79d60cbea535e946ce3669a6fcbbe8152779348ba35107909d7cb",
+    "/workspace/scratch/f9f48fcfb253/d_work/actual_ab_extra_guard/ACTUAL_AB_ANY_EXTRA_LITERAL_HAND_PROOF.md": "5800ec66a34b5054c33e240b68d1e0078d7ad767d969dedb06ade7272c50d389"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0
+}

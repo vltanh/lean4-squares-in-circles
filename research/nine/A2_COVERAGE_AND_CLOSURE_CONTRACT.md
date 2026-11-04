@@ -196,7 +196,8 @@ and the [complete A768 cover](A2_00100_A768_FIXED_CENTER_ENERGY_CLOSURE.md),
 and the [complete CAAA center/frame cover](A2_00100_CAAA_COMPLETE_CENTER_SLOPE_CLOSURE.md),
 and the [complete A7c center/frame/height cover](A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md),
 and the [complete Dc71 original cover](A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md),
-now exclude 219 of those cells and leave 12 OPEN. The
+and the [complete D6c5 original cover](A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md),
+now exclude 220 of those cells and leave 11 OPEN. The
 [stable register](gates/A2_00100_FIXED_FRONTIER.json) retains every original
 path and its physical caller. Shared closed faces are allowed. This
 coverage-qualified count is separate from all 32 mask statuses.

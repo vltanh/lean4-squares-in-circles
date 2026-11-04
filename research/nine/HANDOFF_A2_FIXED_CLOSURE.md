@@ -18,6 +18,14 @@ with a fresh whole-original portable replay. Accepted counts are
 
 ## Read first
 
+Two [literal seven-original row applications](computer_assisted/row_label_substitutions_v1/README.md)
+are now explicitly bound: the opposite-endpoint theorem applies to A,B,I,D,
+and the actual-AB two-link theorem permits either original extra H or I.
+The independent guards use the original physical indices, and both proofs
+retain the original strict-CD equality blocker. Fresh exact guard controls
+and the complete physical reviews pass. The scalar tables are unchanged
+accepted inputs; these conditional applications add **zero cells and masks**.
+
 The [physical frame and projection square rows](computer_assisted/physical_gram_square_rows_v1/README.md)
 now couple existing SAT auxiliary products through exact nonnegative squared
 norms. Their complete physical proofs, independent literal-row checkers and

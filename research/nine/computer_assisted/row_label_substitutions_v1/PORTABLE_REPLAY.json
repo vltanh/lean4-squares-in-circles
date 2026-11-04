@@ -1,0 +1,42 @@
+{
+  "status": "PASS_PORTABLE_LITERAL_ROW_SUBSTITUTIONS",
+  "premise_bindings_sha256": "739d63896d9185f59e9f05a9f689d5685f4fb5b30e646c640ac32e7b67fca1be",
+  "immutable_inputs_checked": 23,
+  "replays": {
+    "opposite_abid": {
+      "status": "PASS_LITERAL_OPPOSITE_ABID_SUBSTITUTION_AND_GUARD_CONTROLS",
+      "guard_states": 1458,
+      "positive_guards": 273,
+      "wrong_physical_row_controls_rejected": 273,
+      "source_theorem_sha256": "db830ffbebdc807b0e05f78766e0a0509d11418be31b9a7ef0623b212328831a",
+      "threshold": "23/100",
+      "original_mask": "001/00",
+      "all_nine_originals_required": true,
+      "full_original_ancestry_required": true,
+      "unchanged_scalar_domains": 80,
+      "unchanged_scalar_leaves": 1405,
+      "scalar_replay_required_on_actual_terminal_use": true,
+      "new_original_cells": 0,
+      "new_masks": 0
+    },
+    "actual_ab_either_extra": {
+      "status": "PASS_LITERAL_ACTUAL_AB_BOTH_EXTRAS_GUARDS",
+      "guard_states": 12150,
+      "positive_guards": 1512,
+      "correlated_translation_controls": 54,
+      "damaged_literals_rejected": 3024,
+      "original_path_and_choices_unchanged": true,
+      "unchanged_scalar_domains": 28,
+      "unchanged_scalar_leaves": 103,
+      "inherited_coefficients": 12875,
+      "scalar_replay_required_on_actual_use": true,
+      "new_original_cells": 0,
+      "new_masks": 0
+    }
+  },
+  "scalar_tables_replayed": false,
+  "accepted_scalar_dependencies_required": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false
+}
