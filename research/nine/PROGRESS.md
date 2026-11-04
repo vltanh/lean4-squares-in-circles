@@ -82,6 +82,23 @@ terminal rows, with the complete hand table and independent assembly review.
 All 174 portable archive members match their frozen bytes. This is a whole
 fixed-rectangle proof; the B16a original remains OPEN and no ledger changes.
 
+## D6c5: complete I21 H and frame cover
+
+The [complete I21 supplement](A2_00100_D6C5_I21_COMPLETE_H_COVER_CHECKPOINT.md)
+excludes the entire original I21 rectangle by eight H products, four complete
+I4 slope covers and two complete D4 subcovers. Twenty-five ordinary terminal
+domains and one separately proved sharp domain retain every original caller
+and shared endpoint. The raw sharp record remains OPEN and supplies only
+its completed state to the separately accepted physical theorem.
+
+The source-pinned composition passes on all 1,456 inputs. Its 32 selected
+new records contain 104 rounds, 23,017 deductions and 27,538 row occurrences,
+including 575 terminal rows. Shorter continuation prefixes are not counted
+again. The root reviewed the full source and hand, independently recomputed
+the table and unions, and audited every one of the 1,466 archive paths.
+D6c5 now has fourteen excluded I rectangles; I22 and I23 remain OPEN.
+No whole original, mask, positional root or roadmap gate is added.
+
 ## D6c5: complete I11, I12 and I13 H covers
 
 The [three complete H covers](A2_00100_D6C5_THREE_COMPLETE_H_COVERS.md)

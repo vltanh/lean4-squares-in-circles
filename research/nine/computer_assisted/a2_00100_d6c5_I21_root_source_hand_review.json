@@ -1,0 +1,53 @@
+{
+  "schema": "D6c5_I21_root_source_hand_table_acceptance_review_v1",
+  "status": "PASS_COMPLETE_I21_SUPPLEMENT_WITH_TWO_REMAINING_I_DOMAINS",
+  "entire_composition_source_and_physical_hand_read": true,
+  "master_sha256": "6663367a835f52efa0af4c529905b731c636205547db4a05024c546528e4e34a",
+  "frozen_manifest_sha256": "99b9b662e0eb92767f85f220f42b3e07b765da3f8ae3449ec3963bbd60a64007",
+  "frozen_inputs": 1456,
+  "all_input_hashes_unchanged": true,
+  "accepted_composition_report_sha256": "0d743226fc0ed4a511cae42e0c6c5e41dd0330b299d5cd2ec1514870c7059ffc",
+  "hand_sha256": "d57ce058674e29dce3d2f4aab6ae02dca74d6191e39b1ebcc055ced8f745f866",
+  "table_sha256": "d63ea7f887b404d19219223d2e1e1d50462c38be43f9235bfe0f28dc912edd3a",
+  "index_sha256": "b4dfb177b16ebcfb0334fefe8fdd83ee797546cd31cbd38588fcf699f7b3deca",
+  "source_review": {
+    "accepted_exact_report_pins_checked": true,
+    "same_original_id_path_prefix_checked": true,
+    "all_eight_H_products_checked": true,
+    "all_four_I_siblings_and_two_D_subcovers_checked": true,
+    "actual_original_frame_restrictions_checked": true,
+    "complete_normal_exit_ancestors_required": true,
+    "literal_same_domain_continuation_prefixes_checked": true,
+    "inherited_bounds_retained": true,
+    "sharp_guard_separate_and_raw_OPEN_preserved": true,
+    "original_nine_physical_caller_and_equality_faces_retained": true,
+    "base_I6_counted_once": true
+  },
+  "selected_records": 32,
+  "terminal_domains": 26,
+  "local_counts": {
+    "rounds": 104,
+    "deductions": 23017,
+    "premise_rows": 26963,
+    "terminal_rows": 575,
+    "all_printed_rows": 27538
+  },
+  "energy_occurrences": {
+    "three_square_center_energy_": 497
+  },
+  "remaining_original_I_tiles": [
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "weighted_arithmetic_repeated": false,
+  "composition_repeated_by_root": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false
+}

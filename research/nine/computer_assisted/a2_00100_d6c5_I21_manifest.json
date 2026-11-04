@@ -1,0 +1,171 @@
+{
+  "schema": "D6c5_I21_complete_fixed_rectangle_publication_v1",
+  "original_id": "positive-6c5f13d07e5538df",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        1
+      ]
+    ]
+  ],
+  "original_prefix_sha256": "d247d7e09ee9366a29164a26c3a776a36fd6dc1fbaa6c88e30190dfd8d9fa1df",
+  "new_complete_I_rectangles": [
+    [
+      2,
+      1
+    ]
+  ],
+  "excluded_original_I_rectangles": 14,
+  "remaining_original_I_tiles": [
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "complete_H_rectangles": 8,
+  "ordinary_H_terminals": 4,
+  "complete_I_angle_covers": 4,
+  "complete_D_angle_subcovers": 2,
+  "terminal_domains": 26,
+  "ordinary_bound_terminals": 25,
+  "accepted_sharp_terminals": 1,
+  "archive": "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz",
+  "archive_bytes": 59056884,
+  "archive_sha256": "bc75b33c8a2eea0919b5cf50e51a9cb9254a04fda1dc9635b47c91684de277ee",
+  "parts": [
+    {
+      "file": "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part01",
+      "bytes": 8388608,
+      "sha256": "80518c441c40ce4579f1809b3280010b77102f3523ff32ccd3eef0c60d772790"
+    },
+    {
+      "file": "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part02",
+      "bytes": 8388608,
+      "sha256": "f90f4c6df6a2351e3324b3f59875e792e32d0ff5c60c57641f5e80d1c6111b13"
+    },
+    {
+      "file": "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part03",
+      "bytes": 8388608,
+      "sha256": "b6bd71f015da9c014cbbb12cb2ff6577258c394940e9fc3da1d79c54da4c119d"
+    },
+    {
+      "file": "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part04",
+      "bytes": 8388608,
+      "sha256": "1f188366116220dcfe10f355705526996a704fc7ea161949fe12d861b4db1c90"
+    },
+    {
+      "file": "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part05",
+      "bytes": 8388608,
+      "sha256": "81c34791ce186b04e985f2bb6626d6c1e3ae0acb5e2712ba656c3bf13a8688de"
+    },
+    {
+      "file": "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part06",
+      "bytes": 8388608,
+      "sha256": "289c1bb598882e86d4fa5dea9bef8979bd0f61b812b8e468a4bb5d153986209e"
+    },
+    {
+      "file": "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part07",
+      "bytes": 8388608,
+      "sha256": "6b6f58af68f67368a4f515fbba2b81c0fd3d559ec9dfb097055da1db23da2879"
+    },
+    {
+      "file": "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part08",
+      "bytes": 336628,
+      "sha256": "fa7e75150e89e02d811581ffd18457d3f9f0bd8ef2413f017164c3783caaf4b7"
+    }
+  ],
+  "concatenation_order": [
+    "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part01",
+    "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part02",
+    "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part03",
+    "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part04",
+    "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part05",
+    "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part06",
+    "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part07",
+    "a2_00100_d6c5_I21_complete_H_checkpoint.tar.xz.part08"
+  ],
+  "packet_directory": "d6c5_I21_H_supplement",
+  "entry_point": "verify_d6c5_I21_H_supplement.py",
+  "frozen_inputs": 1456,
+  "frozen_manifest_sha256": "99b9b662e0eb92767f85f220f42b3e07b765da3f8ae3449ec3963bbd60a64007",
+  "archive_members": 1466,
+  "regular_payload_members": 487,
+  "internal_hardlink_members": 979,
+  "archive_inventory_sha256": "180db28b5f4c4bb31681b3457419bd843f82b8f80de9171afd3361aee092716b",
+  "master_sha256": "6663367a835f52efa0af4c529905b731c636205547db4a05024c546528e4e34a",
+  "accepted_composition_report": "a2_00100_d6c5_I21_composition_replay.json",
+  "accepted_composition_report_sha256": "0d743226fc0ed4a511cae42e0c6c5e41dd0330b299d5cd2ec1514870c7059ffc",
+  "literal_cover_table": "a2_00100_d6c5_I21_complete_H_table.json",
+  "literal_cover_table_sha256": "d63ea7f887b404d19219223d2e1e1d50462c38be43f9235bfe0f28dc912edd3a",
+  "cover_index": "a2_00100_d6c5_I21_complete_H_index.json",
+  "cover_index_sha256": "b4dfb177b16ebcfb0334fefe8fdd83ee797546cd31cbd38588fcf699f7b3deca",
+  "used_energy_rows": "a2_00100_d6c5_I21_used_energy_rows.json",
+  "used_energy_rows_sha256": "3c73b19045a0ceac6942d41bbe4db28ed3f640c9054e96906f3ae0a5714ca9f1",
+  "root_source_hand_review": "a2_00100_d6c5_I21_root_source_hand_review.json",
+  "root_source_hand_review_sha256": "18fa21964f7df1b2ea15f2496a7c123e7e8582ffd3ab1fb4120f7511f74d5c8b",
+  "root_archive_audit": "a2_00100_d6c5_I21_root_archive_check.json",
+  "root_archive_audit_sha256": "191d9bfb94916806fcd94de43976ee34a295421ded798a231bdda32859ee2c5a",
+  "archive_build_receipt": "a2_00100_d6c5_I21_archive_build_receipt.json",
+  "archive_build_receipt_sha256": "8c66bbd8c0a68afcb988c7fc2189e2bddeee146fb8a4338d484fdec3995ab28b",
+  "original_hand_sha256": "d57ce058674e29dce3d2f4aab6ae02dca74d6191e39b1ebcc055ced8f745f866",
+  "committed_hand": "A2_00100_D6C5_I21_COMPLETE_H_COVER_CHECKPOINT.md",
+  "committed_hand_sha256": "515715ba74e73fe990a07205ad3af875be4527db9022d441427d25670ab98300",
+  "selected_new_bound_records": 32,
+  "new_selected_local_counts": {
+    "rounds": 104,
+    "deductions": 23017,
+    "premise_rows": 26963,
+    "terminal_rows": 575,
+    "all_printed_rows": 27538
+  },
+  "base_and_supplement_counts": {
+    "rounds": 176,
+    "deductions": 33493,
+    "premise_rows": 43220,
+    "terminal_rows": 894,
+    "all_printed_rows": 44114
+  },
+  "selected_energy_occurrences": {
+    "three_square_center_energy_": 497
+  },
+  "common_I6_already_counted_in_base": true,
+  "shorter_continuation_prefixes_not_recounted": true,
+  "whole_original_prefix_separate": true,
+  "all_nine_originals_and_all_closed_faces_retained": true,
+  "proof_mode": "COMPOSITION_OF_PINNED_COMPLETED_EXACT_REPORTS",
+  "physical_arithmetic_repeated": false,
+  "whole_original_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "new_positional_roots": 0,
+  "new_roadmap_gates": 0,
+  "fixed_denominators": {
+    "original_cells": 231,
+    "masks": 32,
+    "positional_roots": 7915,
+    "roadmap_gates": 15
+  },
+  "lean_lake_ci_run": false
+}

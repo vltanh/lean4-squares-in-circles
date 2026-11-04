@@ -604,6 +604,22 @@ accounting, not additional original cells or masks. The fixed ledgers stay
 218/231 original cells and 8/32 masks closed, with all other denominators
 unchanged. Whole-original acceptance is a separate remaining obligation.
 
+## D6c5: I21 complete, I22 and I23 remaining
+
+The [I21 checkpoint](A2_00100_D6C5_I21_COMPLETE_H_COVER_CHECKPOINT.md)
+composes four I-angle covers, two D-angle subcovers and the accepted AHID
+sharp terminal with the earlier thirteen-I packet. All 1,456 frozen inputs
+and 1,466 archive paths pass their exact bindings and final hash checks.
+The original-nine caller, literal frame restrictions, closed boundaries
+and strictly weak CD premise are preserved. The raw sharp state remains
+OPEN; its separate theorem is attached only to that exact restricted state.
+
+Fourteen I rectangles are excluded, with I22 and I23 explicit. The new
+27,538 row occurrences and base-plus-supplement total of 44,114 are internal
+proof accounting. This adds zero original cells, masks, positional roots
+or roadmap gates. Independent weighted arithmetic is preserved, while the
+new final runtime is expressly a source-pinned complete-cover composition.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
