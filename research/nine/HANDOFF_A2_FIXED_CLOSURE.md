@@ -923,6 +923,21 @@ claiming an additional cold run. This checkpoint adds **zero original-cell
 and mask closures**; accepted counts remain **221 CLOSED / 10 OPEN** and
 **8 CLOSED / 24 OPEN**.
 
+## D821 complete native proof; portable acceptance pending
+
+The [native proof and complete literal-table checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md)
+excludes all five complementary domains of `positive-821c9a2debeed0aa` in
+fresh independent exact replay. Its 46 grafted trees have 650 nodes and
+415 excluded terminal domains. The tree reports check 109,838 deductions
+and 288,271 row occurrences. Root independently checks every table entry,
+every closed child choice and all 242 affine terminal sums. The original
+nine-square attachment and two preserved migration snapshots are explicit.
+
+The final isolated portable replay and complete compressed-payload audit
+remain acceptance gates. D821 stays OPEN in the unchanged fixed register;
+this intermediate commit adds **zero original-cell or mask credit**.
+Accepted counts remain **221 CLOSED / 10 OPEN** and **8 CLOSED / 24 OPEN**.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

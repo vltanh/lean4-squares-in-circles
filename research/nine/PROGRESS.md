@@ -4,7 +4,7 @@
 
 # n=9: 221/231 current-mask cells closed; 10 remain OPEN
 
-**Latest verified continuation: the complete B340 original-cell exclusion.**
+**Latest accepted closure: the complete B340 original-cell exclusion.**
 The same register now has **221 CLOSED / 10 OPEN**, with
 **168 additions beyond the first 53**. Remaining families:
 **A1, B5, C3, D1**. `001/00`, its reversal, the unrestricted bound and
@@ -14,6 +14,21 @@ equality remain OPEN. No Lean, Lake or CI.
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
 [Source-bound packet and fresh portable replay](computer_assisted/a2_00100_b340_complete_original_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
+
+## D821 complete native proof; portable acceptance pending
+
+The [native proof and complete literal-table checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md)
+excludes all five complementary domains of `positive-821c9a2debeed0aa` in
+fresh independent exact replay. Its 46 grafted trees have 650 nodes and
+415 excluded terminal domains. The tree reports check 109,838 deductions
+and 288,271 row occurrences. Root independently checks every table entry,
+every closed child choice and all 242 affine terminal sums. The original
+nine-square attachment and two preserved migration snapshots are explicit.
+
+The final isolated portable replay and complete compressed-payload audit
+remain acceptance gates. D821 stays OPEN in the unchanged fixed register;
+this intermediate commit adds **zero original-cell or mask credit**.
+Accepted counts remain **221 CLOSED / 10 OPEN** and **8 CLOSED / 24 OPEN**.
 
 ## Complete B340 original: 221 CLOSED / 10 OPEN
 
