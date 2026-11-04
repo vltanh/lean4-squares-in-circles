@@ -8,6 +8,10 @@ No Lean, Lake or CI.
 
 ## Read first
 
+The [explicit aligned B/H boundary-family theorem](A2_00100_TWO_FREE_ALIGNED_BOUNDARY_FAMILY.md)
+is available as a checked conditional input. It contributes zero original
+cells and zero masks; every future caller must still prove its hypotheses.
+
 1. [Current complete proof and scope](A2_00100_B61_FIXED_CENTER_BOUND_PSD_CLOSURE.md).
 2. [Same 231 original IDs, paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
 3. [Immutable packet and fresh independent replay](computer_assisted/a2_00100_b_61_bound_manifest.json).

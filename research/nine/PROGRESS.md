@@ -29,6 +29,15 @@ passed with all 146 frozen inputs unchanged.
 
 No whole mask, positional root or roadmap gate is newly closed.
 
+## Additional verified boundary-family theorem
+
+The [explicit aligned B/H family](A2_00100_TWO_FREE_ALIGNED_BOUNDARY_FAMILY.md)
+now has a compact source-bound proof and fresh independent replay. Its exact
+circle inequality forces `s<53/200`, placing the entire stated family under
+the accepted ABID variation guard. All 36 original pair separators and all
+36 corner implications are checked. This adds **zero original cells and
+zero masks**; it classifies only the explicitly stated family.
+
 ### Preceding checkpoint: 207 CLOSED / 24 OPEN
 
 The [preceding complete assembly](A2_00100_C573_FIXED_CENTER_BOUND_CLOSURE.md) and its immutable

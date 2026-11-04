@@ -1,0 +1,41 @@
+{
+  "schema": "n9_explicit_two_free_aligned_boundary_family_publication_v1",
+  "date": "2026-11-04",
+  "input_commit": "3032a8585c1dd9719eee7c8bf94578b487342e8f",
+  "status": "PASS_EXPLICIT_FAMILY_AND_CONDITIONAL_GUARD_ARITHMETIC",
+  "scope": "Explicit aligned B/H control family with seven fixed physical centers; no whole-original classification.",
+  "hand_proof": "A2_00100_TWO_FREE_ALIGNED_BOUNDARY_FAMILY.md",
+  "hand_proof_sha256": "e103194c4016a0b092c239d384db18c3e828711efc491718e2d220663c1696b8",
+  "archive": "a2_00100_two_free_boundary_checkpoint.tar.gz",
+  "archive_bytes": 39714,
+  "archive_sha256": "5d648ff154318b3b0a601ab980678a6c51b12aecf1d652b28fb2afea8756860b",
+  "archived_members_verified": 17,
+  "full_gzip_stream_and_member_identity_verified": true,
+  "packet_manifest": "MANIFEST.json",
+  "packet_manifest_sha256": "ded1d2002ffa4b385be7c8e0949388351c9afecd1784958d64c6fb7713a465f8",
+  "independent_checker": "verify_all.py",
+  "independent_checker_sha256": "79fa3ce7ee0a448f7e09ae3c979d5a4ed9aa23c680c4453d359b12b764b48fca",
+  "root_fresh_replay": "a2_00100_two_free_boundary_root_replay.json",
+  "root_fresh_replay_sha256": "e69fe68d128b514fe444f29a746ffffa351fce67eaf755eec14fd9da0c5db213",
+  "frozen_inputs": 15,
+  "exact_rational_criterion_checks": 150,
+  "original_pair_witnesses": 36,
+  "original_corners": 36,
+  "exact_positive_cap_factor": "467/20000",
+  "caller_ancestor_replay_included": false,
+  "whole_original_classification_claimed": false,
+  "unchanged_current_register_sha256": "629451745a4423a36a8ee81b0803f75d5b56739f6fd14652250dbad887a2132b",
+  "current_original_ledger": {
+    "closed": 208,
+    "open": 23
+  },
+  "global_mask_ledger": {
+    "closed": 8,
+    "open": 24
+  },
+  "new_original_cells": 0,
+  "new_mask_closures": 0,
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false
+}
