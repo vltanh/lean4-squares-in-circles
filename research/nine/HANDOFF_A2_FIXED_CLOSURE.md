@@ -852,6 +852,30 @@ original cells, masks, positional roots or roadmap gates. The exact
 receipt, hand arguments, root review, independent bound review and
 reproduction commands are included. No Lean, Lake or CI was run.
 
+## C d402: fresh original state and complete OPEN continuation seed
+
+The [Cd402 checkpoint](computer_assisted/a2_00100_cd402_fresh_original_checkpoint_v1/README.md)
+starts directly from the registered `negative-d4021ade840b985c` path. It
+retains all nine original squares, all 36 corner and pair predicates, all
+five cones and the exact `001/00` marked bits. No C887 or Cb882 consequence
+is imported. Its initial static attachment reconstructs 46,584 rows and
+rejects twelve changed callers.
+
+The three-round whole-original bound proof checks 556 deductions and 948
+premise rows, including 64 four-product corner uses. Its continuation seed
+is a complete cover with one explicit OPEN leaf. The new complete-cover
+attachment passes exact four/eight/two-way OPEN fixtures and rejects twelve
+damaged domains or covers. Independent scope/source reviews preserve the
+unchanged physical row and rational arithmetic rules.
+
+A fresh isolated replay of both the whole-original bound and complete OPEN
+seed passes on 2,054 frozen inputs. The 40-member thin delta reuses the
+published C source packet; every mathematical source byte is unchanged and
+every input is rehashed at completion. The original remains OPEN, with zero
+original, mask, positional-root or roadmap credit. The hand arguments,
+source reviews, native controls, cold reports and reproduction commands are
+included. No Lean, Lake or CI was run.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

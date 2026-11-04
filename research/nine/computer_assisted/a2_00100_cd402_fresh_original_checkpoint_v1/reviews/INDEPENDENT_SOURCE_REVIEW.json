@@ -1,0 +1,70 @@
+{
+  "status": "PASS_CD402_COMPLETE_COVER_SCOPE_AND_SOURCE_REVIEW",
+  "original_id": "negative-d4021ade840b985c",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        2
+      ]
+    ]
+  ],
+  "mask": "001/00",
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/verify_cd402_whole_original_tree.py": "ab544aaf35a571e134ee01683fae4ebcf3be39cfdb7f5ea91f656d0e8c443eea",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/resume_cd402_whole_original_adaptive_tree.py": "19ce7da5ddc201e191036012503130521235bca5cdc9a7a0b4eeb17c643e2884",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/prepare_cd402_complete_cover_seed.py": "4ba2d1f8bbb20d76a1be786fef64196e4f594f56dc762afe29a66c90bef11ca8",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/CD402_CONTINUATION_DRIVER_SOURCE_BINDING.json": "5210a343a0bf01568cb82acb01a40c674db31fe10488a738eab31a17c1d20503",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/verify_cd402_original_bound.py": "e658d2aa3b464fd457e7bb3a9e11b5dd5c62b27de20f508f635a1e2ef22aff77",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/cd402_original_runtime.py": "4ddae80bf05087c9dd7205dfe92b684a7df70ad776dbd9b16099bba96d695e56",
+    "/workspace/scratch/f9f48fcfb253/d_work/ac_completed_round_angle_search_v3.py": "f9bf99e8c38673e67377c084613d0ceeffaf0c4d651b0f8923b63884b2ee5141",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/whole_original_complete_cover_seed/manifest.json": "98ceec9da017f1ec4df7177e8dc7b0fefb0e9e9faf0c52d51f0ce74a7326acc9",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/whole_original_complete_cover_seed/node_00000.json": "6040cf93f66e9a6571ef02e9edcd41c4a58c9be5adf5ecc7212d6696e19ad04b",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/OTHER_MASKS_WHOLE_ORIGINAL_BOUND3_EXACT_REPLAY.json": "0c7e71733df6f0532c1cde7437f02a983f9ba4a83e2765b33046b5778cfd3e23"
+  },
+  "explicit_source_transformation_reproduced": true,
+  "replacement_occurrences": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "seed_state_equals_fresh_exact_parent_final": true,
+  "parent_arithmetic_repeated_for_this_review": false,
+  "prior_fresh_parent_replay": {
+    "path": "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/OTHER_MASKS_WHOLE_ORIGINAL_BOUND3_EXACT_REPLAY.json",
+    "sha256": "0c7e71733df6f0532c1cde7437f02a983f9ba4a83e2765b33046b5778cfd3e23",
+    "deductions": 556,
+    "printed_rows_checked": 948
+  },
+  "complete_proxy4_sat8_angle2_traversal_reviewed": true,
+  "all_nine_originals_retained": true,
+  "physical_rows_and_arithmetic_unchanged": true,
+  "no_C887_or_Cb882_consequences": true,
+  "engine_object_explicitly_supplied_to_phase_callback": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "numerical_optimizer_called": false,
+  "full_tree_arithmetic_acceptance_pending": true
+}

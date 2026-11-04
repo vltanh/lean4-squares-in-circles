@@ -1,0 +1,65 @@
+{
+  "status": "PASS_CD402_PORTABLE_TRANSPORT_SOURCE_REVIEW",
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_publication/materialize_cd402_checkpoint.py": "4911741ed29faeec1d5e395837a6b07dbfec8e2fc71ed0ffc81c719ffc49a968",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_publication/replay_portable_cd402_checkpoint.py": "087a973267f9ab18373a6794573247f737d75917b921084764ce14f63f2ff8db",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_publication/build_cd402_checkpoint_delta.py": "128434889ffbe4a5dfc55f7eb1f3403681908f0adde4ac734c668a3a423eb0b2",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_publication/delta/DELTA_MANIFEST.json": "931f10ab56419549e6f4c8a1a04cc06e0a7a1b6a8e6b76ecd7b1a461716810c8",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_publication/delta/BINDINGS.json": "14a23239e069e3da349a3ded42505c0e50fed73a33c5919307d822f5fdf40a48",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_publication/delta/CD402_CHECKPOINT_PROOF.json": "2e9fb5b451700c24a8aa5f2013d7d0e7e717f7d819d5bdd76aa840415b8fd7d1",
+    "/tmp/c_height_portable_packet_v7_20261105/replay_portable_c_height_packet_v3.py": "d7d9b17da9091cb7920e5964618303c93ae2689a8528381091b35f3ee4c2cb28",
+    "/tmp/cd402_checkpoint_fresh_replay_20261104/PORTABLE_RECEIPT.json": "7dd4ff783f9d388ad3b92479bcaf2bc7e1f80649e469ea4b5c6e5046f2854096"
+  },
+  "delta_file_hashes_checked": 39,
+  "base_file_aliases_preserved": 2008,
+  "base_directory_aliases_preserved": 185,
+  "new_file_aliases": 34,
+  "all_actual_relative_paths_contained": true,
+  "unchanged_C_transport_sha256": "d7d9b17da9091cb7920e5964618303c93ae2689a8528381091b35f3ee4c2cb28",
+  "fresh_parent_cold_receipt_inspected": true,
+  "actual_Cd402_exact_reports": {
+    "bound": {
+      "path": "/tmp/cd402_checkpoint_fresh_replay_20261104/bound/WHOLE_ORIGINAL_BOUND_REPLAY.json",
+      "sha256": "1b74d1fdd7d8464b3fd55fd5a04f789ce2361e819112b450442e3ea51407358d",
+      "status": "PASS_CERTIFIED_CD402_WHOLE_ORIGINAL_STATE_OPEN"
+    },
+    "seed": {
+      "path": "/tmp/cd402_checkpoint_fresh_replay_20261104/seed/COMPLETE_OPEN_SEED_REPLAY.json",
+      "sha256": "3eceb1296537df01da89196ab11269da1907df2b970506f37a08bd7e232a3c35",
+      "status": "PASS_PARTIAL_WHOLE_ORIGINAL_CD402_COVER"
+    }
+  },
+  "legacy_C_child_receipt_labels_not_proof_premises": true,
+  "own_arithmetic_replay_performed": false,
+  "numerical_optimizer_called": false,
+  "delta_or_packet_mutated": false,
+  "original_id": "negative-d4021ade840b985c",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        2
+      ]
+    ]
+  ],
+  "original_status": "OPEN",
+  "new_original_cells": 0,
+  "new_masks": 0
+}
