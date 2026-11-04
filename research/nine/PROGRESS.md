@@ -1,31 +1,38 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **206/231 cells CLOSED, 25 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **207/231 cells CLOSED, 24 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 206/231 current-mask cells closed; 25 remain OPEN
+# n=9: 207/231 current-mask cells closed; 24 remain OPEN
 
-**Latest verified continuation: the complete B347 original-cell exclusion.**
-The same register now has **206 CLOSED / 25 OPEN**, with
-**153 additions beyond the first 53**. Remaining families:
-**A4, B10, C8, D3**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete C573 original-cell exclusion.**
+The same register now has **207 CLOSED / 24 OPEN**, with
+**154 additions beyond the first 53**. Remaining families:
+**A4, B10, C7, D3**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_B347_FIXED_CENTER_BOUND_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_C573_FIXED_CENTER_BOUND_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_b_347_bound_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_c_573_bound_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-`negative-3475db94338c355f` is completely excluded. Its sixteen closed
-I-quarter products use a complete H2-by-4 subcover only in I(2,3), giving
-23 final rectangles. Nine direct affine, four direct interval, seven
-affine-after-induction and three interval-after-induction terminals all
-pass. The proof checks 268 terminal rows and 3,516 local bound-premise
-rows; fourteen rounds establish 2,293 bounds. Two terminals give explicit
-positive deficits in the norm of the same original D unit frame. Every
-leaf uses the same replayed ancestor and exact grid. The fresh relocated
-root whole-cover replay passed with all 129 frozen input hashes unchanged.
+`negative-573078fc944ce553` is completely excluded by all sixteen closed
+I-quarter products. Seven direct affine, three direct interval, five
+affine-after-induction and one original-C-frame terminal all pass. Six
+bound rounds establish 1,987 exact necessary bounds using 1,814 premise
+rows. The twelve affine contradictions use 150 terminal rows and each
+exact reserve exceeds 1/256. The frame terminal gives inconsistent lower
+and upper bounds on the same original alpha_C, with positive gap
+3515704726141/281474976710656. Every leaf uses one replayed ancestor; the
+zero-round wrapper adds no hypothesis. The final relocated root replay
+checks the complete table and all 129 frozen source hashes.
 
 No whole mask, positional root or roadmap gate is newly closed.
+
+### Preceding checkpoint: 206 CLOSED / 25 OPEN
+
+The [preceding complete assembly](A2_00100_B347_FIXED_CENTER_BOUND_CLOSURE.md) and its immutable
+mathematical sources remain accepted. Their complete proofs are preserved
+with their original before/after accounting.
 
 ### Preceding checkpoint: 205 CLOSED / 26 OPEN
 
