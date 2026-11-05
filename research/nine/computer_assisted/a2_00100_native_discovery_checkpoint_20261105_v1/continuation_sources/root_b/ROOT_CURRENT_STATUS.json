@@ -1,0 +1,120 @@
+{
+  "updated": "2026-11-05T03:49:32.559413+00:00",
+  "ledger": "222/231 originals CLOSED;9OPEN;mask001/00OPEN",
+  "last_local_commit": "8d332a92",
+  "last_remote_commit": "763a02e3c3557f063b826b719b0347df217bedfc",
+  "published_partial_checkpoint": "computer_assisted/a2_00100_bf14_general_partial_checkpoint_v1",
+  "active": {
+    "f14": {
+      "session": 89919,
+      "directory": "f14_cavity_seventh"
+    },
+    "b7_main": {
+      "session": 74757,
+      "directory": "7c60_relative_difference_sixth",
+      "deferred_subtree": 260,
+      "rounds": 1,
+      "difference_rounds": 1,
+      "max_new_nodes": 384
+    },
+    "b7_conditional_260": {
+      "status": "first negative-y half candidate complete; positive half still OPEN",
+      "first_half_directory": "b7_parent260_difference_bounded_cont4",
+      "positive_half_session": 12514,
+      "positive_half_directory": "b7_positive_relative_cavity_cont3",
+      "rounds": 1,
+      "max_new_nodes": 160
+    },
+    "f14_conditional_209": {
+      "session": 46382,
+      "directory": "f14_future209_cavity"
+    }
+  },
+  "completed": {
+    "cold_f14_partial": "PASS_PORTABLE_OPEN_PROTOTYPE349nodes15OPEN;all732archive members verified;published0credit",
+    "difference_prefix": "B7_DIFFERENCE_CONDITIONAL_EXACT_REPLAY.json PASS23nodes5difference6anglecovers;fresh10node originalprefix;6OPEN at snapshot",
+    "forced_hi_trial": "Stoppedowned72646after23nodes15OPEN;frozen b7_parent260_hi_trial_frozen",
+    "f14_future_sweep": "Fiveclosedfutureleaves210,212,213,216,217;notgrafted;mainwillquicklydiscoveritself",
+    "adaptive_cone_scan": "No material violation on currenthardbranchpoints;notadopted"
+  },
+  "readiness": "verify_b_center_difference_tree.py handlesnewexactclosedcenter-differencecases;generalconecheckeralone doesnot. FutureB7portablebuildermustselectnewexactentry.",
+  "recovery": "Cheightbrowserdownloads returnedpaths butnotmaterialized;Cagent now independently rederivingall207intervals. No archive recoveryclaimed.",
+  "latest_local_commit": "6e6c5c62",
+  "latest_public_commit": "8d5824162975958c566a92642d9dc327669210c7",
+  "c887_starting_state_publication": {
+    "scope": "native integration proof, not standalone portable or original exclusion",
+    "archive_sha256": "010bc1b9a89711bbf06bc4ad0ea867d5e9663458bdc2f35d982b970cec3fa665",
+    "root_review": "C887_FRESH_START_PUBLICATION_REVIEW.json",
+    "native_exact_replay": "../c_family/C887_REJOINED_WHOLE_PARTIAL_REPLAY_fresh_root_report.json"
+  },
+  "difference_portable_prepared": [
+    "packaging/build_registered_b_difference_packet.py",
+    "packaging/replay_registered_b_difference_packet.py",
+    "../b_family/source/CENTER_DIFFERENCE_COVER_HAND_PROOF.md"
+  ],
+  "difference_portable_validation": "not yet exercised; whole-original native report required before builder",
+  "active_conditional_difference": {
+    "session": 96736,
+    "directory": "b7_parent260_difference_bounded_cont4",
+    "source": "../b_family/source/resume_b_center_difference_deferred_tree.py",
+    "rounds": 1,
+    "existing_rounds": 1,
+    "difference_rounds": 1,
+    "new_node_budget": 192,
+    "defer_nodes": [
+      2
+    ],
+    "previous_frozen": "b7_parent260_difference_zero_frozen_355",
+    "previous_nodes": 357,
+    "previous_session45634": "stopped Ctrl-C exit130 after hash-verified snapshot",
+    "status": "FINISHED OPEN;357nodes,1OPEN;complete first half; no fresh357-node arithmetic replay"
+  },
+  "bounded_old_cavity_comparison": {
+    "status": "stopped owned zero-round session66064 after91-node hash-checked freeze",
+    "snapshot": "b7_positive_zero_frozen_85",
+    "manifest_sha256": "a3153bdd93be3f143b625306f45f183aab07547c91821da4e2152c0ab575b283",
+    "new_continuation": "b7_positive_relative_cavity_cont3"
+  },
+  "relative_support_chord_probe": {
+    "new_family_directory": "../b_family/source/relative_support_chords",
+    "runtime": "../b_family/source/b_relative_support_chord_runtime.py",
+    "independent_adapter": "../b_family/source/verify_b_relative_support_chord_tree.py",
+    "native_prefix_report": "B7_RELATIVE_SUPPORT_PREFIX_EXACT_REPLAY.json",
+    "native_status": "PASS_PARTIAL_CONDITIONAL_DIFFERENCE_TREE",
+    "deductions": 105,
+    "new_rows": 10,
+    "original_credit": 0,
+    "main_searches_adopted": false,
+    "positive_half_status": "OPEN after2 rounds,255deductions,105s"
+  },
+  "f14_dg_screen": {
+    "directory": "f14_whole_dg_screen",
+    "scope": "all8DG cases over whole unchanged original F14",
+    "rounds_per_case": 1,
+    "max_depth": 1,
+    "new_original_credit": 0,
+    "session": 26390,
+    "status": "finished OPEN,9nodes4excluded4survivors;native exact PASS8.94s"
+  },
+  "f14_dg_hull_probe": {
+    "session": 18771,
+    "directory": "f14_whole_dg_hull_bound_probe",
+    "status": "finished OPEN",
+    "rounds": 2,
+    "deductions": 106,
+    "full_hull_exact_replay_pending": true,
+    "main_tree_adopted": false
+  },
+  "relative_support_portable_prepared": [
+    "packaging/build_registered_b_relative_support_packet.py",
+    "packaging/replay_registered_b_relative_support_packet.py"
+  ],
+  "relative_support_portable_validation": "Not yet exercised; full original native report required before builder",
+  "discovery_backup": {
+    "public_commit": "8d5824162975958c566a92642d9dc327669210c7",
+    "scope": "five native partial B covers; no arithmetic replay or new credit",
+    "archive_sha256": "3dd68842d378766c2f33ba566870f3a553b4ef9cbb02485d0a07fdb726f25797",
+    "restore_check": "219textparts,1618regularmembersPASS",
+    "github_text_part_retrieval_verified": true
+  }
+}

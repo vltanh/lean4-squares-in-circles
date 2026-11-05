@@ -1,0 +1,73 @@
+{
+  "files": {
+    "A_RELATIVE_SUPPORT_LOCAL_WEIGHTED_RECORD.json": {
+      "bytes": 347775,
+      "sha256": "8cc7531be9970beb4e7b53aee897983a4565a329087fe34798271b7a1f9ba2c2"
+    },
+    "A_RELATIVE_SUPPORT_LOCAL_WEIGHTED_REPLAY.json": {
+      "bytes": 1477,
+      "sha256": "bb8abf82ab50f57401aa8571013d8a14e9942e34935a42b9fc0209a09a6f1d35"
+    },
+    "README.md": {
+      "bytes": 1825,
+      "sha256": "861522e0583ccb58c7e64a14ef5be685c7233b94e40740a2ff82998befb0b98c"
+    },
+    "V9_RELATIVE_SUPPORT_ADOPTION_READY.json": {
+      "bytes": 4518,
+      "sha256": "906c1d07afced1b258aa36b45dd066927c17a19f5e92b212fd3a18c587089f25"
+    },
+    "assemble_conditional_a3_relative_H_cases.py": {
+      "bytes": 5142,
+      "sha256": "dfe04c47fd77205e07983d03830c3894f59d28aa7a5f92807b96677c0442f91a"
+    },
+    "check_A_relative_support_local_weighted.py": {
+      "bytes": 3562,
+      "sha256": "5b3d2851cea361c9d0e7a3652779b67fe072dad1ee94ae74622932fc5c7f5847"
+    },
+    "continue_A_batch_with_relative_rows.py": {
+      "bytes": 2690,
+      "sha256": "82ad11ecb5340ccf228e6b895d9bff6dc74d75b60128162d0b4783466490f050"
+    },
+    "probe_A_relative_support_weighted.py": {
+      "bytes": 2461,
+      "sha256": "6f5d8d8f2f2c5a54bee8cf2a9bb6f9bb01d82e0015633170dcccfba64f89bdbf"
+    },
+    "relative_support_chords_v1/INDEPENDENT_REVIEW.md": {
+      "bytes": 2321,
+      "sha256": "10b950d2ad1c22a26643999d1488e272a3534996a65597fcc0ce4902dbafb901"
+    },
+    "relative_support_chords_v1/INPUT_MANIFEST.json": {
+      "bytes": 2207,
+      "sha256": "99e61c62c216225774d143071250078a3078826ae7227271f7d3fc98d68ddf02"
+    },
+    "relative_support_chords_v1/OWNER_FREE_RELATIVE_SUPPORT_HAND_PROOF.md": {
+      "bytes": 6298,
+      "sha256": "134b349719bdee98c07153c5c1c3598c85b3ca9d010472590abee73c97083e55"
+    },
+    "relative_support_chords_v1/README.md": {
+      "bytes": 2902,
+      "sha256": "4507df6b27faa8faeb5bf20dd94bc62d12897a554e82747dc1cdc2e8cb475bc6"
+    },
+    "relative_support_chords_v1/independent_relative_support_chords.py": {
+      "bytes": 2723,
+      "sha256": "84e65653bbc394bac004aeb5d4d8ec7de707c0a2c8cc1eae219cbd8814aeec91"
+    },
+    "relative_support_chords_v1/owner_free_relative_support_snapshot.py": {
+      "bytes": 5367,
+      "sha256": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788"
+    },
+    "relative_support_chords_v1/physical_relative_support_chords.py": {
+      "bytes": 3175,
+      "sha256": "67e7a1726b7c1d6e9fad5eb887cd4737cb517bfea534129b7a4b6453e98c575c"
+    },
+    "run_conditional_global_corner_relative_v9.py": {
+      "bytes": 7884,
+      "sha256": "f774e27b6ef0168318884a0a2ac0c65db8bc1e9390b7a951db187522936615cc"
+    },
+    "verify_conditional_a3_relative_tree.py": {
+      "bytes": 2332,
+      "sha256": "21a8b85212e71ad3d437d17e217da4c038dfc78251adadef5d8d62a11e2497a7"
+    }
+  },
+  "self_excluded": "FILE_SHA256.json"
+}

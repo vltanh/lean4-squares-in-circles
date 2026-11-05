@@ -1,0 +1,91 @@
+{
+  "status": "READY_FOR_NEXT_ORDINARY_CONTINUATION",
+  "created_at": "2026-11-05T03:42:41.903737+00:00",
+  "files": [
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/run_conditional_global_corner_relative_v9.py",
+      "sha256": "f774e27b6ef0168318884a0a2ac0c65db8bc1e9390b7a951db187522936615cc",
+      "bytes": 7884
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/verify_conditional_a3_relative_tree.py",
+      "sha256": "21a8b85212e71ad3d437d17e217da4c038dfc78251adadef5d8d62a11e2497a7",
+      "bytes": 2332
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/assemble_conditional_a3_relative_H_cases.py",
+      "sha256": "dfe04c47fd77205e07983d03830c3894f59d28aa7a5f92807b96677c0442f91a",
+      "bytes": 5142
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/probe_A_relative_support_weighted.py",
+      "sha256": "6f5d8d8f2f2c5a54bee8cf2a9bb6f9bb01d82e0015633170dcccfba64f89bdbf",
+      "bytes": 2461
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/check_A_relative_support_local_weighted.py",
+      "sha256": "5b3d2851cea361c9d0e7a3652779b67fe072dad1ee94ae74622932fc5c7f5847",
+      "bytes": 3562
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/A_RELATIVE_SUPPORT_LOCAL_WEIGHTED_RECORD.json",
+      "sha256": "8cc7531be9970beb4e7b53aee897983a4565a329087fe34798271b7a1f9ba2c2",
+      "bytes": 347775
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/A_RELATIVE_SUPPORT_LOCAL_WEIGHTED_REPLAY.json",
+      "sha256": "bb8abf82ab50f57401aa8571013d8a14e9942e34935a42b9fc0209a09a6f1d35",
+      "bytes": 1477
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/relative_support_chords_v1/INPUT_MANIFEST.json",
+      "sha256": "99e61c62c216225774d143071250078a3078826ae7227271f7d3fc98d68ddf02",
+      "bytes": 2207
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/relative_support_chords_v1/physical_relative_support_chords.py",
+      "sha256": "67e7a1726b7c1d6e9fad5eb887cd4737cb517bfea534129b7a4b6453e98c575c",
+      "bytes": 3175,
+      "published_commit": "ace346cde0c32b16060a858a76f16146f4d7149e"
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/relative_support_chords_v1/independent_relative_support_chords.py",
+      "sha256": "84e65653bbc394bac004aeb5d4d8ec7de707c0a2c8cc1eae219cbd8814aeec91",
+      "bytes": 2723,
+      "published_commit": "ace346cde0c32b16060a858a76f16146f4d7149e"
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/relative_support_chords_v1/owner_free_relative_support_snapshot.py",
+      "sha256": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788",
+      "bytes": 5367,
+      "published_commit": "ace346cde0c32b16060a858a76f16146f4d7149e"
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/relative_support_chords_v1/OWNER_FREE_RELATIVE_SUPPORT_HAND_PROOF.md",
+      "sha256": "134b349719bdee98c07153c5c1c3598c85b3ca9d010472590abee73c97083e55",
+      "bytes": 6298,
+      "published_commit": "ace346cde0c32b16060a858a76f16146f4d7149e"
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/relative_support_chords_v1/INDEPENDENT_REVIEW.md",
+      "sha256": "10b950d2ad1c22a26643999d1488e272a3534996a65597fcc0ce4902dbafb901",
+      "bytes": 2321,
+      "published_commit": "ace346cde0c32b16060a858a76f16146f4d7149e"
+    },
+    {
+      "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/relative_support_chords_v1/README.md",
+      "sha256": "4507df6b27faa8faeb5bf20dd94bc62d12897a554e82747dc1cdc2e8cb475bc6",
+      "bytes": 2902,
+      "published_commit": "ace346cde0c32b16060a858a76f16146f4d7149e"
+    }
+  ],
+  "published_geometry_commit": "ace346cde0c32b16060a858a76f16146f4d7149e",
+  "current_searches_changed": false,
+  "branching_policy_block_text_identical_to_v8": true,
+  "local_new_family_literals": 4,
+  "local_positive_multiplier_occurrences": 45,
+  "local_deductions_exact_sum_checked": 27,
+  "local_check_conditional_on_saved_intervals_and_old_rows": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

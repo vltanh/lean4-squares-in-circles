@@ -1,0 +1,11 @@
+{
+  "status": "PASS_PUBLISHED_NATIVE_ARCHIVE_AND_PARTS_HASHES",
+  "archive_sha256": "c576adff963a7caaf9e681e326b6158f3996315f7b5b7e392f5c9318cb529d0f",
+  "archive_bytes": 74344064,
+  "parts_checked": 142,
+  "regular_members_checked": 1129,
+  "mathematical_replay": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 22.331354350004403
+}

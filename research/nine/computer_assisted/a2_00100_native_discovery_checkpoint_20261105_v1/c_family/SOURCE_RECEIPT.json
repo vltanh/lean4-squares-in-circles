@@ -1,0 +1,76 @@
+{
+  "status": "PASS_NATIVE_DISCOVERY_BACKUP_HASHES",
+  "packet": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/publication/c_discovery_checkpoint_20261105_v1",
+  "archive": {
+    "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/publication/c_discovery_checkpoint_20261105_v1.tar.xz",
+    "bytes": 74344064,
+    "sha256": "c576adff963a7caaf9e681e326b6158f3996315f7b5b7e392f5c9318cb529d0f"
+  },
+  "files": 1128,
+  "processed_nodes": 678,
+  "covers": [
+    {
+      "family": "cd402",
+      "scope": "whole_original_partial",
+      "original_id": "negative-d4021ade840b985c",
+      "source_manifest": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/cd402_dfs_cached_cavity/MANIFEST.json",
+      "original_manifest_sha256": "89c07d08db61de489d3cb7f03c4e28cac80f7efb52c569fea181eabd3020bed0",
+      "native_manifest": "covers/cd402/MANIFEST.json",
+      "verbatim_manifest": "covers/cd402/ORIGINAL_MANIFEST.json",
+      "counts": {
+        "nodes": 467,
+        "candidate_closed_leaves": 330,
+        "pending": 28,
+        "stopped": 0,
+        "structural_coverage_only": true
+      },
+      "whole_candidate_closed": false,
+      "conditional_candidate_closed": false,
+      "observed_elapsed_seconds": 4960.232325387005
+    },
+    {
+      "family": "cb882_conditional",
+      "scope": "conditional_node61_partial",
+      "original_id": "negative-b882d8ade0cf9ea0",
+      "source_manifest": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/cb882_node61_cached_dfs/MANIFEST.json",
+      "original_manifest_sha256": "b5de684e58c178779ef8ac92cf03b5559223445df0a6b5137df5c31b249222da",
+      "native_manifest": "covers/cb882_conditional/MANIFEST.json",
+      "verbatim_manifest": "covers/cb882_conditional/ORIGINAL_MANIFEST.json",
+      "counts": {
+        "nodes": 89,
+        "candidate_closed_leaves": 48,
+        "pending": 16,
+        "stopped": 0,
+        "structural_coverage_only": true
+      },
+      "whole_candidate_closed": false,
+      "conditional_candidate_closed": false,
+      "observed_elapsed_seconds": 5015.1296869590005
+    },
+    {
+      "family": "c887",
+      "scope": "whole_original_partial",
+      "original_id": "negative-887236b78100baf3",
+      "source_manifest": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_general_continued/MANIFEST.json",
+      "original_manifest_sha256": "e901557dd26312801b71499bff619ce1fcc8a394ed7949750f730841ef40ef60",
+      "native_manifest": "covers/c887/MANIFEST.json",
+      "verbatim_manifest": "covers/c887/ORIGINAL_MANIFEST.json",
+      "counts": {
+        "nodes": 122,
+        "candidate_closed_leaves": 76,
+        "pending": 25,
+        "stopped": 0,
+        "structural_coverage_only": true
+      },
+      "whole_candidate_closed": false,
+      "conditional_candidate_closed": false,
+      "observed_elapsed_seconds": 3265.774757551
+    }
+  ],
+  "payload_bytes": 711163379,
+  "race_retries": [],
+  "searches_interrupted": false,
+  "arithmetic_replay_performed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

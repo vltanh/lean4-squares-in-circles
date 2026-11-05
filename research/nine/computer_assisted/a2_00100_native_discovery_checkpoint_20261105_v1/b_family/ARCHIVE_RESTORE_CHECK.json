@@ -1,0 +1,12 @@
+{
+  "status": "PASS_HASH_VERIFIED_NATIVE_DISCOVERY_ARCHIVE",
+  "archive_sha256": "9e1a8615509353715c1a694f58a52f6047999a7f6c376adff6a75b4891f801e4",
+  "archive_bytes": 52332516,
+  "parts_checked": 100,
+  "regular_members_checked": 1351,
+  "mathematical_replay": false,
+  "standalone_portable_proof": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 10.53505993699946
+}
