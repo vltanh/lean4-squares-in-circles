@@ -2,7 +2,7 @@
   "schema": "exact_actual_edge_three_angle_complete_cover_v1",
   "root_upper": [
     "29/70",
-    "17/72",
+    "5/18",
     "29/70"
   ],
   "coefficient": "701/1000",
@@ -21,7 +21,7 @@
       "selected_owner": 0,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.005885302001843229,
+      "seconds": 0.0012452209994080476,
       "file": "spmm_o01_k0.json",
       "leaves": 1,
       "open": 0
@@ -37,11 +37,11 @@
         1
       ],
       "selected_owner": 1,
-      "nodes": 5,
-      "maxdepth": 2,
-      "seconds": 0.04301905899774283,
+      "nodes": 9,
+      "maxdepth": 3,
+      "seconds": 0.03482558399991831,
       "file": "spmm_o01_k1.json",
-      "leaves": 3,
+      "leaves": 5,
       "open": 0
     },
     {
@@ -57,7 +57,7 @@
       "selected_owner": 0,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.001436663995264098,
+      "seconds": 0.0016664670038153417,
       "file": "spmm_o02_k0.json",
       "leaves": 1,
       "open": 0
@@ -75,7 +75,7 @@
       "selected_owner": 2,
       "nodes": 5,
       "maxdepth": 2,
-      "seconds": 0.0517161789975944,
+      "seconds": 0.01888451899867505,
       "file": "spmm_o02_k2.json",
       "leaves": 3,
       "open": 0
@@ -91,11 +91,11 @@
         1
       ],
       "selected_owner": 1,
-      "nodes": 5,
-      "maxdepth": 2,
-      "seconds": 0.037950370999169536,
+      "nodes": 7,
+      "maxdepth": 3,
+      "seconds": 0.03026274299918441,
       "file": "spmm_o11_k1.json",
-      "leaves": 3,
+      "leaves": 4,
       "open": 0
     },
     {
@@ -111,7 +111,7 @@
       "selected_owner": 1,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.001356806002149824,
+      "seconds": 0.0013135420012986287,
       "file": "spmm_o12_k1.json",
       "leaves": 1,
       "open": 0
@@ -129,7 +129,7 @@
       "selected_owner": 2,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.005182957997021731,
+      "seconds": 0.0010772009991342202,
       "file": "spmm_o12_k2.json",
       "leaves": 1,
       "open": 0
@@ -147,7 +147,7 @@
       "selected_owner": 0,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.0010893679936998524,
+      "seconds": 0.0010599259985610843,
       "file": "spmp_o01_k0.json",
       "leaves": 1,
       "open": 0
@@ -165,7 +165,7 @@
       "selected_owner": 1,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.0015379050018964335,
+      "seconds": 0.0010810770036187023,
       "file": "spmp_o01_k1.json",
       "leaves": 1,
       "open": 0
@@ -183,7 +183,7 @@
       "selected_owner": 0,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.0010931330034509301,
+      "seconds": 0.001071603001037147,
       "file": "spmp_o02_k0.json",
       "leaves": 1,
       "open": 0
@@ -201,7 +201,7 @@
       "selected_owner": 2,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.0010771800007205456,
+      "seconds": 0.0011951470005442388,
       "file": "spmp_o02_k2.json",
       "leaves": 1,
       "open": 0
@@ -219,7 +219,7 @@
       "selected_owner": 1,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.01624068400269607,
+      "seconds": 0.0010606159994495101,
       "file": "spmp_o11_k1.json",
       "leaves": 1,
       "open": 0
@@ -237,7 +237,7 @@
       "selected_owner": 1,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.0011513499994180165,
+      "seconds": 0.0010659340041456744,
       "file": "spmp_o12_k1.json",
       "leaves": 1,
       "open": 0
@@ -255,7 +255,7 @@
       "selected_owner": 2,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.0011242399996262975,
+      "seconds": 0.0013759349967585877,
       "file": "spmp_o12_k2.json",
       "leaves": 1,
       "open": 0
@@ -273,7 +273,7 @@
       "selected_owner": 0,
       "nodes": 3,
       "maxdepth": 1,
-      "seconds": 0.02141644200310111,
+      "seconds": 0.013542788998165634,
       "file": "sppm_o01_k0.json",
       "leaves": 2,
       "open": 0
@@ -291,7 +291,7 @@
       "selected_owner": 1,
       "nodes": 3,
       "maxdepth": 1,
-      "seconds": 0.017019190003338736,
+      "seconds": 0.009215347999997903,
       "file": "sppm_o01_k1.json",
       "leaves": 2,
       "open": 0
@@ -307,11 +307,11 @@
         2
       ],
       "selected_owner": 0,
-      "nodes": 13,
-      "maxdepth": 6,
-      "seconds": 0.13223773399658967,
+      "nodes": 27,
+      "maxdepth": 7,
+      "seconds": 0.11560290999477729,
       "file": "sppm_o02_k0.json",
-      "leaves": 7,
+      "leaves": 14,
       "open": 0
     },
     {
@@ -327,7 +327,7 @@
       "selected_owner": 2,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.0054084240036900155,
+      "seconds": 0.0011588729976210743,
       "file": "sppm_o02_k2.json",
       "leaves": 1,
       "open": 0
@@ -345,7 +345,7 @@
       "selected_owner": 1,
       "nodes": 15,
       "maxdepth": 7,
-      "seconds": 0.14566557000216562,
+      "seconds": 0.06329067399929045,
       "file": "sppm_o11_k1.json",
       "leaves": 8,
       "open": 0
@@ -361,11 +361,11 @@
         2
       ],
       "selected_owner": 1,
-      "nodes": 23,
+      "nodes": 31,
       "maxdepth": 7,
-      "seconds": 0.285297652000736,
+      "seconds": 0.18439219200081425,
       "file": "sppm_o12_k1.json",
-      "leaves": 12,
+      "leaves": 16,
       "open": 0
     },
     {
@@ -381,7 +381,7 @@
       "selected_owner": 2,
       "nodes": 1,
       "maxdepth": 0,
-      "seconds": 0.001494650001404807,
+      "seconds": 0.0014633250029874034,
       "file": "sppm_o12_k2.json",
       "leaves": 1,
       "open": 0
@@ -397,11 +397,11 @@
         1
       ],
       "selected_owner": 0,
-      "nodes": 19,
-      "maxdepth": 8,
-      "seconds": 0.20325409600627609,
+      "nodes": 27,
+      "maxdepth": 9,
+      "seconds": 0.13155441400158452,
       "file": "sppp_o01_k0.json",
-      "leaves": 10,
+      "leaves": 14,
       "open": 0
     },
     {
@@ -415,11 +415,11 @@
         1
       ],
       "selected_owner": 1,
-      "nodes": 19,
-      "maxdepth": 8,
-      "seconds": 0.19633671599876834,
+      "nodes": 27,
+      "maxdepth": 9,
+      "seconds": 0.1177979120038799,
       "file": "sppp_o01_k1.json",
-      "leaves": 10,
+      "leaves": 14,
       "open": 0
     },
     {
@@ -433,11 +433,11 @@
         2
       ],
       "selected_owner": 0,
-      "nodes": 17,
-      "maxdepth": 7,
-      "seconds": 0.15233682899997802,
+      "nodes": 29,
+      "maxdepth": 8,
+      "seconds": 0.16347412000322947,
       "file": "sppp_o02_k0.json",
-      "leaves": 9,
+      "leaves": 15,
       "open": 0
     },
     {
@@ -451,11 +451,11 @@
         2
       ],
       "selected_owner": 2,
-      "nodes": 13,
-      "maxdepth": 6,
-      "seconds": 0.17472804299904965,
+      "nodes": 17,
+      "maxdepth": 8,
+      "seconds": 0.09008564599935198,
       "file": "sppp_o02_k2.json",
-      "leaves": 7,
+      "leaves": 9,
       "open": 0
     },
     {
@@ -469,11 +469,11 @@
         1
       ],
       "selected_owner": 1,
-      "nodes": 23,
+      "nodes": 27,
       "maxdepth": 10,
-      "seconds": 0.2694789050001418,
+      "seconds": 0.17447469499893486,
       "file": "sppp_o11_k1.json",
-      "leaves": 12,
+      "leaves": 14,
       "open": 0
     },
     {
@@ -487,11 +487,11 @@
         2
       ],
       "selected_owner": 1,
-      "nodes": 29,
+      "nodes": 37,
       "maxdepth": 10,
-      "seconds": 0.1483814640014316,
+      "seconds": 0.19011219800449908,
       "file": "sppp_o12_k1.json",
-      "leaves": 15,
+      "leaves": 19,
       "open": 0
     },
     {
@@ -507,13 +507,13 @@
       "selected_owner": 2,
       "nodes": 21,
       "maxdepth": 10,
-      "seconds": 0.09543047099577961,
+      "seconds": 0.1453147930005798,
       "file": "sppp_o12_k2.json",
       "leaves": 11,
       "open": 0
     }
   ],
-  "leaves": 127,
+  "leaves": 163,
   "open": 0,
   "independent_replay_pending": true,
   "no_original_or_mask_credit": true

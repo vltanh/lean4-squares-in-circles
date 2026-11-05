@@ -6,7 +6,7 @@ from itertools import product
 from math import comb
 from pathlib import Path
 import json,time,argparse
-DIM=3;DEG=4;N=125;S=(F(29,70),F(17,72),F(29,70));LAMBDA=F(701,1000);SCALE=736000
+DIM=3;DEG=4;N=125;S=(F(29,70),F(5,18),F(29,70));LAMBDA=F(701,1000);SCALE=736000
 ZERO=(0,0,0);INDICES=list(product(range(5),repeat=3))
 def const(x):return {ZERO:int(x)}
 def var(i,c=1,power=1):
@@ -84,12 +84,12 @@ def run(signs,owners,k,budget):
   addresses,path=stack.pop();nodes+=1;maximum=max(maximum,len(path));proof=test(ps,addresses)
   if proof:leaves.append(dict(path=path,**proof));continue
   if len(path)>=24:unresolved.append(path);continue
-  axis=max(range(3),key=lambda i:S[i]/(1<<addresses[i][1]));n,d=addresses[axis]
+  axis=max(range(3),key=lambda i:F(1,1<<addresses[i][1]));n,d=addresses[axis]
   for side in (1,0):
    child=list(addresses);child[axis]=(2*n+side,d+1);stack.append((child,path+[[axis,side]]))
   if nodes%500==0:print('PROGRESS',signs,owners,k,nodes,len(leaves),len(stack),maximum,round(time.monotonic()-start,2),flush=True)
  return dict(schema='exact_actual_edge_three_angle_bernstein_cover_v1',signs=signs,owners=owners,selected_owner=k,
-             root_upper=list(map(str,S)),coefficient=str(LAMBDA),target_variation='7/10',scale=SCALE,
+             root_upper=[str(v)for v in S],coefficient=str(LAMBDA),target_variation='7/10',scale=SCALE,
              nodes=nodes,maxdepth=maximum,leaves=leaves,frontier=unresolved+[path for addr,path in stack],seconds=time.monotonic()-start)
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('output',type=Path);ap.add_argument('--budget',type=int,default=10000)
@@ -107,7 +107,7 @@ def main():
     summary={q:r[q]for q in('signs','owners','selected_owner','nodes','maxdepth','seconds')}
     summary.update(file=name,leaves=len(r['leaves']),open=len(r['frontier']));summaries.append(summary);print(json.dumps(summary),flush=True)
     if args.pilot:return
- manifest=dict(schema='exact_actual_edge_three_angle_complete_cover_v1',root_upper=list(map(str,S)),coefficient=str(LAMBDA),
+ manifest=dict(schema='exact_actual_edge_three_angle_complete_cover_v1',root_upper=[str(v)for v in S],coefficient=str(LAMBDA),
                target_variation='7/10',domains=summaries,leaves=sum(s['leaves']for s in summaries),open=sum(s['open']for s in summaries),
                independent_replay_pending=True,no_original_or_mask_credit=True)
  (args.output/'MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n')
