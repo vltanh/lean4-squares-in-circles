@@ -4,6 +4,23 @@
 
 # Current A.2 handoff: 224/231 current-mask cells closed; 7 OPEN
 
+## B16a: verified 75-node partial cover
+
+Resume the [freshly exact-replayed native checkpoint](computer_assisted/a2_00100_b16a_75_native_checkpoint_20261105/README.md)
+for the merged I21/I22 rectangle: 75 nodes, 34 excluded terminal domains and
+16 OPEN terminal domains. Inherited regions 1, 5 and 13 are now complete.
+Region 5's complete 20-node extension excludes all 16 terminal descendants;
+region 18 retains every unfinished slope alternative. The other OPEN domains
+are unchanged or explicitly refined. These are internal domains, not original
+cells, and their counts are not an effort or completion percentage.
+
+The packet preserves the full native input map, raw exact replay and verified
+archive. Its transitive published ancestry is still required; no standalone
+cold replay or independent manuscript review is claimed. Later H/I discovery
+is separate from this immutable checkpoint. **Zero original-cell or mask
+credit:** 224/231 and 8/32 remain CLOSED. Continue the entire merged rectangle,
+then assemble with all 14 established quarters. No Lean, Lake or CI.
+
 ## B7: seven complete components in a portable 1,011-domain cover
 
 The [latest B7 checkpoint](computer_assisted/a2_00100_b7_completed_components1011_checkpoint_v1/README.md)

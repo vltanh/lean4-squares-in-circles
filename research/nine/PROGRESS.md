@@ -4,6 +4,23 @@
 
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **224/231 cells CLOSED, 7 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## B16a: three more inherited regions, whole original still OPEN
+
+The [75-node native checkpoint](computer_assisted/a2_00100_b16a_75_native_checkpoint_20261105/README.md)
+has passed fresh independent exact arithmetic replay: 34 excluded terminal
+domains and 16 OPEN terminal domains in the same merged I21/I22 rectangle.
+Inherited regions 1, 5 and 13 are complete; region 5 retains all 16 terminal
+descendants in its 20-node extension. Region 18 has an unfinished slope cover.
+All other unresolved alternatives remain explicit. The changed frontier is
+a subdivision, not a fraction of original-cell completion.
+
+The 346 native input paths, 337 unique archived blobs, raw replay and archive
+hashes are preserved. This checkpoint has no standalone cold replay or new
+independent manuscript review claim. **Zero new originals or masks:**
+224/231 original cells and 8/32 masks remain CLOSED. B16a still needs the
+entire merged rectangle excluded before assembly with its 14 proved quarters.
+No Lean, Lake, compilation or CI was run.
+
 ## B7: seven complete components in a portable 1,011-domain cover
 
 The [latest B7 checkpoint](computer_assisted/a2_00100_b7_completed_components1011_checkpoint_v1/README.md)
