@@ -1,2 +1,0 @@
-PASS: exact SMT seven-square SAT strict 000/01, nine-square equality and four strict-corner negatives.
-No nine-square UNSAT proof.

@@ -1,8 +1,0 @@
-negative-887236b78100baf3 PASS ROUND 0 139
-negative-887236b78100baf3 PASS ROUND 1 78
-negative-887236b78100baf3 PASS ROUND 2 54
-negative-887236b78100baf3 PASS ROUND 3 49
-negative-887236b78100baf3 PASS ROUND 4 44
-{"id": "negative-887236b78100baf3", "status": "PASS_CERTIFIED_PARENT_STATE_OPEN", "whole_original_parent_closed": false, "bound_induction_branch_nodes": 0, "prior_coordinate_deductions": 29, "new_deductions": 364, "rounds": 5, "printed_rows_checked": 976, "terminal_rows": 0, "reserve": "None", "center_cover": null, "unsupported_rules_accepted": false, "certificate_sha256": "d7ad68039cefde5580f63db10002a6dcb436381ee20ac04e9955fb5f127a84f0", "reviewer_sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460", "independent_rules_sha256": "a156f54bf7600a8a743e54083c80b4f7de6faac276774d2e9fd6ff156b6ed84e", "verified_source_bindings": 10, "seconds": 6.547678707996965, "whole_mask_closed": false, "human_or_kernel_verification": false}
-{"id": "negative-887236b78100baf3", "status": "PASS_CERTIFIED_PARENT_STATE_OPEN", "new_exact_deductions": 0, "printed_rows": 0, "terminal_rows": 0, "reserve": "None", "new_original_cells": 0, "whole_mask_closed": false, "certificate_sha256": "9a5c4af1e23964ee661e4e1ae427265a29303b2a6f6bd5a65c5ece14177040a3", "reviewer_sha256": "1bcb12ed95463868eda1e9078650a4dec1139a0bd0ae46dbba8406cf49b7cc60", "independent_rule_sha256": "bfa5cc5448b21e78ebbe46cd79f846fe71a47b8851d2d56cf5d97c21758bb812", "lean_lake_ci_run": false, "seconds": 6.594883952995588}
-{"status": "PASS_FRESH_C887_ORIGINAL_PREFIX", "original_id": "negative-887236b78100baf3", "seconds": 7.151833158997761}

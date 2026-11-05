@@ -1,7 +1,0 @@
-negative-16a2fc93c8d133f0 PASS ROUND 0 144
-negative-16a2fc93c8d133f0 PASS ROUND 1 35
-negative-16a2fc93c8d133f0 PASS ROUND 2 14
-negative-16a2fc93c8d133f0 PASS ROUND 3 3
-negative-16a2fc93c8d133f0 PASS ROUND 4 3
-{"id": "negative-16a2fc93c8d133f0", "status": "PASS_CERTIFIED_PARENT_STATE_OPEN", "whole_original_parent_closed": false, "bound_induction_branch_nodes": 0, "prior_coordinate_deductions": 30, "new_deductions": 199, "rounds": 5, "printed_rows_checked": 582, "terminal_rows": 0, "reserve": "None", "center_cover": null, "unsupported_rules_accepted": false, "certificate_sha256": "69ddd2dcc5383c3259187588a890ddadb4a6545e8bdcc11e653bdfb8bb6b3886", "reviewer_sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460", "independent_rules_sha256": "a156f54bf7600a8a743e54083c80b4f7de6faac276774d2e9fd6ff156b6ed84e", "verified_source_bindings": 10, "seconds": 4.046231283000452, "whole_mask_closed": false, "human_or_kernel_verification": false}
-{"status": "PASS_COMPLETE_RESTRICTED_PHYSICAL_TREE", "additional_relative_support_chord_rows_checked": 45, "additional_central_nine_rows_checked": 0, "seconds": 121.74073872600002}

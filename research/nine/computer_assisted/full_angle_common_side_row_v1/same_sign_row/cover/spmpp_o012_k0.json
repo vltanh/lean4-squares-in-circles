@@ -1,1 +1,0 @@
-{"schema":"four_row_chiral_polynomial_discovery_v1","root_upper":"5/12","variation_certified_candidate":"131/1000","signs":[1,-1,1,1],"owners":[0,1,2],"owner_for_max":0,"nodes":1,"maxdepth":0,"seconds":0.015805497999281215,"leaves":[{"path":[],"weights":[4096,-4096,-3387,0],"weight_power":12,"float_bernstein_min":0.0,"float_weighted_min":0.0006007441767940047}],"frontier":[]}

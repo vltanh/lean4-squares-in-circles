@@ -1,1 +1,0 @@
-{"status": "PASS_SCOPED_NONAUTHOR_REVIEW", "structure": {"nodes": 57, "unions": {"proxy": 12, "angle": 4}, "excluded": 31, "open": 10}, "terminal_kinds": {"accepted_center_interval_terminal": 12, "proved_frame_contradiction": 8, "positive_exact_reserve": 11}, "printed_rows_checked": 3061, "seconds": 23.99976333199993}

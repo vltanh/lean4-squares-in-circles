@@ -1,8 +1,0 @@
-{
-  "published_directory": "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2",
-  "archive_sha256": "60c5fef27b403c0312665b4d1e361f671d4fff0cc30aeda92a12de8c76f9ec2f",
-  "native_frozen_cb882_manifest_sha256": "de9647b32a2a138d24177e19ce4a9b414cdb143c07617b2eeb2f0f688043f25e",
-  "prior_fresh_whole_original_report_sha256": "dc941efb298cb1f1668575e5eaf686145620f6b66a204cfb3fee4eae5511bc27",
-  "new_full_joined_original_replay_included": false,
-  "dependency_catalog": "accepted_prior/published_c_frontiers/PUBLISHED_DEPENDENCY_ARCHIVE_CATALOG.json"
-}

@@ -1,6 +1,6 @@
 # Formalization of "Squares in Circles" in Lean 4
 
-> **Draft n=9 hand-proof research:** [Current progress and remaining proof gates](research/nine/PROGRESS.md) · [Organized research files](research/nine/ORGANIZATION.md). The unrestricted nine-square theorem is not yet proved.
+> **Nine-square pen-and-paper research:** [Gated roadmap](research/nine/PROOF_PLAN.md) · [Proof outline and sources](research/nine/README.md). The unrestricted nine-square theorem remains open; Lean work is deferred.
 
 [![Lean build](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml)
 [![Doc links](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml)

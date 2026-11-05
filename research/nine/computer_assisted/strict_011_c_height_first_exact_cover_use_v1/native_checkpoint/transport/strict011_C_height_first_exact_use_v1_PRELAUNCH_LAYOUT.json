@@ -1,8 +1,0 @@
-{
-  "earlier_error": "FileNotFoundError opening the absent .runs log parent; frozen command was not started",
-  "earlier_transport_exit": 1,
-  "frozen_argv_unchanged": true,
-  "log_parent_created": "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs",
-  "source_binding_sha256": "7dfa1999689e52dbf68ed9a15c24f953339f8c3a8848046841db1c2e2ff0a7d3",
-  "status": "RECORDED_PRELAUNCH_LOG_PARENT_CREATION"
-}

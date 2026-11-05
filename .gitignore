@@ -1,17 +1,2 @@
 .lake/
 __pycache__/
-
-# Disposable proof searches and replay extractions.
-/research/nine/.runs/
-
-# Disposable n=9 search files (never commit numerical exploration output).
-/research/nine/.scratch/
-/research/nine/**/.runs/
-/research/nine/**/.scratch/
-/research/nine/**/intermediate_runs/
-/research/nine/**/tmp/
-/research/nine/**/*.log
-/research/nine/**/*.tmp
-/research/nine/**/*.partial
-.pytest_cache/
-*.pyc

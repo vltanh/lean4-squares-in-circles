@@ -1,8 +1,0 @@
-{
-  "status": "DURABLE_STOP_TO_SPEND_REMAINING_BUDGET_ON_ALREADY_INSTALLED_PAIRED_BRANCH91",
-  "native_calls": 899,
-  "remaining": 240,
-  "nodes": 137,
-  "all_node_hashes_match": true,
-  "retained_whole_original": true
-}

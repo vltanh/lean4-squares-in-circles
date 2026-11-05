@@ -1,8 +1,0 @@
-{
-  "status": "PASS_FOUR_PRODUCT_CORNER_ROOT_PHYSICAL_AND_CODE_REVIEW",
-  "source_binding_sha256": "5fcef62cb21b38dcd42ed3c2bc1e913ff5f9125093eae4be557d92c0a56c2da1",
-  "physical_review_sha256": "79d925b18245e88bef3f35c3262c5e0f3403a3c5d07f1d63553c0b7e827a87f7",
-  "fresh_relocated_replay_sha256": "a03686271483f60f1630e0d29130d2f3e9eddd5eb01c32795c980dee35e2bd06",
-  "new_original_cells": 0,
-  "new_masks": 0
-}

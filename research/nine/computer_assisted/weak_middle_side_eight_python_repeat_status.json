@@ -1,6 +1,0 @@
-{
-  "status": "OPTIONAL_REPEAT_STOPPED",
-  "scope": "The supplemental full80-bit Python replay was stopped after a separate complete48-bit exact C++ replay passed all297270leaves and independent formula/parity review found no gap. No full Python repeat is claimed.",
-  "accepted_complete_replay": "agent_roots/weak_outer_00/weak_middle_eight_replay/weak_middle_side_eight_low_right_cpp_replay.json",
-  "numerical_searches": "All own floating optimizers have completed; only low-floor cover production remains active."
-}

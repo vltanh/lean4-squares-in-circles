@@ -1,6 +1,0 @@
-{"node": 1, "event": "EXACT_CONDITIONAL_EXCLUSION", "reserve": "1/2"}
-{"node": 0, "event": "VALIDATED_CORNER_PHASE_ROWS", "rows": 4, "total_rows": 2337, "next_phase": 1}
-{"node": 0, "event": "VALIDATED_CORNER_PHASE_ROWS", "rows": 4, "total_rows": 2341, "next_phase": 2}
-{"node": 0, "event": "LP_NO_CONCLUSION", "status": {"optimal": false, "status": 1, "message": "explicit no-solver preparation fixture"}}
-{"status": "PASS_EXACT_CHECKPOINT_CORNER_ACTUAL_USE_NOT_OBSERVED", "root_id": "full-strict-01100-representative-root-v1", "mask": "011/00", "radius_mode": "strict", "nodes": 1, "excluded_leaves": 0, "open_leaves": 1, "actual_LP_backend_used": false, "new_positive_corner_weight_uses": 0, "actual_positive_corner_weight_gate_passed": false, "conditional_terminals": 0, "fresh_scalar_replayed_in_cold_gate": false, "whole_mask_proved_by_exact_tree": false, "automatic_mask_credit": 0, "exact_report_sha256": "b4324b67c0327761fba853e8194db49a08f574f2d124d373b38b8b15f79660ee", "manifest_sha256": "6536a8bc9f7f832836403d84c5b4fd7f00d2902802fc8418739b5ddf14d85001", "driver_sha256": "2a5edd64bb7e924cf2c0ad134cdae587f5bf23a01a64a72ccd2fdb2a33ee3f19", "seconds": 20.673255520996463}
-{"status": "PASS_PREPARED_STRENGTHENED_DISCOVERY_CONTROLS_NO_SOLVER", "phase_new_rows": 8, "report_sha256": "1455555099ed95ab32fa5eee25bc31a24e0da2485c195789939aa0ffdd0c3756"}

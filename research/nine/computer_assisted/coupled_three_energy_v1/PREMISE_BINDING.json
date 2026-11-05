@@ -1,7 +1,0 @@
-{
-  "premise": "research/nine/THREE_SQUARE_CENTER_ENERGY_HAND_PROOF.md",
-  "sha256": "4eb92ea792b899c180b038b35af6025fa8daaa62b8a48e281d9a3a0b8bfde01d",
-  "claim": "For any three retained interior-disjoint original unit squares, the sum of their three squared center distances is at least 7/2.",
-  "new_original_cells": 0,
-  "new_masks": 0
-}

@@ -1,8 +1,0 @@
-{
-  "base_directory": "a2_00100_bf14_general_partial_checkpoint_v1",
-  "base_archive_sha256": "773d06284bc4a96815ee948c714bae563a661c93c29098d6b2a07c03345ea5de",
-  "base_packet_directory": "f14_general_partial_packet_v1",
-  "prior_directory": "b16a_I32_complete_H_checkpoint",
-  "prior_archive_sha256": "c6e8dfc170a3d88366a6cd6f0955302ca5f664c626790ca91387f84c42502cb6",
-  "interpretation": "NATIVE_INPUT_MAP maps every original runtime path to either immutable published prerequisite bytes or new archived bytes. Native arithmetic was replayed in full; no fresh relocated replay is claimed."
-}

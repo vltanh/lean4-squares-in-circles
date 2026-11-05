@@ -1,4 +1,0 @@
-/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/fresh_strict011_discovery_singlethread_v2.py:123: OptimizeWarning: Unrecognized options detected: {'threads': 1}. These will be passed to HiGHS verbatim.
-  result = self.linprog(np.r_[np.zeros(self.n),1.0],A_ub=self.phase_matrix,b_ub=self.rhs,
-{"node": 1, "event": "EXACT_CONDITIONAL_EXCLUSION", "reserve": "1/2"}
-{"status": "PASS_FRESH_EXACT_DISCOVERY_CHECKPOINT", "root_id": "full-strict-01100-representative-root-v1", "mode": "AB_NEGATIVE_PROXY_PILOT", "nodes": 5, "excluded_leaves": 1, "open_leaves": 3, "whole_mask_proved_by_exact_tree": false, "automatic_mask_credit": 0, "exact_report_sha256": "81ffe31f37cdd26b4b8ac957381c0438e66f0019c1cdabe81d50595ab68e8545", "manifest_sha256": "94dacdafea838579c1bf81b74b64685a2729679549173ef47ee67a3310e84a78", "seconds": 4.332836970999779}

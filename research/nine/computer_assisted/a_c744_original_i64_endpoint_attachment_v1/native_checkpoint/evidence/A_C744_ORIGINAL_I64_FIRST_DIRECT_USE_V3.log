@@ -1,1 +1,0 @@
-{"status": "PASS_FIRST_EXACT_ORIGINAL_WIDE_I64_DIRECT_BOUND_USE", "weighted_endpoint_occurrences": 268, "ordinary_exact_audit": {"status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN", "rounds": 1, "deductions": 268, "printed_rows_checked": 268, "reserve": null, "numerical_discovery_fields_used": false, "whole_original_credit": 0, "whole_mask_credit": 0}, "seconds": 16.75955393500044}

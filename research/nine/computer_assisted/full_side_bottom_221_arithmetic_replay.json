@@ -1,8 +1,0 @@
-{
-  "result": "PASS",
-  "positive_reserves": {
-    "two_lower_central_original_disk_overlap": "1366867/1729800",
-    "positive_half_central_width": "1/60",
-    "replacement_floor_above_one_tenth": "407/24000"
-  }
-}

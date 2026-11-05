@@ -1,9 +1,0 @@
-{
-  "status": "PASS",
-  "scope": "Exact scalar arithmetic for a continuous hand proof; zero whole-mask closures",
-  "total_variation_bound": "11/30",
-  "polynomial_lower_reserve": "2602608088/269637417",
-  "first_branch_derivative_reserve": "13/660",
-  "radical_squared_reserve": 1126846,
-  "source_sha256": "b3f92e6aa0fb4a8a7cf262128f48cb667268b5a900ab2a2cedc662bfb3851605"
-}

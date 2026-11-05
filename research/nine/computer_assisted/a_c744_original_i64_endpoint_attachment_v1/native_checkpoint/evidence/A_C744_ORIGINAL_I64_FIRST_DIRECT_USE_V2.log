@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/first_direct_use.py", line 74, in <module>
-    assert len(sys.argv)==2;run(sys.argv[1])
-                            ^^^^^^^^^^^^^^^^
-  File "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/first_direct_use.py", line 43, in run
-    assert initial['choices']==[]
-           ^^^^^^^^^^^^^^^^^^^^^^
-AssertionError
