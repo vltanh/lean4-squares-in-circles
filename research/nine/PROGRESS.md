@@ -31,6 +31,13 @@ compilation or CI was run.
 
 ## B16a: three more inherited regions, whole original still OPEN
 
+The [complete region-206 proof](computer_assisted/a2_00100_b16a_node206_native_checkpoint_20261105/PUBLICATION.md)
+joins all eight physical A/H cases, including both difficult regions 236
+and 242. Fresh exact replay and independent review accept its 33 nodes,
+twelve closed slope unions and twenty excluded terminals with zero OPEN.
+It retains its complete conditional attachment and a 321-path native bundle.
+Region 188 and the original remain OPEN; original and mask counts are unchanged.
+
 The [complete conditional node-236 proof](computer_assisted/a2_00100_b16a_node236_native_checkpoint_20261105/PUBLICATION.md)
 adds an independently replayed and reviewed eleven-node component: five
 closed slope unions exclude all six leaves. Its complete conditional

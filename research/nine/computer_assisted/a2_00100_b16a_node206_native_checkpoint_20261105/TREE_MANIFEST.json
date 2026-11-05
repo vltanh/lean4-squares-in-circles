@@ -1,0 +1,355 @@
+{
+  "schema": "B_proxy_first_complete_physical_tree_discovery_v1",
+  "completed": true,
+  "status": "CANDIDATE_COVER_CLOSED",
+  "parent": {
+    "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/node206_ancestry_prefix.json",
+    "sha256": "3097fb439ceeee33ad2a314dc3f38b6d24d90a1fc34d4db5fe635e190522d2f0"
+  },
+  "sources": {
+    "/workspace/scratch/f9f48fcfb253/b_work/b_arc_runtime.py": "b09dc9534061c85fb0fd7dda6f679d1d39966574c358006ea2946acfc8115d8d",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_sat_engine.py": "38d1162c40cd6494579f7793c6b10a54432ce999994f86b6726d2ca9e8022bc4",
+    "/workspace/scratch/f9f48fcfb253/b_work/coupled_three_square_energy.py": "693f5bb65c3d2b9930cf4f0d705ed7987ea0465f1da53b1c029289ae03903d2b",
+    "/workspace/scratch/f9f48fcfb253/b_work/tightened_sat_products.py": "d9a44a0929989c9c1926e73b10d33e05c7662f09ef7a6c8f4000dd73300e557a",
+    "/workspace/scratch/f9f48fcfb253/b_work/shared_frame_triangle_products.py": "da7fa7d71a166a8807798651c58923b7df836ce18283201ed825f64e925eb691",
+    "/workspace/scratch/f9f48fcfb253/b_work/relative_frame_arc_rows.py": "fbcfdfa3d253fdd109613ada16b42b8f46ef94426801ed3d78720fdbeb7a3f3a",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_good_cap_runtime.py": "eb26fa6dba80db5b77b092c5a4248a00ad390724726eb3a5d137cd9eb62940df",
+    "/workspace/scratch/f9f48fcfb253/b_work/oriented_good_cap_rows_snapshot.py": "33e7f0250f94dbcec113ac60677d7f2e0e9e513c7347f30dc808bfd6ea147737",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_owner_free_runtime.py": "aa5ac54204ca44430f4f87aaae0457c0127f451b2e2e83623366a3221b1ae225",
+    "/workspace/scratch/f9f48fcfb253/b_work/owner_free_relative_support_snapshot.py": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_frame_square_runtime.py": "fbd782d2e2b11c2a8e816ebc8882a597c4eb519cae543f0ae5d1fa55d9d04033",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_pair_frame_squares.py": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_frame_square_separation.py": "fdd4bbf142be1cff2c27688b5fd79950e0f105d09dad34a453dcbae50116b39c",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_gram_square_runtime.py": "b0e8e647626b2d0e9698efb3c456d4433661a1fcf90b6ec9c4180c7f769a3516",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_projection_squares.py": "0a33acc6990ccc5f35439f0f641de987a08466b0e53a3bfa38de1dd2c2c8901d",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_projection_square_separation.py": "6f8ede5eb0853b2615bf27b099017293bf909094364938736f00bf7184b04f87",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_all_row_guards_runtime.py": "133d12bae935d46994cb436d6bd4ff148702baa4db8a2a211bcf0611536a410d",
+    "/workspace/scratch/f9f48fcfb253/b_work/sharp_terminal/shared_strict_row_terminal.py": "43a74c66c7c0b91da76e6577ce511e6ae8de7bda9ab6e0adbf81a1cc2b013d43",
+    "/workspace/scratch/f9f48fcfb253/b_work/full_angle_common_side_four_row_guard_snapshot.py": "81895c0397f7e7d0a7a411413b5a8fe02e2782569f6e880d349f2eff9c032e2e",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_lean_objective_unit_runtime.py": "eb0b38b0d1d9756e579a60245db4d912faaf4588f80da000d2187ce4677a7c71",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_corner_disk_rows.py": "633c549239f1893c37c382e1e6aac2eb54f36feb7332390e26f9bccceac286ba",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_corner_disk_separation.py": "3d02c220cda478f7e58f4fa5a9f009f8f14febd06440df9b24ba6ae7d089cc29",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_unit_corner_rows.py": "cdfe8b1f48f6a84bb929f40de7e05cae35134acbd84cc1b4c95fda84d517d575",
+    "/workspace/scratch/f9f48fcfb253/b_work/fast_unit_corner_separation.py": "d395533750f8f3b2949874d61cd609bc01925861565c9a7b20dcc2d221eac5e5",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_lean_complete_guards_runtime.py": "304a2176f20999b4755708f0e96506b5373cf3b29bf557eec51e952e3c978c83",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/tree/full_angle_ab_extra_guard.py": "f19b10ea2e415d3c8c3a60a4f362239de03b5936ad97388cb74e8dbe67e7dc85",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/full_angle_common_side_row_v1/full_angle_common_side_four_row_guard.py": "81895c0397f7e7d0a7a411413b5a8fe02e2782569f6e880d349f2eff9c032e2e",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/tree/opposite_abid_row_guard.py": "a1a5cf009d24a1b18e41a2aff258bfa91987ebaf225308cef32212cee9ed0514",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/c887/c887_whole_eight_checkpoint_package/opposite_tilt_theorem/opposite_tilt_four_row_guard.py": "3d1a74e8108f9eb02e431e2e25f9f24aa7bffd55aac8f3a956d2f54a11886c0d",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/tree/FULL_ANGLE_AB_EXTRA_PREMISE_BINDINGS.json": "021495e5adfb0e7451edbf88f3d8e4ab78d22200051923945ccf575a79f4d77a",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/tree/OPPOSITE_ABID_PREMISE_BINDINGS.json": "f03bf03f9ef8941c93c3999f8076cb7e4a4b7eb66e9b00c0de289c6f7c5cb78d",
+    "/workspace/scratch/f9f48fcfb253/b_work/make_fresh_b_original_frontier.py": "38a227569ccc844698a5917f1835032ddba4f4fc425e06814013aee93c9c9935",
+    "/workspace/scratch/f9f48fcfb253/b_work/reconstruct_b_published_prefix_frontier_v1.py": "d208c5c1a697d6545b49be3b2c5db4ea8d247f2cc33efd1efadf3c77df54db82",
+    "/workspace/scratch/f9f48fcfb253/b_work/independent_physical_sat_replay.py": "1d069c90f289dce136e41afeb5d564ec7016ac06f58eeb733ca7552801b6fafc",
+    "/workspace/scratch/f9f48fcfb253/b_work/independent_physical_proxy_cover.py": "3b46b8a966c712e23894ae4cd7964355730f2bfe3c58a04871ade9d35ddf1277",
+    "/workspace/scratch/f9f48fcfb253/b_work/verify_b_mixed_tree.py": "2fcfc2df5ed488e20b01f755033d1469d11ed3f32cbc53a8c5a53e1b50276b4e",
+    "/workspace/scratch/f9f48fcfb253/b_work/verify_b_four_corner_trees.py": "ac94d17f365d12f64c941bc5faeaa32d7a8ddcc53ead19e7cb2342bbdf332b91",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_policy/unpacked/b_angle_policy_checkpoint/certificates/b16a_after_round_two/PREFIX.json": "504aed4c632540d76d1a9942beafae33fbec3b22e3cd206d4841abd58c799b62",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_policy/unpacked/b_angle_policy_checkpoint/certificates/b16a_after_round_two/manifest.json": "bf02d8cc0032f1ad5630985d95fc95d20033f6b51d7fa27024c4e22d2e496117",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_policy/unpacked/b_angle_policy_checkpoint/certificates/b16a_after_round_two/node_0000.json": "29be1ca64d5944f9e680a9d10195e9b6499c4d142b2eaa870d0e5da427c00a73",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_policy/unpacked/b_angle_policy_checkpoint/certificates/b16a_after_round_two/node_0001.json": "73d92ce1a376dd72160d2a5a6ae7c9f124e2fbca4783bd8f0f82b420a7372314",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_policy/unpacked/b_angle_policy_checkpoint/certificates/b16a_after_round_two/node_0002.json": "1f635b515ec18d28281c8001063217739e1a6b2d255ff8bd0e5d37271aee5290",
+    "/workspace/scratch/f9f48fcfb253/d_work/B16_RESTORED45_LEAF_INTERVAL_SCREEN.json": "e9301b6b8ca119da1724c24e00e35e6e030cfda7b071ee7aa3f5fcb638730790",
+    "/workspace/scratch/f9f48fcfb253/d_work/prepare_b16_interval_continuation_v1.py": "5a71c0da0cb42c97d70dd1e31ce336c73d6db1dd2608d1d875c45c82f8e8a611",
+    "/workspace/scratch/f9f48fcfb253/d_work/check_b16_restored_leaf_intervals_v1.py": "3ef8d0ee7e7d286b205b8fb07970619de553f394489487a39b26b86786762cf3",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_lean_four_corner_runtime.py": "7f8abf87220bf5d0f17fa3f10f7637e05b6e6e5d00e2fef4144b8edaaeabf6d9",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_unit_four_corner_rows.py": "87b1807d71442d558fd6eeaaed9b065d953cc6ca58908079e72b745cb2e227ac",
+    "/workspace/scratch/f9f48fcfb253/b_work/fast_unit_four_corner_separation.py": "bf82ed79b7aaa4ad3ddcdd7d7d387e344d242e7557238b2ebc17936703293b8a",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_four_complete_guards_runtime.py": "d94308b1a38078f34b1e399be6ad9ef975913e4bc16066fb4ca3afe894dafa41",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_accepted_center_disk_runtime_v1.py": "8ffea381e4c9d9713344d81d4e7e6df15ffefe39cb2eb29469b16684720b78ca",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/BINDING.json": "8fb0b5dda2d0bb892236dac5825bec3c8824d4ba6f1440aee967c9b5aa1e1a82",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/physical_center_disk_rows.py": "3b32ff2f02e4681b5ef6b9359420b173f092a96093708c9d2c3fe982948681d8",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/independent_physical_center_disk_rows.py": "9fafd523e0154fcb8aedb7ecf2f36aa6213a77c84ff619ae12cd5612fc1b2acc",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/physical_center_disk_separation.py": "536ee2e0bca8512a4a9ccce8e759ec446f957dcc8749b7a8b8a5537601d6e02b",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/UNIVERSAL_CENTER_DISK_HAND_PROOF.md": "cd4cbeb8e38b139cb3289c3b9ce572537b5b115079452b0454467c4598478491",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/CENTER_DISK_ROOT_WEIGHTED_USE_REVIEW.json": "a76a3fa1f4e6d3c9f9f53c35c2f0d61367d8093cf425cc2505090fbfb9b34221",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/UNIVERSAL_CENTER_DISK_ROOT_PHYSICAL_REVIEW.json": "0663b66ed3e5d1a897fe833d91b83c06d82b407820fb98c4b1b5a33fe904ced9",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/CENTER_DISK_29B_ROOT_FRESH_CONTROLS.json": "e3f842bc4a345acf22052c7b84799a18f57983e221d666db53ab2a0907f0c3ac",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/ACCEPTED_EXTERNAL_CENTER_FIRST_USE_FRESH_REPLAY.json": "df9206690dd860a097093b0c7d86e26a8b6c0215ac5d2c9cfe2b3049ff451696",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/ACCEPTED_PREMISE_BINDINGS.json": "57a0c2002d725f1c0ae4c5a5abac865ffaf16f79d913f32cc5d8c1ee0048532b",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_center_exact_moment_runtime_v1.py": "e5d4a8af92af70607d643f5b81fe78a7cb6710377c2ac0fe33c64433fd09761d",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/BINDING.json": "903a18152fd47b0b0f38a7306711fb2db0abd7d992ea2d341ecbf7aa6173b7e4",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/DISCOVERY_BENCHMARK.json": "24cec7916eb93b8658da6258063e2df27334064c83a086ea291e37bcae5ce294",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/EXACT_LITERAL_PARITY.json": "2a2d3196d236d3dca8a712a428bf31773b0cd779f102a20bfa3a13bfba03bf3a",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/PARITY_INPUTS.json": "ad222e7281ce937dfa4bae5aa53a378c8f7085b0fa1ea928f937c3e196b79cac",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/README.md": "ab1aa256ce4226f13a69a53d9e813aa8cb7e09af09834f543adc20be0bfdfa16",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/check_parity.py": "9b28643767d2b446d71639595792483f8df56031fde4aa8f4e3e12b456b4b3a6",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/fast_exact_area_moments.py": "9afb26cad3032731902679f67a3ff166d44ba5d2a5684cf31f832da767edd071",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/reference_square_area_moment_rows.py": "d4d4b7a9bda2595693ea10e15821eedfb5681b9f1be32381179b20512d2700d1",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/ROOT_REVIEW.json": "738c23ff9531fab0fb8a89d42079ea7e67d915124cf9bbed5340cbe8e845a614",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/MOMENT_PARITY_FRESH_REPORT.json": "997ef7420354c04a82396bcdf7b8359e14dc8eb2c1f8266d175de8d457a62948",
+    "/workspace/scratch/f9f48fcfb253/b_work/resume_b_center_exact_moment_atomic_tree_v1.py": "ab428e2fd19cb0645b9f609c52a183bfdf3d77ec619e9b3990f9e12be91f8545",
+    "/workspace/scratch/f9f48fcfb253/b_work/atomic_json_checkpoint_snapshot.py": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_five_proxy_corner_split.py": "ac0f6161c114a88b4d89895f55d397f51222ea8f67ac44bcb50758c561640042",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_physical_preflight.py": "8e582a0ff140946d2a1c55d92ede5e4e7a160abf439c9347b9fc1aad75ce6391",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_completed_round_angle_search_explicit.py": "8dcdb664fb6fc1dd29e1d8d771c3c4f90b56f6b9d1175bd375b340a8b90967f4",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16_moment_capped64_20261105/PREVIOUS_COMPLETE_MANIFEST.json": "941243cf54bde2070916a29c95c1a2bdba7b5c5e8651ec690c1f482788c210db",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16_broad_phase_20261105/PREVIOUS_COMPLETE_MANIFEST.json": "5e2affad87fa512c56d5c6cc7a7527845727601ee3823be357cdab535c5f524c",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/proof_resume_20261105/hi_cover.py": "515233de7943d657763ee8b7ff13830c6ed0f91bd3ce9d221dfd05f62c093d02",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16_hi_cover_v2_20261105/PREVIOUS_COMPLETE_MANIFEST.json": "70ecc3432ebd9606af902fcb03c9ebafe9123a5b01ed2a5ab3d248c28ff83210",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/bounded_driver.py": "6feabe6040beca368a3ce06ebf603f11c03be872e9b8e50205d771d0ac75d295",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/hi_bounds12/PREVIOUS_COMPLETE_MANIFEST.json": "0a6cba31b7b94b40267fe0a2fa0b295acaa3b345602ddcd79eee17700f5f13b7",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/adaptive_sat_v1.py": "0f99a422314ed98c0d07e125942222cef0c2e544acd3129c9fde9666a16a28f9",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/adaptive_sat192/PREVIOUS_COMPLETE_MANIFEST.json": "9889703ac06f40fd58b173944aeae249c6bd93b8520729cdfed7dfe84536f565",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_geometry/package_tree.py": "11e6bfbc3b96019f2a821d8f53ffda89c5080ff5818d1cc22592cd6a226342ec",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_geometry/source_manifest_snapshot.json": "0a33b8c35e839a93ab534c858ab7d43b8dbb51d9fc9aa9917ef4bd07fa5100da",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_geometry/source_0236.json": "e57a38ef886af1f6667da5a65ab9279e6f1e7abcc133005ad663a1600293b94b",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_geometry/screen_g.py": "086412523c067664663b95bf15c3d39d0575608671961a8c2673ba3b8f6f4a6c",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_geometry/refine_angles.py": "1b700b11095a83481f98fc7475d09ed364ca34cfca0b21d9d1874696e8d7e3e4",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/refine_conditional_angles_v1.py": "e7e676d846e7acc2914e338b244df72c2ba03366d59f3605326afb1e4c1eeefe",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/node242_angles/source_node.json": "f2ba50c9e0b46a4f4400d18709c43182ba5826c622b5819544366c8ebb04d192",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/package_complete206.py": "cc27458e15331721c20f68e92dd214d650c7f9160b4e0114d902a013c2a9af21",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/node206_source_manifest_snapshot.json": "de48f93541623782509781811ab2ea57953aa8f90bd42f176184a3e0bf3db59d"
+  },
+  "accepted_geometric_sources": {
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/b_replay_context.py": "d3e3b75543b5d1a918ffcb165b55e6f72953fca06c83a944928325a312f550d8",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/37860e07b58a12ed_altitude_capacity_v2.py": "37860e07b58a12eda6b64f26645d8d1bb0873b01c8751e99b98c0a7ab0ee94cf",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/5ddcbcb0b9cc5548_point_disk_rows.py": "5ddcbcb0b9cc55480e6db86e0ba78860dc89245d9fd50ddfcf512f75b69639bc",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/4a4147260a8a209f_sharp_strip_rows.py": "4a4147260a8a209f5831e55df6990dda4a566bc6d55b52488fe6077540368542",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/d355d9cf651909a1_frame_perspective_rows.py": "d355d9cf651909a159bdf6b7b657160fb1b9744c3d3caf20d1c88f07327e4418",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/b1aadbae8111d539_support_height_rows.py": "b1aadbae8111d5395b864b06dc97d59eab8bc8e86e85c6972cea6ab0e7463383",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/283e4294298b2ff4_directional_support_rows.py": "283e4294298b2ff4f3458addb6c5479f02dcbb816bb15beb8d6f6fdd8c5b9be7",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/746cd3c373d142a0_planar_four_center_rows.py": "746cd3c373d142a0d603e2d6c0d7b7e114e5b64feb891c0bb1c7f737729e43e0",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/d4d4b7a9bda25956_square_area_moment_rows.py": "d4d4b7a9bda2595693ea10e15821eedfb5681b9f1be32381179b20512d2700d1",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/712f594cfd4ec93f_b_three_square_energy_rows.py": "712f594cfd4ec93f57d5c75c4f768592d1a70063fa2573959bfce4b674495547",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/9d7fc3680ad1b8bb_review_guarded_frame_bounds_independent.py": "9d7fc3680ad1b8bb1035d74deb9ade8501e3ef9989b37a019323f66a92a710e3",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/a625f0c0c4aa40e5_b_active_highs_checked_warning_discovery.py": "a625f0c0c4aa40e51deb662e60a733b2c5ccd738c199ffe5f6487e3a3418114b"
+  },
+  "nodes": [
+    {
+      "index": 0,
+      "file": "node_0000.json",
+      "sha256": "8c92b3c5bcd08872bf039066d8731e3eb421faa099a49fe3b4196f0d59ef72e4",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 0
+    },
+    {
+      "index": 1,
+      "file": "node_0001.json",
+      "sha256": "6f8e263481e319b5561a826e7ae2e0081a86153e6853b0581af9111532e03373",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 1
+    },
+    {
+      "index": 2,
+      "file": "node_0002.json",
+      "sha256": "4d0dfc3dcdacd1e02f24151f7136f65e8b8fdb1d7c67501d4c5db7d7d700a97c",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 1
+    },
+    {
+      "index": 3,
+      "file": "node_0003.json",
+      "sha256": "7c73beeafcf756c493e29b549e4585cf2ae8832f7f91f87fb37c7e12814a8eba",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 2
+    },
+    {
+      "index": 4,
+      "file": "node_0004.json",
+      "sha256": "bda29a56944be0355515d7333d19d41bdc3d9d06bf2f9de77d2fd6e88ecdb309",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 3
+    },
+    {
+      "index": 5,
+      "file": "node_0005.json",
+      "sha256": "40850c289a9e75eb3c628f4c3879d9e94f403471542070674162da7f62f11a62",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 6,
+      "file": "node_0006.json",
+      "sha256": "a5619492e8c162774b58e753732eb7f6133d48ad8b1d1637a95b59b4b41f68d6",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 7,
+      "file": "node_0007.json",
+      "sha256": "bc3849423047e2fba0eb8637ecd3ccb0e6fba39a98e9055d872481c8eec14102",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 3
+    },
+    {
+      "index": 8,
+      "file": "node_0008.json",
+      "sha256": "8b0a1882d6f3714d8fe5c8b5d130135dea2553a876c11c329bd95e40428f8ebe",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 9,
+      "file": "node_0009.json",
+      "sha256": "9f03cc1db7a4fa6986b9708c3af2d871e630720b1c81b170795159e54c1a6aaf",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 10,
+      "file": "node_0010.json",
+      "sha256": "7d89f900605960c80e21455bafae92b39464e60110fcb5561a16be51b1c4916e",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 5
+    },
+    {
+      "index": 11,
+      "file": "node_0011.json",
+      "sha256": "bce7569555d2ae69742c8ceba6191d2f8af320c6360f5160fb56fd95d129eccc",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 5
+    },
+    {
+      "index": 12,
+      "file": "node_0012.json",
+      "sha256": "b744c284ce07c5a69158e20f93b4a958e5333fc909afa22ffdb04a6f1529d3ff",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 2
+    },
+    {
+      "index": 13,
+      "file": "node_0013.json",
+      "sha256": "f736ae4470c77738d2f09e7190f22d710b583061e3a18efeb5901eeaa75875b2",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 1
+    },
+    {
+      "index": 14,
+      "file": "node_0014.json",
+      "sha256": "68a291b66c9dfc17eea6b64629741c9201f21441c4bedc791b24784f34f3bfbf",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 1
+    },
+    {
+      "index": 15,
+      "file": "node_0015.json",
+      "sha256": "5bf0a246a688c45925f630590c35a3cfb7f83e8002155dcbcbffca8e97080d26",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 1
+    },
+    {
+      "index": 16,
+      "file": "node_0016.json",
+      "sha256": "12b7761c9c970b835609a418ba11d8604b7086c59b8b9791524cf24c9c1ebfcf",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 1
+    },
+    {
+      "index": 17,
+      "file": "node_0017.json",
+      "sha256": "5d3eb7e78429bb82ff6af32b20a8de4cb7162cd7db3e5496e50556703cc6248d",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 1
+    },
+    {
+      "index": 18,
+      "file": "node_0018.json",
+      "sha256": "b3cc5bb9ab2385c4c81be7fe5793f94ccc3075eb5e883e890071fc38312d5c21",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 1
+    },
+    {
+      "index": 19,
+      "file": "node_0019.json",
+      "sha256": "658a31cfbecd8e1e6749a04d1501a5d6343feac24c0fc9ec9ebd1552348178bd",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 2
+    },
+    {
+      "index": 20,
+      "file": "node_0020.json",
+      "sha256": "8136c27d9969aaf8d4b48937905cdd583506c24273e6f286a8f20c14cf592762",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 3
+    },
+    {
+      "index": 21,
+      "file": "node_0021.json",
+      "sha256": "67ba730a92df80a5c9405f4a50bed27dc83c32b3ac2c596fd4abc0abd0bf57ca",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 22,
+      "file": "node_0022.json",
+      "sha256": "c177d6abeadfbe0881a915ea5ceaac83690a91c98029270d7459ceb0e5de16ec",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 23,
+      "file": "node_0023.json",
+      "sha256": "96d2cdf7b7152fd7d052cc961db81ed12df87c6e2b46a93ec5ab32b7b2fd7fad",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 3
+    },
+    {
+      "index": 24,
+      "file": "node_0024.json",
+      "sha256": "aefa02dd663ed413e8884380df15e8a90554cce2b7c4afdab7df5190e51a47c7",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 25,
+      "file": "node_0025.json",
+      "sha256": "b0d0463bf758134f4d836d1e547cdcf1a442bb196f82a76ee90ba80a4757e44e",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 5
+    },
+    {
+      "index": 26,
+      "file": "node_0026.json",
+      "sha256": "a133540d2628017a34ce2f9dc997a27c7b76b6fca0bb3d809e99fca309965514",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 5
+    },
+    {
+      "index": 27,
+      "file": "node_0027.json",
+      "sha256": "58e86a4440f97dcbcfe081bd0648fd033955335317e07a69c4d6fe8c43aaf92e",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 28,
+      "file": "node_0028.json",
+      "sha256": "5309c3710f1774077bcdc7e3e098bcc92e99e7e9785c00d4f6143ac2f6614d5b",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 2
+    },
+    {
+      "index": 29,
+      "file": "node_0029.json",
+      "sha256": "92b1191414ab72d960db7c443337373d5e49eb1c11731b2ec2833c4b0c905dd4",
+      "status": "CANDIDATE_COVER_CLOSED",
+      "depth": 3
+    },
+    {
+      "index": 30,
+      "file": "node_0030.json",
+      "sha256": "42bea3fbb3b0efc1ce821b6a5d348c09011e328848f4022466c06d956a611a68",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 31,
+      "file": "node_0031.json",
+      "sha256": "5ce9c361a20a99da6afde4cdd0ac8951790978ab491630debd4eff2868c9a41b",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 4
+    },
+    {
+      "index": 32,
+      "file": "node_0032.json",
+      "sha256": "9265b9b7adfeb0de59361b3d40c4af905df04d82cabccd9ee10ed7ac3225d8e2",
+      "status": "CANDIDATE_CLOSED",
+      "depth": 3
+    }
+  ],
+  "original_cells_closed": 0,
+  "masks_closed": 0,
+  "acceptance_status": "INDEPENDENT_REPLAY_PENDING",
+  "scope": "Complete conditional original B16 node206; whole188 and original remain OPEN"
+}
