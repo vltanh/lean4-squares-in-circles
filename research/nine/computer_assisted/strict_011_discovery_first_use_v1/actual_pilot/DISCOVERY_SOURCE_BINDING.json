@@ -1,0 +1,19 @@
+{
+  "source_manifest": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_rebuilt_v3/strict_011_representative_cover_v1/fresh_controls/fresh_root_open/manifest.json",
+  "source_manifest_sha256": "2a0b969ff11f141f127bcff109bc8345d5573ba13707fbe2f8434c9b4471cf08",
+  "checkpoint_sha256": "ac389f6184af6503294a13fb30c1da82e38d052a5d579bf43ccd4a0017b0485b",
+  "driver_sha256": "58a85d7976aff42bbda10137f0c951985c674e220568f93d9244dfdf1b92275e",
+  "atomic_helper_sha256": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+  "root_id": "full-strict-01100-representative-root-v1",
+  "mask": "011/00",
+  "radius_mode": "strict",
+  "physical_originals": 9,
+  "original_corners": 36,
+  "original_pairs": 36,
+  "marked_cones": 5,
+  "legacy_geometry_context_imported": false,
+  "new_row_families": false,
+  "numerical_results_are_only_proposals": true,
+  "original_cell_credit": 0,
+  "whole_mask_credit": 0
+}

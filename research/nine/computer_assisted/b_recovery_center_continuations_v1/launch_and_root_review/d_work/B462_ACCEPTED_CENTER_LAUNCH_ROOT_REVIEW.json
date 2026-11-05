@@ -1,0 +1,106 @@
+{
+  "status": "PASS_ROOT_B462_ACCEPTED_CENTER_WHOLE_ORIGINAL_LAUNCH_REVIEW",
+  "launch_freeze_sha256": "3299074087a9e5f0c9749b53ae6969c40804ac41b58162f4963bd1bd854cce7c",
+  "source_pins_rehashed": 279,
+  "original_id": "negative-462e78d2e2d8be05",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        1
+      ]
+    ]
+  ],
+  "source_manifest_sha256": "ce7510a78c54c6d8eadf3c1e0f549ec3b84b8cc1d8bc57c5a7b53065571b1cc2",
+  "exact_reports": {
+    "B462_ACCEPTED_CENTER_FRESH_WHOLE_SEED_EXACT_REPLAY.json": {
+      "path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/B462_ACCEPTED_CENTER_FRESH_WHOLE_SEED_EXACT_REPLAY.json",
+      "sha256": "495d3d9585e0c3eb47c746ff56acf6461e68c7f7d23a6ef94b55dbc9714824e2",
+      "nodes": 1,
+      "open_leaves": 1,
+      "rounds": 0,
+      "deductions": 0,
+      "center_rows": 0,
+      "whole_domain_retained": true
+    },
+    "B462_ACCEPTED_CENTER_PREPARED_SEED_EXACT_REPLAY.json": {
+      "path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/B462_ACCEPTED_CENTER_PREPARED_SEED_EXACT_REPLAY.json",
+      "sha256": "94a3f5c0309ba50c01a47f95d7f96ae19822305d2321a2508813e5aa0a1b4a18",
+      "nodes": 1,
+      "open_leaves": 1,
+      "rounds": 0,
+      "deductions": 0,
+      "center_rows": 0,
+      "whole_domain_retained": true
+    }
+  },
+  "accepted_runtime_root_review_sha256": "4ca43201674acdf1b9a5d130c5f41205c4b8ed2b81f928aaa818c814635b2466",
+  "whole_original_and_all_231_definitions_retained": true,
+  "numerical_jobs_observed_before_launch": [
+    {
+      "pid": 156921,
+      "scripts": [
+        "resume_a_component3_direct_shared_atomic_tree_v14.py"
+      ]
+    },
+    {
+      "pid": 162679,
+      "scripts": [
+        "resume_b_center_disk_tree.py"
+      ]
+    },
+    {
+      "pid": 163024,
+      "scripts": [
+        "resume_b_center_retry_tree.py"
+      ]
+    },
+    {
+      "pid": 165080,
+      "scripts": [
+        "resume_c887_direct_shared_height_each_round_atomic_tree_v4.py"
+      ]
+    },
+    {
+      "pid": 165406,
+      "scripts": [
+        "resume_b_five_proxy_round_atomic_tree_v1.py"
+      ]
+    },
+    {
+      "pid": 174409,
+      "scripts": [
+        "resume_b_incircle_chord_tree.py"
+      ]
+    }
+  ],
+  "root_review_only_not_search_completion": true,
+  "new_originals": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false
+}

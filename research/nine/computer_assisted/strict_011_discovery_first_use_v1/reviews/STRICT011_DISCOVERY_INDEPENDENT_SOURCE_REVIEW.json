@@ -1,0 +1,41 @@
+{
+  "status": "PASS_INDEPENDENT_STRICT011_DISCOVERY_PROOF_AND_FRONTIER_SOURCE_REVIEW",
+  "exact_residual_payment_reviewed": true,
+  "independent_arithmetic_required_before_storage": true,
+  "complete_closed_alternatives": [
+    4,
+    8,
+    2
+  ],
+  "immutable_records_atomic_manifest": true,
+  "IO_errors_propagate": true,
+  "singlethread_v2_only_change": true,
+  "actual_LP_gate_still_separate": true,
+  "recorded_bound_fixture_residual": "0",
+  "recorded_interruption_controls": 5,
+  "recorded_SAT8_and_angle2_store_controls": true,
+  "arithmetic_rerun_performed": false,
+  "numerical_solver_called": false,
+  "source_or_worker_modified": false,
+  "whole_mask_proved": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/STRICT011_DISCOVERY_INDEPENDENT_SOURCE_REVIEW.md": "e5b65923255d4f640323fd735f3927b24a6c8f234ab8d76a0882612c8646dbfd",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/check_strict011_discovery_source_review.py": "4434234b421e87aaf87e5dca7c8e2a0e9ba2ffe573375e09d97ddff3b49cbd94",
+    "/workspace/scratch/f9f48fcfb253/b_work/independent_physical_sat_replay.py": "1d069c90f289dce136e41afeb5d564ec7016ac06f58eeb733ca7552801b6fafc",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/DISCOVERY_PROTOCOL_AND_PROOF_BOUNDARY.md": "00792d3a918f9ec2e340f5b6ee28f0e11a3232dad44991265e5ac0c2d40a1043",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/NUMERIC_OPTIONS_NO_SOLVE_PREFLIGHT.json": "5bcd20167814f35b1c5ca97605ea868d041b35011c0eb207e49af5782e3fba0b",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/SINGLETHREAD_V2_FROM_V1.diff": "3a1cb2ca7a0eb3ca998a587ed4868d95f06a621f000a5f43bf02aa66e5bcb609",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/SINGLETHREAD_V2_SOURCE_REVIEW.json": "d1ac9774aa683b54fdc4f345683cb52c0ba000702f24bb6023bf40a7d0f29bba",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/atomic_json_checkpoint.py": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/check_discovery_controls.py": "01cf319373763f2c5d689a879228e7b2f369a7a7a715a1aab4986a41ba3c3326",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/check_numeric_options_without_solving.py": "bbaddf4ba5bc8274770c14f358ed99f833ee7a162c53e842573788f2a40a3793",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/check_store_union_controls.py": "dc13e552ec9edf64916880963fead53190e25bde677f15bba0ec6d328c155cc9",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/exact_controls/DISCOVERY_CONTROLS.json": "787961ad66de7550e1d12ae8dec85f465242f09142725f998e53c9273b3eacc1",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/fresh_strict011_discovery.py": "365d87c7784b114c5c5db2c49e1b479b2079044552003343451037f7d0995783",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/fresh_strict011_discovery_singlethread_v2.py": "58a85d7976aff42bbda10137f0c951985c674e220568f93d9244dfdf1b92275e",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/store_union_controls/STORE_UNION_CONTROLS.json": "8f7a3f909f307d80c6823fbee14eed28be66a86bbe8a7c60b6ddf9723db6ae93",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_rebuilt_v3/strict_011_full_root_v2/independent_strict_011_adapter.py": "de6942227f66cf3f6b979595af06ac5e794b903a5ce158d8b4c3e82e35ab4be7"
+  }
+}

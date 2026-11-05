@@ -1,0 +1,30 @@
+{
+  "actual_numerical_solver_called": false,
+  "fixtures": {
+    "all_HI_owned_cases": {
+      "complete_unions": {
+        "sat": 1
+      },
+      "excluded_leaves": 0,
+      "nodes": 9,
+      "open_leaves": 8,
+      "status": "PASS_COMPLETE_STRICT011_REPRESENTATIVE_COVER_WITH_OPEN_DOMAINS"
+    },
+    "both_D_angle_halves": {
+      "complete_unions": {
+        "angle": 1
+      },
+      "excluded_leaves": 0,
+      "nodes": 3,
+      "open_leaves": 2,
+      "status": "PASS_COMPLETE_STRICT011_REPRESENTATIVE_COVER_WITH_OPEN_DOMAINS"
+    }
+  },
+  "original_cell_credit": 0,
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/check_store_union_controls.py": "dc13e552ec9edf64916880963fead53190e25bde677f15bba0ec6d328c155cc9",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_discovery_v1/fresh_strict011_discovery.py": "365d87c7784b114c5c5db2c49e1b479b2079044552003343451037f7d0995783"
+  },
+  "status": "PASS_FRESH_DISCOVERY_STORE_COMPLETE_SAT8_ANGLE2",
+  "whole_mask_credit": 0
+}

@@ -1,5 +1,26 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## First real strict 011/00 solver certificate
+
+The [strict 011/00 discovery checkpoint](computer_assisted/strict_011_discovery_first_use_v1/README.md)
+preserves the standalone numerical driver and its first actual LP certificate.
+Fresh exact replay, a direct literal-weight audit and a relocated replay with
+numerical imports blocked all pass. The full five-node proxy cover excludes
+one branch with exact reserve 1/2 and retains three OPEN siblings. The complete
+mask remains OPEN; later searches are kept separate from this frozen packet.
+
+## Recovered B covers and center-enabled B462 continuation
+
+The [B recovery and continuation checkpoint](computer_assisted/b_recovery_center_continuations_v1/README.md)
+preserves the complete B16a I21/I22 and B7c OPEN seeds, the fourteen-quarter
+evidence inventory, and the independently reviewed center-enabled driver.
+Its 185-member archive passed a fresh root streaming audit. Separate exact
+gates preserve the complete unchanged B462 original before numerical restart.
+The live search is not part of the frozen archive. A separate immutable B462
+prefix passes two exact rounds and 214 deductions, with 82 independently
+decoded center rows and 346 positive weight uses. Its whole-original domain
+remains OPEN; no closure is claimed.
+
 ## Rebuilt strict 011/00 foundations and bounded-extra review
 
 The [rebuilt strict 011/00 checkpoint](computer_assisted/strict_011_rebuilt_foundations_v3/README.md)

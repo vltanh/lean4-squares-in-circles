@@ -1,5 +1,17 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [first real strict 011/00 certificate](computer_assisted/strict_011_discovery_first_use_v1/README.md)
+passes exact replay and a fresh relocated replay with numerical imports
+blocked. Its complete five-node cover has one excluded branch and three
+OPEN siblings. The numerical driver, complete-cover storage controls and
+actual quarter-weight certificate are preserved without any mask credit.
+
+The [B recovery checkpoint](computer_assisted/b_recovery_center_continuations_v1/README.md)
+preserves fourteen B16a quarter proofs with the I21/I22 complement OPEN, the
+complete B7c OPEN seed and the reviewed center-enabled atomic driver. Fresh
+whole-original seed gates precede the B462 numerical restart; no new original
+or mask has been credited.
+
 The [rebuilt strict 011/00 foundations](computer_assisted/strict_011_rebuilt_foundations_v3/README.md)
 now have a fresh exact replay from a separate copy, with ten complete fixture
 trees and all packet-local dependencies. Both the unnormalized and representative
