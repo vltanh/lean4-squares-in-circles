@@ -1,0 +1,95 @@
+{
+  "schema": "unchanged_review_source_copy_bindings_v1",
+  "files": {
+    "reviewed_source/source/verify_b_center_disk_tree.py": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/source/verify_b_center_disk_tree.py",
+      "bytes": 3601,
+      "sha256": "202522d8c8ff4d38dda733380d397a3fd266f302a8ea7af68ef2fc6430b46228"
+    },
+    "reviewed_source/source/b_center_disk_runtime.py": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/source/b_center_disk_runtime.py",
+      "bytes": 2472,
+      "sha256": "4f9e5b8ccb89d8cf5ad605fa2bf2552519608a9c2a190ec345b8579a17e64fa1"
+    },
+    "reviewed_source/source/universal_center_disk/physical_center_disk_rows.py": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/source/universal_center_disk/physical_center_disk_rows.py",
+      "bytes": 1168,
+      "sha256": "3b32ff2f02e4681b5ef6b9359420b173f092a96093708c9d2c3fe982948681d8"
+    },
+    "reviewed_source/source/universal_center_disk/independent_physical_center_disk_rows.py": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/source/universal_center_disk/independent_physical_center_disk_rows.py",
+      "bytes": 1153,
+      "sha256": "9fafd523e0154fcb8aedb7ecf2f36aa6213a77c84ff619ae12cd5612fc1b2acc"
+    },
+    "reviewed_source/source/universal_center_disk/physical_center_disk_separation.py": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/source/universal_center_disk/physical_center_disk_separation.py",
+      "bytes": 1227,
+      "sha256": "536ee2e0bca8512a4a9ccce8e759ec446f957dcc8749b7a8b8a5537601d6e02b"
+    },
+    "reviewed_source/source/universal_center_disk/UNIVERSAL_CENTER_DISK_HAND_PROOF.md": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/source/universal_center_disk/UNIVERSAL_CENTER_DISK_HAND_PROOF.md",
+      "bytes": 4468,
+      "sha256": "cd4cbeb8e38b139cb3289c3b9ce572537b5b115079452b0454467c4598478491"
+    },
+    "reviewed_source/source/universal_center_disk/check_universal_center_disk.py": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/source/universal_center_disk/check_universal_center_disk.py",
+      "bytes": 9307,
+      "sha256": "f5a709ab8c44fdb746766bf70546e437f5168a9fe18e6426e6187c7d2102181d"
+    },
+    "reviewed_source/B580_CENTER_FIRST_WEIGHTED_USE.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/B580_CENTER_FIRST_WEIGHTED_USE.json",
+      "bytes": 2401309,
+      "sha256": "95b79efadc22737b852d813b5d8d2fcd3a73fdd89cb1e433d594e5e21a703a78"
+    },
+    "reviewed_source/B580_CENTER_FIRST_EXACT_REPLAY.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/B580_CENTER_FIRST_EXACT_REPLAY.json",
+      "bytes": 42001,
+      "sha256": "d5e52902c099971acdfdb83d4fbbff95e9f7faed91e93cdb9d3e71af9cb83c73"
+    },
+    "reviewed_source/CENTER_DISK_EXACT_CONTROLS.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/CENTER_DISK_EXACT_CONTROLS.json",
+      "bytes": 2897,
+      "sha256": "3e828557210a19e6212552c19c411f75adb960233e42f4fe7410acc4b65c226d"
+    },
+    "reviewed_source/whole_B_roots/negative-580db3624cf4c2e2.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/whole_B_roots/negative-580db3624cf4c2e2.json",
+      "bytes": 5579,
+      "sha256": "a9ac5ea57c4a74e39f413fdfe5c8e054453874fe9decdf2d1e9d49c510d27bf3"
+    },
+    "reviewed_source/EXTERNAL_CENTER_FIRST_USE_FRESH_REPLAY.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/EXTERNAL_CENTER_FIRST_USE_FRESH_REPLAY.json",
+      "bytes": 42000,
+      "sha256": "df9206690dd860a097093b0c7d86e26a8b6c0215ac5d2c9cfe2b3049ff451696"
+    },
+    "reviewed_source/EXTERNAL_CENTER_DISK_INDEPENDENT_REVIEW.md": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/EXTERNAL_CENTER_DISK_INDEPENDENT_REVIEW.md",
+      "bytes": 4332,
+      "sha256": "3586a1c2eff0ecf0e08bd8093e3c81846bc63e75233bca9e97c684d006e3ad11"
+    },
+    "reviewed_source/EXTERNAL_CENTER_DISK_INDEPENDENT_REVIEW.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/EXTERNAL_CENTER_DISK_INDEPENDENT_REVIEW.json",
+      "bytes": 63001,
+      "sha256": "59967e83a712aafc651f4ab60868e47f23115e6acd65426435767d1c97409f4e"
+    },
+    "reviewed_source/PREMISE_BINDINGS.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/PREMISE_BINDINGS.json",
+      "bytes": 44460,
+      "sha256": "57a0c2002d725f1c0ae4c5a5abac865ffaf16f79d913f32cc5d8c1ee0048532b"
+    },
+    "native/d_work/UNIVERSAL_CENTER_DISK_ROOT_PHYSICAL_REVIEW.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/d_work/UNIVERSAL_CENTER_DISK_ROOT_PHYSICAL_REVIEW.json",
+      "bytes": 2613,
+      "sha256": "0663b66ed3e5d1a897fe833d91b83c06d82b407820fb98c4b1b5a33fe904ced9"
+    },
+    "native/d_work/CENTER_DISK_29B_ROOT_FRESH_CONTROLS.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/d_work/CENTER_DISK_29B_ROOT_FRESH_CONTROLS.json",
+      "bytes": 3029,
+      "sha256": "e3f842bc4a345acf22052c7b84799a18f57983e221d666db53ab2a0907f0c3ac"
+    },
+    "native/d_work/CENTER_DISK_ROOT_WEIGHTED_USE_REVIEW.json": {
+      "copied_from": "/workspace/scratch/f9f48fcfb253/d_work/CENTER_DISK_ROOT_WEIGHTED_USE_REVIEW.json",
+      "bytes": 1345,
+      "sha256": "a76a3fa1f4e6d3c9f9f53c35c2f0d61367d8093cf425cc2505090fbfb9b34221"
+    }
+  }
+}

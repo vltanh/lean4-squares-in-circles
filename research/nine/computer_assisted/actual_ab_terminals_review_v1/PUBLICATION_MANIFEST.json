@@ -1,0 +1,55 @@
+{
+  "schema": "physical_rows_and_terminals_review_publication_v1",
+  "files": {
+    "README.md": {
+      "bytes": 3459,
+      "sha256": "e1f65faa5558b8dde8c7c1d3056fcb14a8d29180c1674365f363460b0c5ef1da"
+    },
+    "SOURCE_COPY_BINDINGS.json": {
+      "bytes": 2449,
+      "sha256": "c360b6b99132847f8af84cc2afb4ddbfd20383302d315af461b82dfdead3c514"
+    },
+    "native/d_work/ACTUAL_AB_064_ROOT_FRESH_REPLAY.json": {
+      "bytes": 13850,
+      "sha256": "398326895cccdee81c8638528f03ce4c7799da6b011068af8b076f72be876a5c"
+    },
+    "native/d_work/NEW_ACTUAL_AB_ROOT_PHYSICAL_REVIEW.json": {
+      "bytes": 6209,
+      "sha256": "ce732242a466924fe964d6e5e16030dfb02518442fab170fbfad395a81819616"
+    },
+    "native/d_work/NEW_ACTUAL_AB_ROOT_SCALAR_CONTROLS.json": {
+      "bytes": 1982,
+      "sha256": "69d1613c41ec7e3b73408db6742aad1d8d888d7f09f8e21742d6e01cfb1886db"
+    },
+    "native/d_work/UNIVERSAL_ACTUAL_AB_ROOT_FRESH_REPLAY.json": {
+      "bytes": 13604,
+      "sha256": "daa8c818a724c0f302f92f34863ccd4e1d6eeea5c4882404d89e4d25fe35c294"
+    },
+    "native/d_work/check_new_actual_ab_certificates_v1.py": {
+      "bytes": 5503,
+      "sha256": "97bd918926226163a3b861960002de6fcf3aff870a398ff3fb80bce4ef1064f2"
+    },
+    "native/global_work/actual_ab_743b_independent_review/INDEPENDENT_PHYSICAL_REVIEW.json": {
+      "bytes": 23550,
+      "sha256": "0814be15364d3f6a9939779900de646e58dd335118242629efdaeb2108100983"
+    },
+    "native/global_work/actual_ab_743b_independent_review/INDEPENDENT_PHYSICAL_REVIEW.md": {
+      "bytes": 8908,
+      "sha256": "f34c178173c6730130ee928d4d713d61bd551578a87199e3fdaba46a053e9e1a"
+    },
+    "native/global_work/actual_ab_743b_independent_review/audit_sources.py": {
+      "bytes": 3876,
+      "sha256": "e76cf3371eaafbd358a3e05e7c7e8e274d1edb5270b6e9f64ad9facc57b7da57"
+    }
+  },
+  "closed_originals": 222,
+  "fixed_originals": 231,
+  "closed_masks": 8,
+  "fixed_masks": 32,
+  "positional_roots": 7915,
+  "roadmap_ids": 15,
+  "new_originals": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false,
+  "source_review_base_commit": "29b8c4492288ea9f9d9460185e6881e4787fe4ce"
+}

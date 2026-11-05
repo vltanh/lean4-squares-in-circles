@@ -1,5 +1,9 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+Fresh [actual-AB terminal reviews](computer_assisted/actual_ab_terminals_review_v1/README.md)
+and the [actual center-row weighted gate](computer_assisted/universal_center_disk_weighted_gate_v1/README.md)
+preserve stronger reusable physical tools. These add no original or mask credit.
+
 The [atomic continuation source checkpoint](computer_assisted/recovered_atomic_continuations_v1/README.md)
 records restarted A3, B580 and Cd402 discovery and preserves the new drivers.
 The preceding [I/O and recovery package](computer_assisted/checkpoint_io_and_recovery_v1/README.md)

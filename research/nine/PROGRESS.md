@@ -1,5 +1,16 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Stronger terminal reviews and actual center-row use
+
+The [actual-AB terminal review](computer_assisted/actual_ab_terminals_review_v1/README.md)
+records fresh complete exact replay of the 16/25 and universal 21/100 height
+certificates, 22 damaged-input controls, and independent physical/equality
+reviews. The [center-row weighted gate](computer_assisted/universal_center_disk_weighted_gate_v1/README.md)
+records a fresh whole-B580 five-round exact bound proof with 78 positively used
+center rows. Both remain conditional or OPEN results; the fixed totals remain
+222/231 originals and 8/32 masks CLOSED. The 011 caller retains only the
+strict-below-Q use of the new terminal, without the 001 closed-Q blocker.
+
 ## Checkpoint I/O and committed-input recovery
 
 The [atomic continuation source checkpoint](computer_assisted/recovered_atomic_continuations_v1/README.md)

@@ -1,0 +1,85 @@
+{
+  "status": "PASS_ROOT_NEW_ACTUAL_AB_SCALAR_AND_PHYSICAL_REVIEW",
+  "reviewed_commit": "743b768c3de1853b8524be8bba4064c5735e9cbc",
+  "source_premises": [
+    {
+      "package": "actual_AB_two_link_row_064_v1",
+      "commit": "d989c83b8a537b9d028350d4d6f3853fe4eebc9b",
+      "path": "research/nine/computer_assisted/actual_AB_two_link_row_v1/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md",
+      "sha256": "5573dff780b79d60cbea535e946ce3669a6fcbbe8152779348ba35107909d7cb",
+      "unchanged_at_head": true
+    },
+    {
+      "package": "actual_AB_two_link_row_064_v1",
+      "commit": "d989c83b8a537b9d028350d4d6f3853fe4eebc9b",
+      "path": "research/nine/computer_assisted/full_angle_common_side_row_v1/ORIENTED_GOOD_ENDPOINT_TILT_TOLL_HAND_PROOF.md",
+      "sha256": "f48cf83809f7c6d3ddf0a2ea481e0f14990ec46633a2f16e13a9b87c2e53f452",
+      "unchanged_at_head": true
+    },
+    {
+      "package": "actual_AB_two_link_row_064_v1",
+      "commit": "d989c83b8a537b9d028350d4d6f3853fe4eebc9b",
+      "path": "research/nine/UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md",
+      "sha256": "35bdf4d884c2871c1f5608b3782037f840351f7f59652a260f88982eb73e7037",
+      "unchanged_at_head": true
+    },
+    {
+      "package": "actual_AB_two_link_row_064_v1",
+      "commit": "d989c83b8a537b9d028350d4d6f3853fe4eebc9b",
+      "path": "research/nine/computer_assisted/actual_AB_two_link_row_v1/check_three_angle_cover.py",
+      "sha256": "2ee4a2ed4f1fa82f49b3e02393f3e9634444332db4892be48e1fd3198c29900c",
+      "unchanged_at_head": true
+    },
+    {
+      "package": "actual_AB_two_link_row_064_v1",
+      "commit": "d989c83b8a537b9d028350d4d6f3853fe4eebc9b",
+      "path": "research/nine/computer_assisted/actual_AB_two_link_row_v1/exact_three_angle_cover_0601.py",
+      "sha256": "80a17d7d9b5b728260d0bf432722381fb10906b74b0379c0eb6441c76a2a4169",
+      "unchanged_at_head": true
+    },
+    {
+      "package": "universal_actual_AB_two_link_v1",
+      "commit": "d989c83b8a537b9d028350d4d6f3853fe4eebc9b",
+      "path": "research/nine/UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md",
+      "sha256": "35bdf4d884c2871c1f5608b3782037f840351f7f59652a260f88982eb73e7037",
+      "unchanged_at_head": true
+    }
+  ],
+  "reports": [
+    {
+      "path": "/workspace/scratch/f9f48fcfb253/d_work/ACTUAL_AB_064_ROOT_FRESH_REPLAY.json",
+      "sha256": "398326895cccdee81c8638528f03ce4c7799da6b011068af8b076f72be876a5c"
+    },
+    {
+      "path": "/workspace/scratch/f9f48fcfb253/d_work/UNIVERSAL_ACTUAL_AB_ROOT_FRESH_REPLAY.json",
+      "sha256": "daa8c818a724c0f302f92f34863ccd4e1d6eeea5c4882404d89e4d25fe35c294"
+    },
+    {
+      "path": "/workspace/scratch/f9f48fcfb253/d_work/NEW_ACTUAL_AB_ROOT_SCALAR_CONTROLS.json",
+      "sha256": "69d1613c41ec7e3b73408db6742aad1d8d888d7f09f8e21742d6e01cfb1886db"
+    }
+  ],
+  "physical_review": [
+    "All physical pair separators retain their genuine original owner. Their support sum is R=(1+cos(theta_i-theta_j)+abs(sin(theta_i-theta_j)))/2; canonical angle differences lie in [-pi/2,pi/2], so the cosine is nonnegative.",
+    "For a nonnegative horizontal center gap d, each vertical gap has absolute value at most W. Disjoint open radius-one-half incircles give d^2+v^2>=1. Both thresholds obey 2W^2<1, hence d>|v| and d>0. Every backward normal projects to at most abs(v)<1. Both forward owned axes project to at most alpha*d+abs(beta)*abs(v), because alpha>=abs(beta) and d>=abs(v).",
+    "Adding the unchanged A/E and D/G endpoint caps is legitimate because they are separate original physical pairs. Actual EF and FG imply x_G-x_E-h_E-h_G>=2h_F>=1. Division by46 leaves endpoint load plus its two applicable tolls<=2, strictly below Q.",
+    "The 16/25 cap retains theta_D>=0, y_G>=y_D, and abs(x_G-x_D)<1. These force every original D-to-G separator upward; pi rotation then supplies the oriented cap. The universal21/100 cap instead uses the unrestricted endpoint toll on D and requires none of those three guards.",
+    "The independent rational reconstruction has positive factors (1+x_i^2),(1-x_i^2) on each enlarged rational half-angle box. Dot and determinant expansions reproduce R/alpha. The halfwidths and toll numerators agree algebraically with the physical formulas. Every polynomial degree is at most four per variable.",
+    "The rational Bernstein transform is the exact power-basis shift followed by b_i=sum_{m<=i} a_m*binom(i,m)/binom(4,m). Positive coefficients except the zero origin coefficient prove strict positivity at every nonorigin point, including closed faces. The binary trie checks both closed children and all28 sign/owner/selected-owner domains.",
+    "Each chosen toll branch in the universal certificate is a lower expression of the global maximum toll everywhere. It does not impose an additional angle branch on the physical caller. Reflecting all three scalar angles handles theta_D<0 without altering the physical hypothesis set.",
+    "The maximum selected tangent bounds both vertical error terms by M*W. The scalar coefficient exceeds its target W by1/1000. Scalar strictness away from three zero angles also handles a nonzero unselected frame with M=0.",
+    "At Q, equality forces D,X,B aligned; the positive universal A toll forces A aligned. Aligned pair separation and vertical gaps<1 give two horizontal gaps>=1; actual AB gives the third. The cap forces x_D-x_A=3.",
+    "Only the unchanged001/00 caller with actual BC, original CD center cone, and strictly weak CD comparison supplies the final closed-Q equality blocker. A fresh011 caller can use the strict-below-Q contradiction but cannot inherit this closed-Q blocker.",
+    "For A-c744, stronger component3 at threshold16/25 is a subset of its old3/5 component3, so old bound proofs remain necessary there. Replacing the complete five-cover requires retaining the exact same original ancestry and the complete exclusions for components0,1,2,4. No old child, auxiliary witness, or branch choice is transported to a larger domain."
+  ],
+  "runtime_installation_claimed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "fixed_originals": 231,
+  "closed_originals": 222,
+  "fixed_masks": 32,
+  "closed_masks": 8,
+  "positional_roots": 7915,
+  "roadmap_ids": 15,
+  "lean_lake_ci_run": false
+}
