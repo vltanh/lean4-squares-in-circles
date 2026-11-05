@@ -15,12 +15,22 @@ Read these documents in order:
    weighted endpoint inequality, and the exact missing implication.
 2. [Proof plan](PROOF_PLAN.md): complete mathematical milestones and the
    standard for a usable table.
-3. [Review of the earlier work](AUDIT.md): what to reuse, what failed, and
+3. [Physical-and-cap foundation](FOUNDATION.md): the complete physical
+   preliminaries, weighted two-square cap, endpoint criterion, directional
+   center capture and sharp three-square half-plane cap, including their
+   scalar tables and terminal equality arguments.
+4. [Exhaustive extraction](EXTRACTION.md): the complete cone-chain height
+   bound, precise Greene input, rotating-rank proof and all-nine diagonal
+   event cover, including persistent height four and simultaneous ties.
+5. [Actual-four-chain analysis](ACTUAL_FOUR_CHAIN.md): the fixed all-nine
+   domain, a stronger endpoint budget, the common central band, and the
+   precise surviving geometric implication.
+6. [Review of the earlier work](AUDIT.md): what to reuse, what failed, and
    what the old completion counts mean.
-4. [Mathematical sources](sources/README.md): the retained arguments and
+7. [Mathematical sources](sources/README.md): the retained arguments and
    exact examples. Dated status remarks in these sources describe their
    original checkpoints; this page and the proof plan describe current work.
-5. [Archive and recovery](ARCHIVE.md): the immutable snapshot containing
+8. [Archive and recovery](ARCHIVE.md): the immutable snapshot containing
    the old graph campaign, computational certificates, scripts and handoffs.
 
 The most useful existing argument is the
@@ -38,6 +48,9 @@ squares cannot both be discarded: an
 realizes every remaining historical mask with seven squares strictly below
 the proposed radius.
 
-This cleanup changes the organization and proof strategy, not the status of
-the unrestricted theorem. Earlier computational results remain available in
+The foundation and extraction gates G1–G2 are complete at the manuscript
+level and have received independent reading. Greene's finite-poset theorem
+is stated exactly and remains an explicit classical dependency. These
+chapters settle the proof inputs and coverage; the unrestricted geometric
+closure is still open. Earlier computational results remain available in
 Git history; they are not silently promoted to self-contained paper proofs.

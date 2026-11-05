@@ -16,40 +16,64 @@ subcase, restored archive or conditional inequality does not close a gate.
 
 | Gate | Current status | Pass condition | If it does not pass |
 |---|---|---|---|
-| G0. Scope and cleanup | Supplied in this revision | One target, one roadmap, reviewed archive boundary, working source links | Repair the documentation before more research |
-| G1. Hand-proof foundation | Source arguments available; consolidation open | One complete physical-and-cap chapter, with all scalar tables and an independent review | State the exact failing lemma; repair it without weakening its caller |
-| G2. Exhaustive extraction | Source available; dependency audit open | Exact poset input, rotating-frame proof and event cover, including persistent height four and all boundary faces | Keep the missing implication named; do not assume actual chain separation |
-| G3. Choose the all-nine route | Open research decision | One whole-domain attempt, with the stopping rule in Section 3, yields a complete useful hand theorem or an exact obstruction to the proposed stronger route | Record the full surviving predicate; revise the route before growing another case tree |
+| G0. Scope and cleanup | Complete in the preceding cleanup | One target, one roadmap, reviewed archive boundary, working source links | Repair the documentation before more research |
+| G1. Hand-proof foundation | Complete at the manuscript level: [foundation](FOUNDATION.md), independently read | One complete physical-and-cap chapter, with all scalar tables and an independent review | State the exact failing lemma; repair it without weakening its caller |
+| G2. Exhaustive extraction | Complete at the manuscript level: [extraction](EXTRACTION.md), with Greene's theorem explicitly imported | Exact poset input, rotating-frame proof and event cover, including persistent height four and all boundary faces | Keep the missing implication named; do not assume actual chain separation |
+| G3. Choose the all-nine route | Open; [actual-four-chain attempt and surviving predicate](ACTUAL_FOUR_CHAIN.md) recorded | One whole-domain attempt, with the stopping rule in Section 3, yields a complete useful hand theorem or an exact obstruction to the proposed stronger route | Record the full surviving predicate; revise the route before growing another case tree |
 | G4. Unrestricted geometric closure | Open | Every hypothetical strict counterexample reaches a proved sharp criterion, with every original square and every alternative accounted for | Keep the global bound open; local exclusions do not pass this gate |
 | G5. Paper assembly and audit | Open | Attainer plus unconditional lower bound in one acyclic manuscript, with independent checks of geometry, tables and endpoints | Repair the identified dependency or coverage gap |
 | G6. Global equality | Follow-up after G5 | Necessary and sufficient equality families, with converse constructions and allowed symmetries | Retain only the equality statements actually proved |
 
-G1 and the dependency audit for G2 can proceed independently. G3 needs their
+G1 and G2 have been supplied and independently read. Their mathematical
+contracts are recorded in the two chapters; G2 retains one explicitly stated
+classical finite-poset input. These are paper-proof milestones, not Lean
+verification or new unrestricted geometric exclusions. G3 now has their
 precise theorem contracts; G4 depends on the selected route actually working.
 An obstruction passes a **research decision** in G3, never the proof gate G4.
 No gate promises a fixed running time or a guaranteed route to the theorem.
 G5 completes the sharp-radius theorem; G6 is a separate classification task.
 
-## 1. Finish one dependable foundation
+## 1. Completed foundation
 
-Assemble the physical model, support formula, separating-axis criterion,
-aligned inset, and center-radius bound into one chapter. Retain independent
+[FOUNDATION.md](FOUNDATION.md) supplies this deliverable in one acyclic
+chapter. It proves the physical preliminaries, the full weighted two-square
+cap, the endpoint and weak-middle consequences, the directional center
+capture, and the sharp three-square whole-half-plane cap. All five owner
+alternatives, both signs of the normal, the four-interval rational table,
+and the center-cap polynomial and rational anchors are printed. The
+strict-radius and equality arguments are separate. Independent reading
+checked the geometric reductions, scalar coverage and equality steps; the
+center-cap polynomial and both anchor evaluations were also expanded by
+hand. No Lean or computational proof check is asserted.
+
+The chapter assembles the physical model, support formula, separating-axis
+criterion, aligned inset, and center-radius bound. It retains independent
 orientations and weak contacts throughout. Every replacement estimate must
 be an inequality about the same originals, not a new packing whose extra
 properties are transferred back without proof.
 
-Review the two-square cap proof in full, including its triangle
+The two-square cap is proved in full, including its triangle
 bounding-rectangle lemma, five owner cases, four-interval convexity table,
-strictness and equality. Then present its weighted endpoint consequence as
-in (2) of the draft. The actual \(4+3\) chain theorem and the weak-middle
-case become short applications. Review the three-square half-plane cap
-alongside its directional center-cap input.
+strictness and equality. Its weighted endpoint consequence is (2) of the
+draft. The actual \(4+3\) chain theorem and the weak-middle case are short
+applications. The three-square half-plane cap and its directional
+center-cap input are proved in the same chapter.
 
-**Deliverable:** a complete, independently read terminal chapter. Its tables
+**Delivered:** a complete, independently read terminal chapter. Its tables
 contain every rational comparison. This reuses the strongest existing hand
 work without importing a computational closure report.
 
-## 2. Finish the coverage argument before enlarging the case list
+## 2. Completed extraction and its named dependency
+
+[EXTRACTION.md](EXTRACTION.md) supplies the geometric estimates, height
+bound, rotating-rank argument and diagonal-event reduction. It states
+Greene's finite-poset conjugate-partition theorem exactly, cites its original
+paper, and proves the required nine-element specialization. The original
+publisher's abstract and the author's bibliographic record were checked.
+Independent reading checked the shortened five-chain contradiction, the
+closed-comparison argument and every symmetry map. The imported Greene
+theorem remains a dependency for eventual formalization; it is not silently
+treated as a direct finite proof.
 
 The center-cone extraction is the best existing unrestricted starting point.
 Its poset argument invokes Greene's theorem: for the relevant nine-element
@@ -57,16 +81,14 @@ poset of height four and width at most four, there are disjoint chains of
 sizes four and three, or disjoint antichains of those sizes. The short
 partition calculation in the source is conditional on that theorem.
 
-Verify the exact cited theorem and write out its specialization to these
-nine elements. Prefer a short direct proof of the finite lemma, but do not
-start a general Greene-theorem project merely to improve the exposition.
-If the paper cites Greene, state its precise mathematical input and keep it
-in the dependency list for eventual formalization. Calling the step
-standard without stating that input is insufficient. A longest four-chain
-and its five-element complement give a possible starting point for a direct
-proof; the remaining augmentation argument is not yet supplied.
+The exact cited theorem and its specialization now appear in Section 4 of
+the extraction chapter. A self-contained replacement of that imported
+combinatorial theorem would require a direct finite proof; none is claimed
+here. The stated paper-proof acceptance criterion permits this precise
+classical input. A future formalization must prove it or supply the direct
+nine-element lemma.
 
-Retain the unconditional diagonal-event reduction. Mark one tied edge;
+The chapter retains the unconditional diagonal-event reduction. Mark one tied edge;
 whole-chain reversal and a common reflection reduce its position and sign
 to the following cover:
 
@@ -76,16 +98,30 @@ to the following cover:
 | Long-chain middle edge | BC | All five cone comparisons and all nine originals |
 | Short-chain edge | EF | All five cone comparisons and all nine originals |
 
-Write the symmetry maps explicitly, including both chains, both extras and
-every original frame. This table covers event *types*, not finitely many
-positions. Multiple simultaneous ties may belong to several rows.
+Section 7 of the extraction chapter writes the symmetry maps explicitly,
+including both chains, both extras and every original frame. This table
+covers event *types*, not finitely many positions. Multiple simultaneous
+ties may belong to several rows.
 
-**Deliverable:** a complete extraction chapter with its finite-poset proof
+**Delivered:** a complete extraction chapter with its finite-poset proof
 or exact cited input, and its boundary conventions. Do not apply a
 first-birth grid to the persistent height-four case. Do not apply
 actual-four-chain estimates to a cone chain whose links are still weak.
 
 ## 3. Target one all-nine geometric implication
+
+The first attempt is recorded in [ACTUAL_FOUR_CHAIN.md](ACTUAL_FOUR_CHAIN.md).
+It keeps the original nine-square domain fixed. For an actual four-chain,
+write \(U=h_0+h_3-1\) for the endpoint halfwidth excess, \(E\) for
+the full inward endpoint span minus two, and \(S\) for the sum of the
+absolute endpoint heights. The new necessary budget is
+\(S+(37/50)U+(32/9)E\le1/8\), strictly below the proposed radius.
+The pair caps force every other original to meet a common central band
+of width \(1-(92/27)E\). These deductions have been independently read.
+They do not close the domain: physical sections on the two boundary lines
+can be short. Section 5 of that note records every surviving physical
+constraint and the precise missing endpoint/cap implication. Accordingly
+G3 remains open under the stopping rule below.
 
 Use the weighted endpoint quantity \(W\), rather than requiring every weak
 edge to become an actual projection separation. Equation (3) of the draft
@@ -164,7 +200,7 @@ actual proof and verify the converse for every surviving family. The known
 terminal equality cases and attaining examples do not yet give that global
 classification.
 
-The immediate order is therefore: terminal chapter; complete extraction;
-one full all-nine geometric domain; unrestricted assembly; equality. The
+The remaining order is therefore: one full all-nine geometric domain;
+unrestricted assembly and paper audit; equality. The
 [audit](AUDIT.md) explains why restarting the old graph census or finishing
 seven cells of a single mask would not by itself accomplish this plan.

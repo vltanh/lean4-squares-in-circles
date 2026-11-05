@@ -1,8 +1,11 @@
 # Nine unit squares in a circle: proof draft
 
-This is a partial paper proof. Sections 1–4 give the target, an attaining
-packing and consequences of retained hand arguments. Section 5 identifies
-the missing global implication. No unrestricted lower bound is claimed.
+This is a partial paper proof. The complete
+[physical-and-cap foundation](FOUNDATION.md) and
+[exhaustive extraction](EXTRACTION.md) are now written as separate chapters.
+Sections 1–4 below give their target, an attaining packing and the resulting
+proof interface. Section 5 identifies the missing global implication.
+No unrestricted lower bound is claimed.
 
 ## 1. Physical statement
 
@@ -59,7 +62,7 @@ and [oblique extras](sources/NO_GLOBAL_ORTHOGONAL_FRAME.md) prevent that inferen
 
 ## 3. The weighted endpoint criterion
 
-The retained [physical two-square cap theorem](sources/PHYSICAL_TWO_SQUARE_CAP_SUPPORT_AND_UNRESTRICTED_FOUR_PLUS_THREE_CHAINS_2026_10_31.md)
+The [physical two-square cap theorem](FOUNDATION.md#b-the-physical-weighted-two-square-cap)
 states that, when \(R\le r\), two interior-disjoint original squares
 \(M,B\) satisfy, in every unit direction \(e\),
 
@@ -133,16 +136,18 @@ retained: they can compensate for negative ones. Showing the right side
 nonnegative for a suitable witness is sufficient for the endpoint criterion.
 No such general compensation theorem has yet been proved.
 
-Under \(R\le r\), the existing [center-cone extraction](sources/CENTER_CONE_ROTATION_AND_ADJACENT_FIRST_BIRTH_HAND_PROOF.md)
+Under \(R\le r\), the complete [center-cone extraction](EXTRACTION.md)
 supplies some frame and disjoint chains \(A,B,C,D;E,F,G\) for which
 \(\Delta x\ge|\Delta y|\) on the five consecutive edges. Its height
 bound, rotating-rank argument and finite-poset dependency must be read
 together. It does **not** give \(s_{ij}\ge0\) on each edge.
 
-The same source, Section 4, rotates these five comparisons to an endpoint
+The extraction chapter, Section 6, rotates these five comparisons to an endpoint
 of their common admissible angle interval. At least one then satisfies
 \(\Delta x=|\Delta y|>0\). This also covers persistent height four;
-the stronger first-birth grid in later sections has additional hypotheses.
+the stronger first-birth grid in the
+[retained source](sources/CENTER_CONE_ROTATION_AND_ADJACENT_FIRST_BIRTH_HAND_PROOF.md)
+has additional hypotheses.
 The possible event frames depend on the unknown centers.
 
 The other two originals \(H,I\), all 36 original nonoverlap conditions,
@@ -175,7 +180,7 @@ One sufficient research target is the following **unproved** statement:
 > \(\{z:e\cdot z\ge7/16\}\) for some unit \(e\).
 
 The first alternative contradicts (2). The second contradicts the
-[sharp three-square half-plane cap](sources/THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md).
+[sharp three-square half-plane cap](FOUNDATION.md#e-the-sharp-three-square-whole-half-plane-cap).
 This would prove the lower bound. It is a proposed route, not an established
 classification or a premise of the proof.
 
@@ -185,5 +190,11 @@ against the retained exact equality examples, but is not required for the
 strict lower bound. If these two terminals do not suffice, the missing class
 must be stated explicitly before proposing another terminal.
 
-The [proof plan](PROOF_PLAN.md) specifies the next complete mathematical
-deliverables. Global equality classification remains a separate obligation.
+The first unchanged all-nine domain is now specified in
+[the actual-four-chain analysis](ACTUAL_FOUR_CHAIN.md). Its stronger
+endpoint budget retains every chain gap and its pair-cap consequence
+forces the other seven originals to meet one common central band. The
+note states the entire surviving predicate; it does not prove that domain
+empty. The [proof plan](PROOF_PLAN.md) keeps this research decision and
+the unrestricted closure open. Global equality classification remains a
+separate obligation.

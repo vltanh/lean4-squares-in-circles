@@ -165,3 +165,54 @@ eight-square extension further shows that even one of the two bodies
 outside the weak four-list and the three-chain does not suffice by itself.
 The ninth body, or additional proved nine-body consequences, is essential
 to a valid closure of the remaining problem.
+
+## 5. The eight-square obstruction has no actual four-chain in any direction
+
+The same eight originals give a stronger obstruction than the fixed-frame
+rank statement in Section 3: **no unit direction admits an actual
+projection chain of four of these squares**. The proof uses their center
+diameter, so it covers every direction without an angle subdivision.
+
+Every pair of their centers is at distance strictly less than three.
+Here is a complete four-row cover of the center pairs. The remaining six
+centers, meaning those other than A and D, lie in
+\([-1,1]\times[-9/10,6/5]\).
+
+| Center pair | Horizontal gap bound | Vertical gap bound | Squared-distance upper bound |
+|---|---:|---:|---:|
+| A,D | \(<147/50\) | \(1/4\) | \(<87061/10000<9\) |
+| A and any center other than D | \(\le123/50\) | \(\le5/4\) | \(\le76141/10000<9\) |
+| D and any center other than A | \(<62/25\) | \(\le11/10\) | \(<18401/2500<9\) |
+| Two of the remaining six centers | \(\le2\) | \(\le21/10\) | \(\le841/100<9\) |
+
+All entries follow by direct subtraction of the coordinates in Section 1.
+For the two strict horizontal bounds involving D, use
+
+\[
+ x_D=\frac{14939}{10100}<\frac{37}{25},\qquad
+ x_D-x_A=\frac{29685}{10100}<\frac{147}{50}.
+\]
+
+For any unit direction \(e\), let
+\(h_S(e)=(|e\cdot u_S|+|e\cdot v_S|)/2\ge1/2\).
+An actual projection four-chain \(S_1,S_2,S_3,S_4\), ordered along
+\(e\), would satisfy
+
+\[
+\begin{aligned}
+ e\cdot(c_{S_4}-c_{S_1})
+ &\ge h_{S_1}(e)+2h_{S_2}(e)+2h_{S_3}(e)+h_{S_4}(e)\\
+ &\ge3.
+\end{aligned}
+\]
+
+Cauchy--Schwarz would then imply
+\(|c_{S_4}-c_{S_1}|\ge3\), contradicting the table. This proves the
+all-directions claim.
+
+Consequently, the existence of the selected weak four-list, a disjoint
+actual three-chain and one additional original does not even guarantee
+an actual four-chain after changing direction. The ninth original remains
+essential to any proposed universal nine-square extraction of that kind.
+This does not disprove such a nine-square theorem and closes no all-nine
+geometric domain.
