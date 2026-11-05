@@ -1,3 +1,5 @@
+> **ACTIVE EXECUTION DIRECTIVE — 2026-11-04:** [Current mask, priorities, bounded whole-cell attempts and exact acceptance](CURRENT_MASK_DIRECTIVE.md). **222/231 original cells CLOSED, 9 OPEN (A1, B5, C3); 8/32 masks CLOSED.** The next milestone is **223/231**, not another auxiliary lemma. Frozen old status paragraphs below are chronological evidence, not resume instructions. No Lean/Lake/CI.
+
 > **NEW PRIMARY EXECUTION DIRECTIVE (November 3, 2026):** [Shared original-nine macro-closure strategy](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). **Stop prioritizing ever-deeper partial certificate trees**; seek a single proved all-nine argument closing **multiple** of the 34 OPEN original cells, initially targeting the 17-cell B family and the omitted squares H/I. Prove all strict/boundary guards before crediting a cell. **Ledger unchanged: 197/231 cells CLOSED, 34 OPEN; 8/32 masks CLOSED, 24 OPEN.** This priority supersedes earlier search schedules, not their established proofs.
 
 # n=9: fixed-domain roadmap

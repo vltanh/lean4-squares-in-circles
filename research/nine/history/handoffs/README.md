@@ -1,8 +1,8 @@
-# Historical PR #11 handoffs — archived, not active
+# Historical PR #11 handoffs — archived chronology, not active instructions
 
-The **16 historical Markdown handoffs** retain their old paths and mathematical provenance for citations. Each now carries the **exhaustive whole-mask frontier-first directive** and marks its earlier progress counts, strategies and resume instructions as **superseded**. Do not resume an older "current" handoff.
+**Single authoritative resume directive:** [CURRENT_MASK_DIRECTIVE.md](../../CURRENT_MASK_DIRECTIVE.md), accompanied by the [current handoff](../../HANDOFF_A2_FIXED_CLOSURE.md). **Accepted counts:** `001/00` 222/231 originals closed, 9 open (A1, B5, C3); 8/32 full masks closed. All earlier progress numbers in dated handoffs are historical, never a basis for resetting the register.
 
-**One operative source:** [current A.2 handoff](../../HANDOFF_A2_FIXED_CLOSURE.md), supported by [PROGRESS.md](../../PROGRESS.md) and the [fixed roadmap](../../DEEP_GATED_ROADMAP.md). Current status: **8 of 32 original masks closed; 24 open**. The [full `001/00` cover](../../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md) is now certified: **231 fixed original cells at adoption, 53 closed, 178 OPEN**. Historical assertions that its count was not established describe the earlier state. No Lean/Lake/CI; final proof hand/table, computer-assisted exact discovery/replay allowed.
+Historical source and checkpoint paths remain unchanged to avoid breaking proof provenance, hash bindings and links. Do not delete or rewrite accepted certificates during cleanup. The dated handoff filenames below are preserved solely for audit and past context.
 
 ## Retained historical snapshots
 
@@ -24,4 +24,5 @@ The **16 historical Markdown handoffs** retain their old paths and mathematical 
 - [WIP_SIDE_CHANNEL_AND_CERTIFICATE_HANDOFF_2026_10_26.md](../../WIP_SIDE_CHANNEL_AND_CERTIFICATE_HANDOFF_2026_10_26.md)
 
 The machine-readable [November 1 handoff checkpoint](../../gates/A2_HANDOFF_2026_11_01.json) is also historical and is not a source of current closure counts. Its earlier local source/recovery record is preserved.
+
 

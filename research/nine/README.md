@@ -1,14 +1,12 @@
 # n=9 — sharp nine-unit-square packing
 
-**Current original-nine A.2 ledger (2026-11-04): 8/32 full masks CLOSED; 24 OPEN.** The unrestricted sharp bound `R²>=1105/256`, global equality classification and assembled manuscript remain OPEN. The complete `001/00` cover is certified: **218 of 231 fixed original cells excluded; 13 OPEN**. Historical positional roots: 5,838 closed-Q exclusions and 2,077 OPEN out of 7,915; the 15 canonical roadmap gate IDs are unchanged. No new whole-mask or positional-root closure is claimed.
+**Active status (4 November 2026): 222/231 original `001/00` cells CLOSED, 9 OPEN (A1, B5, C3). Eight of 32 complete strict-radius masks CLOSED; 24 OPEN.** The whole `001/00` mask and reversal `100/00` remain OPEN. The global lower bound, equality classification and final manuscript also remain OPEN.
 
-**Read in this order:** [current operative handoff](HANDOFF_A2_FIXED_CLOSURE.md) · [accepted progress and proof ledger](PROGRESS.md) · [fixed-gate roadmap](DEEP_GATED_ROADMAP.md) · [original mask frontier](gates/A2_MASK_FRONTIER.json) · [historical handoffs](history/handoffs/README.md).
+**Start here:** [Current execution directive](CURRENT_MASK_DIRECTIVE.md) · [active full A.2 handoff](HANDOFF_A2_FIXED_CLOSURE.md) · [proof ledger](PROGRESS.md) · [fixed original register](gates/A2_00100_FIXED_FRONTIER.json) · [32-mask frontier](gates/A2_MASK_FRONTIER.json).
 
-**Current evidence:** [latest complete hand/table assembly](A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md) · [fixed 231-cell register](gates/A2_00100_FIXED_FRONTIER.json) · [exact archive and fresh replay manifest](computer_assisted/a2_00100_a_7c_fixed_center_slope_height_manifest.json). All baseline leaves, new leaves and full-cell substitutions have complete exact replay and separate coverage/physical reviews. The [selected-seven obstruction](SEVEN_ORIGINAL_ALL_OPEN_MASKS_OBSTRUCTION.md) supplies strict rational realizations for all 24 open masks when only A–G are retained.
+**Priority:** close one complete original (next target **223/231**) using computer-assisted discovery, independent exact rational replay and a complete original-nine hand/table argument. **Freeze open-ended lemma accumulation and bound search attempts.** Preserve every original premise and boundary. No Lean, Lake, compilation or CI. Older records and the proofs they cite are retained, but the numbers and instructions in those records are historical.
 
-**Execution directive:** Close the named OPEN cells of the certified full-original-nine cover, another entire fixed mask, or a global terminal-extraction theorem. Keep the same 231 cell IDs; unfinished internal trials leave their parent OPEN. Tie every additional lemma to a complete original domain, preserve all nine physical squares and the strict weak-bit boundary, and pivot if blocked. Computer-assisted discovery and independent exact replay permitted; final complete hand/table proof; **no Lean/Lake/CI**.
-
-**Completed subsequent investigation:** the [whole-domain stopping record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md) preserves four portable OPEN-research packages and the exact limits of the all-nine and shared-frame approaches. It adds no further original or mask closure; the current mask and all-mask proof remain unfinished.
+[Original and accepted proof history](history/handoffs/README.md) · [Roadmap (historical schedules superseded)](DEEP_GATED_ROADMAP.md).
 
 ## Historical unrestricted structural evidence (not the active work queue)
 

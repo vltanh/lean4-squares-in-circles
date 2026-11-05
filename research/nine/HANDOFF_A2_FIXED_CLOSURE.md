@@ -1,3 +1,5 @@
+> **ACTIVE EXECUTION DIRECTIVE — 2026-11-04:** [Current mask, priorities, bounded whole-cell attempts and exact acceptance](CURRENT_MASK_DIRECTIVE.md). **222/231 original cells CLOSED, 9 OPEN (A1, B5, C3); 8/32 masks CLOSED.** The next milestone is **223/231**, not another auxiliary lemma. Frozen old status paragraphs below are chronological evidence, not resume instructions. No Lean/Lake/CI.
+
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
 The [B16 exact interval continuation](computer_assisted/b16_interval_terminal_continuation_v1/README.md)
