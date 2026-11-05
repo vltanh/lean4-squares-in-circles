@@ -1,0 +1,12 @@
+{
+  "status": "OBSERVED_A3_NUMERICAL_CONTINUATION_RUNNING",
+  "session_id": 83897,
+  "launch_freeze_sha256": "31e43ea3889aafdf260d87abcf3346ce024d4201b27cb5d17d7ab6433a2cd597",
+  "manifest_observed": true,
+  "initial_published_nodes": 165,
+  "initial_published_open_leaves": 17,
+  "output": "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/a_c744_component3_recovered_atomic_v14",
+  "log": "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/a_c744_component3_recovered_atomic_v14.log",
+  "new_originals": 0,
+  "new_masks": 0
+}

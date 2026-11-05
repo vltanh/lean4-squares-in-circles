@@ -1,0 +1,43 @@
+{
+  "status": "RECOVERED_NATIVE_ATOMIC_CONTINUATION_SOURCE_CHECKPOINT",
+  "observed_utc": "2026-11-05T00:18:49.462064+00:00",
+  "closed_originals": 222,
+  "originals": 231,
+  "open_originals": 9,
+  "closed_masks": 8,
+  "masks": 32,
+  "open_masks": 24,
+  "positional_roots": 7915,
+  "roadmap_ids": 15,
+  "strict_radius_scope_retained": true,
+  "new_originals": 0,
+  "new_masks": 0,
+  "prepared_C887_driver_launch_not_claimed_in_this_snapshot": true,
+  "Cb_driver_launch_held_for_missing_source_proof_sha256": "88fe0a11aed912184b29e8868fd1317e70b5c6dbd29a6107d3651d90a687e2d8",
+  "expanded_new_run_trees_included": false,
+  "no_new_geometric_row_or_checker_rule": true,
+  "io_helper_one_file_atomicity_only": true,
+  "lean_lake_ci_run": false,
+  "source_checkpoint_parent_commit": "41bcaa228ef04dd76bb449ca02b3541925917849",
+  "publication_parent_commit": "743b768c3de1853b8524be8bba4064c5735e9cbc",
+  "recorded_launches": {
+    "A_c744_component3": {
+      "session": 83897,
+      "restored_published_seed_nodes": 165,
+      "lost_suffix_nodes": 483,
+      "suffix_restored": false
+    },
+    "B580": {
+      "session": 39273,
+      "seed_scope": "WHOLE_UNCHANGED_ORIGINAL",
+      "pre_incident_numerical_run_existed": false
+    },
+    "Cd402": {
+      "session": 42207,
+      "restored_published_seed_nodes": 1,
+      "lost_suffix_nodes": 235,
+      "suffix_restored": false
+    }
+  },
+  "runtime_note": "Launch receipts record observed starts only. Later B580 and Cd402 sessions became unaddressable, without an exit record; saved frontiers are undergoing byte/cover audit. No completion is inferred from session loss. A3 was separately observed still running."
+}

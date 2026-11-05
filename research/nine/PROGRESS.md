@@ -2,12 +2,19 @@
 
 ## Checkpoint I/O and committed-input recovery
 
+The [atomic continuation source checkpoint](computer_assisted/recovered_atomic_continuations_v1/README.md)
+records restarted A-c744 component 3, B580 and Cd402 discovery from verified
+published or whole-original seeds. The later reset search suffixes are not
+represented as restored. Reviewed C driver variants are also preserved, with
+the missing Cb source-proof dependency explicit. Accepted closure counts are
+unchanged.
+
 The [recovery checkpoint](computer_assisted/checkpoint_io_and_recovery_v1/README.md)
 preserves an independently reviewed atomic JSON writer, its eight successful
 failure controls, and exact restoration receipts for the published A/A1,
-shared-bound and all-mask inputs. Numerical continuation is paused while
-available committed checkpoints are reattached after a runtime file-availability
-change. Missing later search suffixes are not counted as recovered. The live
+shared-bound and all-mask inputs. It records the earlier pause and exact
+reattachment after the concurrent intermediate-run reset. Missing later search
+suffixes are not counted as recovered. The live
 register remains **222/231 CLOSED**, with **8/32 whole masks CLOSED**.
 
 ## Recovered B16a complementary proof packet

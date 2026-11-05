@@ -1,0 +1,194 @@
+{
+  "files": {
+    "native/d_work/resume_a_component3_direct_shared_atomic_tree_v14.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/d_work/resume_a_component3_direct_shared_atomic_tree_v14.py",
+      "sha256": "218e91c7d4375227a523c98a048dc722fd056fd7ddefa994fabcc61e18266cc0",
+      "bytes": 15274
+    },
+    "native/d_work/cd402_work/resume_cd402_whole_original_atomic_tree_v2.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/resume_cd402_whole_original_atomic_tree_v2.py",
+      "sha256": "ec645fe5aa26d7c6dfdcbd89cc43604d4c5cec60d186f20012c66ae41632b367",
+      "bytes": 11771
+    },
+    "native/ac_work/tree/resume_c887_direct_shared_height_each_round_atomic_tree_v4.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/resume_c887_direct_shared_height_each_round_atomic_tree_v4.py",
+      "sha256": "aad8065320faebd681147d45d833b1a56aed5951c75272a5d9deb59ca49832de",
+      "bytes": 12273
+    },
+    "native/d_work/cb882_shared_height_bounds/resume_cb882_shared_height_bounds_adaptive_atomic_tree_v2.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/resume_cb882_shared_height_bounds_adaptive_atomic_tree_v2.py",
+      "sha256": "a5b8a6d7b12b8bb19f35357f90619dfb83a915890e531bf1022893669949fd6a",
+      "bytes": 12478
+    },
+    "native/ac_work/tree/resume_cb882_shared_height_direct_each_round_atomic_tree_v2.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/resume_cb882_shared_height_direct_each_round_atomic_tree_v2.py",
+      "sha256": "a5a22098845f3a2b65aed846713b28f30fcd40a86ad2493c0afa7889d292a345",
+      "bytes": 12860
+    },
+    "native/b_work/resume_b_five_proxy_round_atomic_tree_v1.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/b_work/resume_b_five_proxy_round_atomic_tree_v1.py",
+      "sha256": "12ff1d2b9a8aa044ff212e72c78d6dd0d1fd1167844fbdaadf181a6b8a9103ea",
+      "bytes": 11837
+    },
+    "native/ac_work/tree/atomic_json_checkpoint.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/atomic_json_checkpoint.py",
+      "sha256": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+      "bytes": 3728
+    },
+    "native/b_work/atomic_json_checkpoint_snapshot.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/b_work/atomic_json_checkpoint_snapshot.py",
+      "sha256": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+      "bytes": 3728
+    },
+    "native/ac_work/tree/prepare_atomic_discovery_driver_variants.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/prepare_atomic_discovery_driver_variants.py",
+      "sha256": "edc0552b92e6944d838ac7f822e4ce6b5e8cade1e1cc9d21cd92fcf65c365c7d",
+      "bytes": 6117
+    },
+    "native/ac_work/tree/check_atomic_discovery_driver_variants.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/check_atomic_discovery_driver_variants.py",
+      "sha256": "31385e0c51ef905845cb86a12cf99dffac88915b5e35e082b7345896d7df6474",
+      "bytes": 7066
+    },
+    "native/d_work/A3_RECOVERED_ATOMIC_LAUNCH_FREEZE.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/d_work/A3_RECOVERED_ATOMIC_LAUNCH_FREEZE.json",
+      "sha256": "31e43ea3889aafdf260d87abcf3346ce024d4201b27cb5d17d7ab6433a2cd597",
+      "bytes": 45328
+    },
+    "native/d_work/A3_RECOVERED_ATOMIC_START_OBSERVATION.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/d_work/A3_RECOVERED_ATOMIC_START_OBSERVATION.json",
+      "sha256": "02d532ee91ecb3d517e22ed97a2407121f021832d7b60248521387ff85c3438b",
+      "bytes": 543
+    },
+    "native/d_work/ATOMIC_A_C_DRIVER_ROOT_REVIEW.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/d_work/ATOMIC_A_C_DRIVER_ROOT_REVIEW.json",
+      "sha256": "1b00e11fe0658587861b0980e1abe581050d531ee75136dfe21222070e452cd8",
+      "bytes": 873
+    },
+    "native/d_work/CD402_ATOMIC_DRIVER_ROOT_REVIEW.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/d_work/CD402_ATOMIC_DRIVER_ROOT_REVIEW.json",
+      "sha256": "47bf918819ae4f59001ef7efb006c3059442d3aab7fe87002ebac792464a3953",
+      "bytes": 560
+    },
+    "native/d_work/B580_ATOMIC_LAUNCH_ROOT_REVIEW.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/d_work/B580_ATOMIC_LAUNCH_ROOT_REVIEW.json",
+      "sha256": "54782a7dae676e08c39b8ea16b137edcd0f1411c76c3005604dc59f3a93c6684",
+      "bytes": 596
+    },
+    "native/b_work/recovery_20261105/B580_ATOMIC_LAUNCH_FREEZE.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/B580_ATOMIC_LAUNCH_FREEZE.json",
+      "sha256": "db653868c23d62c3fa03535a7c3b8f30459ef1ae1f0850a249b66ad5e2ef7b0d",
+      "bytes": 12178
+    },
+    "native/b_work/recovery_20261105/B_ATOMIC_DRIVER_FROM_PUBLISHED.diff": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/B_ATOMIC_DRIVER_FROM_PUBLISHED.diff",
+      "sha256": "c1415c44b6eca0beea15f946a348b7311b8e3fa8957ec5612beba7e097153f07",
+      "bytes": 2195
+    },
+    "native/b_work/recovery_20261105/B_ATOMIC_DRIVER_DISPATCH_CONTROLS.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/B_ATOMIC_DRIVER_DISPATCH_CONTROLS.json",
+      "sha256": "c917b3474158c20adc3c38d533f707c6cbba449de80daa6eb8553a16301c41ed",
+      "bytes": 1018
+    },
+    "native/b_work/recovery_20261105/check_b_atomic_driver_dispatch_v1.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/check_b_atomic_driver_dispatch_v1.py",
+      "sha256": "83e9f9229a7be35acd0ec2a39e9d22670477f5f60d38448b203819aa62ac8f9d",
+      "bytes": 5066
+    },
+    "native/b_work/recovery_20261105/B580_FRESH_ZERO_ROUND_EXACT_REPLAY.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/B580_FRESH_ZERO_ROUND_EXACT_REPLAY.json",
+      "sha256": "6ad4f92d42c301cf1f3341b5632365a283e27c6fb61525f1b5de94eaf6cde2c8",
+      "bytes": 21588
+    },
+    "native/global_work/recovery_20261105/CD402_ATOMIC_DRIVER_V2.diff": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/global_work/recovery_20261105/CD402_ATOMIC_DRIVER_V2.diff",
+      "sha256": "4bc8fd75b6f91013ee4ef62c450eb55dbd0b7867f80bbb6aae9ab5c3c5aad63b",
+      "bytes": 2922
+    },
+    "native/global_work/recovery_20261105/CD402_ATOMIC_RESUME_SOURCE_BINDING.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/global_work/recovery_20261105/CD402_ATOMIC_RESUME_SOURCE_BINDING.json",
+      "sha256": "cd5c6a624bc4a94df3d6c20c482fd81baf68452f6bbbf3943a34ad341f801728",
+      "bytes": 3664
+    },
+    "native/global_work/recovery_20261105/CD402_ATOMIC_DRIVER_FAILFAST_CONTROLS.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/global_work/recovery_20261105/CD402_ATOMIC_DRIVER_FAILFAST_CONTROLS.json",
+      "sha256": "9628184b0e90fca9634c9d286816f66bfa70ba447da6d3327a244b2845c7b7bd",
+      "bytes": 1766
+    },
+    "native/global_work/recovery_20261105/check_cd402_atomic_driver_v2.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/global_work/recovery_20261105/check_cd402_atomic_driver_v2.py",
+      "sha256": "809180275e5f9400f3f5f33e311d59813208069cf15776da5147c9633a419b5e",
+      "bytes": 7516
+    },
+    "native/global_work/recovery_20261105/CD402_AUTHORIZED_LAUNCH.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/global_work/recovery_20261105/CD402_AUTHORIZED_LAUNCH.json",
+      "sha256": "d62c1bbb828fb9c5fe1a6b4258f79621af947a59468c11ded802916dcf4b79bb",
+      "bytes": 1095
+    },
+    "native/global_work/recovery_20261105/CD402_LAUNCH_OBSERVED.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/global_work/recovery_20261105/CD402_LAUNCH_OBSERVED.json",
+      "sha256": "f23834b755115c82b1cc64d84e356a1470044ce71116f11129e72846d3faf575",
+      "bytes": 585
+    },
+    "native/d_work/A1_NATIVE_ALIAS_RESTORATION_RECEIPT.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/d_work/A1_NATIVE_ALIAS_RESTORATION_RECEIPT.json",
+      "sha256": "3f2fe898828d5b72f703b5b0e7abccf1ef3b6ca56027fd3e6a3a643c13ee9be8",
+      "bytes": 90398
+    },
+    "native/ac_work/recovery_064e4aa/C_CANONICAL_RESTORATION.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/C_CANONICAL_RESTORATION.json",
+      "sha256": "36503767ca323485944490bf7f26c4bbf07725b7b2e8bcba41978be8d1dcf3d3",
+      "bytes": 1065346
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/A3_ATOMIC_FROM_BASELINE.diff": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/A3_ATOMIC_FROM_BASELINE.diff",
+      "sha256": "1e8854423f627b7c7985909bb91ba274dfe669b730306a783c67469de24d8867",
+      "bytes": 2341
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_A3.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_A3.py",
+      "sha256": "4848dd2f4327570ad21e0b92130047ebad4c0229aeee4a56c251311120e2662d",
+      "bytes": 14854
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_C887.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_C887.py",
+      "sha256": "d674c59c7842884c8be9f74a96d153aa47bef40f00aa47d23113331f239286f1",
+      "bytes": 11853
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_Cb_prepared_each_round.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_Cb_prepared_each_round.py",
+      "sha256": "4c38151d1b6b6661957e1e4b43dda8bf1bf6d0bba5908033f9abe292992d5112",
+      "bytes": 12440
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_Cb_prior_policy.py": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_Cb_prior_policy.py",
+      "sha256": "05572344f495b69a05e9a525a25a5f5eeaf7c4f187a30480553a6fca331d2f99",
+      "bytes": 12058
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/C887_ATOMIC_FROM_BASELINE.diff": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/C887_ATOMIC_FROM_BASELINE.diff",
+      "sha256": "20a05409e1f6d6c5fee53df0fe0342075cc4a3492b58ff992e5ac9f5914f980c",
+      "bytes": 2351
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/Cb_prepared_each_round_ATOMIC_FROM_BASELINE.diff": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/Cb_prepared_each_round_ATOMIC_FROM_BASELINE.diff",
+      "sha256": "1c1c51ed94078b16decd5330515fa43b546d67613769d8dcd25e06307f336811",
+      "bytes": 2370
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/Cb_prior_policy_ATOMIC_FROM_BASELINE.diff": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/Cb_prior_policy_ATOMIC_FROM_BASELINE.diff",
+      "sha256": "0f55530de12acc3a99afd84316682be3e308cc1a7a5d4439854daaf88d4afde0",
+      "bytes": 2354
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/DISPATCH_CONTROLS.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/DISPATCH_CONTROLS.json",
+      "sha256": "e41d5b0caf0837892f129c5c3a02715693fe82eb0369336f99a328d40c6250ed",
+      "bytes": 2718
+    },
+    "native/ac_work/recovery_064e4aa/atomic_driver_preparation/PREPARATION.json": {
+      "source_path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/PREPARATION.json",
+      "sha256": "8ee6b41a5cd52f3a6e21460f9090aeacc8435170693752d1d99aead402062b32",
+      "bytes": 4785
+    }
+  }
+}

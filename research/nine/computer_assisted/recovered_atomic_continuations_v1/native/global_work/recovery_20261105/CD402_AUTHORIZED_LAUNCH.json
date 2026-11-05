@@ -1,0 +1,34 @@
+{
+  "status": "AUTHORIZED_FROZEN_LAUNCH_PREPARED",
+  "argv": [
+    "python",
+    "-B",
+    "-u",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/resume_cd402_whole_original_atomic_tree_v2.py",
+    "/workspace/scratch/f9f48fcfb253/d_work/cd402_work/whole_original_complete_cover_seed",
+    "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/cd402_recovered_atomic_v2",
+    "--rounds",
+    "6",
+    "--proxy-rounds",
+    "0",
+    "--max-depth",
+    "26",
+    "--max-new-nodes",
+    "1000",
+    "--extra-existing-rounds",
+    "0"
+  ],
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "source_binding_sha256": "cd5c6a624bc4a94df3d6c20c482fd81baf68452f6bbbf3943a34ad341f801728",
+  "root_review_sha256": "47bf918819ae4f59001ef7efb006c3059442d3aab7fe87002ebac792464a3953",
+  "actual_free_bytes": 47226306560,
+  "source_seed": "PUBLISHED_FRESH_WHOLE_ORIGINAL_3ROUND_OPEN_SEED",
+  "lost_235_node_suffix_used": false,
+  "original_id": "negative-d4021ade840b985c",
+  "counts_changed": false,
+  "unix_time": 1793837145.539028
+}

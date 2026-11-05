@@ -1,0 +1,70 @@
+{
+  "status": "PREPARED_IMMUTABLE_ATOMIC_DISCOVERY_VARIANTS_NOT_LAUNCHED",
+  "builder_sha256": "edc0552b92e6944d838ac7f822e4ce6b5e8cade1e1cc9d21cd92fcf65c365c7d",
+  "source_archive_path_map_sha256": "87fa02855665f17f0375788b8d8a0f9372929fc34b695f01beb65d2d51045b05",
+  "atomic_helper_sha256": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+  "cases": [
+    {
+      "label": "A3",
+      "archive_original_path": "/workspace/scratch/f9f48fcfb253/d_work/resume_a_component3_direct_shared_round_tree_v13.py",
+      "old_source_sha256": "4848dd2f4327570ad21e0b92130047ebad4c0229aeee4a56c251311120e2662d",
+      "recovered_baseline": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_A3.py",
+      "new_driver": "/workspace/scratch/f9f48fcfb253/d_work/resume_a_component3_direct_shared_atomic_tree_v14.py",
+      "new_driver_sha256": "218e91c7d4375227a523c98a048dc722fd056fd7ddefa994fabcc61e18266cc0",
+      "diff": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/A3_ATOMIC_FROM_BASELINE.diff",
+      "diff_sha256": "1e8854423f627b7c7985909bb91ba274dfe669b730306a783c67469de24d8867",
+      "exact_non_io_byte_equality": true,
+      "os_error_failfast_handlers": 2,
+      "numeric_driver_imported": false,
+      "launched": false
+    },
+    {
+      "label": "C887",
+      "archive_original_path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/resume_c887_direct_shared_height_each_round_lazy_tree_v3.py",
+      "old_source_sha256": "d674c59c7842884c8be9f74a96d153aa47bef40f00aa47d23113331f239286f1",
+      "recovered_baseline": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_C887.py",
+      "new_driver": "/workspace/scratch/f9f48fcfb253/ac_work/tree/resume_c887_direct_shared_height_each_round_atomic_tree_v4.py",
+      "new_driver_sha256": "aad8065320faebd681147d45d833b1a56aed5951c75272a5d9deb59ca49832de",
+      "diff": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/C887_ATOMIC_FROM_BASELINE.diff",
+      "diff_sha256": "20a05409e1f6d6c5fee53df0fe0342075cc4a3492b58ff992e5ac9f5914f980c",
+      "exact_non_io_byte_equality": true,
+      "os_error_failfast_handlers": 2,
+      "numeric_driver_imported": false,
+      "launched": false
+    },
+    {
+      "label": "Cb_prior_policy",
+      "archive_original_path": "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/resume_cb882_shared_height_bounds_adaptive_lazy_tree.py",
+      "old_source_sha256": "05572344f495b69a05e9a525a25a5f5eeaf7c4f187a30480553a6fca331d2f99",
+      "recovered_baseline": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_Cb_prior_policy.py",
+      "new_driver": "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/resume_cb882_shared_height_bounds_adaptive_atomic_tree_v2.py",
+      "new_driver_sha256": "a5b8a6d7b12b8bb19f35357f90619dfb83a915890e531bf1022893669949fd6a",
+      "diff": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/Cb_prior_policy_ATOMIC_FROM_BASELINE.diff",
+      "diff_sha256": "0f55530de12acc3a99afd84316682be3e308cc1a7a5d4439854daaf88d4afde0",
+      "exact_non_io_byte_equality": true,
+      "os_error_failfast_handlers": 2,
+      "numeric_driver_imported": false,
+      "launched": false
+    },
+    {
+      "label": "Cb_prepared_each_round",
+      "archive_original_path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/resume_cb882_shared_height_direct_each_round_lazy_tree.py",
+      "old_source_sha256": "4c38151d1b6b6661957e1e4b43dda8bf1bf6d0bba5908033f9abe292992d5112",
+      "recovered_baseline": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/BASELINE_Cb_prepared_each_round.py",
+      "new_driver": "/workspace/scratch/f9f48fcfb253/ac_work/tree/resume_cb882_shared_height_direct_each_round_atomic_tree_v2.py",
+      "new_driver_sha256": "a5a22098845f3a2b65aed846713b28f30fcd40a86ad2493c0afa7889d292a345",
+      "diff": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_064e4aa/atomic_driver_preparation/Cb_prepared_each_round_ATOMIC_FROM_BASELINE.diff",
+      "diff_sha256": "1c1c51ed94078b16decd5330515fa43b546d67613769d8dcd25e06307f336811",
+      "exact_non_io_byte_equality": true,
+      "os_error_failfast_handlers": 2,
+      "numeric_driver_imported": false,
+      "launched": false
+    }
+  ],
+  "original_sources_overwritten": false,
+  "numerical_search_started": false,
+  "checker_or_row_rule_changed": false,
+  "multi_file_transaction_claimed": false,
+  "Cb_shared_bound_variants_require_recovery_or_fresh_reproof_of_missing_source_record": true,
+  "source_record_gap_sha256": "88fe0a11aed912184b29e8868fd1317e70b5c6dbd29a6107d3651d90a687e2d8"
+}
