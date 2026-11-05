@@ -1,0 +1,81 @@
+{
+  "status": "HASH_CHECKED_NATIVE_DISCOVERY_CHECKPOINT",
+  "trees": [
+    {
+      "label": "b7_conditional260",
+      "nodes": 357,
+      "candidate_excluded_leaves": 178,
+      "explicit_open_leaves": 1,
+      "original_or_conditional_scope": "See unchanged parent binding and original ID/path in manifest.",
+      "complete_manifest_installed": true,
+      "mathematical_replay_of_this_snapshot": false
+    },
+    {
+      "label": "b7_main",
+      "nodes": 429,
+      "candidate_excluded_leaves": 233,
+      "explicit_open_leaves": 23,
+      "original_or_conditional_scope": "See unchanged parent binding and original ID/path in manifest.",
+      "complete_manifest_installed": true,
+      "mathematical_replay_of_this_snapshot": false
+    },
+    {
+      "label": "b7_positive_half",
+      "nodes": 69,
+      "candidate_excluded_leaves": 27,
+      "explicit_open_leaves": 8,
+      "original_or_conditional_scope": "See unchanged parent binding and original ID/path in manifest.",
+      "complete_manifest_installed": true,
+      "mathematical_replay_of_this_snapshot": false
+    },
+    {
+      "label": "f14_future209",
+      "nodes": 103,
+      "candidate_excluded_leaves": 60,
+      "explicit_open_leaves": 11,
+      "original_or_conditional_scope": "See unchanged parent binding and original ID/path in manifest.",
+      "complete_manifest_installed": true,
+      "mathematical_replay_of_this_snapshot": false
+    },
+    {
+      "label": "f14_main",
+      "nodes": 525,
+      "candidate_excluded_leaves": 334,
+      "explicit_open_leaves": 16,
+      "original_or_conditional_scope": "See unchanged parent binding and original ID/path in manifest.",
+      "complete_manifest_installed": true,
+      "mathematical_replay_of_this_snapshot": false
+    }
+  ],
+  "prefix_only": {
+    "directory": "prefix_b7_260",
+    "indices": [
+      260,
+      158,
+      155,
+      151,
+      150,
+      144,
+      140,
+      8,
+      2,
+      0
+    ],
+    "all_other_prefix_siblings_remain_in_the_full_b7_tree": true
+  },
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "current_originals_closed": 222,
+  "current_originals_open": 9,
+  "standalone_portable_proof": false,
+  "fresh_whole_snapshot_replay_performed": false,
+  "shared_closed_faces_retained_in_all_saved_covers": true,
+  "lean_lake_ci_run": false,
+  "archive": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/root_b/checkpoint_publish/native_root_search_checkpoint_v1.fast.tar.xz",
+  "archive_sha256": "3dd68842d378766c2f33ba566870f3a553b4ef9cbb02485d0a07fdb726f25797",
+  "archive_bytes": 114371392,
+  "archive_members_checked": 1618,
+  "compression": "xz preset1 threads2; identical audited tar stream",
+  "seconds": 23.570945805004158,
+  "compression_seconds": 69.55679113299993
+}
