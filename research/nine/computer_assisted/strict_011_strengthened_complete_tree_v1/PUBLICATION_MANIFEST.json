@@ -1,0 +1,80 @@
+{
+  "files": {
+    "ARCHIVE_MANIFEST.json": {
+      "bytes": 21233,
+      "sha256": "ad5e5832d774b381142a532934c6f50befb07838b060c4756a731a8e039c8f5d"
+    },
+    "COMPLETE_ATTACHMENT_CONTROLS.json": {
+      "bytes": 3523,
+      "sha256": "81c98c50fc16ea9209e72ef9f702ad011e70584ca486d52c9712e7a6b44c2fff"
+    },
+    "COMPLETE_TREE_ATTACHMENT.md": {
+      "bytes": 5934,
+      "sha256": "bd263c3849e202e05e96a19792a2d612eaa80dd34ae15bd7cd851ffcbcbaaa89"
+    },
+    "CONTROL_EXECUTION.json": {
+      "bytes": 1008,
+      "sha256": "221d39350b5eeef7a6caf822ac91fd1f47f047d759af171c8130421303360a53"
+    },
+    "INDEPENDENT_REVIEW.json": {
+      "bytes": 25072,
+      "sha256": "9c2c32ac67a549e8d4b790f1a4f9bd07232522563bda7f051990d5f71b58c80e"
+    },
+    "INDEPENDENT_REVIEW.md": {
+      "bytes": 2880,
+      "sha256": "3b0ad1c669883fd90e968317985f29bb362727bea4d4ddb1a94b90c5f060a8fe"
+    },
+    "PREMISE_BINDINGS.json": {
+      "bytes": 21477,
+      "sha256": "697d1d0f94c6b668baf7f48c193ea7af9a8d2c8d2c51d295d29a6cb79ff55910"
+    },
+    "README.md": {
+      "bytes": 1856,
+      "sha256": "b183587b27aba0bfb16d57dde1dd668f86ade8357c68624449b70fe3cbaeb035"
+    },
+    "ROOT_EXTRACTION.json": {
+      "bytes": 467,
+      "sha256": "6000389bb310b77f12c3bf79a5650df58eaf56df607d851266737df942bd2049"
+    },
+    "ROOT_REVIEW.json": {
+      "bytes": 1360,
+      "sha256": "d9ad0d87249b9abf397d1ed58729661a45c1389a7008479990733293c6862c03"
+    },
+    "WRAPPER_TRANSFORMATION.json": {
+      "bytes": 3642,
+      "sha256": "d253155021188443d50f1cdd982918820fa90dc6e6e6d71f75f7b1ac2b770447"
+    },
+    "native_checkpoint_transport_v2.py": {
+      "bytes": 8718,
+      "sha256": "f2a2f88ed154dcf38e244f7dff3bfbb1c1373bfb20d2c5c37047aeeeb4065965"
+    },
+    "readable_sources/accepted_base_wrapper.py": {
+      "bytes": 10493,
+      "sha256": "c66b6e08616b49623fb6253c28ab2fb6aba1c5d70e0d645ae56b019a5a7bacae"
+    },
+    "readable_sources/build_strengthened_wrapper.py": {
+      "bytes": 5150,
+      "sha256": "1119efd2237511f63727e622949a6aa301026f54f5debe591d7aff76328462ba"
+    },
+    "readable_sources/check_complete_attachment.py": {
+      "bytes": 14106,
+      "sha256": "e3ee92458496e039d77b535a0b18a291177366a0e1f427ca44fdcdc944381850"
+    },
+    "readable_sources/strengthened_adapter.py": {
+      "bytes": 6317,
+      "sha256": "eda928822b3a9af0ca002a3f9a5c1c7b124b04ad7ab3cb0f3e2407961f3df0dd"
+    },
+    "readable_sources/verify_strengthened_complete_tree.py": {
+      "bytes": 11661,
+      "sha256": "48f09d6a110fc0a735dac12300cae363369298e2098e4ccf7110f1023673968c"
+    },
+    "strict011_strengthened_v1.tar.xz": {
+      "bytes": 58100,
+      "sha256": "b1ff1e05d1a860e4b0161fe802d71da0a76f05f5ba226905cb8d21c7a779dda0"
+    }
+  },
+  "fixed_frontier_sha256": "3dfaff7a880ab358930fb0ea835a1fdbe9959711f3c08ac47ee9817e7c693dde",
+  "new_masks": 0,
+  "new_original_cells": 0,
+  "schema": "exact_native_checkpoint_publication_v1"
+}

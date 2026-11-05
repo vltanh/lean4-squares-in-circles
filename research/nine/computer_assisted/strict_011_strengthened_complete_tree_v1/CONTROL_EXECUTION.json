@@ -1,0 +1,30 @@
+{
+  "status": "OBSERVED_PREPARED_COMPLETE_ATTACHMENT_CONTROL_EXIT_ZERO",
+  "session_id": 77309,
+  "observed_exit_code": 0,
+  "argv": [
+    "python",
+    "-B",
+    "-S",
+    "-u",
+    "global_work/strict011_strengthened_tree_v1/check_complete_attachment.py",
+    "--foundation",
+    "global_work/strict_011_rebuilt_v3",
+    "--corner-folder",
+    "global_work/strict011_four_product_layer_v2",
+    "--guard-folder",
+    "global_work/strict011_universal_021_applications_v2",
+    "--output-folder",
+    "global_work/strict011_strengthened_tree_v1/fresh_controls"
+  ],
+  "workspace": "/workspace/scratch/f9f48fcfb253",
+  "report_sha256": "81c98c50fc16ea9209e72ef9f702ad011e70584ca486d52c9712e7a6b44c2fff",
+  "complete_fixture_trees": 5,
+  "damaged_fixtures_rejected": 15,
+  "actual_LP_weighted_use_gate_passed": false,
+  "successful_conditional_terminal_use_exercised": false,
+  "fresh_scalar_replay_performed": false,
+  "numerical_solver_called": false,
+  "original_cell_credit": 0,
+  "whole_mask_credit": 0
+}

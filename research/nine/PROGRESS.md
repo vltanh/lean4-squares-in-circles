@@ -1,5 +1,21 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Fresh A I64 replay and strengthened strict-011 complete-tree review
+
+The [fresh native A I64 gate](computer_assisted/a_c744_i64_fresh_native_gate_v1/README.md)
+replays all seven recovered rounds: 813 deductions, 1,941 premises, two I64
+and 131 center literals. A new scalar replay checks 28 domains and 121 leaves.
+The 95-member archive preserves the complete new reports and sources, with
+explicit reuse of four published older source proofs. Its narrowed domain
+remains OPEN; whole-original endpoint transport is separate.
+
+The [strengthened strict-011 complete reader](computer_assisted/strict_011_strengthened_complete_tree_v1/README.md)
+passes root and peer source/physical review. It retains the exact root and
+all complete 4/8/2 alternatives, uses same-state corner rows, and requires a
+fresh scalar subprocess on the first true conditional guard. Five whole-root
+fixtures and fifteen damaged cases test the attachment; actual solver use
+remains a separate gate. No original or mask is credited by either checkpoint.
+
 ## Fresh B readiness and reviewed strict-011 corner attachment
 
 The [recovered B readiness checkpoint](computer_assisted/b_recovered_center_moment_readiness_v2/README.md)
@@ -20,8 +36,9 @@ positive-weight solver use remain separate gates. No closure count changes.
 The [A-c744 I64 source recovery](computer_assisted/a_c744_i64_source_recovery_v3/README.md)
 preserves the exact seven-round source and the original-wide physical
 implication through complete old components 0/1/2/4. Its 28-member archive
-passes fresh root extraction and source checks. A new weighted replay is
-still required; the lost 235-node consumer and its receipt are not recreated.
+passes fresh root extraction and source checks. The later native weighted
+replay is preserved separately above; the lost 235-node consumer and its
+receipt are not recreated.
 
 The [strict-011 H/I and C applications](computer_assisted/strict_011_universal021_applications_v2/README.md)
 have fresh interval, caller, cone and relocated controls, plus separate

@@ -1,5 +1,17 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [fresh A I64 native gate](computer_assisted/a_c744_i64_fresh_native_gate_v1/README.md)
+passes seven rounds and 813 exact deductions, with the complete new report
+and fresh 16/25 scalar replay preserved. Four old source proofs are reused
+explicitly; their arithmetic is not called fresh. The certified narrowed
+domain remains OPEN, and whole-original transport is a separate attachment.
+
+The [strengthened strict-011 complete-tree review](computer_assisted/strict_011_strengthened_complete_tree_v1/README.md)
+accepts the immutable corner/guard attachment while preserving every root and
+complete child union. Its controls are synthetic. A separate actual LP gate
+and a fresh scalar run for the first true guard remain required. The baseline
+33-node continuation waiter expired without starting a numerical job.
+
 The [new B source/readiness checkpoint](computer_assisted/b_recovered_center_moment_readiness_v2/README.md)
 retains the fresh 45-node B16 regional replay, B462's new whole-original
 attachment, and the exact area-moment runtime with 3,072-row literal parity.

@@ -1,0 +1,116 @@
+{
+  "actual_LP_weighted_use_gate_passed": false,
+  "all_fixture_roots_exact_whole_representative_caller": true,
+  "fixtures": {
+    "angle_two": {
+      "complete_unions": {
+        "angle": 1
+      },
+      "exact_totals": {
+        "deductions": 1,
+        "printed_rows_checked": 1,
+        "rounds": 1
+      },
+      "excluded_leaves": 0,
+      "nodes": 3,
+      "open_leaves": 2,
+      "status": "PASS_COMPLETE_STRICT011_STRENGTHENED_REPRESENTATIVE_COVER_WITH_OPEN_DOMAINS"
+    },
+    "mixed": {
+      "complete_unions": {
+        "angle": 1,
+        "proxy": 1,
+        "sat": 1
+      },
+      "exact_totals": {
+        "deductions": 1,
+        "printed_rows_checked": 5,
+        "rounds": 1
+      },
+      "excluded_leaves": 1,
+      "nodes": 15,
+      "open_leaves": 11,
+      "status": "PASS_COMPLETE_STRICT011_STRENGTHENED_REPRESENTATIVE_COVER_WITH_OPEN_DOMAINS"
+    },
+    "proxy_four": {
+      "complete_unions": {
+        "proxy": 1
+      },
+      "exact_totals": {
+        "deductions": 1,
+        "printed_rows_checked": 5,
+        "rounds": 1
+      },
+      "excluded_leaves": 1,
+      "nodes": 5,
+      "open_leaves": 3,
+      "status": "PASS_COMPLETE_STRICT011_STRENGTHENED_REPRESENTATIVE_COVER_WITH_OPEN_DOMAINS"
+    },
+    "root_corner_open": {
+      "complete_unions": {},
+      "exact_totals": {
+        "deductions": 1,
+        "printed_rows_checked": 1,
+        "rounds": 1
+      },
+      "excluded_leaves": 0,
+      "nodes": 1,
+      "open_leaves": 1,
+      "status": "PASS_COMPLETE_STRICT011_STRENGTHENED_REPRESENTATIVE_COVER_WITH_OPEN_DOMAINS"
+    },
+    "sat_eight": {
+      "complete_unions": {
+        "sat": 1
+      },
+      "exact_totals": {
+        "deductions": 1,
+        "printed_rows_checked": 1,
+        "rounds": 1
+      },
+      "excluded_leaves": 0,
+      "nodes": 9,
+      "open_leaves": 8,
+      "status": "PASS_COMPLETE_STRICT011_STRENGTHENED_REPRESENTATIVE_COVER_WITH_OPEN_DOMAINS"
+    }
+  },
+  "fresh_scalar_replay_performed": false,
+  "no_unproved_narrowing_or_incomplete_union_accepted": true,
+  "numerical_solver_called": false,
+  "original_cell_credit": 0,
+  "positive_synthetic_corner_weight_uses": 5,
+  "rejected_controls": [
+    "missing_proxy_child",
+    "duplicate_sat_choice",
+    "missing_angle_side",
+    "narrowed_child_initial",
+    "changed_corner_rhs",
+    "unpaid_residual",
+    "old_schema",
+    "actual_BC_caller",
+    "unproved_root_guard_2",
+    "unproved_root_narrowing_2",
+    "unproved_root_guard_7",
+    "unproved_root_narrowing_7",
+    "unproved_root_guard_8",
+    "unproved_root_narrowing_8",
+    "existing_scalar_output"
+  ],
+  "source_hashes": {
+    "WRAPPER_TRANSFORMATION.json": "d253155021188443d50f1cdd982918820fa90dc6e6e6d71f75f7b1ac2b770447",
+    "accepted_base_wrapper.py": "c66b6e08616b49623fb6253c28ab2fb6aba1c5d70e0d645ae56b019a5a7bacae",
+    "build_strengthened_wrapper.py": "1119efd2237511f63727e622949a6aa301026f54f5debe591d7aff76328462ba",
+    "check_complete_attachment.py": "e3ee92458496e039d77b535a0b18a291177366a0e1f427ca44fdcdc944381850",
+    "strengthened_adapter.py": "eda928822b3a9af0ca002a3f9a5c1c7b124b04ad7ab3cb0f3e2407961f3df0dd",
+    "verify_strengthened_complete_tree.py": "48f09d6a110fc0a735dac12300cae363369298e2098e4ccf7110f1023673968c"
+  },
+  "status": "PASS_PREPARED_STRENGTHENED_STRICT011_COMPLETE_ATTACHMENT_CONTROLS",
+  "successful_conditional_terminal_use_exercised": false,
+  "unchanged_function_asts": [
+    "walk",
+    "local_file",
+    "digest",
+    "read_module",
+    "pin"
+  ],
+  "whole_mask_credit": 0
+}

@@ -1,0 +1,23 @@
+{
+  "status": "OBSERVED_FRESH_I64_SOURCE_GATE_EXIT_ZERO",
+  "session_id": 23651,
+  "observed_exit_code": 0,
+  "command": [
+    "python",
+    "-B",
+    "-S",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/i64_fresh_gate_v3/replay_recovered_813.py",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/I64_RECOVERED_813_FRESH_EXACT_REPLAY.json"
+  ],
+  "report_member": "reports/I64_RECOVERED_813_FRESH_EXACT_REPLAY.json",
+  "report_sha256": "a6798bdf6a99d3bfdbf5bbe4af6600577959fd06da2c97412c0f7f9fa384a07e",
+  "scoped_status": "PASS_RECOVERED_NARROWED_A3_064_BOUND_RECORD_OPEN",
+  "historical_source_arithmetic_repeated": false,
+  "fresh_weighted_source": true,
+  "fresh_scalar": true,
+  "numerical_solver_run": false,
+  "old_lost_receipts_recreated": false,
+  "retained235_consumer_replayed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}
