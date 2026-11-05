@@ -1,0 +1,15 @@
+{
+  "schema": "fresh_full_strict011_representative_complete_tree_v1",
+  "root_document": {
+    "file": "root_document.json",
+    "sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b"
+  },
+  "root": 0,
+  "nodes": [
+    {
+      "id": 0,
+      "file": "node_0000.json",
+      "sha256": "ea17a56801667ab2e06a0e4389b574cb978ed578d6766f1495c3fe77f35c14f2"
+    }
+  ]
+}

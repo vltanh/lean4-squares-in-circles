@@ -1,5 +1,14 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [rebuilt strict 011/00 foundations](computer_assisted/strict_011_rebuilt_foundations_v3/README.md)
+now have a fresh exact replay from a separate copy, with ten complete fixture
+trees and all packet-local dependencies. Both the unnormalized and representative
+roots are fully specified; the latter is justified only by whole-caller
+reflection and H/I-swap equivalence. Every fixture root remains OPEN.
+The [7/10 half-slope review](computer_assisted/actual_ab_070_half_slope_review_v1/README.md)
+records its original afad08b scope separately from the later 3/5-slope extension.
+Neither checkpoint changes the fixed closure totals.
+
 Fresh [actual-AB terminal reviews](computer_assisted/actual_ab_terminals_review_v1/README.md)
 and the [actual center-row weighted gate](computer_assisted/universal_center_disk_weighted_gate_v1/README.md)
 preserve stronger reusable physical tools. These add no original or mask credit.

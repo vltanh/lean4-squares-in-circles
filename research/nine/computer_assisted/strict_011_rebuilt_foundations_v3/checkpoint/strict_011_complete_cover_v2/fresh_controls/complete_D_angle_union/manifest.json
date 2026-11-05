@@ -1,0 +1,40 @@
+{
+  "schema": "fresh_full_strict011_complete_tree_v1",
+  "root_document": {
+    "file": "root_document.json",
+    "sha256": "e11fe83de71455d05ab58bcc12625050c1d37ef1aac4df5d2069299e566782a2"
+  },
+  "root": 0,
+  "nodes": [
+    {
+      "id": 0,
+      "file": "node_0000.json",
+      "sha256": "df0308778ae5b6dc994a1baf6c29a946f8f6314e02bd6b1b302e384ce6cb68ab",
+      "split": {
+        "kind": "angle",
+        "original": 3,
+        "cut": "0",
+        "children": [
+          {
+            "side": 0,
+            "node": 1
+          },
+          {
+            "side": 1,
+            "node": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "file": "node_0001.json",
+      "sha256": "6ec87ea6d0cc8f6b43c1b42a4f9e609f9fc8b20d6241e95c7f4dd12d264e1031"
+    },
+    {
+      "id": 2,
+      "file": "node_0002.json",
+      "sha256": "02a1050c5435c3d06c24eb94551bd2dc5f1249f15bbc23d4640c170b43776199"
+    }
+  ]
+}

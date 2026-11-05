@@ -1,0 +1,56 @@
+{
+  "status": "PASS_ROOT_BOUNDED_EXTRA_070_SCALAR_PHYSICAL_AND_SCOPE_REVIEW",
+  "source_commit": "afad08b4cab09d4173bb6bceef038a240c25a483",
+  "inherited_premise_commit": "17ee1a047642e3675a82268ed33fed3b021f2c3e",
+  "inherited_premises_checked": [
+    {
+      "path": "research/nine/computer_assisted/actual_AB_two_link_row_v1/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md",
+      "sha256": "5573dff780b79d60cbea535e946ce3669a6fcbbe8152779348ba35107909d7cb"
+    },
+    {
+      "path": "research/nine/computer_assisted/full_angle_common_side_row_v1/ORIENTED_GOOD_ENDPOINT_TILT_TOLL_HAND_PROOF.md",
+      "sha256": "f48cf83809f7c6d3ddf0a2ea481e0f14990ec46633a2f16e13a9b87c2e53f452"
+    },
+    {
+      "path": "research/nine/UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md",
+      "sha256": "35bdf4d884c2871c1f5608b3782037f840351f7f59652a260f88982eb73e7037"
+    },
+    {
+      "path": "research/nine/computer_assisted/actual_AB_two_link_row_v1/check_three_angle_cover.py",
+      "sha256": "2ee4a2ed4f1fa82f49b3e02393f3e9634444332db4892be48e1fd3198c29900c"
+    },
+    {
+      "path": "research/nine/computer_assisted/actual_AB_two_link_row_v1/exact_three_angle_cover_0601.py",
+      "sha256": "80a17d7d9b5b728260d0bf432722381fb10906b74b0379c0eb6441c76a2a4169"
+    },
+    {
+      "path": "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/HAND_PROOF.md",
+      "sha256": "f3b7da577b21ae9e74a7176bf56e17838190be47f7066a18b8de0dcedab6e592"
+    }
+  ],
+  "reports": {
+    "ACTUAL_AB_070_ROOT_FRESH_REPLAY.json": "76f5e38b3e310310b4330cd86b83201e48e370f7e99d9b9afbf31aac47ff31c6",
+    "ACTUAL_AB_070_ROOT_SCALAR_CONTROLS.json": "22bbf076fa5bad1f397342e8c37d86f977e8a01fc46329e40c5c80baa70cb140",
+    "ACTUAL_AB_070_EXTRA_SCOPE_CONTROLS.json": "07c542d2efafcab766466ebef12d45279b18a9d31cffefcb88172dd4c4fc0e67"
+  },
+  "complete_scalar_cover": {
+    "domains": 28,
+    "leaves": 127,
+    "coefficients": 15875,
+    "frontier": 0
+  },
+  "damaged_and_optimized_python_controls": 10,
+  "wrong_selected_extra_domain_controls": 3,
+  "physical_argument": [
+    "The unchanged original D/G oriented cap, A/E universal cap, actual AB/EF/FG links and original B-extra-D order are retained. The D sign, G-above-D, and strict horizontal D/G corridor are still required.",
+    "The selected extra has certified absolute tangent<=1/2. Its half-angle x obeys x*x+4*x-1<=0; hence x<=sqrt(5)-2<17/72. Only this selected extra uses the smaller box axis1; D and B retain29/70.",
+    "Both non-actual links satisfy d>|v| because2*(7/10)^2=49/50<1. Every genuine original owner, axis and sign is retained in the same support inequality.",
+    "The exact scalar coefficient701/1000 exceeds7/10 by1/1000. Strict Bernstein positivity away from three zero angles gives the same equality conclusion. Closed-Q exclusion still needs actual BC, the CD cone and strictly weak CD.",
+    "A-c744 application must retain the complete three closed slope intervals[-1,-1/2],[-1/2,1/2],[1/2,1]. Only the central interval receives7/10; outer intervals retain the full-angle16/25 theorem. Old completed complements attach only by same-original ancestry.",
+    "The exact unrestricted scalar deficit-100711/5602800 with bounded B slope but extra slope20/21 confirms that substituting B or D for the selected extra restriction is invalid. This is a scalar domain control, not a physical packing counterexample."
+  ],
+  "runtime_installation_claimed": false,
+  "new_originals": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false
+}

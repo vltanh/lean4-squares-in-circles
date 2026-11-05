@@ -1,5 +1,19 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Rebuilt strict 011/00 foundations and bounded-extra review
+
+The [rebuilt strict 011/00 checkpoint](computer_assisted/strict_011_rebuilt_foundations_v3/README.md)
+preserves the fresh full caller, its existence-equivalent representative root,
+and the exact complete-cover reader. Root replay from a separate 184-member
+copy passed all ten fixture trees using only bundled arithmetic dependencies.
+All fixture roots remain OPEN; the checkpoint is ready for numerical discovery.
+
+The [7/10 half-slope review](computer_assisted/actual_ab_070_half_slope_review_v1/README.md)
+preserves the exact reviewed afad08b theorem snapshot, fresh scalar replay and
+13 damaged-domain/source controls. Its selected-extra restriction is explicit.
+The later 3/5-slope extension has separate source bytes and is not credited by
+that historical review. These checkpoints add no original or whole-mask credit.
+
 ## Stronger terminal reviews and actual center-row use
 
 The [actual-AB terminal review](computer_assisted/actual_ab_terminals_review_v1/README.md)

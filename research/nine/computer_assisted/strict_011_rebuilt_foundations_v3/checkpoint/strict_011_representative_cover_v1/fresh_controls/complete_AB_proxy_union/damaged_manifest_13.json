@@ -1,0 +1,72 @@
+{
+  "schema": "fresh_full_strict011_representative_complete_tree_v1",
+  "root_document": {
+    "file": "root_document.json",
+    "sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b"
+  },
+  "root": 0,
+  "nodes": [
+    {
+      "id": 0,
+      "file": "node_0000.json",
+      "sha256": "ea17a56801667ab2e06a0e4389b574cb978ed578d6766f1495c3fe77f35c14f2",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          0,
+          1
+        ],
+        "children": [
+          {
+            "choice": [
+              0,
+              -1
+            ],
+            "node": 1
+          },
+          {
+            "choice": [
+              0,
+              1
+            ],
+            "node": 2
+          },
+          {
+            "choice": [
+              1,
+              -1
+            ],
+            "node": 3
+          },
+          {
+            "choice": [
+              1,
+              1
+            ],
+            "node": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "file": "damaged_record_13.json",
+      "sha256": "9a2178169f37bb467c4c164b7ea1219d8a2a8797e545fb3c1412f4358233aca9"
+    },
+    {
+      "id": 2,
+      "file": "node_0002.json",
+      "sha256": "34147794b1d31b71cda6945c6aef4360b3e8150b394beba8fab7e6eabf283c2a"
+    },
+    {
+      "id": 3,
+      "file": "node_0003.json",
+      "sha256": "9c2ad8b3856a47a62de8d4a89b91cbfb7868f9ee0976a1cc09cc0b2a86aa71e8"
+    },
+    {
+      "id": 4,
+      "file": "node_0004.json",
+      "sha256": "f3bdfd998f23ee7d741cb0d07e455e05ed0054166c59ada21feed4e769226b22"
+    }
+  ]
+}

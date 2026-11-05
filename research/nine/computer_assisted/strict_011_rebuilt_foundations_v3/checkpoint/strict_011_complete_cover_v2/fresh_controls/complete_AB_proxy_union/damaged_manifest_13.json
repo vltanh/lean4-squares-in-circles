@@ -1,0 +1,72 @@
+{
+  "schema": "fresh_full_strict011_complete_tree_v1",
+  "root_document": {
+    "file": "root_document.json",
+    "sha256": "e11fe83de71455d05ab58bcc12625050c1d37ef1aac4df5d2069299e566782a2"
+  },
+  "root": 0,
+  "nodes": [
+    {
+      "id": 0,
+      "file": "node_0000.json",
+      "sha256": "df0308778ae5b6dc994a1baf6c29a946f8f6314e02bd6b1b302e384ce6cb68ab",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          0,
+          1
+        ],
+        "children": [
+          {
+            "choice": [
+              0,
+              -1
+            ],
+            "node": 1
+          },
+          {
+            "choice": [
+              0,
+              1
+            ],
+            "node": 2
+          },
+          {
+            "choice": [
+              1,
+              -1
+            ],
+            "node": 3
+          },
+          {
+            "choice": [
+              1,
+              1
+            ],
+            "node": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "file": "damaged_record_13.json",
+      "sha256": "d588d979fc19f417b688ce237dfcb6489af3cc26246f94c6168521c38eb9addf"
+    },
+    {
+      "id": 2,
+      "file": "node_0002.json",
+      "sha256": "9550708f2f4143a1aff9624737c28da2a5180adc01c934b367e017be1ed62747"
+    },
+    {
+      "id": 3,
+      "file": "node_0003.json",
+      "sha256": "81cdd8a34c2ce9d2394322fc79dbd5a0d8493a6e9fe5e3f4a8764c9525d2c02e"
+    },
+    {
+      "id": 4,
+      "file": "node_0004.json",
+      "sha256": "ac4b93777a63539e836ddc4f779dbe1770b80000fe5fde23e8a9b3c7be5883a0"
+    }
+  ]
+}

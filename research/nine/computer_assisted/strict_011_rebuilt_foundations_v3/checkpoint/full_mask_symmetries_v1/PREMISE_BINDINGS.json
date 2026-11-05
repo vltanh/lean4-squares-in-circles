@@ -1,0 +1,32 @@
+{
+  "fresh_generated_json": true,
+  "local_files": {
+    "FRESH_SYMMETRY_CONTROLS.json": {
+      "bytes": 2564,
+      "sha256": "e94a060f7683513fbf2f8231136c8377a2ac596493203faf1af0956bb640f22b"
+    },
+    "FULL_CALLER_SYMMETRY_HAND_PROOF.md": {
+      "bytes": 7311,
+      "sha256": "afb8bb55db3c331c12d9c4d5d0fdc3b557df0d8299a6b7fc46be2b8dbe55b79a"
+    },
+    "README.md": {
+      "bytes": 1895,
+      "sha256": "402b1c128a0a362ca08429c6ba73f4753fd55efe856e2d68df6a07eb80f1661b"
+    },
+    "check_full_mask_symmetries.py": {
+      "bytes": 12645,
+      "sha256": "75c1cea019ca2aa0b09e259b29746ab3f22eab22ec238e590e7701fabacc4e41"
+    },
+    "full_mask_symmetry_maps.py": {
+      "bytes": 3281,
+      "sha256": "5276b865fa7cde499927fba30989fbfb2319b0dcba20cc997a7c76edb748cf22"
+    }
+  },
+  "numerical_solver_called": false,
+  "original_cell_credit": 0,
+  "reconstruction_source_sha256": "cfaad88a7008187f0ee857f027aac428a6ec1d7ff19364cc01ce74d061b6a5d6",
+  "recovered_lost_json_claimed": false,
+  "schema": "rebuilt_full_caller_symmetry_binding_v2",
+  "scope": "Exact preserved whole-caller symmetry sources with newly generated polynomial controls; no normalized root installed by this packet.",
+  "whole_mask_credit": 0
+}

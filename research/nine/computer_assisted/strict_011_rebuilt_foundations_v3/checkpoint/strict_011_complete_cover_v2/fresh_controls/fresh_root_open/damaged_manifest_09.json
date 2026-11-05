@@ -1,0 +1,15 @@
+{
+  "schema": "fresh_full_strict011_complete_tree_v1",
+  "root_document": {
+    "file": "root_document.json",
+    "sha256": "e11fe83de71455d05ab58bcc12625050c1d37ef1aac4df5d2069299e566782a2"
+  },
+  "root": 0,
+  "nodes": [
+    {
+      "id": 0,
+      "file": "damaged_record_09.json",
+      "sha256": "f620f2ae0c9ddf1f427887a1b236160fd34869e4a88f6bc580422468d2b7ba44"
+    }
+  ]
+}

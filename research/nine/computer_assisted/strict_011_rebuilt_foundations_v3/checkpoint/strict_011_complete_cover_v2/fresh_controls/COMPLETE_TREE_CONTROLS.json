@@ -1,0 +1,110 @@
+{
+  "status": "PASS_FRESH_STRICT011_COMPLETE_TREE_CONTROLS",
+  "scope": "Complete-tree attachment and exact conditional fixture; full strict011 remains OPEN",
+  "fixtures": {
+    "fresh_root_open": {
+      "status": "PASS_COMPLETE_STRICT011_COVER_WITH_OPEN_DOMAINS",
+      "nodes": 1,
+      "excluded_leaves": 0,
+      "open_leaves": 1,
+      "unions": {},
+      "exact_totals": {
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0
+      },
+      "report_sha256": "3d911548d393dc8e54ec3a0b64a85004ac614be5d1d11928526177079a2056f3"
+    },
+    "complete_AB_proxy_union": {
+      "status": "PASS_COMPLETE_STRICT011_COVER_WITH_OPEN_DOMAINS",
+      "nodes": 5,
+      "excluded_leaves": 1,
+      "open_leaves": 3,
+      "unions": {
+        "proxy": 1
+      },
+      "exact_totals": {
+        "rounds": 1,
+        "deductions": 1,
+        "printed_rows_checked": 7
+      },
+      "report_sha256": "b826cde8b2489964f622e9fb59f46505c6f9d89d653eeae88c1666bc189f576d"
+    },
+    "proxy_bound_then_complete_angle": {
+      "status": "PASS_COMPLETE_STRICT011_COVER_WITH_OPEN_DOMAINS",
+      "nodes": 7,
+      "excluded_leaves": 1,
+      "open_leaves": 4,
+      "unions": {
+        "proxy": 1,
+        "angle": 1
+      },
+      "exact_totals": {
+        "rounds": 1,
+        "deductions": 1,
+        "printed_rows_checked": 7
+      },
+      "report_sha256": "847f0e77cf11f532c247f218c35508d9e4c46e003483bdd64bcf1ed0c681d97d"
+    },
+    "complete_HI_SAT_union": {
+      "status": "PASS_COMPLETE_STRICT011_COVER_WITH_OPEN_DOMAINS",
+      "nodes": 9,
+      "excluded_leaves": 0,
+      "open_leaves": 8,
+      "unions": {
+        "sat": 1
+      },
+      "exact_totals": {
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0
+      },
+      "report_sha256": "c2820f2a2641849c7dfbe7093bf4ce184ebd65dff2005ec1aee013b66978ab33"
+    },
+    "complete_D_angle_union": {
+      "status": "PASS_COMPLETE_STRICT011_COVER_WITH_OPEN_DOMAINS",
+      "nodes": 3,
+      "excluded_leaves": 0,
+      "open_leaves": 2,
+      "unions": {
+        "angle": 1
+      },
+      "exact_totals": {
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0
+      },
+      "report_sha256": "ca0332c7f42324b4c28db94684245dc65344c912d66a38e80c2686ef88393221"
+    }
+  },
+  "damaged_controls_rejected": [
+    "omit proxy alternative",
+    "duplicate proxy alternative",
+    "omit SAT alternative",
+    "omit angle half",
+    "wrong angle cut",
+    "cycle to root",
+    "repeat child domain",
+    "invent complete flag",
+    "wrong root document hash",
+    "narrowed serialized initial root",
+    "narrowed serialized child initial",
+    "erase inherited weighted difference bound",
+    "changed closed-node multiplier",
+    "changed literal row coefficient",
+    "erase strict positive reserve",
+    "invent terminal on OPEN domain",
+    "unreferenced declared node",
+    "optimized Python before import dispatch"
+  ],
+  "manually_closed_domain": "AB negative-x physical inset alternative; no whole-mask exclusion",
+  "model_binding_sha256": "68fc9bdf42eae978da0a49acc003333a7c658a7fde90b91182ef93d2986891cb",
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_rebuilt_v3/strict_011_complete_cover_v2/check_complete_tree_controls.py": "d50f6443057af26901aa4e4af61616322e08bcb43d8dd982e98050facd0fa780",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_rebuilt_v3/strict_011_complete_cover_v2/verify_strict_011_complete_tree.py": "20c7f344a41154ab8b27ce34885c5e56564a8882fff80ec077ee66f903274059"
+  },
+  "no_numeric_solver_called": true,
+  "normalized_root_installed": false,
+  "whole_mask_credit": 0,
+  "original_cell_credit": 0
+}
