@@ -1,0 +1,12 @@
+{
+  "status": "PASS_EXACT_INCIRCLE_CHORD_CONTROLS",
+  "exact_unit_distance_cases": 440,
+  "damaged_literals_rejected": 96,
+  "source_sha256": {
+    "check_controls.py": "ee445a48fcc218f3eb6e27d25a1a8b356bc5c863ec16e83c516e0c041fc6ef92",
+    "physical_incircle_chords.py": "5202f4c0af9bf913ccb9729738e34b00a391559f274e049cfcc27e1f168ec8db",
+    "independent_incircle_chords.py": "022d3670929e707403f9457a31abca4494e2dcd0d79f88757d65c5e1f0b52ce9"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0
+}
