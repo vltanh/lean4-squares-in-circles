@@ -1,0 +1,19 @@
+{
+  "status": "PASS_PORTABLE_OPEN_PROTOTYPE",
+  "original_id": "negative-f14f5bc4eafdf50d",
+  "complete": false,
+  "whole_original_proved": false,
+  "report_sha256": "5f5b000a90306f011b671ee38a9a17bd6ebb0460054df91ee76eaf4f6424431b",
+  "packet_manifest_sha256": "90dfd89e0d26f2304b9d241af322ea70cee726370d56c3594224925028d12770",
+  "prior_manifest_sha256": "33272ed096ceb3f2dab6a16570ebe080a84677a033be5690ee63bfbdbf7bfc72",
+  "packet_inputs": 728,
+  "prior_inputs": 507,
+  "every_new_bound_and_cover_replayed": true,
+  "all_inputs_rehashed_at_completion": true,
+  "external_workspace_reads_forbidden": true,
+  "numerical_modules_imported": false,
+  "lean_lake_ci_run": false,
+  "new_original_ledger_credit": 0,
+  "new_mask_ledger_credit": 0,
+  "seconds": 412.82865534099983
+}

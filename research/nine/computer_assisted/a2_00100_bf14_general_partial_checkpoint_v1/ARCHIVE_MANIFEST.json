@@ -1,0 +1,52 @@
+{
+  "schema": "open_registered_B_checkpoint_archive_v1",
+  "original_id": "negative-f14f5bc4eafdf50d",
+  "archive": "f14_general_partial_packet_v1.tar.xz",
+  "archive_bytes": 21167708,
+  "archive_sha256": "773d06284bc4a96815ee948c714bae563a661c93c29098d6b2a07c03345ea5de",
+  "archive_members_verified": 732,
+  "all_member_hashes_match": true,
+  "xz_integrity_pass": true,
+  "counts": {
+    "nodes": 349,
+    "complete_unions": {
+      "proxy": 52,
+      "angle": 58,
+      "sat": 3
+    },
+    "terminal_leaves": 236,
+    "excluded_leaves": 221,
+    "open_leaves": 15,
+    "local_rounds": 143,
+    "local_deductions": 27688,
+    "local_printed_rows": 95238,
+    "universal_center_disk_rows_checked": 12990,
+    "incircle_chord_rows_checked": 166,
+    "rotating_center_cone_rows_checked": 200,
+    "general_center_cone_rows_checked": 59
+  },
+  "complete_original": false,
+  "new_original_ledger_credit": 0,
+  "new_mask_ledger_credit": 0,
+  "portable_receipt_sha256": "350b4fab892d97a2d6d31bee27d508c08f60ad7089a20fcf33ec8f0191ca29ff",
+  "release_manifest_sha256": "420772919c896246a084a4fd11598407ddd0a7d5b06a19de1621c22d2d84666d",
+  "prior_archive_sha256": "c6e8dfc170a3d88366a6cd6f0955302ca5f664c626790ca91387f84c42502cb6",
+  "seconds": 295.52677618800226,
+  "parts": [
+    {
+      "file": "f14_general_partial_packet_v1.tar.xz.part001",
+      "bytes": 8388608,
+      "sha256": "c347ad87ab925372bef8fc93664ccfd24aab8304a8b83e255c9f5a0e64fcded6"
+    },
+    {
+      "file": "f14_general_partial_packet_v1.tar.xz.part002",
+      "bytes": 8388608,
+      "sha256": "93b52dd355a1127c390b8c806ce385ff74c235c44e304c4422942b9db0eef383"
+    },
+    {
+      "file": "f14_general_partial_packet_v1.tar.xz.part003",
+      "bytes": 4390492,
+      "sha256": "36bd88213867f3cf45aa3299885f2354e4f1462dbf75809171069c6f165d7725"
+    }
+  ]
+}
