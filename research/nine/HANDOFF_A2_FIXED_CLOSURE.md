@@ -1,3 +1,5 @@
+> **Seven-cell continuation handoff — 2026-11-05:** [Exact open IDs, verified frontiers, blockers and next actions](HANDOFF_2026_11_05_SEVEN_OPEN_00100.md). Snapshot at `76d75814`: **224/231 current-mask originals CLOSED, 7 OPEN**; **8/32 masks CLOSED**. Handoff only, zero new mathematical closure credit.
+
 > **ACTIVE EXECUTION DIRECTIVE — 2026-11-05:** [Current mask, priorities, bounded whole-cell attempts and exact acceptance](CURRENT_MASK_DIRECTIVE.md). **224/231 original cells CLOSED, 7 OPEN (A1, B3, C3); 8/32 masks CLOSED.** Bf14 and B580 are accepted; continue B16, A and the remaining B/C originals. The next milestone is **225/231**. Historical paragraphs below retain their original scope. No Lean/Lake/CI.
 
 # Current A.2 handoff: 224/231 current-mask cells closed; 7 OPEN
