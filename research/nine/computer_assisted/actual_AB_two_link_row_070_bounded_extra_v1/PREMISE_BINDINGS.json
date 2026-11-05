@@ -27,5 +27,6 @@
       "sha256": "f3b7da577b21ae9e74a7176bf56e17838190be47f7066a18b8de0dcedab6e592"
     }
   ],
-  "extra_required_hypothesis": "abs(tan(theta_selected_extra)) <= 1/2"
+  "extra_required_hypothesis": "abs(tan(theta_selected_extra)) <= 3/5",
+  "supersedes_slope_bound": "1/2"
 }

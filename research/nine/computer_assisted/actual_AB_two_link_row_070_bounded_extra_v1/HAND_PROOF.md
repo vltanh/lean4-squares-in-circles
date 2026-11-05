@@ -1,7 +1,7 @@
 # Actual-AB terminal with height variation 7/10 and bounded extra slope
 
 This proves a conditional strengthening of the accepted `16/25` terminal.
-The extra original I must additionally satisfy `|tan(theta_I)|<=1/2`.
+The extra original I must additionally satisfy `|tan(theta_I)|<=3/5`.
 It does not by itself close an original cell. All nine current originals
 and the same fixed registers remain unchanged.
 
@@ -17,7 +17,7 @@ and horizontal halfwidth h=(alpha+|beta|)/2. Suppose
 - theta_D>=0, y_G>=y_D and |x_G-x_D|<1;
 - x_B<=x_I<=x_D;
 - W=|y_I-y_B|+|y_D-y_I|<=7/10;
-- the extra original frame satisfies |tan(theta_I)|<=1/2.
+- the extra original frame satisfies |tan(theta_I)|<=3/5.
 
 Then q>=Q. If q=Q, A, B, I and D are aligned and x_D-x_A=3.
 In the unchanged original-nine `001/00` caller, its actual BC link,
@@ -49,8 +49,8 @@ Here is the full domain and certificate mechanism. Write
 x_i=tan(|theta_i|/2), with sign of theta_0 positive and the other two
 signs free. For D and B the physical half-angle range is contained in [0,29/70],
 because 99^2=9801>9800=2*70^2. For I the extra slope premise gives
-x_1<=sqrt(5)-2<17/72, since 161^2=25921>25920=5*72^2.
-The complete box is therefore [0,29/70] x [0,17/72] x [0,29/70]. The common positive
+x_1<=(sqrt(34)-5)/3<5/18, since 35^2=1225>1224=34*6^2.
+The complete box is therefore [0,29/70] x [0,5/18] x [0,29/70]. The common positive
 denominator is D=product_i(1-x_i^4). Multiply the scalar difference
 by 736000D. It is P_0+|P_1|+|P_2|. The separately reconstructed
 polynomials retain degree at most four in each coordinate.
@@ -65,7 +65,7 @@ That coefficient is exactly zero and the other 124 are positive.
 Therefore the scalar inequality is strict at every nonzero point,
 including every closed leaf boundary. The complete binary partitions
 cover all four sign patterns, all four owner patterns, and every
-selected owner: 28 domains, 127 leaves, 15,875 exact coefficients,
+selected owner: 28 domains, 163 leaves, 20,375 exact coefficients,
 and no open frontier. The independent reconstruction uses Fraction
 arithmetic and the physical frame dot products and determinants;
 it imports no discovery module or numerical optimizer.
@@ -125,7 +125,7 @@ face analytically; it does not assume numerical clearance at Q.
 ## Conditional complement and application to A-c744
 
 This threshold is available only where the extra original has certified
-slope interval contained in [-1/2,1/2]. On that domain, once the D/G guards
+slope interval contained in [-3/5,3/5]. On that domain, once the D/G guards
 and x_I<x_D are proved, the same five closed complement domains are
 x_I<=x_B, y_D-y_B>=7/10, y_B-y_D>=7/10,
 2y_I-y_B-y_D>=7/10, and y_B+y_D-2y_I>=7/10.
@@ -135,7 +135,7 @@ coverage, including each equality face.
 For the A-c744 original, the already closed old components 0,1,2,4 at
 threshold 3/5 exclude the corresponding stronger domains. The remaining
 central-slope case therefore has 2y_I-y_B-y_D>=7/10. A complete orientation
-cover may use the three closed intervals [-1,-1/2], [-1/2,1/2], [1/2,1].
+cover may use the three closed intervals [-1,-3/5], [-3/5,3/5], [3/5,1].
 The outer intervals keep the full-angle 16/25 threshold; they cannot be
 discarded or given the 7/10 threshold by this result. The shared endpoints
 belong to both adjacent intervals.

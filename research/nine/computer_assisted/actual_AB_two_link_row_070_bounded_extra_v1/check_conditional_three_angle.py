@@ -9,7 +9,7 @@ from hashlib import sha256
 import json,time,argparse,sys
 if not __debug__:raise RuntimeError('Assertions are required')
 Z=(0,0,0);INDICES=list(product(range(5),repeat=3));SCALE=736000
-UPPER=(Q(29,70),Q(17,72),Q(29,70))
+UPPER=(Q(29,70),Q(5,18),Q(29,70))
 
 def plus(*polys):
  result={}
@@ -122,7 +122,7 @@ def check_file(path,expected):
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('folder',type=Path);ap.add_argument('report',type=Path)
  a=ap.parse_args();start=time.monotonic();manifest=json.loads((a.folder/'MANIFEST.json').read_text());audits=[];expected_files=set()
- assert Q(99,70)**2>2 and Q(161,72)**2>5
+ assert Q(99,70)**2>2 and Q(35,6)**2>34
  assert 2*Q(7,10)**2<1
  assert manifest['root_upper']==list(map(str,UPPER))
  assert manifest['open']==0 and manifest['coefficient']=='701/1000'and manifest['target_variation']=='7/10'
@@ -144,7 +144,7 @@ def main():
  report=dict(status='PASS_COMPLETE_EXACT_TWO_LINK_SCALAR_COVER',domains=28,leaves=sum(x['leaves']for x in audits),
              bernstein_coefficients=sum(x['bernstein_coefficients']for x in audits),frontier=0,
              coefficient='701/1000',target_variation='7/10',strict_except_all_zero=True,
-             physical_lifting_separately_required=True,new_original_cells=0,new_masks=0,audits=audits,
+             required_middle_slope_bound='3/5',physical_lifting_separately_required=True,new_original_cells=0,new_masks=0,audits=audits,
              checker_sha256=sha256(Path(__file__).read_bytes()).hexdigest(),seconds=time.monotonic()-start)
  a.report.write_text(json.dumps(report,indent=2)+'\n')
  print(json.dumps({k:v for k,v in report.items()if k not in('audits',)}),flush=True)

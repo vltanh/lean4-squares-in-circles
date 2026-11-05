@@ -1,19 +1,20 @@
 {
   "status": "PASS_COMPLETE_EXACT_TWO_LINK_SCALAR_COVER",
   "domains": 28,
-  "leaves": 127,
-  "bernstein_coefficients": 15875,
+  "leaves": 163,
+  "bernstein_coefficients": 20375,
   "frontier": 0,
   "coefficient": "701/1000",
   "target_variation": "7/10",
   "strict_except_all_zero": true,
+  "required_middle_slope_bound": "3/5",
   "physical_lifting_separately_required": true,
   "new_original_cells": 0,
   "new_masks": 0,
   "audits": [
     {
       "file": "spmm_o01_k0.json",
-      "sha256": "f40735a6d50152911d102e3c0a1cc7c7d4628493842db0476a71202a211a9510",
+      "sha256": "edcbf32cf731b1b5d80263c9faaaa68b831d24d62dd65474718dc52247ddccb6",
       "signs": [
         1,
         -1,
@@ -28,12 +29,12 @@
       "nodes": 1,
       "maxdepth": 0,
       "bernstein_coefficients": 125,
-      "minimum_positive_rational_coefficient": "25197041879273/355622400",
+      "minimum_positive_rational_coefficient": "675690675787/20837250",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmm_o01_k1.json",
-      "sha256": "669b8312bc9ad66b16655a478da9b15748e9b6dd5905b831c1912c43021e1c93",
+      "sha256": "e3332e737732cf3e232c763d8ce88c1aa410272472994eee78614e791bf95ad8",
       "signs": [
         1,
         -1,
@@ -44,16 +45,16 @@
         1
       ],
       "selected_owner": 1,
-      "leaves": 3,
-      "nodes": 5,
-      "maxdepth": 2,
-      "bernstein_coefficients": 375,
-      "minimum_positive_rational_coefficient": "166846738/6561",
+      "leaves": 5,
+      "nodes": 9,
+      "maxdepth": 3,
+      "bernstein_coefficients": 625,
+      "minimum_positive_rational_coefficient": "180320/9",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmm_o02_k0.json",
-      "sha256": "28a1154488b7eed5b9cb5fd8de28e7a2ca10a1c93205bff70f0f67cd2126bad8",
+      "sha256": "39ef1ccd5ca9f3929f110df4c4a64f64c9e4b0e84e68b34033f69423b2aa3c17",
       "signs": [
         1,
         -1,
@@ -68,12 +69,12 @@
       "nodes": 1,
       "maxdepth": 0,
       "bernstein_coefficients": 125,
-      "minimum_positive_rational_coefficient": "129243174567551/2489356800",
+      "minimum_positive_rational_coefficient": "5176470178009/145860750",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmm_o02_k2.json",
-      "sha256": "e48f9065c40fbd9a1128ff8ccf039a950bb3bab2eb7e2734ba7daba4c330ad70",
+      "sha256": "9a08b576cefd24acab44df5364413fa28a83e381f13dbd7e292807ef1f8884ed",
       "signs": [
         1,
         -1,
@@ -88,12 +89,12 @@
       "nodes": 5,
       "maxdepth": 2,
       "bernstein_coefficients": 375,
-      "minimum_positive_rational_coefficient": "149408/5",
+      "minimum_positive_rational_coefficient": "230000/3",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmm_o11_k1.json",
-      "sha256": "1c500c82c2ba9a1ba3e96b193165a51b67335b6651c0856d5f89c5a7925b4bd5",
+      "sha256": "d6507b3289656c90045fe5c384e6e42ca9a60c70bc405b8b3548f81536d7579b",
       "signs": [
         1,
         -1,
@@ -104,16 +105,16 @@
         1
       ],
       "selected_owner": 1,
-      "leaves": 3,
-      "nodes": 5,
-      "maxdepth": 2,
-      "bernstein_coefficients": 375,
-      "minimum_positive_rational_coefficient": "306544/9",
+      "leaves": 4,
+      "nodes": 7,
+      "maxdepth": 3,
+      "bernstein_coefficients": 500,
+      "minimum_positive_rational_coefficient": "180320/9",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmm_o12_k1.json",
-      "sha256": "1bd9a40a9f1ce4b35cf5230397b76811b3e7792cb8369e2cdff4c244a54e49d1",
+      "sha256": "c903fe464cef9a1056824be333f7589deea238f66520cb1da3586aa1438fc64e",
       "signs": [
         1,
         -1,
@@ -128,12 +129,12 @@
       "nodes": 1,
       "maxdepth": 0,
       "bernstein_coefficients": 125,
-      "minimum_positive_rational_coefficient": "362848/3",
+      "minimum_positive_rational_coefficient": "30103019906971/437582250",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmm_o12_k2.json",
-      "sha256": "b274097c0368de1f8e8637bd5c1e5436f067a2b91f79e0627626c1cff6cae419",
+      "sha256": "a692530f421bace32026cbc99f6276de1310c7de16f53083dbdf8049e621c259",
       "signs": [
         1,
         -1,
@@ -148,12 +149,12 @@
       "nodes": 1,
       "maxdepth": 0,
       "bernstein_coefficients": 125,
-      "minimum_positive_rational_coefficient": "391000/3",
+      "minimum_positive_rational_coefficient": "4759712/35",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmp_o01_k0.json",
-      "sha256": "16cf439af0c3572ce23443c5bab6b19d6582f582b4caccd6192690f96d2281a4",
+      "sha256": "84c44e1b60648afc7ccec409e821ab109bba0082f329c8c9204f2b5b46009f7f",
       "signs": [
         1,
         -1,
@@ -173,7 +174,7 @@
     },
     {
       "file": "spmp_o01_k1.json",
-      "sha256": "f4ce428d0b02b2c4d0c5a8d4f1b1b5a8c4e351c6487a6583b23dfc8e35f97237",
+      "sha256": "d8c6c29ee2d6705870baecab248091bb8274007514a0398bc5012eaa8a7f177d",
       "signs": [
         1,
         -1,
@@ -188,12 +189,12 @@
       "nodes": 1,
       "maxdepth": 0,
       "bernstein_coefficients": 125,
-      "minimum_positive_rational_coefficient": "1870544/9",
+      "minimum_positive_rational_coefficient": "2200640/9",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmp_o02_k0.json",
-      "sha256": "af145bfc7c3a2691fd2067a4a23bbd3697b39fa1439e6b7c6eee7b98924085a3",
+      "sha256": "4abfa0ce47957f00bd64b76c0e4399d1b9c7bab6e8cc9a4bb3437a5d0f0ea8b0",
       "signs": [
         1,
         -1,
@@ -213,7 +214,7 @@
     },
     {
       "file": "spmp_o02_k2.json",
-      "sha256": "762aa2f0a4cc507b344cd3168540217785db162d6f864132bec669eb83aff938",
+      "sha256": "31d14787c2afb622835924d00d0c95a598dc8892b8523adfaa4477686d433a98",
       "signs": [
         1,
         -1,
@@ -228,12 +229,12 @@
       "nodes": 1,
       "maxdepth": 0,
       "bernstein_coefficients": 125,
-      "minimum_positive_rational_coefficient": "12763712/35",
+      "minimum_positive_rational_coefficient": "12637794446342/72930375",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmp_o11_k1.json",
-      "sha256": "c6d9285d7e90d31d5c48e748fd1cc30cee5389855478c6e26127f39458d42c58",
+      "sha256": "cbba289e4b4accaa336e8525c8b557931a64ba42255b302e23cbe11a484ae640",
       "signs": [
         1,
         -1,
@@ -248,12 +249,12 @@
       "nodes": 1,
       "maxdepth": 0,
       "bernstein_coefficients": 125,
-      "minimum_positive_rational_coefficient": "1870544/9",
+      "minimum_positive_rational_coefficient": "2200640/9",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmp_o12_k1.json",
-      "sha256": "515d03f8d49f70eab4f324871897058717d7c136471448340f00cbb3bb1d6e36",
+      "sha256": "34d0d44974a46d33c05f45b1f78ef2cedf57f62791571acdfa5843f9bed4b136",
       "signs": [
         1,
         -1,
@@ -268,12 +269,12 @@
       "nodes": 1,
       "maxdepth": 0,
       "bernstein_coefficients": 125,
-      "minimum_positive_rational_coefficient": "1870544/9",
+      "minimum_positive_rational_coefficient": "2200640/9",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "spmp_o12_k2.json",
-      "sha256": "25f2c529dea89aad44f9f0992f0a11168a31a97314e3dd002cabc2ff49e662d0",
+      "sha256": "9d0687734452f5e775e0c4ddcadb862440e92173361cc4698480707cebd61ed1",
       "signs": [
         1,
         -1,
@@ -293,7 +294,7 @@
     },
     {
       "file": "sppm_o01_k0.json",
-      "sha256": "d2760e0c7439a5558c6be3005b6dd6500c484938ea560837a32474c39a279a61",
+      "sha256": "9514b2999e3df7cd62c31cc108f4fd8b82ed6b0f97d727d9cbc4dd3a923fd24f",
       "signs": [
         1,
         1,
@@ -308,12 +309,12 @@
       "nodes": 3,
       "maxdepth": 1,
       "bernstein_coefficients": 250,
-      "minimum_positive_rational_coefficient": "391000/9",
+      "minimum_positive_rational_coefficient": "2076363199/42875",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppm_o01_k1.json",
-      "sha256": "b1b3cde56d92fdac3cb73779d6c396429fd26a41c8dd16b1fd439c9f1cb74dc7",
+      "sha256": "f5b9dcd0f047f6f31f717e3aa81dd59b05752cde0545f6d464bd6fd91b8fcd90",
       "signs": [
         1,
         1,
@@ -328,12 +329,12 @@
       "nodes": 3,
       "maxdepth": 1,
       "bernstein_coefficients": 250,
-      "minimum_positive_rational_coefficient": "306544/9",
+      "minimum_positive_rational_coefficient": "360640/9",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppm_o02_k0.json",
-      "sha256": "98588ad826b5b6bd4ab508d78597177e374ce950187225801d42e33ba619ed55",
+      "sha256": "4a45ac651ca38ccec8f9296ff2f7b710ca8f5d1e73c8f6bec4b4f3cc7b77ba2d",
       "signs": [
         1,
         1,
@@ -344,16 +345,16 @@
         2
       ],
       "selected_owner": 0,
-      "leaves": 7,
-      "nodes": 13,
-      "maxdepth": 6,
-      "bernstein_coefficients": 875,
-      "minimum_positive_rational_coefficient": "4039763125/1679616",
+      "leaves": 14,
+      "nodes": 27,
+      "maxdepth": 7,
+      "bernstein_coefficients": 1750,
+      "minimum_positive_rational_coefficient": "12527549883355/16131032064",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppm_o02_k2.json",
-      "sha256": "a1f3c9ff72c2d9489272819cec19663263d07f60eecab2632066b87c8d8a46c7",
+      "sha256": "e0eaff2a011c984f1ee450a35ca60a03591be6ee71215648f325d0980c5f2121",
       "signs": [
         1,
         1,
@@ -368,12 +369,12 @@
       "nodes": 1,
       "maxdepth": 0,
       "bernstein_coefficients": 125,
-      "minimum_positive_rational_coefficient": "2534600/7",
+      "minimum_positive_rational_coefficient": "12637794446342/72930375",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppm_o11_k1.json",
-      "sha256": "fa5baece4ecd15423eb88a7d7d7290008ed70b2df51a3373dcb44b1e14dea201",
+      "sha256": "b5272a85a68b43e222c2a008983a400395d51440294c5dc95b27064bdea8d978",
       "signs": [
         1,
         1,
@@ -388,12 +389,12 @@
       "nodes": 15,
       "maxdepth": 7,
       "bernstein_coefficients": 1000,
-      "minimum_positive_rational_coefficient": "76636/9",
+      "minimum_positive_rational_coefficient": "54442313123528821/7169347584000",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppm_o12_k1.json",
-      "sha256": "95ce927c26ef843296146cf3d7ef4cc71fb91d287fcd3ddec49f44cb9a56e2a5",
+      "sha256": "f82b59f5e7d52314783d80d153b9f1b860f8f0909a17d49231e2ad48acb6f4a6",
       "signs": [
         1,
         1,
@@ -404,16 +405,16 @@
         2
       ],
       "selected_owner": 1,
-      "leaves": 12,
-      "nodes": 23,
+      "leaves": 16,
+      "nodes": 31,
       "maxdepth": 7,
-      "bernstein_coefficients": 1500,
-      "minimum_positive_rational_coefficient": "123992477402370549503/27530294722560000",
+      "bernstein_coefficients": 2000,
+      "minimum_positive_rational_coefficient": "945942201266701/1344252672000",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppm_o12_k2.json",
-      "sha256": "236c3540f304ef76be305bb0d57b384fd9f821efe65580f11317b279d3f126d2",
+      "sha256": "986335644a149fc56267d0a17a7dc7a7dd16744d52f7a8d6700622a721c059b8",
       "signs": [
         1,
         1,
@@ -433,7 +434,7 @@
     },
     {
       "file": "sppp_o01_k0.json",
-      "sha256": "6e30ca1c966b661b8dc9fe3314b7b22c300becdea726cc6b9e4817a521614f26",
+      "sha256": "a2718a7923aa7698b91d6ab7f51a4f3f561c5f3ae69820b7f569bd93cf1d17fc",
       "signs": [
         1,
         1,
@@ -444,16 +445,16 @@
         1
       ],
       "selected_owner": 0,
-      "leaves": 10,
-      "nodes": 19,
-      "maxdepth": 8,
-      "bernstein_coefficients": 1250,
-      "minimum_positive_rational_coefficient": "178089/35",
+      "leaves": 14,
+      "nodes": 27,
+      "maxdepth": 9,
+      "bernstein_coefficients": 1750,
+      "minimum_positive_rational_coefficient": "17968750/6561",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppp_o01_k1.json",
-      "sha256": "0589633d38482c6bb96937e6deffb4877c396c054b1d265a2877c375acfb22c1",
+      "sha256": "242d17bc131727cc01749ba1e19b8fa430ef4cdaed636f4c23f5e694f4d74b3f",
       "signs": [
         1,
         1,
@@ -464,16 +465,16 @@
         1
       ],
       "selected_owner": 1,
-      "leaves": 10,
-      "nodes": 19,
-      "maxdepth": 8,
-      "bernstein_coefficients": 1250,
-      "minimum_positive_rational_coefficient": "15739911044523911017374172889/9400922684994355200000000",
+      "leaves": 14,
+      "nodes": 27,
+      "maxdepth": 9,
+      "bernstein_coefficients": 1750,
+      "minimum_positive_rational_coefficient": "45080/9",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppp_o02_k0.json",
-      "sha256": "8cae9880746361ca6ee605230247c64c9d9f9fdede3b18ce2ba0b4e4594762e6",
+      "sha256": "0de7a0b74d2b3d27ca0381f64a206b6b95d58d3dffc5bd2515e3f0ac32cb3217",
       "signs": [
         1,
         1,
@@ -484,16 +485,16 @@
         2
       ],
       "selected_owner": 0,
-      "leaves": 9,
-      "nodes": 17,
-      "maxdepth": 7,
-      "bernstein_coefficients": 1125,
-      "minimum_positive_rational_coefficient": "4039763125/1679616",
+      "leaves": 15,
+      "nodes": 29,
+      "maxdepth": 8,
+      "bernstein_coefficients": 1875,
+      "minimum_positive_rational_coefficient": "12527549883355/16131032064",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppp_o02_k2.json",
-      "sha256": "4d780780e9b0dc17b82034dff3b27e2e8bab958feb5ffe9e30772ade6681a839",
+      "sha256": "9ceb62715b79589cb0e4caf49a346cca7b67ab69eb99f05f3ed5ce741f62ce51",
       "signs": [
         1,
         1,
@@ -504,16 +505,16 @@
         2
       ],
       "selected_owner": 2,
-      "leaves": 7,
-      "nodes": 13,
-      "maxdepth": 6,
-      "bernstein_coefficients": 875,
-      "minimum_positive_rational_coefficient": "4039763125/1679616",
+      "leaves": 9,
+      "nodes": 17,
+      "maxdepth": 8,
+      "bernstein_coefficients": 1125,
+      "minimum_positive_rational_coefficient": "399060461695554693919277/258204053237760000000",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppp_o11_k1.json",
-      "sha256": "9ea941faa745ae6217e9f12250ab7bb2effa407e914a8890056ac51c0eace0f9",
+      "sha256": "ba999bf4f6681c6374a935ab55a9aea5401a7b6e385fdaa643990b39a09ad93c",
       "signs": [
         1,
         1,
@@ -524,16 +525,16 @@
         1
       ],
       "selected_owner": 1,
-      "leaves": 12,
-      "nodes": 23,
+      "leaves": 14,
+      "nodes": 27,
       "maxdepth": 10,
-      "bernstein_coefficients": 1500,
+      "bernstein_coefficients": 1750,
       "minimum_positive_rational_coefficient": "50025/14",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppp_o12_k1.json",
-      "sha256": "033fc1a8f67509601079970853ae2590dbc7ce0eadec0db92832ab94dab2419f",
+      "sha256": "e8c432d4483b279dfb9f6471ca49bc9191de5e1d673f0093237360eaec23f912",
       "signs": [
         1,
         1,
@@ -544,16 +545,16 @@
         2
       ],
       "selected_owner": 1,
-      "leaves": 15,
-      "nodes": 29,
+      "leaves": 19,
+      "nodes": 37,
       "maxdepth": 10,
-      "bernstein_coefficients": 1875,
-      "minimum_positive_rational_coefficient": "50025/14",
+      "bernstein_coefficients": 2375,
+      "minimum_positive_rational_coefficient": "945942201266701/1344252672000",
       "scalar_strict_except_all_zero": true
     },
     {
       "file": "sppp_o12_k2.json",
-      "sha256": "94322f4c383314fb9baca5a77c89a183159ff0d3a9d6d6f953061d7d600a2ee4",
+      "sha256": "b220e24cd9f2d2448836d9352059cf43780ed932be2509d9b7678875a83f01ad",
       "signs": [
         1,
         1,
@@ -568,10 +569,10 @@
       "nodes": 21,
       "maxdepth": 10,
       "bernstein_coefficients": 1375,
-      "minimum_positive_rational_coefficient": "50025/14",
+      "minimum_positive_rational_coefficient": "1404064910450914673/1761938862243840",
       "scalar_strict_except_all_zero": true
     }
   ],
-  "checker_sha256": "4963058a1896b1518dd533f350c3ba13497c9b581c9068dde5356fb8df0c2af6",
-  "seconds": 1.6608270370052196
+  "checker_sha256": "c45af533ed57b5c49413f701b9b3db06fb0850736de3d284772f74af19028705",
+  "seconds": 1.7780879860001733
 }
