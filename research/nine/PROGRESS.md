@@ -4,6 +4,18 @@
 
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **224/231 cells CLOSED, 7 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## B462: first root branch complete, whole original still OPEN
+
+The [57-node native checkpoint](computer_assisted/a2_00100_b462_57_native_checkpoint_20261105/README.md)
+retains the complete registered original and closes the first of its four
+H/I inset-proxy alternatives. Fresh exact replay and a non-author review
+validate all child unions and all 31 terminal arguments; ten terminal domains
+remain OPEN. The original two-round prefix is preserved. The archive retains
+317 input paths and 308 unique blobs with explicit ancestral dependencies.
+This supplies **zero original-cell or mask credit**; the original remains OPEN
+and totals remain **224/231 originals and 8/32 masks CLOSED**. No Lean, Lake,
+compilation or CI was run.
+
 ## B16a: three more inherited regions, whole original still OPEN
 
 The [subsequent non-author review](computer_assisted/a2_00100_b16a_partial_checkpoints_non_author_review_20261105/B16_CHECKPOINTS_NONAUTHOR_REVIEW.md)

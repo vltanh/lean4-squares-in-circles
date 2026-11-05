@@ -1,0 +1,30 @@
+{
+  "schema": "B462_NATIVE57_CHECKPOINT_V1",
+  "original_id": "negative-462e78d2e2d8be05",
+  "whole_original_domain_retained": true,
+  "whole_original_proved": false,
+  "nodes": 57,
+  "excluded_terminal_domains": 31,
+  "open_terminal_domains": 10,
+  "local_rounds": 11,
+  "local_deductions": 2085,
+  "local_printed_rows": 3061,
+  "new_complete_root_branches": [
+    1
+  ],
+  "input_paths": 317,
+  "unique_blobs": 308,
+  "archive_bytes": 1869000,
+  "archive_sha256": "cd10a2ccfe76c522865a39e21e48f630cf2bf7cf92ec6e663e30662abcd2ef43",
+  "files": {
+    "BASE_REPLAY.json": "a7c70e502d0407df93655495864c32ad97856c8c0509a021dd6d286da38035b5",
+    "FRESH_EXACT_REPLAY.json": "e86118fd7c24711e317de65c577992c5c4a83b72be2b6da75f80397d73a89824",
+    "FRESH_EXACT_REPLAY.log": "6a08576cfb83125ea2c5edc9f1f3ca7c186150940d280c95996edac887ec792a",
+    "INPUTS.json": "fe7f19af1fba6a1a23119d1c74f445d05e5ff5ab203df4eeba82dc80340ca1aa",
+    "inputs.tar.xz": "cd10a2ccfe76c522865a39e21e48f630cf2bf7cf92ec6e663e30662abcd2ef43"
+  },
+  "native_exact_replay_passed": true,
+  "standalone_cold_replay_claimed": false,
+  "original_cells_closed": 0,
+  "masks_closed": 0
+}
