@@ -1,0 +1,26 @@
+{
+  "status": "PASS_ROOT_PHYSICAL_FORMULA_AND_DAMAGED_COVER_CONTROLS",
+  "physical_frame_formula_comparisons": 252,
+  "damaged_covers_rejected": [
+    "changed_middle_box",
+    "changed_scalar_coefficient",
+    "changed_variation",
+    "nonempty_frontier",
+    "excess_absolute_value_weight",
+    "changed_minimum",
+    "changed_positive_minimum",
+    "missing_leaf",
+    "duplicate_leaf",
+    "false_origin_flag"
+  ],
+  "damaged_cover_fixture": "sppm_o01_k0.json",
+  "damaged_cover_fixture_sha256": "9514b2999e3df7cd62c31cc108f4fd8b82ed6b0f97d727d9cbc4dd3a923fd24f",
+  "selected_extra_guard_required": true,
+  "wrongly_bounding_B_instead_of_extra_scalar_deficit": "-100711/5602800",
+  "counterexample_selected_extra_slope": "20/21",
+  "counterexample_B_slope": "0",
+  "checker_sha256": "c45af533ed57b5c49413f701b9b3db06fb0850736de3d284772f74af19028705",
+  "root_control_source_sha256": "4118e6ddad210286846e3f0ecdf50b6eac5268e1385f3b6994a17fdd67c8316d",
+  "new_original_cells": 0,
+  "new_masks": 0
+}

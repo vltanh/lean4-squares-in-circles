@@ -1,0 +1,175 @@
+{
+  "schema": "bounded_extra_three_fifths_reset2_source_binding_v1",
+  "source_commit": "0d321eb7f76117097900b5d3f11d4ec0a39f21fd",
+  "files": {
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/HAND_PROOF.md": {
+      "bytes": 7094,
+      "sha256": "36b2d1cdba8787ee898b27bb74c2a892620861a05f45c9a0ac32d591a2c3f88c"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/check_conditional_three_angle.py": {
+      "bytes": 8167,
+      "sha256": "c45af533ed57b5c49413f701b9b3db06fb0850736de3d284772f74af19028705"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/exact_conditional_three_angle.py": {
+      "bytes": 5743,
+      "sha256": "fe044beaf651643e5b8900a26a428d2e17e874ec40f0c661d3bd17b5ffc89594"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/EXACT_SCALAR_REPLAY.json": {
+      "bytes": 13789,
+      "sha256": "0f4a4a1093788773216158bdc94c1b1b877f3d0a6558ab37041e95e42d647121"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/PREMISE_BINDINGS.json": {
+      "bytes": 1440,
+      "sha256": "76be61ddbf32c0f81894d3f42f70b1ddeed7fc275d6c5e793f6ce19e21e8686d"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/README.md": {
+      "bytes": 1525,
+      "sha256": "faae44d32c27ddbbfa52a670d922b1385441d76d14f66a369b35806cc1ba881a"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmp_o02_k2.json": {
+      "bytes": 449,
+      "sha256": "31d14787c2afb622835924d00d0c95a598dc8892b8523adfaa4477686d433a98"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppp_o12_k1.json": {
+      "bytes": 4545,
+      "sha256": "e8c432d4483b279dfb9f6471ca49bc9191de5e1d673f0093237360eaec23f912"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmm_o12_k1.json": {
+      "bytes": 449,
+      "sha256": "c903fe464cef9a1056824be333f7589deea238f66520cb1da3586aa1438fc64e"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmp_o11_k1.json": {
+      "bytes": 449,
+      "sha256": "cbba289e4b4accaa336e8525c8b557931a64ba42255b302e23cbe11a484ae640"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmm_o02_k0.json": {
+      "bytes": 449,
+      "sha256": "39ef1ccd5ca9f3929f110df4c4a64f64c9e4b0e84e68b34033f69423b2aa3c17"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmp_o12_k2.json": {
+      "bytes": 448,
+      "sha256": "9d0687734452f5e775e0c4ddcadb862440e92173361cc4698480707cebd61ed1"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmm_o01_k0.json": {
+      "bytes": 449,
+      "sha256": "edcbf32cf731b1b5d80263c9faaaa68b831d24d62dd65474718dc52247ddccb6"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppm_o12_k2.json": {
+      "bytes": 447,
+      "sha256": "986335644a149fc56267d0a17a7dc7a7dd16744d52f7a8d6700622a721c059b8"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppp_o01_k0.json": {
+      "bytes": 3334,
+      "sha256": "a2718a7923aa7698b91d6ab7f51a4f3f561c5f3ae69820b7f569bd93cf1d17fc"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmp_o01_k0.json": {
+      "bytes": 449,
+      "sha256": "84c44e1b60648afc7ccec409e821ab109bba0082f329c8c9204f2b5b46009f7f"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppm_o01_k0.json": {
+      "bytes": 639,
+      "sha256": "9514b2999e3df7cd62c31cc108f4fd8b82ed6b0f97d727d9cbc4dd3a923fd24f"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmp_o02_k0.json": {
+      "bytes": 448,
+      "sha256": "4abfa0ce47957f00bd64b76c0e4399d1b9c7bab6e8cc9a4bb3437a5d0f0ea8b0"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/MANIFEST.json": {
+      "bytes": 8560,
+      "sha256": "24fddabefad9934f15585867013ed89b224aa5197220d462e2403e754ae0d65b"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmm_o12_k2.json": {
+      "bytes": 449,
+      "sha256": "a692530f421bace32026cbc99f6276de1310c7de16f53083dbdf8049e621c259"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmm_o01_k1.json": {
+      "bytes": 1269,
+      "sha256": "e3332e737732cf3e232c763d8ce88c1aa410272472994eee78614e791bf95ad8"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmp_o12_k1.json": {
+      "bytes": 449,
+      "sha256": "34d0d44974a46d33c05f45b1f78ef2cedf57f62791571acdfa5843f9bed4b136"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppm_o02_k2.json": {
+      "bytes": 449,
+      "sha256": "e0eaff2a011c984f1ee450a35ca60a03591be6ee71215648f325d0980c5f2121"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppm_o12_k1.json": {
+      "bytes": 3769,
+      "sha256": "f82b59f5e7d52314783d80d153b9f1b860f8f0909a17d49231e2ad48acb6f4a6"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmp_o01_k1.json": {
+      "bytes": 449,
+      "sha256": "d8c6c29ee2d6705870baecab248091bb8274007514a0398bc5012eaa8a7f177d"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmm_o02_k2.json": {
+      "bytes": 844,
+      "sha256": "9a08b576cefd24acab44df5364413fa28a83e381f13dbd7e292807ef1f8884ed"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppp_o02_k0.json": {
+      "bytes": 3566,
+      "sha256": "0de7a0b74d2b3d27ca0381f64a206b6b95d58d3dffc5bd2515e3f0ac32cb3217"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppp_o02_k2.json": {
+      "bytes": 2236,
+      "sha256": "9ceb62715b79589cb0e4caf49a346cca7b67ab69eb99f05f3ed5ce741f62ce51"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppp_o01_k1.json": {
+      "bytes": 3362,
+      "sha256": "242d17bc131727cc01749ba1e19b8fa430ef4cdaed636f4c23f5e694f4d74b3f"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppp_o11_k1.json": {
+      "bytes": 3413,
+      "sha256": "ba999bf4f6681c6374a935ab55a9aea5401a7b6e385fdaa643990b39a09ad93c"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppm_o11_k1.json": {
+      "bytes": 1983,
+      "sha256": "b5272a85a68b43e222c2a008983a400395d51440294c5dc95b27064bdea8d978"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppp_o12_k2.json": {
+      "bytes": 2761,
+      "sha256": "b220e24cd9f2d2448836d9352059cf43780ed932be2509d9b7678875a83f01ad"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppm_o02_k0.json": {
+      "bytes": 3322,
+      "sha256": "4a45ac651ca38ccec8f9296ff2f7b710ca8f5d1e73c8f6bec4b4f3cc7b77ba2d"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/spmm_o11_k1.json": {
+      "bytes": 1056,
+      "sha256": "d6507b3289656c90045fe5c384e6e42ca9a60c70bc405b8b3548f81536d7579b"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_070_bounded_extra_v1/cover/sppm_o01_k1.json": {
+      "bytes": 640,
+      "sha256": "f5b9dcd0f047f6f31f717e3aa81dd59b05752cde0545f6d464bd6fd91b8fcd90"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_v1/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md": {
+      "bytes": 9077,
+      "sha256": "5573dff780b79d60cbea535e946ce3669a6fcbbe8152779348ba35107909d7cb"
+    },
+    "research/nine/computer_assisted/full_angle_common_side_row_v1/ORIENTED_GOOD_ENDPOINT_TILT_TOLL_HAND_PROOF.md": {
+      "bytes": 8487,
+      "sha256": "f48cf83809f7c6d3ddf0a2ea481e0f14990ec46633a2f16e13a9b87c2e53f452"
+    },
+    "research/nine/UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md": {
+      "bytes": 8936,
+      "sha256": "35bdf4d884c2871c1f5608b3782037f840351f7f59652a260f88982eb73e7037"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_v1/check_three_angle_cover.py": {
+      "bytes": 7859,
+      "sha256": "2ee4a2ed4f1fa82f49b3e02393f3e9634444332db4892be48e1fd3198c29900c"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_v1/exact_three_angle_cover_0601.py": {
+      "bytes": 5638,
+      "sha256": "80a17d7d9b5b728260d0bf432722381fb10906b74b0379c0eb6441c76a2a4169"
+    },
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/HAND_PROOF.md": {
+      "bytes": 6087,
+      "sha256": "f3b7da577b21ae9e74a7176bf56e17838190be47f7066a18b8de0dcedab6e592"
+    }
+  },
+  "selected_extra_slope_bound": "3/5",
+  "coefficient": "701/1000",
+  "physical_variation": "7/10",
+  "new_original_cells": 0,
+  "new_masks": 0
+}

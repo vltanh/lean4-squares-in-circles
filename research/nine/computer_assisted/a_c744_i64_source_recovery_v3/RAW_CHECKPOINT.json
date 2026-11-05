@@ -1,0 +1,273 @@
+{
+  "schema": "A_c744_I64_exact_source_recovery_checkpoint_v3",
+  "status": "RECOVERED_SOURCE_AND_HAND_ATTACHMENT_WEIGHTED_REPLAY_PENDING",
+  "original_id": "positive-c744bc031d40ee64",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        4
+      ]
+    ]
+  ],
+  "mask": "001/00",
+  "squared_radius": "1105/256",
+  "all_nine_originals_retained": true,
+  "original_corners": 36,
+  "original_pairs": 36,
+  "marked_cones": 5,
+  "closed_shared_faces_retained": true,
+  "necessary_I64_row": {
+    "coefficients": [
+      [
+        3,
+        "1"
+      ],
+      [
+        7,
+        "1"
+      ],
+      [
+        17,
+        "-2"
+      ]
+    ],
+    "rhs": "-16/25"
+  },
+  "whole_parent": {
+    "original_path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/a_c744_whole_support_caps/record.json",
+    "sha256": "68aae2029165b1148d0b719ac962e7c50c649afd8fcee6bfba4af99f50f85893"
+  },
+  "seven_round_source": {
+    "path": "RECOVERED_SEVEN_ROUND_SOURCE.json",
+    "sha256": "858f627dd6ab4ed6efbd6f57614787d037fe1482997eca4313a3a9eaa1e25244",
+    "rounds": 7,
+    "deductions": 813,
+    "printed_rows": 1941,
+    "I64_literals": 2,
+    "center_literals": 131
+  },
+  "five_round_prefix_source": {
+    "surviving_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/runtime/d_work/A_c744_component3_post_a1_bound_whole_probe/node_00000.json",
+    "sha256": "0649950033bd35b20e88e271223377778f083c9e9f224e2887dcb84b38848fb0",
+    "rounds": 5
+  },
+  "old_exclusion_bindings": {
+    "0_2_4": "905634da0a82c25cd25e2d13d31d9a91be4d2556e1d2a38458a233e627108b7f",
+    "1": "5c46eb3c5e3c60e9e776dd52db041cff92d0718c12feb040b9ada0fc745a801a"
+  },
+  "base": {
+    "package": "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2",
+    "publication_manifest_sha256": "1bda2d75a4e4de0f3a03639d3926a39a31d0be004a87946d6d2b7d7912e0fb3f",
+    "archive_sha256": "8378b765edebbba407e394ed98743193a556255687f7ddb8480bafe31d5710f2",
+    "assembled_input_manifest_sha256": "d8ca6d465aa3831e26d6d0149b8ce734a1043c51694f81a9ce9b9a4e3baaf965",
+    "assembled_binding_sha256": "d3c7032b4aeb12649d8d971d0256de95e05dfdcb622ead8a4b6e69ccb633bde2",
+    "aliases": 2238,
+    "assembled_files": 2249,
+    "required_published_base": {
+      "repository_folder": "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint",
+      "archive_sha256": "e7ddb4f4e5b943a6f69a0aa861f6721ca49835311fa595ef40a10881b62e4343",
+      "input_manifest_sha256": "6b730ae5e0dabed264d7e71ba6de72bc15f744d7bba619ed8f6c27a86b9097cf",
+      "files_reused": 1392
+    }
+  },
+  "published_theorem_files": {
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/EXACT_SCALAR_REPLAY.json": "2fb5325d67124a722e658c5979acd9301e05548a75e742a01c7733617f54fec3",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/HAND_PROOF.md": "f3b7da577b21ae9e74a7176bf56e17838190be47f7066a18b8de0dcedab6e592",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/PREMISE_BINDINGS.json": "ddadc067cbe6b138bb177834252deeca317bbf3a2d909cd5d4cf1b7486a8d34b",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/README.md": "55371117c39c112302fd1d61840e897563d027267466bc60c0351716911064fb",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/check_three_angle_cover_0641.py": "b3fa06fa47cd82a4fbc2f48f50d1ac4fc379c3d5367002fa38416c9ef0c29976",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/MANIFEST.json": "083213ec0a1bd003251c446b233e85e5431a5391daab6011621dde2bf905c737",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmm_o01_k0.json": "b6573598349ff3454df27b0ce853978631cc9475d5bb8df350851885ff2fa74d",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmm_o01_k1.json": "0f490c7ebba9ae750ddf94ed46c91d528b65b5bf6ebe5e98bd8d656c50b96710",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmm_o02_k0.json": "8e3801ccef00b5af760120af371bc5617bd1d3c138cc6a668d78337715ed92b0",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmm_o02_k2.json": "b5510d0b2449257785b8cf6213cfb53963078add3b1aca2869c18b69f5ebd3ce",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmm_o11_k1.json": "e04025f9c28942f18fce6962ab3f938c263324effbac6b55a79175305048beea",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmm_o12_k1.json": "ed87f5f77c91ad71daa9104be6e7445c18513f09f11b78a6b2a714436809d622",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmm_o12_k2.json": "8c4f0c9c4d23a145b6f80dc5d139da723c856d6d84e55b2903da49895bcd1799",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmp_o01_k0.json": "1f999770370b07382262569b9af08f3cfd5a5af666158e687444808cca75c9b6",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmp_o01_k1.json": "1a7141d18eb13baee987d99e1ebe9fdb39860816c5db110fe7eb30a83e59dec7",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmp_o02_k0.json": "1bf59229a31fbd517b2bbbe2f5090894d4422151ab72558b018e9113abcbebad",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmp_o02_k2.json": "cfa8dac94494abaebf45321ff15214d890aa34180c55cb3e307cbc03bcbe6612",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmp_o11_k1.json": "016d1ac60471fbffc3670caecbb3c742f1c6c36d6a2c7f5a638342b5a17b880b",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmp_o12_k1.json": "e45af347e1033247dfa6f6882b1c5539dd55ab04c307e5629723fb6a05184022",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/spmp_o12_k2.json": "cd3f7fdc5187e6315557a037857149f080d0a3d12fab6da0b0fe72c1a6242e3e",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppm_o01_k0.json": "a833db7f85bc3ddabb6cace1a461cd5d32b5393fd646cdc9d1131c478b06a295",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppm_o01_k1.json": "f58857f1c393db9b1e16d8ba61b347bccaa4836813f9e79d21203290ede75928",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppm_o02_k0.json": "254e4fa3990b53c48c6d0d5fcff776b6bcd739da623dd61d0f9eef3eb4153450",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppm_o02_k2.json": "3bd967028ff8cdfd9ffc02577e28465a477ea0a2040b3418299045c6bbc4d899",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppm_o11_k1.json": "45e2b393d51369dfd9244cf6c65e01f911184a5af627d935504002ea9df9a349",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppm_o12_k1.json": "737e16fd82ef18fc45df47b5984050625d3f6822cebd192190aa2c2caa575125",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppm_o12_k2.json": "fa61988b9fdc587ce2b4f48d20d9ea8b261e4351571a100968642a7455b47119",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppp_o01_k0.json": "204ad4ffdc14a43975a3ea1d85b733d856813af425bdb497aa9d48a8f5eb044e",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppp_o01_k1.json": "d32251f25523519ea04739cff5db6d00100fe6f9439ca91c897fb03297bf9012",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppp_o02_k0.json": "9e35d115b54ad2a6a9e71514f191642b6f88ec1671539d339789cf63290f4270",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppp_o02_k2.json": "e84fa02d05bd815781bfbca4b62980cab6281265149bd0b3215db0e7bbb39dd6",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppp_o11_k1.json": "c85c1dcf215243874b4f0f8c0f9195d162e115ddff3183544ca22fe416928477",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppp_o12_k1.json": "2b6a6cf2ede325b13fc1048eae1fb9d5375e4416bab89589f235949ee5078f5d",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/cover_0641/sppp_o12_k2.json": "bd5f4d8dfb181049aab7c4389de61c6af1195005fd739c9c7621eed23000f95f",
+    "research/nine/computer_assisted/actual_AB_two_link_row_064_v1/exact_three_angle_cover_0641.py": "87692fb2aa3f4c573f47af1254c5ebc9eacf235dd33100c272f9bde08916532f",
+    "research/nine/UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md": "35bdf4d884c2871c1f5608b3782037f840351f7f59652a260f88982eb73e7037",
+    "research/nine/computer_assisted/actual_AB_two_link_row_v1/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md": "5573dff780b79d60cbea535e946ce3669a6fcbbe8152779348ba35107909d7cb",
+    "research/nine/computer_assisted/full_angle_common_side_row_v1/ORIENTED_GOOD_ENDPOINT_TILT_TOLL_HAND_PROOF.md": "f48cf83809f7c6d3ddf0a2ea481e0f14990ec46633a2f16e13a9b87c2e53f452",
+    "research/nine/computer_assisted/actual_AB_two_link_row_v1/check_three_angle_cover.py": "2ee4a2ed4f1fa82f49b3e02393f3e9634444332db4892be48e1fd3198c29900c",
+    "research/nine/computer_assisted/actual_AB_two_link_row_v1/exact_three_angle_cover_0601.py": "80a17d7d9b5b728260d0bf432722381fb10906b74b0379c0eb6441c76a2a4169"
+  },
+  "published_theorem_premise_binding_sha256": "ddadc067cbe6b138bb177834252deeca317bbf3a2d909cd5d4cf1b7486a8d34b",
+  "historical_completed_gate_receipt": {
+    "sha256": "29c8ecf7386d80fbcece2ff1ea93066ce3cdbeb902052b61a5f0f83648320c6d",
+    "bytes_available": false,
+    "usable_as_cache": false
+  },
+  "interrupted_retained_consumer": {
+    "session_id": 43629,
+    "observed_exit_code": 1,
+    "arithmetic_complete": false,
+    "checker_failure_established": false,
+    "snapshot_available": false
+  },
+  "copied_source_provenance": [
+    {
+      "path": "RECOVERED_SEVEN_ROUND_SOURCE.json",
+      "sha256": "858f627dd6ab4ed6efbd6f57614787d037fe1482997eca4313a3a9eaa1e25244",
+      "bytes": 4951622,
+      "recovered_from": "/tmp/ac_exact_recovery_20261105_0945/external_exact_seven_round_source/node_00000.json"
+    },
+    {
+      "path": "EXTERNAL_SOURCE_MANIFEST.json",
+      "sha256": "5b8e628e348f9f6dff9fd6aee97eaddf044b2af4f1de3225833f98d7ea6b5f37",
+      "bytes": 69113,
+      "recovered_from": "/tmp/ac_exact_recovery_20261105_0945/external_exact_seven_round_source/EXTERNAL_MANIFEST.json"
+    },
+    {
+      "path": "SOURCE_AVAILABILITY.json",
+      "sha256": "4e0437ab030dcefa2ffc417341e944b48e2a595ac431d04c513d6c6108c8ce73",
+      "bytes": 1510861,
+      "recovered_from": "/tmp/ac_exact_recovery_20261105_0945/COMPLETE_A_SOURCE_AVAILABILITY_V2.json"
+    },
+    {
+      "path": "EXACT_RECORD_RECOVERY_RECEIPT.json",
+      "sha256": "daa154ae2c760dd77de1f9fa3a6f3f93a710266128038c9e3eec12ec27a67e92",
+      "bytes": 743,
+      "recovered_from": "/tmp/ac_exact_recovery_20261105_0945/external_exact_seven_round_source/RECOVERY_RECEIPT.json"
+    },
+    {
+      "path": "INTERRUPTION_OBSERVATION.json",
+      "sha256": "c6de1bd0dc3b53dd1ab99eb746a9a9204e200b375ef3662c17b561d8f01d920a",
+      "bytes": 1832,
+      "recovered_from": "/tmp/ac_runtime_interruption_20261105_0945/OBSERVATION.json"
+    },
+    {
+      "path": "audit_complete_A_source_recovery_v2.py",
+      "sha256": "3393671437013c547fb571142237c06acb82f1abf00d615170418fa3901a5d57",
+      "bytes": 9088,
+      "recovered_from": "/tmp/ac_exact_recovery_20261105_0945/audit_complete_A_source_recovery_v2.py"
+    },
+    {
+      "path": "sources/physical_center_disk_rows.py",
+      "sha256": "3b32ff2f02e4681b5ef6b9359420b173f092a96093708c9d2c3fe982948681d8",
+      "bytes": 1168,
+      "recovered_from": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/universal_center_disk/physical_center_disk_rows.py"
+    },
+    {
+      "path": "sources/independent_physical_center_disk_rows.py",
+      "sha256": "9fafd523e0154fcb8aedb7ecf2f36aa6213a77c84ff619ae12cd5612fc1b2acc",
+      "bytes": 1153,
+      "recovered_from": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/universal_center_disk/independent_physical_center_disk_rows.py"
+    },
+    {
+      "path": "sources/UNIVERSAL_CENTER_DISK_HAND_PROOF.md",
+      "sha256": "cd4cbeb8e38b139cb3289c3b9ce572537b5b115079452b0454467c4598478491",
+      "bytes": 4468,
+      "recovered_from": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/universal_center_disk/UNIVERSAL_CENTER_DISK_HAND_PROOF.md"
+    },
+    {
+      "path": "sources/independent_a_c744_component3_post_a1_bound_rows.py",
+      "sha256": "c9f6acf45daa28efd21a281371eda4eec1f06a603e1f3407967f6beee44861b9",
+      "bytes": 9053,
+      "recovered_from": "/workspace/scratch/f9f48fcfb253/d_work/reset_sources_d989c83/sources/c9f6acf45daa28efd21a281371eda4eec1f06a603e1f3407967f6beee44861b9"
+    },
+    {
+      "path": "sources/verify_a_c744_component3_post_a1_bounds_lazy_tree.py",
+      "sha256": "4b94cd39d2b5141e60dc79cc37e7d9131b8ec8c9005abc515797d0162abdc67c",
+      "bytes": 3512,
+      "recovered_from": "/workspace/scratch/f9f48fcfb253/d_work/reset_sources_d989c83/sources/4b94cd39d2b5141e60dc79cc37e7d9131b8ec8c9005abc515797d0162abdc67c"
+    },
+    {
+      "path": "sources/independent_certified_union_original_rows.py",
+      "sha256": "2c51bd8ccb712083b1aecde3f0e832b05e8d3ac130d82aa1ac5fa02598e32e50",
+      "bytes": 1736,
+      "recovered_from": "/workspace/scratch/f9f48fcfb253/d_work/reset_sources_d989c83/sources/2c51bd8ccb712083b1aecde3f0e832b05e8d3ac130d82aa1ac5fa02598e32e50"
+    },
+    {
+      "path": "sources/A_C744_COMPLEMENT_CONSEQUENCES_BINDING.json",
+      "sha256": "905634da0a82c25cd25e2d13d31d9a91be4d2556e1d2a38458a233e627108b7f",
+      "bytes": 3704,
+      "recovered_from": "/tmp/recovered_a1_packet_064e4aa/payload/ac_work/tree/A_C744_COMPLEMENT_CONSEQUENCES_BINDING.json"
+    },
+    {
+      "path": "sources/A_C744_COMPONENT1_CLOSED_CONSEQUENCE_BINDING.json",
+      "sha256": "5c46eb3c5e3c60e9e776dd52db041cff92d0718c12feb040b9ada0fc745a801a",
+      "bytes": 5015,
+      "recovered_from": "/tmp/recovered_a1_packet_064e4aa/payload/ac_work/tree/A_C744_COMPONENT1_CLOSED_CONSEQUENCE_BINDING.json"
+    },
+    {
+      "path": "sources/A_C744_COMPONENT3_SHARED_BOUND_STATE_BINDING.json",
+      "sha256": "c27b8690fc4fcd096cfcc2efc8776c2b51106762e94ad724de7e57c2a78db574",
+      "bytes": 26355,
+      "recovered_from": "/tmp/recovered_a1_packet_064e4aa/payload/ac_work/tree/A_C744_COMPONENT3_SHARED_BOUND_STATE_BINDING.json"
+    },
+    {
+      "path": "sources/A_C744_COMPONENT3_POST_A1_BOUND_STATE_BINDING.json",
+      "sha256": "338e53440f35ab321c126d6050f9de36c89a0424141ea6e1f6ba2fa6b756c23d",
+      "bytes": 27283,
+      "recovered_from": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/closure_route/runtime/ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_STATE_BINDING.json"
+    },
+    {
+      "path": "sources/HISTORICAL_NATIVE_CACHE_WRAPPER.py",
+      "sha256": "268f89391c5a405c9edf2908510d36928073fb0267b935c708922a75199fc24a",
+      "bytes": 9560,
+      "recovered_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/transcript_source/replay_retained_a3_with_native_source_cache.py"
+    },
+    {
+      "path": "HISTORICAL_CACHE_WRAPPER_SOURCE_REVIEW.json",
+      "sha256": "236ced3eae3ba6d1d9ba594f1e8f0911b7665a0de140d988eb5abee25ba14707",
+      "bytes": 975,
+      "recovered_from": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/A3_NATIVE_CACHE_WRAPPER_SOURCE_REVIEW.json"
+    }
+  ],
+  "weighted_arithmetic_freshly_replayed": false,
+  "original_wide_endpoint_family_installed": false,
+  "old_receipts_recreated": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false,
+  "published_theorem_local_aliases": {
+    "research/nine/computer_assisted/actual_AB_two_link_row_v1/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md": "published_premises/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md",
+    "research/nine/computer_assisted/full_angle_common_side_row_v1/ORIENTED_GOOD_ENDPOINT_TILT_TOLL_HAND_PROOF.md": "published_premises/ORIENTED_GOOD_ENDPOINT_TILT_TOLL_HAND_PROOF.md",
+    "research/nine/UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md": "published_premises/UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md",
+    "research/nine/computer_assisted/actual_AB_two_link_row_v1/check_three_angle_cover.py": "published_premises/check_three_angle_cover.py",
+    "research/nine/computer_assisted/actual_AB_two_link_row_v1/exact_three_angle_cover_0601.py": "published_premises/exact_three_angle_cover_0601.py"
+  },
+  "preparation_revision": {
+    "v2_source_binding_sha256": "98355763b24893065bb4458820451a62b7a0bdc765d16c00d01893af13bbed17",
+    "reason": "Require all five declared physical theorem premises even when four files are absent from a sparse checkout; exact published-donor bytes are included as explicit file aliases. No mathematical record, threshold, guard or proof scope changed."
+  }
+}

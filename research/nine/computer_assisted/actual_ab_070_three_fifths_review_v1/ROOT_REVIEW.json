@@ -1,0 +1,33 @@
+{
+  "status": "PASS_ROOT_THREE_FIFTHS_EXTRA_SLOPE_EXTENSION",
+  "theorem_source_commit": "0d321eb7f76117097900b5d3f11d4ec0a39f21fd",
+  "source_binding_sha256": "48e94f10a7cbd8027578d425a027cb3b0347e969033dd679d25e4c0e61ed35dd",
+  "fresh_scalar_replay_sha256": "6977c4f422ead7b07e913314bd2ecd3b1a10c267b16c3b26cfea657cd4d9aea0",
+  "scalar_session_id": 30157,
+  "scalar_observed_exit_code": 0,
+  "fresh_root_controls_sha256": "0c058403aaa4cbb1f1a4b3b7892a327480da867121b85c58c655e6305dca0523",
+  "root_controls_observed_exit_code": 0,
+  "scalar_domains": 28,
+  "scalar_leaves": 163,
+  "bernstein_coefficients": 20375,
+  "scalar_frontier": 0,
+  "physical_variation_limit": "7/10",
+  "required_slope_owner": "the selected extra original only",
+  "required_absolute_slope_bound": "3/5",
+  "other_guards_retained": [
+    "actualAB/EF/FG",
+    "xB<=xExtra<=xD",
+    "Dcanonical_slope>=0",
+    "yG>=yD",
+    "abs(xG-xD)<1",
+    "all original corners and physical pairs"
+  ],
+  "closed_Q_equality_blocker": "Available in the unchanged001/00 caller only through actualBC,originalCDcone and strictly weakCD; it is not imported into the011 caller.",
+  "orientation_cover": "[-1,-3/5],[-3/5,3/5],[3/5,1]; outer intervals keep the unrestricted16/25 theorem. Shared endpoints retained.",
+  "physical_formula_comparisons": 252,
+  "damaged_cover_controls_rejected": 10,
+  "wrong_selected_frame_countercase_deficit": "-100711/5602800",
+  "new_runtime_installed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

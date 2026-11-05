@@ -1,0 +1,29 @@
+{
+  "status": "PASS_ROOT_STRICT011_HI_AND_C_ATTACHMENT_SOURCE_REVIEW_PREPARATION_ONLY",
+  "binding_sha256": "4c1fb0040f43281fd6e21bbece48d7293d0310a7341f490930c40ef51b689023",
+  "all_frozen_members_rehashed": 48,
+  "fresh_native_control_report_sha256": "ea2239fe63020a44e9e35da24008df2f300b2a5d4734995c9c134172048681e0",
+  "independent_source_review_sha256": "4a81f6181c13e32cb932521d0a2eb1918d8c229a1f58de4ce44faa78c7a6bbb2",
+  "relocated_control_receipt_sha256": "f4626fcd6144fd9149720f5682f93fa5b42db976956c1ed9435454c78777a38d",
+  "entire_source_read": [
+    "strict021_guards.py",
+    "independent_strict021_guards.py",
+    "source_bindings.py",
+    "check_guards.py",
+    "PHYSICAL_ATTACHMENTS.md",
+    "freeze_bundle.py"
+  ],
+  "review_findings": [
+    "H/I signed differences correctly intersect coordinate and pair intervals, including reversal and closed21/100 faces.",
+    "The four-form maximum identity equals the two-link variation. Correlated differences give valid upper bounds.",
+    "X=C names seven distinct originals; AE,DG caps,actualAB/EF/FG,physicalDC/CB and scalarD,C,B retain their hypotheses.",
+    "The original BC/CD center cones give B-C-D order by the four printed half-weight rows; no actualBC premise is introduced.",
+    "The strict caller is excluded using its finite maximum corner radiusq<Q and the theoremq>=Q. No common-center-height or closed-Q equality argument is imported.",
+    "Full certified state ancestry and a new exact scalar replay are required at actual terminal use."
+  ],
+  "fresh_scalar_replay_performed_by_root": false,
+  "actual_state_guard_established": false,
+  "tree_terminal_installed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

@@ -1,0 +1,42 @@
+{
+  "status": "PASS_I64_REGULAR_FILE_TRANSPORT_CONTROLS",
+  "actual_archive_sha256": "2ac4146142e260d62aa8b2156e7e01962ce4f8abb69f8429171c6fa7f26ce86c",
+  "actual_extraction": {
+    "status": "PASS_EXACT_FRESH_I64_EXTRACTION",
+    "members": 28,
+    "bytes": 6720340,
+    "archive_sha256": "2ac4146142e260d62aa8b2156e7e01962ce4f8abb69f8429171c6fa7f26ce86c",
+    "inventory_sha256": "29a783d8878a913cec70e242ab09becd7105e02987fe41da8ebed560cbcc8a30",
+    "source_binding_sha256": "f740ecf06bc2c60b1dbe17ebaa0eef41c468857f595cdbad0cf079426905417a",
+    "proof_arithmetic_replayed": false,
+    "new_original_cells": 0,
+    "new_masks": 0
+  },
+  "deterministic_rebuild_same_archive_and_inventory": true,
+  "damaged_cases_rejected": [
+    "parent_escape",
+    "absolute_name",
+    "empty_component",
+    "duplicate_member",
+    "symlink_member",
+    "hardlink_member",
+    "directory_member",
+    "extra_member",
+    "missing_member",
+    "content_damage",
+    "size_damage",
+    "noncanonical_timestamp",
+    "existing_output",
+    "symlink_output",
+    "optimized_python_rejected_before_dispatch"
+  ],
+  "damaged_case_count": 15,
+  "source_files_before_after": 28,
+  "source_bytes_unchanged": true,
+  "proof_arithmetic_replayed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "helper_sha256": "202a5e6a67f7b635f0cce14964eedbec2e13fc0df0d640b0c123d5815181920f",
+  "control_source_sha256": "7db5ff7daa63134bf612e743adcda6fd1f8e2ba32e5f4a994be96f2afa88ca88",
+  "temporary_folder": "/tmp/i64_transport_controls_w19ht_30"
+}

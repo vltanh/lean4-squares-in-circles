@@ -1,0 +1,22 @@
+{
+  "status": "OBSERVED_FRESH_GUARD_CONTROL_PROCESS_EXIT_ZERO",
+  "session_id": 54786,
+  "observed_exit_code": 0,
+  "argv": [
+    "python",
+    "-B",
+    "-S",
+    "-u",
+    "global_work/strict011_universal_021_applications_v2/check_guards.py",
+    "--foundation",
+    "global_work/strict_011_rebuilt_v3",
+    "--output",
+    "global_work/strict011_universal_021_applications_v2/FRESH_GUARD_CONTROLS.json"
+  ],
+  "workspace": "/workspace/scratch/f9f48fcfb253",
+  "report_sha256": "ea2239fe63020a44e9e35da24008df2f300b2a5d4734995c9c134172048681e0",
+  "missing_old_receipt_reused": false,
+  "numerical_solver_called": false,
+  "whole_mask_credit": 0,
+  "original_cell_credit": 0
+}

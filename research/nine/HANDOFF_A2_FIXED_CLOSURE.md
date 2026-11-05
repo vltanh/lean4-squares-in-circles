@@ -1,5 +1,13 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [A-c744 I64 source checkpoint](computer_assisted/a_c744_i64_source_recovery_v3/README.md)
+preserves the exact source and complete original-wide hand attachment. Its
+fresh weighted gate remains separate; missing later consumer records are
+not silently reconstructed. The [strict-011 H/I and C guards](computer_assisted/strict_011_universal021_applications_v2/README.md)
+and [7/10 selected-extra extension review](computer_assisted/actual_ab_070_three_fifths_review_v1/README.md)
+also retain their full application guards and current preparation scope.
+No new original or mask has been credited.
+
 The [second strict-011 recovery](computer_assisted/strict_011_second_recovery_v1/README.md)
 restores 291 exact published inputs and freshly replays the complete five-node
 pilot. Missing later discovery records are not reconstructed from remembered

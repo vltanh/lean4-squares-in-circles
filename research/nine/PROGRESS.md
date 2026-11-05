@@ -1,5 +1,25 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Preserved stronger A source and strict-011 theorem applications
+
+The [A-c744 I64 source recovery](computer_assisted/a_c744_i64_source_recovery_v3/README.md)
+preserves the exact seven-round source and the original-wide physical
+implication through complete old components 0/1/2/4. Its 28-member archive
+passes fresh root extraction and source checks. A new weighted replay is
+still required; the lost 235-node consumer and its receipt are not recreated.
+
+The [strict-011 H/I and C applications](computer_assisted/strict_011_universal021_applications_v2/README.md)
+have fresh interval, caller, cone and relocated controls, plus separate
+physical/source reviews. The C application derives B-C-D order from the
+original cones and retains both strict weak bits. These are prepared guards,
+with certified state ancestry and fresh scalar replay required at actual use.
+
+The [selected-extra 3/5-slope review](computer_assisted/actual_ab_070_three_fifths_review_v1/README.md)
+freshly replays the complete 7/10 scalar extension and checks the physical
+formula and damaged-cover controls. Its selected-extra guard and both outer
+angle complements remain explicit. None of these checkpoints changes a
+whole-original or whole-mask count.
+
 ## Recovered published inputs and reviewed universal physical rows
 
 The [second strict-011 recovery](computer_assisted/strict_011_second_recovery_v1/README.md)

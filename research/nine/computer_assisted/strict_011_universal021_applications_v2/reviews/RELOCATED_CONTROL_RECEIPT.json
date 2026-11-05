@@ -1,0 +1,17 @@
+{
+  "before_and_after_source_and_copy_hashes_verified": true,
+  "child_exit_code": 0,
+  "exact_control_report_sha256": "ea2239fe63020a44e9e35da24008df2f300b2a5d4734995c9c134172048681e0",
+  "foundation_manifest_sha256": "ac389f6184af6503294a13fb30c1da82e38d052a5d579bf43ccd4a0017b0485b",
+  "foundation_members": 184,
+  "launcher_sha256": "968558acc73b46fd6ab838f84516df5426a2d9e031d84f08e3db2df5a6786909",
+  "native_and_relocated_report_bytes_identical": true,
+  "numerical_solver_called": false,
+  "original_cell_credit": 0,
+  "packet_binding_sha256": "4c1fb0040f43281fd6e21bbece48d7293d0310a7341f490930c40ef51b689023",
+  "packet_members": 48,
+  "relocated_directory": "/tmp/strict011_guards_v2_relocated_0gm1h9ev",
+  "scalar_replay_performed": false,
+  "status": "PASS_RELOCATED_STRICT011_HI_C_V2_GUARD_CONTROLS",
+  "whole_mask_credit": 0
+}
