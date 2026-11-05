@@ -1,0 +1,10 @@
+{
+  "new_positive_corner_weight_uses": 0,
+  "weights_denominator": 1099511627776,
+  "uses": [],
+  "inherited_input_round_uses_excluded": true,
+  "diagnostic_points_used_as_proof": false,
+  "complete_exact_report_sha256": "b4324b67c0327761fba853e8194db49a08f574f2d124d373b38b8b15f79660ee",
+  "actual_LP_backend_used": false,
+  "actual_positive_corner_weight_gate_passed": false
+}

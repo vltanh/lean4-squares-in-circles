@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "complete_tree": {
+      "inventory_file": "PREMISE_BINDINGS.json",
+      "inventory_sha256": "697d1d0f94c6b668baf7f48c193ea7af9a8d2c8d2c51d295d29a6cb79ff55910",
+      "member_count": 122,
+      "workspace_relative_folder": "global_work/strict011_strengthened_tree_v1"
+    },
+    "corner_layer": {
+      "inventory_file": "PREMISE_BINDINGS.json",
+      "inventory_sha256": "efcf09c0494c1f36875533aeb3e4562173f84c49e8856de2d25b81eba781f778",
+      "member_count": 27,
+      "workspace_relative_folder": "global_work/strict011_four_product_layer_v2"
+    },
+    "foundation": {
+      "inventory_file": "CHECKPOINT_MANIFEST.json",
+      "inventory_sha256": "ac389f6184af6503294a13fb30c1da82e38d052a5d579bf43ccd4a0017b0485b",
+      "member_count": 184,
+      "workspace_relative_folder": "global_work/strict_011_rebuilt_v3"
+    },
+    "strict_guard": {
+      "inventory_file": "PREMISE_BINDINGS.json",
+      "inventory_sha256": "4c1fb0040f43281fd6e21bbece48d7293d0310a7341f490930c40ef51b689023",
+      "member_count": 48,
+      "workspace_relative_folder": "global_work/strict011_universal_021_applications_v2"
+    }
+  },
+  "old_001_context_required": false,
+  "schema": "strict011_strengthened_driver_dependencies_v1",
+  "workspace": "/workspace/scratch/f9f48fcfb253"
+}

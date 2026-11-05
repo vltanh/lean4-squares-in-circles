@@ -1,5 +1,16 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [B16 exact interval continuation](computer_assisted/b16_interval_terminal_continuation_v1/README.md)
+passes its full fresh 45-node replay with sixteen excluded and fourteen OPEN
+leaves in the merged I21/I22 region. No whole-original credit is added. The
+[strengthened strict-011 numerical preparation](computer_assisted/strict_011_strengthened_discovery_preparation_v1/README.md)
+passes source review and preserves a held one-node actual-use pilot; the fresh
+capacity launcher will not add a job at or above eight numerical workers.
+The [strict original-C height complement](computer_assisted/strict_011_c_height_complement_preparation_v1/README.md)
+retains all four closed alternatives and has separate physical/source review.
+It remains uninstalled until its new complete ancestry attachment and fresh
+scalar gate pass. All original and mask totals remain unchanged.
+
 The [whole-original A endpoint attachment](computer_assisted/a_c744_original_i64_endpoint_attachment_v1/README.md)
 passes its 268-deduction first use and an independent fresh root record replay.
 Its 414 endpoint inequalities apply without importing a selected source SAT

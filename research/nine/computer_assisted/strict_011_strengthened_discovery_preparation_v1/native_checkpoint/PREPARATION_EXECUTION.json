@@ -1,0 +1,21 @@
+{
+  "accepted_option_inspector_observed_exit_code": 0,
+  "accepted_option_inspector_session": 60647,
+  "actual_corner_weight_gate_passed": false,
+  "controls_log_sha256": "6ed9040f51256b7ca76b0b748de3c63cfc1f3a844d7864d0c881ed8aa59197d2",
+  "controls_observed_exit_code": 0,
+  "controls_report_sha256": "1455555099ed95ab32fa5eee25bc31a24e0da2485c195789939aa0ffdd0c3756",
+  "controls_session": 51628,
+  "exact_whole_seed_freshly_replayed_by_observed_controls": true,
+  "numerical_optimization_called": false,
+  "original_cell_credit": 0,
+  "original_seed_prepare_session": 45533,
+  "original_seed_prepare_session_exit_observed": false,
+  "original_seed_session_note": "Polling after compaction returned Unknown process id; retained artifacts were freshly checked by the observed controls.",
+  "pilot_option_inspector_observed_exit_code": 0,
+  "pilot_option_inspector_session": 35774,
+  "pilot_option_report_sha256": "af5aaad206dbb693e26e149daa72a0b3528fd14a1b7f98b48562f5982f19c3ff",
+  "status": "PASS_OBSERVED_NO_SOLVER_PREPARATION_CONTROLS",
+  "successful_true_guard_gate_passed": false,
+  "whole_mask_credit": 0
+}

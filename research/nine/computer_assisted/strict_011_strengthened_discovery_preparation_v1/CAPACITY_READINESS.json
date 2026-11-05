@@ -1,0 +1,19 @@
+{
+  "status": "PASS_REVIEWED_CAPACITY_LAUNCH_INPUT_IDENTITIES_NO_LAUNCH",
+  "launcher_sha256": "2f2cc03788c72c146f6bc58531ccaf9577bf53c8efa3397406600e7027c844db",
+  "frozen_input_members_rehashed": 450,
+  "source_freeze_sha256": "9df42998d72dc39e358883fc44582e9dc69152f4f5dd20cc1de42d4e5e039ab3",
+  "held_launch_sha256": "84ba95ee37a7b03aa19119589de768f7fd09f105b271e81780d9cf69fcf8a693",
+  "root_review_sha256": "2a1f69461e0e3939ef41bf54e12db7e9e3f87bd468883a3e4a19f6d56fd720d1",
+  "peer_review_sha256": "37188deb285431389bdcba9e844b694d9359559f44552a66b83a34d9740c3646",
+  "numerical_jobs_observed": 13,
+  "unknown_scripts": [
+    "b_work/b16_existing_propagation_screen_v1/screen_repeated_propagation.py"
+  ],
+  "max_simultaneous_numerical_jobs": 8,
+  "first_pilot_output_absent": true,
+  "no_numerical_job_started": true,
+  "no_scalar_gate_run": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

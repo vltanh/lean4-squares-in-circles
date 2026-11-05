@@ -1,0 +1,20 @@
+{
+  "status": "PASS_B16_INTERVAL_CONTINUATION_PACKAGE_AND_MATERIALIZATION",
+  "packet_path": "b_work/b16_interval_continuation_publication_v1",
+  "packet_input_manifest_sha256": "0c8dc46bb00053660535704b72b664f58326de4dcc7d7c86a3784f0f19e7f88d",
+  "files": 38,
+  "bytes_excluding_manifest": 958860,
+  "packet_identity_command_actual_exit": 0,
+  "packet_identity_command_chunk": "531e04",
+  "materialization_command_actual_exit": 0,
+  "materialization_command_chunk": "dd7d4f",
+  "full45_materialization_path": "/tmp/b16_interval_continuation_publication_materialized_v1_20261105",
+  "materialized_manifest_sha256": "941243cf54bde2070916a29c95c1a2bdba7b5c5e8651ec690c1f482788c210db",
+  "all45_node_hashes_verified": true,
+  "new_payloads": 14,
+  "unchanged_published_payloads": 31,
+  "reviewer_repeated_full_bound_arithmetic": false,
+  "root_full45_replay_sha256": "03754a15723bc8e9fc67a685a980ccaa50d034487ca94b827849d1acc31be451",
+  "new_original_cells": 0,
+  "new_masks": 0
+}

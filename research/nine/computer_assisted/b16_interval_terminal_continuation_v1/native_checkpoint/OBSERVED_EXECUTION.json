@@ -1,0 +1,24 @@
+{
+  "schema": "B16_interval_continuation_execution_provenance_v1",
+  "full_exact_gate": {
+    "session_id": 16960,
+    "observed_exit_code": 0,
+    "exit_observed_by": "root",
+    "evidence": "Root task message explicitly reports observed exit0; retained full report and raw log match those supplied hashes.",
+    "report_sha256": "03754a15723bc8e9fc67a685a980ccaa50d034487ca94b827849d1acc31be451",
+    "log_sha256": "86d68ad48e88479095d86193021d28c5528631cf6b65ee59c7aef994d5cc3a84",
+    "fresh_all45node_arithmetic": true,
+    "reviewer_repeated_full_gate": false
+  },
+  "independent_byte_scope_cover_audit": {
+    "session_id": 2743,
+    "observed_exit_code": 0,
+    "exit_observed_by": "b_cells",
+    "report_sha256": "af7127c1ce2a17d2fce6f1ad972551b9c96a944ef77e854281d0d8d87268fd77",
+    "report_source_hashes_rechecked": 293
+  },
+  "numerical_search_started": false,
+  "source_proof_bytes_changed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

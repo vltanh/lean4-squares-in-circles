@@ -1,0 +1,11 @@
+{
+  "current_design_controls": "SYMBOLIC_CONTROLS_CURRENT.json",
+  "current_hand_sha256": "bb588cec64d2c0f6b315f1e6f905b6d9dbd079cceb19a9b6be2d18973e8611b2",
+  "exact_historical_hand_copy": "preliminary_v0/C_HEIGHT_COMPLEMENT.md",
+  "historical_hand_sha256": "94ca02509f5f076bba8b2fbab648108b08acd8c5d99ef2dcf6ce10d662e02487",
+  "historical_report_is_not_current_hand_replay": true,
+  "original_reported_hand_path": "/workspace/scratch/f9f48fcfb253/global_work/strict011_c_height_complement_note_v1/C_HEIGHT_COMPLEMENT.md",
+  "preliminary_report": "SYMBOLIC_CONTROLS.json",
+  "preliminary_report_sha256": "92ab80983c5b4a7846e5d592641f02e4edadef410ce01bc28a344aacda12f1cb",
+  "status": "PRESERVED_PRELIMINARY_HAND_BYTES"
+}

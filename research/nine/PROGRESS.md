@@ -1,5 +1,23 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Fourteen exact B16 exclusions and strengthened strict-011 preparation
+
+The [B16 interval continuation](computer_assisted/b16_interval_terminal_continuation_v1/README.md)
+adds fourteen exact terminal leaves to the retained 45-node I21/I22 regional
+cover. The fresh full replay checks 2,324 deductions and 7,865 rows and retains
+all complete alternatives: sixteen leaves are excluded and fourteen remain
+OPEN. All 31 other payloads are byte-identical. The whole original remains
+OPEN, and the separate fourteen-quarter proofs retain their accepted scope.
+
+The [reviewed strengthened strict-011 driver](computer_assisted/strict_011_strengthened_discovery_preparation_v1/README.md)
+preserves its unchanged accepted numerical core, same-state corner cut passes,
+complete atomic storage and exact final reader. Its one-node actual-use pilot
+is frozen and held for capacity; no-solver controls do not count as real use.
+A [separate original-C height cover](computer_assisted/strict_011_c_height_complement_preparation_v1/README.md)
+has a complete physical and symbolic four-alternative proof. It still needs
+fresh scalar replay and its own reviewed ancestry attachment before actual use.
+Neither preparation changes a frozen active driver or any closure count.
+
 ## Whole-original A endpoint bounds and three exact C terminals
 
 The [A-c744 endpoint attachment](computer_assisted/a_c744_original_i64_endpoint_attachment_v1/README.md)

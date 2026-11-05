@@ -1,0 +1,13 @@
+{
+  "cover_installed": false,
+  "literal_controls_observed_exit_code": 0,
+  "literal_controls_report_sha256": "8a551d4d64b00d95a7186e10daf5e88b2d46c210760fae39b86b722f313eb43f",
+  "numerical_process_started": false,
+  "original_cell_credit": 0,
+  "scalar_process_started": false,
+  "source_pin_and_caller_count_checks": true,
+  "status": "PASS_OBSERVED_EXACT_DESIGN_CONTROLS_ONLY",
+  "symbolic_current_controls_observed_exit_code": 0,
+  "symbolic_current_report_sha256": "e86fe28db001c63bc71435ee58e24c3d9b23538f7df4d3ed62d915e40521f363",
+  "whole_mask_credit": 0
+}

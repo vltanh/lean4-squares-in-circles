@@ -1,0 +1,21 @@
+{
+  "status": "PASS_FRESH_STRENGTHENED_ZERO_ROUND_WHOLE_ROOT_SEED",
+  "seed_manifest_sha256": "6536a8bc9f7f832836403d84c5b4fd7f00d2902802fc8418739b5ddf14d85001",
+  "exact_report_sha256": "1aacc463401002b8b34db904a5d107dfc25eee3955d931fb7d6b9fb873700c28",
+  "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+  "root_id": "full-strict-01100-representative-root-v1",
+  "mask": "011/00",
+  "radius_mode": "strict",
+  "physical_originals": 9,
+  "original_corners": 36,
+  "original_pairs": 36,
+  "marked_cones": 5,
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_strengthened_discovery_v1/prepare_fresh_seed.py": "64c5efd33a12ca7fcf90a7acde97a084d7d9724731c336501da54f5e4ee9b8b8",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_strengthened_discovery_v1/strengthened_discovery.py": "2a5edd64bb7e924cf2c0ad134cdae587f5bf23a01a64a72ccd2fdb2a33ee3f19"
+  },
+  "no_prior_numerical_suffix_used": true,
+  "numerical_solver_called": false,
+  "original_cell_credit": 0,
+  "whole_mask_credit": 0
+}

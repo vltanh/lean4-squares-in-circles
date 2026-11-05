@@ -1,0 +1,13 @@
+{
+  "node": 0,
+  "extra_round": 0,
+  "phase_stage": 0,
+  "row_count": 2333,
+  "numerical_only": true,
+  "ignored_by_exact_verifier": true,
+  "phase": {
+    "optimal": false,
+    "status": 1,
+    "message": "explicit no-solver preparation fixture"
+  }
+}

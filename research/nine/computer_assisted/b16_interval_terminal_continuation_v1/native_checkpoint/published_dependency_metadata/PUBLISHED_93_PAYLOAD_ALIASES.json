@@ -1,0 +1,661 @@
+{
+  "schema": "B_reset2_published_node_payload_aliases_v1",
+  "published_commit": "35ac6d675d74f013a59804ef5506b74b005b59d6",
+  "published_package": "research/nine/computer_assisted/b_recovery_center_continuations_v1",
+  "archive_sha256": "ddba86d2dda6c261e1a3b2868459ddbb7eced058fc0c91c8b72d56254d6f6e93",
+  "aliases": [
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0000.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0000.json",
+      "sha256": "62b54955abb954ea4267e5f3820b962e63e46b02eadb8a70a43915557af99a99",
+      "bytes": 622767
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0000.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0000.json",
+      "sha256": "62b54955abb954ea4267e5f3820b962e63e46b02eadb8a70a43915557af99a99",
+      "bytes": 622767
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0001.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0001.json",
+      "sha256": "0aad55ebc11f4f2c3c941fb6bf4766fcace523f7c0a1f354b3fdfc9dc2b3a317",
+      "bytes": 48233
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0001.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0001.json",
+      "sha256": "0aad55ebc11f4f2c3c941fb6bf4766fcace523f7c0a1f354b3fdfc9dc2b3a317",
+      "bytes": 48233
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0002.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0002.json",
+      "sha256": "108d185c4df5cfb5acc87be004afd31dbe1cdb87e33de7c4329baf8cf3c9ab1e",
+      "bytes": 48229
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0002.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0002.json",
+      "sha256": "108d185c4df5cfb5acc87be004afd31dbe1cdb87e33de7c4329baf8cf3c9ab1e",
+      "bytes": 48229
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0003.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0003.json",
+      "sha256": "50f074ab17615a503c805c0e2a2d2dbbd96127cb35cfc6d69cf492219b8e9c3d",
+      "bytes": 48233
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0003.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0003.json",
+      "sha256": "50f074ab17615a503c805c0e2a2d2dbbd96127cb35cfc6d69cf492219b8e9c3d",
+      "bytes": 48233
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0004.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0004.json",
+      "sha256": "84b6876978be93f404ed5d6dec18903939f7db93aeb1386d3f017e136875373a",
+      "bytes": 50468
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0004.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0004.json",
+      "sha256": "84b6876978be93f404ed5d6dec18903939f7db93aeb1386d3f017e136875373a",
+      "bytes": 50468
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0005.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0005.json",
+      "sha256": "e0094572bbe5cb95c7a0c7d1f58fa3920b56b5a37835703a5f3b86c3f1e32f3a",
+      "bytes": 48652
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0005.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0005.json",
+      "sha256": "e0094572bbe5cb95c7a0c7d1f58fa3920b56b5a37835703a5f3b86c3f1e32f3a",
+      "bytes": 48652
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0006.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0006.json",
+      "sha256": "2b613a103a9bb44eaac1ff848316df5299659a42975f9139ec68c751a4d653f4",
+      "bytes": 48648
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0006.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0006.json",
+      "sha256": "2b613a103a9bb44eaac1ff848316df5299659a42975f9139ec68c751a4d653f4",
+      "bytes": 48648
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0007.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0007.json",
+      "sha256": "adce48d8494775d9e63e5ebcf803472ed7f0ebcd81ed436f5bd3aac6d6e1b58a",
+      "bytes": 50868
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0007.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0007.json",
+      "sha256": "adce48d8494775d9e63e5ebcf803472ed7f0ebcd81ed436f5bd3aac6d6e1b58a",
+      "bytes": 50868
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0008.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0008.json",
+      "sha256": "dfac63bd6d4e6906de608579b6cfd3632d2ffc1d9c786bdee504a71b582db6d5",
+      "bytes": 49074
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0008.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0008.json",
+      "sha256": "dfac63bd6d4e6906de608579b6cfd3632d2ffc1d9c786bdee504a71b582db6d5",
+      "bytes": 49074
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0009.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0009.json",
+      "sha256": "bc85a98d9ac0c97d9ea0675dc4e9db1e48490a80ff99a5b1aaa4584364d48c09",
+      "bytes": 51324
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0009.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0009.json",
+      "sha256": "bc85a98d9ac0c97d9ea0675dc4e9db1e48490a80ff99a5b1aaa4584364d48c09",
+      "bytes": 51324
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0010.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0010.json",
+      "sha256": "a9819ff21e71aa27c6d5cfcded1cdbf94112c15b04110cba0429df280aca41d8",
+      "bytes": 49494
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0010.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0010.json",
+      "sha256": "a9819ff21e71aa27c6d5cfcded1cdbf94112c15b04110cba0429df280aca41d8",
+      "bytes": 49494
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0011.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0011.json",
+      "sha256": "1e30553f23c8949266b43424d062f690f00ee5eab15049e2ab4edff927c40edf",
+      "bytes": 51687
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0011.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0011.json",
+      "sha256": "1e30553f23c8949266b43424d062f690f00ee5eab15049e2ab4edff927c40edf",
+      "bytes": 51687
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0012.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0012.json",
+      "sha256": "2c9931f93d1d8ec545b46d49352cc996845269b49bdacce36a0385fcb5f7147c",
+      "bytes": 49914
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0012.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0012.json",
+      "sha256": "2c9931f93d1d8ec545b46d49352cc996845269b49bdacce36a0385fcb5f7147c",
+      "bytes": 49914
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0013.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0013.json",
+      "sha256": "ef7b482af792cbebef7289780659d1acdafae2ff2bdbfd4678ef284c4003f487",
+      "bytes": 49910
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0013.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0013.json",
+      "sha256": "ef7b482af792cbebef7289780659d1acdafae2ff2bdbfd4678ef284c4003f487",
+      "bytes": 49910
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0014.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0014.json",
+      "sha256": "597be4e50ea34ee4b3339b943d4699134087d036a49081bff0285ec77467da1d",
+      "bytes": 52103
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0014.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0014.json",
+      "sha256": "597be4e50ea34ee4b3339b943d4699134087d036a49081bff0285ec77467da1d",
+      "bytes": 52103
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0015.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0015.json",
+      "sha256": "c127649bbebf22449cf0466d5e4c2b8212ccfae1051ff39b46fd276bc2eee41a",
+      "bytes": 2052793
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0015.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0015.json",
+      "sha256": "c127649bbebf22449cf0466d5e4c2b8212ccfae1051ff39b46fd276bc2eee41a",
+      "bytes": 2052793
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0016.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0016.json",
+      "sha256": "a9e9ba8bc50a2124c30c7b96565996a3d1fc8e577b6cbcd522a0e93cdf3b3c52",
+      "bytes": 53302
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0016.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0016.json",
+      "sha256": "a9e9ba8bc50a2124c30c7b96565996a3d1fc8e577b6cbcd522a0e93cdf3b3c52",
+      "bytes": 53302
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0017.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0017.json",
+      "sha256": "2b188af4fb140032d923ec6e5eac55a7fb454fbce3e2c7224f40bf8a9de64fdd",
+      "bytes": 1869200
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0017.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0017.json",
+      "sha256": "2b188af4fb140032d923ec6e5eac55a7fb454fbce3e2c7224f40bf8a9de64fdd",
+      "bytes": 1869200
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0018.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0018.json",
+      "sha256": "4d03572dbaff4ad4f7655af9fd1c203b3c4d4b599295ae408f923b69df9d91f0",
+      "bytes": 51740
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0018.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0018.json",
+      "sha256": "4d03572dbaff4ad4f7655af9fd1c203b3c4d4b599295ae408f923b69df9d91f0",
+      "bytes": 51740
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0019.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0019.json",
+      "sha256": "4e18cca53598984713b22d6877711b0e40f57f9ff8fca0e41860a519afdb28e3",
+      "bytes": 2399026
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0019.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0019.json",
+      "sha256": "4e18cca53598984713b22d6877711b0e40f57f9ff8fca0e41860a519afdb28e3",
+      "bytes": 2399026
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0020.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0020.json",
+      "sha256": "80633bccaa55e2b1102d398a25efc7be1c38c5da23f5d24077028183463e1cff",
+      "bytes": 51884
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0020.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0020.json",
+      "sha256": "80633bccaa55e2b1102d398a25efc7be1c38c5da23f5d24077028183463e1cff",
+      "bytes": 51884
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0021.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0021.json",
+      "sha256": "62941e068b246bdd045d14d20fed85a9ea2366a6f97d9774f2f8fb7fae2223d5",
+      "bytes": 51880
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0021.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0021.json",
+      "sha256": "62941e068b246bdd045d14d20fed85a9ea2366a6f97d9774f2f8fb7fae2223d5",
+      "bytes": 51880
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0022.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0022.json",
+      "sha256": "1330147378e36f45793489afc3b155c3b0ea1da8707f52f46ebe6af521fd6679",
+      "bytes": 51884
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0022.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0022.json",
+      "sha256": "1330147378e36f45793489afc3b155c3b0ea1da8707f52f46ebe6af521fd6679",
+      "bytes": 51884
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0023.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0023.json",
+      "sha256": "c0ba40f8ff6e94f9e0fa980aa63ea556d5fb1b137bd3b77b91105f24cda883d5",
+      "bytes": 54373
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0023.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0023.json",
+      "sha256": "c0ba40f8ff6e94f9e0fa980aa63ea556d5fb1b137bd3b77b91105f24cda883d5",
+      "bytes": 54373
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0024.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0024.json",
+      "sha256": "fdb10896c0a0a05e3e7efae206ed28a459085a798e49c1331412e557f564e96c",
+      "bytes": 52243
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0024.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0024.json",
+      "sha256": "fdb10896c0a0a05e3e7efae206ed28a459085a798e49c1331412e557f564e96c",
+      "bytes": 52243
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0025.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0025.json",
+      "sha256": "ae7305b6303c4957e81aa571c8d96b551d1206f693f702b86f968dda8bc0f9b6",
+      "bytes": 1184079
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0025.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0025.json",
+      "sha256": "ae7305b6303c4957e81aa571c8d96b551d1206f693f702b86f968dda8bc0f9b6",
+      "bytes": 1184079
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0026.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0026.json",
+      "sha256": "d8394647c50eb45eef15b6053e5cf5aaafa4ff3173555d68d0356e5607b31eae",
+      "bytes": 53352
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0026.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0026.json",
+      "sha256": "d8394647c50eb45eef15b6053e5cf5aaafa4ff3173555d68d0356e5607b31eae",
+      "bytes": 53352
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0027.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0027.json",
+      "sha256": "64fd3866176685b221ffb187020ed14da065a89fe8e469569c234137675759e1",
+      "bytes": 2562563
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0027.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0027.json",
+      "sha256": "64fd3866176685b221ffb187020ed14da065a89fe8e469569c234137675759e1",
+      "bytes": 2562563
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0028.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0028.json",
+      "sha256": "cc1708b9903e3a9e0bc59ae08306b0dbc3c0975275cbe411c936bc04ebf1de5d",
+      "bytes": 53144
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0028.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0028.json",
+      "sha256": "cc1708b9903e3a9e0bc59ae08306b0dbc3c0975275cbe411c936bc04ebf1de5d",
+      "bytes": 53144
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0029.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0029.json",
+      "sha256": "f3f75256b9968afce73f9ab0a66fc758f1db62a2046ac326cb7ddd5c75249f19",
+      "bytes": 2910118
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0029.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0029.json",
+      "sha256": "f3f75256b9968afce73f9ab0a66fc758f1db62a2046ac326cb7ddd5c75249f19",
+      "bytes": 2910118
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0030.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0030.json",
+      "sha256": "e082cb6ed48675a16561461f81afd382bc6b94b1ba739085faeff5f4cdfa82bd",
+      "bytes": 4050769
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0030.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0030.json",
+      "sha256": "e082cb6ed48675a16561461f81afd382bc6b94b1ba739085faeff5f4cdfa82bd",
+      "bytes": 4050769
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0031.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0031.json",
+      "sha256": "e0bc67ec3085fb27a2bc7bec0ead537a5073db93bc7f0ecdcb459895df95904e",
+      "bytes": 2266753
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0031.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0031.json",
+      "sha256": "e0bc67ec3085fb27a2bc7bec0ead537a5073db93bc7f0ecdcb459895df95904e",
+      "bytes": 2266753
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0032.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0032.json",
+      "sha256": "cf234d4a823f87e38eaab9a8f1c570ac47a5df2103915d42eb924e2027bf5796",
+      "bytes": 2311785
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0032.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0032.json",
+      "sha256": "cf234d4a823f87e38eaab9a8f1c570ac47a5df2103915d42eb924e2027bf5796",
+      "bytes": 2311785
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0033.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0033.json",
+      "sha256": "606a545230eb32ad05233f30b59d50d6fca5488bbd7ffffe9910f8cc775ea678",
+      "bytes": 54163
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0033.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0033.json",
+      "sha256": "606a545230eb32ad05233f30b59d50d6fca5488bbd7ffffe9910f8cc775ea678",
+      "bytes": 54163
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0034.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0034.json",
+      "sha256": "1b7c0ed8148210e7c619432e0af25009ba6595c3dc6a12dccba71d5699088d13",
+      "bytes": 51336
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0034.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0034.json",
+      "sha256": "1b7c0ed8148210e7c619432e0af25009ba6595c3dc6a12dccba71d5699088d13",
+      "bytes": 51336
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0035.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0035.json",
+      "sha256": "d9e0eb2cdbed0f7fd2d10056a4a4c16744bc5859d8b98e3864dba453bafc8cd5",
+      "bytes": 51033
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0035.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0035.json",
+      "sha256": "d9e0eb2cdbed0f7fd2d10056a4a4c16744bc5859d8b98e3864dba453bafc8cd5",
+      "bytes": 51033
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0036.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0036.json",
+      "sha256": "98729b9ab55bd067b7090143431936af9734a687fbbf149ce78b23a16cf24724",
+      "bytes": 51037
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0036.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0036.json",
+      "sha256": "98729b9ab55bd067b7090143431936af9734a687fbbf149ce78b23a16cf24724",
+      "bytes": 51037
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0037.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0037.json",
+      "sha256": "a63b239ca5b7452db0c94fd72eb483579d737009e7c351836fd771499d05ab9c",
+      "bytes": 51033
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0037.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0037.json",
+      "sha256": "a63b239ca5b7452db0c94fd72eb483579d737009e7c351836fd771499d05ab9c",
+      "bytes": 51033
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0038.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0038.json",
+      "sha256": "f9caedf56ca4259a4f32814e8a9df87d02b2b23e18b0e07553539acd1541728f",
+      "bytes": 50213
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0038.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0038.json",
+      "sha256": "f9caedf56ca4259a4f32814e8a9df87d02b2b23e18b0e07553539acd1541728f",
+      "bytes": 50213
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0039.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0039.json",
+      "sha256": "9860ff0e1a1079239c3d8d9536c766248e2b5ed8c212297dcfee8be51182fad3",
+      "bytes": 49910
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0039.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0039.json",
+      "sha256": "9860ff0e1a1079239c3d8d9536c766248e2b5ed8c212297dcfee8be51182fad3",
+      "bytes": 49910
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0040.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0040.json",
+      "sha256": "8590695dbc81a8d8ee0a7160a9eb68942a83809e704ad4a8dffdca2128b4e054",
+      "bytes": 49494
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0040.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0040.json",
+      "sha256": "8590695dbc81a8d8ee0a7160a9eb68942a83809e704ad4a8dffdca2128b4e054",
+      "bytes": 49494
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0041.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0041.json",
+      "sha256": "33dc692d962d9eea44dc6b9ba8851d513bd2531cf355447071777ce6af66bdf8",
+      "bytes": 49490
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0041.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0041.json",
+      "sha256": "33dc692d962d9eea44dc6b9ba8851d513bd2531cf355447071777ce6af66bdf8",
+      "bytes": 49490
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0042.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0042.json",
+      "sha256": "1634219fdc560bfec2f873323d28f369596aab752dbddecfc23db96020c3aff9",
+      "bytes": 49075
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0042.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0042.json",
+      "sha256": "1634219fdc560bfec2f873323d28f369596aab752dbddecfc23db96020c3aff9",
+      "bytes": 49075
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0043.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0043.json",
+      "sha256": "4376465fe1b89512863aabb95b407c41f958e52034f8e0d785b5402ababd5c4d",
+      "bytes": 49071
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0043.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0043.json",
+      "sha256": "4376465fe1b89512863aabb95b407c41f958e52034f8e0d785b5402ababd5c4d",
+      "bytes": 49071
+    },
+    {
+      "target": "b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0044.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0044.json",
+      "sha256": "1d9c4061652363cb9abc0612af837f89e21c9dde70c86e33ea440931e381d715",
+      "bytes": 48649
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/node_0044.json",
+      "kind": "archive_member",
+      "published_path": "native/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0044.json",
+      "sha256": "1d9c4061652363cb9abc0612af837f89e21c9dde70c86e33ea440931e381d715",
+      "bytes": 48649
+    },
+    {
+      "target": "b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/node_0000.json",
+      "kind": "publication_file",
+      "published_path": "first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/node_0000.json",
+      "sha256": "b3e57974e756c308a4121f2f2e4a0e515dec22c0c20d97ad3077c32819c92d64",
+      "bytes": 1189997
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B462_preserved_two_round_whole_attachment_v1/node_0000.json",
+      "kind": "publication_file",
+      "published_path": "first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/node_0000.json",
+      "sha256": "b3e57974e756c308a4121f2f2e4a0e515dec22c0c20d97ad3077c32819c92d64",
+      "bytes": 1189997
+    },
+    {
+      "target": "b_work/recovery_20261105_reset2/B462_center_exact_moment_prepared_seed_v1/node_0000.json",
+      "kind": "publication_file",
+      "published_path": "first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/node_0000.json",
+      "sha256": "b3e57974e756c308a4121f2f2e4a0e515dec22c0c20d97ad3077c32819c92d64",
+      "bytes": 1189997
+    }
+  ],
+  "role": "Exact byte reuse only; transitive proof masters remain required",
+  "arithmetic_replayed": false
+}

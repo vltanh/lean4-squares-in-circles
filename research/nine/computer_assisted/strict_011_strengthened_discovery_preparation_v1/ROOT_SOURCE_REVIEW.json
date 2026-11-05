@@ -1,0 +1,47 @@
+{
+  "status": "PASS_ROOT_STRICT011_STRENGTHENED_DISCOVERY_SOURCE_REVIEW",
+  "source_freeze_sha256": "9df42998d72dc39e358883fc44582e9dc69152f4f5dd20cc1de42d4e5e039ab3",
+  "held_pilot_launch_sha256": "84ba95ee37a7b03aa19119589de768f7fd09f105b271e81780d9cf69fcf8a693",
+  "members_rehashed": 69,
+  "dependency_members_rehashed": {
+    "foundation": 184,
+    "complete_tree": 122,
+    "corner_layer": 27,
+    "strict_guard": 48
+  },
+  "source_read_in_full": [
+    "strengthened_discovery.py",
+    "README.md",
+    "NUMERICAL_PROPOSAL_BOUNDARY.md",
+    "check_preparation_controls.py",
+    "HELD_PILOT_LAUNCH.json",
+    "prepare_fresh_seed.py",
+    "freeze_preparation.py",
+    "check_pilot_options_without_solving.py",
+    "PILOT_OPTIONS_VALUE_ONLY.diff"
+  ],
+  "accepted_numeric_core_unchanged_sha256": "58a85d7976aff42bbda10137f0c951985c674e220568f93d9244dfdf1b92275e",
+  "checks": [
+    "Current-box corner candidates are independently rebuilt against exactly the same physical state before solving.",
+    "At most two append passes; a final pass returns its last solved row list and matching dual indices.",
+    "Dual rounding, residual exact support, objectives and complete atomic Store are unchanged accepted code.",
+    "First successful theorem guard invokes a fresh scalar subprocess before terminal storage. Complete final checker repeats its own first successful guard scalar gate.",
+    "New positive corner-weight accounting excludes inherited rounds and requires the real numerical backend.",
+    "Code3 preserves a complete exact checkpoint while declining an actual-corner-use claim.",
+    "One whole representative root, all nine originals and strict bits; no001 D/G normalization or actualBC substitution.",
+    "No-solver fixtures and option inspection are distinguished from real LP use."
+  ],
+  "controls_inspected_not_repeated": true,
+  "controls_observed_session": 51628,
+  "controls_observed_exit_code": 0,
+  "pilot_options_observed_session": 35774,
+  "pilot_options_observed_exit_code": 0,
+  "peer_review_sha256": "37188deb285431389bdcba9e844b694d9359559f44552a66b83a34d9740c3646",
+  "no_numerical_job_started": true,
+  "numerical_launch_requires_fresh_capacity_check": true,
+  "positive_new_corner_weight_gate_pending": true,
+  "successful_true_guard_and_fresh_scalar_gate_pending": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false
+}
