@@ -1,0 +1,28 @@
+{
+  "status": "ASSEMBLED_NATIVE_DISCOVERY_COVER_ARITHMETIC_REPLAY_REQUIRED",
+  "base": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/root_b/f14_whole_frozen_for_consolidation/manifest.json",
+  "base_sha256": "4f3546553de51b38c06836283de5be8cb0da327896369f3e2926b803a1225901",
+  "grafts": [
+    {
+      "old_target": 209,
+      "source": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/root_b/f14_future209_frozen_for_consolidation/manifest.json",
+      "source_sha256": "1ea8e8f59e1a7710a58de18924e6b1aec3c1c67712c00555b2b2e371584c3d4e",
+      "subtree_nodes": 135,
+      "incoming_open_leaves": 16,
+      "initial_matches_old_final": true,
+      "all_incoming_cases_retained": true
+    }
+  ],
+  "original_nodes": 549,
+  "removed_descendant_nodes": 0,
+  "new_nodes": 683,
+  "open_leaves": 19,
+  "all_remaining_pending_domains_retained": true,
+  "root_original_parent_unchanged": true,
+  "root_initial_state_unchanged": true,
+  "all_nodes_reachable": true,
+  "bounded_record_memory": true,
+  "arithmetic_replay": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

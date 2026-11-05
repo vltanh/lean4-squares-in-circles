@@ -1,0 +1,36 @@
+{
+  "status": "PASS_COMPLETE_STORED_CASE_SLOTS_AND_GRAPH_ONLY",
+  "manifest_sha256": "675ad65ec3dffbf7c5c68089aeb816199126904c9e0699a1e719702529ec92cf",
+  "original_id": "negative-7c60be8b07a358e9",
+  "nodes": 895,
+  "complete_case_unions": {
+    "proxy": 32,
+    "sat": 3,
+    "angle": 258,
+    "difference": 113
+  },
+  "open_leaf_indices": [
+    3,
+    4,
+    141,
+    142,
+    145,
+    146,
+    152,
+    153,
+    154,
+    156,
+    426,
+    435,
+    436,
+    794
+  ],
+  "open_leaves": 14,
+  "all_nodes_reachable": true,
+  "node_and_record_initial_states_identical": true,
+  "arithmetic_replay": false,
+  "original_domain_replay": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "checker_sha256": "e5aefd3315f0d5a9c5d5094536a01ab828a7f185c258cf34fbde98d4b372f715"
+}
