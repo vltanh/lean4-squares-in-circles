@@ -1,0 +1,42 @@
+{
+  "status": "PASS_INDEPENDENT_NODE188_PHYSICAL_COVER_WEIGHTED_CHORD_AND_NATIVE_TRANSPORT_REVIEW",
+  "independent_replay": {
+    "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/b7_continue/B16_NODE188_INDEPENDENT_REPLAY.json",
+    "sha256": "1bd1dda98e4a1c358689cff5a97381463353b16e43f31fb9325f3744d8291797"
+  },
+  "tree_manifest_sha256": "71abf14f8708a6673c03da04cfae1d3931e5f93654ad8ca5f9d8660048c0c1db",
+  "package_manifest_sha256": "7a4d61b7161318c25569a44694d7dd56369617dfbc9bec4f54616a45de2749cc",
+  "archive_sha256": "5ce1da49ec74e29d1daa986c2a49d01fa58638f8bbbb8aa4b23a0f55b139ca5c",
+  "input_paths": 605,
+  "unique_input_blobs": 591,
+  "original_id": "negative-16a2fc93c8d133f0",
+  "same_frozen_original_prefix": true,
+  "scope": "complete 19-entry conditional region node188 only",
+  "nodes": 281,
+  "complete_closed_SAT_unions": 23,
+  "complete_closed_angle_unions": 48,
+  "excluded_terminal_domains": 210,
+  "open_terminal_domains": 0,
+  "weighted_relative_support_chord_occurrences_independently_decoded": 45,
+  "weighted_central_nine_rows": 0,
+  "every_chord_guard_rebuilt_from_certified_same_state_intervals": true,
+  "all_nine_originals_36corners_36pairs_fivecones_actual_AB_BC_EF_FG_strict_weak_CD_retained": true,
+  "ancestor_prefix_freshly_replayed": true,
+  "root_two_bound_rounds_in_prefix": true,
+  "zero_round_root_identical_to_replayed_prefix_final": true,
+  "grafted_complete_regions": [
+    206,
+    318,
+    322,
+    326,
+    330
+  ],
+  "all_closed_angle_and_SAT_faces_retained": true,
+  "all_archive_members_and_native_inputs_rehashed": true,
+  "full_original_or_parent73_closure_claimed": false,
+  "standalone_cold_portable_replay_claimed": false,
+  "whole_original_credit": 0,
+  "new_mask_credit": 0,
+  "blocking_findings": [],
+  "reviewer_source_sha256": "175d5d006ac6b96e18df75480d621290a93a87e3972afc2a4f68ca0ee7b905b2"
+}

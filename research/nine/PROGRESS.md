@@ -44,6 +44,14 @@ compilation or CI was run.
 
 ## B16a: three more inherited regions, whole original still OPEN
 
+The [complete region-188 proof](computer_assisted/a2_00100_b16a_node188_native_checkpoint_20261105/PUBLICATION.md)
+has passed fresh exact replay and non-author review: 281 nodes, 23 complete
+physical SAT unions, 48 closed slope unions, and 210 excluded terminals with
+zero OPEN. It includes the reviewed smaller components and all 45 weighted
+relative-support chord uses. Of parent 73's eight H/I alternatives, only
+192 remains OPEN. This does not close the entire merged rectangle or original;
+canonical original and mask counts remain unchanged.
+
 The [complete region-206 proof](computer_assisted/a2_00100_b16a_node206_native_checkpoint_20261105/PUBLICATION.md)
 joins all eight physical A/H cases, including both difficult regions 236
 and 242. Fresh exact replay and independent review accept its 33 nodes,
