@@ -1,0 +1,22 @@
+{
+  "status": "PASS_REPLAYED_OPEN_COMPONENT_CHECKPOINT_PUBLICATION",
+  "original_id": "negative-7c60be8b07a358e9",
+  "current_register_sha256": "34afb382fd9604f1ca339c31f3929f37b6b9e074fed8cb2b4d62a25e684459d8",
+  "original_ledger_unchanged": true,
+  "fixed_original_count": 231,
+  "closed_originals": 223,
+  "open_originals": 8,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "complete_original": false,
+  "complete_component_nodes": 425,
+  "complete_component_leaves": 213,
+  "full_original_cover_nodes": 813,
+  "open_leaves": 6,
+  "archive_sha256": "8caaaa49a1ec7527896fe6733a3722fb1bd0cfec5be61b33a90802d50bbb5346",
+  "archive_parts": 5,
+  "every_part_rehashed": true,
+  "helper_archive_sha256": "b575033f59b32dbcd8768c4c2ca4faf5e8b233ec6cd6904ef54b1e94522499ef",
+  "helper_members_rehashed": 17,
+  "no_lean_lake_compilation_or_ci": true
+}

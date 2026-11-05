@@ -1,0 +1,37 @@
+{
+  "schema": "open_registered_B_checkpoint_archive_v1",
+  "original_id": "negative-7c60be8b07a358e9",
+  "archive": "b7_completed260_open_packet_v2.tar.xz",
+  "archive_bytes": 33772300,
+  "archive_sha256": "8caaaa49a1ec7527896fe6733a3722fb1bd0cfec5be61b33a90802d50bbb5346",
+  "archive_members_verified": 1231,
+  "all_member_hashes_match": true,
+  "xz_integrity_pass": true,
+  "counts": {
+    "nodes": 813,
+    "complete_unions": {
+      "proxy": 32,
+      "angle": 233,
+      "sat": 3,
+      "difference": 97
+    },
+    "terminal_leaves": 448,
+    "excluded_leaves": 442,
+    "open_leaves": 6,
+    "local_rounds": 228,
+    "local_deductions": 43129,
+    "local_printed_rows": 163003,
+    "universal_center_disk_rows_checked": 21818,
+    "incircle_chord_rows_checked": 839,
+    "rotating_center_cone_rows_checked": 528,
+    "general_center_cone_rows_checked": 698,
+    "relative_support_chord_rows_checked": 596
+  },
+  "complete_original": false,
+  "new_original_ledger_credit": 0,
+  "new_mask_ledger_credit": 0,
+  "portable_receipt_sha256": "1e9079325a0c2e4511a3090ae99219182b28f9d2818d160f27c9dad2fb8f11fc",
+  "release_manifest_sha256": "01332c383c0c9913635fa8fb5db9f4fff4ef7f2b96aade20d2733961a319701f",
+  "prior_archive_sha256": "c6e8dfc170a3d88366a6cd6f0955302ca5f664c626790ca91387f84c42502cb6",
+  "seconds": 195.99684265999895
+}

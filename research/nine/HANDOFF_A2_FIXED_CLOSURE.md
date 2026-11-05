@@ -24,6 +24,27 @@ families are **A1, B4, C3, D0**. Whole masks remain **8 CLOSED / 24 OPEN**;
 
 [Complete proof and reproduction](A2_00100_BF14_COMPLETE_ORIGINAL_CLOSURE.md).
 
+## Recovered complete B7 component; whole original still OPEN
+
+The [portable B7 checkpoint](computer_assisted/a2_00100_b7_completed260_checkpoint_v1/README.md)
+freshly replays the entire 813-node original cover and excludes all 213
+leaves of saved domain 260. Both closed H/I vertical-order halves, every
+old root round, and every outside sibling are retained. The six remaining
+outside obligations are original-tree nodes 3, 4, 142, 154, 156 and 264;
+the full checkpoint has 442 excluded and six OPEN leaves. Its five-part
+archive, native/portable reports, physical attachment and independent
+coverage/transport reviews are published together. Later discovery trees
+are not silently included in this frozen checkpoint. Zero new original
+or mask credit is granted; totals remain 223/231 and 8/32 CLOSED.
+
+The [boundary-helper source packet](computer_assisted/a2_00100_original_boundary_guard_helpers_v1/README.md)
+preserves the existing sharp and deep physical guards with all frozen
+dependencies, local-only exact source replay and a complete member audit.
+Its preparation has zero original-terminal uses and zero cell credit.
+The actual C27 central exclusion is the sharp AHID terminal; all exterior
+complements remain obligations. Continue B16/A and the shortest remaining
+B/C whole-original routes, with no Lean, Lake, compilation or CI.
+
 ## Earlier continuation records
 
 The [finite A correlation attempt](computer_assisted/a_c744_finite_existing_correlations_v2/README.md)

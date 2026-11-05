@@ -24,6 +24,27 @@ families are **A1, B4, C3, D0**. Whole masks remain **8 CLOSED / 24 OPEN**;
 
 [Complete proof and reproduction](A2_00100_BF14_COMPLETE_ORIGINAL_CLOSURE.md).
 
+## Reproducible B7 component and boundary inputs: zero new cell credit
+
+The [B7 completed-domain checkpoint](computer_assisted/a2_00100_b7_completed260_checkpoint_v1/README.md)
+passes fresh native and portable exact replay of the entire unchanged
+813-node original cover: 442 excluded leaves and six OPEN leaves. Saved
+domain 260 is completely excluded by its 425-node, 213-leaf subtree,
+including both closed sides of `y_I-y_H=0`. Its physical hand attachment,
+independent source/coverage review and complete terminal table are retained.
+The 33,772,300-byte archive has five hash-checked parts and 1,231 verified
+regular members. The six outside branches remain OPEN; this checkpoint
+changes neither the fixed original ledger nor any whole-mask total.
+
+The [reusable original-boundary helpers](computer_assisted/a2_00100_original_boundary_guard_helpers_v1/README.md)
+retain both sharp and deep guards with their frozen proof dependencies.
+Fresh local-only source replay checks three sharp criteria and 144 deep
+identities, and every archived member is rehashed. This preparation grants
+no original credit and implies no actual deep-terminal use. Concrete C27
+central subdomains use the existing sharp AHID theorem, with every outer
+complement still retained. Continue the remaining whole originals under
+the current bounded-work directive. No Lean, Lake, compilation or CI.
+
 ## Earlier continuation records
 
 ## Completed bounded A and B16 attempts

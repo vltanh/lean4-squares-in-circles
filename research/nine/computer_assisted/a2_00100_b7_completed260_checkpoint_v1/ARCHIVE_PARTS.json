@@ -1,0 +1,32 @@
+{
+  "archive": "b7_completed260_open_packet_v2.tar.xz",
+  "archive_bytes": 33772300,
+  "archive_sha256": "8caaaa49a1ec7527896fe6733a3722fb1bd0cfec5be61b33a90802d50bbb5346",
+  "parts": [
+    {
+      "file": "b7_completed260_open_packet_v2.tar.xz.part001",
+      "bytes": 8388608,
+      "sha256": "3635d17fd2e86d6ad8e15c351f78c96419754f5247c2fe6caeb750d33cd77fc5"
+    },
+    {
+      "file": "b7_completed260_open_packet_v2.tar.xz.part002",
+      "bytes": 8388608,
+      "sha256": "f064e278dc56be7f2d95e239c8b4383c05a9dad0e8cb61503e6124f3cbdeb580"
+    },
+    {
+      "file": "b7_completed260_open_packet_v2.tar.xz.part003",
+      "bytes": 8388608,
+      "sha256": "350601db17715901f930411325f81f06e32d94c8f005d2dde4f5e94369896f05"
+    },
+    {
+      "file": "b7_completed260_open_packet_v2.tar.xz.part004",
+      "bytes": 8388608,
+      "sha256": "3cfe32694411049e3faa787899ba272f1ae74ce276c5d584fea9a380043d9adf"
+    },
+    {
+      "file": "b7_completed260_open_packet_v2.tar.xz.part005",
+      "bytes": 217868,
+      "sha256": "e40c1698e2e34e53c1e23b7b4e1156d5f08dae6c878f28966b74f0cb3edc729a"
+    }
+  ]
+}
