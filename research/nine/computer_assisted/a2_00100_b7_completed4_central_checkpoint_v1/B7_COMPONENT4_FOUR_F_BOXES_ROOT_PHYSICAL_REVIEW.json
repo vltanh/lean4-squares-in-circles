@@ -1,0 +1,206 @@
+{
+  "status": "PASS_B7_COMPONENT4_F_BOX_PHYSICAL_AND_COMPLETE_COVER_REVIEW",
+  "original_id": "negative-7c60be8b07a358e9",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      0
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        2
+      ]
+    ]
+  ],
+  "source_sha256": {
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/acceptance/review_b7_component4_four_F_boxes_physical.py": "a7db6f828df55095deede37215704f74c383a0b29a673b8e24e42bf87444e465",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_old915_five_asymmetric_outer_unsplit3_v1/manifest.json": "c6701cae69ae3bc3f59c90bdd7f1ffe6428f8a9574b648087b06ba29fb367ade",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_component4_four_central_F_boxes_v1/manifest.json": "6ed2023b52bd9f3b05d6a705c69a4d7b10b94f9e2d614c43c95facbee27e3d24",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b_native/b_family_native_discovery_checkpoint_v1/native/whole_B_roots/negative-7c60be8b07a358e9.json": "bcfb4791de2366d134e64be339c3eae698215c4dddfecec9bdf9d725de586536",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_old915_asymmetric925_final_fresh_exact.json": "84c4bce5895678692d0a86f6a5dc32ef5ed340863f1f568f7162c8569d9a25b4",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_component4_four_central_F_boxes_v1/COMPONENT4_F_BOX_PROVENANCE.json": "4dfc4d694c47e229c860d1e70075ef2c5a316167797793d818d9ef921dc8e470",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/drivers/prepare_b7_component4_four_central_F_boxes.py": "5ca20513f2a477ff72ed58254ec9a4ca1aec3ffa800ae6b37efa844618f4a6c4",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/drivers/B7_COMPONENT4_FOUR_CENTRAL_F_BOXES_HAND_ATTACHMENT.md": "828da587d76e7a34b6df3e35c64e73c02a16870e99ff3755eecee26bc26ee75e",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/drivers/independent_b7_central_nine_adapter.py": "956cac4fc7649fd16111e0f17d6bd92a759be84fe9c88d6c03d42a7ca1d21da7",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/drivers/independent_b_position_tree_replay.py": "9415c322fcf7ef53d128c00329130b8bbb3b666568f1820f206d982bdd2bb202"
+  },
+  "nodes": 949,
+  "old_payloads_byte_identical": 921,
+  "old_target_records_unchanged": true,
+  "new_closed_position_unions": [
+    {
+      "parent": 822,
+      "coordinate": 10,
+      "cut": "1/5",
+      "children": [
+        925,
+        926
+      ]
+    },
+    {
+      "parent": 925,
+      "coordinate": 11,
+      "cut": "-9/50",
+      "children": [
+        927,
+        928
+      ]
+    },
+    {
+      "parent": 928,
+      "coordinate": 11,
+      "cut": "9/50",
+      "children": [
+        929,
+        930
+      ]
+    },
+    {
+      "parent": 823,
+      "coordinate": 10,
+      "cut": "1/5",
+      "children": [
+        931,
+        932
+      ]
+    },
+    {
+      "parent": 931,
+      "coordinate": 11,
+      "cut": "-9/50",
+      "children": [
+        933,
+        934
+      ]
+    },
+    {
+      "parent": 934,
+      "coordinate": 11,
+      "cut": "9/50",
+      "children": [
+        935,
+        936
+      ]
+    },
+    {
+      "parent": 826,
+      "coordinate": 10,
+      "cut": "1/5",
+      "children": [
+        937,
+        938
+      ]
+    },
+    {
+      "parent": 937,
+      "coordinate": 11,
+      "cut": "-9/50",
+      "children": [
+        939,
+        940
+      ]
+    },
+    {
+      "parent": 940,
+      "coordinate": 11,
+      "cut": "9/50",
+      "children": [
+        941,
+        942
+      ]
+    },
+    {
+      "parent": 827,
+      "coordinate": 10,
+      "cut": "1/5",
+      "children": [
+        943,
+        944
+      ]
+    },
+    {
+      "parent": 943,
+      "coordinate": 11,
+      "cut": "-9/50",
+      "children": [
+        945,
+        946
+      ]
+    },
+    {
+      "parent": 946,
+      "coordinate": 11,
+      "cut": "9/50",
+      "children": [
+        947,
+        948
+      ]
+    }
+  ],
+  "new_terminals": [
+    {
+      "index": 929,
+      "norm_squared_upper": "181/2500",
+      "gap": "1/2000"
+    },
+    {
+      "index": 935,
+      "norm_squared_upper": "181/2500",
+      "gap": "1/2000"
+    },
+    {
+      "index": 941,
+      "norm_squared_upper": "181/2500",
+      "gap": "1/2000"
+    },
+    {
+      "index": 947,
+      "norm_squared_upper": "181/2500",
+      "gap": "1/2000"
+    }
+  ],
+  "all_twelve_outer_complements": [
+    926,
+    927,
+    930,
+    932,
+    933,
+    936,
+    938,
+    939,
+    942,
+    944,
+    945,
+    948
+  ],
+  "unrelated_old_open_retained": 41,
+  "old_bound_arithmetic_not_repeated_by_this_review": true,
+  "accepted_all_nine_arc_theorem_and_original_mask_retained": true,
+  "all_nine_corners_pairs_cones_original_H_I_and_strict_CD_preserved": true,
+  "all_source_bindings_rehashed": true,
+  "full_fresh_final_arithmetic_replay_required": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

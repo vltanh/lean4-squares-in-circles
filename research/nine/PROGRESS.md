@@ -2,6 +2,30 @@
 
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **224/231 cells CLOSED, 7 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## B7 complete component 4: portable checkpoint, zero new cell credit
+
+The [new B7 checkpoint](computer_assisted/a2_00100_b7_completed4_central_checkpoint_v1/README.md)
+completes saved component 4: all 20 terminal domains in its 33-domain cover
+are excluded. The complete E/H eight-way separator cover and twelve closed
+original-F position cuts retain every shared face. Four inner F boxes use
+the published all-nine central-capacity theorem; all twelve complementary
+domains have independent exact exclusions. Previously completed component
+260 remains present with 425 domains and 213 excluded terminals.
+
+Fresh native and portable replay check the entire unchanged original:
+**949 domains, 505 excluded terminal domains and 41 OPEN terminal domains**.
+The remaining coarse branches are 3, 142, 154, 156 and 264; the 41 leaves
+are their finer unresolved alternatives. All original physical predicates,
+strict CD and the strict-radius scope remain. B7 is still OPEN, so totals
+remain **224/231 originals and 8/32 masks CLOSED**.
+
+The six-part archive has 45,432,120 bytes and 1,415 rehashed regular members.
+Its cold replay uses 1,411 frozen packet inputs plus the 507-input published
+prior, forbids external workspace proof reads and rehashes every input at
+completion. Physical, literal-table, source, transport and archive audits
+pass. Later angle alternatives are separate and are not added to this
+immutable checkpoint. No Lean, Lake, compilation or CI.
+
 ## Exact C-family checkpoint: no new original credit
 
 The [C-family partial checkpoint](A2_00100_C_FINITE_FRONTIERS_CHECKPOINT.md)
