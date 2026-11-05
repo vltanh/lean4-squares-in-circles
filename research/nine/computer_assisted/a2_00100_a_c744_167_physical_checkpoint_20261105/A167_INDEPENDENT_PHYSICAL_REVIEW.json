@@ -1,0 +1,258 @@
+{
+  "status": "PASS_INDEPENDENT_A167_PHYSICAL_ANCESTRY_COVER_AND_NEW_SUFFIX_REVIEW",
+  "manifest_sha256": "cf9012e14c64460a2898dd46a6a356d158a77afb3e1e2fd01acbd3475662ecbb",
+  "source_manifest_sha256": "5c06610c0f8e4e317707b4f352277a2530d39e7f3cb63dfc5b03089571ccd98c",
+  "original_id": "positive-c744bc031d40ee64",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        4
+      ]
+    ]
+  ],
+  "same_frozen_231_cell_definition": true,
+  "component": 3,
+  "scope": "ONE_CLOSED_MEMBER_OF_THE_COMPLETE_ACTUAL_AB_FIVE_COVER",
+  "nodes": 167,
+  "excluded_leaves": 124,
+  "open_leaves": 9,
+  "every_graph_node_reached_once": true,
+  "every_closed_union_complete": true,
+  "new_angle146_both_closed_faces_retained": true,
+  "all_nine_original_frames_36_corners_36_pairs_five_cones_actual_AB_BC_EF_FG_strict_weak_CD_preserved": true,
+  "all_152_unmodified_payloads_byte_identical": true,
+  "original_prefix_rounds_preserved": true,
+  "new_physical_suffixes_independently_replayed": [
+    {
+      "index": 144,
+      "payload_sha256": "a03a9305e251e1c921c2eacc891269c299b7ae8b58256103934010c60acd6ef0",
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 1,
+      "deductions": 64,
+      "printed_rows_checked": 296,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 145,
+      "payload_sha256": "1bdac8625906bf5f8d213c9644e827b5b49399e6abbc049e0569c593e10245a4",
+      "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+      "rounds": 0,
+      "deductions": 0,
+      "printed_rows_checked": 1,
+      "reserve": "333710234497035970865/295147905179352825856",
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 148,
+      "payload_sha256": "9040d90bb279c0ae51bf894f1eb3d7e2b83fc8740b492c4db986b6b1d8710ede",
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 1,
+      "deductions": 28,
+      "printed_rows_checked": 185,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 149,
+      "payload_sha256": "80f2f584f2a79b9a4174b479c4751abc86c48a3f5b9e1d9eb27d6dfcf18d5c79",
+      "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+      "rounds": 0,
+      "deductions": 0,
+      "printed_rows_checked": 1,
+      "reserve": "168656747667207512555/295147905179352825856",
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 151,
+      "payload_sha256": "3ef65d4944ac5407a446884257a8fc1a0fc3bede94841b96836b3bed2bd627cd",
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 1,
+      "deductions": 38,
+      "printed_rows_checked": 198,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 152,
+      "payload_sha256": "f5e56ba1b3945d831c939a451db235eb585d3edcbb369a0c407973729783aa9d",
+      "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+      "rounds": 0,
+      "deductions": 0,
+      "printed_rows_checked": 1,
+      "reserve": "33192408964599795297/295147905179352825856",
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 154,
+      "payload_sha256": "dc02cf31823b520294e4f1dc161fb480ac14590981a2b27f2d052fdce20a1c60",
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 1,
+      "deductions": 8,
+      "printed_rows_checked": 104,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 156,
+      "payload_sha256": "c3e224592afc134ef401ba97523ac36a8a35ac00066932cc44f779c98702ae56",
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 1,
+      "deductions": 17,
+      "printed_rows_checked": 125,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 157,
+      "payload_sha256": "aedcb1837d8d35ff98e19c44894ca64104ea43f9c8d61c3c468a2faed714d683",
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 1,
+      "deductions": 8,
+      "printed_rows_checked": 97,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 159,
+      "payload_sha256": "7f6666b32b6253dbfc4c7401ea3e47865068d1855219038b6f6b945776e22ef2",
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 1,
+      "deductions": 1,
+      "printed_rows_checked": 20,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 161,
+      "payload_sha256": "67ac6e80b44ba70d78f8fec72e621b37fda1a5b4f4b66d85e61023632ddcc52b",
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 1,
+      "deductions": 1,
+      "printed_rows_checked": 11,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 163,
+      "payload_sha256": "9f629fd970966896ee6e0e889b4d70b3cefdaa263f5577a125fecebcec517cf3",
+      "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+      "rounds": 0,
+      "deductions": 0,
+      "printed_rows_checked": 18,
+      "reserve": "48141642292606194979297448963469762140739732552612528006474821/4750087239065593376700668672395157304937493299200000000000000000",
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 164,
+      "payload_sha256": "6f1df3e7cd214292ecfb77feda65e1d58c687a8a5c1c69289c423a4bbc835a72",
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 1,
+      "deductions": 1,
+      "printed_rows_checked": 19,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 165,
+      "payload_sha256": "4bc3d1e006dcba80deb4b16051f3e5055694130c79f36dfd57c933d0464f688f",
+      "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+      "rounds": 0,
+      "deductions": 0,
+      "printed_rows_checked": 43,
+      "reserve": "15955927326437497934655718567593994750722301329634295073371674499052259109426193073/20403105990294265706577144128349869749838262951057956880830305612829950923599448637440",
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    {
+      "index": 166,
+      "payload_sha256": "e09c25ef016dc3412682570bc221f0070f10082a96b0fcc8aeb0369d1339952f",
+      "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+      "rounds": 0,
+      "deductions": 0,
+      "printed_rows_checked": 20,
+      "reserve": "48843980741375769198609431974868051037961/3266710722441009249248396231344974829977600",
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    }
+  ],
+  "unproved_guarded_height_rows_used": false,
+  "new_rows_replay_under_standard_physical_adapter_without_original_i64_or_height_extensions": true,
+  "existing_original_wide_I64_transport_reviewed_separately": true,
+  "historical_accepted_source_arithmetic_reused_not_repeated": true,
+  "complete167_prefix_replay_status": "PASS_PARTIAL_TWO_LINK_COMPLEMENT_TREE",
+  "new_original_ledger_credit": 0,
+  "new_mask_ledger_credit": 0,
+  "strict_radius_scope": "q < 1105/256; no global equality classification",
+  "blocking_findings": [],
+  "checker_source_sha256": {
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b7_continue/review_a167_v2.py": "a112c535eed28fbd63236583cb02534680fe72fc2a74ac7fd021fbf368490163",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_c887_unit_four_corner_tree.py": "b06b754193bdab0f01e250cd4378e751337ef6039a40db27b97e6aba3e82eb87",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_physical_sat_diagonal_replay.py": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301"
+  },
+  "seconds": 12.394480408000163,
+  "complete167_prefix_replay": {
+    "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/a_continue/CHECKPOINT167_FULL_REPLAY.json",
+    "sha256": "6517b3ccc626af594ac2d2505265f1d2262077f83f2c85871b03d22147ac4996"
+  },
+  "complete_current_prefixes_freshly_replayed": true,
+  "historical_source_proofs_reused_not_cold_replayed": true,
+  "full_replay_counts": {
+    "nodes": 167,
+    "leaf_domains": 133,
+    "excluded_leaves": 124,
+    "open_leaves": 9,
+    "rounds": 133,
+    "deductions": 28709,
+    "printed_rows_checked": 49707
+  },
+  "source_bindings_sha256": "f20771899b63f0df1abaf0a3cb3eec7270f4ecfcb83803b040efde0e878a7ff7",
+  "reviewed_I64_source_binding_sha256": "63458318a3681d677745baf4a00d8a738a5705c6276659174e59f440fa9a06e3",
+  "zero_whole_original_credit_because_nine_component3_domains_remain_open": true
+}

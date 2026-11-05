@@ -1,0 +1,13 @@
+{
+  "archive": "a167_physical_continuation_v1.tar.xz",
+  "sha256": "2483231fb9c42c62c3d4828e66bb40a2699eb03928e0b502bb6a409583b96dde",
+  "bytes": 1641920,
+  "members": 42,
+  "changed_or_new_payloads": 15,
+  "all167_prefixes_and_records_replayed": true,
+  "nodes": 167,
+  "excluded_leaves": 124,
+  "open_leaves": 9,
+  "new_originals": 0,
+  "new_masks": 0
+}

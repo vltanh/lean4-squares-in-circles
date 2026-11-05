@@ -4,6 +4,19 @@
 
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **224/231 cells CLOSED, 7 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## A-c744: five inherited regions excluded, nine leaves remain OPEN
+
+The [167-node physical checkpoint](computer_assisted/a2_00100_a_c744_167_physical_checkpoint_20261105/PUBLICATION.md)
+completely excludes inherited regions 145, 146, 149, 152 and 163 of the
+retained component-3 cover. Its 124 excluded leaves and nine OPEN leaves
+replace the preceding 118-excluded/14-OPEN frontier. Fresh full current-tree
+replay and a non-author physical/coverage review pass. All new suffixes use
+accepted physical premises; every guard complement and original predicate
+remains retained. The thin archive reproduces all 167 payloads with the
+accepted base. Historical source arithmetic is explicitly reused.
+The original and mask remain OPEN: **224/231 originals and 8/32 masks CLOSED**.
+No Lean, Lake, compilation or CI was run.
+
 ## B462: first root branch complete, whole original still OPEN
 
 The [57-node native checkpoint](computer_assisted/a2_00100_b462_57_native_checkpoint_20261105/README.md)

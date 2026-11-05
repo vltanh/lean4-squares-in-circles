@@ -1,0 +1,8 @@
+{
+  "status": "PASS_FRESH_ARCHIVE_AND_COMPLETE_A167_MATERIALIZATION",
+  "nodes": 167,
+  "all_materialized_bytes_equal_freshly_replayed_candidate": true,
+  "archive_sha256": "2483231fb9c42c62c3d4828e66bb40a2699eb03928e0b502bb6a409583b96dde",
+  "new_originals": 0,
+  "new_masks": 0
+}
