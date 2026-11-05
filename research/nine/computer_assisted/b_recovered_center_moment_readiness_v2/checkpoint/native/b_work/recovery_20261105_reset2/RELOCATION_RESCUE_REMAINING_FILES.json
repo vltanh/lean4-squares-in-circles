@@ -1,0 +1,24 @@
+{
+  "status": "PARTIAL_RELOCATION_RESCUE_INVENTORY_NO_PROOF_CLAIM",
+  "findings": [
+    {
+      "source": "/workspace/scratch/.scratch-cleaning-2b0eb01f60c512501143178498d9c631-191498-f9f48fcfb253/repo/research/nine/.runs/b16a_merged_recovered_atomic_v1",
+      "target": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/b16a_merged_recovered_atomic_v1_remaining_files",
+      "captured": [],
+      "regular_files_visible": 0
+    },
+    {
+      "source": "/workspace/scratch/.scratch-cleaning-2b0eb01f60c512501143178498d9c631-191498-f9f48fcfb253/repo/research/nine/.runs/b462_fresh_accepted_center_atomic_v1",
+      "target": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/b462_fresh_accepted_center_atomic_v1_remaining_files",
+      "captured": [],
+      "regular_files_visible": 0
+    },
+    {
+      "source": "/workspace/scratch/.scratch-cleaning-2b0eb01f60c512501143178498d9c631-191498-f9f48fcfb253/repo/research/nine/.runs/b580_recovery_five_proxy_atomic_v1",
+      "target": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/b580_recovery_five_proxy_atomic_v1_remaining_files",
+      "captured": [],
+      "regular_files_visible": 0
+    }
+  ],
+  "source_mutated": false
+}

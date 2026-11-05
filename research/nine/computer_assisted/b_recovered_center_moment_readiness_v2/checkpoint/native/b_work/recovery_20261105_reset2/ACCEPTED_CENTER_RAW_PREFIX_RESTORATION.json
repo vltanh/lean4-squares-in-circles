@@ -1,0 +1,9 @@
+{
+  "status": "PASS_EXACT_PUBLISHED_CENTER_RAW_PREFIX_RESTORED",
+  "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/reviewed_source/B580_CENTER_FIRST_WEIGHTED_USE.json",
+  "destination": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reviewed_external_center_v1/B580_CENTER_FIRST_WEIGHTED_USE.json",
+  "sha256": "95b79efadc22737b852d813b5d8d2fcd3a73fdd89cb1e433d594e5e21a703a78",
+  "publication_manifest_sha256": "e2f0ddcd2a4930725afe53d076f214e10b6cf0ad889f7851fa29dc2c9c279dee",
+  "arithmetic_repeated": false,
+  "foreign_registered_caller_not_adopted": true
+}

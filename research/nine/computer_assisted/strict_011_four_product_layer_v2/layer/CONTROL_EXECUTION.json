@@ -1,0 +1,23 @@
+{
+  "status": "OBSERVED_NEW_CORNER_LAYER_CONTROL_PROCESS_EXIT_ZERO",
+  "session_id": 3925,
+  "observed_exit_code": 0,
+  "argv": [
+    "python",
+    "-B",
+    "-S",
+    "-u",
+    "global_work/strict011_four_product_layer_v2/check_layer_controls.py",
+    "--foundation",
+    "global_work/strict_011_rebuilt_v3",
+    "--output",
+    "global_work/strict011_four_product_layer_v2/FRESH_LAYER_CONTROLS.json"
+  ],
+  "workspace": "/workspace/scratch/f9f48fcfb253",
+  "report_sha256": "ade0bdfe961de3840339bbf0ce607a32c20142e06db2f6e1a68315663630a8d7",
+  "missing_old_receipt_reused": false,
+  "numerical_solver_called": false,
+  "actual_weighted_use_gate_passed": false,
+  "original_cell_credit": 0,
+  "whole_mask_credit": 0
+}

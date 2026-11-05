@@ -1,0 +1,252 @@
+{
+  "status": "PASS_COMMITTED_GIT_BLOB_AND_SHA256_EXPORT",
+  "commit": "35ac6d675d74f013a59804ef5506b74b005b59d6",
+  "prefix": "research/nine/computer_assisted/b_recovery_center_continuations_v1",
+  "output": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/published_35ac6d675d",
+  "files": [
+    {
+      "path": "B462_START_OBSERVATION.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/B462_START_OBSERVATION.json",
+      "git_blob_sha1": "b43c10695520d9d850f52f37a59671b191920b9e",
+      "sha256": "4a725b41768c885ba224c14ba30bc6bec0f998626488ad35f2f3fb619ce3bba9",
+      "bytes": 540
+    },
+    {
+      "path": "PUBLICATION_MANIFEST.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/PUBLICATION_MANIFEST.json",
+      "git_blob_sha1": "235cefe07dba671dd29f03c317f28f70a1c52251",
+      "sha256": "d5a6939c7aa741d51d83e9346705ebbbf70ba77f2d7aa43f2f66feb168c02ffe",
+      "bytes": 6830
+    },
+    {
+      "path": "README.md",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/README.md",
+      "git_blob_sha1": "0a020c30a90814094dc424a585a68779f9be6c86",
+      "sha256": "6933b6b4c94f1002ea18954b5f7f0cca9fc8b2a5e62c1908b49fc7384aa94802",
+      "bytes": 2730
+    },
+    {
+      "path": "first_actual_B462_use/b_work/recovery_20261105/B462_FIRST_ACTUAL_WEIGHTED_CENTER_ATTACHMENT.md",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/first_actual_B462_use/b_work/recovery_20261105/B462_FIRST_ACTUAL_WEIGHTED_CENTER_ATTACHMENT.md",
+      "git_blob_sha1": "05f8543b3c15a735c82b3fed1e47369d2b9bc528",
+      "sha256": "a1e9e7233d11fe2949396e150cc73c70ea9291c8dfd931a4cb8aa1851f566659",
+      "bytes": 4182
+    },
+    {
+      "path": "first_actual_B462_use/b_work/recovery_20261105/B462_FIRST_ACTUAL_WEIGHTED_CENTER_BINDING.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/first_actual_B462_use/b_work/recovery_20261105/B462_FIRST_ACTUAL_WEIGHTED_CENTER_BINDING.json",
+      "git_blob_sha1": "1270d7743f2cbbfacf404041b6a7c8de140809e1",
+      "sha256": "e2192cd393bcb79b4caa6a4fe69e24e11a09f7a075ee49a5422978ec436edc8f",
+      "bytes": 59749
+    },
+    {
+      "path": "first_actual_B462_use/b_work/recovery_20261105/B462_FIRST_ACTUAL_WEIGHTED_CENTER_EXACT_REPLAY.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/first_actual_B462_use/b_work/recovery_20261105/B462_FIRST_ACTUAL_WEIGHTED_CENTER_EXACT_REPLAY.json",
+      "git_blob_sha1": "feee367446cef222277d4729c2f44850ad14e6c2",
+      "sha256": "c9275de2680c07b253d776c891ec8f0b31f8234e08b85327238913f0c1c08fda",
+      "bytes": 59956
+    },
+    {
+      "path": "first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/CAPTURED_SOURCE_MANIFEST.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/CAPTURED_SOURCE_MANIFEST.json",
+      "git_blob_sha1": "5ec69e70b0323cd969f2fbfd62259314a96605bf",
+      "sha256": "67c9f1e52eac3a3205c682c57276b30277f6c891086183ca95131256ebeb3b54",
+      "bytes": 12033
+    },
+    {
+      "path": "first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/CAPTURED_SOURCE_NODE_0000.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/CAPTURED_SOURCE_NODE_0000.json",
+      "git_blob_sha1": "d3e2197e2d51c7e9b3cc14b8cac370567c61194e",
+      "sha256": "b3e57974e756c308a4121f2f2e4a0e515dec22c0c20d97ad3077c32819c92d64",
+      "bytes": 1189997
+    },
+    {
+      "path": "first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/CAPTURE_RECEIPT.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/CAPTURE_RECEIPT.json",
+      "git_blob_sha1": "2c067d69e81f9c47bbaffb9ae5f6b5a752d9f51f",
+      "sha256": "d87f5095ae72141c5a247766d8f7b18ce8243dcff9b8565670aa74d338a2537f",
+      "bytes": 1574
+    },
+    {
+      "path": "first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/manifest.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/manifest.json",
+      "git_blob_sha1": "c0035ac1a3565d096de8e5a679434b67c0805bb0",
+      "sha256": "6e58fa1ab35c8b247b3c1b2979cf8f63e0670f955275e94f8464543317d71a7d",
+      "bytes": 11869
+    },
+    {
+      "path": "first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/node_0000.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/first_actual_B462_use/b_work/recovery_20261105/B462_first_center_weighted_prefix_v1/node_0000.json",
+      "git_blob_sha1": "d3e2197e2d51c7e9b3cc14b8cac370567c61194e",
+      "sha256": "b3e57974e756c308a4121f2f2e4a0e515dec22c0c20d97ad3077c32819c92d64",
+      "bytes": 1189997
+    },
+    {
+      "path": "first_actual_B462_use/d_work/B462_FIRST_WEIGHTED_CENTER_ROOT_REVIEW.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/first_actual_B462_use/d_work/B462_FIRST_WEIGHTED_CENTER_ROOT_REVIEW.json",
+      "git_blob_sha1": "8da1e307fffc981f8f1c5a011b7ba6d8767a00d8",
+      "sha256": "d3f2a67685fdaed09b2cad3945b56bf4fbb5746211a04610e0c6255db74d5575",
+      "bytes": 1076
+    },
+    {
+      "path": "launch_and_root_review/b_work/recovery_20261105/B462_ACCEPTED_CENTER_FRESH_WHOLE_SEED_EXACT_REPLAY.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/b_work/recovery_20261105/B462_ACCEPTED_CENTER_FRESH_WHOLE_SEED_EXACT_REPLAY.json",
+      "git_blob_sha1": "e3283068dae6032674f3caf84c3c8f3f80469b56",
+      "sha256": "495d3d9585e0c3eb47c746ff56acf6461e68c7f7d23a6ef94b55dbc9714824e2",
+      "bytes": 23147
+    },
+    {
+      "path": "launch_and_root_review/b_work/recovery_20261105/B462_ACCEPTED_CENTER_HELD_WHOLE_ORIGINAL_LAUNCH_FREEZE.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/b_work/recovery_20261105/B462_ACCEPTED_CENTER_HELD_WHOLE_ORIGINAL_LAUNCH_FREEZE.json",
+      "git_blob_sha1": "5cfc8175553dd69c652cf6678dc75b89be052826",
+      "sha256": "3299074087a9e5f0c9749b53ae6969c40804ac41b58162f4963bd1bd854cce7c",
+      "bytes": 65876
+    },
+    {
+      "path": "launch_and_root_review/b_work/recovery_20261105/B462_ACCEPTED_CENTER_LAUNCH_ATTACHMENT.md",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/b_work/recovery_20261105/B462_ACCEPTED_CENTER_LAUNCH_ATTACHMENT.md",
+      "git_blob_sha1": "f2b29add2d76d70cf12570c9f046a9caf3f5cdbd",
+      "sha256": "20eb2c76b2407711decf8c1625126074b09728b8b364c4d5a451191339e6f0bb",
+      "bytes": 5057
+    },
+    {
+      "path": "launch_and_root_review/b_work/recovery_20261105/B462_ACCEPTED_CENTER_PREPARED_SEED_EXACT_REPLAY.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/b_work/recovery_20261105/B462_ACCEPTED_CENTER_PREPARED_SEED_EXACT_REPLAY.json",
+      "git_blob_sha1": "8369348783eb37bc47f1c962aea57ed9c0eb902f",
+      "sha256": "94a3f5c0309ba50c01a47f95d7f96ae19822305d2321a2508813e5aa0a1b4a18",
+      "bytes": 24872
+    },
+    {
+      "path": "launch_and_root_review/b_work/recovery_20261105/B462_accepted_center_prepared_whole_seed_v1/PREVIOUS_COMPLETE_MANIFEST.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/b_work/recovery_20261105/B462_accepted_center_prepared_whole_seed_v1/PREVIOUS_COMPLETE_MANIFEST.json",
+      "git_blob_sha1": "b12523624f9a70ff28248bbab7bb276fc75d0fed",
+      "sha256": "a72f82b211e6584423a72e66f31434fab950aa0b10efe8f65ef3bc1c7814b717",
+      "bytes": 8035
+    },
+    {
+      "path": "launch_and_root_review/b_work/recovery_20261105/B462_accepted_center_prepared_whole_seed_v1/manifest.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/b_work/recovery_20261105/B462_accepted_center_prepared_whole_seed_v1/manifest.json",
+      "git_blob_sha1": "1977de16897ce03679ee350692718481d625894f",
+      "sha256": "ce7510a78c54c6d8eadf3c1e0f549ec3b84b8cc1d8bc57c5a7b53065571b1cc2",
+      "bytes": 11808
+    },
+    {
+      "path": "launch_and_root_review/b_work/recovery_20261105/B462_accepted_center_prepared_whole_seed_v1/node_0000.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/b_work/recovery_20261105/B462_accepted_center_prepared_whole_seed_v1/node_0000.json",
+      "git_blob_sha1": "aa59fb456588847d80e77d2e05788afbf711130e",
+      "sha256": "23cac022620d3fbcc2c64ed8bf7fc84de3a158a28ad024766e31a098b2a83a28",
+      "bytes": 15347
+    },
+    {
+      "path": "launch_and_root_review/b_work/recovery_20261105/freeze_b462_accepted_center_launch_v1.py",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/b_work/recovery_20261105/freeze_b462_accepted_center_launch_v1.py",
+      "git_blob_sha1": "66d822e0cc55b77ae6b9f382423f4b2c88eaffb3",
+      "sha256": "409f24f7fe90fc4d00bb1d64f742ccdf1d64e8dbe86fa1df687507c3d8c1d3c5",
+      "bytes": 8713
+    },
+    {
+      "path": "launch_and_root_review/b_work/recovery_20261105/registered_B_initial_states/negative-462e78d2e2d8be05.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/b_work/recovery_20261105/registered_B_initial_states/negative-462e78d2e2d8be05.json",
+      "git_blob_sha1": "471cefc69e9257743efce532f86cb2bcd3dc52f6",
+      "sha256": "24d91df8ce4a2472ebf76ac4b73c1fc07c58fbb5f9c213be8b415d1b8b2cc302",
+      "bytes": 5552
+    },
+    {
+      "path": "launch_and_root_review/d_work/B462_ACCEPTED_CENTER_LAUNCH_ROOT_REVIEW.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/d_work/B462_ACCEPTED_CENTER_LAUNCH_ROOT_REVIEW.json",
+      "git_blob_sha1": "b29ecd8d51f73a7dfd1bc45b525904623f8fa271",
+      "sha256": "12a1cf0978ec46adedf1f1a98017bdc273a7cbe835576d7194539794e7472228",
+      "bytes": 2572
+    },
+    {
+      "path": "launch_and_root_review/d_work/B_RECOVERY_TRANSPORT_ROOT_FRESH_REPLAY.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/launch_and_root_review/d_work/B_RECOVERY_TRANSPORT_ROOT_FRESH_REPLAY.json",
+      "git_blob_sha1": "541eff5bb34911283bfe2b56c81e129c907ec045",
+      "sha256": "32f499284ba8a96b7c914a66a8ed6d2271997cf1daa3b487aeb890a17299e108",
+      "bytes": 729
+    },
+    {
+      "path": "transport/ARCHIVE_READY.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/ARCHIVE_READY.json",
+      "git_blob_sha1": "f357175ac97c90656b00f5d57ff4533c5965ce9f",
+      "sha256": "f87e7c5cbf26531320129d9e8b1691e710eae908f0d71992039c0bff09753511",
+      "bytes": 3186
+    },
+    {
+      "path": "transport/ARCHIVE_WRITTEN.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/ARCHIVE_WRITTEN.json",
+      "git_blob_sha1": "3c7c0b1922b5ed9fe8a7fd3d603accaf3abb6d05",
+      "sha256": "a6e7d01ab00dd17151e2b713ecad249eb8998b91ac64f222918176c760b2d87f",
+      "bytes": 918
+    },
+    {
+      "path": "transport/B_ACCEPTED_CENTER_RUNTIME_ROOT_REVIEW.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/B_ACCEPTED_CENTER_RUNTIME_ROOT_REVIEW.json",
+      "git_blob_sha1": "3747ccec7f3a94e6a67e88d01623f8a2cbd3dc4d",
+      "sha256": "4ca43201674acdf1b9a5d130c5f41205c4b8ed2b81f928aaa818c814635b2466",
+      "bytes": 1568
+    },
+    {
+      "path": "transport/INDEPENDENT_TRANSPORT_REPLAY.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/INDEPENDENT_TRANSPORT_REPLAY.json",
+      "git_blob_sha1": "541eff5bb34911283bfe2b56c81e129c907ec045",
+      "sha256": "32f499284ba8a96b7c914a66a8ed6d2271997cf1daa3b487aeb890a17299e108",
+      "bytes": 729
+    },
+    {
+      "path": "transport/MEMBER_MANIFEST.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/MEMBER_MANIFEST.json",
+      "git_blob_sha1": "81eb026851a7d4db0e5209235802385a56b6b095",
+      "sha256": "b378e221ee25b1aa129a80284b38496f6d9a7eef97768bb65e8696e50b8b7935",
+      "bytes": 37873
+    },
+    {
+      "path": "transport/PUBLICATION_FILE_SELECTION.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/PUBLICATION_FILE_SELECTION.json",
+      "git_blob_sha1": "82476176b1675923cb004a6ea8c135e3c079fa56",
+      "sha256": "859dbc1a1433f10fa31a3f76a5445f7779977211e403497614d63dd70c5a0edc",
+      "bytes": 71798
+    },
+    {
+      "path": "transport/README.md",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/README.md",
+      "git_blob_sha1": "0c8e49cb6947c6bcdd81eaeda4c3bd6aa0f9f5fe",
+      "sha256": "6e8bc413af9e6bd42787ad38451e0f021808c2f9aa8857ffabd368b61189cd32",
+      "bytes": 2695
+    },
+    {
+      "path": "transport/REQUIRED_PUBLISHED_ANCESTRY.json",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/REQUIRED_PUBLISHED_ANCESTRY.json",
+      "git_blob_sha1": "eab4671111b84f86871ff1081fb3df36d07ee4cd",
+      "sha256": "8d3c79f96690a6415bc419e65b27bb36a21e3ed9e917a365a77f4d68899616d4",
+      "bytes": 5242
+    },
+    {
+      "path": "transport/archive_b_recovery_selection_v1.py",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/archive_b_recovery_selection_v1.py",
+      "git_blob_sha1": "687fdfebc6cd2c10ba898039f4c45915b3a07fa9",
+      "sha256": "340097707e43060d9b383b533a083085034f7ab06ae84e695c4eb351fb10e9c2",
+      "bytes": 7049
+    },
+    {
+      "path": "transport/b_recovery_center_continuations_v1.tar.xz",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/b_recovery_center_continuations_v1.tar.xz",
+      "git_blob_sha1": "d5e94393bd96fa0292a23f83971a98a9dc712209",
+      "sha256": "ddba86d2dda6c261e1a3b2868459ddbb7eced058fc0c91c8b72d56254d6f6e93",
+      "bytes": 4522668
+    },
+    {
+      "path": "transport/verify_b_recovery_transport_v1.py",
+      "git_path": "research/nine/computer_assisted/b_recovery_center_continuations_v1/transport/verify_b_recovery_transport_v1.py",
+      "git_blob_sha1": "af4f584e402109a4b1367b0940d6b94ba5563fc1",
+      "sha256": "8de60c725b0cc3149da132da35716b8c7e307d7c88f9efb205028105069d68f8",
+      "bytes": 4358
+    }
+  ],
+  "archive_sha256": "ddba86d2dda6c261e1a3b2868459ddbb7eced058fc0c91c8b72d56254d6f6e93",
+  "index_or_ref_mutated": false,
+  "arithmetic_repeated": false,
+  "live_tree_touched": false,
+  "numerical_search_started": false,
+  "original_or_mask_credit": 0
+}

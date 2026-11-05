@@ -1,0 +1,18 @@
+{
+  "status": "PASS_EXACT_PUBLISHED_ARCHIVE_AND_ALL_MEMBER_BYTES_RESTORED",
+  "package": "policy",
+  "archive_sha256": "024d614fa7addb24120b7872641bb78425fa2e402d9e685ec72c5eee38c1f9c4",
+  "member_count": 82,
+  "member_bytes": 74243593,
+  "installed": 82,
+  "historical_member_audit_sha256": "ed56068d85198356737c46eb3e5b82d72825d4422c1c12288432ca64dabb7459",
+  "metadata_sha256": "eb2964df0ff9c77b75bdcdbcdf670ef95d29da665ae2e0f4a802082301dbe619",
+  "packet": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_policy/unpacked/b_angle_policy_checkpoint",
+  "restorer_sha256": "289d2e0e19e58a9486d1ac68edd8b6e19561df2da7b22884e8882cf610bc27ad",
+  "arithmetic_repeated": false,
+  "numerical_search_started": false,
+  "git_index_or_ref_mutated": false,
+  "existing_different_files_overwritten": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "B_second_runtime_discontinuity_observed_results_v1",
+  "status": "OBSERVED_COMPLETION_THEN_MISSING_PAYLOADS_NO_RECONSTRUCTED_PROOF_CLAIM",
+  "timestamp_utc": "2026-11-05T01:48:33.679816+00:00",
+  "observed_process_results": [
+    {
+      "kind": "full105_exact_arithmetic",
+      "session": 51802,
+      "observed_exit_code": 0,
+      "path": "b_work/recovery_20261105/B16A_CENTER_MIGRATION_SNAPSHOT_EXACT_REPLAY.json",
+      "sha256": "2e55fe172e0a81ae12867ded4685dc9f69af4ff117af81ceaf4d274aa67f61aa",
+      "nodes": 105,
+      "closed_leaves": 48,
+      "open_leaves": 21,
+      "rounds": 94,
+      "deductions": 14993,
+      "printed_rows": 54826,
+      "currently_available_at_recorded_path": false
+    },
+    {
+      "kind": "final107_same_run_composition_fresh_suffix",
+      "session": 35289,
+      "observed_exit_code": 0,
+      "path": "b_work/recovery_20261105/B16A_FINAL_STOPPED_SUFFIX_EXACT_REPLAY_V1.json",
+      "sha256": "8f3ed489b9d6c38ab32895a08b383e5f5d7114226fde2dbcd1384b1e4545c745",
+      "fresh_indices": [
+        104,
+        105,
+        106
+      ],
+      "fresh_rounds": 9,
+      "fresh_deductions": 1428,
+      "fresh_printed_rows": 6033,
+      "composed_nodes": 107,
+      "composed_closed_leaves": 48,
+      "composed_open_leaves": 22,
+      "source_pins": 473,
+      "seconds": 15.436771581997164,
+      "currently_available_at_recorded_path": false
+    },
+    {
+      "kind": "final107_prepare_only",
+      "session": 99871,
+      "observed_exit_code": 0,
+      "path": "b_work/recovery_20261105/B16A_accepted_center_final_prepared_seed_v2",
+      "manifest_sha256_not_captured_before_loss": true,
+      "nodes": 107,
+      "open_leaves": 22,
+      "numerical_solves": 0,
+      "seconds": 2.3035480140024447,
+      "currently_available_at_recorded_path": false
+    }
+  ],
+  "final_stopped_manifest_sha256": "2a0d537b3daa1a62f5e0db656aa52997b6e0d7faa1855623ec53afdac711ce02",
+  "final_capture_receipt_sha256": "74f11eeb4c50e1a33a37152424137fcc4f4bc21aa7164ef24eab91ea7050d0db",
+  "capture_session44786_exit_unknown": true,
+  "root_reported_predecessor_stop": {
+    "session": 73831,
+    "observed_exit_code": 130,
+    "method": "write_stdin Ctrl-C",
+    "failed_direct_PID_signal_not_credited": true
+  },
+  "final_freeze_builder_observed_exit_code": 1,
+  "final_freeze_failure": "FileNotFoundError reading final_stopped_frontier_v1/manifest.json before any freeze/receipt write",
+  "surviving_new_preparation_files": {
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/freeze_b16a_center_final_migration_v2.py": {
+      "sha256": "2d8c9fbce5213f22b7ee2213c75614a646588f611386145fcfbafcea331c6716",
+      "bytes": 9134
+    },
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/B16A_ACCEPTED_CENTER_FINAL_MIGRATION_ATTACHMENT_V2.md": {
+      "sha256": "4c1536ee5a6391ba2ceeec8b8336f6184593707b87572bcf2c3510c4d034e604",
+      "bytes": 5295
+    }
+  },
+  "prior_runtime_proof_payloads_recovered": 0,
+  "relocated_workspace_inventory": "RELOCATION_RESCUE_REMAINING_FILES.json",
+  "cause_established": false,
+  "source_or_worker_mutation_performed": false,
+  "numerical_restart_performed": false,
+  "recorded_hashes_are_not_substitutes_for_missing_bytes": true,
+  "proof_acceptance_or_ledger_credit_from_missing_result": false,
+  "latest185_transport_observed_archive_sha256": "ddba86d2dda6c261e1a3b2868459ddbb7eced058fc0c91c8b72d56254d6f6e93",
+  "latest185_transport_publication_status": "Awaiting root confirmation",
+  "new_original_cells": 0,
+  "new_masks": 0
+}

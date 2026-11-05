@@ -1,0 +1,18 @@
+{
+  "status": "PASS_EXACT_PUBLISHED_ARCHIVE_AND_ALL_MEMBER_BYTES_RESTORED",
+  "package": "three_i",
+  "archive_sha256": "37c1fb64515c1f4d6145133f75a52d4cab780333742c4aa0e1b1168b60aba99d",
+  "member_count": 259,
+  "member_bytes": 248469821,
+  "installed": 259,
+  "historical_member_audit_sha256": "9d2a34f465f6486d83467c91d230daa8ae013d0efa7c7123b25b28c30c313353",
+  "metadata_sha256": "42a03cc7bcdb0d45d14d6930ca86a4f14b48d5ecf485ec0c36b2009c11ee04d8",
+  "packet": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_three_i/unpacked/b16a_three_complete_H_checkpoint",
+  "restorer_sha256": "289d2e0e19e58a9486d1ac68edd8b6e19561df2da7b22884e8882cf610bc27ad",
+  "arithmetic_repeated": false,
+  "numerical_search_started": false,
+  "git_index_or_ref_mutated": false,
+  "existing_different_files_overwritten": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

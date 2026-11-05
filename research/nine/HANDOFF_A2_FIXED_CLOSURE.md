@@ -1,5 +1,16 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [new B source/readiness checkpoint](computer_assisted/b_recovered_center_moment_readiness_v2/README.md)
+retains the fresh 45-node B16 regional replay, B462's new whole-original
+attachment, and the exact area-moment runtime with 3,072-row literal parity.
+The missing B16 suffix and B462 capture program remain explicitly unavailable.
+No bounded numerical command was started by this publication.
+
+The [strict-011 four-product layer](computer_assisted/strict_011_four_product_layer_v2/README.md)
+passes root and peer physical/source review with matching relocated controls.
+It is source preparation only: no frozen driver is changed, and a separately
+reviewed complete-tree attachment plus actual solver use is still required.
+
 The [A-c744 I64 source checkpoint](computer_assisted/a_c744_i64_source_recovery_v3/README.md)
 preserves the exact source and complete original-wide hand attachment. Its
 fresh weighted gate remains separate; missing later consumer records are

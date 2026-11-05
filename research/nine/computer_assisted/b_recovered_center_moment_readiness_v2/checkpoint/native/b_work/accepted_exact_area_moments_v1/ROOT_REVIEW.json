@@ -1,0 +1,115 @@
+{
+  "schema": "universal_physical_rows_root_review_v1",
+  "status": "PASS_SOURCE_PHYSICAL_IMPLICATIONS_AND_FRESH_EXACT_FAMILY_CONTROLS",
+  "source_review_commit": "600818c19a54f124aedbb67db7cc5044ba68ee0b",
+  "complete_sources_read": [
+    "original_incircle_distance_chords_v1/HAND_PROOF.md",
+    "original_incircle_distance_chords_v1/PREMISE_BINDINGS.json",
+    "original_incircle_distance_chords_v1/physical_incircle_chords.py",
+    "original_incircle_distance_chords_v1/independent_incircle_chords.py",
+    "original_incircle_distance_chords_v1/check_controls.py",
+    "rotating_frame_center_cone_v1/HAND_PROOF.md",
+    "rotating_frame_center_cone_v1/physical_center_cone_rows.py",
+    "rotating_frame_center_cone_v1/independent_center_cone_rows.py",
+    "rotating_frame_center_cone_v1/verify_packet.py",
+    "general_center_cone_v1/GENERAL_CENTER_CONE_HAND_PROOF.md",
+    "general_center_cone_v1/physical_general_center_cone_rows.py",
+    "general_center_cone_v1/independent_general_center_cone_rows.py",
+    "general_center_cone_v1/verify_general_center_cone_controls.py",
+    "general_center_cone_v1/verify_packet.py",
+    "exact_area_moment_assembly_v1/fast_exact_area_moments.py",
+    "exact_area_moment_assembly_v1/reference_square_area_moment_rows.py",
+    "exact_area_moment_assembly_v1/check_parity.py"
+  ],
+  "fresh_commands": [
+    {
+      "family": "incircle",
+      "command": [
+        "python",
+        "-B",
+        "-S",
+        "check_controls.py",
+        "INCIRCLE_FRESH_REPORT.json"
+      ],
+      "observed_exit_code": 0
+    },
+    {
+      "family": "rotating_frame",
+      "command": [
+        "python",
+        "-B",
+        "-S",
+        "verify_packet.py"
+      ],
+      "observed_exit_code": 0
+    },
+    {
+      "family": "general_center",
+      "command": [
+        "python",
+        "-B",
+        "-S",
+        "verify_packet.py"
+      ],
+      "session_id": 3402,
+      "observed_exit_code": 0
+    },
+    {
+      "family": "exact_moment_assembly",
+      "command": [
+        "python",
+        "-B",
+        "-S",
+        "check_parity.py",
+        "MOMENT_PARITY_FRESH_REPORT.json"
+      ],
+      "session_id": 21666,
+      "observed_exit_code": 0
+    }
+  ],
+  "fresh_reports": {
+    "INCIRCLE_FRESH_REPORT.json": {
+      "bytes": 496,
+      "sha256": "8500d4029b124e7cbf53541d8fed570a3c24002ff867d786df2a7278b2ee8200"
+    },
+    "NARROW_CONE_FRESH_REPORT.json": {
+      "bytes": 1331,
+      "sha256": "a1823b4aafadf16a7a00b05fe14435a4de4fbef3fd60016a2889b3cd9e064301"
+    },
+    "GENERAL_CONE_FRESH_REPORT.json": {
+      "bytes": 854,
+      "sha256": "177eb78e2bf7a493a7722dbe13d4c91bb76bed0ff36930805d1a84824c6dda50"
+    },
+    "GENERAL_CONE_FRESH_CONTROLS.json": {
+      "bytes": 1176,
+      "sha256": "f74e67a463ab29af5c56969d65315f90088e811a5476fcd4d31d9e1fe80c1acc"
+    },
+    "MOMENT_PARITY_FRESH_REPORT.json": {
+      "bytes": 1012,
+      "sha256": "997ef7420354c04a82396bcdf7b8359e14dc8eb2c1f8266d175de8d457a62948"
+    }
+  },
+  "physical_scope": {
+    "incircle": "Any pair of distinct original unit squares with disjoint open interiors; same-pair certified sign and transverse interval. No mask or circle premise.",
+    "center_cones": "Each original physical unit square with all four corners at squared radius at most1105/256; its canonical alpha>0 frame and same-owner certified closed slope interval. No SAT or mask premise."
+  },
+  "weighted_excerpt_limit": "Each cone excerpt freshly verifies its new family literals and nonnegative weighted arithmetic, conditional on the other printed rows and supplied absolute bounds. The complete original ancestry and older row provenance have not been independently replayed by this root packet.",
+  "acceptance": "Physical row families and literal decoders accepted for a separately frozen integration. Each integrated certificate still needs independently propagated state, accepted older rows, complete parent/path/cover and fresh full arithmetic. No running source is changed by this review.",
+  "optimization_contract": {
+    "all_36_pair_intervals": true,
+    "exact_immutable_rational_values": true,
+    "counts_and_matrices_finite_stable_sequences": true,
+    "lower_bound_name_axes_functions_frozen_after_installation": true,
+    "fresh_complete_literal_comparisons": 6144,
+    "independent_checker_unchanged": true,
+    "not_a_whole_search_speedup_claim": true
+  },
+  "fixed_register_sha256": "3dfaff7a880ab358930fb0ea835a1fdbe9959711f3c08ac47ee9817e7c693dde",
+  "whole_originals_closed": 222,
+  "whole_originals_open": 9,
+  "whole_masks_closed": 8,
+  "whole_masks_open": 24,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false
+}

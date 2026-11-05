@@ -1,0 +1,22 @@
+{
+  "status": "PASS_EXACT_FOUR_RECTANGLE_UNIT_CORNER_CONTROLS",
+  "literal_rows": 3456,
+  "exact_physical_residual_identities": 3456,
+  "accepted_two_rectangle_rows_reproduced": 864,
+  "original_signed_corners": 36,
+  "rectangle_choice_patterns": 16,
+  "damaged_controls_rejected": 5,
+  "continuous_physical_implication_in_hand_proof": true,
+  "optimizer_used": false,
+  "original_cells_closed": 0,
+  "masks_closed": 0,
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/d_work/four_corner_root_review/global_work/unit_corner_four_rectangles/check_four_rectangle_corner_rows.py": "d43123cd1256db2c15bbbec1ab46c212e3980dca2cc92069eeda55e8c77d4f26",
+    "/workspace/scratch/f9f48fcfb253/d_work/four_corner_root_review/global_work/unit_corner_four_rectangles/physical_unit_four_corner_rows.py": "87b1807d71442d558fd6eeaaed9b065d953cc6ca58908079e72b745cb2e227ac",
+    "/workspace/scratch/f9f48fcfb253/d_work/four_corner_root_review/global_work/unit_corner_four_rectangles/independent_physical_unit_four_corner_rows.py": "bfb6dc614269eaaa2c9f087cc7295c2598648d9349d76006b1e4aa08e66380a6",
+    "/workspace/scratch/f9f48fcfb253/d_work/four_corner_root_review/global_work/unit_corner_four_rectangles/physical_unit_four_corner_separation.py": "4b6dfffbb781dc4d6020fefbc27ef2305197b4ed484a77c0173957c0187e755e",
+    "/workspace/scratch/f9f48fcfb253/d_work/four_corner_root_review/global_work/unit_corner_four_rectangles/FOUR_RECTANGLE_UNIT_CORNER_HAND_PROOF.md": "da45c5a17d3a8ec79f30e390b138d7222e913753a63e0009f509313183445166"
+  },
+  "accepted_parent_producer_sha256": "cdfe8b1f48f6a84bb929f40de7e05cae35134acbd84cc1b4c95fda84d517d575",
+  "seconds": 1.0206589620011073
+}

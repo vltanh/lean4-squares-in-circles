@@ -1,0 +1,18 @@
+{
+  "status": "PASS_EXACT_PUBLISHED_ARCHIVE_AND_ALL_MEMBER_BYTES_RESTORED",
+  "package": "i11",
+  "archive_sha256": "833c6386f813e6bbda3a15d0b13625dfacde036cb61be083be12147ae5374131",
+  "member_count": 174,
+  "member_bytes": 111455814,
+  "installed": 174,
+  "historical_member_audit_sha256": "efacb429f7561e2a23bdfed221a43bbb159042b094672ccbb5d2214c415f7b73",
+  "metadata_sha256": "75b0404a536ff1541faacabb0e2d296a9bd7240f9ea07a371576d957e9e41d68",
+  "packet": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_i11/unpacked/b16a_I11_complete_fixed_rectangle_checkpoint",
+  "restorer_sha256": "289d2e0e19e58a9486d1ac68edd8b6e19561df2da7b22884e8882cf610bc27ad",
+  "arithmetic_repeated": false,
+  "numerical_search_started": false,
+  "git_index_or_ref_mutated": false,
+  "existing_different_files_overwritten": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS_EXACT_PUBLISHED_B_CANONICAL_PLAN_RESTORED",
+  "mode": "all",
+  "plan_sha256": "7e070a4aa2902fefff7ccac54c02a6f5fa402fe83e9669b80b243cef1839c028",
+  "files": 2215,
+  "installed": 471,
+  "existing_identical_retained": 1744,
+  "source_and_destination_hashes_rechecked": true,
+  "helper_sha256": "289d2e0e19e58a9486d1ac68edd8b6e19561df2da7b22884e8882cf610bc27ad",
+  "restorer_sha256": "840f77a924d15dbf1336ad187417d67aeef8df1db541813911106e4a9fb00a79",
+  "historical_plan_or_receipt_rewritten": false,
+  "existing_drift_overwritten": false,
+  "mathematical_replay_performed": false,
+  "numerical_search_started": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

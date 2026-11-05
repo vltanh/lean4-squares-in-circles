@@ -1,0 +1,18 @@
+{
+  "status": "PASS_EXACT_PUBLISHED_ARCHIVE_AND_ALL_MEMBER_BYTES_RESTORED",
+  "package": "i10",
+  "archive_sha256": "4f224ed9de556fcfbb8fe5146d02ed69b52168067065cedb6f254b95ab72873d",
+  "member_count": 430,
+  "member_bytes": 501893637,
+  "installed": 430,
+  "historical_member_audit_sha256": "d80e79d4988ac28db10e425d4bbea3293af6927e9f2a1a01f7074cafc4f8acdb",
+  "metadata_sha256": "8ca6977c37b8a48657d4dac97d5a29f4fa0eb0cde4a311c9c6bd7d35b96ec965",
+  "packet": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_i10/unpacked/b16a_I10_complete_H_checkpoint_v2",
+  "restorer_sha256": "289d2e0e19e58a9486d1ac68edd8b6e19561df2da7b22884e8882cf610bc27ad",
+  "arithmetic_repeated": false,
+  "numerical_search_started": false,
+  "git_index_or_ref_mutated": false,
+  "existing_different_files_overwritten": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

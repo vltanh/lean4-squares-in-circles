@@ -1,0 +1,18 @@
+{
+  "status": "PASS_EXACT_PUBLISHED_ARCHIVE_AND_ALL_MEMBER_BYTES_RESTORED",
+  "package": "complementary",
+  "archive_sha256": "ae34519e5ecf84123170b33736c36da714a49f458d4a63953d27430e8e7141e0",
+  "member_count": 367,
+  "member_bytes": 34754947,
+  "installed": 367,
+  "historical_member_audit_sha256": "220d9edbb68080e4b3ea29e0b14c00fa469bae6c663872ad2ba227bdf4379eb5",
+  "metadata_sha256": "6a524b58b4af278d2e04978189fdea333f3aeedd70d1854e1c0279ff744a50d1",
+  "packet": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/extracted_complementary/unpacked/b16a_complementary_package_v2",
+  "restorer_sha256": "289d2e0e19e58a9486d1ac68edd8b6e19561df2da7b22884e8882cf610bc27ad",
+  "arithmetic_repeated": false,
+  "numerical_search_started": false,
+  "git_index_or_ref_mutated": false,
+  "existing_different_files_overwritten": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

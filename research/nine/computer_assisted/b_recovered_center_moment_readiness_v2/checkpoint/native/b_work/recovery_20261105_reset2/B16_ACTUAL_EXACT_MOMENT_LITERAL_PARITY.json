@@ -1,0 +1,131 @@
+{
+  "status": "PASS_COMPLETE_EXACT_MOMENT_LITERAL_PARITY_ON_FRESH_B16_CALLER",
+  "original_id": "negative-16a2fc93c8d133f0",
+  "path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        3
+      ]
+    ]
+  ],
+  "source_node_index": 0,
+  "source_node_sha256": "62b54955abb954ea4267e5f3820b962e63e46b02eadb8a70a43915557af99a99",
+  "fresh_complete_tree_report_sha256": "6957aef8e8867eb8c36ff8df268f448896f27e203e59e76547000a926b31fbfa",
+  "pair_intervals": 36,
+  "matrices": 12,
+  "counts": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "rows_compared": 3072,
+  "complete_coefficients_rhs_names_and_order_equal": true,
+  "literal_sequence_sha256": "10bdbe4a5b497e6a90be5618295ba39b0a907b828ad35441045a20ef3a064f83",
+  "immutable_cache_rows_and_independent_outer_lists": true,
+  "malformed_callers_rejected": [
+    "missing_original_pair",
+    "nonstable_matrix_iterator",
+    "different_subset_size_sequence",
+    "mutated_lower_bound_helper"
+  ],
+  "reference_generator_sha256": "d4d4b7a9bda2595693ea10e15821eedfb5681b9f1be32381179b20512d2700d1",
+  "optimizer_sha256": "9afb26cad3032731902679f67a3ff166d44ba5d2a5684cf31f832da767edd071",
+  "reference_generation_seconds": 5.199777660003747,
+  "optimized_generation_seconds": 0.964941958001873,
+  "timings_are_generator_only": true,
+  "mathematical_row_families_changed": 0,
+  "independent_checker_unchanged": true,
+  "numerical_LP_solves": 0,
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/b_work/b_arc_runtime.py": "b09dc9534061c85fb0fd7dda6f679d1d39966574c358006ea2946acfc8115d8d",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_sat_engine.py": "38d1162c40cd6494579f7793c6b10a54432ce999994f86b6726d2ca9e8022bc4",
+    "/workspace/scratch/f9f48fcfb253/b_work/coupled_three_square_energy.py": "693f5bb65c3d2b9930cf4f0d705ed7987ea0465f1da53b1c029289ae03903d2b",
+    "/workspace/scratch/f9f48fcfb253/b_work/tightened_sat_products.py": "d9a44a0929989c9c1926e73b10d33e05c7662f09ef7a6c8f4000dd73300e557a",
+    "/workspace/scratch/f9f48fcfb253/b_work/shared_frame_triangle_products.py": "da7fa7d71a166a8807798651c58923b7df836ce18283201ed825f64e925eb691",
+    "/workspace/scratch/f9f48fcfb253/b_work/relative_frame_arc_rows.py": "fbcfdfa3d253fdd109613ada16b42b8f46ef94426801ed3d78720fdbeb7a3f3a",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_good_cap_runtime.py": "eb26fa6dba80db5b77b092c5a4248a00ad390724726eb3a5d137cd9eb62940df",
+    "/workspace/scratch/f9f48fcfb253/b_work/oriented_good_cap_rows_snapshot.py": "33e7f0250f94dbcec113ac60677d7f2e0e9e513c7347f30dc808bfd6ea147737",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_owner_free_runtime.py": "aa5ac54204ca44430f4f87aaae0457c0127f451b2e2e83623366a3221b1ae225",
+    "/workspace/scratch/f9f48fcfb253/b_work/owner_free_relative_support_snapshot.py": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_frame_square_runtime.py": "fbd782d2e2b11c2a8e816ebc8882a597c4eb519cae543f0ae5d1fa55d9d04033",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_pair_frame_squares.py": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_frame_square_separation.py": "fdd4bbf142be1cff2c27688b5fd79950e0f105d09dad34a453dcbae50116b39c",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_gram_square_runtime.py": "b0e8e647626b2d0e9698efb3c456d4433661a1fcf90b6ec9c4180c7f769a3516",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_projection_squares.py": "0a33acc6990ccc5f35439f0f641de987a08466b0e53a3bfa38de1dd2c2c8901d",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_projection_square_separation.py": "6f8ede5eb0853b2615bf27b099017293bf909094364938736f00bf7184b04f87",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_all_row_guards_runtime.py": "133d12bae935d46994cb436d6bd4ff148702baa4db8a2a211bcf0611536a410d",
+    "/workspace/scratch/f9f48fcfb253/b_work/sharp_terminal/shared_strict_row_terminal.py": "43a74c66c7c0b91da76e6577ce511e6ae8de7bda9ab6e0adbf81a1cc2b013d43",
+    "/workspace/scratch/f9f48fcfb253/b_work/full_angle_common_side_four_row_guard_snapshot.py": "81895c0397f7e7d0a7a411413b5a8fe02e2782569f6e880d349f2eff9c032e2e",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_lean_four_corner_runtime.py": "7f8abf87220bf5d0f17fa3f10f7637e05b6e6e5d00e2fef4144b8edaaeabf6d9",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_corner_disk_rows.py": "633c549239f1893c37c382e1e6aac2eb54f36feb7332390e26f9bccceac286ba",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_corner_disk_separation.py": "3d02c220cda478f7e58f4fa5a9f009f8f14febd06440df9b24ba6ae7d089cc29",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_unit_four_corner_rows.py": "87b1807d71442d558fd6eeaaed9b065d953cc6ca58908079e72b745cb2e227ac",
+    "/workspace/scratch/f9f48fcfb253/b_work/fast_unit_four_corner_separation.py": "bf82ed79b7aaa4ad3ddcdd7d7d387e344d242e7557238b2ebc17936703293b8a",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_four_complete_guards_runtime.py": "d94308b1a38078f34b1e399be6ad9ef975913e4bc16066fb4ca3afe894dafa41",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/tree/full_angle_ab_extra_guard.py": "f19b10ea2e415d3c8c3a60a4f362239de03b5936ad97388cb74e8dbe67e7dc85",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/full_angle_common_side_row_v1/full_angle_common_side_four_row_guard.py": "81895c0397f7e7d0a7a411413b5a8fe02e2782569f6e880d349f2eff9c032e2e",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/tree/opposite_abid_row_guard.py": "a1a5cf009d24a1b18e41a2aff258bfa91987ebaf225308cef32212cee9ed0514",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/c887/c887_whole_eight_checkpoint_package/opposite_tilt_theorem/opposite_tilt_four_row_guard.py": "3d1a74e8108f9eb02e431e2e25f9f24aa7bffd55aac8f3a956d2f54a11886c0d",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/tree/FULL_ANGLE_AB_EXTRA_PREMISE_BINDINGS.json": "021495e5adfb0e7451edbf88f3d8e4ab78d22200051923945ccf575a79f4d77a",
+    "/workspace/scratch/f9f48fcfb253/b_work/row_guards/tree/OPPOSITE_ABID_PREMISE_BINDINGS.json": "f03bf03f9ef8941c93c3999f8076cb7e4a4b7eb66e9b00c0de289c6f7c5cb78d",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_accepted_center_disk_runtime_v1.py": "8ffea381e4c9d9713344d81d4e7e6df15ffefe39cb2eb29469b16684720b78ca",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/BINDING.json": "8fb0b5dda2d0bb892236dac5825bec3c8824d4ba6f1440aee967c9b5aa1e1a82",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/physical_center_disk_rows.py": "3b32ff2f02e4681b5ef6b9359420b173f092a96093708c9d2c3fe982948681d8",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/independent_physical_center_disk_rows.py": "9fafd523e0154fcb8aedb7ecf2f36aa6213a77c84ff619ae12cd5612fc1b2acc",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/physical_center_disk_separation.py": "536ee2e0bca8512a4a9ccce8e759ec446f957dcc8749b7a8b8a5537601d6e02b",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/UNIVERSAL_CENTER_DISK_HAND_PROOF.md": "cd4cbeb8e38b139cb3289c3b9ce572537b5b115079452b0454467c4598478491",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/CENTER_DISK_ROOT_WEIGHTED_USE_REVIEW.json": "a76a3fa1f4e6d3c9f9f53c35c2f0d61367d8093cf425cc2505090fbfb9b34221",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/UNIVERSAL_CENTER_DISK_ROOT_PHYSICAL_REVIEW.json": "0663b66ed3e5d1a897fe833d91b83c06d82b407820fb98c4b1b5a33fe904ced9",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/CENTER_DISK_29B_ROOT_FRESH_CONTROLS.json": "e3f842bc4a345acf22052c7b84799a18f57983e221d666db53ab2a0907f0c3ac",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/ACCEPTED_EXTERNAL_CENTER_FIRST_USE_FRESH_REPLAY.json": "df9206690dd860a097093b0c7d86e26a8b6c0215ac5d2c9cfe2b3049ff451696",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_center_disk_v1/ACCEPTED_PREMISE_BINDINGS.json": "57a0c2002d725f1c0ae4c5a5abac865ffaf16f79d913f32cc5d8c1ee0048532b",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_center_exact_moment_runtime_v1.py": "e5d4a8af92af70607d643f5b81fe78a7cb6710377c2ac0fe33c64433fd09761d",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/BINDING.json": "903a18152fd47b0b0f38a7306711fb2db0abd7d992ea2d341ecbf7aa6173b7e4",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/DISCOVERY_BENCHMARK.json": "24cec7916eb93b8658da6258063e2df27334064c83a086ea291e37bcae5ce294",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/EXACT_LITERAL_PARITY.json": "2a2d3196d236d3dca8a712a428bf31773b0cd779f102a20bfa3a13bfba03bf3a",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/PARITY_INPUTS.json": "ad222e7281ce937dfa4bae5aa53a378c8f7085b0fa1ea928f937c3e196b79cac",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/README.md": "ab1aa256ce4226f13a69a53d9e813aa8cb7e09af09834f543adc20be0bfdfa16",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/check_parity.py": "9b28643767d2b446d71639595792483f8df56031fde4aa8f4e3e12b456b4b3a6",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/fast_exact_area_moments.py": "9afb26cad3032731902679f67a3ff166d44ba5d2a5684cf31f832da767edd071",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/reference_square_area_moment_rows.py": "d4d4b7a9bda2595693ea10e15821eedfb5681b9f1be32381179b20512d2700d1",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/ROOT_REVIEW.json": "738c23ff9531fab0fb8a89d42079ea7e67d915124cf9bbed5340cbe8e845a614",
+    "/workspace/scratch/f9f48fcfb253/b_work/accepted_exact_area_moments_v1/MOMENT_PARITY_FRESH_REPORT.json": "997ef7420354c04a82396bcdf7b8359e14dc8eb2c1f8266d175de8d457a62948",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/check_b16_actual_moment_parity_v1.py": "5646fb5bd2049a5f5203419b234544d294b5e526ff5c54b0d7e2aa40629343be",
+    "/workspace/scratch/f9f48fcfb253/b_work/run_coupled_sat_cover.py": "45c66b4329333e3fe15e4bfbeda0821d0ad2233719e0ed926392ed748a521456",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/d4d4b7a9bda25956_square_area_moment_rows.py": "d4d4b7a9bda2595693ea10e15821eedfb5681b9f1be32381179b20512d2700d1",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/manifest.json": "b90924544fd382d2bc31c536ddd8b12be13d7748abe262106d40661b325283a5",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/node_0000.json": "62b54955abb954ea4267e5f3820b962e63e46b02eadb8a70a43915557af99a99",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/RESTORED_B16A_45_ACCEPTED_CENTER_FRESH_EXACT_REPLAY.json": "6957aef8e8867eb8c36ff8df268f448896f27e203e59e76547000a926b31fbfa"
+  },
+  "numerical_search_started": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

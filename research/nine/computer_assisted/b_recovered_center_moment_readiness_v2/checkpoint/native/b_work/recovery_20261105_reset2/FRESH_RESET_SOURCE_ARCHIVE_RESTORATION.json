@@ -1,0 +1,17 @@
+{
+  "status": "PASS_EXACT_RESET_SOURCE_ARCHIVE_AND22109_MAPPINGS",
+  "archive_sha256": "157bbd24c778cef8f44e0e357ac47322bbd527aac0dbc6c751b66d5b0eb7546d",
+  "paths_sha256": "87fa02855665f17f0375788b8d8a0f9372929fc34b695f01beb65d2d51045b05",
+  "content_blobs": 3686,
+  "members": 3688,
+  "installed": 3688,
+  "all_content_names_are_exact_sha256": true,
+  "destination": "/workspace/scratch/f9f48fcfb253/d_work/reset_sources_d989c83",
+  "restorer_sha256": "289d2e0e19e58a9486d1ac68edd8b6e19561df2da7b22884e8882cf610bc27ad",
+  "arithmetic_repeated": false,
+  "numerical_search_started": false,
+  "git_index_or_ref_mutated": false,
+  "existing_different_files_overwritten": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

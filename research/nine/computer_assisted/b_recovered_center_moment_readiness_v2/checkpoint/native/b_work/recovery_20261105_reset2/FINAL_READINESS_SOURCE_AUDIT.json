@@ -1,0 +1,20 @@
+{
+  "status": "PASS_ALL_FINAL_READINESS_PINS_AND_NO_LAUNCH_PATHS",
+  "freeze_sha256": "b744219d6505282f5071d84f29c323c459cf94604a68066c552660b9a2b11138",
+  "source_pins": 396,
+  "cases": {
+    "B16A": {
+      "prepared_manifest_sha256": "47de09f3afb009eeb38b2bd70ff91cb1341b9e87a3ac13106d0d42a5fe042493",
+      "output_absent": true,
+      "log_absent": true
+    },
+    "B462": {
+      "prepared_manifest_sha256": "4f34b0df2f816254e707f0eb1c9d99ee98bcdf0eb0a147106c1f02ef83a88f5b",
+      "output_absent": true,
+      "log_absent": true
+    }
+  },
+  "arithmetic_replayed": false,
+  "numerical_search_started": false,
+  "no_original_or_mask_credit": true
+}

@@ -1,0 +1,26 @@
+{
+  "status": "CURRENT_REGULAR_FILE_BYTE_INVENTORY_ONLY",
+  "files": [
+    {
+      "path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/freeze_b16a_center_final_migration_v2.py",
+      "bytes": 9134,
+      "sha256": "2d8c9fbce5213f22b7ee2213c75614a646588f611386145fcfbafcea331c6716"
+    },
+    {
+      "path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/B16A_ACCEPTED_CENTER_FINAL_MIGRATION_ATTACHMENT_V2.md",
+      "bytes": 5295,
+      "sha256": "4c1536ee5a6391ba2ceeec8b8336f6184593707b87572bcf2c3510c4d034e604"
+    },
+    {
+      "path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/B_RESET2_OBSERVED_COMPLETION_AND_LOSS_RECEIPT.json",
+      "bytes": 3529,
+      "sha256": "d6bd5213361169aa475460ac5dc55ad2880afe2c75ac126a5db09f7f5f87b124"
+    },
+    {
+      "path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/RELOCATION_RESCUE_REMAINING_FILES.json",
+      "bytes": 1227,
+      "sha256": "244c45f9a169e43874c6815a7ca1ace1931ff27bc1141db65610c529192d09e6"
+    }
+  ],
+  "proof_frontier_available": false
+}

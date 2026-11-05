@@ -1,0 +1,92 @@
+{
+  "label": "B16A",
+  "status": "HOLD_EXTERNAL_SAME_ORIGINAL_SEARCH_ACTIVE",
+  "original_id": "negative-16a2fc93c8d133f0",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        3
+      ]
+    ]
+  ],
+  "whole_original_domain_retained": false,
+  "source_manifest": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105/reassembled_B16a_published_prefix_v1/manifest.json",
+  "source_manifest_sha256": "b90924544fd382d2bc31c536ddd8b12be13d7748abe262106d40661b325283a5",
+  "prepared_manifest": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1/manifest.json",
+  "prepared_manifest_sha256": "47de09f3afb009eeb38b2bd70ff91cb1341b9e87a3ac13106d0d42a5fe042493",
+  "nodes": 45,
+  "excluded_leaves": 2,
+  "open_leaves": 28,
+  "complete_unions": {
+    "proxy": 7,
+    "angle": 8
+  },
+  "all_retained_payload_and_cover_bytes_unchanged": true,
+  "exact_report": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/RESTORED_B16A_45_ACCEPTED_CENTER_FRESH_EXACT_REPLAY.json",
+  "exact_report_sha256": "6957aef8e8867eb8c36ff8df268f448896f27e203e59e76547000a926b31fbfa",
+  "exact_session": 86994,
+  "exact_observed_exit_code": 0,
+  "prepare_only_session": 29887,
+  "prepare_only_observed_exit_code": 0,
+  "command": [
+    "python",
+    "-B",
+    "-u",
+    "/workspace/scratch/f9f48fcfb253/b_work/resume_b_center_exact_moment_atomic_tree_v1.py",
+    "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/B16A_center_exact_moment_prepared_seed_v1",
+    "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/b16a_restored_center_moment_bounded_v1",
+    "--packet",
+    "/workspace/scratch/f9f48fcfb253/b_work/b16a_I32_complete_H_checkpoint",
+    "--rounds",
+    "2",
+    "--existing-rounds",
+    "1",
+    "--proxy-rounds",
+    "0",
+    "--max-depth",
+    "24",
+    "--max-new-nodes",
+    "64"
+  ],
+  "output": "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/b16a_restored_center_moment_bounded_v1",
+  "log": "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/b16a_restored_center_moment_bounded_v1.log",
+  "output_and_log_absent": true,
+  "numerical_search_started": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "common_source_freeze": {
+    "path": "/workspace/scratch/f9f48fcfb253/b_work/recovery_20261105_reset2/B_CENTER_EXACT_MOMENT_BOUNDED_READINESS_FREEZE_V1.json",
+    "sha256": "b744219d6505282f5071d84f29c323c459cf94604a68066c552660b9a2b11138"
+  },
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}

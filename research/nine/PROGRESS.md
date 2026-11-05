@@ -1,5 +1,20 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Fresh B readiness and reviewed strict-011 corner attachment
+
+The [recovered B readiness checkpoint](computer_assisted/b_recovered_center_moment_readiness_v2/README.md)
+preserves fresh exact replay of the complete 45-node B16 I21/I22 cover and a
+new whole-original attachment of B462's unchanged two-round raw certificate.
+Both remain OPEN. The exact area-moment discovery cache matches all 3,072
+literal rows on an actual replayed state, with its caller contract enforced.
+The independent checker is unchanged; bounded numerical commands remain held.
+
+The [strict-011 four-product layer](computer_assisted/strict_011_four_product_layer_v2/README.md)
+has complete physical and source reviews, exact accepted formula bytes, and
+matching native and relocated controls. Its extra corner planes use the same
+independently propagated original boxes. Complete-tree integration and actual
+positive-weight solver use remain separate gates. No closure count changes.
+
 ## Preserved stronger A source and strict-011 theorem applications
 
 The [A-c744 I64 source recovery](computer_assisted/a_c744_i64_source_recovery_v3/README.md)
