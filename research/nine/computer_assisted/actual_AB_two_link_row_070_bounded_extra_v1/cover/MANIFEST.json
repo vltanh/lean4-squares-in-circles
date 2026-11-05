@@ -1,0 +1,520 @@
+{
+  "schema": "exact_actual_edge_three_angle_complete_cover_v1",
+  "root_upper": [
+    "29/70",
+    "17/72",
+    "29/70"
+  ],
+  "coefficient": "701/1000",
+  "target_variation": "7/10",
+  "domains": [
+    {
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 0,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.005885302001843229,
+      "file": "spmm_o01_k0.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 1,
+      "nodes": 5,
+      "maxdepth": 2,
+      "seconds": 0.04301905899774283,
+      "file": "spmm_o01_k1.json",
+      "leaves": 3,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 0,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.001436663995264098,
+      "file": "spmm_o02_k0.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 2,
+      "nodes": 5,
+      "maxdepth": 2,
+      "seconds": 0.0517161789975944,
+      "file": "spmm_o02_k2.json",
+      "leaves": 3,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        1,
+        1
+      ],
+      "selected_owner": 1,
+      "nodes": 5,
+      "maxdepth": 2,
+      "seconds": 0.037950370999169536,
+      "file": "spmm_o11_k1.json",
+      "leaves": 3,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.001356806002149824,
+      "file": "spmm_o12_k1.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 2,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.005182957997021731,
+      "file": "spmm_o12_k2.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 0,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.0010893679936998524,
+      "file": "spmp_o01_k0.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.0015379050018964335,
+      "file": "spmp_o01_k1.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 0,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.0010931330034509301,
+      "file": "spmp_o02_k0.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 2,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.0010771800007205456,
+      "file": "spmp_o02_k2.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1
+      ],
+      "selected_owner": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.01624068400269607,
+      "file": "spmp_o11_k1.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.0011513499994180165,
+      "file": "spmp_o12_k1.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 2,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.0011242399996262975,
+      "file": "spmp_o12_k2.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 0,
+      "nodes": 3,
+      "maxdepth": 1,
+      "seconds": 0.02141644200310111,
+      "file": "sppm_o01_k0.json",
+      "leaves": 2,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 1,
+      "nodes": 3,
+      "maxdepth": 1,
+      "seconds": 0.017019190003338736,
+      "file": "sppm_o01_k1.json",
+      "leaves": 2,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 0,
+      "nodes": 13,
+      "maxdepth": 6,
+      "seconds": 0.13223773399658967,
+      "file": "sppm_o02_k0.json",
+      "leaves": 7,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 2,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.0054084240036900155,
+      "file": "sppm_o02_k2.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        1,
+        1
+      ],
+      "selected_owner": 1,
+      "nodes": 15,
+      "maxdepth": 7,
+      "seconds": 0.14566557000216562,
+      "file": "sppm_o11_k1.json",
+      "leaves": 8,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 1,
+      "nodes": 23,
+      "maxdepth": 7,
+      "seconds": 0.285297652000736,
+      "file": "sppm_o12_k1.json",
+      "leaves": 12,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 2,
+      "nodes": 1,
+      "maxdepth": 0,
+      "seconds": 0.001494650001404807,
+      "file": "sppm_o12_k2.json",
+      "leaves": 1,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 0,
+      "nodes": 19,
+      "maxdepth": 8,
+      "seconds": 0.20325409600627609,
+      "file": "sppp_o01_k0.json",
+      "leaves": 10,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 1,
+      "nodes": 19,
+      "maxdepth": 8,
+      "seconds": 0.19633671599876834,
+      "file": "sppp_o01_k1.json",
+      "leaves": 10,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 0,
+      "nodes": 17,
+      "maxdepth": 7,
+      "seconds": 0.15233682899997802,
+      "file": "sppp_o02_k0.json",
+      "leaves": 9,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 2,
+      "nodes": 13,
+      "maxdepth": 6,
+      "seconds": 0.17472804299904965,
+      "file": "sppp_o02_k2.json",
+      "leaves": 7,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1
+      ],
+      "selected_owner": 1,
+      "nodes": 23,
+      "maxdepth": 10,
+      "seconds": 0.2694789050001418,
+      "file": "sppp_o11_k1.json",
+      "leaves": 12,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 1,
+      "nodes": 29,
+      "maxdepth": 10,
+      "seconds": 0.1483814640014316,
+      "file": "sppp_o12_k1.json",
+      "leaves": 15,
+      "open": 0
+    },
+    {
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 2,
+      "nodes": 21,
+      "maxdepth": 10,
+      "seconds": 0.09543047099577961,
+      "file": "sppp_o12_k2.json",
+      "leaves": 11,
+      "open": 0
+    }
+  ],
+  "leaves": 127,
+  "open": 0,
+  "independent_replay_pending": true,
+  "no_original_or_mask_credit": true
+}
