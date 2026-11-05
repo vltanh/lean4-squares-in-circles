@@ -1,0 +1,17 @@
+{
+  "schema": "signed177_completed_input_archive_v1",
+  "archive": "a2_00100_cb882_signed_177_completed_input_v1.tar.xz",
+  "archive_bytes": 183796,
+  "archive_sha256": "379224126a8a24a883ba1ea29b3b6080a3f0236b574b1563df2ca50e636755b0",
+  "top_directory": "a2_00100_cb882_signed_177_completed_input_v1",
+  "immutable_members": 64,
+  "bundle_sha256": "de0ee11019eb0d02334daa9f01f3bb9f712068f32692d5a4594b06a1cde5c3d8",
+  "new_scalar_domains": 32,
+  "new_scalar_nodes": 36,
+  "new_scalar_leaves": 34,
+  "new_scalar_coefficients": 11662,
+  "complete_incoming_domain": 177,
+  "original_cells_closed": 0,
+  "masks_closed": 0,
+  "joined_original_replay_required_separately": true
+}

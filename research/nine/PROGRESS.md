@@ -4,6 +4,19 @@
 
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **224/231 cells CLOSED, 7 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Cb882: complete signed-height input for saved domain 177
+
+The [signed ABID proof](computer_assisted/a2_00100_cb882_signed_177_completed_input_v1/README.md)
+supplies a complete terminal for the unchanged pending domain 177. Its 32
+sign/owner/axis cases have 34 closed terminal boxes and zero frontier.
+Independent rational reconstruction verifies all 11,662 coefficient signs;
+separate mathematical and physical reviews accept the original incoming
+guards, complete separator alternatives and strict-radius cap argument.
+Fresh portable replay checks the new scalar proof and exact state attachment,
+explicitly reusing the prior Cb882 ancestry evidence. The full joined original
+cover still needs its new consumer replay. This is zero original-cell or mask
+credit: **224/231 originals and 8/32 masks remain CLOSED**.
+
 ## A-c744: five inherited regions excluded, nine leaves remain OPEN
 
 The [167-node physical checkpoint](computer_assisted/a2_00100_a_c744_167_physical_checkpoint_20261105/PUBLICATION.md)
