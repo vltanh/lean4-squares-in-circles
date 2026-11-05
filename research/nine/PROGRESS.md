@@ -18,6 +18,14 @@ compilation or CI was run.
 
 ## B16a: three more inherited regions, whole original still OPEN
 
+The [complete conditional node-236 proof](computer_assisted/a2_00100_b16a_node236_native_checkpoint_20261105/PUBLICATION.md)
+adds an independently replayed and reviewed eleven-node component: five
+closed slope unions exclude all six leaves. Its complete conditional
+attachment is retained, including the changed ancestry's two bound rounds.
+Sibling 242 remains OPEN, so this does not close parent 206, the merged
+rectangle or the original. The 295-path native input bundle and all review
+evidence are preserved with zero original-cell or mask credit.
+
 The [subsequent non-author review](computer_assisted/a2_00100_b16a_partial_checkpoints_non_author_review_20261105/B16_CHECKPOINTS_NONAUTHOR_REVIEW.md)
 accepts the exact published 75/203-node partial checkpoints. It independently
 checks all child unions, 99 new terminal arguments, old round prefixes and

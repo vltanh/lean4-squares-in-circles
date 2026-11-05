@@ -1,0 +1,2641 @@
+{
+  "status": "PASS_SCOPED_NONAUTHOR_REVIEW",
+  "transport": {
+    "a2_00100_b16a_75_native_checkpoint_20261105": {
+      "paths": 346,
+      "blobs": 337,
+      "archive_sha256": "a6089f712ff8107dd58222d43b9869cc607aa4017e9e3b9fb91a3e69a36c043c"
+    },
+    "a2_00100_b16a_hi_cover_native_checkpoint_20261105": {
+      "paths": 476,
+      "blobs": 467,
+      "archive_sha256": "f34dbf2278d05692a1b0f8bba015042b693c32f8c268bfa44a3ddb5c137ebabb"
+    }
+  },
+  "structure": {
+    "prior45": {
+      "nodes": 45,
+      "unions": {
+        "proxy": 7,
+        "angle": 8
+      },
+      "excluded": 16,
+      "open": 14
+    },
+    "checkpoint75": {
+      "nodes": 75,
+      "unions": {
+        "proxy": 12,
+        "angle": 13
+      },
+      "excluded": 34,
+      "open": 16
+    },
+    "checkpoint203": {
+      "nodes": 203,
+      "unions": {
+        "proxy": 12,
+        "angle": 13,
+        "sat": 16
+      },
+      "excluded": 115,
+      "open": 47
+    }
+  },
+  "unchanged_original_caller": true,
+  "unchanged_old_closed_payloads": true,
+  "exact_old_round_prefixes_retained": true,
+  "all_new_closed_faces_and_owner_sign_cases": true,
+  "new75_terminal_arguments": 18,
+  "new203_terminal_arguments": 81,
+  "conditional_records_replayed": [
+    {
+      "group": "new75records",
+      "node": 1,
+      "literal_reserve": "1585891983721397399989719967771900946790749/1156960047531190775775473665268011918950400",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 5,
+        "reserve": "1585891983721397399989719967771900946790749/1156960047531190775775473665268011918950400",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 5,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 13,
+      "literal_reserve": "886568824994943350764035079129970491/210854656902175482030738489848365056000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 16,
+        "reserve": "886568824994943350764035079129970491/210854656902175482030738489848365056000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 18,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 1,
+        "deductions": 137,
+        "printed_rows_checked": 463,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 21,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 24,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 26,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 28,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 33,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 34,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 36,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 38,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 40,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 42,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 45,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 46,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 47,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 48,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 49,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 50,
+      "literal_reserve": "2649063080339639482084806880982874584064100723/341515005766872870953424335609729048625178214400",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 17,
+        "reserve": "2649063080339639482084806880982874584064100723/341515005766872870953424335609729048625178214400",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 51,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 52,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 53,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 54,
+      "literal_reserve": "71548752681794480936105552433754857432800058154133269/39794362969838594666429534446500368726671622200035901440",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 19,
+        "reserve": "71548752681794480936105552433754857432800058154133269/39794362969838594666429534446500368726671622200035901440",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 55,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 56,
+      "literal_reserve": "316263712607307547970527375750557467397113/326671072244100924924839623134497482997760",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 3,
+        "reserve": "316263712607307547970527375750557467397113/326671072244100924924839623134497482997760",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 57,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 58,
+      "literal_reserve": "2649063080339639482084806880982874584064100723/341515005766872870953424335609729048625178214400",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 17,
+        "reserve": "2649063080339639482084806880982874584064100723/341515005766872870953424335609729048625178214400",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 59,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 60,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 61,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 62,
+      "literal_reserve": "71548752681794480936105552433754857432800058154133269/39794362969838594666429534446500368726671622200035901440",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 19,
+        "reserve": "71548752681794480936105552433754857432800058154133269/39794362969838594666429534446500368726671622200035901440",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 63,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 64,
+      "literal_reserve": "316263712607307547970527375750557467397113/326671072244100924924839623134497482997760",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 3,
+        "reserve": "316263712607307547970527375750557467397113/326671072244100924924839623134497482997760",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 65,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 2,
+        "deductions": 266,
+        "printed_rows_checked": 907,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 66,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 67,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 2,
+        "deductions": 263,
+        "printed_rows_checked": 1186,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 68,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 69,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 1,
+        "deductions": 147,
+        "printed_rows_checked": 701,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 70,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 71,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 1,
+        "deductions": 162,
+        "printed_rows_checked": 753,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 72,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 73,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new75records",
+      "node": 74,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 75,
+      "literal_reserve": "44766760146003643667319610751/59421121885698253195157962752",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "44766760146003643667319610751/59421121885698253195157962752",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 76,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 77,
+      "literal_reserve": "4334882083278493972204864734208006471305784212307705672060058367464651397087588592155997244962973/289299417506442379990308338271608195662985447096580460579135262606315559924321484800000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 39,
+        "reserve": "4334882083278493972204864734208006471305784212307705672060058367464651397087588592155997244962973/289299417506442379990308338271608195662985447096580460579135262606315559924321484800000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 78,
+      "literal_reserve": "46702962866973147799175535251156291786503385463457/7975367974709495237422842361682067456000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 31,
+        "reserve": "46702962866973147799175535251156291786503385463457/7975367974709495237422842361682067456000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 79,
+      "literal_reserve": "44766760146003643667319610751/59421121885698253195157962752",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "44766760146003643667319610751/59421121885698253195157962752",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 80,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 81,
+      "literal_reserve": "479544881974257509791519542799045523595030388667618146129469338218834724031/42386843694185226257069043456170741442787993629593235672268800000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 35,
+        "reserve": "479544881974257509791519542799045523595030388667618146129469338218834724031/42386843694185226257069043456170741442787993629593235672268800000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 82,
+      "literal_reserve": "14791646496428896405096327673730943527421533056710331/3289839289567666785436922474193852825600000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 34,
+        "reserve": "14791646496428896405096327673730943527421533056710331/3289839289567666785436922474193852825600000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 83,
+      "literal_reserve": "29166683967798819068411053203/39614081257132168796771975168",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "29166683967798819068411053203/39614081257132168796771975168",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 84,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 85,
+      "literal_reserve": "1839946648133695073322153750380961588895626582163156066575109259134307760874463/241347364167732165732723101861147833959946716194732372472669143040000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 44,
+        "reserve": "1839946648133695073322153750380961588895626582163156066575109259134307760874463/241347364167732165732723101861147833959946716194732372472669143040000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 86,
+      "literal_reserve": "13091152123590365711775512279332974746771414171628345646289/6787006849538774092045628155073443692286889164800000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 24,
+        "reserve": "13091152123590365711775512279332974746771414171628345646289/6787006849538774092045628155073443692286889164800000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 87,
+      "literal_reserve": "29166683967798819068411053203/39614081257132168796771975168",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "29166683967798819068411053203/39614081257132168796771975168",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 88,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 89,
+      "literal_reserve": "55972613201507674152039175502608322413303038611096143577427714815607580422371/6648687718119343408614961483778177244075667112802544696216780800000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 44,
+        "reserve": "55972613201507674152039175502608322413303038611096143577427714815607580422371/6648687718119343408614961483778177244075667112802544696216780800000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 90,
+      "literal_reserve": "13091152123590365711775512279332974746771414171628345646289/6787006849538774092045628155073443692286889164800000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 24,
+        "reserve": "13091152123590365711775512279332974746771414171628345646289/6787006849538774092045628155073443692286889164800000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 91,
+      "literal_reserve": "7208286717624801401023045451/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "7208286717624801401023045451/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 92,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 93,
+      "literal_reserve": "25769/1048576",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "25769/1048576",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 94,
+      "literal_reserve": "166611684978711731976123148821186454865989/19763599870768105957952797199637097721364480",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 25,
+        "reserve": "166611684978711731976123148821186454865989/19763599870768105957952797199637097721364480",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 95,
+      "literal_reserve": "7208286717624801401023045451/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "7208286717624801401023045451/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 96,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 97,
+      "literal_reserve": "25769/1048576",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "25769/1048576",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 98,
+      "literal_reserve": "166611684994936675210236258685017776834629/19763599870768105957952797199637097721364480",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 25,
+        "reserve": "166611684994936675210236258685017776834629/19763599870768105957952797199637097721364480",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 99,
+      "literal_reserve": "7935565585443883480105465113/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "7935565585443883480105465113/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 100,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 101,
+      "literal_reserve": "80413/1048576",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "80413/1048576",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 102,
+      "literal_reserve": "3197675472513617755741631988422502366157/163335536122050462462419811567248741498880",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 15,
+        "reserve": "3197675472513617755741631988422502366157/163335536122050462462419811567248741498880",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 103,
+      "literal_reserve": "7935565585443883480105465113/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "7935565585443883480105465113/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 104,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 105,
+      "literal_reserve": "80413/1048576",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "80413/1048576",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 106,
+      "literal_reserve": "3197675472513617755741631988422502366157/163335536122050462462419811567248741498880",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 15,
+        "reserve": "3197675472513617755741631988422502366157/163335536122050462462419811567248741498880",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 107,
+      "literal_reserve": "9507555586688204576988706073/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "9507555586688204576988706073/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 108,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 109,
+      "literal_reserve": "2132474029143655373199311241/19807040628566084398385987584",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "2132474029143655373199311241/19807040628566084398385987584",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 110,
+      "literal_reserve": "338612318985998996841169142122457/9735556609752801803494680617287680",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 7,
+        "reserve": "338612318985998996841169142122457/9735556609752801803494680617287680",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 111,
+      "literal_reserve": "9507555586688204576988706073/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "9507555586688204576988706073/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 112,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 113,
+      "literal_reserve": "27735/262144",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "27735/262144",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 114,
+      "literal_reserve": "42368692684058687227121040703621/1216944576219100225436835077160960",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 6,
+        "reserve": "42368692684058687227121040703621/1216944576219100225436835077160960",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 115,
+      "literal_reserve": "6430566962941792264159868185/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "6430566962941792264159868185/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 116,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 117,
+      "literal_reserve": "47132408593316836112033422499864320200336438010781254070779387926215607749700318244267071222551/6163389922570167399681256978762036651562616115748533805569819240793673381288345600000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 42,
+        "reserve": "47132408593316836112033422499864320200336438010781254070779387926215607749700318244267071222551/6163389922570167399681256978762036651562616115748533805569819240793673381288345600000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 118,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 119,
+      "literal_reserve": "3720818786374756768887452953/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "3720818786374756768887452953/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 120,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 121,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 122,
+      "literal_reserve": "105765/524288",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "105765/524288",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 123,
+      "literal_reserve": "15887429225525038351099613915/19807040628566084398385987584",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "15887429225525038351099613915/19807040628566084398385987584",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 124,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 125,
+      "literal_reserve": "691345300541080268481971527091701908352144078111815419955079662166028849609718498952765769317/192605935080317731240039280586313645361331753617141681424056851274802293165260800000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 35,
+        "reserve": "691345300541080268481971527091701908352144078111815419955079662166028849609718498952765769317/192605935080317731240039280586313645361331753617141681424056851274802293165260800000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 126,
+      "literal_reserve": "242803935711759636994671175430543298704593/44100594752953624864853349123157160204697600",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 23,
+        "reserve": "242803935711759636994671175430543298704593/44100594752953624864853349123157160204697600",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 127,
+      "literal_reserve": "3720818786374756768887452953/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "3720818786374756768887452953/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 128,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 129,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 130,
+      "literal_reserve": "125586783416069468670477341054685893196247/22050297376476812432426674561578580102348800",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 23,
+        "reserve": "125586783416069468670477341054685893196247/22050297376476812432426674561578580102348800",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 131,
+      "literal_reserve": "1149775055746008898591648241/12379400392853802748991242240",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "1149775055746008898591648241/12379400392853802748991242240",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 132,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 133,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 134,
+      "literal_reserve": "105850578998100663306223417924710517376789/980013216732302774774518869403492448993280",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 7,
+        "reserve": "105850578998100663306223417924710517376789/980013216732302774774518869403492448993280",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 135,
+      "literal_reserve": "1149775055746008898591648241/12379400392853802748991242240",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "1149775055746008898591648241/12379400392853802748991242240",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 136,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 137,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 138,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 139,
+      "literal_reserve": "4304199523472435569900387491994090326274735117/39249311549413896729102864159861116250525532160",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 10,
+        "reserve": "4304199523472435569900387491994090326274735117/39249311549413896729102864159861116250525532160",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 140,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 141,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 142,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 143,
+      "literal_reserve": "4304199523472435569900387491994090326274735117/39249311549413896729102864159861116250525532160",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 10,
+        "reserve": "4304199523472435569900387491994090326274735117/39249311549413896729102864159861116250525532160",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 144,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 145,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 146,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 147,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 148,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 149,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 150,
+      "literal_reserve": "4527926089615947490572031321226624710589/163335536122050462462419811567248741498880",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 16,
+        "reserve": "4527926089615947490572031321226624710589/163335536122050462462419811567248741498880",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 151,
+      "literal_reserve": "84904494733006558594742502544157852715043532571539544358201771952377/34859195629259135291133217963452577069009240736844663235621050698956800",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 35,
+        "reserve": "84904494733006558594742502544157852715043532571539544358201771952377/34859195629259135291133217963452577069009240736844663235621050698956800",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 152,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 153,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 154,
+      "literal_reserve": "695553232559912633884819644799938214839/27222589353675077077069968594541456916480",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 9,
+        "reserve": "695553232559912633884819644799938214839/27222589353675077077069968594541456916480",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 155,
+      "literal_reserve": "6531805354961872788750447897/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "6531805354961872788750447897/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 156,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 157,
+      "literal_reserve": "90820891455963616739109696905934923335282279339159235804029896243628214510837009/7990998627471604862429959743157276744048688136306457419056991436800000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 46,
+        "reserve": "90820891455963616739109696905934923335282279339159235804029896243628214510837009/7990998627471604862429959743157276744048688136306457419056991436800000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 158,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 159,
+      "literal_reserve": "6531805354961872788750447897/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "6531805354961872788750447897/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 160,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 161,
+      "literal_reserve": "31849307252336050442581654989362195911635715781581706607623043411844107558523/4775086308997792058313176557547370696117150726212735309394739200000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 47,
+        "reserve": "31849307252336050442581654989362195911635715781581706607623043411844107558523/4775086308997792058313176557547370696117150726212735309394739200000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 162,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 163,
+      "literal_reserve": "6834264985293519131942696217/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "6834264985293519131942696217/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 164,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 165,
+      "literal_reserve": "1017655233585343480661416657649082480938262302472682923518724822877603787882598719546771/75553702823847259411156086138877080757053867023087142174720000000000000000000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 44,
+        "reserve": "1017655233585343480661416657649082480938262302472682923518724822877603787882598719546771/75553702823847259411156086138877080757053867023087142174720000000000000000000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 166,
+      "literal_reserve": "146787646480370608790004861542511832991301165633883060315949/40087088194199648067491445216842904541224074844656342233251840",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 30,
+        "reserve": "146787646480370608790004861542511832991301165633883060315949/40087088194199648067491445216842904541224074844656342233251840",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 167,
+      "literal_reserve": "6834264985293519131942696217/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "6834264985293519131942696217/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 168,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 169,
+      "literal_reserve": "46353306747568788585054758852320830744335149864302009047332852028374181058423667273053/5092248780563087127800830886692521664411179112039920435200000000000000000000000000000000",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 40,
+        "reserve": "46353306747568788585054758852320830744335149864302009047332852028374181058423667273053/5092248780563087127800830886692521664411179112039920435200000000000000000000000000000000",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 170,
+      "literal_reserve": "63221761776429802350679316349832040559793739/21344687860429554434589020975608065539073638400",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 35,
+        "reserve": "63221761776429802350679316349832040559793739/21344687860429554434589020975608065539073638400",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 171,
+      "literal_reserve": "7146087781111817597028775193/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "7146087781111817597028775193/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 172,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 173,
+      "literal_reserve": "2025057462665696535681765608003848579162121646309135953965361/1149174782637086079782299308524884816474652912110115866489651200",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 44,
+        "reserve": "2025057462665696535681765608003848579162121646309135953965361/1149174782637086079782299308524884816474652912110115866489651200",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 174,
+      "literal_reserve": "318645069579399854185164654805718068653441918226589301900337744744247/87770452962377882158906489809815810674953496435696133424404266116710400",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 29,
+        "reserve": "318645069579399854185164654805718068653441918226589301900337744744247/87770452962377882158906489809815810674953496435696133424404266116710400",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 175,
+      "literal_reserve": "7146087781111817597028775193/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "7146087781111817597028775193/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 176,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 177,
+      "literal_reserve": "484268554824484233026009400272110002133066737079914859912704451/278100297398174831307316432663022125586866004730648039690495590400",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 47,
+        "reserve": "484268554824484233026009400272110002133066737079914859912704451/278100297398174831307316432663022125586866004730648039690495590400",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 178,
+      "literal_reserve": "159580818674969795037964022422615620169784727352681984414465199221103/43885226481188941079453244904907905337476748217848066712202133058355200",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 29,
+        "reserve": "159580818674969795037964022422615620169784727352681984414465199221103/43885226481188941079453244904907905337476748217848066712202133058355200",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 179,
+      "literal_reserve": "7774682403842783625937238399/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "7774682403842783625937238399/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 180,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 181,
+      "literal_reserve": "246298211177801084594007702982969651/21028802277066051895548510133341388800",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 26,
+        "reserve": "246298211177801084594007702982969651/21028802277066051895548510133341388800",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 182,
+      "literal_reserve": "3793838597078825779351052745218525261087/163335536122050462462419811567248741498880",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 17,
+        "reserve": "3793838597078825779351052745218525261087/163335536122050462462419811567248741498880",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 183,
+      "literal_reserve": "7774682403842783625937238399/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "7774682403842783625937238399/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 184,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 185,
+      "literal_reserve": "117424421649627751095609756663443477/9346134345362689731354893392596172800",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 26,
+        "reserve": "117424421649627751095609756663443477/9346134345362689731354893392596172800",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 186,
+      "literal_reserve": "3793838597078825779351052745218525261087/163335536122050462462419811567248741498880",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 17,
+        "reserve": "3793838597078825779351052745218525261087/163335536122050462462419811567248741498880",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 187,
+      "literal_reserve": "8281067727588277420413531417/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "8281067727588277420413531417/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 188,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 189,
+      "literal_reserve": "8913789722545020975479385558619680005269338760234735058393843660297/583528974522896291127020297212733797780769168201351891697050163609600",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 35,
+        "reserve": "8913789722545020975479385558619680005269338760234735058393843660297/583528974522896291127020297212733797780769168201351891697050163609600",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 190,
+      "literal_reserve": "3793828996449203943153911823812853745607/163335536122050462462419811567248741498880",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 15,
+        "reserve": "3793828996449203943153911823812853745607/163335536122050462462419811567248741498880",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 191,
+      "literal_reserve": "8281067727588277420413531417/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "8281067727588277420413531417/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 192,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 193,
+      "literal_reserve": "9570846468025759933178718254586215143/616844866793937522269422963911347404800",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 31,
+        "reserve": "9570846468025759933178718254586215143/616844866793937522269422963911347404800",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 194,
+      "literal_reserve": "3793828996449203943153911823812853745607/163335536122050462462419811567248741498880",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 15,
+        "reserve": "3793828996449203943153911823812853745607/163335536122050462462419811567248741498880",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 195,
+      "literal_reserve": "8281067727588277420413531417/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "8281067727588277420413531417/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 196,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 197,
+      "literal_reserve": "972600295432515754446637275533387/65715007115831412173589094166691840",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 22,
+        "reserve": "972600295432515754446637275533387/65715007115831412173589094166691840",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 198,
+      "literal_reserve": "3793828996449203943153911823812853745607/163335536122050462462419811567248741498880",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 15,
+        "reserve": "3793828996449203943153911823812853745607/163335536122050462462419811567248741498880",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 199,
+      "literal_reserve": "8281067727588277420413531417/9903520314283042199192993792",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 1,
+        "reserve": "8281067727588277420413531417/9903520314283042199192993792",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 200,
+      "literal_reserve": null,
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 201,
+      "literal_reserve": "972600295432515754446637275533387/65715007115831412173589094166691840",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 22,
+        "reserve": "972600295432515754446637275533387/65715007115831412173589094166691840",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    },
+    {
+      "group": "new203records",
+      "node": 202,
+      "literal_reserve": "3793828996449203943153911823812853745607/163335536122050462462419811567248741498880",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 0,
+        "deductions": 0,
+        "printed_rows_checked": 15,
+        "reserve": "3793828996449203943153911823812853745607/163335536122050462462419811567248741498880",
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      }
+    }
+  ],
+  "fresh_full_ancestry_replay_repeated": false,
+  "accepted_full_reports_reused_for_original_parent_ancestry": true,
+  "independent_literal_weight_sums_recomputed": true,
+  "no_original_cell_or_mask_closure": true,
+  "whole_proof_audit_claimed": false,
+  "source_pins_rechecked": 159,
+  "seconds": 73.75696841200033,
+  "reviewer_source_sha256": "fb78dac04f3b9177f97a5d78e731b3d0ffb683c63f23b54ea1e2d89587d5b5c8"
+}

@@ -1,0 +1,232 @@
+{
+  "schema": "B16_NODE236_NATIVE_COMPLETE_COMPONENT_V1",
+  "status": "PASS_COMPLETE_RESTRICTED_PHYSICAL_TREE",
+  "original_id": "negative-16a2fc93c8d133f0",
+  "scope": "exact native node236 conditional region only",
+  "initial_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        3
+      ]
+    ],
+    [
+      "proxy",
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      "proxy",
+      [
+        5,
+        7
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    [
+      "proxy",
+      [
+        7,
+        8
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      "proxy",
+      [
+        4,
+        7
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      "proxy",
+      [
+        5,
+        8
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    [
+      "angle_cut",
+      [
+        7,
+        "0"
+      ],
+      0
+    ],
+    [
+      "proxy",
+      [
+        6,
+        8
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    [
+      "angle_cut",
+      [
+        8,
+        "0"
+      ],
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        4,
+        "0"
+      ],
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        3,
+        "-12243/46271"
+      ],
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        6,
+        "0"
+      ],
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        4,
+        "-19865/40972"
+      ],
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        6,
+        "-5357/36160"
+      ],
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        2,
+        "0"
+      ],
+      0
+    ],
+    [
+      "sat",
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        0,
+        1
+      ]
+    ],
+    [
+      "sat",
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    [
+      "sat",
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  ],
+  "nodes": 11,
+  "complete_angle_unions": 5,
+  "excluded_terminal_domains": 6,
+  "open_terminal_domains": 0,
+  "local_rounds": 0,
+  "local_printed_rows": 335,
+  "source_input_paths": 295,
+  "unique_input_blobs": 286,
+  "input_archive_sha256": "7c5e9ff2a308804adf05351ed635fd48bbe1d45356572cfc26be6fb9ecff0026",
+  "input_archive_bytes": 4832040,
+  "files": {
+    "ANCESTRY_PREFIX.json": "e5a858f51e41475902275b97743a7aed29218ec6df287524b8b1dc6658cc422e",
+    "EXACT_REPLAY.json": "a3fec7f6661e4c5f536986528eaac4652fba0dc6991de918ada4365f023ad4e5",
+    "INPUTS.json": "6e08800bc5d0fd6e479d8a43b19e02857d9dfd51eff152771ee5508ab9a8a1d7",
+    "README.md": "2dfa25e585b066374a6d24ec8159b6f665e274a7d08c3b9d5cf8938e5d5f2c9d",
+    "SOURCE_NODE236.json": "e57a38ef886af1f6667da5a65ab9279e6f1e7abcc133005ad663a1600293b94b",
+    "TREE_MANIFEST.json": "28ff378d53a57bf25fea1b43faf2a2fd07307b33927cb45cd2fdcbe53861233a",
+    "inputs.tar.xz": "7c5e9ff2a308804adf05351ed635fd48bbe1d45356572cfc26be6fb9ecff0026",
+    "package_node236.py": "ce7aabcde06bb349e714e5ac404939706f882560fa925e4a3add8ef98069367c"
+  },
+  "independent_arithmetic_replay_passed": true,
+  "independent_manuscript_review_performed": false,
+  "standalone_cold_replay_claimed": false,
+  "whole_node206_closed": false,
+  "whole_original_closed": false,
+  "original_cells_closed": 0,
+  "masks_closed": 0
+}
