@@ -1,0 +1,55 @@
+{
+  "schema": "independent_B580_publication_source_review_v1",
+  "status": "PASS_B580_PUBLICATION_SOURCE_SCOPE_REVIEW",
+  "reviewer": "a_c744_closure",
+  "reviewed_at_utc": "2026-11-05T07:53:19.367936+00:00",
+  "publisher_sha256": "2f57083d1ace8964b6dfebc235127af570607602039878524c9d82a85f466523",
+  "expected_before_register_sha256": "34afb382fd9604f1ca339c31f3929f37b6b9e074fed8cb2b4d62a25e684459d8",
+  "expected_transition": {
+    "before_closed": 223,
+    "before_open": 8,
+    "after_closed": 224,
+    "after_open": 7,
+    "total_originals": 231,
+    "changed_original_ids": [
+      "negative-580db3624cf4c2e2"
+    ],
+    "new_mask_closures": 0
+  },
+  "findings": [
+    "Publisher has no Git calls, numerical producer calls, arithmetic replay or independent proof inference; it consumes the accepted complete gate reports.",
+    "Native and portable reports must agree on original ID, path, parent hash, manifest hash, complete755-node/537-terminal cover,0 OPEN,96 proxy/101 angle/21 SAT unions and all declared proof counts.",
+    "The fresh portable receipt must match actual packet input-manifest and report hashes and attest all inputs rehashed, no external workspace reads and no numerical modules.",
+    "Physical, structure, hand/table and transport reviews must all pass for B580 without blockers. The complete structure booleans, original-nine scope, unchanged original root, all231 definitions and absence of H/I permutation are explicitly required.",
+    "The literal table and archive audit must pass; table counts, kinds, row accounting, exact report hash and Markdown table hash are checked. Archive hash, fresh report identity and all copied part hashes are bound.",
+    "Every source bound by the independent reviews is rehashed before publication.",
+    "The before-register digest must equal the frozen builder snapshot. The selected B580 entry must still be OPEN with the original path, and the starting totals must be223/8.",
+    "After mutation, all231 ID/sign/baseline-index/path tuples are compared in order; exactly B580 may differ among the231 cell payloads, and totals are independently counted as224 CLOSED/7 OPEN. The whole-mask ledger is required identical.",
+    "Only current headings, current accounting and latest-proof links are updated; historical Bf14 acceptance and B7 partial-checkpoint accounting remain historical. Every required one-occurrence text replacement exists exactly once in its intended current file.",
+    "The planned copied file names from the current12 review_inputs plus separately copied sources/reports do not collide.",
+    "Published prose keeps strict-radius scope q<1105/256 and explicitly denies mask/root/gate/equality-classification credit and human or proof-kernel verification claims.",
+    "The corrected archive-source path exists in the current repository. Its actual bytes are source-bound in this review; publication requires the same hash named by the completed archive receipt. No packet file is added or mutated by this correction.",
+    "The publisher requires this review to name its exact current source hash and exact before-register hash, then copies the review into the final dossier. This is a publication-source gate, not a new mathematical premise."
+  ],
+  "scope_limitations": [
+    "This review does not execute the publisher or alter any ledger.",
+    "The still-running portable replay and subsequent archive gates must succeed before execution.",
+    "Concrete post-publication content and ledger-delta review remains required before commit."
+  ],
+  "blocking_findings": [],
+  "source_sha256": {
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/acceptance/publish_b580_complete_original.py": "2f57083d1ace8964b6dfebc235127af570607602039878524c9d82a85f466523",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/gates/A2_00100_FIXED_FRONTIER.json": "34afb382fd9604f1ca339c31f3929f37b6b9e074fed8cb2b4d62a25e684459d8",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/accepted/b580_complete_original_package_v2/ORIGINAL_PROOF.json": "8168654e75f50fb8ca64591109d3ab33619311a24ebf4af17883cc2350fd9844",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/accepted/b580_complete_original_package_v2/INPUT_MANIFEST.json": "2eb464d3586e073604738d30e777d32f584294c55de82ad02730ddab64576409",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/PROGRESS.md": "2beed0b65601d39385ed31f59b2a7e0d83ed95d4572a461c33260e6e460596e5",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/HANDOFF_A2_FIXED_CLOSURE.md": "dbc4de7cd1c2830ac1ddd86abc84093185b4022424e54f55c4712034adf97751",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/CURRENT_MASK_DIRECTIVE.md": "d696e19d956707440fc8224c76fd42410a8146f3a9314c3216e2c6647819d227",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_b340_complete_original/archive_registered_b_packet_streaming.py": "d47b36d2084628d2b784e6e19d0337e8368a70676c4d7bf6cb06ce3a3918649d"
+  },
+  "amendment": {
+    "preceding_review_sha256": "6804039b03e14f9152dc51d7326e5a747580d256380567168e218a5aec6a626f",
+    "preceding_publisher_sha256": "c05260b9aac30d2c51a07d62adbea09a4039b18624fdd1e99fbf4dc71f952552",
+    "reason": "Publisher preflight found that the original frozen streaming archiver was not attached inside v2. The publisher now copies the actual repository source, requires its digest to match ARCHIVE_READY.outer_archiver_sha256, and also binds the current publisher source-review digest and before-register hash before mutation. Packet and proof bytes are unchanged."
+  }
+}

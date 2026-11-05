@@ -1,0 +1,49 @@
+{
+  "schema": "complete_registered_B_original_archive_parts_v1",
+  "original_id": "negative-580db3624cf4c2e2",
+  "archive": "b580_complete_original_package_v2.tar.xz",
+  "archive_bytes": 46765716,
+  "archive_sha256": "e17d594ff3b5bd56640a7875275f53fcfab6beac8fa7f46d64cab5ed4d7c94ca",
+  "parts": [
+    {
+      "file": "b580_complete_original_package_v2.tar.xz.part001",
+      "bytes": 8388608,
+      "sha256": "aa90d5f84679363eb1a784a5cb814fc99a22b94c4f5a0b4ef4916d04f2eba490"
+    },
+    {
+      "file": "b580_complete_original_package_v2.tar.xz.part002",
+      "bytes": 8388608,
+      "sha256": "9a284ee4bcacc50e33a244881c78ace6e5629595478f47a7f8bd30fb4227cb34"
+    },
+    {
+      "file": "b580_complete_original_package_v2.tar.xz.part003",
+      "bytes": 8388608,
+      "sha256": "98902e9dc7c2982383290df2758c3870819b5c3b0be7e352e648d6c90a584b45"
+    },
+    {
+      "file": "b580_complete_original_package_v2.tar.xz.part004",
+      "bytes": 8388608,
+      "sha256": "3b159592b4f1348da9517b5fb0ff92dde843119c8e55cdc1041cdefdc0022c77"
+    },
+    {
+      "file": "b580_complete_original_package_v2.tar.xz.part005",
+      "bytes": 8388608,
+      "sha256": "2abb5aa0977d68006b904db4a57ada4a06e94d3bae524d895632b962aedb11e4"
+    },
+    {
+      "file": "b580_complete_original_package_v2.tar.xz.part006",
+      "bytes": 4822676,
+      "sha256": "7fae220bd6febe7145fa8f286d1b94ef1af6e08d7008e2ea7e699babf19b8b9d"
+    }
+  ],
+  "release_manifest_sha256": "66a661ceaf4e64d34795a04d6daedad64775bdd4badf6dc1ed84d4582a1315d6",
+  "all_archive_members_verified": 1160,
+  "xz_integrity_pass": true,
+  "all_member_hashes_match": true,
+  "prior_archive_sha256": "c6e8dfc170a3d88366a6cd6f0955302ca5f664c626790ca91387f84c42502cb6",
+  "fresh_portable_replay_pass": true,
+  "streaming_compression": true,
+  "raw_tar_intermediate_created": false,
+  "outer_archiver_sha256": "d47b36d2084628d2b784e6e19d0337e8368a70676c4d7bf6cb06ce3a3918649d",
+  "seconds": 276.10278118600036
+}

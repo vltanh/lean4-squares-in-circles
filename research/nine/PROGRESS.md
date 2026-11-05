@@ -1,6 +1,28 @@
-> **ACTIVE EXECUTION DIRECTIVE — 2026-11-05:** [Current mask, priorities, bounded whole-cell attempts and exact acceptance](CURRENT_MASK_DIRECTIVE.md). **223/231 original cells CLOSED, 8 OPEN (A1, B4, C3); 8/32 masks CLOSED.** Bf14 is accepted; continue B16, A and the remaining B/C originals. The next milestone is **224/231**. Historical paragraphs below retain their original scope. No Lean/Lake/CI.
+> **ACTIVE EXECUTION DIRECTIVE — 2026-11-05:** [Current mask, priorities, bounded whole-cell attempts and exact acceptance](CURRENT_MASK_DIRECTIVE.md). **224/231 original cells CLOSED, 7 OPEN (A1, B3, C3); 8/32 masks CLOSED.** Bf14 and B580 are accepted; continue B16, A and the remaining B/C originals. The next milestone is **225/231**. Historical paragraphs below retain their original scope. No Lean/Lake/CI.
 
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **223/231 cells CLOSED, 8 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **224/231 cells CLOSED, 7 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+
+## Complete B580 original: 224 CLOSED / 7 OPEN
+
+The complete physical tree excludes `negative-580db3624cf4c2e2`
+in the strict-radius caller `q < Q = 1105/256`. Its **755 nodes exclude all
+537 terminal domains, with zero OPEN leaves**. The complete unions are
+96 four-way inset covers, 101 two-way closed slope covers and 21 eight-way
+physical separating-axis covers.
+
+Fresh native and portable exact replay, independent physical and complete
+coverage review, the full literal terminal-table audit and archive/member
+verification all pass. The arithmetic checks 350 bound rounds, 66,464
+rational deductions and 216,274 printed row occurrences, including
+1,177 independently decoded relative-support chord rows.
+
+This accepts exactly one unchanged original: **223 CLOSED / 8 OPEN becomes
+224 CLOSED / 7 OPEN**, with remaining families **A1, B3, C3, D0**. The
+231-cell register and all original definitions remain fixed. Whole masks
+remain **8 CLOSED / 24 OPEN**; `001/00` and reversal `100/00` remain OPEN.
+No Lean, Lake, compilation or CI was run.
+
+[Complete proof and reproduction](A2_00100_B580_COMPLETE_ORIGINAL_CLOSURE.md).
 
 ## Complete Bf14 original: 223 CLOSED / 8 OPEN
 
@@ -286,17 +308,17 @@ I21/I22 rectangle remains OPEN. The accepted current-mask ledger remains
 
 > **Execution restored, 4 November 2026:** Published ancestors were recovered and hash-checked after the [recorded outage](EXECUTION_RECOVERY_2026_11_04_1328.md). Subsequent computer-assisted discovery, exact replays and complete physical assembly close D6c5, B340 and D821. All other open originals remain explicit.
 
-# n=9: 223/231 current-mask cells closed; 8 remain OPEN
+# n=9: 224/231 current-mask cells closed; 7 remain OPEN
 
-**Latest accepted closure: the complete Bf14 original-cell exclusion.**
-The same register now has **223 CLOSED / 8 OPEN**, with
-**170 additions beyond the first 53**. Remaining families: **A1, B4, C3, D0**.
+**Latest accepted closure: the complete B580 original-cell exclusion.**
+The same register now has **224 CLOSED / 7 OPEN**, with
+**171 additions beyond the first 53**. Remaining families: **A1, B3, C3, D0**.
 `001/00`, its reversal, the unrestricted bound and equality remain OPEN.
 The whole-mask target remains strict-radius. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_BF14_COMPLETE_ORIGINAL_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_B580_COMPLETE_ORIGINAL_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh portable replay](computer_assisted/a2_00100_bf14_complete_original_manifest.json) ·
+[Source-bound packet and fresh portable replay](computer_assisted/a2_00100_b580_complete_original_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## Native exact shared-bound progress checkpoint
@@ -1017,7 +1039,7 @@ count; the preceding seven, nine and six proofs reached **121** additions; the n
 unchanged. All 231 original IDs and exact ancestor paths are preserved.
 
 The following table preserves the historical 197/34 checkpoint. The current
-register is 223/8, with A1/B4/C3/D0 remaining.
+register is 224/7, with A1/B3/C3/D0 remaining.
 
 | Fixed family | Original OPEN baseline | Closed since baseline | OPEN at that checkpoint |
 |---|---:|---:|---:|

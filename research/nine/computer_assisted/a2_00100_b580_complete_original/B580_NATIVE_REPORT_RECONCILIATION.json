@@ -1,0 +1,79 @@
+{
+  "schema": "independent_B580_native_exact_physical_table_reconciliation_v1",
+  "status": "PASS_NATIVE_EXACT_AND_PHYSICAL_TABLE_RECONCILIATION",
+  "original_id": "negative-580db3624cf4c2e2",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        4
+      ]
+    ]
+  ],
+  "manifest_sha256": "2f8125fc8107684ef2d31bb64cd82ea8c71a621dd671786355f4906daa28ea1a",
+  "native_exact_report_sha256": "3faa9a80272decd33e556f9688e8f1e81d8e477156c251320ddb3d8c70f3f17e",
+  "complete": true,
+  "whole_original_proved_by_native_exact_replay": true,
+  "entire_registered_original_domain_retained": true,
+  "nodes": 755,
+  "excluded_leaves": 537,
+  "open_leaves": 0,
+  "complete_unions": {
+    "proxy": 96,
+    "angle": 101,
+    "sat": 21
+  },
+  "rounds": 350,
+  "deductions": 66464,
+  "printed_row_occurrences": 216274,
+  "relative_support_chord_rows_checked": 1177,
+  "actual_terminal_kinds": {
+    "accepted_center_interval_terminal": 167,
+    "positive_exact_reserve": 347,
+    "proved_empty_analytic_frame": 11,
+    "proved_frame_contradiction": 11,
+    "empty_difference": 1
+  },
+  "all_537_structural_table_entries_match_exact_leaf_and_node_audits": true,
+  "all_755_node_audits_ignore_numerical_discovery_fields": true,
+  "physical_attachment_and_checker_source_hashes_match": true,
+  "weighted_arithmetic_repeated_in_this_reconciliation": false,
+  "fresh_portable_and_archive_gates_still_required": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "blocking_findings": [],
+  "source_sha256": {
+    "/workspace/scratch/6b34cccf3741/b16_work/B580_COMPLETE_ORIGINAL755_FRESH_REPLAY.json": "3faa9a80272decd33e556f9688e8f1e81d8e477156c251320ddb3d8c70f3f17e",
+    "/workspace/scratch/6b34cccf3741/a_work/B580_FINAL_STRUCTURAL_REVIEW.json": "69e8f840931f9398f711cafaf7803d93ff415000092acfc5ae96dbf5a1243780",
+    "/workspace/scratch/6b34cccf3741/a_work/B580_FINAL_PHYSICAL_SOURCE_REVIEW.json": "1c818cfa0a3ad6971b3bf1b4cd09f115d5d48390d70541262fe1a35cdb4b8627",
+    "/workspace/scratch/6b34cccf3741/a_work/B580_FINAL_COMPLETE_TERMINAL_TABLE.json": "aa50531ebb1d186d4207a1f948aab591223f3c16f87dacca54cd25b6a251ea3b",
+    "/workspace/scratch/6b34cccf3741/a_work/B580_FINAL_COMPLETE_COVER_TABLE.json": "baaf1fe3a77eafec2a2b01dbcc706aa26ed2bbcf8447e7a3bb50e715d0bb2ae4",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b580_complete_candidate755_v1/manifest.json": "2f8125fc8107684ef2d31bb64cd82ea8c71a621dd671786355f4906daa28ea1a",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/acceptance/B580_REGISTERED_ORIGINAL_PHYSICAL_ATTACHMENT.md": "bad6f542884f91fb82efccda04473b90884259b6c2bee0b724022f598770fa45"
+  }
+}

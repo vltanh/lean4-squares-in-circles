@@ -2,10 +2,10 @@
 **4 November 2026 (America/Chicago) · replaces prior execution priorities; does not replace proof evidence.**
 
 ## Fixed verified accounting
-- Exact nine-original `001/00` register: **223 of 231 original cells CLOSED, 8 OPEN (A1, B4, C3; D0)**. Source of truth: [fixed original register](gates/A2_00100_FIXED_FRONTIER.json), not historical handoffs.
+- Exact nine-original `001/00` register: **224 of 231 original cells CLOSED, 7 OPEN (A1, B3, C3; D0)**. Source of truth: [fixed original register](gates/A2_00100_FIXED_FRONTIER.json), not historical handoffs.
 - Full masks: **8 of 32 CLOSED, 24 OPEN**. `001/00` and reversal `100/00` both remain OPEN. The 7,915 positional-root register and 15 gate IDs are separate and unchanged.
 - Radius scope: strict squared radius `q < Q = 1105/256`. No claim of closed-Q exclusion or global equality classification follows from a strict-radius terminal.
-- Next meaningful progress: **224/231 fully closed originals**. A lemma, partial tree, improved threshold, recovered source, or solver node is **not** a newly closed original.
+- Next meaningful progress: **225/231 fully closed originals**. A lemma, partial tree, improved threshold, recovered source, or solver node is **not** a newly closed original.
 
 ## Mandatory execution order
 1. **Freeze open-ended auxiliary-theorem development.** Start with already saved complete caller, physical bounds and exact replayers. A new inequality is allowed only when it immediately discharges an entire identified complementary domain or several named originals, with a complete coverage plan. Do not open extra research fronts merely to make a relaxation tighter.
@@ -17,7 +17,29 @@
 7. **Commit and push promptly.** One `[skip ci]` commit for every independently replayed whole-original closure; checkpoint only genuinely reusable completed proof inputs, with **zero credit** for partials. Keep proof sources and replay/checker bindings. Do not run Lean, Lake, compilation or CI.
 8. **Disk/repo hygiene:** avoid parallel orphaned searches. Put disposable searches, LP outputs, temporary extraction trees, logs and caches under ignored `research/nine/.runs/` or `research/nine/.scratch/`. Delete only demonstrably disposable intermediate runs in the workspace you can actually inspect. Never delete a hash-bound source, accepted certificate, manifest, archive, complete tree, replay, or retained historical snapshot simply because it is large. If a previous workspace is inaccessible, state that its processes/files cannot be certified cleaned.
 
-## Fresh complete-original acceptance — 5 November 2026 UTC
+## Complete B580 original accepted — 5 November 2026 UTC
+
+The complete physical tree excludes `negative-580db3624cf4c2e2`
+in the strict-radius caller `q < Q = 1105/256`. Its **755 nodes exclude all
+537 terminal domains, with zero OPEN leaves**. The complete unions are
+96 four-way inset covers, 101 two-way closed slope covers and 21 eight-way
+physical separating-axis covers.
+
+Fresh native and portable exact replay, independent physical and complete
+coverage review, the full literal terminal-table audit and archive/member
+verification all pass. The arithmetic checks 350 bound rounds, 66,464
+rational deductions and 216,274 printed row occurrences, including
+1,177 independently decoded relative-support chord rows.
+
+This accepts exactly one unchanged original: **223 CLOSED / 8 OPEN becomes
+224 CLOSED / 7 OPEN**, with remaining families **A1, B3, C3, D0**. The
+231-cell register and all original definitions remain fixed. Whole masks
+remain **8 CLOSED / 24 OPEN**; `001/00` and reversal `100/00` remain OPEN.
+No Lean, Lake, compilation or CI was run.
+
+[Complete proof and reproduction](A2_00100_B580_COMPLETE_ORIGINAL_CLOSURE.md).
+
+## Earlier Bf14 acceptance — 5 November 2026 UTC
 
 The complete physical tree excludes `negative-f14f5bc4eafdf50d` in the strict-radius caller
 `q < Q = 1105/256`. Its 679 nodes have **461 excluded terminal domains and

@@ -1,6 +1,28 @@
-> **ACTIVE EXECUTION DIRECTIVE — 2026-11-05:** [Current mask, priorities, bounded whole-cell attempts and exact acceptance](CURRENT_MASK_DIRECTIVE.md). **223/231 original cells CLOSED, 8 OPEN (A1, B4, C3); 8/32 masks CLOSED.** Bf14 is accepted; continue B16, A and the remaining B/C originals. The next milestone is **224/231**. Historical paragraphs below retain their original scope. No Lean/Lake/CI.
+> **ACTIVE EXECUTION DIRECTIVE — 2026-11-05:** [Current mask, priorities, bounded whole-cell attempts and exact acceptance](CURRENT_MASK_DIRECTIVE.md). **224/231 original cells CLOSED, 7 OPEN (A1, B3, C3); 8/32 masks CLOSED.** Bf14 and B580 are accepted; continue B16, A and the remaining B/C originals. The next milestone is **225/231**. Historical paragraphs below retain their original scope. No Lean/Lake/CI.
 
-# Current A.2 handoff: 223/231 current-mask cells closed; 8 OPEN
+# Current A.2 handoff: 224/231 current-mask cells closed; 7 OPEN
+
+## Complete B580 original: 224 CLOSED / 7 OPEN
+
+The complete physical tree excludes `negative-580db3624cf4c2e2`
+in the strict-radius caller `q < Q = 1105/256`. Its **755 nodes exclude all
+537 terminal domains, with zero OPEN leaves**. The complete unions are
+96 four-way inset covers, 101 two-way closed slope covers and 21 eight-way
+physical separating-axis covers.
+
+Fresh native and portable exact replay, independent physical and complete
+coverage review, the full literal terminal-table audit and archive/member
+verification all pass. The arithmetic checks 350 bound rounds, 66,464
+rational deductions and 216,274 printed row occurrences, including
+1,177 independently decoded relative-support chord rows.
+
+This accepts exactly one unchanged original: **223 CLOSED / 8 OPEN becomes
+224 CLOSED / 7 OPEN**, with remaining families **A1, B3, C3, D0**. The
+231-cell register and all original definitions remain fixed. Whole masks
+remain **8 CLOSED / 24 OPEN**; `001/00` and reversal `100/00` remain OPEN.
+No Lean, Lake, compilation or CI was run.
+
+[Complete proof and reproduction](A2_00100_B580_COMPLETE_ORIGINAL_CLOSURE.md).
 
 ## Complete Bf14 original: 223 CLOSED / 8 OPEN
 
@@ -1191,13 +1213,13 @@ and externally added staging tools are preserved with explicit historical
 metadata. The [complete portable release](computer_assisted/a2_00100_d821_complete_original/README.md)
 now passes native/cold proof replay, full hand/table review and every
 archive gate. D821 is CLOSED in the unchanged fixed-original definition.
-The register is **223 CLOSED / 8 OPEN**; the mask ledger is **8 CLOSED /
+The register is **224 CLOSED / 7 OPEN**; the mask ledger is **8 CLOSED /
 24 OPEN**. The eventual full-mask conclusion remains strict-radius.
 
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
-- Current mask: **223 CLOSED / 8 OPEN**, same 231 IDs and certified full cover.
+- Current mask: **224 CLOSED / 7 OPEN**, same 231 IDs and certified full cover.
 - Positional roots: **5,838 historical closed-Q exclusions / 2,077 OPEN**
   among the same 7,915 IDs. Equality root 7820 remains feasible at Q.
 - The same 15 roadmap IDs and all global deliverables retain their statuses.

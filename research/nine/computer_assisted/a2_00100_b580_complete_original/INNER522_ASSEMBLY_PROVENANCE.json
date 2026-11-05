@@ -1,0 +1,53 @@
+{
+  "status": "COMPLETE_COVER_ASSEMBLY_INDEPENDENT_REPLAY_REQUIRED",
+  "base": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b580_522_ch_unsplit3_v2/manifest.json",
+  "base_sha256": "ed27c62ec735b85af7b27710bfbc120326d55f90c38c5591eb527b7888b7a719",
+  "changes": [
+    {
+      "target": 683,
+      "variant": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b580_522_c_third_sat_unsplit3_v2/manifest.json",
+      "variant_sha256": "3b71d0cfe5184d7837ea85e414f9473b640f29901d4fe0bb35189bca96710a1e",
+      "replacement_nodes": 1,
+      "old_rounds_preserved": 4,
+      "initial_state_identical": true,
+      "all_open_descendants_retained": true
+    },
+    {
+      "target": 686,
+      "variant": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b580_522_c_third_sat_unsplit3_v2/manifest.json",
+      "variant_sha256": "3b71d0cfe5184d7837ea85e414f9473b640f29901d4fe0bb35189bca96710a1e",
+      "replacement_nodes": 33,
+      "old_rounds_preserved": 4,
+      "initial_state_identical": true,
+      "all_open_descendants_retained": true
+    },
+    {
+      "target": 687,
+      "variant": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b580_522_h704_third_sat_layer_v1/manifest.json",
+      "variant_sha256": "1e5f848090efc99e09d101eabfa5d75b8fe71fe6bdf9325142ec7b3e47abfac4",
+      "replacement_nodes": 9,
+      "old_rounds_preserved": 4,
+      "initial_state_identical": true,
+      "all_open_descendants_retained": true
+    },
+    {
+      "target": 690,
+      "variant": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b580_522_h704_third_sat_layer_v1/manifest.json",
+      "variant_sha256": "1e5f848090efc99e09d101eabfa5d75b8fe71fe6bdf9325142ec7b3e47abfac4",
+      "replacement_nodes": 9,
+      "old_rounds_preserved": 4,
+      "initial_state_identical": true,
+      "all_open_descendants_retained": true
+    }
+  ],
+  "original_parent_unchanged": true,
+  "original_root_initial_unchanged": true,
+  "all_original_siblings_retained": true,
+  "all_nodes_reachable": true,
+  "all_shared_closed_faces_retained_by_existing_cover_predicates": true,
+  "nodes": 739,
+  "unchanged_payload_files": 687,
+  "open_leaves": 3,
+  "whole_original_credit": 0,
+  "new_masks": 0
+}
