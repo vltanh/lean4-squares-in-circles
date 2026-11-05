@@ -1,0 +1,46 @@
+{
+  "status": "PASS_ROOT_C887_THREE_TERMINAL_SOURCE_PHYSICAL_AND_COMPLETE_COVER_REVIEW",
+  "packet_input_manifest_sha256": "ae0f8dffdad4fd1399eb4dcd07450408db3bee86af6b8b37404ce9f21a06c156",
+  "source_binding_sha256": "4f919c33418028f1fab2fcf82714552dcf3d1389664acd8524bd4106fa6dbba6",
+  "source_read_in_full": [
+    "code/HAND_ATTACHMENT.md",
+    "code/build_continuation.py",
+    "code/verify_continuation.py",
+    "code/historical_leaf_source.py",
+    "verify_packet.py",
+    "independent_review/C887_THREE_TERMINAL_CONTINUATION_INDEPENDENT_REVIEW.md"
+  ],
+  "physical_implication": "The accepted D/G separator rule requires a strictly positive vertical component. Leaf29 has D-owned +u_D with beta_D<=0 including the zero face; leaves30/64 have -v_D/-v_G with negative canonical alpha components.",
+  "unchanged_child_constructors_and_all_siblings_checked": true,
+  "new_manifest_is_exact_old_manifest_plus_three_terminal_delta": true,
+  "new_records_retain_exact_old_initial_and_zero_rounds": true,
+  "retained_nodes": 91,
+  "fresh_excluded_leaves": [
+    29,
+    30,
+    64
+  ],
+  "unchanged_payloads": 88,
+  "remaining_open_leaves": 70,
+  "complete_covers": {
+    "proxy": 9,
+    "sat": 6,
+    "angle": 3
+  },
+  "accepted_historical_report_sha256": "ec915e7153afab3fe1b674992f251dccde51e7901602db368c3530f08b278a08",
+  "historical_weighted_rounds_reused_not_repeated": 57,
+  "fresh_terminal_report_sha256": "ab1f2aac0ad99539365df036ce3c884b6af2f7ebecc5c890fdd8b35df5f3a51a",
+  "agent_exact_gate_observed_session": 60920,
+  "agent_exact_gate_observed_exit_code": 0,
+  "root_packet_identity_session": 58072,
+  "root_packet_identity_observed_exit_code": 0,
+  "historical_source_pins_rehashed": 543,
+  "all_88_published_aliases_rehashed": true,
+  "peer_review_sha256": "3599db9c45dc7537fb5d52383d2ef10ed7a9ca5da2e828cf8eacaf3669ed9f63",
+  "new_terminal_arithmetic_repeated_by_root": false,
+  "numerical_optimizer_used": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "whole_original_still_open": true,
+  "lean_lake_ci_run": false
+}

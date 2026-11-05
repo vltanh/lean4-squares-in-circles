@@ -1,5 +1,14 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [whole-original A endpoint attachment](computer_assisted/a_c744_original_i64_endpoint_attachment_v1/README.md)
+passes its 268-deduction first use and an independent fresh root record replay.
+Its 414 endpoint inequalities apply without importing a selected source SAT
+predicate. The A165 consumer continuation remains separate. The
+[C887 exact terminal continuation](computer_assisted/c887_three_terminal_continuation_v1/README.md)
+retains the complete 91-node cover with three excluded and 70 OPEN leaves;
+every old parent and sibling remains present. Old weighted arithmetic reuse
+is explicit. These checkpoints change no original or whole-mask count.
+
 The [fresh A I64 native gate](computer_assisted/a_c744_i64_fresh_native_gate_v1/README.md)
 passes seven rounds and 813 exact deductions, with the complete new report
 and fresh 16/25 scalar replay preserved. Four old source proofs are reused

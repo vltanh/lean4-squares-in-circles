@@ -1,0 +1,1559 @@
+{
+  "status": "PASS_FIRST_EXACT_ORIGINAL_WIDE_I64_DIRECT_BOUND_USE",
+  "original_id": "positive-c744bc031d40ee64",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        4
+      ]
+    ]
+  ],
+  "scope": "WHOLE_UNCHANGED_ORIGINAL_PARENT",
+  "binding_sha256": "63458318a3681d677745baf4a00d8a738a5705c6276659174e59f440fa9a06e3",
+  "source_gate_sha256": "a6798bdf6a99d3bfdbf5bbe4af6600577959fd06da2c97412c0f7f9fa384a07e",
+  "original_parent": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/a_c744_whole_support_caps/record.json",
+    "sha256": "68aae2029165b1148d0b719ac962e7c50c649afd8fcee6bfba4af99f50f85893"
+  },
+  "original_initial_state_unchanged": true,
+  "source_I64_predicate_not_added_to_path": true,
+  "ordinary_exact_audit": {
+    "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+    "rounds": 1,
+    "deductions": 268,
+    "printed_rows_checked": 268,
+    "reserve": null,
+    "numerical_discovery_fields_used": false,
+    "whole_original_credit": 0,
+    "whole_mask_credit": 0
+  },
+  "weighted_endpoint_occurrences": 268,
+  "record": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A_C744_ORIGINAL_I64_FIRST_DIRECT_USE_V3_RECORD.json",
+    "sha256": "c183d3ee7c8dcaf80c4e5a3ff6fc0d6a37c820545a3e722cb32a4361bb8ff21d"
+  },
+  "certified_final_state": {
+    "id": "positive-c744bc031d40ee64",
+    "path": [
+      [
+        "angle",
+        3,
+        1
+      ],
+      [
+        "angle_cut",
+        [
+          0,
+          "0"
+        ],
+        0
+      ],
+      [
+        "inward_row_escape",
+        [
+          7,
+          8
+        ],
+        [
+          4
+        ]
+      ]
+    ],
+    "angles": [
+      [
+        "-28084773501019/281474976710656",
+        "0"
+      ],
+      [
+        "-20151354414321/281474976710656",
+        "20151354414321/281474976710656"
+      ],
+      [
+        "-185431203739653/281474976710656",
+        "206975924884743/281474976710656"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "-24755144747695/70368744177664",
+        "24755144747695/70368744177664"
+      ],
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "-1",
+        "1"
+      ]
+    ],
+    "positions": [
+      [
+        "-91/60",
+        "-1505351/1048576"
+      ],
+      [
+        "-266347/1048576",
+        "197481/1048576"
+      ],
+      [
+        "-31/60",
+        "-456775/1048576"
+      ],
+      [
+        "-507877/524288",
+        "137695/524288"
+      ],
+      [
+        "29/60",
+        "715749/1048576"
+      ],
+      [
+        "-641727/524288",
+        "-77/120"
+      ],
+      [
+        "6684432029724121/5000000000000000",
+        "91/60"
+      ],
+      [
+        "-386773/1048576",
+        "281411/1048576"
+      ],
+      [
+        "-334137/262144",
+        "-47/64"
+      ],
+      [
+        "182395/262144",
+        "328569/262144"
+      ],
+      [
+        "-210829/1048576",
+        "17/64"
+      ],
+      [
+        "-52359/1048576",
+        "91/60"
+      ],
+      [
+        "838145/1048576",
+        "1451177/1048576"
+      ],
+      [
+        "595629/1048576",
+        "626575/524288"
+      ],
+      [
+        "-1465837/1048576",
+        "5/4"
+      ],
+      [
+        "-91/60",
+        "7371983528137207/5000000000000000"
+      ],
+      [
+        "-541625/1048576",
+        "5/4"
+      ],
+      [
+        "-365637/1048576",
+        "91/60"
+      ]
+    ],
+    "scalar": [
+      [
+        "280084242752693/281474976710656",
+        "1"
+      ],
+      [
+        "280756399979175/281474976710656",
+        "1"
+      ],
+      [
+        "113383563926227/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "265523828035151/281474976710656",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "-104107/1048576",
+        "0"
+      ],
+      [
+        "-37439/524288",
+        "37439/524288"
+      ],
+      [
+        "-288429/524288",
+        "4853/8192"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "-43497/131072",
+        "43497/131072"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "104107/1048576"
+      ],
+      [
+        "0",
+        "37439/524288"
+      ],
+      [
+        "0",
+        "4853/8192"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "43497/131072"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "128604514981353/281474976710656",
+        "1/2"
+      ],
+      [
+        "131671099901749/281474976710656",
+        "1/2"
+      ],
+      [
+        "12583410887503/35184372088832",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "110366251124651/281474976710656",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ]
+    ],
+    "differences": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "intervals": [
+          [
+            "1048575/1048576",
+            "1120753/1048576"
+          ],
+          [
+            "-126703/131072",
+            "106319/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          2
+        ],
+        "intervals": [
+          [
+            "2097151/1048576",
+            "576489/262144"
+          ],
+          [
+            "-325105/262144",
+            "-480553/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          3
+        ],
+        "intervals": [
+          [
+            "2992167/1048576",
+            "3145729/1048576"
+          ],
+          [
+            "-192239/524288",
+            "501153/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          4
+        ],
+        "intervals": [
+          [
+            "169149/1048576",
+            "751/960"
+          ],
+          [
+            "909281/1048576",
+            "696839/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          5
+        ],
+        "intervals": [
+          [
+            "1294867/1048576",
+            "1711/960"
+          ],
+          [
+            "-29993/524288",
+            "1854881/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          6
+        ],
+        "intervals": [
+          [
+            "1172071/524288",
+            "3041377/1048576"
+          ],
+          [
+            "282337/524288",
+            "1519497/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          7
+        ],
+        "intervals": [
+          [
+            "39859/1048576",
+            "83/30"
+          ],
+          [
+            "-893911/524288",
+            "389445/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          8
+        ],
+        "intervals": [
+          [
+            "1048575/1048576",
+            "83/30"
+          ],
+          [
+            "-363507/1048576",
+            "1856687/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "intervals": [
+          [
+            "1048575/1048576",
+            "314345/262144"
+          ],
+          [
+            "-1221429/1048576",
+            "-69905/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "intervals": [
+          [
+            "1943591/1048576",
+            "2097153/1048576"
+          ],
+          [
+            "-492701/1048576",
+            "314573/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "intervals": [
+          [
+            "-879427/1048576",
+            "-209/960"
+          ],
+          [
+            "893863/1048576",
+            "2317899/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          5
+        ],
+        "intervals": [
+          [
+            "246291/1048576",
+            "751/960"
+          ],
+          [
+            "58941/65536",
+            "2604407/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          6
+        ],
+        "intervals": [
+          [
+            "647783/524288",
+            "1992801/1048576"
+          ],
+          [
+            "488313/1048576",
+            "1000601/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          7
+        ],
+        "intervals": [
+          [
+            "-1008717/1048576",
+            "53/30"
+          ],
+          [
+            "-1865731/1048576",
+            "1280775/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          8
+        ],
+        "intervals": [
+          [
+            "0",
+            "53/30"
+          ],
+          [
+            "89369/1048576",
+            "2606095/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "intervals": [
+          [
+            "774321/1048576",
+            "1048577/1048576"
+          ],
+          [
+            "349525/524288",
+            "1048577/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "intervals": [
+          [
+            "-983479/524288",
+            "-1169/960"
+          ],
+          [
+            "1474571/1048576",
+            "2597641/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          5
+        ],
+        "intervals": [
+          [
+            "-838059/1048576",
+            "-209/960"
+          ],
+          [
+            "1013157/1048576",
+            "1435999/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          6
+        ],
+        "intervals": [
+          [
+            "210517/1048576",
+            "944225/1048576"
+          ],
+          [
+            "1551221/1048576",
+            "2281167/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          7
+        ],
+        "intervals": [
+          [
+            "-1045425/524288",
+            "23/30"
+          ],
+          [
+            "-7/8",
+            "2829087/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          8
+        ],
+        "intervals": [
+          [
+            "-1257123/1048576",
+            "23/30"
+          ],
+          [
+            "360011/524288",
+            "1436897/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "intervals": [
+          [
+            "-1457651/524288",
+            "-34165/16384"
+          ],
+          [
+            "500997/1048576",
+            "13197/8192"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          5
+        ],
+        "intervals": [
+          [
+            "-223695/131072",
+            "-17781/16384"
+          ],
+          [
+            "157053/524288",
+            "987631/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          6
+        ],
+        "intervals": [
+          [
+            "-92623/131072",
+            "3259/131072"
+          ],
+          [
+            "104991/131072",
+            "171507/131072"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          7
+        ],
+        "intervals": [
+          [
+            "-3044327/1048576",
+            "-434432029724121/5000000000000000"
+          ],
+          [
+            "-1871751/1048576",
+            "241571/131072"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          8
+        ],
+        "intervals": [
+          [
+            "-2097153/1048576",
+            "-434432029724121/5000000000000000"
+          ],
+          [
+            "20971/1048576",
+            "1977113/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          5
+        ],
+        "intervals": [
+          [
+            "1",
+            "1479991/1048576"
+          ],
+          [
+            "-617233/524288",
+            "857843/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          6
+        ],
+        "intervals": [
+          [
+            "2097151/1048576",
+            "661063/262144"
+          ],
+          [
+            "-315069/524288",
+            "499511/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          7
+        ],
+        "intervals": [
+          [
+            "-252777/524288",
+            "661817/262144"
+          ],
+          [
+            "-10892311/3932160",
+            "153665/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          8
+        ],
+        "intervals": [
+          [
+            "228423/1048576",
+            "661817/262144"
+          ],
+          [
+            "-1668245/1048576",
+            "860761/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          6
+        ],
+        "intervals": [
+          [
+            "1048575/1048576",
+            "1454799/1048576"
+          ],
+          [
+            "-61443/65536",
+            "476313/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          7
+        ],
+        "intervals": [
+          [
+            "-777065/524288",
+            "1521549/1048576"
+          ],
+          [
+            "-91/30",
+            "340667/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          8
+        ],
+        "intervals": [
+          [
+            "-820153/1048576",
+            "1521549/1048576"
+          ],
+          [
+            "-977145/524288",
+            "410675/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6,
+          7
+        ],
+        "intervals": [
+          [
+            "-1360271/524288",
+            "472575/1048576"
+          ],
+          [
+            "-1421745/524288",
+            "949575/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6,
+          8
+        ],
+        "intervals": [
+          [
+            "-1992801/1048576",
+            "472575/1048576"
+          ],
+          [
+            "-337771/262144",
+            "994711/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          7,
+          8
+        ],
+        "intervals": [
+          [
+            "0",
+            "2776557/1048576"
+          ],
+          [
+            "-1/1048576",
+            "91/30"
+          ]
+        ]
+      }
+    ],
+    "diagonal": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "intervals": [
+          [
+            "4369/131072",
+            "368463/262144"
+          ],
+          [
+            "155825/262144",
+            "2066565/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          2
+        ],
+        "intervals": [
+          [
+            "199183/262144",
+            "1619819/1048576"
+          ],
+          [
+            "2577705/1048576",
+            "3401261/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          3
+        ],
+        "intervals": [
+          [
+            "2607689/1048576",
+            "111863/32768"
+          ],
+          [
+            "644471/262144",
+            "3401261/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          4
+        ],
+        "intervals": [
+          [
+            "618843/524288",
+            "1037889/524288"
+          ],
+          [
+            "-994007/1048576",
+            "-218877/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          5
+        ],
+        "intervals": [
+          [
+            "1632087/1048576",
+            "3443665/1048576"
+          ],
+          [
+            "-513879/1048576",
+            "1822923/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          6
+        ],
+        "intervals": [
+          [
+            "3287307/1048576",
+            "4021037/1048576"
+          ],
+          [
+            "450889/524288",
+            "2400015/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          7
+        ],
+        "intervals": [
+          [
+            "-228843/262144",
+            "3657031/1048576"
+          ],
+          [
+            "-252433/262144",
+            "2002069/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          8
+        ],
+        "intervals": [
+          [
+            "43539/65536",
+            "1005281/262144"
+          ],
+          [
+            "-740999/1048576",
+            "1395249/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "intervals": [
+          [
+            "0",
+            "576673/524288"
+          ],
+          [
+            "69905/65536",
+            "610559/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "intervals": [
+          [
+            "379959/262144",
+            "1363149/524288"
+          ],
+          [
+            "657223/524288",
+            "9845/4096"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "intervals": [
+          [
+            "19323/1048576",
+            "997179/524288"
+          ],
+          [
+            "-680935/262144",
+            "-303145/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          5
+        ],
+        "intervals": [
+          [
+            "1294867/1048576",
+            "837171/262144"
+          ],
+          [
+            "-1998173/1048576",
+            "-228417/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          6
+        ],
+        "intervals": [
+          [
+            "2163603/1048576",
+            "1895263/524288"
+          ],
+          [
+            "-399691/1048576",
+            "353/256"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          7
+        ],
+        "intervals": [
+          [
+            "-2011577/1048576",
+            "3460247/1048576"
+          ],
+          [
+            "-680935/262144",
+            "3065593/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          8
+        ],
+        "intervals": [
+          [
+            "494317/1048576",
+            "1902965/524288"
+          ],
+          [
+            "-1255607/524288",
+            "1760939/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "intervals": [
+          [
+            "46627/32768",
+            "1048577/524288"
+          ],
+          [
+            "0",
+            "349527/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "intervals": [
+          [
+            "-95489/262144",
+            "1234399/1048576"
+          ],
+          [
+            "-2019743/524288",
+            "-1531703/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          5
+        ],
+        "intervals": [
+          [
+            "385699/1048576",
+            "1288637/524288"
+          ],
+          [
+            "-3340945/1048576",
+            "-168363/131072"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          6
+        ],
+        "intervals": [
+          [
+            "980407/524288",
+            "3009771/1048576"
+          ],
+          [
+            "-1789319/1048576",
+            "-769377/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          7
+        ],
+        "intervals": [
+          [
+            "-1054587/524288",
+            "2679899/1048576"
+          ],
+          [
+            "-2019743/524288",
+            "1069183/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          8
+        ],
+        "intervals": [
+          [
+            "-503229/1048576",
+            "3025583/1048576"
+          ],
+          [
+            "-3827297/1048576",
+            "-66279/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "intervals": [
+          [
+            "-2341713/1048576",
+            "-583009/1048576"
+          ],
+          [
+            "-2019743/524288",
+            "-3232187/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          5
+        ],
+        "intervals": [
+          [
+            "-685065/524288",
+            "192813/262144"
+          ],
+          [
+            "-3340945/1048576",
+            "-1557925/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          6
+        ],
+        "intervals": [
+          [
+            "246291/1048576",
+            "1217759/1048576"
+          ],
+          [
+            "-1789319/1048576",
+            "-991291/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          7
+        ],
+        "intervals": [
+          [
+            "-511967/131072",
+            "887487/1048576"
+          ],
+          [
+            "-2019743/524288",
+            "498203/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          8
+        ],
+        "intervals": [
+          [
+            "-2076181/1048576",
+            "616585/524288"
+          ],
+          [
+            "-3827297/1048576",
+            "-610543/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          5
+        ],
+        "intervals": [
+          [
+            "0",
+            "532459/262144"
+          ],
+          [
+            "126369/524288",
+            "2481431/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          6
+        ],
+        "intervals": [
+          [
+            "51383/32768",
+            "347915/131072"
+          ],
+          [
+            "1704015/1048576",
+            "3048071/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          7
+        ],
+        "intervals": [
+          [
+            "-2707073/1048576",
+            "1199503/524288"
+          ],
+          [
+            "-125583/262144",
+            "2249081/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          8
+        ],
+        "intervals": [
+          [
+            "-669959/524288",
+            "2783437/1048576"
+          ],
+          [
+            "-66377/262144",
+            "3428943/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          6
+        ],
+        "intervals": [
+          [
+            "4731/32768",
+            "1071935/524288"
+          ],
+          [
+            "160483/1048576",
+            "2332915/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          7
+        ],
+        "intervals": [
+          [
+            "-506245/131072",
+            "453327/262144"
+          ],
+          [
+            "-2481431/1048576",
+            "2001155/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          8
+        ],
+        "intervals": [
+          [
+            "-1343359/524288",
+            "2158991/1048576"
+          ],
+          [
+            "-2269733/1048576",
+            "1365201/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6,
+          7
+        ],
+        "intervals": [
+          [
+            "-2249081/524288",
+            "145469/1048576"
+          ],
+          [
+            "-3048071/1048576",
+            "2586725/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6,
+          8
+        ],
+        "intervals": [
+          [
+            "-1564427/524288",
+            "30697/65536"
+          ],
+          [
+            "-1417941/524288",
+            "147347/131072"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          7,
+          8
+        ],
+        "intervals": [
+          [
+            "345683/1048576",
+            "2249081/524288"
+          ],
+          [
+            "-91/30",
+            "1322915/524288"
+          ]
+        ]
+      }
+    ]
+  },
+  "positive_unit_weights": true,
+  "zero_residual_exact": true,
+  "usual_grid_and_frame_inference": true,
+  "old_source_arithmetic_repeated": false,
+  "new813_source_repeated": false,
+  "historical_source_identity_revalidated": true,
+  "numerical_solves": 0,
+  "actual_LP_use_claimed": false,
+  "cold_portable_replay_claimed": false,
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/independent_direct_use_adapter.py": "c5a6d4f12d02b1d42aa3746442a2f120d25c436a2efea5f3cc1f9030cc909e6e",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/independent_original_i64_bounds.py": "e1c1983cfa0f17c718aa226a8d5853be48eb51f3d890f43a989be08a7f3d9fcf",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/first_direct_use.py": "a18c2e59fe6745518fbe026ec29ffa5d54d5848202a543b73e289e604047c17c",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/check_bound_controls.py": "bd695e44d5ac5486f3f40779d213c5395c736af115faa09730bf2ef98cdf0156",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/SOURCE_BINDINGS.json": "93d79d81b6f9f4b2499220b75aca0e6c2c400829261ff783a6ff068fa4301e78",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/FIRST_USE_PROTOCOL.json": "fce57fd2ae8e299270c80205a03839e71140654e970fea5675759a5f641fc1d4",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/direct_shared_bound_round_snapshot.py": "be5a16d1106d37a47b1e21591a47b3f90dcf50839ebbf81ed30d0b74a8187d25",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/original_i64_bound_rows.py": "f9b7089768432e20723b72ee6309d4f2a34a58471cfff32864e423c9e8b992b1",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/PREMISE_BINDING.json": "63458318a3681d677745baf4a00d8a738a5705c6276659174e59f440fa9a06e3",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/WHOLE_ORIGINAL_ENDPOINT_ATTACHMENT.md": "8465b064a8706ec0e1533fd931aadd962c545025b30f4f45b001cd1616f859dd",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_direct_use_v3/first_direct_use_v3.py": "08bffe3cd564ab4864b1193aaab68e3b5b0a5f414801c220378f7d2a21363738"
+  },
+  "independent_loaded_dependency_sha256": {
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_direct_use_v3/first_direct_use_v3.py": "08bffe3cd564ab4864b1193aaab68e3b5b0a5f414801c220378f7d2a21363738",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_certified_union_original_rows.py": "2c51bd8ccb712083b1aecde3f0e832b05e8d3ac130d82aa1ac5fa02598e32e50",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_a_c744_component3_post_a1_bound_rows.py": "c9f6acf45daa28efd21a281371eda4eec1f06a603e1f3407967f6beee44861b9",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_a_c744_component3_shared_bound_rows.py": "8a36733b2955a6592286221476d0494cc74ec3377b9cdf43b048bb26b900ec8e",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_a_c744_component1_consequence.py": "97851b50451fdcfa788f7b71c639ea2c3107899e05467724d27b70b705f625bf",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_a_c744_complement_consequences.py": "9936b84c489a3ff6b08fa9cdc8937f07aa69fe2c976f256b7af633a8d4b518a4",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/i64_fresh_gate_v3/historical_source_cache.py": "fae655ca5cb79f719cb238b82b808102b968dac7829cb3e71fc9d3473fc4464f",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/independent_original_i64_bounds.py": "e1c1983cfa0f17c718aa226a8d5853be48eb51f3d890f43a989be08a7f3d9fcf",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/certified_union_original_rows.py": "703fe8cf070f38b4925b07a31f6048c906cb822143fcf258da221f738a4b1e71",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/original_i64_bound_rows.py": "f9b7089768432e20723b72ee6309d4f2a34a58471cfff32864e423c9e8b992b1",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/independent_empty_angle_terminal.py": "374ecc61720e29c689455dcf7ec42dc92b6b722da2088013d7d1afbcd23729a6",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/independent_fixed_bound_terminals.py": "ee65b7af82fb7249e3656f16e60b83bf401f52d1e94519e62ee68eb3d1ea6950",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/independent_three_square_energy_rows.py": "d7f0e356bf268e6c9396287c1d1cadbebc32505b6dd71771e999f918baba5edc",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/verify_cd_triple_energy_recursive_bounds.py": "e73773f57e99797edcf5ee9726000c57ce212936b853c75247ff63ce9f16e0f4",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_physical_sat_diagonal_replay.py": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_coupled_three_square_energy.py": "2b10685c12a21020c05f38ef24dc482b3987acd56d744c6c8c53814cde82781e",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_tightened_sat_products.py": "dd0d8f591dfb4ccebfbb7b71782cd2e41d6e99e0d911b33295efbc477944c0b0",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_shared_frame_triangle_products.py": "5e32612b4fbc10bf67d7fefeef59c12c0c98bc0d7d019644de53d20161f5d9da",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_relative_frame_arc_rows.py": "c12ccf7d4f68e25890dd137d0b4d4a98ae3baddfd42c2c13ab4cba87720bd295",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_physical_proxy_cover.py": "3b46b8a966c712e23894ae4cd7964355730f2bfe3c58a04871ade9d35ddf1277",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_owner_free_relative_support.py": "a9279225ec2ee13b263f412b36b6d5de876a8bbdf8059a5bc1e0c12531995377",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_c887_ownerfree_physical_tree.py": "755f9ed05839e27c04e8687de2273f3bf415388c9ef6dbe9c96fb1c3b20cb7ad",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/independent_direct_use_adapter.py": "c5a6d4f12d02b1d42aa3746442a2f120d25c436a2efea5f3cc1f9030cc909e6e",
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/direct_shared_bound_round_snapshot.py": "be5a16d1106d37a47b1e21591a47b3f90dcf50839ebbf81ed30d0b74a8187d25",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/replay_context.py": "be53b0adf7485a68c0475d6148b5018df9d1dbe8e9bba9c110ab7b98ef4084da",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/independent_all_rules.py": "a156f54bf7600a8a743e54083c80b4f7de6faac276774d2e9fd6ff156b6ed84e",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py": "ec1b7de7b15bcc9d89d12087bff974c68e6d056bdaae26b482d514027ec97993",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/review_tight_bounds_independent.py": "fc4afd4c1fa2ae2fabae656f1d55e1289b1cb92212ebd153b9cc20a3f79e7c3a",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/independent_v4_rows.py": "deec1bd3e5bba3a895f69cd824e5ca8dcfad8eaf98515544f592752ef3696efc",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/verify_shared_bound.py": "8ab01fdffa3b8e2404036e8a92adb8c5b63da381c7e4e96b09da477c25e9d1c7",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/verify_joint_original.py": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/sources/review_guarded_frame_bounds_independent.py": "9d7fc3680ad1b8bb1035d74deb9ade8501e3ef9989b37a019323f66a92a710e3",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/cd_family/verify_arc_union.py": "f54ca5f7eae74c6683684136ce0798d17346da9acfae59314099e234dd58e67e",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/cd_family/independent_diagonal_rows.py": "bfa5cc5448b21e78ebbe46cd79f846fe71a47b8851d2d56cf5d97c21758bb812",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/cd_family/verify_diagonal_pass.py": "1bcb12ed95463868eda1e9078650a4dec1139a0bd0ae46dbba8406cf49b7cc60",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/cd_family/independent_correlated_capacity.py": "b4872bf07042808c8e8f79d9a395109f0875e905040e347530ff741db29f8055",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/verify_affine_cover.py": "e4cc9407a19d3943861b307452bae9f0398027d3fb04d3635d5b3dd6d9f88703"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 16.75955393500044
+}

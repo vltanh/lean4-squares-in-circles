@@ -1,0 +1,71 @@
+{
+  "schema": "B_accepted_universal_center_runtime_source_binding_v1",
+  "status": "PUBLISHED_PHYSICAL_AND_ACTUAL_WEIGHTED_USE_GATE_ACCEPTED",
+  "canonical_family_commit": "29b8c4492288ea9f9d9460185e6881e4787fe4ce",
+  "weighted_gate_commit": "dbe204881898cb41ec19fdd4696f7898d8d91d53",
+  "publication_manifest_sha256": "e2f0ddcd2a4930725afe53d076f214e10b6cf0ad889f7851fa29dc2c9c279dee",
+  "physical_scope": "ANY_ORIGINAL_PHYSICAL_UNIT_SQUARE_WITH_FOUR_CLOSED_Q_CORNERS",
+  "squared_radius": "1105/256",
+  "center_radius_enclosure": "91/60",
+  "files": {
+    "physical_center_disk_rows.py": "3b32ff2f02e4681b5ef6b9359420b173f092a96093708c9d2c3fe982948681d8",
+    "independent_physical_center_disk_rows.py": "9fafd523e0154fcb8aedb7ecf2f36aa6213a77c84ff619ae12cd5612fc1b2acc",
+    "physical_center_disk_separation.py": "536ee2e0bca8512a4a9ccce8e759ec446f957dcc8749b7a8b8a5537601d6e02b",
+    "UNIVERSAL_CENTER_DISK_HAND_PROOF.md": "cd4cbeb8e38b139cb3289c3b9ce572537b5b115079452b0454467c4598478491",
+    "CENTER_DISK_ROOT_WEIGHTED_USE_REVIEW.json": "a76a3fa1f4e6d3c9f9f53c35c2f0d61367d8093cf425cc2505090fbfb9b34221",
+    "UNIVERSAL_CENTER_DISK_ROOT_PHYSICAL_REVIEW.json": "0663b66ed3e5d1a897fe833d91b83c06d82b407820fb98c4b1b5a33fe904ced9",
+    "CENTER_DISK_29B_ROOT_FRESH_CONTROLS.json": "e3f842bc4a345acf22052c7b84799a18f57983e221d666db53ab2a0907f0c3ac",
+    "ACCEPTED_EXTERNAL_CENTER_FIRST_USE_FRESH_REPLAY.json": "df9206690dd860a097093b0c7d86e26a8b6c0215ac5d2c9cfe2b3049ff451696",
+    "ACCEPTED_PREMISE_BINDINGS.json": "57a0c2002d725f1c0ae4c5a5abac865ffaf16f79d913f32cc5d8c1ee0048532b"
+  },
+  "byte_exact_copies": [
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/reviewed_source/source/universal_center_disk/physical_center_disk_rows.py",
+      "target": "physical_center_disk_rows.py",
+      "sha256": "3b32ff2f02e4681b5ef6b9359420b173f092a96093708c9d2c3fe982948681d8"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/reviewed_source/source/universal_center_disk/independent_physical_center_disk_rows.py",
+      "target": "independent_physical_center_disk_rows.py",
+      "sha256": "9fafd523e0154fcb8aedb7ecf2f36aa6213a77c84ff619ae12cd5612fc1b2acc"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/reviewed_source/source/universal_center_disk/physical_center_disk_separation.py",
+      "target": "physical_center_disk_separation.py",
+      "sha256": "536ee2e0bca8512a4a9ccce8e759ec446f957dcc8749b7a8b8a5537601d6e02b"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/reviewed_source/source/universal_center_disk/UNIVERSAL_CENTER_DISK_HAND_PROOF.md",
+      "target": "UNIVERSAL_CENTER_DISK_HAND_PROOF.md",
+      "sha256": "cd4cbeb8e38b139cb3289c3b9ce572537b5b115079452b0454467c4598478491"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/native/d_work/CENTER_DISK_ROOT_WEIGHTED_USE_REVIEW.json",
+      "target": "CENTER_DISK_ROOT_WEIGHTED_USE_REVIEW.json",
+      "sha256": "a76a3fa1f4e6d3c9f9f53c35c2f0d61367d8093cf425cc2505090fbfb9b34221"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/native/d_work/UNIVERSAL_CENTER_DISK_ROOT_PHYSICAL_REVIEW.json",
+      "target": "UNIVERSAL_CENTER_DISK_ROOT_PHYSICAL_REVIEW.json",
+      "sha256": "0663b66ed3e5d1a897fe833d91b83c06d82b407820fb98c4b1b5a33fe904ced9"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/native/d_work/CENTER_DISK_29B_ROOT_FRESH_CONTROLS.json",
+      "target": "CENTER_DISK_29B_ROOT_FRESH_CONTROLS.json",
+      "sha256": "e3f842bc4a345acf22052c7b84799a18f57983e221d666db53ab2a0907f0c3ac"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/reviewed_source/EXTERNAL_CENTER_FIRST_USE_FRESH_REPLAY.json",
+      "target": "ACCEPTED_EXTERNAL_CENTER_FIRST_USE_FRESH_REPLAY.json",
+      "sha256": "df9206690dd860a097093b0c7d86e26a8b6c0215ac5d2c9cfe2b3049ff451696"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/universal_center_disk_weighted_gate_v1/reviewed_source/PREMISE_BINDINGS.json",
+      "target": "ACCEPTED_PREMISE_BINDINGS.json",
+      "sha256": "57a0c2002d725f1c0ae4c5a5abac865ffaf16f79d913f32cc5d8c1ee0048532b"
+    }
+  ],
+  "old_missing_binding_bytes_recreated": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

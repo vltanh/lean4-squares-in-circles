@@ -1,0 +1,181 @@
+{
+  "cold_self_contained_replay_claimed": false,
+  "files": {
+    "README.md": {
+      "bytes": 1557,
+      "sha256": "c3bf32d396021a2fc30ff05f55c85af500bf7d148f66e2853709a6e7234a7a99"
+    },
+    "ROOT_FRESH_268_REPLAY.log": {
+      "bytes": 176,
+      "sha256": "f3ddf67c40869b161e4a60da08ba1f8966dfbd8eb52d8f95fd50f62ef4ddf645"
+    },
+    "ROOT_PACKET_BYTE_AUDIT.json": {
+      "bytes": 434,
+      "sha256": "9c3357fe4be60650e59cab82fffd0b1a2b1a7edcfd0bdd0ea2b3953de50135e4"
+    },
+    "native_checkpoint/COPY_PROVENANCE.json": {
+      "bytes": 9998,
+      "sha256": "76235781a10f0fe53d098e57e98781c6eb92fb552bf1f1cb8321a991efbcd3a6"
+    },
+    "native_checkpoint/DEPENDENCIES.json": {
+      "bytes": 23276,
+      "sha256": "cb843c19dcd5fbccc521094ed56a1bf5fe18f7cab6cc786a18d391d43191ed60"
+    },
+    "native_checkpoint/INPUT_MANIFEST.json": {
+      "bytes": 6429,
+      "sha256": "8edf7970a83abc7f8d1b8d42aeb7a33aea1a24059c1a712e24151f2c40474e78"
+    },
+    "native_checkpoint/OBSERVED_EXECUTION.json": {
+      "bytes": 810,
+      "sha256": "6003474c4449363db41daf6f104260af9e99bbf6159c580915718bfedf607f2e"
+    },
+    "native_checkpoint/README.md": {
+      "bytes": 2556,
+      "sha256": "7849ac125d1d2dbafdd5200c68c0c2dabb2e3456724254ec1a52f6f9d600a768"
+    },
+    "native_checkpoint/additional_exact_sources/09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460": {
+      "bytes": 10546,
+      "sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460"
+    },
+    "native_checkpoint/additional_exact_sources/1bcb12ed95463868eda1e9078650a4dec1139a0bd0ae46dbba8406cf49b7cc60": {
+      "bytes": 6961,
+      "sha256": "1bcb12ed95463868eda1e9078650a4dec1139a0bd0ae46dbba8406cf49b7cc60"
+    },
+    "native_checkpoint/additional_exact_sources/a156f54bf7600a8a743e54083c80b4f7de6faac276774d2e9fd6ff156b6ed84e": {
+      "bytes": 8279,
+      "sha256": "a156f54bf7600a8a743e54083c80b4f7de6faac276774d2e9fd6ff156b6ed84e"
+    },
+    "native_checkpoint/additional_exact_sources/b4872bf07042808c8e8f79d9a395109f0875e905040e347530ff741db29f8055": {
+      "bytes": 3358,
+      "sha256": "b4872bf07042808c8e8f79d9a395109f0875e905040e347530ff741db29f8055"
+    },
+    "native_checkpoint/additional_exact_sources/be53b0adf7485a68c0475d6148b5018df9d1dbe8e9bba9c110ab7b98ef4084da": {
+      "bytes": 2703,
+      "sha256": "be53b0adf7485a68c0475d6148b5018df9d1dbe8e9bba9c110ab7b98ef4084da"
+    },
+    "native_checkpoint/additional_exact_sources/bfa5cc5448b21e78ebbe46cd79f846fe71a47b8851d2d56cf5d97c21758bb812": {
+      "bytes": 2612,
+      "sha256": "bfa5cc5448b21e78ebbe46cd79f846fe71a47b8851d2d56cf5d97c21758bb812"
+    },
+    "native_checkpoint/additional_exact_sources/e4cc9407a19d3943861b307452bae9f0398027d3fb04d3635d5b3dd6d9f88703": {
+      "bytes": 10863,
+      "sha256": "e4cc9407a19d3943861b307452bae9f0398027d3fb04d3635d5b3dd6d9f88703"
+    },
+    "native_checkpoint/additional_exact_sources/f54ca5f7eae74c6683684136ce0798d17346da9acfae59314099e234dd58e67e": {
+      "bytes": 8935,
+      "sha256": "f54ca5f7eae74c6683684136ce0798d17346da9acfae59314099e234dd58e67e"
+    },
+    "native_checkpoint/build_native_checkpoint.py": {
+      "bytes": 12940,
+      "sha256": "ab2cd75dce36a72a31801bdc64a588dc88b9fff5f1924f560ad05af32830c91b"
+    },
+    "native_checkpoint/check_checkpoint.py": {
+      "bytes": 3120,
+      "sha256": "10b09c9834b286e93813992d2312c6d923c36f78a16607b4131a261fe8bc4d2b"
+    },
+    "native_checkpoint/direct_v3/FROM_V2.diff": {
+      "bytes": 1686,
+      "sha256": "715300f26b6df7100f5e6e57eed4e3cc0d8d5ebac80ffecaba68a797762382fd"
+    },
+    "native_checkpoint/direct_v3/SOURCE_BINDINGS.json": {
+      "bytes": 1566,
+      "sha256": "6c5124c817c426cc744daee72c17c1dfc3ca77fd613fbecf77f2460f7acbb747"
+    },
+    "native_checkpoint/direct_v3/first_direct_use_v3.py": {
+      "bytes": 4969,
+      "sha256": "08bffe3cd564ab4864b1193aaab68e3b5b0a5f414801c220378f7d2a21363738"
+    },
+    "native_checkpoint/evidence/A_C744_ORIGINAL_I64_BOUND_CONTROLS_V2.json": {
+      "bytes": 2169,
+      "sha256": "b17a331204bb9f0375c6e6814e4e6ae9f82f5554fc555a2867dea2e3af6acb1d"
+    },
+    "native_checkpoint/evidence/A_C744_ORIGINAL_I64_FIRST_DIRECT_USE_V2.log": {
+      "bytes": 495,
+      "sha256": "6cf3b16e0335f1d397a0f3a2164ee1b41370414097d01b4aea6142d141ef49fe"
+    },
+    "native_checkpoint/evidence/A_C744_ORIGINAL_I64_FIRST_DIRECT_USE_V2_EXECUTION.json": {
+      "bytes": 769,
+      "sha256": "60a0355e2b1e0bee15c2efc4582b9f0a0990f48d290c596b7f23bb923e8200d1"
+    },
+    "native_checkpoint/evidence/A_C744_ORIGINAL_I64_FIRST_DIRECT_USE_V3.json": {
+      "bytes": 35450,
+      "sha256": "3fc7996b0a2571cfd2d232d5b3811f4d27b39ced63c1b4c9330d551c1ad5f481"
+    },
+    "native_checkpoint/evidence/A_C744_ORIGINAL_I64_FIRST_DIRECT_USE_V3.log": {
+      "bytes": 380,
+      "sha256": "c44197844feac5478e43698e170ac1ca1b11b9b501fc155f6e134588f227f097"
+    },
+    "native_checkpoint/evidence/A_C744_ORIGINAL_I64_FIRST_DIRECT_USE_V3_RECORD.json": {
+      "bytes": 446337,
+      "sha256": "c183d3ee7c8dcaf80c4e5a3ff6fc0d6a37c820545a3e722cb32a4361bb8ff21d"
+    },
+    "native_checkpoint/family/FIRST_USE_PROTOCOL.json": {
+      "bytes": 839,
+      "sha256": "fce57fd2ae8e299270c80205a03839e71140654e970fea5675759a5f641fc1d4"
+    },
+    "native_checkpoint/family/PREMISE_BINDING.json": {
+      "bytes": 30408,
+      "sha256": "63458318a3681d677745baf4a00d8a738a5705c6276659174e59f440fa9a06e3"
+    },
+    "native_checkpoint/family/SOURCE_BINDINGS.json": {
+      "bytes": 1062,
+      "sha256": "93d79d81b6f9f4b2499220b75aca0e6c2c400829261ff783a6ff068fa4301e78"
+    },
+    "native_checkpoint/family/WHOLE_ORIGINAL_ENDPOINT_ATTACHMENT.md": {
+      "bytes": 6087,
+      "sha256": "8465b064a8706ec0e1533fd931aadd962c545025b30f4f45b001cd1616f859dd"
+    },
+    "native_checkpoint/family/check_bound_controls.py": {
+      "bytes": 3611,
+      "sha256": "bd695e44d5ac5486f3f40779d213c5395c736af115faa09730bf2ef98cdf0156"
+    },
+    "native_checkpoint/family/direct_shared_bound_round_snapshot.py": {
+      "bytes": 6233,
+      "sha256": "be5a16d1106d37a47b1e21591a47b3f90dcf50839ebbf81ed30d0b74a8187d25"
+    },
+    "native_checkpoint/family/first_direct_use.py": {
+      "bytes": 4783,
+      "sha256": "a18c2e59fe6745518fbe026ec29ffa5d54d5848202a543b73e289e604047c17c"
+    },
+    "native_checkpoint/family/independent_direct_use_adapter.py": {
+      "bytes": 1101,
+      "sha256": "c5a6d4f12d02b1d42aa3746442a2f120d25c436a2efea5f3cc1f9030cc909e6e"
+    },
+    "native_checkpoint/family/independent_original_i64_bounds.py": {
+      "bytes": 9753,
+      "sha256": "e1c1983cfa0f17c718aa226a8d5853be48eb51f3d890f43a989be08a7f3d9fcf"
+    },
+    "native_checkpoint/family/original_i64_bound_rows.py": {
+      "bytes": 1606,
+      "sha256": "f9b7089768432e20723b72ee6309d4f2a34a58471cfff32864e423c9e8b992b1"
+    },
+    "native_checkpoint/reviews/A_I64_ORIGINAL_ENDPOINT_V2_SOURCE_REVIEW.json": {
+      "bytes": 4003,
+      "sha256": "47d6f4b4ea1c84b01475ff2c3fa554444249bd6fefef95b74eb0724c099c1933"
+    },
+    "native_checkpoint/reviews/A_I64_ORIGINAL_ENDPOINT_V2_SOURCE_REVIEW.md": {
+      "bytes": 4225,
+      "sha256": "4140e8dbb7548be6cc9661f41bbb23a0f8d171bd1abac77da9c68f8401b580c0"
+    },
+    "native_checkpoint/reviews/A_ORIGINAL_I64_FIRST_DIRECT_ROOT_FRESH_REPLAY.json": {
+      "bytes": 1813,
+      "sha256": "27f2794b8ed66fcfa4343a3ab7903e22e1f1ce6549950454ed2e5c0e84b27187"
+    },
+    "native_checkpoint/reviews/replay_a_original_i64_first_record_v1.py": {
+      "bytes": 4816,
+      "sha256": "d52b6825b2db6d8f93d23585773ec1c0393effa6d269a3a12a56428925c36931"
+    },
+    "package_reviewed_evidence.py": {
+      "bytes": 7006,
+      "sha256": "561aa26b9b4f794594e9ec84145e1680a171adef4f974093eebab92dbc6b4c4a"
+    }
+  },
+  "lean_lake_ci_run": false,
+  "native_dependency_aliases_explicit": true,
+  "new_masks": 0,
+  "new_original_cells": 0,
+  "schema": "reviewed_native_proof_evidence_publication_v1",
+  "source_bytes_unchanged": true,
+  "source_packet_manifest_sha256": "8edf7970a83abc7f8d1b8d42aeb7a33aea1a24059c1a712e24151f2c40474e78",
+  "total_bytes": 696720
+}

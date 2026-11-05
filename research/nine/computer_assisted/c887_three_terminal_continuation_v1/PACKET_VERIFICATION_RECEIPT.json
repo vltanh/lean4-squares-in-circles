@@ -1,0 +1,17 @@
+{
+  "status": "PASS_C887_THREE_TERMINAL_PACKET_IDENTITIES",
+  "actual_session": 38453,
+  "actual_exit_observed": true,
+  "exit_code": 0,
+  "files": 41,
+  "bytes": 1986255,
+  "packet": "b_work/c887_three_terminal_publication_v1",
+  "manifest_sha256": "ae0f8dffdad4fd1399eb4dcd07450408db3bee86af6b8b37404ce9f21a06c156",
+  "unchanged_node_aliases": 88,
+  "historical_packet_identities_checked": true,
+  "historical_source_pins": 543,
+  "new_terminal_arithmetic_repeated": false,
+  "old_weighted_arithmetic_repeated": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "C887_center_diagnostic_observed_execution_v1",
+  "failed_direct_center_preparation": {
+    "session": 46509,
+    "actual_exit": 1,
+    "status": "REJECTED_REDUNDANT_CURRENT_BOUND",
+    "candidate_written": false,
+    "passed_proof_claimed": false
+  },
+  "successful_propagated_screen": {
+    "session": 52165,
+    "actual_exit": 0,
+    "report_sha256": "b98d35d876999c433b3f8af22bd596e9ee63c838e0047bdd44fe609f01edd3dc",
+    "candidates": 63,
+    "distinct_nonterminal_current_states": 36,
+    "existing_interval_terminal_states": 3,
+    "genuine_current_grid_improvements": 0
+  },
+  "new_terminal_premise": false,
+  "numerical_solver_called": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

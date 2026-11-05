@@ -1,0 +1,28 @@
+{
+  "schema": "C887_three_terminal_observed_execution_v1",
+  "exact_command": [
+    "python",
+    "-B",
+    "-S",
+    "-u",
+    "/tmp/c887_three_terminal_sources_v1_20261105/verify_continuation.py",
+    "--packet",
+    "/tmp/recovered_c_height_packet_064e4aa",
+    "--tree",
+    "/tmp/c887_complete91_three_terminal_tree_v1_20261105",
+    "--output",
+    "/tmp/c887_complete91_three_terminal_exact_v1_20261105"
+  ],
+  "exact_session_id": 60920,
+  "actual_process_exit_observed": true,
+  "exit_code": 0,
+  "status": "PASS_COMPLETE_C887_COVER_WITH_THREE_FRESH_EXISTING_TERMINALS",
+  "exact_report_sha256": "ab1f2aac0ad99539365df036ce3c884b6af2f7ebecc5c890fdd8b35df5f3a51a",
+  "full91_manifest_sha256": "276bae5827e64c8e9cabd1c5907d5047b26cde6cabc68fee9440a44f067f7e09",
+  "source_binding_sha256": "4f919c33418028f1fab2fcf82714552dcf3d1389664acd8524bd4106fa6dbba6",
+  "observed_build_exit_unknown_after_context_boundary": true,
+  "build_output_independently_verified_by_fresh_gate": true,
+  "numerical_solver_called": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

@@ -1,0 +1,58 @@
+"""Independent reconstruction of correlated original three-square guards."""
+from fractions import Fraction as F
+from itertools import product,combinations
+from math import isqrt
+from independent_diagonal_rows import span
+
+def lowroot(z):
+    d=1<<48;n=isqrt(z.numerator*d*d//z.denominator);a=F(n,d)
+    assert a*a<=z<(a+F(1,d))**2
+    return a
+def physical_row(name,cartesian,diagonal):
+    parts=name.split('_')
+    def delta(bounds,i,j):
+        rectangle=bounds[min(i,j),max(i,j)]
+        return rectangle if i<j else tuple((-u,-l)for l,u in rectangle)
+    def projection(i,j,e):
+        a,b=span(delta(cartesian,i,j),*e)
+        c,d=span(delta(diagonal,i,j),(e[0]+e[1])/2,(e[0]-e[1])/2)
+        assert max(a,c)<=min(b,d)
+        return max(a,c),min(b,d)
+    if name.startswith('correlated_rotated_unit_gap_'):
+        assert len(parts)==9
+        i,j=map(int,parts[4:6]);e=tuple(map(F,parts[6:8]));sg=int(parts[8])
+        assert 0<=i<j<9 and sg in(-1,1)and sum(v*v for v in e)==1
+        f=(-e[1],e[0]);across=projection(i,j,e);along=projection(i,j,f)
+        width=max(abs(v)for v in across);assert width<1
+        root=lowroot(1-width*width)
+        assert along[0]>-root if sg==1 else along[1]<root
+        coeff={2*i:sg*f[0],2*i+1:sg*f[1],2*j:-sg*f[0],2*j+1:-sg*f[1]};rhs=-root
+    elif name.startswith('correlated_rotated_sharp_strip_'):
+        assert len(parts)==9
+        l,m,u=map(int,parts[4:7]);e=tuple(map(F,parts[7:]));f=(-e[1],e[0])
+        assert len({l,m,u})==3 and all(0<=i<9 for i in(l,m,u))and sum(v*v for v in e)==1
+        assert projection(l,m,f)[0]>=0 and projection(m,u,f)[0]>=0
+        width=max(abs(v)for i,j in combinations((l,m,u),2)for v in projection(i,j,e));assert width<=F(7,10)
+        a,b=projection(l,u,e);minimum=min(F(2),F(280,99)-2*width);c=F(13,50)*(a+b)
+        n=(f[0]+c*e[0],f[1]+c*e[1]);coeff={2*l:n[0],2*l+1:n[1],2*u:-n[0],2*u+1:-n[1]}
+        rhs=-minimum-F(13,50)*a*b
+    else:
+        assert name.startswith('correlated_diagonal_altitude_capacity_')and len(parts)==7
+        l,m,u=map(int,parts[4:]);assert len({l,m,u})==3 and all(0<=i<9 for i in(l,m,u))
+        pairs=((l,m),(m,u),(l,u));v=[delta(cartesian,i,j)for i,j in pairs];w=[delta(diagonal,i,j)for i,j in pairs]
+        def inner_min(a,b):return min(x*z+y*t for x,y in product(*a)for z,t in product(*b))
+        def outer_max(a,b):return max(abs(x*t-y*z)for x,y in product(*a)for z,t in product(*b))
+        def square_min(a):return sum(F(0)if l<=0<=h else min(l*l,h*h)for l,h in a)
+        lengths=[max(F(1),square_min(v[k]),square_min(w[k])/2)for k in range(3)]
+        crosslower=max(inner_min(v[0],v[1]),inner_min(w[0],w[1])/2)
+        first=max(inner_min(v[0],v[2]),inner_min(w[0],w[2])/2,lengths[0]+crosslower)
+        last=max(inner_min(v[1],v[2]),inner_min(w[1],w[2])/2,lengths[1]+crosslower)
+        assert first>=0 and last>=0
+        area=min(*[outer_max(v[a],v[b])for a,b in combinations(range(3),2)],
+                 *[outer_max(w[a],w[b])/2 for a,b in combinations(range(3),2)])
+        root=lowroot(lengths[2]);assert root>0
+        altitude=area/root;assert altitude<=F(7,10)
+        minimum=min(F(2),F(280,99)-2*altitude)
+        (a,b),(c,d)=w[2];ex=(a+b+c+d)/2;ey=(a+b-c-d)/2
+        coeff={2*l:ex,2*l+1:ey,2*u:-ex,2*u+1:-ey};rhs=-minimum*minimum-(a*b+c*d)/2
+    return tuple((k,v)for k,v in sorted(coeff.items())if v),rhs,name

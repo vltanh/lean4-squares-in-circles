@@ -1,0 +1,20 @@
+{
+  "schema": "C887_three_existing_terminal_sources_v1",
+  "files": {
+    "HAND_ATTACHMENT.md": "63dc23313c441a5352fb9b6526d0bc5f7d7a1cb260412b4571f1d818d2687092",
+    "build_continuation.py": "aafe412e9e938dcc1509dd89d8af64bafc7d657a881a6c153c368e742a1c1abf",
+    "historical_leaf_source.py": "f55e45c0a20d89adb3bbeb29847f056419446a46a17af5aae693e5ce13871c70",
+    "verify_continuation.py": "1b4ee36f87a2b0766a6c4f08a40bed98984e2974a767f4a2ddb240badcce2df4"
+  },
+  "old_complete_source_report_sha256": "ec915e7153afab3fe1b674992f251dccde51e7901602db368c3530f08b278a08",
+  "old_manifest_sha256": "a091ad6716ef688cf001857a70f5058acfbb9601a87818de1edb4db4fa9bbe49",
+  "changed_leaf_indices": [
+    29,
+    30,
+    64
+  ],
+  "historical_source_reuse_explicit": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "numerical_solver_called": false
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "C887_direct_center_leaf_gate_sources_v1",
+  "files": {
+    "HAND_ATTACHMENT.md": "2280474f683c4e6f889f9ad18143020c8f0ff17fbdbd58da6f5ac79827325ea0",
+    "center_family/ACCEPTED_EXTERNAL_CENTER_FIRST_USE_FRESH_REPLAY.json": "df9206690dd860a097093b0c7d86e26a8b6c0215ac5d2c9cfe2b3049ff451696",
+    "center_family/ACCEPTED_PREMISE_BINDINGS.json": "57a0c2002d725f1c0ae4c5a5abac865ffaf16f79d913f32cc5d8c1ee0048532b",
+    "center_family/BINDING.json": "8fb0b5dda2d0bb892236dac5825bec3c8824d4ba6f1440aee967c9b5aa1e1a82",
+    "center_family/CENTER_DISK_29B_ROOT_FRESH_CONTROLS.json": "e3f842bc4a345acf22052c7b84799a18f57983e221d666db53ab2a0907f0c3ac",
+    "center_family/CENTER_DISK_ROOT_WEIGHTED_USE_REVIEW.json": "a76a3fa1f4e6d3c9f9f53c35c2f0d61367d8093cf425cc2505090fbfb9b34221",
+    "center_family/UNIVERSAL_CENTER_DISK_HAND_PROOF.md": "cd4cbeb8e38b139cb3289c3b9ce572537b5b115079452b0454467c4598478491",
+    "center_family/UNIVERSAL_CENTER_DISK_ROOT_PHYSICAL_REVIEW.json": "0663b66ed3e5d1a897fe833d91b83c06d82b407820fb98c4b1b5a33fe904ced9",
+    "center_family/independent_physical_center_disk_rows.py": "9fafd523e0154fcb8aedb7ecf2f36aa6213a77c84ff619ae12cd5612fc1b2acc",
+    "center_family/physical_center_disk_rows.py": "3b32ff2f02e4681b5ef6b9359420b173f092a96093708c9d2c3fe982948681d8",
+    "center_family/physical_center_disk_separation.py": "536ee2e0bca8512a4a9ccce8e759ec446f957dcc8749b7a8b8a5537601d6e02b",
+    "historical_leaf_source.py": "f55e45c0a20d89adb3bbeb29847f056419446a46a17af5aae693e5ce13871c70",
+    "prepare_direct_center_round.py": "1bd91f28cc19c2d8b94a14768e2271db402eee9c36b30e48d24f63bcbe793dce",
+    "verify_direct_center_round.py": "32d7bd0d21ce0470a924231126cebcd299f949401bde8ed844f16fd840b48dc2"
+  },
+  "status": "PREPARED_FOR_SOLVER_FREE_EXACT_GATE",
+  "scope": "ONLY_THE_CERTIFIED_C887_LEAF_47_DOMAIN",
+  "historical_source_proof_reuse_explicit": true,
+  "numerical_search_started": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

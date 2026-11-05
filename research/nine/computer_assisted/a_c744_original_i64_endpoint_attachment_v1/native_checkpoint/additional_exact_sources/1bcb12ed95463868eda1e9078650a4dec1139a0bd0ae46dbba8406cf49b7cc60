@@ -1,0 +1,99 @@
+#!/usr/bin/env python3
+"""Independent exact whole-parent correlated diagonal bound replay."""
+import sys,json,time,hashlib
+from pathlib import Path
+from fractions import Fraction as F
+HERE=Path(__file__).resolve().parent
+OLD=Path('/workspace/scratch/29af4f6e10bf/current_proof')
+sys.path.insert(0,str(OLD))
+import verify_joint_original as J
+from independent_diagonal_rows import intervals,physical_row
+K=J.K
+sys.path.insert(0,str(OLD/'shared_capacity_three_b_v4/sources'))
+import review_guarded_frame_bounds_independent as R
+def digest(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def box(values):return tuple(tuple(F(z)for z in ab)for ab in values)
+def view(s,g):return dict(angles=K.view(s['angles']),positions=K.view(s['positions']),scalar=K.view(s['scalar']),differences=K.diffview(s['differences']),diagonal=K.diffview(g))
+
+def rows_for(state,diag,saved):
+    base,absolute,pos,scalar,diff,guards=K.rebuild(state['path'],state['angles'],state['positions'],state['choices'],state['scalar'],state['differences'])
+    gg=intervals(diff,diag)
+    assert saved['propagated_positions']==K.view(pos)and saved['physical_scalar_intersection']==K.view(scalar)
+    assert saved['effective_differences']==K.diffview(diff)and saved['effective_diagonal']==K.diffview(gg)
+    assert list(map(str,absolute))==saved['absolute_variable_bounds']
+    assert all(a<=b for v in gg.values()for a,b in v)
+    used=saved['printed_rows'];index=[d['index']for d in used];assert len(index)==len(set(index))
+    rows=list(base);maximum=max(index,default=-1)
+    if maximum>=len(rows):rows += [((),F(0),'UNUSED_UNVERIFIED')]*(maximum+1-len(rows))
+    for entry in used:
+        k=entry['index'];assert type(k)is int and 0<=k<saved['rows']
+        name=entry['name']
+        if k>=len(base):
+            rows[k]=(physical_row(name,scalar,diff,gg)if name.startswith('correlated_')else J.rebuild_joint(name,scalar,diff,state['angles'],J.point_row))
+        co,rhs,nm=rows[k]
+        assert name==nm and F(entry['rhs'])==rhs
+        assert [(i,F(c))for i,c in entry['coefficients']if F(c)]==[(i,c)for i,c in co if c],(k,name,entry['coefficients'],co)
+    return rows,absolute,pos,scalar,diff,gg
+
+def replay(path):
+    begin=time.monotonic();path=Path(path);record=json.loads(path.read_text())
+    assert record['schema']=='correlated_diagonal_whole_parent_v1'and record['status']in('OPEN','CANDIDATE_CLOSED')
+    prior=record['prior'];assert digest(prior['path'])==prior['sha256']
+    if prior['kind']=='v3':prior_report,state=J.replay(prior['path'],allow_open=True,return_state=True)
+    else:
+        assert prior['kind']=='arc'
+        from verify_arc_union import replay as arc_replay
+        prior_report,state=arc_replay(prior['path'])
+    assert record['id']==state['id']and record['path']==state['path']
+    K.verify_index();diag={};totalrows=0;deductions=0;stats=[]
+    for ri,rr in enumerate(record['rounds']):
+        assert rr['round']==ri and rr['before']==view(state,diag)
+        rows,ab,pos,sc,diff,gg=rows_for(state,diag,rr)
+        pp=[list(x)for x in pos];ss=[list(x)for x in sc];dd={k:[list(x)for x in v]for k,v in diff.items()};newg={k:[list(x)for x in v]for k,v in gg.items()}
+        used=set();counts={'scalar':0,'difference':0,'diagonal':0}
+        for p in rr['proposals']:
+            up=K.audit_bound(rows,ab,p);sign=p['sign'];key=p['key'];assert sign in(-1,1)
+            kind=p['kind'];assert kind in counts;counts[kind]+=1
+            if kind=='scalar':
+                assert type(key)is int and 0<=key<54 and p['objective']==[[key,sign]]
+                dest=pp[key]if key<18 else ss[key-18];old=pos[key]if key<18 else sc[key-18]
+            else:
+                assert len(key)==3;i,j,ax=key;assert 0<=i<j<9 and ax in(0,1)
+                if kind=='difference':
+                    assert p['objective']==[[2*j+ax,sign],[2*i+ax,-sign]];dest=dd[i,j][ax];old=diff[i,j][ax]
+                else:
+                    sy=1 if ax==0 else-1
+                    assert p['objective']==[[2*j,sign],[2*i,-sign],[2*j+1,sign*sy],[2*i+1,-sign*sy]];dest=newg[i,j][ax];old=gg[i,j][ax]
+            assert F(p['old'])==(old[1]if sign==1 else-old[0])
+            if sign==1:dest[1]=min(dest[1],up)
+            else:dest[0]=max(dest[0],-up)
+            used.update(i for i,w in p['weights']);deductions+=1
+        assert used=={v['index']for v in rr['printed_rows']}
+        totalrows+=len(used)
+        pos=tuple(map(tuple,pp));sc=tuple(map(tuple,ss));diff={k:tuple(map(tuple,v))for k,v in dd.items()};diag={k:tuple(map(tuple,v))for k,v in newg.items()}
+        assert all(a<=b for a,b in pos+sc)and all(a<=b for zz in list(diff.values())+list(diag.values())for a,b in zz),'Empty-interval terminal requires dedicated review'
+        angles=K.angles_from_scalar(state['angles'],sc,rr['physical_frame_inferences'])
+        analytic=K.analytic(angles);sc=tuple((max(a,c),min(b,d))for(a,b),(c,d)in zip(sc,analytic));assert all(a<=b for a,b in sc)
+        state.update(angles=angles,positions=pos,scalar=sc,differences=diff)
+        assert rr['after']==view(state,diag)
+        stats.append(dict(round=ri,rows=len(used),**counts));print(record['id'],'PASS DIAGONAL ROUND',stats[-1],flush=True)
+    reserve=None;terminalrows=0
+    if record['status']=='CANDIDATE_CLOSED':
+        t=record['terminal'];assert t['kind']=='positive_exact_reserve','This verifier accepts positive exact terminals only'
+        rr=t['state'];assert rr['round']==len(record['rounds'])and rr['before']==view(state,diag)
+        saved=dict(rr,printed_rows=t['printed_rows'],absolute_variable_bounds=t['absolute_variable_bounds'])
+        rows,ab,pos,sc,diff,gg=rows_for(state,diag,saved)
+        used={i for i,w in t['weights']};assert used=={v['index']for v in t['printed_rows']}
+        co,rhs=K.sum_rows(rows,ab,t['weights']);reserve=-rhs-sum(m*abs(v)for m,v in zip(ab,co))
+        assert reserve>0 and reserve==F(t['reserve'])and rhs==F(t['weighted_rhs'])and co==list(map(F,t['weighted_coefficients']))
+        terminalrows=len(used);totalrows+=terminalrows
+    assert record['final']==view(state,diag)
+    report=dict(id=record['id'],status='PASS_COMPLETE_ORIGINAL_PARENT'if reserve is not None else'PASS_CERTIFIED_PARENT_STATE_OPEN',
+         prior_report=prior_report,rounds=stats,new_exact_deductions=deductions,printed_rows=totalrows,terminal_rows=terminalrows,
+         reserve=str(reserve),new_original_cells=int(reserve is not None),whole_mask_closed=False,
+         certificate_sha256=digest(path),reviewer_sha256=digest(__file__),independent_rule_sha256=digest(HERE/'independent_diagonal_rows.py'),
+         lean_lake_ci_run=False,seconds=time.monotonic()-begin)
+    out=HERE/'diagonal_replay_reports';out.mkdir(exist_ok=True);(out/(record['id']+'.json')).write_text(json.dumps(report,indent=2)+'\n')
+    print(json.dumps({k:v for k,v in report.items()if k not in('prior_report','rounds')}),flush=True)
+    return report,state,diag
+if __name__=='__main__':replay(sys.argv[1])

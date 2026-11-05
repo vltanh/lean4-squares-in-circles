@@ -1,0 +1,39 @@
+{
+  "schema": "original_I64_direct_use_v3_inherited_choice_correction",
+  "old_family_source_binding": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/SOURCE_BINDINGS.json",
+    "sha256": "93d79d81b6f9f4b2499220b75aca0e6c2c400829261ff783a6ff068fa4301e78"
+  },
+  "old_entrypoint": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_bounds_v2/first_direct_use.py",
+    "sha256": "a18c2e59fe6745518fbe026ec29ffa5d54d5848202a543b73e289e604047c17c"
+  },
+  "new_entrypoint": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_direct_use_v3/first_direct_use_v3.py",
+    "sha256": "08bffe3cd564ab4864b1193aaab68e3b5b0a5f414801c220378f7d2a21363738"
+  },
+  "diff": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_direct_use_v3/FROM_V2.diff",
+    "sha256": "715300f26b6df7100f5e6e57eed4e3cc0d8d5ebac80ffecaba68a797762382fd"
+  },
+  "exact_inherited_original_choices": [
+    [
+      [
+        7,
+        8
+      ],
+      "inward_row_escape",
+      [
+        4
+      ]
+    ]
+  ],
+  "mathematical_row_family_or_checker_changed": false,
+  "original_choices_preserved": true,
+  "v2_execution_receipt": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A_C744_ORIGINAL_I64_FIRST_DIRECT_USE_V2_EXECUTION.json",
+    "sha256": "60a0355e2b1e0bee15c2efc4582b9f0a0990f48d290c596b7f23bb923e8200d1"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0
+}

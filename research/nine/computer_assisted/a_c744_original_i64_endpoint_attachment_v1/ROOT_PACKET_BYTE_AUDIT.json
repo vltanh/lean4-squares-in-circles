@@ -1,0 +1,13 @@
+{
+  "status": "PASS_ORIGINAL_I64_ENDPOINT_PACKET_BYTES_AND_HEADERS",
+  "files": 38,
+  "input_manifest_sha256": "8edf7970a83abc7f8d1b8d42aeb7a33aea1a24059c1a712e24151f2c40474e78",
+  "endpoint_rows": 414,
+  "separate_height_rows": 1,
+  "saved_direct_deductions": 268,
+  "weighted_arithmetic_replayed": false,
+  "historical_source_arithmetic_repeated": false,
+  "cold_proof_claimed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

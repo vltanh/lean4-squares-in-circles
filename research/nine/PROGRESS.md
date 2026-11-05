@@ -1,5 +1,22 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Whole-original A endpoint bounds and three exact C terminals
+
+The [A-c744 endpoint attachment](computer_assisted/a_c744_original_i64_endpoint_attachment_v1/README.md)
+accepts 414 necessary endpoint rows on the entire unchanged original, using
+complete old components and the accepted 16/25 source implication. The first
+ordinary round has 268 exact unit-weight deductions; a separate root replay
+matches its OPEN final state. The source I slope remains [-1,1]. The retained
+A165 consumer is a separate continuation, without any closure credit here.
+
+The [C887 terminal continuation](computer_assisted/c887_three_terminal_continuation_v1/README.md)
+excludes three leaves using the existing D/G separator rule. Its complete
+91-node cover retains 70 OPEN leaves, all 88 other payloads byte-identical,
+and every complete proxy/SAT/angle alternative. The three terminals and all
+child states are freshly checked; historical weighted arithmetic is explicitly
+reused. Root and peer source/physical reviews pass. No whole-original or mask
+count changes.
+
 ## Fresh A I64 replay and strengthened strict-011 complete-tree review
 
 The [fresh native A I64 gate](computer_assisted/a_c744_i64_fresh_native_gate_v1/README.md)

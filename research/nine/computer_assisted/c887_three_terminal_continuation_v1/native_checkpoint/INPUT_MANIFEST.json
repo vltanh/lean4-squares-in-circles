@@ -1,0 +1,176 @@
+{
+  "schema": "C887_three_terminal_publication_inventory_v1",
+  "files": {
+    "EXACT_REPLAY.json": {
+      "bytes": 199992,
+      "sha256": "ab1f2aac0ad99539365df036ce3c884b6af2f7ebecc5c890fdd8b35df5f3a51a"
+    },
+    "OBSERVED_EXECUTION.json": {
+      "bytes": 1068,
+      "sha256": "62cc4070c22e72748a9620653c2b57bd8850e3f73b7cf4c93215a1c87227a419"
+    },
+    "PUBLISHED_DEPENDENCIES.json": {
+      "bytes": 24538,
+      "sha256": "fa853559f93ffb59df6c4014e2e96105cd254215b674d72ac0c1da6f80edf86b"
+    },
+    "README.md": {
+      "bytes": 5249,
+      "sha256": "a5a77140d314a7abb0e4a27313616de159e10883b04959733d0ee896fca198f2"
+    },
+    "code/HAND_ATTACHMENT.md": {
+      "bytes": 3706,
+      "sha256": "63dc23313c441a5352fb9b6526d0bc5f7d7a1cb260412b4571f1d818d2687092"
+    },
+    "code/SOURCE_BINDING.json": {
+      "bytes": 846,
+      "sha256": "4f919c33418028f1fab2fcf82714552dcf3d1389664acd8524bd4106fa6dbba6"
+    },
+    "code/build_continuation.py": {
+      "bytes": 3033,
+      "sha256": "aafe412e9e938dcc1509dd89d8af64bafc7d657a881a6c153c368e742a1c1abf"
+    },
+    "code/historical_leaf_source.py": {
+      "bytes": 14968,
+      "sha256": "f55e45c0a20d89adb3bbeb29847f056419446a46a17af5aae693e5ce13871c70"
+    },
+    "code/verify_continuation.py": {
+      "bytes": 8799,
+      "sha256": "1b4ee36f87a2b0766a6c4f08a40bed98984e2974a767f4a2ddb240badcce2df4"
+    },
+    "continuation/manifest.json": {
+      "bytes": 135324,
+      "sha256": "276bae5827e64c8e9cabd1c5907d5047b26cde6cabc68fee9440a44f067f7e09"
+    },
+    "continuation/node_00029.json": {
+      "bytes": 26467,
+      "sha256": "d4dcbffae080db8e85cddc0127e1615a8e4db71fc1b9283e5727cf44aa465c02"
+    },
+    "continuation/node_00030.json": {
+      "bytes": 26468,
+      "sha256": "b9637ae10017944acf99455761737d4f6e8ce3fe10e2d813febaabb8711f9e4b"
+    },
+    "continuation/node_00064.json": {
+      "bytes": 26468,
+      "sha256": "ae6edfb0ad5bc6e01c05ac6dcc4ff010017803631e872716231ea0dbf01cf5ad"
+    },
+    "diagnostic/C887_RESTORED91_DIRECT_CENTER_SCREEN.json": {
+      "bytes": 27536,
+      "sha256": "922d89e23ee23a01a5f164995a4cc5f22186677f519820f6bf92f82beab33e98"
+    },
+    "diagnostic/OBSERVED_DIAGNOSTIC.json": {
+      "bytes": 712,
+      "sha256": "b3d2d8ffe0bc1730526a0c0a0f9b457a15036aae057df58e0fa36147402ba39e"
+    },
+    "diagnostic/PROPAGATED_CENTER_SCREEN.json": {
+      "bytes": 1302240,
+      "sha256": "b98d35d876999c433b3f8af22bd596e9ee63c838e0047bdd44fe609f01edd3dc"
+    },
+    "diagnostic/c887_direct_center_screen_v1.py": {
+      "bytes": 3148,
+      "sha256": "94cf542efd51557fa778612db3c33478c79c11263a5bb28b84491a954317e957"
+    },
+    "diagnostic/earlier_center_gate_sources/HAND_ATTACHMENT.md": {
+      "bytes": 4231,
+      "sha256": "2280474f683c4e6f889f9ad18143020c8f0ff17fbdbd58da6f5ac79827325ea0"
+    },
+    "diagnostic/earlier_center_gate_sources/SOURCE_BINDING.json": {
+      "bytes": 1976,
+      "sha256": "1eb705ad93a17638cf15a6dfa44f6dcdae217a7c0dcaaf157d09f6aa16832157"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/ACCEPTED_EXTERNAL_CENTER_FIRST_USE_FRESH_REPLAY.json": {
+      "bytes": 42000,
+      "sha256": "df9206690dd860a097093b0c7d86e26a8b6c0215ac5d2c9cfe2b3049ff451696"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/ACCEPTED_PREMISE_BINDINGS.json": {
+      "bytes": 44460,
+      "sha256": "57a0c2002d725f1c0ae4c5a5abac865ffaf16f79d913f32cc5d8c1ee0048532b"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/BINDING.json": {
+      "bytes": 4838,
+      "sha256": "8fb0b5dda2d0bb892236dac5825bec3c8824d4ba6f1440aee967c9b5aa1e1a82"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/CENTER_DISK_29B_ROOT_FRESH_CONTROLS.json": {
+      "bytes": 3029,
+      "sha256": "e3f842bc4a345acf22052c7b84799a18f57983e221d666db53ab2a0907f0c3ac"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/CENTER_DISK_ROOT_WEIGHTED_USE_REVIEW.json": {
+      "bytes": 1345,
+      "sha256": "a76a3fa1f4e6d3c9f9f53c35c2f0d61367d8093cf425cc2505090fbfb9b34221"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/UNIVERSAL_CENTER_DISK_HAND_PROOF.md": {
+      "bytes": 4468,
+      "sha256": "cd4cbeb8e38b139cb3289c3b9ce572537b5b115079452b0454467c4598478491"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/UNIVERSAL_CENTER_DISK_ROOT_PHYSICAL_REVIEW.json": {
+      "bytes": 2613,
+      "sha256": "0663b66ed3e5d1a897fe833d91b83c06d82b407820fb98c4b1b5a33fe904ced9"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/independent_physical_center_disk_rows.py": {
+      "bytes": 1153,
+      "sha256": "9fafd523e0154fcb8aedb7ecf2f36aa6213a77c84ff619ae12cd5612fc1b2acc"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/physical_center_disk_rows.py": {
+      "bytes": 1168,
+      "sha256": "3b32ff2f02e4681b5ef6b9359420b173f092a96093708c9d2c3fe982948681d8"
+    },
+    "diagnostic/earlier_center_gate_sources/center_family/physical_center_disk_separation.py": {
+      "bytes": 1227,
+      "sha256": "536ee2e0bca8512a4a9ccce8e759ec446f957dcc8749b7a8b8a5537601d6e02b"
+    },
+    "diagnostic/earlier_center_gate_sources/historical_leaf_source.py": {
+      "bytes": 14968,
+      "sha256": "f55e45c0a20d89adb3bbeb29847f056419446a46a17af5aae693e5ce13871c70"
+    },
+    "diagnostic/earlier_center_gate_sources/prepare_direct_center_round.py": {
+      "bytes": 4542,
+      "sha256": "1bd91f28cc19c2d8b94a14768e2271db402eee9c36b30e48d24f63bcbe793dce"
+    },
+    "diagnostic/earlier_center_gate_sources/scan_propagated_center_candidates.py": {
+      "bytes": 4264,
+      "sha256": "742da0e2519d8bff8a5855b407df8f8271b790456a8303ade9a42c244bfcb1f5"
+    },
+    "diagnostic/earlier_center_gate_sources/verify_direct_center_round.py": {
+      "bytes": 5924,
+      "sha256": "32d7bd0d21ce0470a924231126cebcd299f949401bde8ed844f16fd840b48dc2"
+    },
+    "diagnostic/scan_propagated_center_candidates.py": {
+      "bytes": 6127,
+      "sha256": "9e19629abc7360bc12876e9a5ef1aba1045fb24cd35cb099c7fa08ef8bd794a8"
+    },
+    "independent_review/C887_THREE_TERMINAL_CONTINUATION_INDEPENDENT_REVIEW.json": {
+      "bytes": 2168,
+      "sha256": "3599db9c45dc7537fb5d52383d2ef10ed7a9ca5da2e828cf8eacaf3669ed9f63"
+    },
+    "independent_review/C887_THREE_TERMINAL_CONTINUATION_INDEPENDENT_REVIEW.md": {
+      "bytes": 2277,
+      "sha256": "4eccf17f88273b8649db8943a3b1060986599b1e0dcd46be9e3ad17b2d0c4424"
+    },
+    "published_dependency_metadata/ARCHIVE_MANIFEST.json": {
+      "bytes": 1355,
+      "sha256": "8f9be5d565759fb3e04039983721eeb5f22ec7959e4c086090194bc6cfbf8e1c"
+    },
+    "published_dependency_metadata/PUBLICATION_MANIFEST.json": {
+      "bytes": 6623,
+      "sha256": "c2461b69b3a2e89d5bb3ccacb5e57c43b858b86c787f1fafec6ab6f8f257ce4a"
+    },
+    "published_dependency_metadata/README.md": {
+      "bytes": 7117,
+      "sha256": "4f511078d8a319a560df7fb71f20abf3f5cdf35d8b06ea9b08b96a4c0b691ad9"
+    },
+    "published_dependency_metadata/fresh_replay/PORTABLE_RECEIPT.json": {
+      "bytes": 2635,
+      "sha256": "0ec2356ee2becd7b1b56c80929f7dab6dfcf7ae272b85ce990a6e454e621fe8d"
+    },
+    "verify_packet.py": {
+      "bytes": 5185,
+      "sha256": "a7c9d3b26dc709fbddb2258b31a11bb74a7d43f4b1e22a5ccd117cf139863eaf"
+    }
+  },
+  "total_files": 41,
+  "total_bytes": 1986255,
+  "full_old_packet_required": true,
+  "fresh_terminal_records": 3,
+  "remaining_open_leaf_domains": 70,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

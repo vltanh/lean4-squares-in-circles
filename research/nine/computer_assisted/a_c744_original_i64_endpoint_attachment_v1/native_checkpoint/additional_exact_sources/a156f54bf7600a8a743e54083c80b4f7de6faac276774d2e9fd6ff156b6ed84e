@@ -1,0 +1,170 @@
+"""Independent exact reconstruction of the physical rows used by B a3ab.
+
+No discovery row generator is imported. All guards are re-established
+from the old, independently proved original-frame and difference boxes.
+"""
+from fractions import Fraction as Q
+from itertools import combinations,product
+from math import isqrt
+
+
+def root_lower(value):
+    assert value>=0
+    scale=1<<48
+    n=isqrt(value.numerator*scale*scale//value.denominator)
+    r=Q(n,scale)
+    assert r*r<=value<(r+Q(1,scale))**2
+    return r
+
+
+def clean(coeff,rhs,name):
+    return tuple((k,v)for k,v in sorted(coeff.items())if v),rhs,name
+
+
+def rebuild_prior(name,scalar,differences,angles,point_rule):
+    if name.startswith('original_point_incircle_'):
+        return point_rule(name,scalar,differences)
+    parts=name.split('_')
+    if name.startswith('physical_inset_perspective_'):
+        assert parts[:3]==['physical','inset','perspective']
+        i=int(parts[4]);assert 0<=i<9
+        kind=parts[3]
+        def r(t):return (1+t*t)/(1+t)
+        if kind=='tangent':
+            assert len(parts)==6
+            t=Q(parts[5]);assert 0<=t<=1
+            # r''(t)=4/(1+t)^3>0. Exact tangent perspective.
+            p=(1+2*t-t*t)/(1+t)**2
+            q=(t*t+2*t-1)/(1+t)**2
+            return clean({18+i:p,36+i:q,45+i:Q(-2)},Q(0),name)
+        assert kind=='secant'and len(parts)==7
+        m,M=map(Q,parts[5:])
+        al,au=scalar[i];zl,zu=scalar[18+i]
+        lo,hi=angles[i]
+        amin=Q(0)if lo<=0<=hi else min(abs(lo),abs(hi))
+        amax=max(abs(lo),abs(hi))
+        lower=max(amin,zl/au);upper=min(amax,zu/al,Q(1))
+        assert 0<=m<=lower<=upper<=M<=1
+        if m==M:p,q=r(m),Q(0)
+        else:
+            q=(r(M)-r(m))/(M-m);p=r(m)-m*q
+        return clean({18+i:-p,36+i:-q,45+i:Q(2)},Q(0),name)
+    if name.startswith('physical_inset_reciprocal_'):
+        assert parts[:3]==['physical','inset','reciprocal']
+        i=int(parts[4]);assert 0<=i<9
+        if parts[3]=='tangent':
+            assert len(parts)==6
+            s=Q(parts[5]);assert s>0
+            return clean({18+i:-1/(2*s*s),36+i:-1/(2*s*s),45+i:Q(-1)},-1/s,name)
+        assert parts[3]=='upper'and len(parts)==7
+        lo,hi=map(Q,parts[5:]);al,au=scalar[i];zl,zu=scalar[18+i]
+        assert Q(99,70)**2>2
+        actual_lower=max(Q(1),al+zl)
+        actual_upper=min(Q(99,70),au+zu)
+        assert 0<lo<=actual_lower<=actual_upper<=hi
+        return clean({18+i:Q(1),36+i:Q(1),45+i:2*lo*hi},lo+hi,name)
+    if name.startswith('physical_folded_arc_'):
+        assert parts[:3]==['physical','folded','arc']
+        i=int(parts[4]);assert 0<=i<9
+        actual=scalar[18+i]
+        if parts[3]=='point':
+            assert len(parts)==6
+            z=Q(parts[5]);assert actual==(z,z)and 0<=z<1
+            return clean({18+i:Q(-1)},-root_lower(1-z*z),name)
+        assert parts[3]=='chord'and len(parts)==7
+        l,u=map(Q,parts[5:]);assert 0<=l<=actual[0]<=actual[1]<=u<1 and l<u
+        f,g=root_lower(1-l*l),root_lower(1-u*u)
+        slope=(g-f)/(u-l);intercept=f-slope*l
+        return clean({18+i:Q(-1),36+i:slope},-intercept,name)
+    if name.startswith(('strong_rotated_three_square_strip_','sharp_rotated_three_square_strip_')):
+        assert parts[0]in('strong','sharp')and parts[1:5]==['rotated','three','square','strip']and len(parts)==10
+        l,m,u=map(int,parts[5:8]);assert len({l,m,u})==3 and all(0<=i<9 for i in(l,m,u))
+        e=tuple(map(Q,parts[8:]));assert sum(x*x for x in e)==1
+        f=(-e[1],e[0])
+        def project(i,j,normal):
+            box=differences[min(i,j),max(i,j)]
+            values=[normal[0]*x+normal[1]*y for x,y in product(*box)]
+            a,b=min(values),max(values)
+            return (a,b)if i<j else(-b,-a)
+        assert project(l,m,f)[0]>=0 and project(m,u,f)[0]>=0
+        width=max(abs(v)for i,j in combinations((l,m,u),2)for v in project(i,j,e))
+        assert width<=Q(7,10)
+        low,high=project(l,u,e)
+        floor=min(Q(2),Q(280,99)-2*width)
+        factor=Q(13,50)if parts[0]=='sharp'else Q(5,14)
+        normal=tuple(f[k]+factor*(low+high)*e[k]for k in(0,1))
+        co={2*l:normal[0],2*l+1:normal[1],2*u:-normal[0],2*u+1:-normal[1]}
+        return clean(co,-floor-factor*low*high,name)
+    raise AssertionError(('unsupported_new_physical_rule',name))
+
+
+# Additional independently reconstructed original support and altitude rules.
+# None of their discovery modules is imported.
+DIRECTIONS=((Q(1),Q(0)),(Q(3,5),Q(4,5)),(Q(4,5),Q(3,5)),
+ (Q(5,13),Q(12,13)),(Q(12,13),Q(5,13)),(Q(8,17),Q(15,17)),(Q(15,17),Q(8,17)),
+ (Q(7,25),Q(24,25)),(Q(24,25),Q(7,25)),(Q(20,29),Q(21,29)),(Q(21,29),Q(20,29)),
+ (Q(9,41),Q(40,41)),(Q(40,41),Q(9,41)))
+
+def rebuild(name,scalar,differences,angles,point_rule):
+    parts=name.split('_')
+    if name.startswith('original_support_height_radius_'):
+        assert parts[:4]==['original','support','height','radius']and len(parts)==8
+        i,j,sign=map(int,parts[4:7]);t=Q(parts[7]);assert 0<=i<j<9 and sign in(-1,1)
+        # t may be any rational number; no selection condition is a premise.
+        co={}
+        rhs=t*t-1
+        for axis,(lo,hi)in enumerate(differences[i,j]):
+            co[2*i+axis]=lo+hi;co[2*j+axis]=-lo-hi;rhs-=lo*hi
+        for k,sg in((i,1),(j,-1)):
+            co[18+k]=sg*(sign+t);co[36+k]=sg*(sign+t)
+        return clean(co,rhs,name)
+    if name.startswith('directional_support_gap_'):
+        assert parts[:3]==['directional','support','gap']and len(parts)==10
+        i,j,owner,index,s,t=map(int,parts[3:9]);k=Q(parts[9])
+        assert 0<=i<j<9 and owner in(i,j) and 0<=index<len(DIRECTIONS)and s in(-1,1)and t in(-1,1)and k>=-1
+        other=j if owner==i else i;p,q=DIRECTIONS[index];assert p*p+q*q==1
+        # Each absolute linear form of the other original is bounded by
+        # its exact convex chord on its already proved interval.
+        def upper_abs(ca,cb):
+            a,b=scalar[other],scalar[9+other]
+            lo=sum(min(c*x for x in interval)for c,interval in((ca,a),(cb,b)))
+            hi=sum(max(c*x for x in interval)for c,interval in((ca,a),(cb,b)))
+            if lo>=0:return ca,cb,Q(0)
+            if hi<=0:return -ca,-cb,Q(0)
+            slope=(hi+lo)/(hi-lo);shift=-2*hi*lo/(hi-lo)
+            return slope*ca,slope*cb,shift
+        first,second=upper_abs(p,q),upper_abs(q,-p)
+        ua,ub,uc=tuple((x+y)/2 for x,y in zip(first,second))
+        la,lb=(s*p+t*q)/2,(s*q-t*p)/2
+        mult=2*(1+k);co={};rhs=k*k-1+mult*uc
+        for axis,(lo,hi)in enumerate(differences[i,j]):
+            co[2*i+axis]=lo+hi;co[2*j+axis]=-lo-hi;rhs-=lo*hi
+        co[18+owner]=mult*la;co[27+owner]=mult*lb
+        co[18+other]=-mult*ua;co[27+other]=-mult*ub
+        return clean(co,rhs,name)
+    if name.startswith('original_stronger_altitude_capacity_'):
+        assert parts[:4]==['original','stronger','altitude','capacity']and len(parts)==7
+        l,m,u=map(int,parts[4:]);assert len({l,m,u})==3 and all(0<=i<9 for i in(l,m,u))
+        def pair(i,j):
+            ab=differences[min(i,j),max(i,j)]
+            return ab if i<j else tuple((-b,-a)for a,b in ab)
+        def norm_lower2(box):
+            return max(Q(1),sum(Q(0)if a<=0<=b else min(a*a,b*b)for a,b in box))
+        def dot_lower(a,b):
+            return min(x[0]*y[0]+x[1]*y[1]for x in product(*a)for y in product(*b))
+        def determinant_upper(a,b):
+            return max(abs(x[0]*y[1]-x[1]*y[0])for x in product(*a)for y in product(*b))
+        first,last,endpoint=pair(l,m),pair(m,u),pair(l,u)
+        adjacent_dot=dot_lower(first,last)
+        guard1=max(dot_lower(first,endpoint),norm_lower2(first)+adjacent_dot)
+        guard2=max(dot_lower(last,endpoint),norm_lower2(last)+adjacent_dot)
+        assert guard1>=0 and guard2>=0
+        denominator=root_lower(norm_lower2(endpoint));assert denominator>0
+        area_upper=min(determinant_upper(first,last),determinant_upper(first,endpoint),determinant_upper(last,endpoint))
+        altitude=area_upper/denominator;assert 0<=altitude<=Q(7,10)
+        length=min(Q(2),Q(280,99)-2*altitude);assert length>0
+        co={};rhs=-length*length
+        for axis,(a,b)in enumerate(endpoint):
+            co[2*l+axis]=a+b;co[2*u+axis]=-a-b;rhs-=a*b
+        return clean(co,rhs,name)
+    return rebuild_prior(name,scalar,differences,angles,point_rule)

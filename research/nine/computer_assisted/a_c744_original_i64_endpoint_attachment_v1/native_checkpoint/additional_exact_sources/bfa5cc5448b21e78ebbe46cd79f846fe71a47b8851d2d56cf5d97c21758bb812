@@ -1,0 +1,54 @@
+"""Independent physical-row reconstruction from exact correlated intervals."""
+from fractions import Fraction as F
+from itertools import product
+
+def span(rect,p,q):
+    vs=[p*x+q*y for x,y in product(*rect)]
+    return min(vs),max(vs)
+def intervals(cartesian,previous):
+    result={}
+    for key,rect in sorted(cartesian.items()):
+        fresh=(span(rect,F(1),F(1)),span(rect,F(1),F(-1)))
+        if key in previous:fresh=tuple((max(x,u),min(y,v))for(x,y),(u,v)in zip(fresh,previous[key]))
+        result[key]=fresh
+    return result
+def physical_row(name,scalar,cartesian,diagonal):
+    p=name.split('_')
+    if name.startswith('correlated_point_incircle_'):
+        assert len(p)==10
+        i,j,owner=map(int,p[3:6]);s,t=map(F,p[6:8]);ap,bp=map(int,p[8:])
+        assert 0<=i<j<9 and owner in(i,j) and -1<=s<=1 and -1<=t<=1 and ap in(0,1)and bp in(0,1)
+        def projected(a,b):
+            l,u=span(cartesian[i,j],a,b);v,w=span(diagonal[i,j],(a+b)/2,(a-b)/2)
+            assert max(l,v)<=min(u,w)
+            return max(l,v),min(u,w)
+        lo_p,hi_p=projected(s,t);lo_q,hi_q=projected(-t,s)
+        aa=scalar[owner][ap];bb=scalar[9+owner][bp]
+        pp=(lo_p,hi_p)[ap];qq=(lo_q,hi_q)[bp]
+        (a,b),(c,d)=diagonal[i,j]
+        nx=(a+b+c+d)/2;ny=(a+b-c-d)/2
+        cx=aa*s-bb*t-nx;cy=aa*t+bb*s-ny
+        coeff={2*i:-cx,2*j:cx,2*i+1:-cy,2*j+1:cy,18+owner:pp,27+owner:qq}
+        rhs=(s*s+t*t-1)/4-(a*b+c*d)/2+aa*pp+bb*qq
+    elif name.startswith('correlated_diagonal_bound_'):
+        assert len(p)==7
+        i,j,axis,sign=map(int,p[3:]);assert 0<=i<j<9 and axis in(0,1) and sign in(-1,1)
+        lo,hi=diagonal[i,j][axis];sy=1 if axis==0 else-1
+        coeff={2*i:F(-sign),2*j:F(sign),2*i+1:F(-sign*sy),2*j+1:F(sign*sy)}
+        rhs=hi if sign==1 else-lo
+    elif name.startswith('correlated_diagonal_unit_distance_'):
+        assert len(p)==6
+        i,j=map(int,p[4:]);assert 0<=i<j<9
+        (a,b),(c,d)=diagonal[i,j];u=(a+b+c+d)/2;v=(a+b-c-d)/2
+        coeff={2*i:u,2*j:-u,2*i+1:v,2*j+1:-v}
+        rhs=-1-(a*b+c*d)/2
+    elif name.startswith('correlated_diagonal_inset_ellipse_'):
+        assert len(p)==8
+        i,j=map(int,p[4:6]);v,z=map(F,p[6:]);assert 0<=i<j<9 and -1<=v<=1
+        (a,b),(c,d)=diagonal[i,j]
+        first=(1-v)/2;second=(1+v)/2;factor=1-v*v
+        u=first*(a+b)+second*(c+d);w=first*(a+b)-second*(c+d)
+        coeff={2*i:u,2*j:-u,2*i+1:w,2*j+1:-w,45+i:2*factor*z,45+j:2*factor*z}
+        rhs=factor*z*z-first*a*b-second*c*d
+    else:raise AssertionError(('unsupported_diagonal_physical_row',name))
+    return tuple((k,x)for k,x in sorted(coeff.items())if x),rhs,name
