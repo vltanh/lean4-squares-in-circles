@@ -1,0 +1,27 @@
+{
+  "status": "PASS_INDEPENDENT_LOCAL_NEW_ROW_RECORD",
+  "audit": {
+    "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+    "rounds": 1,
+    "deductions": 202,
+    "printed_rows_checked": 583,
+    "reserve": null,
+    "numerical_discovery_fields_used": false,
+    "whole_original_credit": 0,
+    "whole_mask_credit": 0
+  },
+  "record": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/CB882_NODE61_GENERAL_CONE_BOUND1.json",
+  "sha256": "454b0527a728b340f0e367f8fb722773e831e07de666cec9d970bd678fe17adc",
+  "new_row_counts": {
+    "general_cone": 1,
+    "incircle": 2,
+    "rotating_tangent": 0,
+    "rotating_cone": 3
+  },
+  "original_ancestry_and_complete_cover_checked": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "rotating_family_review_required": true,
+  "numerical_modules_or_producers_imported": false,
+  "seconds": 2.6124265370017383
+}

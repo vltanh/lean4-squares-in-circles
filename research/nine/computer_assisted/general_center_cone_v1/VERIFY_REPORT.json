@@ -1,0 +1,27 @@
+{
+  "status": "PASS_GENERAL_CENTER_CONE_PACKET",
+  "positive_literal_controls": 5220,
+  "rejected_literal_guard_controls": 17,
+  "weighted_rejection_controls": [
+    "negative_dual_multiplier",
+    "incorrect_outward_bound",
+    "actual_weighted_guard_removed"
+  ],
+  "actual_weighted_excerpt": {
+    "rows": 11,
+    "positively_weighted_cone_rows": 1,
+    "cone_indices": [
+      48116
+    ],
+    "proved_upper": "-152210579292145803850562075947/349597319631885916570178813952",
+    "outward_upper": "-456537/1048576",
+    "other_row_provenance_checked": false
+  },
+  "full_saved_record_general_cone_rows": 1,
+  "closed_endpoints_retained": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "packet_self_contained_for_new_row_family": true,
+  "full_older_row_provenance_or_original_ancestry_replayed": false,
+  "numerical_packages_imported": false
+}
