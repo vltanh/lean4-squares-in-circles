@@ -1,0 +1,9 @@
+{
+  "status": "STOPPED_AT_DURABLE_ATOMIC_CHECKPOINT",
+  "nodes": 89,
+  "manifest_sha256": "5984ffb9d97248d9f48802e7c0792be6779675d9ae220a62b7c987fc7f2af7da",
+  "underlying_highs_run_count": "UNKNOWN; exceeded1500; original launch only enforced256nodecap",
+  "budget_compliance_claim": false,
+  "whole_original_closed": false,
+  "source_bytes_retained": true
+}

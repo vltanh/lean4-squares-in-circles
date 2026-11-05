@@ -1,0 +1,10 @@
+{
+  "archive": "a_c744_verified_continuation_handoff_v1.tar.xz",
+  "sha256": "f2e86fcdfd3b1bfb9b83f0c49a4cf0308580b1625266570f30f4f81f2a975aed",
+  "bytes": 2643776,
+  "members": 282,
+  "published_base_commit": "a41572b",
+  "whole_original_status": "OPEN",
+  "new_originals": 0,
+  "new_masks": 0
+}

@@ -1,0 +1,1985 @@
+{
+  "files": [
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/MANIFEST.json",
+      "sha256": "de9647b32a2a138d24177e19ce4a9b414cdb143c07617b2eeb2f0f688043f25e",
+      "bytes": 890525
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/ORIGINAL_MANIFEST.json",
+      "sha256": "9d5ae44cb574ed3808f53cd61027b2babd4e8643228de40a7f75d10820ad2314",
+      "bytes": 912689
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00000.json",
+      "sha256": "2654a75a9e90bbc85623cce376581cc0c766fffb3ae9a0d77af26e1e64785e29",
+      "bytes": 1372321
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00001.json",
+      "sha256": "1da60adb389cd7b1a393fbad83941760080bd1be96c6acdc948ec31c16634699",
+      "bytes": 24602
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00002.json",
+      "sha256": "947210cb0cd791cb3ec32bc984f1e7fbd47159447b8a8a6324f4c7e8b3470156",
+      "bytes": 3569320
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00003.json",
+      "sha256": "9bae1eec867637864493ac9cd6ddd151cc1d8e5a99e5189a05ecb62f6e2312e3",
+      "bytes": 6798810
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00004.json",
+      "sha256": "12ebb37f10f42204600c658a2043e96e751ae89bf62dcbf76d6d62480261c466",
+      "bytes": 50644
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00013.json",
+      "sha256": "37754b2d17e38d5d5c265dabb02acc0ba9502dc7e3e870bc5183c1f064b123f4",
+      "bytes": 59588
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00014.json",
+      "sha256": "afa99f8bdff8b84bf220f7127eef2c592d7c813e62676c8f78557bfb5a35e7fd",
+      "bytes": 51361
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00015.json",
+      "sha256": "dccdaf30e459670c299b3af1303e682823482db7ba2e89548192720c6475c8ed",
+      "bytes": 50944
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00016.json",
+      "sha256": "d893f79d524fcfe3f04b591ea69f5660c732e57199ef02693aa2d01a5ba57b83",
+      "bytes": 24777
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00025.json",
+      "sha256": "b016058090047c61585efcd15a1e43fd65af1ad21d14ad916cc66aac91740e6f",
+      "bytes": 24872
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00026.json",
+      "sha256": "58b8d097ef5e18a39d944d7109ea6e717661ff9739ced05811a06791f49843aa",
+      "bytes": 3472038
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00027.json",
+      "sha256": "a33f8c80a3ce19f06614a12ef9ce1650fccc25264707e228753f6ef58e2aa704",
+      "bytes": 2152639
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00028.json",
+      "sha256": "2d82ea3211cc6747e4af8b5df835ce5f1b2ef017f7adcc3fd536292f3f6a72c0",
+      "bytes": 51218
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00057.json",
+      "sha256": "379a237af953d1a458a9628bae418c29d350f3253750712256ef3669d1c32955",
+      "bytes": 3173059
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00058.json",
+      "sha256": "d7fed6d0b27d7d641dd011ab7b092b96b2334a8f68e8cbc435a969b43c05b064",
+      "bytes": 3571872
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00059.json",
+      "sha256": "ef44aadac7723c52c5378723a0864fed5bf0cc86484a0bcf9ed294657d0ab992",
+      "bytes": 3864851
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00060.json",
+      "sha256": "f965fdf715d0c8e6f042c4172b6af37b788cb3b8d2a61127e172576339563344",
+      "bytes": 51380
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00061.json",
+      "sha256": "8beace886847dfd43134fd79189547ff06f76ee819169029778a224930c823d5",
+      "bytes": 1603710
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00062.json",
+      "sha256": "a6708925acd0bad173aa6c995eb29e8eb464acba0db24d46b000ee7af4aa3317",
+      "bytes": 25102
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00063.json",
+      "sha256": "b4ff162b9ee9412cd9580289e90a4c1fb012797645683e1000ea90b79d0d6744",
+      "bytes": 62634
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00064.json",
+      "sha256": "109fba11e1021e54780dd335b416f786746df93931b302b9f89c8db4d4dfa435",
+      "bytes": 25101
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00065.json",
+      "sha256": "7fe97d50e04b300a1866022eeab059eb927e65c7b996c0bfa9e7ae105742c51a",
+      "bytes": 1452168
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00066.json",
+      "sha256": "eb9437d652f78e96c762cfd55ad31fe247c3dde9490ecc7d209780f03bd91308",
+      "bytes": 52466
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00067.json",
+      "sha256": "b3ec7bcf7909f017be7f3624c13ae928b1a880192986a1e81d358e991aec674d",
+      "bytes": 7535522
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00068.json",
+      "sha256": "cab62bf0d815391c0e7cd999205071e43af06e957108b1ed8df9b92b3a2a6b96",
+      "bytes": 3019591
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00069.json",
+      "sha256": "334db7b2e64be1b9ca86763f1d8e46cc5fc5fb36b678776849219b8a9b8407c2",
+      "bytes": 4788448
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00070.json",
+      "sha256": "c4d932071f0b6b78157305582cec56eecfc218eda8d23cbae037fbdff6ab6d01",
+      "bytes": 52465
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00071.json",
+      "sha256": "df72fad6635dc0afc7a4db370b347dbd6eddba86f717328f17a860237cd99381",
+      "bytes": 7984844
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00072.json",
+      "sha256": "cb42d2853e277879eb1de8a06699fc7cf4ea6fa586189955bb061d7959bcdc6a",
+      "bytes": 3094223
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00073.json",
+      "sha256": "4b0b4e4190f6390956ee0157e1c78fe51e95addc0493bda8c13ea024582a27a3",
+      "bytes": 25568
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00074.json",
+      "sha256": "7f37c5a6c0fb8adec894c71d3cb6cde0e80aa090a000c045a649083692d2229d",
+      "bytes": 52774
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00075.json",
+      "sha256": "8d539e0bde2ed201795c2e06e37e46e8ddc99a4e1fc358a8f24ae78d2df36332",
+      "bytes": 25568
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00076.json",
+      "sha256": "8b2072871c96c4425f13c298f140ff239c79ddd524a3d9977c3a7acb4eea1fb6",
+      "bytes": 2409148
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00077.json",
+      "sha256": "c18f22a7a9b530aab97fc17b43cbc56aaccdc4d71df1f7e043a6ed71754c449b",
+      "bytes": 1523191
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00078.json",
+      "sha256": "ed83c7d08130fe6c37b9056ae16b2754283cc465364be75debaf64375792dbb5",
+      "bytes": 5466625
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00079.json",
+      "sha256": "4151398d6ff7dfc952c92a67615a518c949a859f57d823cb842e6a2e64142c46",
+      "bytes": 1881674
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00080.json",
+      "sha256": "ca40bbe5eea790fbcf8a8aeb75e688ff7b43ab540092b81a20549ea666f14a9c",
+      "bytes": 5419281
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00081.json",
+      "sha256": "0fc4b6fb168ab7e1fa235c5e033a36f03231970f0b95a9d97de80ee9234c29d3",
+      "bytes": 1985311
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00082.json",
+      "sha256": "ffb5faf062531e1b3b7828b6e492c5b1542518393a1d5312cb0f05686fb156ff",
+      "bytes": 6031604
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00083.json",
+      "sha256": "ffc574cb855054a062d73f612580d88240a97dfcc4979d730cd9adfe9f1894e4",
+      "bytes": 53390
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00084.json",
+      "sha256": "a03f260e9d574c0409bce94ec5fc7fc7cd17005338c0eb79030a3df504d82138",
+      "bytes": 25793
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00085.json",
+      "sha256": "edbf020bf65f309cc72af24e3f36fa2ee827ef38b74badaf00908df522c6abc8",
+      "bytes": 25794
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00086.json",
+      "sha256": "ec20d5fa185c692a08b1175a4a292eb1da7b02ddb64c5ba52656a3e44cc4d97f",
+      "bytes": 6497178
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00087.json",
+      "sha256": "63ee9176ff19de03f5af1ed3cb687cdebae2a0126245573e129495a112600aca",
+      "bytes": 2268115
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00088.json",
+      "sha256": "37c9660541183440e0a9c9e3da2b8ba76324784556a8a57de80195bac462265c",
+      "bytes": 5827823
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00089.json",
+      "sha256": "1f646f66682d47ae4193779dc8aae4b72368de70f99ce93f9e767f1be573522f",
+      "bytes": 2507747
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00090.json",
+      "sha256": "995edc3d3cd1489e6289d8808c835ca5ab9fb94798ae3fca2dd2383595a5413f",
+      "bytes": 7903198
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00091.json",
+      "sha256": "1644569732ad9f624220c6e31b77fc4fd10aa69f12b0db5007140d86a7f9e410",
+      "bytes": 2617130
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00092.json",
+      "sha256": "cf301e7e1ce0d952605a5daf523b8cf6549f82fae15212140b6ae8d8ce7e9f4c",
+      "bytes": 2716817
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00093.json",
+      "sha256": "b7f41acd1b9b69374d057a89945b681a9f04bff8f0336080dbf22c9bfb14fd83",
+      "bytes": 3585299
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00094.json",
+      "sha256": "9ef2dea96ea3dd1d6c7aeb7c8f2ec53b53123ba96bbedc9febfad2cce28a6171",
+      "bytes": 2587701
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00095.json",
+      "sha256": "fadd8bd1da680ceb1e1afbcd719dc911987cb9c6fb378185dcb9aaecac856cce",
+      "bytes": 3933823
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00096.json",
+      "sha256": "d14c166be0d749b747e5472d2695493be3adfdd1644cacdb436fcbe0fd780b17",
+      "bytes": 3927034
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00097.json",
+      "sha256": "f0cc3bc7698f1320da42f4beb44304e9e89d3fa99b807432a17463ad1820cd81",
+      "bytes": 3029938
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00098.json",
+      "sha256": "b402beac553fcf948adcbe6e8c8e3f5330851cd9afbc60752a77511c39a53ae3",
+      "bytes": 2876944
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00099.json",
+      "sha256": "73833319c5ddb60f29e7554524e29e7bd0f1df7eaac903083b62dc082e006565",
+      "bytes": 3366405
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00100.json",
+      "sha256": "40bb6b85d1d461a9e2e7ee873e45f423158d1dc9d8cc653ede36d11ef1c008c7",
+      "bytes": 3350198
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00101.json",
+      "sha256": "e7a85a2241fbfe9f935cc72a5df43ed41bbc0dc757f24c4fe43e1a4da890c30d",
+      "bytes": 3793213
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00102.json",
+      "sha256": "8c013f52459ecf85f99c0a3a15f519824684558054fecc6d2b4755ee87179231",
+      "bytes": 3516385
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00103.json",
+      "sha256": "a02bc5d12d864db9258da3f9e0ca5a1d88d22ec3f5b28cea979fb819cb151ad1",
+      "bytes": 82078
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00104.json",
+      "sha256": "1a4a279274dcee7db21b70945cd27eb9afd969aaf9bf22d19eb7c3ae0942bede",
+      "bytes": 3743209
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00105.json",
+      "sha256": "8592b24800de8c6b4a0159caf772986bcfa9fc1199212764bbd0a55391d4c243",
+      "bytes": 3696912
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00106.json",
+      "sha256": "e505c628af7b12baf71b6a27e751bf0247806796601edfc8b3f8582ef16b5b55",
+      "bytes": 3501107
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00107.json",
+      "sha256": "f10df5f33ad4e45bbd1b667e67c3606970df6ada694ac76f761a126e05b4506c",
+      "bytes": 4035021
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00108.json",
+      "sha256": "b255d0bcae64aa649889c13ca4da4181f1a393e61c39eab696b56816bba27db0",
+      "bytes": 3839418
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00109.json",
+      "sha256": "99cef45dfae92aa1f5ed1cd0cff2606d636880000bfdc636760549d3f24b2fc7",
+      "bytes": 4081476
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00110.json",
+      "sha256": "9e8634a7dc873d014df53a5d5dc4d4b2688482fa47c4fe67adb7886f8b790b9b",
+      "bytes": 3779956
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00111.json",
+      "sha256": "66675dbc0697925736c93705d37e25470d9f33f2248bdceb4484f16a282322c0",
+      "bytes": 3413820
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00112.json",
+      "sha256": "eae77278ef58c31f359bbe22ba29c624435c4e5debeabe6d207c924c716ee0ab",
+      "bytes": 3105305
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00113.json",
+      "sha256": "9f7462d843512fe2477e66678165c553abda9c9cabaa795a5417980182df74e6",
+      "bytes": 3791969
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00114.json",
+      "sha256": "15890b7a5d15b7243e2a204a20b581e45e23d7095edcc1ee473d34cb8dd59945",
+      "bytes": 3728451
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00115.json",
+      "sha256": "8a90e3dc5e967315205b59753d0936602f328370363c90412fa0e47b05f2e947",
+      "bytes": 4099321
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00116.json",
+      "sha256": "82ee9445d04493254541a5b556218a822d93177e7cf16651a0619b7a758fd34a",
+      "bytes": 4030444
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00117.json",
+      "sha256": "8fb4dda68a3b88ee5f6bc073880621d3902c87ee4b70dc62459560023a65467f",
+      "bytes": 3850793
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00118.json",
+      "sha256": "3367631aac28961a7193f7d535f8aba62858ef30b2261fd9f43d4ae53fc56060",
+      "bytes": 3738038
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00119.json",
+      "sha256": "788efb779428ac28d386ede09a0878d220c75cc7319f7fa01d214d5a5139faa2",
+      "bytes": 82995
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00120.json",
+      "sha256": "54e029817cea2f41379ea616e2c29cba18d7286f13cedec008063f31b0912d62",
+      "bytes": 83017
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00121.json",
+      "sha256": "ae3d5fe2e0a8e54938f4ed34c09ff40159c2193d43fc7788fd5a45e5fc824749",
+      "bytes": 27010
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00122.json",
+      "sha256": "a1fdb25540ed8caed0c38644ae40bf5d25b2e6273abd8f70985c5bd2cc620efc",
+      "bytes": 81110
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00123.json",
+      "sha256": "cd1b4e9b8e69bd3a5afc739f7e00c458a05a3cfbb945ba217d66fa32115afb11",
+      "bytes": 27010
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00124.json",
+      "sha256": "38be26386565541ba6122499f74f6436ad74a6d2f38a042e8bf85f66dd4ca0ef",
+      "bytes": 27012
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00125.json",
+      "sha256": "70159246837b96a31696cd03407d2b9c7ec3c2fd75276ce06fa8d35f243022be",
+      "bytes": 27010
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00126.json",
+      "sha256": "88e09326d08926255992d4e30ed06ad12403ec45280a9a17054d4019fe53d250",
+      "bytes": 26997
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00127.json",
+      "sha256": "61e9c12b436056f0844828da1fb8b625770a8f70f61c7c844c1d7db14b35bba4",
+      "bytes": 27010
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00128.json",
+      "sha256": "148248c88255b4527d7d634c5d0e124c1c1281fbac1d3faf6ed3eb8560e467bf",
+      "bytes": 85807
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00129.json",
+      "sha256": "e26f13c93a2b980092871d0ccfc39334d379ff2c8d7785c662dcd710fa4ca4b6",
+      "bytes": 3733971
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00130.json",
+      "sha256": "3a81e5c3d1db34900d4a7cdf7044003939ce1bc73b2ba3e6d964a29994de3f44",
+      "bytes": 3411924
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00131.json",
+      "sha256": "53604df8f176466ff76064a6b41d3097486b1e937fdfabfe795462d5c9afe3cb",
+      "bytes": 4111768
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00132.json",
+      "sha256": "dbab6d8d499ca2e060d6641c9a40b3d97f21ec9c1385054d0545bf9cdb460466",
+      "bytes": 4008297
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00133.json",
+      "sha256": "d0b8648a573df53162f8015830b5dec3bb4942a2ff45113b5089926b2647e40d",
+      "bytes": 3617259
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00134.json",
+      "sha256": "614d4b44c789ec5f5f18f9d9097a12ecfb1772191182520046fc4f6e37eb8174",
+      "bytes": 3568074
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00135.json",
+      "sha256": "371364100df74e99f63e9866649f98cd47d82f3bfb33cdc44557a5244b42d296",
+      "bytes": 4123505
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00136.json",
+      "sha256": "cb746e598bc4ce2d8a5a8389bd48f8c7da822624999021ed5f86de93cdd64f2f",
+      "bytes": 4185743
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00137.json",
+      "sha256": "65825c314f3657eb4225a0cfa7d2b83eb8b7a515490067c8a3a372f789731618",
+      "bytes": 4170776
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00138.json",
+      "sha256": "d6b27a6a3fb20111b06f650cac4a050b12dd90e678254511c515439c970dc4de",
+      "bytes": 3848829
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00139.json",
+      "sha256": "cdfa98ee7d8dabf90a3f8ef7934a71f6968546d0b0d0e1e2dad9f6b3e47af699",
+      "bytes": 27164
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00140.json",
+      "sha256": "10619398b9e4a6daf1f259cc8f524682a3edfbe6735d47322a01fd84722c4185",
+      "bytes": 85984
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00141.json",
+      "sha256": "14dab68718e6b345c8e4e361a7d01c8239cb1fe770a7f095a5aab713e7207ed8",
+      "bytes": 27164
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00142.json",
+      "sha256": "b6e3b5d0abf98c38b5ea8d8b79b5a71f3bbe7f83e09dd6f919868e7695ebd0e7",
+      "bytes": 27165
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00143.json",
+      "sha256": "f84746b84e760e90c48d0bd92933b4351df48574090b63de7810599fda3276c3",
+      "bytes": 27164
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00144.json",
+      "sha256": "bcfe09cea351aba69497d4c0ddf0ed783604af2b465eecf15b402d4c3be5f534",
+      "bytes": 27150
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00145.json",
+      "sha256": "7c72702e3c3b05ad84a0f4fe6edf1107bb4c837c2a4c9c6a367a3113badcf2ba",
+      "bytes": 27164
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00146.json",
+      "sha256": "705ce38d908757c3544b12ea306d8d0da3e97d4600b1e809c0800d00e0f4afb8",
+      "bytes": 81608
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00147.json",
+      "sha256": "cf9e6c93778ae2fc2b8b8a83801f98ed3d4a14c0741e0bc03070b687e3b7a118",
+      "bytes": 2741994
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00148.json",
+      "sha256": "dc18eedb0f46bf3d58bcbc22e9b62dba94bf2b35649b478af1117fe235de7aa9",
+      "bytes": 8773001
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00149.json",
+      "sha256": "e77a12d5aeb01caaa07cd843e48ad37d085c96ab6ed8c9e108cdcf25e14cf9f1",
+      "bytes": 3126103
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00150.json",
+      "sha256": "dcfd9a1bd0d12523cb177daba3786ad09237c57dc288f7b6409534d92683b3e9",
+      "bytes": 3078575
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00151.json",
+      "sha256": "a26aeacf2a80e297115cfbaeb26982dba9f7b5b123d4680535e2e417c92e19ad",
+      "bytes": 3691473
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00152.json",
+      "sha256": "401443b62893bcdac3252e7d58b674a4634c842f64650b0cda587f925b0dc5aa",
+      "bytes": 3539754
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00153.json",
+      "sha256": "015ad867b8696cc8489fc7b319a2a9b5fa3bc9eed0453d0d64bc6b3e4d68991f",
+      "bytes": 3973588
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00154.json",
+      "sha256": "644e2ba9f86e00d5ddc6caae731daf64d5b9980d970a6f3ac1a5784dcaf8d06c",
+      "bytes": 3993737
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00155.json",
+      "sha256": "b0b594c3b0bb7aca0aa20d17fc2c8bfe4d92b9acd070369ead567d6c03b18835",
+      "bytes": 3545814
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00156.json",
+      "sha256": "0ee8d1e43b9e365c09b8dfcdafec3c1b5096192ce8c273bec127e6eb5ff8ffec",
+      "bytes": 3518047
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00157.json",
+      "sha256": "30490ac8e6157e26366ea58fa34ed6460974bb8283c05fb4e0dc44da5e653218",
+      "bytes": 3760523
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00158.json",
+      "sha256": "1231381e2677abb01ac2a9991f22b8cde071ea962e39848a0a44d5a090def59c",
+      "bytes": 3723692
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00159.json",
+      "sha256": "617a36e55420cef12304824e2c5ec36263189a9ad08d8b839d1a8f7bc9f91da2",
+      "bytes": 4032106
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00160.json",
+      "sha256": "4877e6d41d091524cf6dd7f22103f2cb5fa9441a2ceea4fddb620407566193f2",
+      "bytes": 4024552
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00161.json",
+      "sha256": "8ccd67b1de93abacaa793a07cd44aee9f4cc1a55612c875cdfbe5012413b8aee",
+      "bytes": 4040537
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00162.json",
+      "sha256": "3fa2f2d0bf25f35f274ed9c2b9a2215bc1f9bd218e915ca787efa7c30f1fc7da",
+      "bytes": 3971482
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00163.json",
+      "sha256": "5811ada7d35e96b2321a5371790f06ef4b14a42087650e087fc6885db4929e15",
+      "bytes": 3664650
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00164.json",
+      "sha256": "22aab3812b3958bfcbdb9648be6e5866692c20d4c5e0e80b189b0bb870ecf521",
+      "bytes": 3652732
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00165.json",
+      "sha256": "68b807739f045c4455a84ed22a3ff51e87a34aa2d55c190b182ea732d7ccb9b5",
+      "bytes": 4000278
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00166.json",
+      "sha256": "5234537407c4e8150603a99153a98c88e6db94145797e8261c7eeb7358f537f8",
+      "bytes": 3959400
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00167.json",
+      "sha256": "e155d4b08bbc1f9248449d0242f71abfd10cea19d59781d479c0f72db6e83c60",
+      "bytes": 4060439
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00168.json",
+      "sha256": "7a2b6225c1e5e5e194409acaa08181bc8cf591c7d03244e1c0670d25cf51fc99",
+      "bytes": 3975177
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00170.json",
+      "sha256": "cc0c3ea438bdf319f9f453e3ec202260bf1d8cce588ca08da5812c08ecc442e9",
+      "bytes": 49687
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00171.json",
+      "sha256": "99f26f4603698567f0a02f3f86cb1fa91b1b7b5524af8cc52e5d0ac878bc75d5",
+      "bytes": 49667
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00174.json",
+      "sha256": "cce825de81649463d540346bc5ddb6a52aa1b81ca66203518cf658f7844bc143",
+      "bytes": 49649
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00175.json",
+      "sha256": "94a1b8c39839b23f2db1a953cb681417fc4b7ce849f1049089d5f573dff09806",
+      "bytes": 49627
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00178.json",
+      "sha256": "8c4a19dfd5e4b5917da85fff9c4277b50d5be99470ce831e26cca8115918ae37",
+      "bytes": 49607
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00179.json",
+      "sha256": "634e3d3effd6e8296e22563205f02b077be99531c24af4c5d6ce76636ed040b5",
+      "bytes": 26905
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00182.json",
+      "sha256": "e951e3d94b3e3300fe6a4296af4729768cbf9279aac48192e7062abc43e8f3f1",
+      "bytes": 49041
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00184.json",
+      "sha256": "f2cba590d705756dfbc56caaa4029128b062c909f0d61af8ad2dc520aaa263e3",
+      "bytes": 49019
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00185.json",
+      "sha256": "d76be19311be45c147727f38f07746a9c4840097f5fc0ce6608787c455e74315",
+      "bytes": 48999
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00188.json",
+      "sha256": "9e0153b3d0d02558d09aa64302911cfca63384fc8c750c7bf155647780ede04c",
+      "bytes": 48981
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00189.json",
+      "sha256": "38606fa3a717eb2f61e8aca97ea96ebf4dc50fe4a030ac09914a2fbecabce639",
+      "bytes": 48959
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00192.json",
+      "sha256": "9b9c4e6e6641472ad61b1c7d427f0e66f50f21312f603425f5b357b82916f91c",
+      "bytes": 48941
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/c_continue/extracted/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/node_00193.json",
+      "sha256": "0846d460745fe9886f38df8f063eb5a6a7dddd4edbb887b31a3c0089f29193bf",
+      "bytes": 26562
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/ANGLE_TACTIC_STOP.json",
+      "sha256": "a9a93c768e0218c770b63e2fa710abc18fc73fdcdb74c928adaa19bcac3f1dd0",
+      "bytes": 283
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/CB882_BASE_FRESH_REPLAY.json",
+      "sha256": "dc941efb298cb1f1668575e5eaf686145620f6b66a204cfb3fee4eae5511bc27",
+      "bytes": 808863
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/CB882_BASE_FRESH_REPLAY.log",
+      "sha256": "aa20fa0042f5a2a209bf79899f9b7b515d4e9e92b2e7bfc9e924e6a09642aa5f",
+      "bytes": 488
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/CB882_BASE_FRESH_REPLAY.manifest.json",
+      "sha256": "de9647b32a2a138d24177e19ce4a9b414cdb143c07617b2eeb2f0f688043f25e",
+      "bytes": 890525
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/CB882_BASE_FRESH_REPLAY.original.json",
+      "sha256": "bb9ba6e9a93c71f93dcfe5e372a6ddd785447ceb29a20d99c6a94f49709151c1",
+      "bytes": 150566
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/CB882_BASE_FRESH_REPLAY.original.log",
+      "sha256": "579d3f383080f297f71192ff9c0d2800c7e512e4d5b0c89a25f85f146414a64e",
+      "bytes": 1638
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/CB882_BASE_FRESH_REPLAY_fresh_height_exclusions/cb882_old_checker_exclusions.json",
+      "sha256": "cbae62ae0a0ed785f4abbc93b88615a2f69668b9fe85df637dafe6c227678c24",
+      "bytes": 249470
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/CB882_BASE_FRESH_REPLAY_fresh_height_exclusions/cb882_old_checker_exclusions.log",
+      "sha256": "deac6b84a2f242276168cdc1183b4edf35ac5bd5e92ae94a7531a8931874bd20",
+      "bytes": 2187
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/FINITE_FINISH_ALLOCATION.json",
+      "sha256": "5e1e54c487875056c59502ddc68e4b5dafd9e1b6105e3a163bae8a9495a172c0",
+      "bytes": 420
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/abid177191_bounds/MANIFEST.json",
+      "sha256": "49bb2e6f6d016e569b10a9f802693b45297805ccf878fa57688d85933063593e",
+      "bytes": 926675
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/abid177191_bounds.log",
+      "sha256": "c5b5c90cda8f291fcb296bea90c6b7e12023bc8b4e92b28b3e1ec3c2c9fa2994",
+      "bytes": 116
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/abid177191_zero/MANIFEST.json",
+      "sha256": "cf3f5fc0127cc50b38c91e42298e8534dc8b7b5e6518ead4372b7899a7150df5",
+      "bytes": 926998
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/abid177191_zero/node_00177.json",
+      "sha256": "a618d5de063146089beb219147f7e3462ab27761bb6c981c02d220a3ca2494d4",
+      "bytes": 51518
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/abid177191_zero/node_00191.json",
+      "sha256": "13d2ebbaf278c03df10521cdff02bce3f67a2c3b2ba6b9877f2abc8010373b74",
+      "bytes": 50765
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/abid177191_zero.log",
+      "sha256": "6b678fe8c15688a17edc38c6658873452d475ca1ddc499b3b1356f1448f6676f",
+      "bytes": 177
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cb882_FI_then_frame_angles.py",
+      "sha256": "1178978512b0315f5b2183ceefab5d67ff08ec50ad80fcd843397e8e33c275d6",
+      "bytes": 7827
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cb882_bounded_sat_layer.py",
+      "sha256": "b468a2a63bcc060ff334d45518197fa8533300b06f3094ca7b453f51e4ab3d92",
+      "bytes": 7517
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cb882_finish_five_angles.py",
+      "sha256": "d1e08e50636e76437d292ba74656c2aeacabbef921a8fcf047aa5deab8830a8b",
+      "bytes": 8040
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cb882_original_complement_bounds.py",
+      "sha256": "9b5b828c87f4ac2467580a7cb331aa756c24ed9525ad94e539f3cfb98e7c4550",
+      "bytes": 6583
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cb882_original_complement_sweep.py",
+      "sha256": "20a0de2415da316c37503a1d26115b1f2301559c3c3214abccc60f73e8998e08",
+      "bytes": 6556
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cb882_targeted_frame_angles.py",
+      "sha256": "05389942abfa746ac4f4f0bbc56667504edbafa22ea9eed39e9dabdb111ee17c",
+      "bytes": 7634
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cb882_targeted_frame_round.py",
+      "sha256": "ad31727d2a8fdc0cb4dc7a0e5e9bca38710aa2e5f305c18bebfe8b4a65cc359e",
+      "bytes": 7044
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cb882_targeted_round.py",
+      "sha256": "2c062127523930c3820c426863f3005035532b5d56d587b953ed3aaa8089be5f",
+      "bytes": 6537
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cb882_two_residual_sat.py",
+      "sha256": "ee8e352a4792b7434b6d3c0adc6d1d58e11380d3c7f37b2b55647b68c2fd6908",
+      "bytes": 7592
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/LP_CALL_COUNTER.json",
+      "sha256": "e65e03f6a4dc75f0225cf735512efe9b5075c152288f554ef6be70595a69911a",
+      "bytes": 27
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/MANIFEST.json",
+      "sha256": "d409a65a08e5c2cc4ec8c046c306cf92d2f5408eec28f4ec4ff25cfd3283aec4",
+      "bytes": 1001268
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00203.json",
+      "sha256": "e6e237494a9c44b6a2fc1e22f7ff549ee34d99e04218215b88df47f486d92d31",
+      "bytes": 55398
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00204.json",
+      "sha256": "10e4e1719070093f32ee57221563598a81e72fb816d4fcb2f057ee488afff38b",
+      "bytes": 55390
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00205.json",
+      "sha256": "294b5d24fd15631120ac5747a07199f6c05bc5da220571b8860c934ebb1ebb4a",
+      "bytes": 55398
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00206.json",
+      "sha256": "15e52f0b4b4321fb55825a4c868096866046131431160bf873d0c326951cfeac",
+      "bytes": 55575
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00207.json",
+      "sha256": "6cdedf8795be87aca150c879f594f54f36b909bafef7be6f3d845ad8a7abaf73",
+      "bytes": 55392
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00208.json",
+      "sha256": "a486f5ad7125b236be82d5377f1e6e8827c62264c3844cce8e350dc090ddf218",
+      "bytes": 55309
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00209.json",
+      "sha256": "4979efd0c0e65428ff6f2ca9dd28d9535c61de65351bee1b2653760fc45fcb3c",
+      "bytes": 55398
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00210.json",
+      "sha256": "becfd4f3535bcf2d5d47cce675b0b4be41e60e71249aeac7be8b73fce4b4cd68",
+      "bytes": 55566
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00211.json",
+      "sha256": "0eb21a86bcff2ec868f05f3ec6a89c2d93aaa09d77a9e9ec735f0bff14987373",
+      "bytes": 55238
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00212.json",
+      "sha256": "c91adc58f55ecdec65ad71ca4f05298d1dd87c17e62f270a2bf3238f324885e6",
+      "bytes": 55236
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00213.json",
+      "sha256": "4cca88694cc4653ffcbab7c3a4d4aef6ae9313f2219502cee83273a8fb8fc121",
+      "bytes": 55235
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00214.json",
+      "sha256": "29f651a9728039d71fa25b57bce5a28035467e57f938da4702e73e884ac06eb0",
+      "bytes": 55466
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00215.json",
+      "sha256": "277cebc6f019f9de8884fc6ab2f332425414a328c1ea677f2fbb074c348756b9",
+      "bytes": 62215
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00216.json",
+      "sha256": "d72f1b1ea29d55bb6935b0ab75316ad94edf3e4e65a435720ba72350c3fa0032",
+      "bytes": 55143
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00217.json",
+      "sha256": "6e2bcdb0c520c65f42b4c27489993fb78ff62e3fbf2e215966b5512fb4bed1cb",
+      "bytes": 55235
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover/node_00218.json",
+      "sha256": "3e6a9f457919008ccb91dfea88fccc570c5bb412777f083fa410b09edc3bc08d",
+      "bytes": 55479
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_cover.log",
+      "sha256": "a7db40666053b4a9c7b00315ce08eb97f8522288af6756e8851de846129233b9",
+      "bytes": 1475
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/LP_CALL_COUNTER.json",
+      "sha256": "f48c11ada28edfd255fbe7b1a475d88df0aa8148bbe00d8acb490dd067a7b9b6",
+      "bytes": 35
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/MANIFEST.json",
+      "sha256": "7c81c4d36179bca83376ce14ba4ba78e7c69b78a043de0049675b91379511e16",
+      "bytes": 1067027
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00206.json",
+      "sha256": "2483d30732cd1aae555af303f2319a04a09b1cef3fd3bcba4dad4254b7e495df",
+      "bytes": 55574
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00210.json",
+      "sha256": "fba404add8c42785be3991f5790cc54784a7a715b52955a6366d8a7416f8dbb8",
+      "bytes": 55572
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00214.json",
+      "sha256": "c1d7da2567b310a7bc83d11acc52515a81719bab5ac057722a2beef0a1eb5b2e",
+      "bytes": 55458
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00219.json",
+      "sha256": "c50ed8764332760ea2249a9858580f188841855b8e103f6f10a1453e2a682955",
+      "bytes": 55673
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00220.json",
+      "sha256": "70abac326aad3c30eb1b51b5e8cfb99f505efe5c167e2b886ef2a2114240bc69",
+      "bytes": 81662
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00221.json",
+      "sha256": "b8f027de4a035ad813bf30e207021e09a51852e3acbd9be8683d96f16cfcb4bf",
+      "bytes": 55919
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00222.json",
+      "sha256": "5c6b17acbcbd56bfd0e489e9376baf449f2e403d357a732783c97723ae608045",
+      "bytes": 55909
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00223.json",
+      "sha256": "b3a1e3852c393ca82f11ed026495b8df1ae293496788d644f435437159fdda09",
+      "bytes": 88254
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00224.json",
+      "sha256": "d877c41afd4cb6fc91bd3ceb03b2ff194fb44b9d59348afe67dd08282e6438f9",
+      "bytes": 88972
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00225.json",
+      "sha256": "9d70ef13f481cf0180d7b4f67b3efaa9decc52b6e7dae9e2889e954c2720c2d9",
+      "bytes": 88275
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00226.json",
+      "sha256": "1910c548823c400d21f960ce91db976eda3215c175f48781cefe0637a9ef7154",
+      "bytes": 55954
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00227.json",
+      "sha256": "1affff5175c7488c9efbbde6080348bb2ec380abfd76f33c50e36224e82d09a8",
+      "bytes": 56272
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00228.json",
+      "sha256": "d48c5e58a67aabee9d7432210da8997601e03ad86260cc9c50e60c4f8b600a09",
+      "bytes": 56192
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00229.json",
+      "sha256": "a6a994e7115fc59ca25ce26cf4b9ca770ba757e4be8d9707457b0167433e55a7",
+      "bytes": 88837
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00230.json",
+      "sha256": "7e54d4dca12bd605f375c686d4365a44179b2d62aa8fb4d56ce3203d591eae03",
+      "bytes": 56484
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00231.json",
+      "sha256": "914e5355318036192f3bd6e5fde80e296eb3daa3c7dc5f9f60db31a84d904d2b",
+      "bytes": 91746
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00232.json",
+      "sha256": "bbc695e5e124c6de23a4b2befafc97dc8a95df388945ab6f19af1667a991ddba",
+      "bytes": 88198
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00233.json",
+      "sha256": "eb1112da75af78000faa6d38b631486cc9e4f0872fc705529f8b24fb290dfcf6",
+      "bytes": 90556
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00234.json",
+      "sha256": "b5e051f912da0dd5939a1c706a66d13a58263950453b517930066094f976556d",
+      "bytes": 56425
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00235.json",
+      "sha256": "cad8aadb1123e047cee230bede1d36234c83a96c0f191d882a2656fa3e7c608c",
+      "bytes": 89572
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00236.json",
+      "sha256": "c94f07241d2b7549344b68addb5a1cd0c7a376586d8a152b8335055a021ff4f3",
+      "bytes": 56555
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00237.json",
+      "sha256": "b7a448081009399d719ab4e6d27e1921365182abc6c36aa4a7f6e5f790c1ef29",
+      "bytes": 91567
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00238.json",
+      "sha256": "6b54178d87782d60bdf9958669c1a9a878c860052aa2ed898e78ff3b6ed79dfe",
+      "bytes": 88303
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00239.json",
+      "sha256": "6d0b471caa452ff9a3648c0cdf292048be23a8009b26f6dc77c44ea9e58d86de",
+      "bytes": 88399
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00240.json",
+      "sha256": "2d901b0becf38ff008f964f5e9854a1f50596febf14c0746227ea058dd73e991",
+      "bytes": 55839
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00241.json",
+      "sha256": "44bcebbe9f1067d896f384c88c0f2d58529158e834eb458eb158b1e7d8157835",
+      "bytes": 55835
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00242.json",
+      "sha256": "cd7d66c96f166f89526694b6669ddeda06e0b8fb42fd132da9c1793f91e790f4",
+      "bytes": 80866
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00243.json",
+      "sha256": "d847e1a09e0bc4cc7b20897866b7df6ce8f474cd11983e2278d5937e7c7f9894",
+      "bytes": 56176
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00244.json",
+      "sha256": "2a0856fc356b2cef9cc5acc69b2061130f50aaf4b124a6e5ea8be56e37ec5b6c",
+      "bytes": 56051
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00245.json",
+      "sha256": "7eb19e21b9e197e2aad3f59278ecf769125860084e15c69c1d6083856ce3a89c",
+      "bytes": 88845
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00246.json",
+      "sha256": "584a13f2eb6fd682015647ec14df34f42b1f085b1b7f5172c9a5e0c5dd42c939",
+      "bytes": 85732
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00247.json",
+      "sha256": "55344bb2ba1cafa72fe91be48ee8d0f976d4abf8a37050674f293dc51e3b2e1b",
+      "bytes": 86575
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00248.json",
+      "sha256": "5fbe882b521bb07ac4f60216259774d528ef4f7ad47e4fd500ca32ad44449657",
+      "bytes": 56157
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00249.json",
+      "sha256": "630d3b1a560d814d101e51158945337c2746c9a83b0e03a4b6396e45c3531a5d",
+      "bytes": 56403
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00250.json",
+      "sha256": "82c96a15caad403e340fb9addca7c5296182b629c5bd016bd61c49b187a70507",
+      "bytes": 56395
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00251.json",
+      "sha256": "7d8be8e4926005fc7ccb06e7c97fd1eecd043f4093738590e64cfbfbf8fb594b",
+      "bytes": 91189
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00252.json",
+      "sha256": "a478304656d8c29e922716cc2226c7e8c679fb8472142804340b787937959a80",
+      "bytes": 56568
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00253.json",
+      "sha256": "b5ed55eb64d32534115230d045bafa8fab226b1fb853a1872cfb93d0ee7c3499",
+      "bytes": 85633
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00254.json",
+      "sha256": "0e355521ba80cbe54b8e14ef3babf95ebec54a3bc23a77557d0af19260b09982",
+      "bytes": 88808
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00255.json",
+      "sha256": "c9a91f8fdfdba3150ddc9f8f235207ec8e05c0327d531763f080aac028360f9c",
+      "bytes": 89047
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00256.json",
+      "sha256": "cca14a0c5f2ea4c337a2178405483e90db1735b212a10e9127e75bff35ee4ac6",
+      "bytes": 88908
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00257.json",
+      "sha256": "89275fa0fca0d5fa3ad7efe56322d1db2a347a44aadfd022b381217a8c582777",
+      "bytes": 55591
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00259.json",
+      "sha256": "ed931bec20940fa30d57bae05dc6dfaf88e22a3e761fa5ad40b4d55f40e08f61",
+      "bytes": 55730
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00261.json",
+      "sha256": "5a4b95ac6102ed023dbc6a15116a6ae22059c80a3d3b8d865777c029b3e576d5",
+      "bytes": 55868
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00262.json",
+      "sha256": "0ecc9c09b3a1e172729cfe431c8176c63ee9c33c534d171c2385212601ae1a4b",
+      "bytes": 55883
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00263.json",
+      "sha256": "7fba2d7420bad33712f8edae44930550f4fe5add89f695811cb661569128c224",
+      "bytes": 88240
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00264.json",
+      "sha256": "e352ca596d6fc82fa9ec5ff35b2b2fdb20c02efe3489639ac1bfabe473f97527",
+      "bytes": 56164
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00265.json",
+      "sha256": "38cb6f1958d914e83b78f2acb8e150ee7964d81e2a47ddcaf9728af5329967cf",
+      "bytes": 90048
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00266.json",
+      "sha256": "8c5e98a4d3792a5216e04c8ef909ec68723fe0c158937f6eba497ffa96503239",
+      "bytes": 89930
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00267.json",
+      "sha256": "e1df80e539e10e9f337be3a17ad656506f1adb8f0feb5ba9d64721eff95d4fe7",
+      "bytes": 56052
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00268.json",
+      "sha256": "c9426055f71bf14638d8d5a8324f49517c4c9fce30a23e242e455ac619c52798",
+      "bytes": 56038
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00269.json",
+      "sha256": "206ead7b5cd43c8d5d6b959c717e79ce2073d61dc0c457a07f05df2fb2cce5bc",
+      "bytes": 88744
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00270.json",
+      "sha256": "584490acf0d8cbd5c781d5eef278566fdf0aca3979535b9d98ebab038b7a2d96",
+      "bytes": 56295
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00271.json",
+      "sha256": "2c61f46eafffd2a645449c6649132d30a0976302fdb13b908dbf04b05215b4ab",
+      "bytes": 89049
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00272.json",
+      "sha256": "ce82920a9e11b7dfdd6646e99338a931e7a18c5d2293cdaeb22561e2fa96935f",
+      "bytes": 56512
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00273.json",
+      "sha256": "d75760bc93c1a4e11793d23ddac1c07e05bc68cebaa2e6343b491e253d25f7ac",
+      "bytes": 90060
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00274.json",
+      "sha256": "efc9f09ec9a92516e5583186bbc5487befd02b88608785ad7b1fec46c8e53cfc",
+      "bytes": 56632
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00275.json",
+      "sha256": "f6496fa7b65959abfe153538fae1fa0c37d22271a137ce3215a4a7dc12181d72",
+      "bytes": 89501
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00276.json",
+      "sha256": "1fb85e8e04121484229ff04765c48a4e2c9517b5e229ed0495cc0ae17641fbf3",
+      "bytes": 56843
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00277.json",
+      "sha256": "b72e9ef9acfed5edf606b971f7f250ba33f5266a53a5ec2459a0a6e906e09c44",
+      "bytes": 90783
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00278.json",
+      "sha256": "605d55b70d600956435a2d171e282b3a593b721837462c5b08fd0422fc0bf1e2",
+      "bytes": 87375
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00279.json",
+      "sha256": "d6e6749e8f2097599a1b1541bd85f5f65be1678d8e1ffbf475a953c536fda9e2",
+      "bytes": 89071
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00280.json",
+      "sha256": "b0eea16a2cfb04f290332e1c491a9262ed9b4771a5003a32d48e610c85ec0312",
+      "bytes": 56162
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00281.json",
+      "sha256": "950763941de169d11c9efd6a75bb9ed6439974b4422cc75fea94e51ffcfd36cf",
+      "bytes": 56378
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00282.json",
+      "sha256": "7cfbdbf9d41297d00e133c32894929e9f9dda68ed789443d3a69f91d7373d845",
+      "bytes": 56333
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00283.json",
+      "sha256": "efbe8426a3c69f79bbb447fa4ca7c24b1170d3856a0b19b904b2600a375c230f",
+      "bytes": 90607
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles/node_00284.json",
+      "sha256": "4d9a4d59e2a50ec159a65f2fd8b7a683b03b1cd2a73bd79536763dc5aee988fc",
+      "bytes": 86632
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_FI_frame_angles.log",
+      "sha256": "57d2ab0ea91681becf0a9cbe2d8cb6c94e3fc434c8d16b8b00f59b9ef53ff4db",
+      "bytes": 5104
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/LP_CALL_COUNTER.json",
+      "sha256": "f48c11ada28edfd255fbe7b1a475d88df0aa8148bbe00d8acb490dd067a7b9b6",
+      "bytes": 35
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/MANIFEST.json",
+      "sha256": "c62525b8411093da7cc61165baabe7de7e0f4bf6110af779af30f8e411b8edc4",
+      "bytes": 1084212
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00218.json",
+      "sha256": "6fc1b96e9ea1e98d69724c183bb1abb5172ccd9a75f5c4bad82efd6fb6952386",
+      "bytes": 55441
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00258.json",
+      "sha256": "b4d116018ffbc7d3b1f341cc6c8f9a0f0ea72ed3492d8c59b43738b7c806405e",
+      "bytes": 55476
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00260.json",
+      "sha256": "a03fb0ba05d91f9d5b55aed386e5798292c10016f714637e86c6875651af82ad",
+      "bytes": 55730
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00285.json",
+      "sha256": "3cb194dcdc72f710d861b76fa02969fa540cb9989109a00c450821116b10a171",
+      "bytes": 89905
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00286.json",
+      "sha256": "804dd3f11cf1708f3aa2a4a54d0fe8049b36cffa48a78cdf6b2c8f3ce99a67e8",
+      "bytes": 56491
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00287.json",
+      "sha256": "268b271dbdc450125bb66174343d9f059d5845f1754f4fc878abffae5a1bbf4d",
+      "bytes": 56724
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00288.json",
+      "sha256": "7ed93dea6a60415ad918f97cf4038da6143a667f1a46f6889c5b11dc520e7370",
+      "bytes": 56725
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00289.json",
+      "sha256": "7cfa2e67a82edd304a6e56b499af5032c1fb04a43ab87a586b2b9457861c23f7",
+      "bytes": 89741
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00290.json",
+      "sha256": "623b0180e6627eb28c31731cac98b4cfb6a61517aad89d9fe0bacdf78616a9de",
+      "bytes": 56884
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00291.json",
+      "sha256": "1f3ae582162927ead541db4553e58179e40e73968b4fcb5b3b68d20843aa8b85",
+      "bytes": 90742
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00292.json",
+      "sha256": "4d0c3bf106779311c084da0d9eba08ed224e720d08cd587b2b6b3d9c588c2c08",
+      "bytes": 88063
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00293.json",
+      "sha256": "7e5fb1d108bc075ff14a306f66db58cb41a8cbe0437cbf702a8d891672bce13d",
+      "bytes": 56863
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00294.json",
+      "sha256": "1a844ace8a1139fd8386960dd0259768e174c896b5c02e63d737beca26378a25",
+      "bytes": 56799
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00295.json",
+      "sha256": "ab2d78e323bf84b2f171dd27cc8df94923c11c7c15246a9226bc6ad0efa55cc7",
+      "bytes": 90619
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00296.json",
+      "sha256": "7c6d55d12109920f656676c6d5369140644ec163667ab56e48557c5270bfa2ba",
+      "bytes": 57070
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00297.json",
+      "sha256": "805f5c206c004687268f44d21791336957b012ceb6578bd44bee07ed0a053169",
+      "bytes": 57281
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00298.json",
+      "sha256": "317c8c4e9388b3344d7eecb9b989fc3fb4223d1f721ebcc908f38acefb16f560",
+      "bytes": 57290
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00299.json",
+      "sha256": "20ce30b948c677ad7719521c992ede65343b7e0fd305ca891f5d8b8d19c99df4",
+      "bytes": 91323
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00300.json",
+      "sha256": "51b5249fc83b017a4a9f3619d7f0df51af8254384a27d8044d10fb8f8d05a66a",
+      "bytes": 87021
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00301.json",
+      "sha256": "9e91d30a08f265f6849ad94f1c36033c6ecf8887aec4077a492cf04546215665",
+      "bytes": 89826
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00302.json",
+      "sha256": "a354b738f1eab6a4e5364ab8befd1971363edded56815aec016a040e0fe787cb",
+      "bytes": 57490
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00303.json",
+      "sha256": "fedc4d1de2d2b6655e462ea8b1a9e1adeda92a409be421510ef48d1bb202bd24",
+      "bytes": 86846
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00304.json",
+      "sha256": "419a255a3a0aa87cdc2932e39d53b55ae9bb212495545bbe9a937bc9eef249d5",
+      "bytes": 86892
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00305.json",
+      "sha256": "c294cadacb4986ce661432520b210eb1bb5dfc46c4b5c4a43de355ee1fe1c1a2",
+      "bytes": 57068
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00306.json",
+      "sha256": "e5c78764432a58c70d3af4bd21d34659345c986cef5c95cbeaf36abb430edb97",
+      "bytes": 57065
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00307.json",
+      "sha256": "f390812841ee69f732bfa557e73a69e251851bf1619d2a623c13b90b4ee6b69a",
+      "bytes": 89392
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00308.json",
+      "sha256": "68dcf58b846a7a8aec9fca2ffc4cda93bd3095de1bdaf36e56df570f7cb6f0b0",
+      "bytes": 57336
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00309.json",
+      "sha256": "97f8f783484a7760b5288efb9a6635882c26adf3ccab21dd06fd95bca220140e",
+      "bytes": 90134
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00310.json",
+      "sha256": "d2aef69a3df8950362bdc5a0a2b4dd332c2a35cf6d55e9c96ce83cb72e15a56c",
+      "bytes": 85846
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00311.json",
+      "sha256": "f2e253833c468c6a17084c687ac622823cf11a4d9b931307655a10ea7d73d681",
+      "bytes": 57198
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00312.json",
+      "sha256": "80c4f12f29a6f25904700db67032a5f47cfc7d5ab5e505a3ce68d6c99fd6c0de",
+      "bytes": 84945
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00313.json",
+      "sha256": "773b7bce833ea98a26aa3d2da19ebe00f09d41593400e9c72bbf1133a40ec45e",
+      "bytes": 90539
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00314.json",
+      "sha256": "d3fa703413f8aaaccf91bdd3da60cd30818dff01781e2f08e2b15121851f772f",
+      "bytes": 86915
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00315.json",
+      "sha256": "c67275e0c3bcb313c54d746c0734daff3425a85866906e88288c8aa0df2b6569",
+      "bytes": 88167
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00316.json",
+      "sha256": "8ad775a0d20a7e463f861a796b75b2c8760939d4207eee15833078ed98660959",
+      "bytes": 55890
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00317.json",
+      "sha256": "242111b31f3ec90f2d40aa42b214ab24a20022956c1d79a0e5b58936ab83e23e",
+      "bytes": 86795
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00318.json",
+      "sha256": "d0d35b067007cedf9889cf10fcda626d91f77eb8e35f43740716648fb96df53e",
+      "bytes": 56029
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00319.json",
+      "sha256": "8c22d3af0478d9aab937837483c21892cc000dc69d5f96086e07512bd14b851b",
+      "bytes": 87054
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00320.json",
+      "sha256": "915d478168318706912c4f91a687a7f07ce0cd9db6b53a3faa01aad63cbee032",
+      "bytes": 56248
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00321.json",
+      "sha256": "bf84f9e5f6de500ebf52361416570f383ad596620d6cc9a21dadc67b65b0f71d",
+      "bytes": 89179
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00322.json",
+      "sha256": "f2fd06c75f4a5cf5d214229ab6bbfeee62663c4a6264debed7344801cc341b9f",
+      "bytes": 85094
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00323.json",
+      "sha256": "256bd94c9b0e15e7340264410a417938b0d8368e55aa18e1cab5827f594cb786",
+      "bytes": 83033
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00324.json",
+      "sha256": "c10d95bf5de565caad127f7868f25b577a8b27b10d06957c0fe8b0b93489a52e",
+      "bytes": 55537
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00325.json",
+      "sha256": "a5dd6e140ffd717eb36e66191fefd37486cd1efbfdb9228d988ad3d83596ed53",
+      "bytes": 83803
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00326.json",
+      "sha256": "7e5275acf4d7c5a7c2ae52c6319e9b0fa045a5559ddc02eca24e776a4f1bb0fb",
+      "bytes": 84648
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00327.json",
+      "sha256": "ab0729e13325fb084d48104a77a909a7221024e0fb232d7d5dd0c382793d5538",
+      "bytes": 55597
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00329.json",
+      "sha256": "fc361ffddc22f0bb85ad556a4c5d186584d3cfd1f4677eebe068eef0c60f02ab",
+      "bytes": 55743
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00331.json",
+      "sha256": "b9e1d5880a122b6c1c42569abeb728ebc94b1eadcef191892318fe892d4ab99b",
+      "bytes": 88182
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00332.json",
+      "sha256": "1a07426c05f3e6f372acd179c92d5809f6d627d3f6525b37c8867ab171e22204",
+      "bytes": 55876
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00333.json",
+      "sha256": "2b78ad03abe22736328e7a05f6116b9a3049a6442ee144e0f6df7e632bdfcfb0",
+      "bytes": 56134
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00334.json",
+      "sha256": "063a1bbf2a4c9ff2196e81e15d175e32a2269e50e9a2391296ed39c6a2811157",
+      "bytes": 56012
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00335.json",
+      "sha256": "56c04b9e65b4be46dbdd06d21372e8f231acbdd133afcfdade1f2289754b81ff",
+      "bytes": 86014
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00336.json",
+      "sha256": "c30ee83f6f553e6aec649358c96b0ed4791f8844e207d15e3e821acde75a229c",
+      "bytes": 56285
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00337.json",
+      "sha256": "7a7bba99190650f975348e4eae21cc95230da776cb33f74bb936206e976d36ed",
+      "bytes": 87453
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00338.json",
+      "sha256": "e410fa86904b77765893f99de9b2bfc00d8d3e664fc87499cba576aced2adac8",
+      "bytes": 87240
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00339.json",
+      "sha256": "af3f1560cea837d484e789bef161afd1fe58edd1b799c35fc05c9a2afe929570",
+      "bytes": 56300
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00340.json",
+      "sha256": "1810ed59afcd56c948f1318c041982ee1d9f785b95140802335b4b6ead030c44",
+      "bytes": 56169
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00341.json",
+      "sha256": "1aa217744fcce9ed5247e8daac38941a2dc4e1a78c75f55255d1fd2c4862b3f3",
+      "bytes": 91233
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00342.json",
+      "sha256": "4ee54f1fea95585f300c305976498e1c5eae29cfb51a93b719f274ec5381d9b6",
+      "bytes": 56465
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00343.json",
+      "sha256": "2e9c1a40166d43953dc2ecbb1d05f797445dbed2615ee51dc45b8df3d5b72de2",
+      "bytes": 87464
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00344.json",
+      "sha256": "03d7013fddaf866224ff612c8db86a192ea6661f78e332d4f9c5bc6af92a13dd",
+      "bytes": 56582
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00345.json",
+      "sha256": "fa4999a5908365f0e7e747d725abda9bb7234348e5a7e0b5584d960054ae95be",
+      "bytes": 89965
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00346.json",
+      "sha256": "47d6d09c67ddc93ce948fea926180421dd789d71fe8f9103ec2312f8de7b1e2a",
+      "bytes": 86808
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00347.json",
+      "sha256": "74b997fdf1f6a44cff24f3a0fb8874b36751af62d72e14d22f66e0183a226beb",
+      "bytes": 56435
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00348.json",
+      "sha256": "ee5d00f14c5a82a47ae3475efcbee7e6764399f3af451e5e020937f1662d563d",
+      "bytes": 56261
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00349.json",
+      "sha256": "7c3693811f1f87df95e85e7076c69cf19bbe20fa696c775f31c61ac97283fc34",
+      "bytes": 89721
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00350.json",
+      "sha256": "8e4044a87662af4e1d6111f7403f802c4f890f499ab73c811a91be6d19c9d774",
+      "bytes": 56487
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00351.json",
+      "sha256": "fd4e4fdbd1580a46f8d525a5dfb1fc58a81b3471fe6bcee7909bd5ac737eeb6c",
+      "bytes": 90114
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00352.json",
+      "sha256": "ccb9aa4924cbfd6d1f7be71822f67d18cfa5a57e06df5d796d532ab41dcc6d42",
+      "bytes": 87273
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00353.json",
+      "sha256": "093b3c088cfdaf00637ddcb28dbea4e26652c40cdde312e323b21cf931b4c122",
+      "bytes": 87523
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00354.json",
+      "sha256": "ac4b43aeef3fa55e8aefbf91dc7bbe1616229530b659d77175d1ed98045f81ff",
+      "bytes": 56540
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00355.json",
+      "sha256": "90fb77481e776e3df29406058f7fc03d49e0de137375cd75d14cecfe96f55593",
+      "bytes": 88837
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00356.json",
+      "sha256": "d8ec3bc442e030368d45748d18ff330d81f1a803cde77c73978889b26f898182",
+      "bytes": 56701
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00357.json",
+      "sha256": "8a9cb75bf55db58855c6cbbcb6ac2c3802b1840ab6d2ea59f8d17f3c910e72b5",
+      "bytes": 56852
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00358.json",
+      "sha256": "006836960da00c9b25b346daec613a7435dae6f8d9f9f0cbf7dd8249c0433dab",
+      "bytes": 56909
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00359.json",
+      "sha256": "ef5faa9bf304c93f2ddd95bd56b4f2cc19b56f66f0d349687e23d90f78f7ab31",
+      "bytes": 90096
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00360.json",
+      "sha256": "8ce7f5683cab39ce6bbca640aa2f2926af5d13530a5e00add1d8aa6ed13f788c",
+      "bytes": 88340
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00361.json",
+      "sha256": "8b7f61f18116b7c3fc33af8ce86e7e8d78d77f0d41a8ad3c3b3dea6bc14f2eb9",
+      "bytes": 87638
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00362.json",
+      "sha256": "a514d1de2d37c99810142fd773cabea84bf96c238c2711a7465fd0f2ecd8ff3a",
+      "bytes": 57040
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00363.json",
+      "sha256": "af2e3e6fb6f7242566c4d870d288aee68cfcfadb8acb5661ae52f0dfbdd9adb9",
+      "bytes": 89260
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five/node_00364.json",
+      "sha256": "2607a5565176f3cb41bd0ae6b74de1fec64147fe73aac7321763e46f011ab85c",
+      "bytes": 57199
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_finish_five.log",
+      "sha256": "7f056b02d61333854ddc57bf2194ef3802998cc09b9bf3e23729c5bdbb450e11",
+      "bytes": 6173
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/LP_CALL_COUNTER.json",
+      "sha256": "e460a7b0c7eb10b679d1fa465ebde26e1ee756be47f0e6b109e014b09da7f21d",
+      "bytes": 34
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/MANIFEST.json",
+      "sha256": "117e7cef1dabcd7ca70279a85ac984e126f9ebce06a7e756f4f1700be494be4f",
+      "bytes": 1068844
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00198.json",
+      "sha256": "36d3f4b22f5012136e4b61068094b77846b3342735cb56817ecf3d2c055bc431",
+      "bytes": 882971
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00203.json",
+      "sha256": "268e15df20aff4a0c999493263deb637a0b664e9909a27f9c8ab9f7baa63c83c",
+      "bytes": 55441
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00205.json",
+      "sha256": "e6add78d8ad2599ff3b2c5d01c876ae84075d17887e71a6624d5581af453c26a",
+      "bytes": 55659
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00207.json",
+      "sha256": "b9a1dce56ea6c4d0cae20e2526f4dc577766c5c727f91cde83a52ffd015899ce",
+      "bytes": 55826
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00208.json",
+      "sha256": "a22a045bbc40ace83c9cf2246652d4b9da68b9c0aa16878d849715b163cc90d2",
+      "bytes": 55766
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00209.json",
+      "sha256": "deb402323672356794ea787d57a8e42c259f5b5154f454c2a5e8f60b5a1b1290",
+      "bytes": 86979
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00210.json",
+      "sha256": "a3561640fba9196abc7eed606c3428f07ddf570dace22c54606b06928118eadb",
+      "bytes": 56056
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00211.json",
+      "sha256": "2c49c22fde2d24a6e66593c4c2e20181b7f0f972df4e69df5fb65c2f4bf71fb5",
+      "bytes": 56189
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00212.json",
+      "sha256": "12d67bf1bdf5e9ca041f6152758d1de4e1f60c50e8c7a0fbd1b23a0ead5316ca",
+      "bytes": 82585
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00213.json",
+      "sha256": "7407a804cecb1c84945834817be8099c8f3e6c743d394932cbc31d79ce05929d",
+      "bytes": 85172
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00214.json",
+      "sha256": "1f92eb2b45b6bbf5a579d91c7cec8d9c4e1f21a2604b75751187241fd9dbeb8b",
+      "bytes": 56357
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00215.json",
+      "sha256": "d064be5b2caa196aa730ca2947ed92d0281e7b220fb1d2f1ca492daa138b68ca",
+      "bytes": 83819
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00216.json",
+      "sha256": "0e966be252ee83779ec9e58953dcb947e4f40d674869dd826258610824e5916a",
+      "bytes": 86664
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00217.json",
+      "sha256": "0190e62ba15bb646fb57f8dd11268b520faab4d335f37c8ddf39e58ebc20e8e4",
+      "bytes": 56071
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00219.json",
+      "sha256": "a7d43a28653e5b45b2341b166261c080451648ba14d4ec0309251e565d7018fd",
+      "bytes": 56238
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00220.json",
+      "sha256": "76dd8792d0dfc37fff4aaa1d67fec828fd56a08c791ab9aab24d5381588362be",
+      "bytes": 56234
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00221.json",
+      "sha256": "003230239994ffeb47a7da6ba6ddece152f3c290e55900fe3e828e2d31e3e5ae",
+      "bytes": 56431
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00222.json",
+      "sha256": "c447f080205ca96e70404618f7c192fca78aca654289a193a950b0b662294325",
+      "bytes": 85790
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00223.json",
+      "sha256": "b6763dab7240f6d43b8f05500c9335879e83acf76c8b807b9fd1936dc3ab80eb",
+      "bytes": 89450
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles/node_00224.json",
+      "sha256": "04f157747c5a1300f72c55aea2444f45a53602417aac2b742bb4ef6462fb8da8",
+      "bytes": 87669
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd148_frame_angles.log",
+      "sha256": "587784cb74bcb5a6faf998335aba1f5e4e996f7ecf3a7eafa6cb25f63c9c4f66",
+      "bytes": 1472
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_frames/MANIFEST.json",
+      "sha256": "e1afdb5830db4201317b940aeabb3966e6ef4f2f7a8710c666841713952e10ed",
+      "bytes": 926065
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_frames/node_00198.json",
+      "sha256": "76ff57e1937b428b05d997e262dfe4bb4be66031bdec9ee168bee1984c18de9f",
+      "bytes": 882920
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_frames/node_00202.json",
+      "sha256": "7cb5437f9c186258671cf625d4c14e0401343c1b918a31533074eb3858034fb2",
+      "bytes": 688154
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_frames.log",
+      "sha256": "1c388b8609d13d730b063f124730123be227b74b5d67d97b5c1d412687b62f6f",
+      "bytes": 260
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_round/MANIFEST.json",
+      "sha256": "d110f96c3bf6ce6974e06a54808f02e996349e362b89697ac65d2ba029fa342d",
+      "bytes": 925286
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_round/node_00196.json",
+      "sha256": "9dba93b9749c572efd210b8c7fbfd1036ca716a8235bbc6963b26410f32aecb2",
+      "bytes": 3780921
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_round.log",
+      "sha256": "dda7dab7920b3059a469b8215d48cff04dfa21035f94367c032386d5fb16e767",
+      "bytes": 220
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero/MANIFEST.json",
+      "sha256": "2628e089cbdf9d6e5204e1fce2ea57c7b8e743ef84ccb8a58c03ae49898545a4",
+      "bytes": 959341
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero/node_00195.json",
+      "sha256": "04ff20102e24aa184572fe8379196fdb9fb5efe575f9170074192f8ff71520c7",
+      "bytes": 26522
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero/node_00196.json",
+      "sha256": "05bf871cbb78120e06618154675b6a2fa28cf3eb76b92747e643e1652d4d1e92",
+      "bytes": 54826
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero/node_00197.json",
+      "sha256": "9f4fc52b3f3bae3e0f515e0369987f7ad523f1d2ae5c86a99ef30653529cc0a4",
+      "bytes": 26520
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero/node_00198.json",
+      "sha256": "722ded148d4fa321b0ee366681d65af971ff8b838f3d78bdf00dbbbd5047f298",
+      "bytes": 54904
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero/node_00199.json",
+      "sha256": "97594f93493ae41f289c646f14915bffd9fe569fdbe7763f627c5ee42c40c12a",
+      "bytes": 26521
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero/node_00200.json",
+      "sha256": "d9682043c37e08a8ef79ea27f3ef5d18f52f7e7d28895c5637130c7e7a5ba573",
+      "bytes": 26508
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero/node_00201.json",
+      "sha256": "b271cb84721cc5f0bf721a9e0fd0c77d3f22713489f91f8132f4b25260e7a8ed",
+      "bytes": 26521
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero/node_00202.json",
+      "sha256": "a0e75a638ad6e13eb2b2a48a79837bc7e44135c34d1c9fd54d2c9c144f3d6451",
+      "bytes": 54735
+    },
+    {
+      "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/root_cb882_continue/cd_sat148_zero.log",
+      "sha256": "bf791a416d6ebab64d360068b680246f3ef01b00c23477c38d7ef537c25c2a92",
+      "bytes": 761
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/c_cached_general_runtime.py",
+      "sha256": "9c824e0c2ca9b67ef2730325d8e8404b94a726ff35f815753f48c5749c0cc299",
+      "bytes": 578
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/c_cavity_split_policy.py",
+      "sha256": "0125a3c59b28b788747680c93901e92180c2ca07b46982c2cfe4b59e45eba933",
+      "bytes": 2923
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/c_center_runtime.py",
+      "sha256": "2fa295d58e1ac64b775efa5425ce256c1d291fc50d77c351445dcedf6046e9f1",
+      "bytes": 1927
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/c_cone_incircle_runtime.py",
+      "sha256": "06b0f241a2b6e3e4836939eaac9446a381b8d2dfa8b8c8fc14dd1ee2aab0cd08",
+      "bytes": 501
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/c_fast_cone_runtime.py",
+      "sha256": "2981df25ae41841b50111642532eccffc3e114f66578a6306923fab934be4bae",
+      "bytes": 929
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/c_general_center_runtime.py",
+      "sha256": "96313438ef4cad242a5d75f094c65797b4558d327bdc77d8150f7269fe12bf11",
+      "bytes": 732
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/c_incircle_runtime.py",
+      "sha256": "0e858867ce6811785666b24459866bdb8b8fd41cd321315c005366988c7da287",
+      "bytes": 657
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/c_relative_support_chord_runtime.py",
+      "sha256": "006254c5c4cd35985d1ed4f389afb04f10eff6c77ee8dbdd282ea48bbd0236b4",
+      "bytes": 1336
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/c_sparse_general_runtime.py",
+      "sha256": "8591ee961e0171e2e0f885af43d48f06301bee860568240b6092188a928c49ed",
+      "bytes": 642
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/physical_general_center_cone_rows.py",
+      "sha256": "4fb68a0b0e5ddac7cc8d3802ae675f3dcc9a7e9ff6c1e0484714593c940b1682",
+      "bytes": 1683
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/physical_rotating_frame_center_rows.py",
+      "sha256": "5de2a9213dde7e684f8dccfd5e9b895c805bcd0a9386662b963c3119ab2e2acf",
+      "bytes": 2531
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/relative_support_chords/OWNER_FREE_RELATIVE_SUPPORT_HAND_PROOF.md",
+      "sha256": "134b349719bdee98c07153c5c1c3598c85b3ca9d010472590abee73c97083e55",
+      "bytes": 6298
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/relative_support_chords/RELATIVE_SUPPORT_CHORD_HAND_PROOF.md",
+      "sha256": "10b950d2ad1c22a26643999d1488e272a3534996a65597fcc0ce4902dbafb901",
+      "bytes": 2321
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/relative_support_chords/physical_relative_support_chords.py",
+      "sha256": "67e7a1726b7c1d6e9fad5eb887cd4737cb517bfea534129b7a4b6453e98c575c",
+      "bytes": 3175
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/source/ac_work/tree/owner_free_relative_support_snapshot.py",
+      "sha256": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788",
+      "bytes": 5367
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/source/fast_coupled_energy_cache.py",
+      "sha256": "ed9fb3bd573e342a3c4af47a54f8d4bbcbc5f9ee68f608216e1c8e74aee54c29",
+      "bytes": 1430
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/source/fast_exact_area_moments.py",
+      "sha256": "9afb26cad3032731902679f67a3ff166d44ba5d2a5684cf31f832da767edd071",
+      "bytes": 2357
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/source/fast_sparse_dual_terms.py",
+      "sha256": "e53a9e02775ae4cc14a4ead913e48775e3f9afadb35e3f506a89e5120486d619",
+      "bytes": 907
+    },
+    {
+      "path": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/source/incircle_distance_chords/physical_incircle_chords.py",
+      "sha256": "5202f4c0af9bf913ccb9729738e34b00a391559f274e049cfcc27e1f168ec8db",
+      "bytes": 1159
+    }
+  ],
+  "all_transitive_ancestry_inputs_claimed": false
+}

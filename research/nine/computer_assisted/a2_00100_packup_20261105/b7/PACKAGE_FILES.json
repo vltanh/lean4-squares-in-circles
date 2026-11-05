@@ -1,0 +1,16 @@
+{
+  "status": "FROZEN_VERIFIED_PREFIX_AND_DIAGNOSTIC_HANDOFF",
+  "files": {
+    "inputs.tar.xz": "4e77cbf91489879921bee1a06dbca7550afce82592faf332dd5203f17fe4d268",
+    "README.md": "0b920bc6645b55e89589b1dfdf7a241932365fa929222a681d9958550e5bb0f3",
+    "restore_thin_handoff.py": "3a551fae15121f3023298c11420ce115b97ac2e5d9b5f577dfac3ca60bc4c6b1",
+    "MANIFEST.json": "d9632d398570c7b3d33e19e4d06d960c4b6c95ed5037966c465eaf20e5c4af3c",
+    "PUBLISHED_PRIOR.json": "94915483b36cc5a2ee7c4c4a76ad25e25ef00935cb64b1ef2ec63361d8a0b551",
+    "ARCHIVE_PARTS.json": "9791a3da5949153693bb0173abd6df679f1535e5114c27994494b1812f82a5a9",
+    "INPUTS.json": "98ce07e07c58c7e634d14896c2ac16c4b7ca3b0744624333593672315a7ecf18",
+    "PACKAGING_AUDIT.json": "ea7178cfa2d982205ca8f9f91c54096ec007e73a743530b8b34317c6db363ecd",
+    "pack_b7_handoff_v1.py": "787aa4d7b9ebbddbb6a79dd9ce5cd5c93ea05e270784e071c4cc639e5c28efcf"
+  },
+  "new_original_credit": 0,
+  "new_mask_credit": 0
+}

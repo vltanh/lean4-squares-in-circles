@@ -1,0 +1,72 @@
+{
+  "schema": "B462_NATIVE145_PLUS_NONADDITIVE93_HANDOFF_V1",
+  "original_id": "negative-462e78d2e2d8be05",
+  "whole_original_proved": false,
+  "new_originals_closed": 0,
+  "new_masks_closed": 0,
+  "full_tree": {
+    "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/b462_continue/snapshot145/manifest.json",
+    "sha256": "d5900b020d988fd8470cba6dcb1c4aee9087829342b3d2704459960ef400476a",
+    "nodes": 145,
+    "excluded": 64,
+    "open": 43,
+    "whole_original_domain_retained": true
+  },
+  "conditional91": {
+    "root_index": 91,
+    "nodes": 17,
+    "excluded": 12,
+    "open": 0,
+    "merged_into145": true
+  },
+  "conditional93": {
+    "path": "/workspace/lean4-squares-in-circles/research/nine/.runs/b462_continue/alternate93_ah_hsign/manifest.json",
+    "sha256": "d966480c7cc875c7866087a535c9d4d459c5555013e0ff512226e4c532b7b277",
+    "nodes": 15,
+    "excluded": 11,
+    "open": 0,
+    "nonadditive_alternate": true,
+    "merged": false
+  },
+  "root3_BH_alternatives_with_complete_proofs": [
+    89,
+    90,
+    91,
+    93
+  ],
+  "root3_BH_alternatives_remaining_open": [
+    92,
+    94,
+    95,
+    96
+  ],
+  "other_whole_original_top_branches_remaining_open": [
+    2,
+    4
+  ],
+  "independent91_and93_review_status": "PENDING_AT_PACKET_BUILD; supersede only with separate explicit review artifacts",
+  "native_exact_replays_passed": true,
+  "standalone_cold_replay_claimed": false,
+  "source_note": "Native checkpoint; uses preserved published B ancestry. Sources and all proof input bytes retained, no false isolated-cold claim.",
+  "input_paths": 602,
+  "unique_blobs": 446,
+  "archive_bytes": 3938716,
+  "archive_sha256": "893e98afae4a61abd745d65f9b801fcf21bba9116379c0ac3e8f80b4f0054739",
+  "files": {
+    "ALTERNATE93_AH_HSIGN_REPLAY.json": "58369a3aa54a4089fcf13da5269147609980abe19af34a8b69659481598f17cf",
+    "ALTERNATE93_AH_HSIGN_REPLAY.log": "04426522afd617f37c186e530c1271a165779e510e965a41dce4316ae0a051b7",
+    "BRANCH91_FROZEN_SCOPE.json": "7b5353089919d78f8ecf188197c182830004f229b7e32eefc0b6ae0e0faff383",
+    "BUDGET_RECEIPT.json": "b45f2e496d4fa95c7b07844ef8ac6b7e0a3a99a118ae897c6740fd6d90ee6b01",
+    "B_COMMON_ATTACHMENT_NONAUTHOR_REVIEW.json": "b258e7fa0dc7a63d17e92c0bb405f174ae404153f408e8a54a6119cb368857fd",
+    "INITIAL_TACTIC_STOP.json": "222fad39a7106f93f84cda90e54279df03429c675ee038477882a569d96ae246",
+    "INPUTS.json": "50b5a1624e0ac3f80e3a1d9b3647172c864e17711367c0ee37b22c404c59064e",
+    "PAIRED91_FULL_REPLAY.json": "094a0a5547b4be030031bf4473394fda55fb8ab9fa421b88fe9118f66ae2ab10",
+    "PAIRED91_FULL_REPLAY.log": "843412b043d525e4083de424271d1d5923f648e4445ad84c62b09c6ef50d7026",
+    "PAIRED_TRAVERSAL_PIVOT.json": "c0a77ff77ad34f752225ee913870ca66a7e4d8851b8a74d00783556815ef27bc",
+    "SHARED_ADDITIONAL_ROWS_PRODUCER_CALLER_REVIEW.json": "21c75542ac5444bd5a597d10f1ba461f29e6349f937e527b006083fd2deacde3",
+    "inputs.tar.xz": "893e98afae4a61abd745d65f9b801fcf21bba9116379c0ac3e8f80b4f0054739",
+    "FINAL_WORK_RECEIPT.json": "7c90c71425f08fda53319bdc3e695a537e425d5422b459c5ef4119fbf50bfdab"
+  },
+  "final_work_receipt": "FINAL_WORK_RECEIPT.json",
+  "all_owned_numerical_jobs_stopped": true
+}

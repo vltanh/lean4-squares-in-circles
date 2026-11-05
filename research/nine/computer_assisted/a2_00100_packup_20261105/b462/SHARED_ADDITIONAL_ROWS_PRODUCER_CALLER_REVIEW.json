@@ -1,0 +1,51 @@
+{
+  "status": "PASS_INDEPENDENT_SHARED_PUBLISHED_ROW_PRODUCER_BINDING_AND_B16_PHASE_CALLER_REVIEW",
+  "source_sha256": {
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b7_continue/review_shared_producer_v1.py": "90a182d29b123535a2933d5fbdfcca22787a805b5b4929aca98cd2323069a0a5",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b462_continue/additional_rows/b_common_additional_rows_runtime_v1.py": "832ba5969658e5c929b9c1e83359860237a707f65eb17e02f6ca50a323cb6da3",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b462_continue/additional_rows/BINDING.json": "4fe8dce88ae55c8bbfbea5dc6ee7cf539b8b8ed8b2b225dcd1b1cece83181747",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b7_continue/restored/b7_selected1011_open_packet_v1/INPUT_MANIFEST.json": "02a31bff354a13b6ee84e3cd8ef36c7972d85abe3bd610aee82c94611f00d1e7",
+    "/workspace/lean4-squares-in-circles/research/nine/.runs/b16_continue/additional_phase_v1.py": "4acc30ddf76ee154edf9ab791683945f4793588da56157d56c3efc604cde66ba",
+    "/workspace/scratch/f9f48fcfb253/b_work/physical_sat_engine.py": "38d1162c40cd6494579f7793c6b10a54432ce999994f86b6726d2ca9e8022bc4"
+  },
+  "nine_published_files_byte_identical": {
+    "physical_relative_support_chords.py": "67e7a1726b7c1d6e9fad5eb887cd4737cb517bfea534129b7a4b6453e98c575c",
+    "independent_relative_support_chords.py": "84e65653bbc394bac004aeb5d4d8ec7de707c0a2c8cc1eae219cbd8814aeec91",
+    "RELATIVE_SUPPORT_CHORD_HAND_PROOF.md": "10b950d2ad1c22a26643999d1488e272a3534996a65597fcc0ce4902dbafb901",
+    "OWNER_FREE_RELATIVE_SUPPORT_HAND_PROOF.md": "134b349719bdee98c07153c5c1c3598c85b3ca9d010472590abee73c97083e55",
+    "central_nine_rows.py": "eb83013e9e2e04adf6256c731f2734fd772cf02d72c5313284727733a2b3d302",
+    "independent_central_rows.py": "d769b3337046e8e5c05b65953470825e720f911ff5a49b834f3f04563ba6d512",
+    "SMALLER_CENTRAL_DISKS_NINE_UNIT_CAPACITY.md": "b0b2858252d2a3bee205d40f97958da445ece0a3a4e05bd693340b2e94884257",
+    "ACCEPTED_CENTRAL_ARC_REVIEW.md": "613993c57ff120c9dd65e71cf8b16c51badce088877d4cd90c8efd7f6c994db6",
+    "GLOBAL_NINE_CENTRAL_CAPACITY_ROWS.md": "2eb8c70bc3fb714e39803243b316e76791df0fbe6ff6cbac862f097b0733725b"
+  },
+  "owner_free_helper": {
+    "path": "/workspace/scratch/f9f48fcfb253/b_work/owner_free_relative_support_snapshot.py",
+    "sha256": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788"
+  },
+  "producer_extends_unchanged_accepted_center_exact_moment_runtime": true,
+  "additional_rows_append_only": true,
+  "central_generator_call_is_unconditional_generate_rows": true,
+  "no_selected_near_pair_or_own_axis_assumed": true,
+  "no_B7_specific_terminal_reused": true,
+  "discovery_geometry_remains_untrusted_and_independent_decoder_required": true,
+  "caller_hard_limit_underlying_native_solves": 1500,
+  "active_set_and_dynamic_cut_resolves_are_counted": true,
+  "caller_raises_before_1501st_native_run": true,
+  "all_existing_domain_payloads_retained": true,
+  "closed_payloads_byte_identical": true,
+  "caller_new_nodes": 0,
+  "caller_bound_rounds": 0,
+  "observed_retained_node_count": 203,
+  "observed_native_counter": {
+    "native_run_calls": 1007,
+    "maximum": 1500
+  },
+  "caller_frozen_original_parent_unchanged": true,
+  "source_checker_physical_attachment_review_owned_by_separate_reviewer": true,
+  "actual_new_weighted_row_replay_status": "PENDING_SEPARATE_B462_WEIGHTED_REPLAY",
+  "blocking_findings": [],
+  "new_original_ledger_credit": 0,
+  "new_mask_ledger_credit": 0,
+  "lean_lake_compilation_CI_run": false
+}

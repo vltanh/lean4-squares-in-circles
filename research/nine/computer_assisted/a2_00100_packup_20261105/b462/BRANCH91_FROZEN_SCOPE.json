@@ -1,0 +1,294 @@
+{
+  "schema": "B462_complete_conditional91_frozen_scope_v1",
+  "full_manifest_sha256": "d5900b020d988fd8470cba6dcb1c4aee9087829342b3d2704459960ef400476a",
+  "full_snapshot": "/workspace/lean4-squares-in-circles/research/nine/.runs/b462_continue/snapshot145",
+  "root_index": 91,
+  "original": "negative-462e78d2e2d8be05",
+  "initial_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        1
+      ]
+    ],
+    [
+      "proxy",
+      [
+        7,
+        8
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    [
+      "sat",
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        1,
+        -1
+      ]
+    ]
+  ],
+  "conditional_nodes": 17,
+  "excluded_terminal_domains": 12,
+  "open_terminal_domains": 0,
+  "unions": [
+    {
+      "index": 91,
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          8
+        ],
+        "selection": "fixed_BH_then_CI_physical_separation"
+      },
+      "children": [
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "choices": [
+        [
+          2,
+          0,
+          -1
+        ],
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          1,
+          -1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          8,
+          0,
+          -1
+        ],
+        [
+          8,
+          0,
+          1
+        ],
+        [
+          8,
+          1,
+          -1
+        ],
+        [
+          8,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "index": 97,
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "0",
+        "selection": "largest_frame_defect_after_fixed_BH_CI",
+        "untrusted_defect": 0.42094739737345427
+      },
+      "children": [
+        137,
+        138
+      ],
+      "choices": [
+        0,
+        1
+      ]
+    },
+    {
+      "index": 99,
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "0",
+        "selection": "largest_frame_defect_after_fixed_BH_CI",
+        "untrusted_defect": 0.3731589668090462
+      },
+      "children": [
+        139,
+        140
+      ],
+      "choices": [
+        0,
+        1
+      ]
+    },
+    {
+      "index": 101,
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "0",
+        "selection": "largest_frame_defect_after_fixed_BH_CI",
+        "untrusted_defect": 0.40379052600010745
+      },
+      "children": [
+        141,
+        142
+      ],
+      "choices": [
+        0,
+        1
+      ]
+    },
+    {
+      "index": 103,
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "0",
+        "selection": "largest_frame_defect_after_fixed_BH_CI",
+        "untrusted_defect": 0.39248449641249183
+      },
+      "children": [
+        143,
+        144
+      ],
+      "choices": [
+        0,
+        1
+      ]
+    }
+  ],
+  "terminals": [
+    {
+      "index": 98,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "1235645018520435984406385109366421371967/326671072244100924924839623134497482997760",
+      "node_sha256": "64fe793eb396d3b45e4378a0b7856ad1bfe72e6591b69963d6496b9f3a9b078b"
+    },
+    {
+      "index": 100,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "3717533713735216262760493953092878121/850705917302346158658436518579420528640",
+      "node_sha256": "dae867ee84b88b0f37bf6d932ca814bbb0e7c3b51a93304bd566f1cb44e41659"
+    },
+    {
+      "index": 102,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "406045214341739063756951649927007387577/32667107224410092492483962313449748299776",
+      "node_sha256": "71b73e9bfaa8a293dbc6d51e94ace51510b6133ef6097639c0fa24812a7ee577"
+    },
+    {
+      "index": 104,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "206994322948057035869998358176968124023/27222589353675077077069968594541456916480",
+      "node_sha256": "b52fe98e4b68e0e077bb81201e8a3730a35ee7b6f756a11c33e77efcb2c982da"
+    },
+    {
+      "index": 137,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "13399462322155015886992927904529376395184407929833007198983966823128238087903/5479455516618753819137336266173704252476030739431006358426868892417219583016960",
+      "node_sha256": "01c1ce81a00b45edbdebae94c1279cd90966d1c88dedea72b99dba1e60b9d75e"
+    },
+    {
+      "index": 138,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "158197633567178652655667138852701964144843132238580975083460067196182755223771/65753466199425045829648035194084451029712368873172076301122426709006634996203520",
+      "node_sha256": "a816e48943d322c25a23b1294ba893cfd28095675ad70093d18c3e561308bd10"
+    },
+    {
+      "index": 139,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "13399462322156377587194696846556104200917480184901622347919959289600359227103/5479455516618753819137336266173704252476030739431006358426868892417219583016960",
+      "node_sha256": "87fbfd39bfc1807ba7b91fbe7283b1f435610e8d7e6df1085a2e9f7e338c7427"
+    },
+    {
+      "index": 140,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "9879257064831246831654946194900382657020749425904911930190645044057932941683/4109591637464065364353002199630278189357023054573254768820151669312914687262720",
+      "node_sha256": "e30ad4dc9f65ac06e07241f3dbc2064910131d2be72c603d853f91c250c4ca86"
+    },
+    {
+      "index": 141,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "13399462322156377587194696846556104200917480184901622347919959289600359227103/5479455516618753819137336266173704252476030739431006358426868892417219583016960",
+      "node_sha256": "2d1fd0230025cf7f8af9076bcb05cdfa900bcb2617e7bb2dae910c329710aefe"
+    },
+    {
+      "index": 142,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "11652622091441291958622099287979368633527371915684940439145764294377829457055890093159134112367/4771046097219663839510537286562874078259895325233483007289670311485438506672827699685234248253440",
+      "node_sha256": "c149946140742c433f091ecfa8a660b7c294fc426934a5169d2f445a430fe834"
+    },
+    {
+      "index": 143,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "13399462322156377587194696846556104200917480184901622347919959289600359227103/5479455516618753819137336266173704252476030739431006358426868892417219583016960",
+      "node_sha256": "bbdb7d45d6cfefaa7c568686ff9c1d758bef63dfa98f1b4807c470a952081436"
+    },
+    {
+      "index": 144,
+      "status": "CANDIDATE_CLOSED",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "9879257064831246831654946194900382657020749425904911930190645044057932941683/4109591637464065364353002199630278189357023054573254768820151669312914687262720",
+      "node_sha256": "776641277bcdb4defdbf416b0b7c36420f9be468c91d0ca1115a6a20ad6a3a2f"
+    }
+  ],
+  "full_original_retained": true,
+  "original_status": "OPEN",
+  "new_originals_closed": 0,
+  "new_masks_closed": 0,
+  "interpretation": "Complete H-below-B physical alternative under original root H/I lower proxy branch; C/I complete8 then H closed slope halves; every other original domain retained in full145tree"
+}
