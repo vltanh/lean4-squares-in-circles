@@ -1,0 +1,29 @@
+{
+  "status": "SOURCE_DERIVATION_REQUIRES_INDEPENDENT_TRANSPORT_REVIEW",
+  "builder_base": "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_native_discovery_checkpoint_20261105_v1/continuation_sources/root_b/packaging/build_registered_b_relative_support_packet.py",
+  "builder_base_sha256": "2fb474cabed57375f23b67df9e6830095851f6bd6e89081d337e983b2536764e",
+  "replay_base": "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_native_discovery_checkpoint_20261105_v1/continuation_sources/root_b/packaging/replay_registered_b_relative_support_packet.py",
+  "replay_base_sha256": "42770b7eb3c49eb744cdd434befb270b15ad54a6e2fecc02f15ebc291d203d26",
+  "builder": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/packaging_b7_central/build_b7_central_position_packet.py",
+  "builder_sha256": "afa2773a40a54545e3798a82e0b599b58d846ac3f4b44900d3dd437ea4538f19",
+  "replay": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/packaging_b7_central/replay_b7_central_position_packet.py",
+  "replay_sha256": "e48350437d599ecfa38793728debdad49073bcdd6c2b4cb81f1f86492a835809",
+  "physical_decoder_and_position_reader_unchanged": true,
+  "additional_transport_mappings": [
+    "three actual executable/attachment files in packet/code",
+    "published central-capacity sources under packet/central_nine_source_recovery matching unchanged adapter relative layout"
+  ],
+  "retained_security": [
+    "full packet/prior hashes",
+    "dedicated common directory boundary",
+    "external workspace read audit",
+    "literal alias hashes",
+    "all231 original definition comparisons",
+    "full original attachment",
+    "all node/union replay",
+    "all input completion rehash",
+    "no numerical producer imports"
+  ],
+  "new_arithmetic_or_geometric_rule": false,
+  "original_credit": 0
+}

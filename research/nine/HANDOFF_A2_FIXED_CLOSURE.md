@@ -4,7 +4,33 @@
 
 # Current A.2 handoff: 224/231 current-mask cells closed; 7 OPEN
 
-## B7 complete component 4: portable checkpoint, zero new cell credit
+## B7: seven complete components in a portable 1,011-domain cover
+
+The [latest B7 checkpoint](computer_assisted/a2_00100_b7_completed_components1011_checkpoint_v1/README.md)
+retains seven complete internal components. The two newly completed components
+are the positive G/I branch 814 (13 domains, 10 excluded terminals) and the
+negative-F half 993 (9 domains, 8 excluded terminals). All four positive-sign
+G/I alternatives under component 3 are now complete. Every complementary
+region remains in the cover; the original cell is still OPEN.
+
+Fresh native and isolated portable exact replay agree on **1,011 domains,
+543 excluded terminal domains and 43 OPEN terminal domains**. They check
+416 bound rounds, 67,065 exact deductions and 246,778 printed rows, including
+2,118 relative-support chord rows, 131 all-nine central rows and 13 original-F
+central-box terminals. Independent physical review reconstructs the five new
+closed unions and all 18 terminal arguments. All original physical predicates,
+strict CD and the strict-radius scope remain unchanged.
+
+The seven-part archive has 51,389,580 bytes and 1,527 independently rehashed
+regular members. Its fresh portable replay checks 1,523 frozen packet inputs
+and the 507-input published prior, forbids external workspace proof reads,
+and starts with an empty private cache. The exact frontier is 10 OPEN domains
+under coarse branch 3, 6 under 142, 18 under 154, 4 under 156 and 5 under 264.
+This checkpoint grants **zero original-cell or mask credit**: totals remain
+**224/231 originals and 8/32 masks CLOSED**. Later numerical trials are separate.
+No Lean, Lake, compilation or CI was run.
+
+## Earlier B7 component 4 checkpoint: zero new cell credit
 
 The [new B7 checkpoint](computer_assisted/a2_00100_b7_completed4_central_checkpoint_v1/README.md)
 completes saved component 4: all 20 terminal domains in its 33-domain cover

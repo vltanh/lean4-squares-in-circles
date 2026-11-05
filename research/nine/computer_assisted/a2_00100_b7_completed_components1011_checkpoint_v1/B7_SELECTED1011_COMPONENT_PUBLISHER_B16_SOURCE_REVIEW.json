@@ -1,0 +1,99 @@
+{
+  "status": "PASS_B7_SELECTED1011_COMPONENT_PUBLISHER_B16_SOURCE_REVIEW",
+  "reviewer": "b16_closure",
+  "publisher_sha256": "ce030af21a5de05863e51c16b306e49bdd767019d2d78125366dad55c69c828f",
+  "derivation_sha256": "94925d8468d908a6bf6e23e0259b08fed33a7fe27c58e0bb1d9390bcdc3d5a06",
+  "source_sha256": {
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/packaging_b7_central/publish_b7_selected1011_component_checkpoint.py": "ce030af21a5de05863e51c16b306e49bdd767019d2d78125366dad55c69c828f",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/packaging_b7_central/SELECTED1011_PUBLISHER_SOURCE_DERIVATION.json": "94925d8468d908a6bf6e23e0259b08fed33a7fe27c58e0bb1d9390bcdc3d5a06",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/packaging_b7_central/publish_b7_central_component_checkpoint_v2.py": "315679f74ef6070eb25dc5de0dcf8304ce0a66df96b4f59a0d3341aebb87cb85",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/bf14_independent_review/B7_CENTRAL_COMPONENT_PUBLISHER_V2_B16_SOURCE_REVIEW.json": "3195b25790da682f470e8561d58a695e7d2907e1c330e7c5fb2a660f1f62badf",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/packaging_b7_central/archive_partial_b7_central_checkpoint.py": "1e037872f55dc15f9161e8fca7ea5c5878ade1d78d646aa005e439dba37f2611",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/packaging_b7_central/build_b7_central_position_packet.py": "afa2773a40a54545e3798a82e0b599b58d846ac3f4b44900d3dd437ea4538f19",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/packaging_b7_central/replay_b7_central_position_packet.py": "e48350437d599ecfa38793728debdad49073bcdd6c2b4cb81f1f86492a835809",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/INPUT_MANIFEST.json": "02a31bff354a13b6ee84e3cd8ef36c7972d85abe3bd610aee82c94611f00d1e7",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/ORIGINAL_PROOF.json": "8707816ead4a32e9a4e05fe5490ded099491ae8d08dc323dae937621d7706c5e",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/TRANSPORT_PREPARATION.json": "a165ee64a58a6f7f82eb6f8deb0acb0f1f938bd731c4439591d52346b8fc9522",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/original_audits/EXACT_TREE_REPLAY.json": "0f7007a02876f18701a532cf1bf82c038557c5eabfb5566a35080b7c48b862ba",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_SELECTED1011_COMPLETE_COMPONENTS_FINAL_PHYSICAL_REVIEW.json": "d9c151d858827e66964de21cc782eff81fad793eb3047bfd8072325a03ecff8a",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_SELECTED1011_COMPLETE_COMPONENTS_C_AGENT_PHYSICAL_TABLE_REVIEW.json": "8f23ec1fbb784fd01fc720fb2fa0267dd5eae823be17c8a87101e59cd2dda98a",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_SELECTED1011_COMPLETE_COMPONENTS_LITERAL_TERMINAL_TABLE.json": "500eff3ba2fe5ce420f0c57ae4295986ca28d3168e1f13e85f987ff71787ee8f",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_SELECTED1011_COMPLETE_COMPONENTS_PHYSICAL_HAND.md": "1a07937cb73a6c7392ba9b7655343d8d29284c378a2e62762b9f8480cd454a6a",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_CENTRAL_PORTABLE_SOURCE_TRANSPORT_REVIEW.json": "2b71c4577cb10522f8dd3167ae7efdc567de4440dbec4d694274497927f99c88",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_CENTRAL_PORTABLE_SOURCE_DERIVATION.json": "6f2b522cd166ac0ab3919948ab86c7471c6321caf4ee50feef6847a72c43f7f6",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_SELECTED_NEGATIVE_F_AND_CI1011_ASSEMBLY_FREEZE.json": "3026311fc8371bada0a2e5aeec52d311db4e2612e1f5f15cc5a29c59232443e6",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_COMPLETE_COMPONENT4_PHYSICAL_HAND_ATTACHMENT.md": "643610b3d0ba2c6aae1b8d63fb9f249d92ee185a5548773614e2e6fc4ef9ebbe",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_COMPLETE_COMPONENT4_FINAL_PHYSICAL_REVIEW.json": "659e54e1c14b45f3ce71e0c336352a4101fad8b967dd303f50155b1d12f109ae",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/B7_COMPLETE_COMPONENT4_C_AGENT_PHYSICAL_REVIEW.json": "2d32d92b6734e620234566f61510edbe00efe609aebb5f3c6361dadd90cf39bf",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/acceptance_tools/review_b7_selected1011_complete_components.py": "321e5631fe5ebc4a7910d2625235368d591f4b8308d98a105979c15bc8476f16",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/acceptance_tools/review_b7_selected1011_components_c_agent.py": "95cf8064a9296ff38fd9c3bdd0fa3fc3c5f7ba68e667e674e212cf6002c2c3b5",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/accepted_repo/research/nine/.runs/closure_20261104/b7_selected_negativeF_and_CI_completed1011_v1/manifest.json": "bb5aaf7a3d16638b5ed6c7a70c947407c1c470e777468c4d0e0549b16ca6a449",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/accepted_repo/research/nine/.runs/closure_20261104/b7_selected_negativeF_and_CI_completed1011_v1/node_0814.json": "396e7a25f9891f55b06319515e76329f5158c724b4ef6736fe6de5b025ea716a",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/accepted_repo/research/nine/.runs/closure_20261104/b7_selected_negativeF_and_CI_completed1011_v1/node_0816.json": "e386f8aef12f2e7877dda2594ccf3533393a177906852e910005c29a1f3edbfb",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/accepted_repo/research/nine/.runs/closure_20261104/b7_selected_negativeF_and_CI_completed1011_v1/node_0818.json": "bae29b3c2e6f4dad1f3138dc2a748c6488f9d78aa512c388b2640c2e67b2a7e4",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/accepted_repo/research/nine/.runs/closure_20261104/b7_selected_negativeF_and_CI_completed1011_v1/node_0820.json": "2b3b2c63cff3369ade89908cdf30acbd3777507cb3324c18071139c2b5d88f85",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/accepted_repo/research/nine/.runs/closure_20261104/b7_selected_negativeF_and_CI_completed1011_v1/node_0949.json": "a870cf68938245eba0d8ee7a415f7bfd0156b5a6931f971f6f9109dbfa03f1cf",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/accepted_repo/research/nine/.runs/closure_20261104/b7_selected_negativeF_and_CI_completed1011_v1/node_0993.json": "a1af604d779c9ba1028202e0a648c766ca57aec74f4ae0c816cce4cd55207017",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/accepted_repo/research/nine/.runs/closure_20261104/b7_selected_negativeF_and_CI_completed1011_v1/node_1002.json": "36fc026c693d69b43c3e0cb2e48e1d810ee5a38ddce9756238460b9730721643",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/b7_selected1011_portable_isolation_v1/b7_selected1011_open_packet_v1/accepted_repo/research/nine/.runs/closure_20261104/b7_selected_negativeF_and_CI_completed1011_v1/node_0952.json": "156351365c2b98d0ea290bebc6e9fb3a6e40a4965aee640a01fec4934814f990",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/gates/A2_00100_FIXED_FRONTIER.json": "f4b0dcdba20214f819bc6d15cd37704be4986729562932218162f47d1d0dc569",
+    "/workspace/scratch/6b34cccf3741/b16_work/review_b7_selected1011_publisher_source.py": "b75135f5c219a464ca9bbb880d69ff46cbc81b6752ffd5d02ba866cf72405986"
+  },
+  "blocking_findings": [],
+  "exact_declared_source_replacements": 15,
+  "reviewed_original_counts": [
+    1011,
+    543,
+    43
+  ],
+  "completed_components": {
+    "4": [
+      33,
+      20
+    ],
+    "260": [
+      425,
+      213
+    ],
+    "814": [
+      13,
+      10
+    ],
+    "816": [
+      7,
+      4
+    ],
+    "818": [
+      9,
+      8
+    ],
+    "820": [
+      7,
+      4
+    ],
+    "993": [
+      9,
+      8
+    ]
+  },
+  "packet_manifest_sha256": "02a31bff354a13b6ee84e3cd8ef36c7972d85abe3bd610aee82c94611f00d1e7",
+  "packet_input_count": 1523,
+  "original_still_OPEN": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "mathematical_checker_or_decoder_changed": false,
+  "ledger_write_present": false,
+  "git_or_network_write_present": false,
+  "publisher_executed_by_this_review": false,
+  "no_new_arithmetic_replay_performed": true,
+  "future_concrete_transport_portable_archive_and_staged_audits_required": true,
+  "source_and_readme_findings": [
+    "Exact derivation from previously reviewed315679f7 preserves all packet/release/archive cross-bindings and changes only fixed selected1011 scope, attachments, counts and documentation.",
+    "Before creating a new publication directory, requires pinned1523-member packet, native1011/543/43, matching fresh isolated portable counts and zero-credit flags, physical/table peers,752-alias concrete transport, release-member hashes and full archive integrity/digest.",
+    "Each8MiB archive part is rehashed and their ordered concatenated digest is checked; no extraction, network, git or ledger write occurs.",
+    "All12 attachment names are safe relative paths, bound to the fixed packet, and disjoint from the generic copied metadata filenames.",
+    "README counts, exact central-box fraction/margin, original G/I signs, newly complete814 and negative-F993, retained whole813/952/1002 OPEN and43-leaf coarse distribution match the pinned native/physical sources.",
+    "Seven completed components are explicitly internal domains, not new registered cells. The strict q<Q and original strictly weakCD scope are retained; no global closed-Q/equality claim is made.",
+    "Future portable/transport/archive receipts were not asserted to have completed by this review. Actual publication and staged files require their concrete gates and root approval."
+  ]
+}
