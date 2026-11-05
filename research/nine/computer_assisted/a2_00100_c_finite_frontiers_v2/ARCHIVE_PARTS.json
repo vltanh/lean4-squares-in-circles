@@ -1,0 +1,83 @@
+{
+  "archive": "frozen_c_finite_frontiers_v2.tar.xz",
+  "archive_bytes": 123751936,
+  "archive_sha256": "60c5fef27b403c0312665b4d1e361f671d4fff0cc30aeda92a12de8c76f9ec2f",
+  "top_directory": "frozen_c_finite_frontiers_v2",
+  "parts": [
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part001",
+      "bytes": 8388608,
+      "sha256": "43e9f50cb703558f3528ca08427736df8bc67f36d31efcfa6f22dc211cf1708d"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part002",
+      "bytes": 8388608,
+      "sha256": "6b4f3b7e8c40be31f59fef581478941e76a8be6f90262c16f60bd2080d5a2676"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part003",
+      "bytes": 8388608,
+      "sha256": "1b24513133fd8ad96acc3750cba80306dfd5bf0c1dacfcc863985d1ac564c150"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part004",
+      "bytes": 8388608,
+      "sha256": "865ab869d3c35ab1b4b341c4e132697c526b5d01de74d7b932805bf279f4628d"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part005",
+      "bytes": 8388608,
+      "sha256": "dfe5e3115ed530079a1580d46075da30c9766934aefb86bc4ce291d1a85ab1d4"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part006",
+      "bytes": 8388608,
+      "sha256": "a0b008bb035daf703c844389f37228151e29baa490a4dde82761a120b46f721a"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part007",
+      "bytes": 8388608,
+      "sha256": "aedb0b203fdfd075336125aff1443278b0a59b8e703714febfb7fedafdea480b"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part008",
+      "bytes": 8388608,
+      "sha256": "0592a3a16dea7df678df755334f136aec461fb6d855628bf9b1368f1a4f2095f"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part009",
+      "bytes": 8388608,
+      "sha256": "4e5c2e4345620a28b65d27306b0352183622a358a83fdce26349ef1e78803b71"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part010",
+      "bytes": 8388608,
+      "sha256": "6455dd16355156a5d5f631eb38d0691e6015ca0cd75e204f7c80cfc3d9280126"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part011",
+      "bytes": 8388608,
+      "sha256": "e9914d33bb3a585330ced5259540bc9c02962b4e6d8d3cb4835a1d070dc94dc3"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part012",
+      "bytes": 8388608,
+      "sha256": "fb4cd0af282ff01ceee8de57e2df8eb8c5999bdfe3db46a5dcbe92f03d08e3ff"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part013",
+      "bytes": 8388608,
+      "sha256": "25d8ae0ec33b86424f8cbc6a577d7a1af3c3e4c6bf3aad2471be3408dae43e8c"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part014",
+      "bytes": 8388608,
+      "sha256": "00f80205607b4254ff52602f957ff3eb7e3d7e641062555a60bc17081744ac79"
+    },
+    {
+      "file": "frozen_c_finite_frontiers_v2.tar.xz.part015",
+      "bytes": 6311424,
+      "sha256": "c22ba02014cbd97583da9674acbce92ebc9b80e873d33edef50a43485e7325ca"
+    }
+  ]
+}

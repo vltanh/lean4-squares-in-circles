@@ -1,0 +1,470 @@
+{
+  "status": "PASS_C_V2_STAGED_NATIVE_PARTIAL_PUBLICATION_SCOPE_AND_BYTE_REVIEW",
+  "parent_commit": "195d1ffb3dfeef021e254744672a5c425352e987",
+  "staged_files": 56,
+  "publication_directory_files": 53,
+  "every_staged_blob_equals_reviewed_working_file": true,
+  "fixed_register_head_index_and_working_bytes_identical": true,
+  "fixed_register_sha256": "f4b0dcdba20214f819bc6d15cd37704be4986729562932218162f47d1d0dc569",
+  "immutable_original_definitions": 231,
+  "closed_originals": 224,
+  "open_originals": 7,
+  "whole_masks_closed": 8,
+  "whole_masks_total": 32,
+  "only_handoff_and_progress_checkpoint_paragraphs_added": true,
+  "historical_document_bytes_preserved": {
+    "research/nine/PROGRESS.md": "1082230d645ac8a9e632bc2b39c50bd43f343d4e416863087246b232347efde4",
+    "research/nine/HANDOFF_A2_FIXED_CLOSURE.md": "8efa32b48fd3163d3dd42375a0850d875a833fc109674364e98d74f8a03ca8bb"
+  },
+  "copied_source_and_evidence_files": 35,
+  "all_copied_files_match_frozen_source_bytes": true,
+  "all_15_parts_and_concatenated_bytes_independently_rehashed": true,
+  "archive_bytes": 123751936,
+  "archive_sha256": "60c5fef27b403c0312665b4d1e361f671d4fff0cc30aeda92a12de8c76f9ec2f",
+  "archive_regular_members": 1394,
+  "inventoried_files": 1393,
+  "expanded_archive_member_scan_not_repeated": true,
+  "pinned_archive_member_auditor_and_receipt_binding_checked": true,
+  "native_cover_report_and_manifest_bindings_checked": [
+    {
+      "name": "c887_main_259",
+      "original_id": "negative-887236b78100baf3",
+      "counts": {
+        "processed_nodes": 259,
+        "candidate_excluded_leaves": 135,
+        "pending": 0,
+        "stopped": 43,
+        "open_leaves": 43,
+        "whole_candidate_closed": false
+      },
+      "total_graph_domains": 259,
+      "exact_report_sha256": "31206e3b588555a59dea2a9d1ab2a910efc503b4c875a636b137403ceacd6ac4",
+      "original_manifest_sha256": "02caef8a7ec9bc16859f1e2c9a4a7e9d4443252774600ed9945a9eeb56f49e50"
+    },
+    {
+      "name": "cd402_opposite_507",
+      "original_id": "negative-d4021ade840b985c",
+      "counts": {
+        "processed_nodes": 507,
+        "candidate_excluded_leaves": 351,
+        "pending": 0,
+        "stopped": 13,
+        "open_leaves": 13,
+        "whole_candidate_closed": false
+      },
+      "total_graph_domains": 507,
+      "exact_report_sha256": "1bee09bb17c3a7d03729a11dee805ecdddffbd6e38702d6666acb5b9133e8678",
+      "original_manifest_sha256": "0530d5ae5bbac2152eca05862bf24a6855cfc3df4292d5935c0eef6f71dbe64d"
+    },
+    {
+      "name": "c887_scalar_alternative_189",
+      "original_id": "negative-887236b78100baf3",
+      "counts": {
+        "processed_nodes": 189,
+        "candidate_excluded_leaves": 115,
+        "pending": 24,
+        "stopped": 0,
+        "open_leaves": 24,
+        "whole_candidate_closed": false
+      },
+      "total_graph_domains": 213,
+      "exact_report_sha256": "144ae85942cd5233f7a13b3d04b8347c476993cc010c4839f31df487a2bb68d4",
+      "original_manifest_sha256": "0c358db4d557070925c05d200403ec0ff336eb5e573893220b54cf85ab1bb4d9"
+    },
+    {
+      "name": "cb882_abid_138",
+      "original_id": "negative-b882d8ade0cf9ea0",
+      "counts": {
+        "processed_nodes": 138,
+        "candidate_excluded_leaves": 67,
+        "pending": 13,
+        "stopped": 12,
+        "open_leaves": 25,
+        "whole_candidate_closed": false
+      },
+      "total_graph_domains": 151,
+      "exact_report_sha256": "bbba963c21d6a755ab2bc7e011c1654baffaf1b5f2b0a77bce13f4fe0ff5d761",
+      "original_manifest_sha256": "9d5ae44cb574ed3808f53cd61027b2babd4e8643228de40a7f75d10820ad2314"
+    }
+  ],
+  "all_pending_and_stopped_counts_preserved": true,
+  "C887_alternative_counts_not_additive": true,
+  "selected_Cb882_scope_is_138_processed_13_pending_25_OPEN": true,
+  "later_Cb882_and_C887_continuation_not_imported": true,
+  "actual_guarded_terminal_counts_checked": {
+    "C887_sharp": 1,
+    "Cd402_AHID": 1,
+    "Cb882_ABID": 2,
+    "deep_cylinder": 0
+  },
+  "exact_external_inputs": 994,
+  "external_archive_member_mapping_counts": {
+    "a_c744_portable_open_checkpoint": 527,
+    "c887_fresh_whole_state": 11,
+    "cd402_original_checkpoint_delta": 6,
+    "cb882_whole_eight_checkpoint": 450
+  },
+  "recovery_rules": 336,
+  "all_rules_limited_to_exact_input_lists": true,
+  "published_dependency_archive_count": 4,
+  "catalog_regular_members": 1954,
+  "published_git_objects_checked": 9,
+  "published_dependency_commit_is_immediate_parent_of_current_HEAD": true,
+  "ancestry_evidence": "Immutable git cat-file commit header; shallow revision walking does not expose this parent",
+  "current_commit_object_payload_sha256": "4f9b579c2a409e376f98d3672e589a0d3cc8763a5b5dcc689b27da0318d2c1e5",
+  "derived_outputs_included_and_not_external": 6,
+  "native_arithmetic_reports_included": true,
+  "cold_standalone_arithmetic_replay_claimed": false,
+  "arithmetic_or_optimization_run_by_review": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "no_Lean_Lake_compilation_or_CI": true,
+  "blocking_findings": [],
+  "publisher_source_sha256": "6d193391c2f4d36b9c02a02803ffd6849d06a6cadfa31900ba21bbf2eab35886",
+  "staged_blobs": {
+    "research/nine/A2_00100_C_FINITE_FRONTIERS_CHECKPOINT.md": {
+      "sha256": "6423dce97f18cf82bb96b6e0fb575e1c71e25bbdca434530bc48a001bd2d9fe7",
+      "bytes": 4074,
+      "git_blob": "abf34f215b24eca4f61ccfdacf02264b4ddd4cdf"
+    },
+    "research/nine/HANDOFF_A2_FIXED_CLOSURE.md": {
+      "sha256": "e404f173ecd33cdd81548c7623ce599473931188ba94a269895f54d8c2cb46af",
+      "bytes": 77041,
+      "git_blob": "93017be2888f10e23e5dd87e8e710b4387307b0e"
+    },
+    "research/nine/PROGRESS.md": {
+      "sha256": "736fbbf9acb2ad063833a4717217e8ddea54721acc79a97b919b646edf8a50e3",
+      "bytes": 67315,
+      "git_blob": "5a65645444c1ce4711e332e0eefe2414a8f4999e"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/ARCHIVE_PARTS.json": {
+      "sha256": "a2eb49fa191c513ebc323dbb1cda8723e184636c30ae8748bf1f1ce18d3e307d",
+      "bytes": 2956,
+      "git_blob": "717ad58f06d00914f5892219a37ec4962e968057"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/CB882_ABID_FINAL_SCOPE_B16_REVIEW.json": {
+      "sha256": "bdf15344af55ab2283d58c4d93c0cc21edbe267e3f3885aaef063769104063d2",
+      "bytes": 3572,
+      "git_blob": "1c3a45430d48a1eb6a6a48517209dcbf56a3f546"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_FINITE_FRONTIERS_V2_ARCHIVE_AUDIT.json": {
+      "sha256": "65915a06b85304e7e6effcb35f5cafa65a86cf81ece8ea95c4a2dd19d2d2b938",
+      "bytes": 1663,
+      "git_blob": "f431ad8b76ea1975bb9ff810ed95377194f3a01d"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_FINITE_FRONTIERS_V2_HASH_GRAPH_REPLAY.json": {
+      "sha256": "81813b7f805761df2b14fd4bb568b4bee7edca19cbc4270392392de96f6dc6de",
+      "bytes": 1359,
+      "git_blob": "4a50e58cde7614194e55bd78669df1484f9206c5"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_FINITE_FRONTIERS_V2_PUBLICATION_HANDOFF.md": {
+      "sha256": "6e6e8f0a1133bc83eb9353578e9461e184b28d3db1b67d6af1d4c37bf4bb3953",
+      "bytes": 11484,
+      "git_blob": "692789f296a61f627cc2dcd0bc94b62b15c7ea01"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_FINITE_FRONTIERS_V2_RECOVERY_PREFIX_MAP.json": {
+      "sha256": "0ec276115ca7b975f8e4bfc763e7168fb0d78819d9c7dba6fd9f0b73448dd31c",
+      "bytes": 357941,
+      "git_blob": "726339092218480ee04e8135c7e77554d8a06b27"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_FRONTIER_FREEZER_V2_B16_AGENT_REVIEW.json": {
+      "sha256": "a0606de79dc93296f8691abcf7389ccf2892a1841d59a843d1aa7799b433a8f2",
+      "bytes": 4522,
+      "git_blob": "67010a57ffb37ec7f77a3cfa3063004a32547ac5"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_PUBLISHED_DEPENDENCY_B16_REHASH.json": {
+      "sha256": "ccd696380749bebc7539a5fbf5cb0a42575be214b584069dbe2d806ebf286f17",
+      "bytes": 1408,
+      "git_blob": "a66e34c15c37ad153e81c18a46da3f703aeac66c"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/EXTERNAL_PROOF_INPUTS.json": {
+      "sha256": "bc8a9a11b9b49a16b8bf627bb915bb37592feaef60d2447e8c3ad21de6191a79",
+      "bytes": 257847,
+      "git_blob": "fa24c44c92754938921659c22877513917c8b15b"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/FREEZE_CONFIG.json": {
+      "sha256": "cb5df5044435a501b706d98ad5e4b4f0181085a0d0d5705b5a61e5f8c25210db",
+      "bytes": 10337,
+      "git_blob": "20d9b2405427456c11d103e00488932b0108955a"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/FROZEN_PACKET_README.md": {
+      "sha256": "72f15811ef91cd83a224def239f8c64e5d919e8aba5f92f8a342968cb04c6669",
+      "bytes": 8228,
+      "git_blob": "5ca37a29dc761060fd341b05b29d61927d0c1e2f"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/INVENTORY.json": {
+      "sha256": "35f08283d11ad099ac9a42fcd462d51736d1795b805b5f6a3c3aac736d87c013",
+      "bytes": 292099,
+      "git_blob": "cf8e84787d25da4ee11098f27452b767d87b9aa9"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/MANIFEST.json": {
+      "sha256": "56b34886713a1798944a46c8499e729d93fda1d93341e72a0d265e8701979265",
+      "bytes": 5172,
+      "git_blob": "ba7afa6925bc05f704bf5efcab3285c250a2ad46"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/ORIGINAL_PATH_MAP.json": {
+      "sha256": "58b5b9ef58cb7eaf7701deb207b0c76432399be686383be579af077cc4caeb8e",
+      "bytes": 406864,
+      "git_blob": "f7c03979a6469a8c7760d12f428c537f0b4a1a2b"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/PUBLISHED_DEPENDENCY_ARCHIVE_CATALOG.json": {
+      "sha256": "c59c03a6a2495ed881aab41fc205204eeb7cf76b6ceed9a9e420572a6e592a66",
+      "bytes": 609490,
+      "git_blob": "c6c39cb3c33f8b54e5f598443e43b628bd9caf80"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/PUBLISHED_DEPENDENCY_RECOVERY.json": {
+      "sha256": "1b3a531b2ffd08385219a95bc678daf868f602d087e2964168640f6266420bc9",
+      "bytes": 768917,
+      "git_blob": "7c88c2bb00c837e1c3599423cab3cbf03759b909"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/README.md": {
+      "sha256": "19532eefdc517153e0a5e31b92ffe27c9489d6879e375c7a79256fb53b74a528",
+      "bytes": 2987,
+      "git_blob": "e7787e7ebef8f60049a151ede3f871dd2d634c29"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/SOURCE_BINDINGS.json": {
+      "sha256": "65e73e830f93c4aa86ff2f1cdf82c568503bf85d15645d9fc1bf77889d42f55f",
+      "bytes": 50881,
+      "git_blob": "12f74a0d78c44381310b86ad2748d04075aa7cd9"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/ZERO_CREDIT_PUBLICATION_AUDIT.json": {
+      "sha256": "95a3c9f1c226aca08dd15f503843ee071e24a362d2804cdfb3db7e30a3ba0cee",
+      "bytes": 9213,
+      "git_blob": "0518ceb218d1df4b046fc8c783e773c886f6051c"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/c887_main_259/MANIFEST.json": {
+      "sha256": "f00730d13e8d6f6e9044cc7eba3e924696726b8ccb721796878f60f96b66a60a",
+      "bytes": 1512423,
+      "git_blob": "27ea9d99542eea7de0e3bba9fcbab161ff749f8c"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/c887_main_259/ORIGINAL_MANIFEST.json": {
+      "sha256": "02caef8a7ec9bc16859f1e2c9a4a7e9d4443252774600ed9945a9eeb56f49e50",
+      "bytes": 1553174,
+      "git_blob": "19dff8ff623040bd9f956a2d444d415b00b85fef"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/c887_scalar_alternative_189/MANIFEST.json": {
+      "sha256": "a6d1fdbb7453756f2bca97d5e54c48d2a32b3cef59c1c926897f4e6ff4dd8e50",
+      "bytes": 877701,
+      "git_blob": "7caa55fb2086b4be8137e4ec1544fb20c57032af"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/c887_scalar_alternative_189/ORIGINAL_MANIFEST.json": {
+      "sha256": "0c358db4d557070925c05d200403ec0ff336eb5e573893220b54cf85ab1bb4d9",
+      "bytes": 908223,
+      "git_blob": "ba9faa6bfc9f21a005498fd6ebdd0684c62fc8ba"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/cb882_abid_138/MANIFEST.json": {
+      "sha256": "de9647b32a2a138d24177e19ce4a9b414cdb143c07617b2eeb2f0f688043f25e",
+      "bytes": 890525,
+      "git_blob": "a5e540144afa2e2da02d2d3d84b2b53f9d1dad15"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/cb882_abid_138/ORIGINAL_MANIFEST.json": {
+      "sha256": "9d5ae44cb574ed3808f53cd61027b2babd4e8643228de40a7f75d10820ad2314",
+      "bytes": 912689,
+      "git_blob": "dadceade36f0f4ab94e307c85445f3880a906704"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/cd402_opposite_507/MANIFEST.json": {
+      "sha256": "998995ab2a3eddc91631acbbe19d352817bc1d3194018a64ead38f2318149a12",
+      "bytes": 663696,
+      "git_blob": "12b58e41d467daeac461e246055ce7aca7aec421"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/cd402_opposite_507/ORIGINAL_MANIFEST.json": {
+      "sha256": "0530d5ae5bbac2152eca05862bf24a6855cfc3df4292d5935c0eef6f71dbe64d",
+      "bytes": 749183,
+      "git_blob": "354f8afce9d7933fdf0abfed789e0c47032ab1ee"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/evidence/C887_CURRENT_COMPLETE_PARTIAL_REPLAY.json": {
+      "sha256": "31206e3b588555a59dea2a9d1ab2a910efc503b4c875a636b137403ceacd6ac4",
+      "bytes": 1018874,
+      "git_blob": "b71e425f19c87b6203fd7a6ab0764101ead6a8b0"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/evidence/C887_SCALAR_STOPPED_REPLAY.json": {
+      "sha256": "144ae85942cd5233f7a13b3d04b8347c476993cc010c4839f31df487a2bb68d4",
+      "bytes": 966602,
+      "git_blob": "046e1f61b875b2e937ae196f9088bf97caf81844"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/evidence/CB882_ABID_TWO_BOUNDARY_PEELS_REPLAY.json": {
+      "sha256": "bbba963c21d6a755ab2bc7e011c1654baffaf1b5f2b0a77bce13f4fe0ff5d761",
+      "bytes": 809912,
+      "git_blob": "1ca9d2be28c327667ef64abb2fce6cdb6c8f4bfa"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/evidence/CD402_N43_FIVE_OUTER_TWO_ROUND_REPLAY.json": {
+      "sha256": "1bee09bb17c3a7d03729a11dee805ecdddffbd6e38702d6666acb5b9133e8678",
+      "bytes": 584660,
+      "git_blob": "c65497478e016ed9597e7977798235c54a2c5d59"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part001": {
+      "sha256": "43e9f50cb703558f3528ca08427736df8bc67f36d31efcfa6f22dc211cf1708d",
+      "bytes": 8388608,
+      "git_blob": "36835aa89162cb4afbb1f87402e8a7fdee2bee10"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part002": {
+      "sha256": "6b4f3b7e8c40be31f59fef581478941e76a8be6f90262c16f60bd2080d5a2676",
+      "bytes": 8388608,
+      "git_blob": "3ace461de5871df3a28ce071158829a32c31a012"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part003": {
+      "sha256": "1b24513133fd8ad96acc3750cba80306dfd5bf0c1dacfcc863985d1ac564c150",
+      "bytes": 8388608,
+      "git_blob": "0c8a72a8130587314fba902dca628bcd5aa3d700"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part004": {
+      "sha256": "865ab869d3c35ab1b4b341c4e132697c526b5d01de74d7b932805bf279f4628d",
+      "bytes": 8388608,
+      "git_blob": "ae231ae9f14fe226025891024e889ae4ffe80762"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part005": {
+      "sha256": "dfe5e3115ed530079a1580d46075da30c9766934aefb86bc4ce291d1a85ab1d4",
+      "bytes": 8388608,
+      "git_blob": "e3dae0321b56a7dee5a05627570fbd3021ca43a3"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part006": {
+      "sha256": "a0b008bb035daf703c844389f37228151e29baa490a4dde82761a120b46f721a",
+      "bytes": 8388608,
+      "git_blob": "371ceef760dff5b0cfde8f2fb472e1058d4c5e30"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part007": {
+      "sha256": "aedb0b203fdfd075336125aff1443278b0a59b8e703714febfb7fedafdea480b",
+      "bytes": 8388608,
+      "git_blob": "9f77192b6c5ccb477ac7d6d0dfbf59805cbacad5"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part008": {
+      "sha256": "0592a3a16dea7df678df755334f136aec461fb6d855628bf9b1368f1a4f2095f",
+      "bytes": 8388608,
+      "git_blob": "9a9091ebffd899c1df116e64d2f05885b9d72a52"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part009": {
+      "sha256": "4e5c2e4345620a28b65d27306b0352183622a358a83fdce26349ef1e78803b71",
+      "bytes": 8388608,
+      "git_blob": "c916cb5fd5983aeccc119a85d8e19170a8ea7643"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part010": {
+      "sha256": "6455dd16355156a5d5f631eb38d0691e6015ca0cd75e204f7c80cfc3d9280126",
+      "bytes": 8388608,
+      "git_blob": "490316a14c6aca84cdaee2e006726441e3fb9b74"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part011": {
+      "sha256": "e9914d33bb3a585330ced5259540bc9c02962b4e6d8d3cb4835a1d070dc94dc3",
+      "bytes": 8388608,
+      "git_blob": "ecd01b62c37253e52d51f0518246f42ce5819f93"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part012": {
+      "sha256": "fb4cd0af282ff01ceee8de57e2df8eb8c5999bdfe3db46a5dcbe92f03d08e3ff",
+      "bytes": 8388608,
+      "git_blob": "5ef30d5d2679908a4d8208e0779ba499abdd4368"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part013": {
+      "sha256": "25d8ae0ec33b86424f8cbc6a577d7a1af3c3e4c6bf3aad2471be3408dae43e8c",
+      "bytes": 8388608,
+      "git_blob": "bc85cb1e0f1c14ef02776eaa76f558ff3f1442cd"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part014": {
+      "sha256": "00f80205607b4254ff52602f957ff3eb7e3d7e641062555a60bc17081744ac79",
+      "bytes": 8388608,
+      "git_blob": "19e27cb8559449927ea5f7b9b839c2848d6b9557"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/frozen_c_finite_frontiers_v2.tar.xz.part015": {
+      "sha256": "c22ba02014cbd97583da9674acbce92ebc9b80e873d33edef50a43485e7325ca",
+      "bytes": 6311424,
+      "git_blob": "ca34206686362f282f08b12c344292006e51d192"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/publish_c_finite_frontiers_v2.py": {
+      "sha256": "6d193391c2f4d36b9c02a02803ffd6849d06a6cadfa31900ba21bbf2eab35886",
+      "bytes": 12844,
+      "git_blob": "ee6a5ce519e717fea5ec160eb4e46a18db234b2c"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/transport_sources/archive_frozen_c_frontiers.py": {
+      "sha256": "6c6a3b0910d31a2e78a68e7fbebaaaf025b40d75b6b36f5af93d76e58db0d739",
+      "bytes": 5492,
+      "git_blob": "b3241d366b13eaf423c0bcf3cae69d06a0afb474"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/transport_sources/build_c_published_dependency_catalog.py": {
+      "sha256": "783247018b051dd9ac1f080895cca301a83d2eb0f4d831d74e4029646201c865",
+      "bytes": 5542,
+      "git_blob": "b7e72249265ce7b2f87a296e1d2f9a8071cb5fb5"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/transport_sources/freeze_c_completed_frontiers.py": {
+      "sha256": "fdc75cccf61ed289d67d42b942fbe72d5e8f9a2f299c1824f8374595a0845bf9",
+      "bytes": 11583,
+      "git_blob": "af55d887af271d3a8b6d14b11bf0137d049f83c0"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/transport_sources/freeze_c_completed_frontiers_v2.py": {
+      "sha256": "8c30ce7abea905bddb6a77f6376ee75d24a31c9772f090e4092484084897fd95",
+      "bytes": 14045,
+      "git_blob": "e2dd3cf076c624c4659fd3c5f981500275596b7d"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/transport_sources/verify_frozen_c_frontiers.py": {
+      "sha256": "037e8881709a5075cb9edf490608939bef65f34aef5d40bd940f0ca0c4681c33",
+      "bytes": 6607,
+      "git_blob": "690cb626554f727e476745ae0148c8e59877ed34"
+    },
+    "research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/transport_sources/verify_frozen_c_frontiers_v2.py": {
+      "sha256": "8c97f58b2098d1c1d8aa4ae018baa3f6454b51883eb6e4c75cc33ceb225dd984",
+      "bytes": 8021,
+      "git_blob": "9b6132ba564a2a2d0f8bd376b76a771cdddb38ea"
+    }
+  },
+  "source_sha256": {
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/ZERO_CREDIT_PUBLICATION_AUDIT.json": "95a3c9f1c226aca08dd15f503843ee071e24a362d2804cdfb3db7e30a3ba0cee",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/ARCHIVE_PARTS.json": "a2eb49fa191c513ebc323dbb1cda8723e184636c30ae8748bf1f1ce18d3e307d",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/MANIFEST.json": "56b34886713a1798944a46c8499e729d93fda1d93341e72a0d265e8701979265",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/INVENTORY.json": "35f08283d11ad099ac9a42fcd462d51736d1795b805b5f6a3c3aac736d87c013",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/EXTERNAL_PROOF_INPUTS.json": "bc8a9a11b9b49a16b8bf627bb915bb37592feaef60d2447e8c3ad21de6191a79",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/PUBLISHED_DEPENDENCY_RECOVERY.json": "1b3a531b2ffd08385219a95bc678daf868f602d087e2964168640f6266420bc9",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/PUBLISHED_DEPENDENCY_ARCHIVE_CATALOG.json": "c59c03a6a2495ed881aab41fc205204eeb7cf76b6ceed9a9e420572a6e592a66",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/ORIGINAL_PATH_MAP.json": "58b5b9ef58cb7eaf7701deb207b0c76432399be686383be579af077cc4caeb8e",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/SOURCE_BINDINGS.json": "65e73e830f93c4aa86ff2f1cdf82c568503bf85d15645d9fc1bf77889d42f55f",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/FREEZE_CONFIG.json": "cb5df5044435a501b706d98ad5e4b4f0181085a0d0d5705b5a61e5f8c25210db",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/README.md": "72f15811ef91cd83a224def239f8c64e5d919e8aba5f92f8a342968cb04c6669",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/covers/c887_main_259/ORIGINAL_MANIFEST.json": "02caef8a7ec9bc16859f1e2c9a4a7e9d4443252774600ed9945a9eeb56f49e50",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/covers/c887_main_259/MANIFEST.json": "f00730d13e8d6f6e9044cc7eba3e924696726b8ccb721796878f60f96b66a60a",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/evidence/C887_CURRENT_COMPLETE_PARTIAL_REPLAY.json": "31206e3b588555a59dea2a9d1ab2a910efc503b4c875a636b137403ceacd6ac4",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/covers/cd402_opposite_507/ORIGINAL_MANIFEST.json": "0530d5ae5bbac2152eca05862bf24a6855cfc3df4292d5935c0eef6f71dbe64d",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/covers/cd402_opposite_507/MANIFEST.json": "998995ab2a3eddc91631acbbe19d352817bc1d3194018a64ead38f2318149a12",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/evidence/CD402_N43_FIVE_OUTER_TWO_ROUND_REPLAY.json": "1bee09bb17c3a7d03729a11dee805ecdddffbd6e38702d6666acb5b9133e8678",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/covers/c887_scalar_alternative_189/ORIGINAL_MANIFEST.json": "0c358db4d557070925c05d200403ec0ff336eb5e573893220b54cf85ab1bb4d9",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/covers/c887_scalar_alternative_189/MANIFEST.json": "a6d1fdbb7453756f2bca97d5e54c48d2a32b3cef59c1c926897f4e6ff4dd8e50",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/evidence/C887_SCALAR_STOPPED_REPLAY.json": "144ae85942cd5233f7a13b3d04b8347c476993cc010c4839f31df487a2bb68d4",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/ORIGINAL_MANIFEST.json": "9d5ae44cb574ed3808f53cd61027b2babd4e8643228de40a7f75d10820ad2314",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/covers/cb882_abid_138/MANIFEST.json": "de9647b32a2a138d24177e19ce4a9b414cdb143c07617b2eeb2f0f688043f25e",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/frozen_c_finite_frontiers_v2/evidence/CB882_ABID_TWO_BOUNDARY_PEELS_REPLAY.json": "bbba963c21d6a755ab2bc7e011c1654baffaf1b5f2b0a77bce13f4fe0ff5d761",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_FINITE_FRONTIERS_V2_ARCHIVE_AUDIT.json": "65915a06b85304e7e6effcb35f5cafa65a86cf81ece8ea95c4a2dd19d2d2b938",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_FINITE_FRONTIERS_V2_HASH_GRAPH_REPLAY.json": "81813b7f805761df2b14fd4bb568b4bee7edca19cbc4270392392de96f6dc6de",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_FINITE_FRONTIERS_V2_PUBLICATION_HANDOFF.md": "6e6e8f0a1133bc83eb9353578e9461e184b28d3db1b67d6af1d4c37bf4bb3953",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_FINITE_FRONTIERS_V2_RECOVERY_PREFIX_MAP.json": "0ec276115ca7b975f8e4bfc763e7168fb0d78819d9c7dba6fd9f0b73448dd31c",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_FRONTIER_FREEZER_V2_B16_AGENT_REVIEW.json": "a0606de79dc93296f8691abcf7389ccf2892a1841d59a843d1aa7799b433a8f2",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_PUBLISHED_DEPENDENCY_B16_REHASH.json": "ccd696380749bebc7539a5fbf5cb0a42575be214b584069dbe2d806ebf286f17",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/CB882_ABID_FINAL_SCOPE_B16_REVIEW.json": "bdf15344af55ab2283d58c4d93c0cc21edbe267e3f3885aaef063769104063d2",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/archive_frozen_c_frontiers.py": "6c6a3b0910d31a2e78a68e7fbebaaaf025b40d75b6b36f5af93d76e58db0d739",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/freeze_c_completed_frontiers.py": "fdc75cccf61ed289d67d42b942fbe72d5e8f9a2f299c1824f8374595a0845bf9",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/freeze_c_completed_frontiers_v2.py": "8c30ce7abea905bddb6a77f6376ee75d24a31c9772f090e4092484084897fd95",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/verify_frozen_c_frontiers.py": "037e8881709a5075cb9edf490608939bef65f34aef5d40bd940f0ca0c4681c33",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/verify_frozen_c_frontiers_v2.py": "8c97f58b2098d1c1d8aa4ae018baa3f6454b51883eb6e4c75cc33ceb225dd984",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/build_c_published_dependency_catalog.py": "783247018b051dd9ac1f080895cca301a83d2eb0f4d831d74e4029646201c865",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/acceptance/publish_c_finite_frontiers_v2.py": "6d193391c2f4d36b9c02a02803ffd6849d06a6cadfa31900ba21bbf2eab35886",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_FINITE_FRONTIERS_V2_ARCHIVE_AUDIT.json": "65915a06b85304e7e6effcb35f5cafa65a86cf81ece8ea95c4a2dd19d2d2b938",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/MANIFEST.json": "56b34886713a1798944a46c8499e729d93fda1d93341e72a0d265e8701979265",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/INVENTORY.json": "35f08283d11ad099ac9a42fcd462d51736d1795b805b5f6a3c3aac736d87c013",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_FINITE_FRONTIERS_V2_HASH_GRAPH_REPLAY.json": "81813b7f805761df2b14fd4bb568b4bee7edca19cbc4270392392de96f6dc6de",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/EXTERNAL_PROOF_INPUTS.json": "bc8a9a11b9b49a16b8bf627bb915bb37592feaef60d2447e8c3ad21de6191a79",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/PUBLISHED_DEPENDENCY_RECOVERY.json": "1b3a531b2ffd08385219a95bc678daf868f602d087e2964168640f6266420bc9",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/PUBLISHED_DEPENDENCY_ARCHIVE_CATALOG.json": "c59c03a6a2495ed881aab41fc205204eeb7cf76b6ceed9a9e420572a6e592a66",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/ORIGINAL_PATH_MAP.json": "58b5b9ef58cb7eaf7701deb207b0c76432399be686383be579af077cc4caeb8e",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/FREEZE_CONFIG.json": "cb5df5044435a501b706d98ad5e4b4f0181085a0d0d5705b5a61e5f8c25210db",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/SOURCE_BINDINGS.json": "65e73e830f93c4aa86ff2f1cdf82c568503bf85d15645d9fc1bf77889d42f55f",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_PUBLISHED_DEPENDENCY_B16_REHASH.json": "ccd696380749bebc7539a5fbf5cb0a42575be214b584069dbe2d806ebf286f17",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/C_FINITE_FRONTIERS_V2_RECOVERY_PREFIX_MAP.json": "0ec276115ca7b975f8e4bfc763e7168fb0d78819d9c7dba6fd9f0b73448dd31c",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/c887_main_259/ORIGINAL_MANIFEST.json": "02caef8a7ec9bc16859f1e2c9a4a7e9d4443252774600ed9945a9eeb56f49e50",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/c887_main_259/MANIFEST.json": "f00730d13e8d6f6e9044cc7eba3e924696726b8ccb721796878f60f96b66a60a",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/evidence/C887_CURRENT_COMPLETE_PARTIAL_REPLAY.json": "31206e3b588555a59dea2a9d1ab2a910efc503b4c875a636b137403ceacd6ac4",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/cd402_opposite_507/ORIGINAL_MANIFEST.json": "0530d5ae5bbac2152eca05862bf24a6855cfc3df4292d5935c0eef6f71dbe64d",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/cd402_opposite_507/MANIFEST.json": "998995ab2a3eddc91631acbbe19d352817bc1d3194018a64ead38f2318149a12",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/evidence/CD402_N43_FIVE_OUTER_TWO_ROUND_REPLAY.json": "1bee09bb17c3a7d03729a11dee805ecdddffbd6e38702d6666acb5b9133e8678",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/c887_scalar_alternative_189/ORIGINAL_MANIFEST.json": "0c358db4d557070925c05d200403ec0ff336eb5e573893220b54cf85ab1bb4d9",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/c887_scalar_alternative_189/MANIFEST.json": "a6d1fdbb7453756f2bca97d5e54c48d2a32b3cef59c1c926897f4e6ff4dd8e50",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/evidence/C887_SCALAR_STOPPED_REPLAY.json": "144ae85942cd5233f7a13b3d04b8347c476993cc010c4839f31df487a2bb68d4",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/cb882_abid_138/ORIGINAL_MANIFEST.json": "9d5ae44cb574ed3808f53cd61027b2babd4e8643228de40a7f75d10820ad2314",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/covers/cb882_abid_138/MANIFEST.json": "de9647b32a2a138d24177e19ce4a9b414cdb143c07617b2eeb2f0f688043f25e",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/computer_assisted/a2_00100_c_finite_frontiers_v2/evidence/CB882_ABID_TWO_BOUNDARY_PEELS_REPLAY.json": "bbba963c21d6a755ab2bc7e011c1654baffaf1b5f2b0a77bce13f4fe0ff5d761",
+    "/workspace/scratch/6b34cccf3741/a_work/review_c_v2_staged_publication.py": "1c895374a59b463800096d1f8c5300b073f9932f4dffdeec9a0cad537f091a41"
+  }
+}

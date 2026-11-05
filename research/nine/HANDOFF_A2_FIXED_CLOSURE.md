@@ -2,6 +2,24 @@
 
 # Current A.2 handoff: 224/231 current-mask cells closed; 7 OPEN
 
+## Frozen C-family native checkpoint: all three originals remain OPEN
+
+The [C-family checkpoint](A2_00100_C_FINITE_FRONTIERS_CHECKPOINT.md)
+preserves four fresh exact partial covers with all unresolved alternatives:
+C887 main 259 processed / 135 excluded / 43 OPEN; Cd402 507 / 351 / 13;
+the separate C887 scalar alternative 189 / 115 / 24; Cb882 138 / 67 / 25.
+The C887 alternatives cannot be added. The actual guarded components,
+physical hand tables and complete original attachments are preserved.
+
+All 1,394 regular archive members and 15 parts are hash-bound. The 994
+external inputs are exactly recoverable from four published archives;
+their 1,954 members and Git blobs passed an independent byte audit.
+The packet is a native checkpoint with explicit dependencies, with no
+claim of standalone cold arithmetic replay. Its publication changes no
+ledger: **224 CLOSED / 7 OPEN**, and **8/32 masks CLOSED**. Later Cb882
+and C887 continuation records remain outside this immutable snapshot.
+Continue the seven whole originals; no Lean, Lake, compilation or CI.
+
 ## Complete B580 original: 224 CLOSED / 7 OPEN
 
 The complete physical tree excludes `negative-580db3624cf4c2e2`

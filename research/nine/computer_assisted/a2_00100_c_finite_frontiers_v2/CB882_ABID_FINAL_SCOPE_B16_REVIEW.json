@@ -1,0 +1,116 @@
+{
+  "status": "PASS_FINAL_TWO_ABID_TERMINAL_BINDINGS_AND_PARTIAL_ACCEPTANCE_SCOPE",
+  "reviewer": "b16_closure",
+  "original": "negative-b882d8ade0cf9ea0",
+  "processed_records": 138,
+  "explicit_pending_domains": 13,
+  "total_graph_domains": 151,
+  "excluded_leaves": 67,
+  "open_leaves": 25,
+  "unrelated_stopped_leaves": 12,
+  "source_binding_entries_rehashed": 164,
+  "new_terminal_literals": [
+    {
+      "index": 179,
+      "payload_sha256": "634e3d3effd6e8296e22563205f02b077be99531c24af4c5d6ce76636ed040b5",
+      "physical_row": [
+        0,
+        1,
+        8,
+        3
+      ],
+      "orders": [
+        [
+          "1048575/1048576",
+          "1133663/1048576"
+        ],
+        [
+          "855653/1048576",
+          "53/30"
+        ],
+        [
+          "434432029724121/5000000000000000",
+          "1233569/1048576"
+        ]
+      ],
+      "heights": [
+        [
+          "-1/16",
+          "1/16"
+        ],
+        [
+          "-1/16",
+          "1/16"
+        ],
+        [
+          "-1/16",
+          "1/16"
+        ]
+      ],
+      "variation": "3/16",
+      "original_CD_bit_retained_by_full_reader": true
+    },
+    {
+      "index": 193,
+      "payload_sha256": "0846d460745fe9886f38df8f063eb5a6a7dddd4edbb887b31a3c0089f29193bf",
+      "physical_row": [
+        0,
+        1,
+        8,
+        3
+      ],
+      "orders": [
+        [
+          "1048575/1048576",
+          "1133663/1048576"
+        ],
+        [
+          "0",
+          "53/30"
+        ],
+        [
+          "434432029724121/5000000000000000",
+          "2269523/1048576"
+        ]
+      ],
+      "heights": [
+        [
+          "-1/16",
+          "1/16"
+        ],
+        [
+          "-1/16",
+          "1/16"
+        ],
+        [
+          "-1/16",
+          "1/16"
+        ]
+      ],
+      "variation": "3/16",
+      "original_CD_bit_retained_by_full_reader": true
+    }
+  ],
+  "complete_closed_difference_cuts": 13,
+  "fresh_scalar_report_summary": {
+    "complete_domains": 80,
+    "leaves": 1405,
+    "coefficient_checks": 878125,
+    "frontier": 0
+  },
+  "source_review_hashes_unchanged": true,
+  "parent_physical_review_consistent": true,
+  "record_source_bindings_match_arithmetic_report": true,
+  "fresh_arithmetic_not_repeated_by_this_review": true,
+  "whole_original_excluded": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "scope": "The complete original domain is retained, but25 OPEN leaves prevent original closure. The two accepted ABID terminals exclude only their literal inner neighborhoods; all13 new outer complements and12 unrelated stopped domains remain. This review authorizes no new cell credit.",
+  "source_sha256": {
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/CB882_ABID_TWO_BOUNDARY_PEELS_REPLAY.json": "bbba963c21d6a755ab2bc7e011c1654baffaf1b5f2b0a77bce13f4fe0ff5d761",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/CB882_ABID_TWO_BOUNDARY_PEELS_REPLAY.manifest.json": "9d5ae44cb574ed3808f53cd61027b2babd4e8643228de40a7f75d10820ad2314",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/CB882_TWO_ABID_PEELS_PHYSICAL_ROOT_REVIEW.json": "b4c2d646b89c5214642eb19c48c989559816b2820d0a9c8f74d3859ecc6d3664",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/CB882_ABID_DIFFERENCE_B16_AGENT_REVIEW.json": "39b55f733c100394693c8f831716597e338694144549489d4143c8ce647a2085"
+  },
+  "remaining_transport_gate": "Final v2 archive and restoration audits remain separate."
+}

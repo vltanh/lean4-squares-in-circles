@@ -2,6 +2,24 @@
 
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **224/231 cells CLOSED, 7 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Exact C-family checkpoint: no new original credit
+
+The [C-family partial checkpoint](A2_00100_C_FINITE_FRONTIERS_CHECKPOINT.md)
+preserves four freshly exact-replayed covers of three unchanged originals:
+C887 main 259 processed / 135 excluded / 43 OPEN, Cd402 507 / 351 / 13,
+the separate C887 scalar alternative 189 / 115 / 24, and Cb882 138 / 67 / 25.
+It retains the completed C887 components, one actual full-angle AHID
+terminal and two literal ABID terminals, with every outer complement.
+The two C887 alternatives are not additive.
+
+The 15-part archive has 1,394 rehashed regular members. All 994 external
+inputs map to exact members of four previously published archives whose
+1,954 members and Git blobs were independently checked. This is a native
+checkpoint with explicit dependencies; standalone cold arithmetic replay
+is not claimed. Transport and graph audits add no original or mask credit.
+Totals remain **224/231 originals and 8/32 masks CLOSED**. Later C-family
+continuations are outside this immutable snapshot. No Lean/Lake/CI.
+
 ## Complete B580 original: 224 CLOSED / 7 OPEN
 
 The complete physical tree excludes `negative-580db3624cf4c2e2`

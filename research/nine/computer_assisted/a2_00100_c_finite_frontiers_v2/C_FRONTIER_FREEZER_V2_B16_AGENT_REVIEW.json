@@ -1,0 +1,38 @@
+{
+  "status": "PASS_V2_SOURCE_AND_PUBLISHED_BYTE_PROVENANCE_REVIEW_FINAL_FREEZE_PENDING",
+  "reviewer": "b16_closure",
+  "changes_reviewed": [
+    "Both producer and verifier add exactly the existing two-child arity for difference covers. Full graph traversal remains eager and preserves every pending/stopped descendant. No new arithmetic decoder or branch inequality is accepted by this transport code.",
+    "Every selected cover now requires a matching fresh partial whole-original exact report. The original-manifest digest, counts, report-input digests and each copied processed-record digest remain jointly checked; the v1 stale-report/changed-record protection remains intact.",
+    "Only source_file location fields may be removed from a copied native manifest. All original mathematical strings, original state, split choices, pending/stopped domains and record bytes remain unchanged.",
+    "The new opposite-terminal source-binding dictionary is retained in the same hash-checked source-file path map as the existing independent checker dependencies and chord sources.",
+    "Explicit rederived outputs are copied under content-addressed paths and marked as fresh outputs/location transport. The report-input reconciliation runs after these copies, verifies exact digests, preserves literal aliases, and removes them from external dependencies.",
+    "Every remaining external input must match a catalogued regular archive member by its exact SHA256 and byte count. The separate verifier matches every recovery entry to a unique archive/member record in the pinned catalog and requires the recovery key set to equal the external input set.",
+    "The catalog builder verifies three complete Git blobs and every part plus whole-archive metadata for the multipart A archive, then streams and hashes every regular member without extraction or path rewriting."
+  ],
+  "independent_catalog_audit": {
+    "report": "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_PUBLISHED_DEPENDENCY_B16_REHASH.json",
+    "archive_count": 4,
+    "members_rehashed": 1954,
+    "published_commit": "4ce6c4567ddb810da03f64b2b139e5d3867661a6",
+    "all_archive_bytes_and_Git_object_ids_matched": true,
+    "normalized_member_names_unique": true
+  },
+  "scope_limits": [
+    "The frozen payload verifier checks the copied catalog/recovery metadata and hashes; the actual external archive bytes were independently rehashed in this review. It does not download those archives or redo arithmetic.",
+    "The packet is explicitly non-standalone for arithmetic. Restoring the pinned historical dependencies and performing a fresh original proof replay remain separate obligations.",
+    "No final v2 packet has been frozen or accepted by this source review; its own post-freeze inventory/graph verification is still required."
+  ],
+  "original_cells_credit": 0,
+  "new_masks": 0,
+  "source_sha256": {
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/freeze_c_completed_frontiers.py": "fdc75cccf61ed289d67d42b942fbe72d5e8f9a2f299c1824f8374595a0845bf9",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/verify_frozen_c_frontiers.py": "037e8881709a5075cb9edf490608939bef65f34aef5d40bd940f0ca0c4681c33",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/freeze_c_completed_frontiers_v2.py": "8c30ce7abea905bddb6a77f6376ee75d24a31c9772f090e4092484084897fd95",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/verify_frozen_c_frontiers_v2.py": "8c97f58b2098d1c1d8aa4ae018baa3f6454b51883eb6e4c75cc33ceb225dd984",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/code/build_c_published_dependency_catalog.py": "783247018b051dd9ac1f080895cca301a83d2eb0f4d831d74e4029646201c865",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_PUBLISHED_DEPENDENCY_ARCHIVE_CATALOG.json": "c59c03a6a2495ed881aab41fc205204eeb7cf76b6ceed9a9e420572a6e592a66",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_PUBLISHED_DEPENDENCY_B16_REHASH.json": "ccd696380749bebc7539a5fbf5cb0a42575be214b584069dbe2d806ebf286f17",
+    "/workspace/scratch/6b34cccf3741/repo/research/nine/.runs/closure_20261104/c_runtime/C_REVISED_FRONTIER_FREEZER_B16_AGENT_REVIEW.json": "215932ed1eb60ad7bf39824532f9ae8bbeca09f05bc564f71415d544aef40e89"
+  }
+}
