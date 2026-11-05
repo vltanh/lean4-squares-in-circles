@@ -1,0 +1,44 @@
+{
+  "status": "PASS_INDEPENDENT_RELATIVE_SUPPORT_CHORD_CONTROLS",
+  "domains": 28,
+  "literals": 1792,
+  "rejected_controls": [
+    "right-hand-side",
+    "coefficient",
+    "reverse-coefficient-order",
+    "unknown-family",
+    "reversed-original-pair",
+    "noncanonical-integer",
+    "bad-axis",
+    "longitudinal-sign",
+    "bad-epsilon",
+    "ratio-left-guard",
+    "ratio-right-guard",
+    "endpoint-height-square",
+    "negative-endpoint-height",
+    "bad-plane-bit",
+    "caller-longitudinal-interval",
+    "caller-transverse-interval",
+    "reversed-scalar-interval",
+    "negative-intercept",
+    "degenerate-height"
+  ],
+  "decoder": {
+    "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/computer_assisted/relative_support_chords_v1/independent_relative_support_chords.py",
+    "sha256": "84e65653bbc394bac004aeb5d4d8ec7de707c0a2c8cc1eae219cbd8814aeec91"
+  },
+  "fixture": {
+    "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/computer_assisted/relative_support_chords_v1/CONTROL_FIXTURE.json",
+    "sha256": "014b42a446e032275a52aad36c89fdd12ea63b3c43cd9940c488d8f7ecd52205"
+  },
+  "checker": {
+    "path": "/workspace/scratch/8446ce74729c/pr11/research/nine/computer_assisted/relative_support_chords_v1/check_controls.py",
+    "sha256": "5340a3417d3edf3c3abb2a868d7175323c7cce88fe7f45487e62de40d4192269"
+  },
+  "producer_imported": false,
+  "numerical_library_imported": false,
+  "actual_weighted_certificate_checked": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 0.6032563100015977
+}

@@ -1,0 +1,16 @@
+{
+  "status": "INDEPENDENT_NATIVE_PREFIX_AND_BOUND_PASS_CONDITIONAL_OPEN",
+  "original_id": "negative-7c60be8b07a358e9",
+  "global_prefix_node": 260,
+  "record_sha256": "c6767f9623466702441a04453c1ab2291549fd8ab10396c48db10c829a00db25",
+  "fresh_original_prefix_nodes": 10,
+  "conditional_bound_rounds": 1,
+  "conditional_deductions": 105,
+  "conditional_printed_rows": 441,
+  "new_family_rows_checked": 10,
+  "whole_original_proved": false,
+  "standalone_native_ancestry_bundled": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false
+}
