@@ -1,0 +1,12 @@
+{
+  "schema": "Cd402_eight_terminal_delta_archive_v1",
+  "archive": "cd402_eight_terminal_delta_v1.tar.xz",
+  "sha256": "f539dc4621515cb8459f08f0f791d34aa4ce94b142a5537906ad24874f0eed89",
+  "bytes": 970456,
+  "regular_members": 89,
+  "uncompressed_bytes": 14253738,
+  "inventory": "PAYLOAD_SHA256.json",
+  "inventory_sha256": "4acc4aab99aa5bde496fff8ecea08c8938149616f2a1010e0b7b323e9d647260",
+  "new_original_cells": 0,
+  "new_masks": 0
+}

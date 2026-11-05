@@ -1,0 +1,28 @@
+{
+  "schema": "Cd402_eight_terminal_delta_publication_v1",
+  "files": {
+    "ARCHIVE_MANIFEST.json": "e5cba97b1cccfa81ba62003c92f128971f4d97b5701d29e86055f605d7039396",
+    "DEPENDENCIES.json": "da639f779bcaf302acbe073fd8dc0da7b345f4961792ec2af70ef2026caca7b4",
+    "HAND_TABLE.md": "3fa421af7fab017da5e4c4ea4ab93c326694750723cbf704bfbec2e5770c8eb7",
+    "NATIVE_DEPENDENCIES.json": "c553f019964d2ceaf567c7f809021ff8d6726599b115c11e1d77eed68e3462bb",
+    "NATIVE_REPLAY.json": "458a4ac376b336de89115851f2b77b26d798dd5d256064fa48bd3c9c4931bb6e",
+    "PAYLOAD_SHA256.json": "4acc4aab99aa5bde496fff8ecea08c8938149616f2a1010e0b7b323e9d647260",
+    "README.md": "ed8b66d794f5d42420684144205de917caa8bc77f988f0ecc49b8ba902cbf725",
+    "SOURCE_BOUNDARY.md": "bff395e6bf0203558ad3a8a2defa7dd70f0e56d81a3e69bee83000a315a11b48",
+    "cd402_eight_terminal_delta_v1.tar.xz": "f539dc4621515cb8459f08f0f791d34aa4ce94b142a5537906ad24874f0eed89",
+    "replay_native_delta.py": "f06dd095dc3f9bd466f0d72b9d5f831be728e5768ddf8fd9bc25930e2848e477"
+  },
+  "archive_sha256": "f539dc4621515cb8459f08f0f791d34aa4ce94b142a5537906ad24874f0eed89",
+  "native_report_sha256": "458a4ac376b336de89115851f2b77b26d798dd5d256064fa48bd3c9c4931bb6e",
+  "original_id": "negative-d4021ade840b985c",
+  "original_status": "OPEN",
+  "pending_before": 25,
+  "pending_after": 17,
+  "new_frontier_exclusions": 8,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "cold_standalone_proof": false,
+  "native_ancestry_replay": true,
+  "ten_ancestor_records_preserved": true,
+  "lean_lake_ci_run": false
+}

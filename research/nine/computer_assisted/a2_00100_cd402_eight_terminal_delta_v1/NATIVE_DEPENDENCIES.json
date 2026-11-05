@@ -1,0 +1,344 @@
+{
+  "schema": "hash_bound_native_runtime_dependency_v1",
+  "native_c_family_root": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family",
+  "native_runs_root": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs",
+  "runtime_sources": [
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/b_family/source/universal_center_disk/independent_physical_center_disk_rows.py",
+      "payload_path": "runtime_source_snapshots/b_family/source/universal_center_disk/independent_physical_center_disk_rows.py",
+      "bytes": 1153,
+      "sha256": "9fafd523e0154fcb8aedb7ecf2f36aa6213a77c84ff619ae12cd5612fc1b2acc",
+      "relative_to_native_runs_root": "b_family/source/universal_center_disk/independent_physical_center_disk_rows.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/independent_correlated_capacity.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/independent_correlated_capacity.py",
+      "bytes": 3358,
+      "sha256": "b4872bf07042808c8e8f79d9a395109f0875e905040e347530ff741db29f8055",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/independent_correlated_capacity.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/independent_diagonal_rows.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/independent_diagonal_rows.py",
+      "bytes": 2612,
+      "sha256": "bfa5cc5448b21e78ebbe46cd79f846fe71a47b8851d2d56cf5d97c21758bb812",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/independent_diagonal_rows.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/verify_arc_union.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/verify_arc_union.py",
+      "bytes": 8935,
+      "sha256": "f54ca5f7eae74c6683684136ce0798d17346da9acfae59314099e234dd58e67e",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/verify_arc_union.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/verify_diagonal_pass.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/verify_diagonal_pass.py",
+      "bytes": 6961,
+      "sha256": "1bcb12ed95463868eda1e9078650a4dec1139a0bd0ae46dbba8406cf49b7cc60",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/cd_family/verify_diagonal_pass.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/independent_all_rules.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/independent_all_rules.py",
+      "bytes": 8279,
+      "sha256": "a156f54bf7600a8a743e54083c80b4f7de6faac276774d2e9fd6ff156b6ed84e",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/independent_all_rules.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/review_tight_bounds_independent.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/review_tight_bounds_independent.py",
+      "bytes": 17065,
+      "sha256": "fc4afd4c1fa2ae2fabae656f1d55e1289b1cb92212ebd153b9cc20a3f79e7c3a",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/review_tight_bounds_independent.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py",
+      "bytes": 59712,
+      "sha256": "ec1b7de7b15bcc9d89d12087bff974c68e6d056bdaae26b482d514027ec97993",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/independent_v4_rows.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/independent_v4_rows.py",
+      "bytes": 6649,
+      "sha256": "deec1bd3e5bba3a895f69cd824e5ca8dcfad8eaf98515544f592752ef3696efc",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/independent_v4_rows.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/sources/review_guarded_frame_bounds_independent.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/sources/review_guarded_frame_bounds_independent.py",
+      "bytes": 22303,
+      "sha256": "9d7fc3680ad1b8bb1035d74deb9ade8501e3ef9989b37a019323f66a92a710e3",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/sources/review_guarded_frame_bounds_independent.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/verify_shared_bound.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/verify_shared_bound.py",
+      "bytes": 21665,
+      "sha256": "8ab01fdffa3b8e2404036e8a92adb8c5b63da381c7e4e96b09da477c25e9d1c7",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/verify_shared_bound.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/verify_joint_original.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/verify_joint_original.py",
+      "bytes": 10546,
+      "sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/verify_joint_original.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/independent_empty_angle_terminal.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/independent_empty_angle_terminal.py",
+      "bytes": 2156,
+      "sha256": "374ecc61720e29c689455dcf7ec42dc92b6b722da2088013d7d1afbcd23729a6",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/independent_empty_angle_terminal.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/independent_fixed_bound_terminals.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/independent_fixed_bound_terminals.py",
+      "bytes": 3637,
+      "sha256": "ee65b7af82fb7249e3656f16e60b83bf401f52d1e94519e62ee68eb3d1ea6950",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/independent_fixed_bound_terminals.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/independent_three_square_energy_rows.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/independent_three_square_energy_rows.py",
+      "bytes": 3621,
+      "sha256": "d7f0e356bf268e6c9396287c1d1cadbebc32505b6dd71771e999f918baba5edc",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/independent_three_square_energy_rows.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/replay_context.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/replay_context.py",
+      "bytes": 2703,
+      "sha256": "be53b0adf7485a68c0475d6148b5018df9d1dbe8e9bba9c110ab7b98ef4084da",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/replay_context.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/verify_affine_cover.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/verify_affine_cover.py",
+      "bytes": 10863,
+      "sha256": "e4cc9407a19d3943861b307452bae9f0398027d3fb04d3635d5b3dd6d9f88703",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/verify_affine_cover.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/c887_whole_eight_checkpoint_package/verify_cd_triple_energy_recursive_bounds.py",
+      "payload_path": "runtime_source_snapshots/c_family/c887_whole_eight_checkpoint_package/verify_cd_triple_energy_recursive_bounds.py",
+      "bytes": 24804,
+      "sha256": "e73773f57e99797edcf5ee9726000c57ce212936b853c75247ff63ce9f16e0f4",
+      "relative_to_native_runs_root": "c_family/c887_whole_eight_checkpoint_package/verify_cd_triple_energy_recursive_bounds.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/check_c_general_cover_local.py",
+      "payload_path": "runtime_source_snapshots/c_family/check_c_general_cover_local.py",
+      "bytes": 1429,
+      "sha256": "8b5180c8aef3efcdd82edb2778d6fa81131bad835687804181f3767ec9d33e2c",
+      "relative_to_native_runs_root": "c_family/check_c_general_cover_local.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/check_cd402_complete_cover.py",
+      "payload_path": "runtime_source_snapshots/c_family/check_cd402_complete_cover.py",
+      "bytes": 13144,
+      "sha256": "976125718a41c3693a71582af39e94d60f89205d2c4b17632ea78beb137ab63a",
+      "relative_to_native_runs_root": "c_family/check_cd402_complete_cover.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/independent_c_general_rows_adapter.py",
+      "payload_path": "runtime_source_snapshots/c_family/independent_c_general_rows_adapter.py",
+      "bytes": 1113,
+      "sha256": "5115f262ad0086f6f82486b2a45e7d7e3eff8845f58d4cee9e914033267b83c1",
+      "relative_to_native_runs_root": "c_family/independent_c_general_rows_adapter.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/independent_c_new_rows_adapter.py",
+      "payload_path": "runtime_source_snapshots/c_family/independent_c_new_rows_adapter.py",
+      "bytes": 1821,
+      "sha256": "c32359820e00b299d8468cb16f899d4c451950c2b7b05f4543253218564bb7aa",
+      "relative_to_native_runs_root": "c_family/independent_c_new_rows_adapter.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/independent_general_center_cone_rows.py",
+      "payload_path": "runtime_source_snapshots/c_family/independent_general_center_cone_rows.py",
+      "bytes": 1262,
+      "sha256": "db58933d275991d0d4a9027a84844259a18f1cbe21b9ea60d7d3b5ea72459ca7",
+      "relative_to_native_runs_root": "c_family/independent_general_center_cone_rows.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/independent_rotating_frame_center_rows.py",
+      "payload_path": "runtime_source_snapshots/c_family/independent_rotating_frame_center_rows.py",
+      "bytes": 1899,
+      "sha256": "9e438af532cbb990b0f9eefaf0d3267043ea8cc7fc5300b10100659811570785",
+      "relative_to_native_runs_root": "c_family/independent_rotating_frame_center_rows.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/accepted_oriented_cap.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/accepted_oriented_cap.py",
+      "bytes": 1757,
+      "sha256": "8cb20efcd7c7b3685b064a2a47078ee0bf7b01e7226319c72082cb22179cee7b",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/accepted_oriented_cap.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_coupled_three_square_energy.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_coupled_three_square_energy.py",
+      "bytes": 7454,
+      "sha256": "2b10685c12a21020c05f38ef24dc482b3987acd56d744c6c8c53814cde82781e",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_coupled_three_square_energy.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_opposite_abid_row_guard.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_opposite_abid_row_guard.py",
+      "bytes": 3129,
+      "sha256": "678c8d84ad8a865d4126ef57adbb3bcad32c641871aaf37f3491b71d16969600",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_opposite_abid_row_guard.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_owner_free_relative_support.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_owner_free_relative_support.py",
+      "bytes": 2307,
+      "sha256": "a9279225ec2ee13b263f412b36b6d5de876a8bbdf8059a5bc1e0c12531995377",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_owner_free_relative_support.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_physical_pair_frame_squares.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_physical_pair_frame_squares.py",
+      "bytes": 1293,
+      "sha256": "1a0d5a02f7de45491e8dee625b95fe72aa17be66867e202f91e2a354f23d66b0",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_physical_pair_frame_squares.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_physical_projection_squares.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_physical_projection_squares.py",
+      "bytes": 1566,
+      "sha256": "c1274d245162b3e57c679039c3d31b6f4faebf25c46903de3649c1b68888df38",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_physical_projection_squares.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_physical_proxy_cover.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_physical_proxy_cover.py",
+      "bytes": 1552,
+      "sha256": "3b46b8a966c712e23894ae4cd7964355730f2bfe3c58a04871ade9d35ddf1277",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_physical_proxy_cover.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_physical_sat_diagonal_replay.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_physical_sat_diagonal_replay.py",
+      "bytes": 13113,
+      "sha256": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_physical_sat_diagonal_replay.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_relative_frame_arc_rows.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_relative_frame_arc_rows.py",
+      "bytes": 2539,
+      "sha256": "c12ccf7d4f68e25890dd137d0b4d4a98ae3baddfd42c2c13ab4cba87720bd295",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_relative_frame_arc_rows.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_shared_frame_triangle_products.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_shared_frame_triangle_products.py",
+      "bytes": 2812,
+      "sha256": "5e32612b4fbc10bf67d7fefeef59c12c0c98bc0d7d019644de53d20161f5d9da",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_shared_frame_triangle_products.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_shared_sharp_terminal.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_shared_sharp_terminal.py",
+      "bytes": 5426,
+      "sha256": "7adfa5221e9908b0806936e63e733ef7881ffabe5a3135093aeb19d83af61242",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_shared_sharp_terminal.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/independent_tightened_sat_products.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/independent_tightened_sat_products.py",
+      "bytes": 4137,
+      "sha256": "dd0d8f591dfb4ccebfbb7b71782cd2e41d6e99e0d911b33295efbc477944c0b0",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/independent_tightened_sat_products.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_ac_original_bound_pass.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_ac_original_bound_pass.py",
+      "bytes": 4802,
+      "sha256": "b94bec13de27c549428fabfb7fb1965da2518825631fa011588c1b8b67416fd2",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_ac_original_bound_pass.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_ac_two_link_complement.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_ac_two_link_complement.py",
+      "bytes": 7112,
+      "sha256": "b19d8b39168283488515b999ac7dfdfb691869dd47ecd4e6380f2a4374e4f8c8",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_ac_two_link_complement.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_c887_all_guards_physical_tree.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_c887_all_guards_physical_tree.py",
+      "bytes": 4012,
+      "sha256": "08800feaa76129f92f0be1cae104230322fc84a7c759460c70ef389e60e75bd4",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_c887_all_guards_physical_tree.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_c887_all_guards_v2.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_c887_all_guards_v2.py",
+      "bytes": 3406,
+      "sha256": "462fda7117c665170ec9db7823a7c5c4027179928a394a16763db242431bb14a",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_c887_all_guards_v2.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_c887_all_guards_v3.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_c887_all_guards_v3.py",
+      "bytes": 3350,
+      "sha256": "64129e58a3054cef02a7a1e8493bd619f6cd369cc95190e1a0e6016eacd9c81e",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_c887_all_guards_v3.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_c887_cap_physical_tree.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_c887_cap_physical_tree.py",
+      "bytes": 2312,
+      "sha256": "21bdc8fb511f597d8d9ad0948cdf5b23ce40b1c28dca19c769fa55173e332ac2",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_c887_cap_physical_tree.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_c887_corner_tree.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_c887_corner_tree.py",
+      "bytes": 2870,
+      "sha256": "6e524e0ea30889a96267eca40083a46d2ace0d0191c3e605540afb8a5519b156",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_c887_corner_tree.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_c887_gram_physical_tree.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_c887_gram_physical_tree.py",
+      "bytes": 2465,
+      "sha256": "dc1b0d6be3e65914a49e43de18651a73e212c98f3b09776f4004677752630faf",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_c887_gram_physical_tree.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_c887_ownerfree_physical_tree.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_c887_ownerfree_physical_tree.py",
+      "bytes": 16818,
+      "sha256": "755f9ed05839e27c04e8687de2273f3bf415388c9ef6dbe9c96fb1c3b20cb7ad",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_c887_ownerfree_physical_tree.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_c887_unit_corner_tree.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_c887_unit_corner_tree.py",
+      "bytes": 3463,
+      "sha256": "b1d006fd6ef54aba81d6224dc8da1cbcea584b03095d60ffed272ba4ec261eb3",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_c887_unit_corner_tree.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/ac_work/tree/verify_c887_unit_four_corner_tree.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/ac_work/tree/verify_c887_unit_four_corner_tree.py",
+      "bytes": 3489,
+      "sha256": "b06b754193bdab0f01e250cd4378e751337ef6039a40db27b97e6aba3e82eb87",
+      "relative_to_native_runs_root": "c_family/source/ac_work/tree/verify_c887_unit_four_corner_tree.py"
+    },
+    {
+      "original_path": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/source/incircle_distance_chords/independent_incircle_chords.py",
+      "payload_path": "runtime_source_snapshots/c_family/source/incircle_distance_chords/independent_incircle_chords.py",
+      "bytes": 1103,
+      "sha256": "022d3670929e707403f9457a31abca4494e2dcd0d79f88757d65c5e1f0b52ce9",
+      "relative_to_native_runs_root": "c_family/source/incircle_distance_chords/independent_incircle_chords.py"
+    }
+  ],
+  "boundary": "The archive preserves source bytes but the replay imports these exact files from the retained native runtime. Published base inventories and accepted legacy input fixtures remain external. No cold transport is implemented by this delta."
+}
