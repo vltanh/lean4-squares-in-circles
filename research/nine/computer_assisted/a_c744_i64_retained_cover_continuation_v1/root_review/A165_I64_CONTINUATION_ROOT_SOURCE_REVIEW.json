@@ -1,0 +1,42 @@
+{
+  "status": "PASS_ROOT_SOURCE_AND_PHYSICAL_ATTACHMENT_REVIEW",
+  "source_freeze_sha256": "15feafdc6a1fb1456a31d9784a3810418fbe01c058b7425d23aec8f3e9918af8",
+  "local_members_rehashed": 8,
+  "external_inputs_rehashed": 318,
+  "source_manifest_sha256": "a8f67d1de94a9a8eac0034b3a85f77d971fff500de3ea73d2458501246a3a1ad",
+  "source_nodes": 165,
+  "source_excluded_leaves": 115,
+  "source_open_leaves": 17,
+  "source_scope": "ENTIRE_RETAINED_CLOSED_ACTUAL_AB_COMPONENT3_NOT_WHOLE_ORIGINAL",
+  "whole_original_necessary_family_previously_reviewed": true,
+  "whole_original_family_freeze_sha256": "93d79d81b6f9f4b2499220b75aca0e6c2c400829261ff783a6ff068fa4301e78",
+  "root_fresh268_record_replay_sha256": "27f2794b8ed66fcfa4343a3ab7903e22e1f1ce6549950454ed2e5c0e84b27187",
+  "sources_fully_read": [
+    "COMPLETE_RETAINED_COVER_ATTACHMENT.md",
+    "EXECUTION_PROTOCOL.json",
+    "PLAN_BINDING.json",
+    "check_attachment_controls.py",
+    "extend_retained_cover.py",
+    "i64_retained_cover_adapter.py",
+    "replay_retained_cover.py",
+    "retained_cover_contract.py"
+  ],
+  "composition_review": [
+    "Whole-original 414 endpoint literals carry no selected source SAT predicate or source auxiliary coordinate.",
+    "All old initial states, old round prefixes, parent/child restrictions and full 4/8/2 covers remain exact.",
+    "Only the 17 old OPEN terminal leaves may append at most one unit endpoint round plus one empty-proposal propagation round. No LP or new branch is used.",
+    "Independent adapter rebuilds new literals separately and routes all ordinary rows through the accepted adapter.",
+    "Frozen lazy walker checks every payload and every child initial, uses all-sibling closure conjunction, and requires visited set equals the manifest node set.",
+    "Historical source cache is explicitly labeled reused; all 165 consumer arithmetic records must be freshly replayed.",
+    "Nine temporary module references are restored in finally.",
+    "No original or mask credit follows solely from preparation or partial component improvement."
+  ],
+  "source_controls_inspected_not_repeated": true,
+  "source_controls_sha256": "2fe4021db27336840360fc7ae4d72bc729e39cf6f2c89b4fa8dd356b32ec9667",
+  "exact_constructor_and_full165_gate_ready": true,
+  "complete_consumer_gate_pending": true,
+  "numerical_job_authorized_or_started": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false
+}

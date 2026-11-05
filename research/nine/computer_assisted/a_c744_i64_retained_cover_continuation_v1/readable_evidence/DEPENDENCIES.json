@@ -1,0 +1,22 @@
+{
+  "schema": "A165_native_continuation_dependencies_v1",
+  "complete_A1_assembled_packet": {
+    "input_manifest_sha256": "d8ca6d465aa3831e26d6d0149b8ce734a1043c51694f81a9ce9b9a4e3baaf965",
+    "binding_sha256": "d3c7032b4aeb12649d8d971d0256de95e05dfdcb622ead8a4b6e69ccb633bde2",
+    "publication": "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2"
+  },
+  "whole_original_I64_endpoint_packet": {
+    "input_manifest_sha256": "8edf7970a83abc7f8d1b8d42aeb7a33aea1a24059c1a712e24151f2c40474e78",
+    "native_packet_folder": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a_c744_original_i64_endpoint_native_v1",
+    "dependency_map_sha256": "cb843c19dcd5fbccc521094ed56a1bf5fe18f7cab6cc786a18d391d43191ed60"
+  },
+  "source_code_freeze": {
+    "member": "sources/SOURCE_BINDINGS.json",
+    "sha256": "15feafdc6a1fb1456a31d9784a3810418fbe01c058b7425d23aec8f3e9918af8"
+  },
+  "historical_source_identity_reuse_explicit": true,
+  "full_cold_replay_claimed": false,
+  "unchanged_native_aliases_required_for_arithmetic": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

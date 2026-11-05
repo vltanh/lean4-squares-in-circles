@@ -1,0 +1,42 @@
+{
+  "status": "PASS_ROOT_C887_FRESH_WHOLE_ORIGINAL_SOURCE_AND_PHYSICAL_REVIEW",
+  "published_commit": "4efd616976b22fb3dd1802a0314deba461753099",
+  "published_archive_sha256": "010bc1b9a89711bbf06bc4ad0ea867d5e9663458bdc2f35d982b970cec3fa665",
+  "dependency_binding_sha256": "f4d8441a29920b6ac05ab2b23cd85fe4e4587953ff9f1a2697bf99ddc1bc4847",
+  "sources_read_in_full": [
+    "HAND_PROOF.md",
+    "code/c887_fresh_ancestry.py",
+    "code/c887_fresh_dg_union_replay.py",
+    "code/replay_c887_original_prefix.py",
+    "code/check_c887_complete_cover.py",
+    "code/independent_c_general_rows_adapter.py",
+    "code/local_c_height_transport.py",
+    "code/check_c887_general_cover_rejoined.py",
+    "code/verify_c887_fresh_dg_union.py",
+    "independent_physical_union_bounds.py",
+    "independent_c_new_rows_adapter.py",
+    "independent_physical_sat_diagonal_replay.py"
+  ],
+  "physical_implication": [
+    "The fresh original prefix retains the exact C887 original id/path, all9 frames,36 corners,36 physical pairs and the001/00 mask with strict weakCD.",
+    "Accepted C-height source exclusions are replayed in a separate standard-library child after exact injective filename transport; no proof coefficient or checker byte is changed.",
+    "Six original-root bound rounds are independently reconstructed. The missing older strong-box archive supplies no premise.",
+    "All8 D/G physical owned-axis alternatives start from one identical certified parent, with4 exact exclusions and4 surviving bound states.",
+    "Coordinatewise hull followed by intersection with parent intervals is a necessary original-domain bound. Only original slopes,centers,frames,physical differences and diagonals cross the union.",
+    "Parent id/path/choices are restored unchanged and all child SAT auxiliaries remain local.",
+    "The old207interval target is only a weaker statement; its containment is separately checked.",
+    "The general,rotating-cone and incircle families were previously reviewed; literal reconstruction uses current independently propagated boxes. No rotating tangent occurs."
+  ],
+  "fresh_root_gate_observed_session": 85419,
+  "fresh_root_gate_observed_exit_code": 0,
+  "fresh_report_sha256": "b31edb0036ebef7d707304ea99a32335ced0e3b59265a0442deb8958c1f478e1",
+  "fresh_receipt_sha256": "364e19d8342f5d35f5b836dd835a0154eb6ef01501517fd8dcfd6abbc4c4ef20",
+  "native_pins_rehashed_before_and_after": 557,
+  "fresh_hull_matches_published": true,
+  "peer_review_sha256": "101622c15c95dac89182de422701681f49f2fd11d0f70d135058a70f2bde6ebc",
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "whole_original_remains_open": true,
+  "numerical_solver_called": false,
+  "lean_lake_ci_run": false
+}

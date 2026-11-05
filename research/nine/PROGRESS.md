@@ -2,6 +2,30 @@
 
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Retained A cover replay and fresh whole-original C bounds
+
+The [A165 exact continuation](computer_assisted/a_c744_i64_retained_cover_continuation_v1/README.md)
+preserves every old initial state and complete alternative. Its fresh full
+consumer replay checks 28,533 deductions and 48,549 rows, excludes three more
+leaves, and leaves fourteen OPEN. The compact delta preserves all seventeen
+changed records and exact aliases for the other 148. A separate subsequent
+height-row deduction at leaf 154 is independently checked but has not yet
+replaced the complete cover. No whole-original credit is added.
+
+The [fresh C887 whole-original source replay](computer_assisted/c887_fresh_original_bounds_root_replay_v1/README.md)
+independently reconstructs the original prefix, accepted height consequences,
+six bound rounds and all eight D/G alternatives. Four alternatives are
+excluded, and the hull of the other four strengthens 165 of 207 original
+intervals. No selected child predicate or auxiliary is transported. The root
+replay exits zero after checking all 557 source/input identities before and
+after execution. The old missing starting archive is not a premise.
+
+Execution follows the current directive: Bf14 first, then B16 and A, with
+bounded attempts aimed at complete originals. The waiting strengthened-011
+pilot was stopped before any numerical launch; further 011 development is
+paused while 001/00 remains OPEN. Totals remain 222/231 originals and 8/32
+masks CLOSED. No Lean, Lake, compilation or CI was run.
+
 ## Fourteen exact B16 exclusions and strengthened strict-011 preparation
 
 The [B16 interval continuation](computer_assisted/b16_interval_terminal_continuation_v1/README.md)

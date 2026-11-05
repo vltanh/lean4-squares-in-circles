@@ -2,6 +2,18 @@
 
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [retained A165 continuation](computer_assisted/a_c744_i64_retained_cover_continuation_v1/README.md)
+passes its full fresh consumer replay and leaves fourteen OPEN leaves, with
+three new internal exclusions. A separate first use of the accepted I64
+height row improves leaf 154 but is not yet composed into that cover. The
+[fresh whole-original C887 source gate](computer_assisted/c887_fresh_original_bounds_root_replay_v1/README.md)
+passes root source/physical review and fresh replay of all eight D/G
+alternatives, producing an unconditional original-domain hull. Neither closes
+an original. Bf14 is now the first whole-original target, followed by B16 and
+A. The capacity waiter for the strengthened 011 pilot was stopped before
+launch, and further 011 development is paused under the current directive.
+Historical status paragraphs below retain their chronological scope.
+
 The [B16 exact interval continuation](computer_assisted/b16_interval_terminal_continuation_v1/README.md)
 passes its full fresh 45-node replay with sixteen excluded and fourteen OPEN
 leaves in the merged I21/I22 region. No whole-original credit is added. The

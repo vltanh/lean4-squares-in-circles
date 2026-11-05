@@ -1,0 +1,37 @@
+{
+  "status": "PASS_ROOT_FIRST_I64_HEIGHT_SOURCE_ATTACHMENT_AND_OBSERVED_REPLAY_REVIEW",
+  "source_freeze_sha256": "d0d66d21f9e2bb4dce8a3571382ebd77cf6555e7ddc349ca5fbc78a81c4c35ea",
+  "source_files_read_in_full": [
+    "HAND_ATTACHMENT.md",
+    "attachment.py",
+    "build_first_height_record.py",
+    "isolate_height_round.py",
+    "replay_first_height_record.py"
+  ],
+  "external_pins_rehashed": 496,
+  "source_manifest_sha256": "4469ce8ceda7692f49faa58ece25872c0448fbd8fc86447acb6facf0cd4e2283",
+  "source_full_consumer_report_sha256": "98bc7f287f1eb62e0a132437d808c48121a017317adde4ea9083f83364d2ad8f",
+  "source_leaf": 154,
+  "physical_implication": [
+    "The complete retained165 proof supplies the exact leaf154 final box while preserving the old component3 closed3/5 domain and original choices.",
+    "The previously accepted whole-original row yB+yD-2yI<=-16/25 applies at this leaf without any additional slope assumption.",
+    "One half of that row plus one half each of the current negative yB and negative yD endpoint rows gives a negative yI bound, with zero residual.",
+    "The producer is not imported by the exact replay. The unchanged independent adapter reconstructs the named height row and unchanged CORE checks three positive half weights, outward grid rounding and final-state propagation.",
+    "The old record initial and every old round are retained exactly. No manifest is replaced and no full-cover closure is inferred."
+  ],
+  "fresh_gate_observed_by": "a_c_cells",
+  "observed_constructor_session": 46204,
+  "observed_constructor_exit_code": 0,
+  "observed_gate_session": 11538,
+  "observed_gate_exit_code": 0,
+  "exact_report_sha256": "9e9c43c6f7442215c2d24ed9b1e55ffdbd1af4b53ed1f82f118bc313289773f9",
+  "observed_receipt_sha256": "71248641faa0b852856341882b47e2971daa2e91fabeb2a4fe0d07aa21cec785",
+  "damaged_records_rejected": 5,
+  "first_height_deduction_accepted": true,
+  "full_cover_replacement_accepted": false,
+  "whole_original_remains_open": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "numerical_solves": 0,
+  "lean_lake_ci_run": false
+}

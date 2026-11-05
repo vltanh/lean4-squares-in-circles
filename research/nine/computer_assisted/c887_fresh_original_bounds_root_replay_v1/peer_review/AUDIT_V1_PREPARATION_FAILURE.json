@@ -1,0 +1,10 @@
+{
+  "status": "PREPARATION_HARNESS_EXIT_1_BEFORE_ARITHMETIC",
+  "source_sha256": "6e96027c5f3f7c2abbab925af3fab06547e74950e1098e5eb58642c84c94c08e",
+  "tool_chunk_id": "5a2e36",
+  "observed_exit_code": 1,
+  "cause": "Inventory header entries have no optional source_path; payload hash check completed before attempted metadata lookup.",
+  "source_or_proof_inputs_changed": false,
+  "replacement": "audit_sources_and_original_hull_v2.py",
+  "replacement_sha256": "de1fbdc3ed5fed73f68d43247a6e654a2ef0707d310fba61749c6655369d8bac"
+}

@@ -1,0 +1,67 @@
+{
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_i64_height_isolation_v1/HAND_ATTACHMENT.md": {
+    "member": "sources/HAND_ATTACHMENT.md",
+    "sha256": "1450dbebfc8411b177d86a1ebc465ddd3e68546b858a3c08e557a52f526013e2",
+    "bytes": 2194
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_i64_height_isolation_v1/SOURCE_BINDINGS.json": {
+    "member": "sources/SOURCE_BINDINGS.json",
+    "sha256": "d0d66d21f9e2bb4dce8a3571382ebd77cf6555e7ddc349ca5fbc78a81c4c35ea",
+    "bytes": 88943
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_i64_height_isolation_v1/attachment.py": {
+    "member": "sources/attachment.py",
+    "sha256": "907f586fd5d04cdeec74281d7a973224f33ee7e66978509847c69fc60d146645",
+    "bytes": 3569
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_i64_height_isolation_v1/build_first_height_record.py": {
+    "member": "sources/build_first_height_record.py",
+    "sha256": "91e9062931bf844c8451404c807fd4e10d86ca520f690d5b13c3dd5365ae81c0",
+    "bytes": 2109
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_i64_height_isolation_v1/isolate_height_round.py": {
+    "member": "sources/isolate_height_round.py",
+    "sha256": "de678347a7b9f15cde1595bc937211099deeb2b0068b9b364e920f122bcb22b4",
+    "bytes": 3752
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_i64_height_isolation_v1/replay_first_height_record.py": {
+    "member": "sources/replay_first_height_record.py",
+    "sha256": "3b50f7f6b6f12a39fc654d19eaaf44141aa647f46e60fa429f094e2a244de160",
+    "bytes": 4233
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_first_height_record_v1/ATTACHMENT.json": {
+    "member": "record/ATTACHMENT.json",
+    "sha256": "b71266e7ed27ba06eb642cbe3dc21ceadb2d3471cf18f06358802c4ca229bfe8",
+    "bytes": 27269
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_first_height_record_v1/CONTINUED_NODE_00154.json": {
+    "member": "record/CONTINUED_NODE_00154.json",
+    "sha256": "90b55ade745df28337248dfdcbf8103b75a8bc76c3966172f73cbee41a2e98e6",
+    "bytes": 601479
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_first_height_record_v1/SUFFIX_RECORD.json": {
+    "member": "record/SUFFIX_RECORD.json",
+    "sha256": "7ad5cf680503f7d80a24f0885966bc1c6a5a0fc53132c9b28399441a94a3483e",
+    "bytes": 161059
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_FIRST_I64_HEIGHT_EXACT_REPLAY_V1.json": {
+    "member": "reports/A165_FIRST_I64_HEIGHT_EXACT_REPLAY_V1.json",
+    "sha256": "9e9c43c6f7442215c2d24ed9b1e55ffdbd1af4b53ed1f82f118bc313289773f9",
+    "bytes": 3042
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_FIRST_I64_HEIGHT_EXACT_REPLAY_V1.log": {
+    "member": "reports/A165_FIRST_I64_HEIGHT_EXACT_REPLAY_V1.log",
+    "sha256": "ef472477bb47e2dbc304096823543c30d5f59accecd4cddf9b5ab5754e46c559",
+    "bytes": 188
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_FIRST_HEIGHT_CONSTRUCTION_V1.log": {
+    "member": "reports/A165_FIRST_HEIGHT_CONSTRUCTION_V1.log",
+    "sha256": "d7598c4bb54d2e4acb6cdcf5ca299f81ade1ba534c875ab0e6586419f2a4112d",
+    "bytes": 185
+  },
+  "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_FIRST_HEIGHT_OBSERVED_EXECUTION_V1.json": {
+    "member": "reports/A165_FIRST_HEIGHT_OBSERVED_EXECUTION_V1.json",
+    "sha256": "71248641faa0b852856341882b47e2971daa2e91fabeb2a4fe0d07aa21cec785",
+    "bytes": 786
+  }
+}

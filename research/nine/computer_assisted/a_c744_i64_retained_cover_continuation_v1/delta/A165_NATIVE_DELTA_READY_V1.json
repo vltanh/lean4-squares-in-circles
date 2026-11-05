@@ -1,0 +1,76 @@
+{
+  "status": "READY_A165_EXACT_NATIVE_CONTINUATION_DELTA",
+  "delta_folder": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_i64_native_continuation_delta_v1",
+  "delta_input_manifest_sha256": "274e0ab65d290d61b8dee91146e2e4f2ee3316ece91bc19bbe05d6afb4e43805",
+  "archive_sha256": "0c479a7ae1aaf76dad59908e5185838d189280de2dcdb9abeb0440c56e8641f6",
+  "archive_bytes": 1209116,
+  "archive_members": 45,
+  "archive_uncompressed_bytes": 16153258,
+  "files": {
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_i64_native_continuation_delta_v1.tar.xz": {
+      "sha256": "0c479a7ae1aaf76dad59908e5185838d189280de2dcdb9abeb0440c56e8641f6",
+      "bytes": 1209116
+    },
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_NATIVE_DELTA_ARCHIVE_INVENTORY_V1.json": {
+      "sha256": "c261eaa0279a7b3f1a468437be6cf14611d3273f15d9342e474fdb88e4d9f67f",
+      "bytes": 7288
+    },
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/a165_delta_transport_v1.py": {
+      "sha256": "0bbd5704adcce8eda2abc5395b6f3710ff3efbe7f2e6cbfe53859dfb659453ae",
+      "bytes": 7078
+    },
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/check_a165_delta_bytes_v1.py": {
+      "sha256": "48fe8d1178b04cf902e410750991fc34f3ebc9aac6de591ff5393b28f8317271",
+      "bytes": 8882
+    },
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/check_a165_delta_bytes_v2.py": {
+      "sha256": "e7042a209dc4220d7d3ad14fb77b77e412265b1c3f2a48e6f0583864ea27680c",
+      "bytes": 8842
+    },
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/check_a165_delta_bytes_v3.py": {
+      "sha256": "f0963feead2edda2a5a2ada098e4b15287bab751481984988da0ce7a92a52ecc",
+      "bytes": 8841
+    },
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_DELTA_BYTE_AUDIT_PREPARATION_HISTORY.json": {
+      "sha256": "4dbff98b03793a45ad24d0db33628e22dfb25e5dfb28774a923c29eab1b4e9cb",
+      "bytes": 559
+    },
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_DELTA_BYTE_AUDIT_V2_PREPARATION_HISTORY.json": {
+      "sha256": "f3eaf46d17de800200ddc16389ec2076cb6172f189ab5507e8d3d447885c936c",
+      "bytes": 505
+    },
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_I64_DELTA_BYTES_AUDIT_V3.json": {
+      "sha256": "aecf486c9c9dfa437879f696113c88b97ad2567cd39f909b9b0f2a0df4b2c4f5",
+      "bytes": 998
+    },
+    "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_NATIVE_DELTA_FRESH_EXTRACTION_V1.json": {
+      "sha256": "a685cdcd018d16931c738bde57016c7fb23f4a49eb949c42ac2e6fa6f8d0be3b",
+      "bytes": 431
+    }
+  },
+  "observed_process_exits": {
+    "constructor_96325": 0,
+    "full_consumer_20956": 0,
+    "builder_88567": 0,
+    "byte_audit_24781": 0,
+    "archive_15954": 0,
+    "fresh_extract_exec_chunk_21d5c7": 0
+  },
+  "nodes": 165,
+  "unchanged_published_payloads": 148,
+  "changed_payloads": 17,
+  "excluded_leaves": 118,
+  "open_leaves": 14,
+  "new_closed_leaf_indices": [
+    155,
+    158,
+    160
+  ],
+  "changed_payload_bytes": 15203667,
+  "all165_consumer_records_freshly_replayed": true,
+  "historical_source_arithmetic_reuse_explicit": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "cold_proof_claimed": false,
+  "numerical_solves": 0
+}

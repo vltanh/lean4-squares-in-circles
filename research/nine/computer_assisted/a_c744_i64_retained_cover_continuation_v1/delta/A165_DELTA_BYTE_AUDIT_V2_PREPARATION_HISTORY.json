@@ -1,0 +1,10 @@
+{
+  "status": "PRESERVED_SECOND_BYTE_AUDIT_SCHEMA_ERROR",
+  "observed_session_id": 9499,
+  "observed_exit_code": 1,
+  "error": "KeyError(deductions): ordinary bound-round array is proposals.",
+  "source_v2_sha256": "e7042a209dc4220d7d3ad14fb77b77e412265b1c3f2a48e6f0583864ea27680c",
+  "source_v3_sha256": "f0963feead2edda2a5a2ada098e4b15287bab751481984988da0ce7a92a52ecc",
+  "change": "Only count proposals in the same appended round objects. No proof or input file altered.",
+  "arithmetic_run": false
+}

@@ -1,0 +1,262 @@
+{
+  "status": "PASS_A165_I64_COMPLETE_RETAINED_COVER_OPEN",
+  "original_id": "positive-c744bc031d40ee64",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        4
+      ]
+    ]
+  ],
+  "component": 3,
+  "closed_domain": {
+    "name": "two_link_actual_AB_escape_3",
+    "coefficients": [
+      [
+        3,
+        "1"
+      ],
+      [
+        7,
+        "1"
+      ],
+      [
+        17,
+        "-2"
+      ]
+    ],
+    "rhs": "-3/5"
+  },
+  "scope": "ENTIRE_RETAINED_OLD_3_5_COMPONENT3_COVER_WITH_ORIGINAL_WIDE_NECESSARY_ROWS",
+  "family_binding_sha256": "63458318a3681d677745baf4a00d8a738a5705c6276659174e59f440fa9a06e3",
+  "source_manifest_sha256": "a8f67d1de94a9a8eac0034b3a85f77d971fff500de3ea73d2458501246a3a1ad",
+  "continued_manifest_sha256": "4469ce8ceda7692f49faa58ece25872c0448fbd8fc86447acb6facf0cd4e2283",
+  "attachment": {
+    "source_manifest_sha256": "a8f67d1de94a9a8eac0034b3a85f77d971fff500de3ea73d2458501246a3a1ad",
+    "total_nodes": 165,
+    "retained_open_leaf_domains": 17,
+    "unchanged_payloads": 148,
+    "changed_leaves": [
+      {
+        "index": 144,
+        "old_rounds": 3,
+        "appended_rounds": 1,
+        "appended_deductions": 0,
+        "appended_printed_rows": 0,
+        "status": "OPEN"
+      },
+      {
+        "index": 145,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 17,
+        "appended_printed_rows": 17,
+        "status": "OPEN"
+      },
+      {
+        "index": 146,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 17,
+        "appended_printed_rows": 17,
+        "status": "OPEN"
+      },
+      {
+        "index": 148,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 17,
+        "appended_printed_rows": 17,
+        "status": "OPEN"
+      },
+      {
+        "index": 149,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 17,
+        "appended_printed_rows": 17,
+        "status": "OPEN"
+      },
+      {
+        "index": 151,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 45,
+        "appended_printed_rows": 45,
+        "status": "OPEN"
+      },
+      {
+        "index": 152,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 45,
+        "appended_printed_rows": 45,
+        "status": "OPEN"
+      },
+      {
+        "index": 154,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 183,
+        "appended_printed_rows": 183,
+        "status": "OPEN"
+      },
+      {
+        "index": 155,
+        "old_rounds": 0,
+        "appended_rounds": 0,
+        "appended_deductions": 0,
+        "appended_printed_rows": 0,
+        "status": "CANDIDATE_CLOSED"
+      },
+      {
+        "index": 156,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 190,
+        "appended_printed_rows": 190,
+        "status": "OPEN"
+      },
+      {
+        "index": 157,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 175,
+        "appended_printed_rows": 175,
+        "status": "OPEN"
+      },
+      {
+        "index": 158,
+        "old_rounds": 0,
+        "appended_rounds": 0,
+        "appended_deductions": 0,
+        "appended_printed_rows": 0,
+        "status": "CANDIDATE_CLOSED"
+      },
+      {
+        "index": 159,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 253,
+        "appended_printed_rows": 253,
+        "status": "OPEN"
+      },
+      {
+        "index": 160,
+        "old_rounds": 0,
+        "appended_rounds": 0,
+        "appended_deductions": 0,
+        "appended_printed_rows": 0,
+        "status": "CANDIDATE_CLOSED"
+      },
+      {
+        "index": 161,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 237,
+        "appended_printed_rows": 237,
+        "status": "OPEN"
+      },
+      {
+        "index": 163,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 213,
+        "appended_printed_rows": 213,
+        "status": "OPEN"
+      },
+      {
+        "index": 164,
+        "old_rounds": 0,
+        "appended_rounds": 2,
+        "appended_deductions": 255,
+        "appended_printed_rows": 255,
+        "status": "OPEN"
+      }
+    ],
+    "child_states_not_rebased": true,
+    "cover_arithmetic_checked": false
+  },
+  "nodes": 165,
+  "leaf_domains": 132,
+  "excluded_leaves": 118,
+  "open_leaves": 14,
+  "rounds": 112,
+  "deductions": 28533,
+  "printed_rows_checked": 48549,
+  "weighted_I64_endpoint_occurrences": 1664,
+  "weighted_I64_height_occurrences": 0,
+  "inherited_complete_arithmetic_report": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/recovery_20261105_reset2/A165_I64_EXACT_CONTINUATION_REPLAY_V1_INHERITED_A165.json",
+    "sha256": "9b9671f505730c0d233ecc8d91ca73f8adc60758cf21443172d60d8eb599d455"
+  },
+  "historical_source_proof_reuse": {
+    "status": "PASS_HISTORICALLY_ACCEPTED_PUBLISHED_PROOF_IDENTITIES",
+    "binding_sha256": "c80c305b0ec5cae2ad7942c388e68a0991a658b916a5361b8dce8363635d94b7",
+    "published_outer_report": {
+      "path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/A_C744_COMPONENT3_FIRST_COMPLETE_A1_CONSEQUENCE_EXACT_REPLAY.json",
+      "sha256": "5c14a5ee853378adf31fcb56665bafa0c98656eec9bab0ca27ba596c03dc826d"
+    },
+    "embedded_reports": {
+      "shared_four": "a81c99008261d4926b214ddf7f7f784641785c041b1def6d017f2a9917ffc20a",
+      "complete_A1": "48f34ba9f856106460fddb0f3630d85cd1cc3ee5416f5fb877216b0ad4feadb1",
+      "five_declaration": "e0c7af88543cb2af88e38050a564e89f97205b7d5c912222c05fbf350e8773a4",
+      "complete_component0": "3bf4b0de25d16156cd4a10e7e28083d39281aa8804f02585dc6c5c46d3e23d5d"
+    },
+    "source_files": 7,
+    "historical_report_inputs": 1010,
+    "complete_component0_nodes": 41,
+    "complete_component1_nodes": 757,
+    "complete_component0_closed_leaves": 31,
+    "complete_component1_closed_leaves": 566,
+    "source_arithmetic_repeated": false,
+    "new_receipts_recreated": false,
+    "lost_receipts_used": false,
+    "old_component3_conditional_scope_preserved": true,
+    "new_original_cells": 0,
+    "new_masks": 0
+  },
+  "cached_source_provider_calls": {
+    "post": 0,
+    "shared": 0,
+    "a1": 0,
+    "complements": 1
+  },
+  "legacy_report_freshly_replayed_source_field_is_explicit_historical_reuse": true,
+  "all165_nodes_freshly_replayed": true,
+  "all_old_rounds_retained": true,
+  "all_child_initial_states_unchanged": true,
+  "new_I64_height_predicate_not_added_to_path": true,
+  "complete_4_8_2_covers_unchanged": true,
+  "historical_A1_and_source_arithmetic_repeated": false,
+  "fresh813_source_repeated": false,
+  "cold_portable_replay_claimed": false,
+  "numerical_solves": 0,
+  "all_nine_originals_retained": true,
+  "original_corners": 36,
+  "original_pairs": 36,
+  "marked_cones": 5,
+  "mask": "001/00",
+  "closed_shared_faces_retained": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 454.3642711930006
+}
