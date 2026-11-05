@@ -1,0 +1,1234 @@
+[
+  {
+    "parent": 21,
+    "children": [
+      {
+        "index": 75,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 76,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 77,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 78,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 79,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 80,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 81,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 82,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 24,
+    "children": [
+      {
+        "index": 83,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 84,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 85,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 86,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 87,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 88,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 89,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 90,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 26,
+    "children": [
+      {
+        "index": 91,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 92,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 93,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 94,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 95,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 96,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 97,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 98,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 28,
+    "children": [
+      {
+        "index": 99,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 100,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 101,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 102,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 103,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 104,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 105,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 106,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 33,
+    "children": [
+      {
+        "index": 107,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 108,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 109,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 110,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 111,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 112,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 113,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 114,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 34,
+    "children": [
+      {
+        "index": 115,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 116,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 117,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 118,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 119,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 120,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 121,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 122,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 36,
+    "children": [
+      {
+        "index": 123,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 124,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 125,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 126,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 127,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 128,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 129,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 130,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 38,
+    "children": [
+      {
+        "index": 131,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 132,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 133,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 134,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 135,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 136,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 137,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 138,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": false
+      }
+    ]
+  },
+  {
+    "parent": 40,
+    "children": [
+      {
+        "index": 139,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 140,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 141,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 142,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 143,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 144,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 145,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 146,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": false
+      }
+    ]
+  },
+  {
+    "parent": 42,
+    "children": [
+      {
+        "index": 147,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 148,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 149,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 150,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 151,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 152,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 153,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 154,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 66,
+    "children": [
+      {
+        "index": 155,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 156,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 157,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 158,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 159,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 160,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 161,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 162,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": false
+      }
+    ]
+  },
+  {
+    "parent": 68,
+    "children": [
+      {
+        "index": 163,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 164,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 165,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 166,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 167,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 168,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 169,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 170,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 70,
+    "children": [
+      {
+        "index": 171,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 172,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 173,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 174,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 175,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 176,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 177,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 178,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 72,
+    "children": [
+      {
+        "index": 179,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 180,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 181,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 182,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 183,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 184,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 185,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 186,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 73,
+    "children": [
+      {
+        "index": 187,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 188,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 189,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 190,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 191,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 192,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 193,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 194,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  },
+  {
+    "parent": 74,
+    "children": [
+      {
+        "index": 195,
+        "choice": [
+          7,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 196,
+        "choice": [
+          7,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 197,
+        "choice": [
+          7,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 198,
+        "choice": [
+          7,
+          1,
+          1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 199,
+        "choice": [
+          8,
+          0,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 200,
+        "choice": [
+          8,
+          0,
+          1
+        ],
+        "excluded": false
+      },
+      {
+        "index": 201,
+        "choice": [
+          8,
+          1,
+          -1
+        ],
+        "excluded": true
+      },
+      {
+        "index": 202,
+        "choice": [
+          8,
+          1,
+          1
+        ],
+        "excluded": true
+      }
+    ]
+  }
+]
