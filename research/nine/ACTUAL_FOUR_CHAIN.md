@@ -362,6 +362,49 @@ nonoverlap conditions. A valid capacity argument must retain those
 physical conditions, beyond their band and strip consequences. This
 obstruction to the relaxation does not close G3.
 
+### 4.2. A complete five-square terminal
+
+The [five-square cap](FIVE_SQUARE_CAP.md), with its complete
+[outer-envelope proof](FIVE_SQUARE_CAP_OUTER.md), supplies another
+terminal for this unchanged all-nine domain. It requires three distinct
+original squares L,F,R, all different from S0,S3, satisfying
+
+\[
+ x_L\le0\le x_R,\qquad |x_F|\le\frac{29}{60},\qquad
+ y_L,y_R\ge\frac35,\qquad y_F-h_F\ge\frac1{10}.
+ \tag{21}
+\]
+
+The endpoint bounds from Sections 2--3 give all the cap's remaining
+hypotheses: the original endpoints have centers in the stated bands
+near \(\pm3/2\), absolute heights at most \(1/8\), and halfwidths
+below \(8/15\). Every other original has \(|x|<13/12\), by the
+inner-main bounds or the outsider-strip theorem. The five selected
+squares inherit actual physical nonoverlap and corner containment.
+
+The cap then gives
+
+\[
+ x_3-x_0-h_0-h_3<2 \quad\text{when }R<r,
+\]
+
+contradicting its actual-chain value \(2+E\). Vertical reflection
+gives the lower counterpart, with shoulder heights at most \(-3/5\)
+and the central square's whole top at most \(-1/10\). All slopes
+and independent frames are covered by the cap; no projection
+three-chain is required of L,F,R.
+
+The central transfer uses the two genuine shoulder-to-central
+separators. Its positive case has an explicit degree-six polynomial
+proof and final rational reserve \(19117/36288000\). The outer
+envelopes and all other central signs also have complete hand proofs.
+No archived interval table enters this terminal.
+
+This proves that every strict counterexample in Section 1 must fail
+at least one guard of (21) for every such triple, and likewise after
+vertical reflection. It does not prove that a suitable triple always
+exists.
+
 ## 5. The precise surviving problem
 
 No argument above proves that a pair violating (18) exists. The
@@ -370,11 +413,14 @@ corner bounds at one radius \(R<r\), all 36 physical nonoverlap
 conditions, the three actual-chain inequalities (1), and the strict
 endpoint-span restrictions (18). It also necessarily obeys (7),
 (13)--(16), and the retained outsider-strip, side-capacity and inner
-clearance theorems.
+clearance theorems. Section 4.2 additionally excludes every upper or
+lower five-square cap caller (21), with its full guard complement
+retained.
 
 To close the planned route, one must prove that this full predicate
 forces either an endpoint criterion after another label/direction
-choice, or three whole originals beyond a \(7/16\) cap line. In
+choice, three whole originals beyond a \(7/16\) cap line, or a
+five-square caller satisfying every hypothesis in Section 4.2. In
 particular, a proof may not turn a short section on \(x=p\) or \(x=q\)
 into full projection separation, drop either extra original, or discard
 the complement of a main-height or orientation guard. The coupled

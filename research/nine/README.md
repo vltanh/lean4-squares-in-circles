@@ -19,18 +19,24 @@ Read these documents in order:
    preliminaries, weighted two-square cap, endpoint criterion, directional
    center capture and sharp three-square half-plane cap, including their
    scalar tables and terminal equality arguments.
-4. [Exhaustive extraction](EXTRACTION.md): the complete cone-chain height
+4. [Five-square cap](FIVE_SQUARE_CAP.md) and its
+   [outer-envelope proof](FIVE_SQUARE_CAP_OUTER.md): a complete hand
+   terminal coupling two far endpoints to three upper originals,
+   with every separating direction, strictness and its own equality
+   family. The outer and central interval tables have been replaced
+   by explicit analytic arguments.
+5. [Exhaustive extraction](EXTRACTION.md): the complete cone-chain height
    bound, precise Greene input, rotating-rank proof and all-nine diagonal
    event cover, including persistent height four and simultaneous ties.
-5. [Actual-four-chain analysis](ACTUAL_FOUR_CHAIN.md): the fixed all-nine
+6. [Actual-four-chain analysis](ACTUAL_FOUR_CHAIN.md): the fixed all-nine
    domain, a stronger endpoint budget, the common central band, and the
    precise surviving geometric implication.
-6. [Review of the earlier work](AUDIT.md): what to reuse, what failed, and
+7. [Review of the earlier work](AUDIT.md): what to reuse, what failed, and
    what the old completion counts mean.
-7. [Mathematical sources](sources/README.md): the retained arguments and
+8. [Mathematical sources](sources/README.md): the retained arguments and
    exact examples. Dated status remarks in these sources describe their
    original checkpoints; this page and the proof plan describe current work.
-8. [Archive and recovery](ARCHIVE.md): the immutable snapshot containing
+9. [Archive and recovery](ARCHIVE.md): the immutable snapshot containing
    the old graph campaign, computational certificates, scripts and handoffs.
 
 The most useful existing argument is the
@@ -52,5 +58,7 @@ The foundation and extraction gates G1–G2 are complete at the manuscript
 level and have received independent reading. Greene's finite-poset theorem
 is stated exactly and remains an explicit classical dependency. These
 chapters settle the proof inputs and coverage; the unrestricted geometric
-closure is still open. Earlier computational results remain available in
+closure is still open. The complete five-square cap strengthens the
+available terminals and the surviving actual-four-chain predicate.
+Earlier computational results remain available in
 Git history; they are not silently promoted to self-contained paper proofs.

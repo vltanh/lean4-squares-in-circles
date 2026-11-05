@@ -63,6 +63,18 @@ center-cap input are proved in the same chapter.
 contain every rational comparison. This reuses the strongest existing hand
 work without importing a computational closure report.
 
+The [five-square cap](FIVE_SQUARE_CAP.md) now extends these terminals.
+It couples two far horizontal endpoints to three original upper squares:
+the shoulders have center height at least \(3/5\), and the central
+original has whole floor at least \(1/10\). The endpoint inward span
+is at most two, strictly less below the target radius. The
+[outer envelopes](FIVE_SQUARE_CAP_OUTER.md) cover all real separating
+slopes and all original owners by hand. The central transfer likewise
+has a complete analytic proof, including its degree-six positive-slope
+polynomial and its negative reciprocal boundary. Both parts replace
+their archived interval-certificate dependencies. The five-square
+equality family is proved within this terminal's own domain.
+
 ## 2. Completed extraction and its named dependency
 
 [EXTRACTION.md](EXTRACTION.md) supplies the geometric estimates, height
@@ -123,6 +135,13 @@ can be short. Section 5 of that note records every surviving physical
 constraint and the precise missing endpoint/cap implication. Accordingly
 G3 remains open under the stopping rule below.
 
+Section 4.2 of the same actual-four analysis now installs the complete
+five-square cap as an additional proved terminal. The surviving
+all-nine predicate must fail at least one of that caller's guards for
+every eligible triple, on both vertical sides. This is a stronger
+necessary condition; extracting such a triple throughout the domain
+remains unproved and does not change the status of G3 or G4.
+
 Use the weighted endpoint quantity \(W\), rather than requiring every weak
 edge to become an actual projection separation. Equation (3) of the draft
 retains both the projection losses and the positive surpluses. The latter
@@ -130,8 +149,9 @@ may supply the compensation the earlier edge-by-edge approach loses.
 
 The proposed global target is the explicit routing statement in Section 5
 of the draft: obtain \(W\ge211/2\) for some endpoint choice and direction,
-or force three whole originals beyond the \(7/16\) cap line. It remains
-unproved. Keep both omitted squares in the domain. Excluding the remaining
+force three whole originals beyond the \(7/16\) cap line, or extract all
+five-square cap hypotheses with endpoint inward span at least two. This
+coverage remains unproved. Keep both omitted squares in the domain. Excluding the remaining
 fixed masks requires some information involving an omitted original: an
 exact seven-square realization exists for every such mask. This does not
 prove that both extras are individually indispensable.

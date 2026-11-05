@@ -3,6 +3,8 @@
 This is a partial paper proof. The complete
 [physical-and-cap foundation](FOUNDATION.md) and
 [exhaustive extraction](EXTRACTION.md) are now written as separate chapters.
+The [five-square cap](FIVE_SQUARE_CAP.md) adds a complete terminal with
+all of its formerly computational scalar steps replaced by hand proofs.
 Sections 1–4 below give their target, an attaining packing and the resulting
 proof interface. Section 5 identifies the missing global implication.
 No unrestricted lower bound is claimed.
@@ -110,6 +112,34 @@ interior main squares give \(L\ge2\), and the short chain's interior
 square gives \(S\ge1\). Hence
 \(W\ge2\cdot46+27/2=211/2\).
 
+### 3.1. A five-square criterion with arbitrary central separating directions
+
+A second proved terminal is [FIVE_SQUARE_CAP.md](FIVE_SQUARE_CAP.md).
+In a frame with two original endpoints near \(x=\pm3/2\), suppose
+their absolute center heights are at most \(1/8\), their halfwidths
+are at most \(8/15\), and there are three further originals L,U,R
+with
+
+\[
+ -\frac{13}{12}\le x_L\le0\le x_R\le\frac{13}{12},\qquad
+ |x_U|\le\frac{29}{60},\qquad
+ y_L,y_R\ge\frac35,\qquad y_U-h_U\ge\frac1{10}.
+\]
+
+The endpoint center bands are the explicit intervals
+\([-91/60,-89/60]\) and \([89/60,91/60]\). Under these physical
+hypotheses their inward span is at most two, strictly less when
+\(R<r\). The theorem retains every possible central separating
+direction and independent frame. Its full outer support estimates,
+central transfer, strictness and five-square equality family are printed
+in the two cap chapters.
+
+For an actual four-chain, the original endpoint bounds and inward span
+at least two are already available. Thus a triple satisfying the
+displayed upper-square conditions, or their vertical reflection,
+immediately excludes a strict counterexample. Section 4.2 of
+[ACTUAL_FOUR_CHAIN.md](ACTUAL_FOUR_CHAIN.md) states the complete caller.
+
 ## 4. What completed chains actually supply
 
 For seven distinct labels \(A,B,C,D;E,F,G\) in a chosen unit direction,
@@ -174,20 +204,23 @@ witness**. Different witnesses of the same packing may have different masks.
 
 One sufficient research target is the following **unproved** statement:
 
-> Every hypothetical nine-square packing with \(R<r\) admits either a
-> choice of four originals and a direction with \(W\ge211/2\), or three
-> whole original squares lying in a half-plane
-> \(\{z:e\cdot z\ge7/16\}\) for some unit \(e\).
+> Every hypothetical nine-square packing with \(R<r\) admits a choice
+> of four originals and a direction with \(W\ge211/2\); or three whole
+> original squares lying in a half-plane
+> \(\{z:e\cdot z\ge7/16\}\) for some unit \(e\); or five originals
+> satisfying every hypothesis of Section 3.1, whose two endpoint squares
+> have inward span at least two.
 
 The first alternative contradicts (2). The second contradicts the
 [sharp three-square half-plane cap](FOUNDATION.md#e-the-sharp-three-square-whole-half-plane-cap).
+The third contradicts the strict five-square cap of Section 3.1.
 This would prove the lower bound. It is a proposed route, not an established
 classification or a premise of the proof.
 
 The terminal direction and labels may differ from those of the first
 extracted witness. A stronger closed-\(Q\) routing statement can be tested
 against the retained exact equality examples, but is not required for the
-strict lower bound. If these two terminals do not suffice, the missing class
+strict lower bound. If these three terminals do not suffice, the missing class
 must be stated explicitly before proposing another terminal.
 
 The first unchanged all-nine domain is now specified in
@@ -195,6 +228,8 @@ The first unchanged all-nine domain is now specified in
 endpoint budget retains every chain gap and its pair-cap consequence
 forces the other seven originals to meet one common central band. The
 note states the entire surviving predicate; it does not prove that domain
-empty. The [proof plan](PROOF_PLAN.md) keeps this research decision and
+empty. It now also excludes the upper and lower five-square callers of
+Section 3.1; the complementary geometric configurations remain in the
+domain. The [proof plan](PROOF_PLAN.md) keeps this research decision and
 the unrestricted closure open. Global equality classification remains a
 separate obligation.
