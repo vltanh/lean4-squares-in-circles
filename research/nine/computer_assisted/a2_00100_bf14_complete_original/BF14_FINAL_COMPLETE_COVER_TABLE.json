@@ -1,0 +1,4304 @@
+{
+  "status": "STRUCTURAL_TABLE_FINAL_EXACT_REPLAY_PENDING",
+  "manifest_sha256": "8769cac62d561bdeaf1294357db1342bbd95cd9bd9496b5ba74962cb5960645b",
+  "original_id": "negative-f14f5bc4eafdf50d",
+  "covers": [
+    {
+      "index": 0,
+      "depth": 0,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          5,
+          8
+        ],
+        "discovery_gap": -1.0
+      },
+      "children": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 1,
+      "depth": 1,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          7,
+          8
+        ],
+        "discovery_gap": -0.5923938977564674
+      },
+      "children": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 2,
+      "depth": 1,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_gap": -0.49702061685860877
+      },
+      "children": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 3,
+      "depth": 1,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          7,
+          8
+        ],
+        "discovery_gap": -0.6398458319804331
+      },
+      "children": [
+        115,
+        116,
+        117,
+        118
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 4,
+      "depth": 1,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          0,
+          7
+        ],
+        "discovery_gap": -0.4767688760338913
+      },
+      "children": [
+        207,
+        208,
+        209,
+        210
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 7,
+      "depth": 2,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          8
+        ],
+        "discovery_gap": -0.5879801767627206
+      },
+      "children": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 8,
+      "depth": 2,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.5341828118706797
+      },
+      "children": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 15,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_gap": -0.3679857592855859
+      },
+      "children": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 16,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_gap": -0.4397152612674121
+      },
+      "children": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 25,
+      "depth": 2,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          5,
+          7
+        ],
+        "discovery_gap": -0.56115176469774
+      },
+      "children": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 28,
+      "depth": 2,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.5023795255806314
+      },
+      "children": [
+        99,
+        100,
+        101,
+        102
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 29,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          3,
+          8
+        ],
+        "discovery_gap": -0.4217822019328091
+      },
+      "children": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 31,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.3532553392118137
+      },
+      "children": [
+        65,
+        66,
+        67,
+        68
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 33,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.2744697314303843
+      },
+      "children": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 35,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          8
+        ],
+        "discovery_gap": -0.3393595973823723
+      },
+      "children": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 36,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          6,
+          8
+        ],
+        "discovery_gap": -0.26749365083885557
+      },
+      "children": [
+        45,
+        46,
+        47,
+        48
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 45,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.34213555084110575
+      },
+      "children": [
+        49,
+        50,
+        51,
+        52
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 47,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          0,
+          7
+        ],
+        "discovery_gap": -0.17428998935450568
+      },
+      "children": [
+        53,
+        54,
+        55,
+        56
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 48,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.21260264722399524
+      },
+      "children": [
+        61,
+        62,
+        63,
+        64
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 55,
+      "depth": 6,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.5912344194785148
+      },
+      "children": [
+        57,
+        58,
+        59,
+        60
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 67,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          3,
+          8
+        ],
+        "discovery_gap": -0.21008870546358943
+      },
+      "children": [
+        69,
+        70,
+        71,
+        72
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 69,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          6,
+          8
+        ],
+        "discovery_gap": -0.09334149417275261
+      },
+      "children": [
+        73,
+        74,
+        75,
+        76
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 71,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          8
+        ],
+        "discovery_gap": -0.2597500831884618
+      },
+      "children": [
+        83,
+        84,
+        85,
+        86
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 72,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          6,
+          8
+        ],
+        "discovery_gap": -0.3221725402889378
+      },
+      "children": [
+        87,
+        88,
+        89,
+        90
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 73,
+      "depth": 6,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "0",
+        "normalized_corner_excess": 0.20024987409784423,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        77,
+        78
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 75,
+      "depth": 6,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-7136/25965",
+        "normalized_corner_excess": 0.18368293297274452,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        79,
+        80
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 76,
+      "depth": 6,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "0",
+        "normalized_corner_excess": 0.6150180553926106,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        81,
+        82
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 87,
+      "depth": 6,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "0",
+        "normalized_corner_excess": 0.5218032616314217,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        91,
+        92
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 89,
+      "depth": 6,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "0",
+        "normalized_corner_excess": 0.5943464481664611,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        93,
+        94
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 90,
+      "depth": 6,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "0",
+        "normalized_corner_excess": 0.3190642740542682,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        95,
+        96
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 95,
+      "depth": 7,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.3491680464401341,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        97,
+        98
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 102,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          5,
+          7
+        ],
+        "discovery_gap": -0.2703834844198751
+      },
+      "children": [
+        103,
+        104,
+        105,
+        106
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 105,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          3,
+          8
+        ],
+        "discovery_gap": -0.5153194556841014
+      },
+      "children": [
+        107,
+        108,
+        109,
+        110
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 110,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          6,
+          8
+        ],
+        "discovery_gap": -0.159590137888382
+      },
+      "children": [
+        111,
+        112,
+        113,
+        114
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 116,
+      "depth": 2,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          8
+        ],
+        "discovery_gap": -0.38478713039353046
+      },
+      "children": [
+        119,
+        120,
+        121,
+        122
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 117,
+      "depth": 2,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          0,
+          7
+        ],
+        "discovery_gap": -0.43300797220523374
+      },
+      "children": [
+        181,
+        182,
+        183,
+        184
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 118,
+      "depth": 2,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          3,
+          8
+        ],
+        "discovery_gap": -0.5140513872910227
+      },
+      "children": [
+        189,
+        190,
+        191,
+        192
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 120,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          5,
+          7
+        ],
+        "discovery_gap": -0.38207859047867904
+      },
+      "children": [
+        123,
+        124,
+        125,
+        126
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 121,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          0,
+          7
+        ],
+        "discovery_gap": -0.437890667907299
+      },
+      "children": [
+        157,
+        158,
+        159,
+        160
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 122,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          5,
+          7
+        ],
+        "discovery_gap": -0.17473040381098398
+      },
+      "children": [
+        169,
+        170,
+        171,
+        172
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 123,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.5240591388340861
+      },
+      "children": [
+        127,
+        128,
+        129,
+        130
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 125,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          8
+        ],
+        "discovery_gap": -0.556611031886295
+      },
+      "children": [
+        131,
+        132,
+        133,
+        134
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 134,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.4342709760616556
+      },
+      "children": [
+        135,
+        136,
+        137,
+        138
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 137,
+      "depth": 6,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          3,
+          8
+        ],
+        "discovery_gap": -0.27463484807327765
+      },
+      "children": [
+        139,
+        140,
+        141,
+        142
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 138,
+      "depth": 6,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_gap": -0.06940133408564625
+      },
+      "children": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 139,
+      "depth": 7,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_gap": -0.08218237505513643
+      },
+      "children": [
+        143,
+        144,
+        145,
+        146
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 143,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "0",
+        "normalized_corner_excess": 0.3234256610542978,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 8
+      },
+      "children": [
+        147,
+        148
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 152,
+      "depth": 7,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          3,
+          8
+        ],
+        "discovery_gap": -0.10276062734174246
+      },
+      "children": [
+        153,
+        154,
+        155,
+        156
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 159,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          8
+        ],
+        "discovery_gap": -0.3944329227790758
+      },
+      "children": [
+        161,
+        162,
+        163,
+        164
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 161,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.4563857007628438
+      },
+      "children": [
+        165,
+        166,
+        167,
+        168
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 169,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          0,
+          7
+        ],
+        "discovery_gap": -0.13909136028447167
+      },
+      "children": [
+        173,
+        174,
+        175,
+        176
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 171,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.012156826871130288
+      },
+      "children": [
+        177,
+        178,
+        179,
+        180
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 182,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          5,
+          7
+        ],
+        "discovery_gap": -0.250663174603046
+      },
+      "children": [
+        185,
+        186,
+        187,
+        188
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 189,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.07268900527300964
+      },
+      "children": [
+        193,
+        194,
+        195,
+        196
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 195,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_gap": -0.0630257274332493
+      },
+      "children": [
+        197,
+        198,
+        199,
+        200
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 197,
+      "depth": 5,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          8
+        ],
+        "discovery_gap": -0.015083839901411877
+      },
+      "children": [
+        201,
+        202,
+        203,
+        204
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 204,
+      "depth": 6,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.09424687892840566,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        205,
+        206
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 208,
+      "depth": 2,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          6,
+          8
+        ],
+        "discovery_gap": -0.35601693540217283
+      },
+      "children": [
+        211,
+        212,
+        213,
+        214
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 209,
+      "depth": 2,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.4817730325168209
+      },
+      "children": [
+        537,
+        538,
+        539,
+        540
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 211,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_gap": -0.5078699008119929
+      },
+      "children": [
+        215,
+        216,
+        217,
+        218
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 214,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.5262470197033267
+      },
+      "children": [
+        493,
+        494,
+        495,
+        496
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 215,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          1,
+          7
+        ],
+        "discovery_gap": -0.49605991049780035
+      },
+      "children": [
+        219,
+        220,
+        221,
+        222
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 218,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_gap": -0.3692525933440825
+      },
+      "children": [
+        481,
+        482,
+        483,
+        484
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 221,
+      "depth": 5,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "0",
+        "normalized_corner_excess": 0.24915001540785298,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        223,
+        224
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 223,
+      "depth": 6,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_gap": -0.18554686786876323
+      },
+      "children": [
+        225,
+        226,
+        227,
+        228
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 224,
+      "depth": 6,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "0",
+        "normalized_corner_excess": 0.5991491328693561,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        449,
+        450
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 226,
+      "depth": 7,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "0",
+        "normalized_corner_excess": 0.20400257475517947,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        229,
+        230
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 229,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "0",
+        "normalized_corner_excess": 0.21755698070284346,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        231,
+        232
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 230,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "0",
+        "normalized_corner_excess": 0.40574853381823495,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        333,
+        334
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 231,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.13544222614672208,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        233,
+        234
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 232,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.13114021834646472,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        307,
+        308
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 233,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-19868/39921",
+        "normalized_corner_excess": 0.18151399572414118,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        235,
+        236
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 234,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-10352/32041",
+        "normalized_corner_excess": 0.16765016509070652,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        279,
+        280
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 235,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-9442/40973",
+        "normalized_corner_excess": 0.18771290426399112,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        237,
+        238
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 236,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-18406/56357",
+        "normalized_corner_excess": 0.19921275875512912,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        239,
+        240
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 239,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-23561/52943",
+        "normalized_corner_excess": 0.055787880739792683,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        241,
+        242
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 240,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-4721/20756",
+        "normalized_corner_excess": 0.05744924987919742,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        243,
+        244
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 243,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "-17653/61725",
+        "normalized_corner_excess": 0.18694003385527402,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        245,
+        246
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 244,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-8399/57491",
+        "normalized_corner_excess": 0.03308352049393637,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        271,
+        272
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 245,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-5013/39652",
+        "normalized_corner_excess": 0.12484125537066859,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        247,
+        248
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 246,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-5459/27517",
+        "normalized_corner_excess": 0.06277435382626706,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        253,
+        254
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 247,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-12703/58813",
+        "normalized_corner_excess": 0.02648222679943224,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        249,
+        250
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 248,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-7384/62685",
+        "normalized_corner_excess": 0.018887861274570206,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        251,
+        252
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 253,
+      "depth": 15,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          3
+        ]
+      },
+      "children": [
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 254,
+      "depth": 15,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ]
+      },
+      "children": [
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 271,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-2476/9263",
+        "normalized_corner_excess": 0.08935318463478659,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        273,
+        274
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 272,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-8244/60721",
+        "normalized_corner_excess": 0.02083406191285686,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        277,
+        278
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 274,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-4971/53624",
+        "normalized_corner_excess": 0.014357091186067983,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        275,
+        276
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 279,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "22083/64912",
+        "normalized_corner_excess": 0.19861519458564914,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        281,
+        282
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 280,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "24263/64867",
+        "normalized_corner_excess": 0.20256483325761732,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        293,
+        294
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 281,
+      "depth": 12,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ]
+      },
+      "children": [
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 282,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "22766/37107",
+        "normalized_corner_excess": 0.0639633695084072,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        291,
+        292
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 293,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "-15716/58835",
+        "normalized_corner_excess": 0.181241531711672,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        295,
+        296
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 295,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "2711/18095",
+        "normalized_corner_excess": 0.03750024513938044,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        297,
+        298
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 296,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-11999/46453",
+        "normalized_corner_excess": 0.014807648905886595,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        305,
+        306
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 297,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-9206/49827",
+        "normalized_corner_excess": 0.018177059829660003,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        299,
+        300
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 298,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-10686/46265",
+        "normalized_corner_excess": 0.020053205712631694,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        303,
+        304
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 300,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-3160/12581",
+        "normalized_corner_excess": 0.015439578540500598,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        301,
+        302
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 307,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-14005/50751",
+        "normalized_corner_excess": 0.16563314572115218,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        309,
+        310
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 308,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-18444/59501",
+        "normalized_corner_excess": 0.15070385454592383,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        323,
+        324
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 309,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-4873/15539",
+        "normalized_corner_excess": 0.20032075480731315,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        311,
+        312
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 310,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "10427/33714",
+        "normalized_corner_excess": 0.21121164236561007,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        317,
+        318
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 311,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "3059/19142",
+        "normalized_corner_excess": 0.1090703257602037,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        313,
+        314
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 312,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "5084/15475",
+        "normalized_corner_excess": 0.21474630771174041,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        315,
+        316
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 317,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-3508/15253",
+        "normalized_corner_excess": 0.18691479172860603,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        319,
+        320
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 320,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "-25229/58339",
+        "normalized_corner_excess": 0.17132854210504167,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        321,
+        322
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 323,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "6871/20197",
+        "normalized_corner_excess": 0.1986151936453222,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        325,
+        326
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 324,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "19597/53678",
+        "normalized_corner_excess": 0.20176866509199165,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        327,
+        328
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 327,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "17011/57868",
+        "normalized_corner_excess": 0.20767330813899854,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        329,
+        330
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 328,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "12213/61253",
+        "normalized_corner_excess": 0.17211540985089258,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        331,
+        332
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 333,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.1840600391002294,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        335,
+        336
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 334,
+      "depth": 9,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_extra_cavity_priority": true,
+        "physical_sat_violation": -0.2421671514506215
+      },
+      "children": [
+        435,
+        436,
+        437,
+        438,
+        439,
+        440,
+        441,
+        442
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 335,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-5999/36734",
+        "normalized_corner_excess": 0.14916306947014668,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        337,
+        338
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 336,
+      "depth": 10,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          5,
+          8
+        ],
+        "discovery_extra_cavity_priority": true,
+        "physical_sat_violation": -0.3996129261345507
+      },
+      "children": [
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 337,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "195911326896369/562949953421312",
+        "normalized_corner_excess": 0.037555323481658576,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        339,
+        340
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 338,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "8546/46343",
+        "normalized_corner_excess": 0.11467621818015417,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        343,
+        344
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 339,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-12409/60256",
+        "normalized_corner_excess": 0.14548784680127902,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        341,
+        342
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 343,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-5241/32345",
+        "normalized_corner_excess": 0.021738551989233024,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        345,
+        346
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 344,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-18804/58519",
+        "normalized_corner_excess": 0.21282746474999392,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 0,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        347,
+        348
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 348,
+      "depth": 13,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_extra_cavity_priority": true,
+        "physical_sat_violation": -0.1720123084295485
+      },
+      "children": [
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        355,
+        356
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 349,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-5181/35495",
+        "normalized_corner_excess": 0.03996488770030737,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        357,
+        358
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 362,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-2456/10239",
+        "normalized_corner_excess": 0.1625243061068753,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        367,
+        368
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 366,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "11303/31153",
+        "normalized_corner_excess": 0.20886383870582748,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        401,
+        402
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 367,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "5135/42709",
+        "normalized_corner_excess": 0.11443958298385226,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        369,
+        370
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 368,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "14935/43039",
+        "normalized_corner_excess": 0.17817159703197127,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        383,
+        384
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 369,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-7075/40019",
+        "normalized_corner_excess": 0.06576999624996294,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        371,
+        372
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 370,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-17173/61501",
+        "normalized_corner_excess": 0.08837775134989645,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        377,
+        378
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 371,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-473/3508",
+        "normalized_corner_excess": 0.018565941355901394,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        373,
+        374
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 372,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-5136/47137",
+        "normalized_corner_excess": 0.019089837048944958,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        375,
+        376
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 377,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "18989/57618",
+        "normalized_corner_excess": 0.103443278600027,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        379,
+        380
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 378,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "36155/64782",
+        "normalized_corner_excess": 0.07338094124171146,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        381,
+        382
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 383,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-19653/58294",
+        "normalized_corner_excess": 0.0786173720294503,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        385,
+        386
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 384,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "28729/63454",
+        "normalized_corner_excess": 0.13965965159107085,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        399,
+        400
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 385,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "29792/54557",
+        "normalized_corner_excess": 0.1021944379976043,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        387,
+        388
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 386,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "5707/36760",
+        "normalized_corner_excess": 0.13808580800437475,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        391,
+        392
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 387,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-4265/36246",
+        "normalized_corner_excess": 0.017643485160087735,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        389,
+        390
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 391,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-690/13559",
+        "normalized_corner_excess": 0.014250278448642462,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        393,
+        394
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 392,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "25203/65528",
+        "normalized_corner_excess": 0.09641068865140223,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        397,
+        398
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 393,
+      "depth": 16,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-3875/20332",
+        "normalized_corner_excess": 0.01288887692782037,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        395,
+        396
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 401,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-7199/34899",
+        "normalized_corner_excess": 0.07865548488324947,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        403,
+        404
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 402,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-14956/41831",
+        "normalized_corner_excess": 0.0758032929265493,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        429,
+        430
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 403,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-20463/58205",
+        "normalized_corner_excess": 0.016877350949283887,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        405,
+        406
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 404,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-10788/43903",
+        "normalized_corner_excess": 0.05206790090410873,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        413,
+        414
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 405,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-6563/48678",
+        "normalized_corner_excess": 0.01979009687204414,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        407,
+        408
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 406,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-21049/34899",
+        "normalized_corner_excess": 0.04404488040457899,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        409,
+        410
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 410,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-4793/48697",
+        "normalized_corner_excess": 0.01680166314419651,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        411,
+        412
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 413,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "4463/58501",
+        "normalized_corner_excess": 0.025986953236356136,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        415,
+        416
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 414,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "18359393586511/70368744177664",
+        "normalized_corner_excess": 0.016614895308404876,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        425,
+        426
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 415,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-1213/18766",
+        "normalized_corner_excess": 0.01316375850868301,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        417,
+        418
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 416,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-981/7601",
+        "normalized_corner_excess": 0.018579464844684423,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        423,
+        424
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 417,
+      "depth": 16,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "9218/59021",
+        "normalized_corner_excess": 0.02537003871091592,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        419,
+        420
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 418,
+      "depth": 16,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "-4605/52022",
+        "normalized_corner_excess": 0.014402158165685464,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        421,
+        422
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 425,
+      "depth": 15,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "8572/28741",
+        "normalized_corner_excess": 0.02381072884001867,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        427,
+        428
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 429,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-2147/13020",
+        "normalized_corner_excess": 0.030282505280633032,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        431,
+        432
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 430,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "23693/40046",
+        "normalized_corner_excess": 0.061772462867379474,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        433,
+        434
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 435,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 2,
+        "cut": "0",
+        "normalized_corner_excess": 0.16319673741974938,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        443,
+        444
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 439,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.22708463988853822,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        447,
+        448
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 444,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.21511139673630097,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        445,
+        446
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 449,
+      "depth": 7,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_extra_cavity_priority": true,
+        "physical_sat_violation": -0.10883517888536243
+      },
+      "children": [
+        451,
+        452,
+        453,
+        454,
+        455,
+        456,
+        457,
+        458
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 450,
+      "depth": 7,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_extra_cavity_priority": true,
+        "physical_sat_violation": -0.09023546406520266
+      },
+      "children": [
+        471,
+        472,
+        473,
+        474,
+        475,
+        476,
+        477,
+        478
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 452,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.21906128997112795,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        459,
+        460
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 454,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.23157168666371852,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        461,
+        462
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 456,
+      "depth": 8,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_gap": -0.07340197288690403
+      },
+      "children": [
+        463,
+        464,
+        465,
+        466
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 458,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-14257/61714",
+        "normalized_corner_excess": 0.18314175042488312,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        469,
+        470
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 464,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.2227946178191571,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        467,
+        468
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 471,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.20572749407462343,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        479,
+        480
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 482,
+      "depth": 5,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          5,
+          7
+        ],
+        "discovery_extra_cavity_priority": true,
+        "physical_sat_violation": -0.2833489071872082
+      },
+      "children": [
+        485,
+        486,
+        487,
+        488,
+        489,
+        490,
+        491,
+        492
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 495,
+      "depth": 4,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_gap": -0.33584618539933037
+      },
+      "children": [
+        497,
+        498,
+        499,
+        500
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 497,
+      "depth": 5,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_extra_cavity_priority": true,
+        "physical_sat_violation": -0.1144922965662779
+      },
+      "children": [
+        501,
+        502,
+        503,
+        504,
+        505,
+        506,
+        507,
+        508
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 501,
+      "depth": 6,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_gap": -0.22685382537652482
+      },
+      "children": [
+        509,
+        510,
+        511,
+        512
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 510,
+      "depth": 7,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.21993140248458953,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        513,
+        514
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 513,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "0",
+        "normalized_corner_excess": 0.6007078928155938,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        515,
+        516
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 514,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "0",
+        "normalized_corner_excess": 0.20481457202303144,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        525,
+        526
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 515,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-141305368185395/281474976710656",
+        "normalized_corner_excess": 0.09968764649365092,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        517,
+        518
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 516,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "16043/61179",
+        "normalized_corner_excess": 0.19919133943086464,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        521,
+        522
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 518,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-20421/50216",
+        "normalized_corner_excess": 0.2089339906662202,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        519,
+        520
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 521,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-13288/53861",
+        "normalized_corner_excess": 0.1174605199255998,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        523,
+        524
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 525,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "0",
+        "normalized_corner_excess": 0.5317313202616951,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        527,
+        528
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 526,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "0",
+        "normalized_corner_excess": 0.567601521909932,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        533,
+        534
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 527,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "-15683/63982",
+        "normalized_corner_excess": 0.09584617586019473,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        529,
+        530
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 528,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "-12883/54699",
+        "normalized_corner_excess": 0.0982645490151679,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        531,
+        532
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 533,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "8840/55383",
+        "normalized_corner_excess": 0.12596580845763405,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 1,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        535,
+        536
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 539,
+      "depth": 3,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_gap": -0.36498918813010195
+      },
+      "children": [
+        541,
+        542,
+        543,
+        544
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 541,
+      "depth": 4,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 8,
+        "cut": "0",
+        "defect": 0.5759782801111254,
+        "cut_selection": "interior_radial_slope_or_midpoint"
+      },
+      "children": [
+        545,
+        546
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 545,
+      "depth": 5,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "5010/57077",
+        "defect": 0.42649785172667826,
+        "cut_selection": "interior_radial_slope_or_midpoint"
+      },
+      "children": [
+        547,
+        548
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 546,
+      "depth": 5,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_frozen_CH_separator": true
+      },
+      "children": [
+        655,
+        656,
+        657,
+        658,
+        659,
+        660,
+        661,
+        662
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 547,
+      "depth": 6,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          3
+        ]
+      },
+      "children": [
+        549,
+        550,
+        551,
+        552,
+        553,
+        554,
+        555,
+        556
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 548,
+      "depth": 6,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_frozen_CH_separator": true
+      },
+      "children": [
+        647,
+        648,
+        649,
+        650,
+        651,
+        652,
+        653,
+        654
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 550,
+      "depth": 7,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          3,
+          6
+        ]
+      },
+      "children": [
+        557,
+        558,
+        559,
+        560,
+        561,
+        562,
+        563,
+        564
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 552,
+      "depth": 7,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ]
+      },
+      "children": [
+        567,
+        568,
+        569,
+        570,
+        571,
+        572,
+        573,
+        574
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 556,
+      "depth": 7,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          3,
+          6
+        ]
+      },
+      "children": [
+        581,
+        582,
+        583,
+        584,
+        585,
+        586,
+        587,
+        588
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 564,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.42612954652032453,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 4
+      },
+      "children": [
+        565,
+        566
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 571,
+      "depth": 8,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_gap": -0.02804574084295053
+      },
+      "children": [
+        575,
+        576,
+        577,
+        578
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 576,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.22309785364729873,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        579,
+        580
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 584,
+      "depth": 8,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_gap": -0.18306160539448652
+      },
+      "children": [
+        589,
+        590,
+        591,
+        592
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 588,
+      "depth": 8,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "0",
+        "normalized_corner_excess": 0.19291282219652572,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 4
+      },
+      "children": [
+        599,
+        600
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 590,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.5659769203190077,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        593,
+        594
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 593,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-6835/60092",
+        "normalized_corner_excess": 0.11485623353846641,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        595,
+        596
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 594,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "17940/32053",
+        "normalized_corner_excess": 0.1445152919644439,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 5
+      },
+      "children": [
+        597,
+        598
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 599,
+      "depth": 9,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          4,
+          8
+        ],
+        "discovery_gap": -0.09643268506892233
+      },
+      "children": [
+        601,
+        602,
+        603,
+        604
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 600,
+      "depth": 9,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.1609830874758984,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 4
+      },
+      "children": [
+        631,
+        632
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 602,
+      "depth": 10,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          6,
+          8
+        ],
+        "discovery_gap": -0.06330685244530093
+      },
+      "children": [
+        605,
+        606,
+        607,
+        608
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 605,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-7805/31726",
+        "normalized_corner_excess": 0.16272642334774723,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        609,
+        610
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 608,
+      "depth": 11,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.2302689782055678,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        627,
+        628
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 609,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.17350812063693066,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        611,
+        612
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 610,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "0",
+        "normalized_corner_excess": 0.23944130497838323,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        617,
+        618
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 611,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 7,
+        "cut": "0",
+        "normalized_corner_excess": 0.013349889585950514,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        613,
+        614
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 612,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "2117/5395",
+        "normalized_corner_excess": 0.15760416410890699,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        615,
+        616
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 617,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-4961/62080",
+        "normalized_corner_excess": 0.04123098038304729,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        619,
+        620
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 618,
+      "depth": 13,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "17798/45603",
+        "normalized_corner_excess": 0.21070798481548358,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        623,
+        624
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 620,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 4,
+        "cut": "-4194/64891",
+        "normalized_corner_excess": 0.016728176999132316,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        621,
+        622
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 623,
+      "depth": 14,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-1696/5421",
+        "normalized_corner_excess": 0.04594651715797404,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        625,
+        626
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 628,
+      "depth": 12,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 3,
+        "cut": "-19975/55874",
+        "normalized_corner_excess": 0.02862515199032778,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 6
+      },
+      "children": [
+        629,
+        630
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 631,
+      "depth": 10,
+      "kind": "angle",
+      "split": {
+        "kind": "angle",
+        "owner": 6,
+        "cut": "-10681/64477",
+        "normalized_corner_excess": 0.06064812963055388,
+        "cut_selection": "physical_corner_normalized_frame_radial_or_zero_after_sat_or_proxies",
+        "selected_sat_pairs": 2,
+        "selected_proxy_pairs": 4
+      },
+      "children": [
+        633,
+        634
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 632,
+      "depth": 10,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          2,
+          7
+        ],
+        "discovery_frozen_CH_separator": true
+      },
+      "children": [
+        639,
+        640,
+        641,
+        642,
+        643,
+        644,
+        645,
+        646
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 634,
+      "depth": 11,
+      "kind": "proxy",
+      "split": {
+        "kind": "proxy",
+        "pair": [
+          6,
+          8
+        ],
+        "discovery_gap": -0.17954998602003863
+      },
+      "children": [
+        635,
+        636,
+        637,
+        638
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 647,
+      "depth": 7,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          1,
+          5
+        ],
+        "discovery_frozen_BF_separator": true
+      },
+      "children": [
+        663,
+        664,
+        665,
+        666,
+        667,
+        668,
+        669,
+        670
+      ],
+      "all_closed_faces_retained": true
+    },
+    {
+      "index": 655,
+      "depth": 6,
+      "kind": "sat",
+      "split": {
+        "kind": "sat",
+        "pair": [
+          1,
+          5
+        ],
+        "discovery_frozen_BF_separator": true
+      },
+      "children": [
+        671,
+        672,
+        673,
+        674,
+        675,
+        676,
+        677,
+        678
+      ],
+      "all_closed_faces_retained": true
+    }
+  ]
+}

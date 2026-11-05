@@ -1,0 +1,19 @@
+{
+  "status": "PASS_FRESH_PORTABLE_COMPLETE_REGISTERED_B_ORIGINAL",
+  "original_id": "negative-f14f5bc4eafdf50d",
+  "complete": true,
+  "whole_original_proved": true,
+  "report_sha256": "286c19e5f2131a93b0f805c333b8e60185caa63ea23dcf0fba5217c175b1057d",
+  "packet_manifest_sha256": "9d6b4d3d0582fb9c79695ce31ebb32324f131642d5d6e191540bb218fc7cdd6a",
+  "prior_manifest_sha256": "33272ed096ceb3f2dab6a16570ebe080a84677a033be5690ee63bfbdbf7bfc72",
+  "packet_inputs": 1136,
+  "prior_inputs": 507,
+  "every_new_bound_and_cover_replayed": true,
+  "all_inputs_rehashed_at_completion": true,
+  "external_workspace_reads_forbidden": true,
+  "numerical_modules_imported": false,
+  "lean_lake_ci_run": false,
+  "new_original_ledger_credit": 0,
+  "new_mask_ledger_credit": 0,
+  "seconds": 771.22788941
+}

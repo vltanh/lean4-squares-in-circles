@@ -1,0 +1,46 @@
+{
+  "status": "PASS_EXACT_ONE_REGISTERED_ORIGINAL_LEDGER_DELTA",
+  "before_sha256": "3dfaff7a880ab358930fb0ea835a1fdbe9959711f3c08ac47ee9817e7c693dde",
+  "after_sha256": "34afb382fd9604f1ca339c31f3929f37b6b9e074fed8cb2b4d62a25e684459d8",
+  "changed_original_ids": [
+    "negative-f14f5bc4eafdf50d"
+  ],
+  "all_231_original_definitions_unchanged": true,
+  "other_230_entries_unchanged": true,
+  "before": {
+    "closed": 222,
+    "open": 9,
+    "total": 231
+  },
+  "after": {
+    "closed": 223,
+    "open": 8,
+    "total": 231
+  },
+  "mask_ledger": {
+    "closed": 8,
+    "open": 24,
+    "total": 32
+  },
+  "new_original_cells": 1,
+  "new_masks": 0,
+  "new_positional_roots": 0,
+  "new_roadmap_gates": 0,
+  "fixed_denominators": {
+    "original_cells": 231,
+    "masks": 32,
+    "positional_roots": 7915,
+    "roadmap_gates": 15
+  },
+  "remaining_open_original_ids": [
+    "positive-c744bc031d40ee64",
+    "negative-887236b78100baf3",
+    "negative-d4021ade840b985c",
+    "negative-b882d8ade0cf9ea0",
+    "negative-7c60be8b07a358e9",
+    "negative-462e78d2e2d8be05",
+    "negative-16a2fc93c8d133f0",
+    "negative-580db3624cf4c2e2"
+  ],
+  "lean_lake_ci_run": false
+}

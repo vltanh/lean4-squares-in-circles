@@ -1,6 +1,30 @@
-> **ACTIVE EXECUTION DIRECTIVE — 2026-11-04:** [Current mask, priorities, bounded whole-cell attempts and exact acceptance](CURRENT_MASK_DIRECTIVE.md). **222/231 original cells CLOSED, 9 OPEN (A1, B5, C3); 8/32 masks CLOSED.** The next milestone is **223/231**, not another auxiliary lemma. Frozen old status paragraphs below are chronological evidence, not resume instructions. No Lean/Lake/CI.
+> **ACTIVE EXECUTION DIRECTIVE — 2026-11-05:** [Current mask, priorities, bounded whole-cell attempts and exact acceptance](CURRENT_MASK_DIRECTIVE.md). **223/231 original cells CLOSED, 8 OPEN (A1, B4, C3); 8/32 masks CLOSED.** Bf14 is accepted; continue B16, A and the remaining B/C originals. The next milestone is **224/231**. Historical paragraphs below retain their original scope. No Lean/Lake/CI.
 
-# Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
+# Current A.2 handoff: 223/231 current-mask cells closed; 8 OPEN
+
+## Complete Bf14 original: 223 CLOSED / 8 OPEN
+
+The complete physical tree excludes `negative-f14f5bc4eafdf50d` in the strict-radius caller
+`q < Q = 1105/256`. Its 679 nodes have **461 excluded terminal domains and
+zero OPEN leaves**, with 64 four-way inset covers, 19 eight-way physical
+separating-axis covers and 135 two-way closed slope covers.
+
+Native and fresh portable exact replay both pass. The independent
+physical/source and full-cover reviews, complete literal terminal-table
+audit and archive/part audit also pass. The arithmetic contains
+363 bound rounds, 71,407 rational deductions,
+246,787 premise-row occurrences and 7,244
+terminal-row occurrences. These are internal proof counts, not additional
+originals or masks.
+
+This accepts exactly one unchanged original, advancing **222 CLOSED / 9 OPEN
+to 223 CLOSED / 8 OPEN** in the same 231-cell register. Remaining original
+families are **A1, B4, C3, D0**. Whole masks remain **8 CLOSED / 24 OPEN**;
+`001/00` and reversal `100/00` remain OPEN. No Lean, Lake, compilation or CI.
+
+[Complete proof and reproduction](A2_00100_BF14_COMPLETE_ORIGINAL_CLOSURE.md).
+
+## Earlier continuation records
 
 The [finite A correlation attempt](computer_assisted/a_c744_finite_existing_correlations_v2/README.md)
 is complete and stopped: twelve exact rounds improve six leaves but add no
@@ -1146,13 +1170,13 @@ and externally added staging tools are preserved with explicit historical
 metadata. The [complete portable release](computer_assisted/a2_00100_d821_complete_original/README.md)
 now passes native/cold proof replay, full hand/table review and every
 archive gate. D821 is CLOSED in the unchanged fixed-original definition.
-The register is **222 CLOSED / 9 OPEN**; the mask ledger is **8 CLOSED /
+The register is **223 CLOSED / 8 OPEN**; the mask ledger is **8 CLOSED /
 24 OPEN**. The eventual full-mask conclusion remains strict-radius.
 
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
-- Current mask: **222 CLOSED / 9 OPEN**, same 231 IDs and certified full cover.
+- Current mask: **223 CLOSED / 8 OPEN**, same 231 IDs and certified full cover.
 - Positional roots: **5,838 historical closed-Q exclusions / 2,077 OPEN**
   among the same 7,915 IDs. Equality root 7820 remains feasible at Q.
 - The same 15 roadmap IDs and all global deliverables retain their statuses.

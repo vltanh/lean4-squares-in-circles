@@ -1,0 +1,56 @@
+{
+  "status": "PASS_ROOT_BF14_COMPLETE_ARCHIVE_AND_PART_AUDIT",
+  "original_id": "negative-f14f5bc4eafdf50d",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      0
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        1
+      ]
+    ]
+  ],
+  "archive_sha256": "edb4c405069d743ae3c44488e4027b1fdc566ffd8fafa2751c91ef3988ac6878",
+  "archive_bytes": 60025316,
+  "complete_part_count": 8,
+  "every_part_hash_checked": true,
+  "concatenated_part_digest_matches_archive": true,
+  "all_regular_members_verified": 1140,
+  "all_source_packet_bytes_rehashed": true,
+  "native_and_portable_mathematical_reports_match": true,
+  "release_manifest_sha256": "55f642b2bd81c96c64f4b13385e94a982f1fc5a0e2704aad0d8832c2499ba857",
+  "fresh_complete_report_sha256": "286c19e5f2131a93b0f805c333b8e60185caa63ea23dcf0fba5217c175b1057d",
+  "fresh_portable_receipt_sha256": "be8b81b1809ea7a5341a5e40f08e42c42e3cd1e667d3be842d9bd8fc3558933a",
+  "input_manifest_sha256": "9d6b4d3d0582fb9c79695ce31ebb32324f131642d5d6e191540bb218fc7cdd6a",
+  "archive_ready_sha256": "5b5ab1434a6941131070ebf8083d27009a8a954f9e0961acf15e8b736d0441f2",
+  "weighted_arithmetic_repeated": false,
+  "numerical_optimizer_called": false,
+  "no_original_ledger_mutation_by_auditor": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 7.072914944999866
+}
