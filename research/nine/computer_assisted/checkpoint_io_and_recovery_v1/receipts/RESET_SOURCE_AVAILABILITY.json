@@ -1,0 +1,14 @@
+{
+  "status": "PASS_RESET_SOURCE_ARCHIVE_AND_ALL_CONTENT_PATH_IDENTITIES",
+  "source_commit": "d989c83b8a537b9d028350d4d6f3853fe4eebc9b",
+  "accepted_proof_baseline": "064e4aa0444a20b79d108b4e6bfc12de3a12b9cb",
+  "archive_sha256": "157bbd24c778cef8f44e0e357ac47322bbd527aac0dbc6c751b66d5b0eb7546d",
+  "paths_sha256": "87fa02855665f17f0375788b8d8a0f9372929fc34b695f01beb65d2d51045b05",
+  "original_source_paths": 22109,
+  "distinct_source_contents": 3686,
+  "distinct_source_bytes": 31783691,
+  "all_source_hashes_and_lengths_rechecked": true,
+  "expanded_search_states_included": false,
+  "source_execution_performed": false,
+  "new_proof_credit": 0
+}

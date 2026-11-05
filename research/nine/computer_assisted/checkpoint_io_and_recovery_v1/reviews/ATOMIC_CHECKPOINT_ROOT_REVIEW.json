@@ -1,0 +1,55 @@
+{
+  "status": "PASS_ROOT_ATOMIC_CHECKPOINT_SOURCE_REVIEW_AND_FRESH_EIGHT_CONTROLS",
+  "fresh_controls": {
+    "status": "PASS_ATOMIC_JSON_CHECKPOINT_CONTROLS",
+    "count": 8,
+    "checks": [
+      "ENOSPC before serialization: prior bytes/inode/mode intact; diagnostic retained; OSError propagated",
+      "ENOSPC within serialization: prior bytes/inode/mode intact; diagnostic retained; OSError propagated",
+      "os.replace failure: prior bytes/inode/mode intact; diagnostic retained; OSError propagated",
+      "file fsync ENOSPC: prior bytes/inode/mode intact; diagnostic retained; OSError propagated",
+      "Success: byte-identical indent2/newline serialization; existing0640 mode preserved; file then directory fsync; no temp remains",
+      "New file: exact0644 mode despite restrictive umask; identical bytes",
+      "Post-replace directory-fsync failure: new installed bytes and exact diagnostic link retained; explicit replaced=True; error propagated",
+      "Symlink destination rejected before staging; linked target unchanged"
+    ],
+    "helper_sha256": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+    "control_source_sha256": "c7f6e72ee5aed200ddcc1a11f6b80612944e845f52c9cd92b32d1e81d496a6bb",
+    "disposable_fixtures_only": true,
+    "live_driver_or_proof_path_modified": false,
+    "multi_file_transaction_claimed": false
+  },
+  "identical_to_frozen_control_result": true,
+  "files": {
+    "ac_work/tree/atomic_json_checkpoint.py": {
+      "sha256": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+      "bytes": 3728
+    },
+    "ac_work/tree/check_atomic_json_checkpoint.py": {
+      "sha256": "c7f6e72ee5aed200ddcc1a11f6b80612944e845f52c9cd92b32d1e81d496a6bb",
+      "bytes": 7815
+    },
+    "ac_work/tree/ATOMIC_JSON_CHECKPOINT_HAND_NOTE.md": {
+      "sha256": "ea5eaab99aeaf2243da6bebd0f043321e9c62e1e6956a6d44d9dae1f11a279dc",
+      "bytes": 2466
+    },
+    "ac_work/tree/ATOMIC_JSON_CHECKPOINT_SOURCE_FREEZE.json": {
+      "sha256": "36b5f1e83811b7264940d8b1e0ce4d7e68594ea62d7bdcce24b4b886ddca917f",
+      "bytes": 1291
+    },
+    "ac_work/tree/ATOMIC_JSON_CHECKPOINT_CONTROLS.json": {
+      "sha256": "6c65a1bed9d9b77759e96fb2d5f7f5d7143973c51bacb7ab256e30333fd6280f",
+      "bytes": 1231
+    }
+  },
+  "root_review": {
+    "full_helper_hand_note_and_control_source_read": true,
+    "exact_indent2_newline_serialization": true,
+    "previous_inode_bytes_mode_preserved_before_replace_errors": true,
+    "post_replace_directory_fsync_error_truthfully_identified": true,
+    "oserror_must_be_rethrown_in_immutable_new_drivers": true,
+    "single_file_only_node_manifest_audit_still_required": true,
+    "no_live_driver_changed": true,
+    "new_proof_credit": 0
+  }
+}

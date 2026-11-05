@@ -1,0 +1,13 @@
+{
+  "status": "PASS_MATERIALIZED_COMPLETE_A1_CONSEQUENCE_THIN_PACKET",
+  "delta_manifest_sha256": "70c971d00fb804d0765cce66ef540b3c79e18a0eed29b08d5f63793b94eedf4d",
+  "assembled_input_manifest_sha256": "d8ca6d465aa3831e26d6d0149b8ce734a1043c51694f81a9ce9b9a4e3baaf965",
+  "new_delta_files": 858,
+  "reused_A_aliases": 1392,
+  "assembled_input_files": 2249,
+  "assembled_input_bytes": 1091622669,
+  "all_source_bytes_unchanged": true,
+  "no_source_packet_modified": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

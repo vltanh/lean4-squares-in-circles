@@ -1,5 +1,11 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [checkpoint I/O and recovery package](computer_assisted/checkpoint_io_and_recovery_v1/README.md)
+records the paused numerical lanes, recovered committed A/A1 and shared-bound
+inputs, and the atomic JSON writer required for new continuation drivers.
+Uncommitted search suffixes that became unavailable are not represented as
+recovered. All accepted counts and original definitions remain unchanged.
+
 ## D821 source restoration and portable acceptance completed
 
 The earlier external continuation correctly required real source bytes,

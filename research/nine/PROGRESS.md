@@ -1,5 +1,15 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Checkpoint I/O and committed-input recovery
+
+The [recovery checkpoint](computer_assisted/checkpoint_io_and_recovery_v1/README.md)
+preserves an independently reviewed atomic JSON writer, its eight successful
+failure controls, and exact restoration receipts for the published A/A1,
+shared-bound and all-mask inputs. Numerical continuation is paused while
+available committed checkpoints are reattached after a runtime file-availability
+change. Missing later search suffixes are not counted as recovered. The live
+register remains **222/231 CLOSED**, with **8/32 whole masks CLOSED**.
+
 ## Recovered B16a complementary proof packet
 
 The complete I20/I31/I33 proofs from local commit `a16650c9656f9b1bc1bb7f45d15e4e2897561098`

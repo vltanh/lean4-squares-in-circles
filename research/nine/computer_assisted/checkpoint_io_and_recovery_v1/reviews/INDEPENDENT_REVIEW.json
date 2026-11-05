@@ -1,0 +1,21 @@
+{
+  "status": "PASS_INDEPENDENT_ATOMIC_CHECKPOINT_SOURCE_AND_RECORDED_CONTROLS_REVIEW",
+  "source_freeze_sha256": "36b5f1e83811b7264940d8b1e0ce4d7e68594ea62d7bdcce24b4b886ddca917f",
+  "helper_sha256": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+  "control_source_sha256": "c7f6e72ee5aed200ddcc1a11f6b80612944e845f52c9cd92b32d1e81d496a6bb",
+  "hand_review_sha256": "41269871fbcbab62b6ae5feee88184ee7e84fcbcf5a168dcd7437c416b4d2768",
+  "all_frozen_members_rehashed": 4,
+  "recorded_controls": 8,
+  "controls_rerun_by_reviewer": false,
+  "filesystem_mutation_controls_executed_by_reviewer": false,
+  "exact_source_bytes_reestablished_after_runtime_reattachment": true,
+  "future_driver_must_rethrow_oserror": true,
+  "single_file_atomicity_only": true,
+  "multi_file_transaction": false,
+  "no_frozen_driver_changed": true,
+  "no_live_checkpoint_touched": true,
+  "numerical_restart_authorized": false,
+  "caller_operational_assumption": "One writer per checkpoint; exit-time node/manifest integrity audit retained",
+  "original_cell_credit": 0,
+  "mask_credit": 0
+}

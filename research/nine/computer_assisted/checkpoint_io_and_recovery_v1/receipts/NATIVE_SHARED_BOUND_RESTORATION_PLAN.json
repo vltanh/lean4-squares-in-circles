@@ -1,0 +1,367 @@
+{
+  "b_work/C887_DIRECT_SHARED_SEARCH_V3_INDEPENDENT_REVIEW.md": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/b_work/C887_DIRECT_SHARED_SEARCH_V3_INDEPENDENT_REVIEW.md",
+    "sha256": "afd18453b6b8ea16146b66ebd52742a7d83fbe172b53e6d14c2d46d959b58a2f",
+    "bytes": 3499
+  },
+  "b_work/C887_DIRECT_SHARED_SEARCH_V3_INDEPENDENT_REVIEW.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/b_work/C887_DIRECT_SHARED_SEARCH_V3_INDEPENDENT_REVIEW.json",
+    "sha256": "b86c5e9daabffea25b7f5fb6957078d43bdb10f04aa3fb414c409ad3f508df64",
+    "bytes": 1822
+  },
+  "b_work/C_AND_CB_LAZY_EXACT_REPLAY_INDEPENDENT_REVIEW.md": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/b_work/C_AND_CB_LAZY_EXACT_REPLAY_INDEPENDENT_REVIEW.md",
+    "sha256": "05365d58cf856a3115dc11ce2b8e30415ac2ff5aeee852d3bc43c9b7ccb69ff8",
+    "bytes": 2770
+  },
+  "b_work/C_AND_CB_LAZY_EXACT_REPLAY_INDEPENDENT_REVIEW.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/b_work/C_AND_CB_LAZY_EXACT_REPLAY_INDEPENDENT_REVIEW.json",
+    "sha256": "c92a9af9c4fe0e4051889ba9596cadfad5f35843293de2f9038c0264eaf8b229",
+    "bytes": 2366
+  },
+  "ac_work/build_native_progress_checkpoints.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/build_native_progress_checkpoints.py",
+    "sha256": "310ab7088db3271ab3461961327e808f1dc10c6dccf277908799f53f625609f9",
+    "bytes": 20146
+  },
+  "ac_work/verify_native_checkpoint_inventory.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/verify_native_checkpoint_inventory.py",
+    "sha256": "3a2e10184f6c7967919775a95a2f7f906c653099d7d9603cc985dc2500797d41",
+    "bytes": 6075
+  },
+  "d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_EXACT_CONTROLS.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_EXACT_CONTROLS.json",
+    "sha256": "fc159a8d87041305b2579e5741774c7051702b81eded3cc9f61bf82d05a65c30",
+    "bytes": 2487
+  },
+  "d_work/cb882_shared_height_bounds/cb882_shared_height_bounds_runtime.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/cb882_shared_height_bounds_runtime.py",
+    "sha256": "748b9bd4495a351de304028fcea07bbb6b7a2d26c7a30d5b0eea6d2cfc6dcb5a",
+    "bytes": 1231
+  },
+  "d_work/cb882_shared_height_bounds/verify_cb882_shared_height_bounds_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/verify_cb882_shared_height_bounds_tree.py",
+    "sha256": "1e962a7619b6c997b655c74d2c0454f75128d71531bed57746b84e33d4e95433",
+    "bytes": 2664
+  },
+  "d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_STATE_BINDING.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_STATE_BINDING.json",
+    "sha256": "f0e49cf500739a4c878ef34c5f420e5430ca22dd9e147986615a4c546554ee38",
+    "bytes": 27647
+  },
+  "d_work/cb882_shared_height_bounds/independent_cb882_whole_height_bound_rows.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/independent_cb882_whole_height_bound_rows.py",
+    "sha256": "caeb30637c898182ed0fa7fe5a3454d9987650ec80f4a5db64975a2197f97955",
+    "bytes": 7268
+  },
+  "d_work/cb882_shared_height_bounds/cb882_whole_height_bound_rows.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/cb882_whole_height_bound_rows.py",
+    "sha256": "dafa4d2cedacc0ca409195abcd45eba5b281561f9d1061de4b396a2e2e446200",
+    "bytes": 980
+  },
+  "d_work/cb882_shared_height_bounds/SOURCE_FREEZE.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/SOURCE_FREEZE.json",
+    "sha256": "6ade847ccacb3a36eb4655394a32e35c7689384797aa14360e24b7104337831d",
+    "bytes": 4793
+  },
+  "d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_STATE_HAND_PROOF.md": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_STATE_HAND_PROOF.md",
+    "sha256": "bec2b67456b5f22520d9767d5405949d68f9b06ece80c9ed85b572894bc7814f",
+    "bytes": 4318
+  },
+  "ac_work/tree/CB882_DIRECT_SHARED_LAZY_READER_ACTUAL_ATTACHMENT.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/CB882_DIRECT_SHARED_LAZY_READER_ACTUAL_ATTACHMENT.json",
+    "sha256": "62d7de0a19ac9d3c832fb77c10ce655c4d150f941f3094e48f0e5a701926260e",
+    "bytes": 907
+  },
+  "ac_work/tree/DIRECT_SHARED_SEARCH_COMPOSITION_CONTROLS.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_SEARCH_COMPOSITION_CONTROLS.json",
+    "sha256": "070ae62296d9c542b7653fa2bc3469f613888fec99b9a046f38966786e1248a1",
+    "bytes": 897
+  },
+  "ac_work/tree/direct_shared_bound_round.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/direct_shared_bound_round.py",
+    "sha256": "be5a16d1106d37a47b1e21591a47b3f90dcf50839ebbf81ed30d0b74a8187d25",
+    "bytes": 6233
+  },
+  "ac_work/tree/DIRECT_SHARED_BOUND_ROUND_HAND_PROOF.md": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_BOUND_ROUND_HAND_PROOF.md",
+    "sha256": "3df13de0570dab56907f7294ff0f1827640f62ea88efc08a42bce4bfd46a295b",
+    "bytes": 3318
+  },
+  "ac_work/tree/direct_shared_bound_precheck.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/direct_shared_bound_precheck.py",
+    "sha256": "abce850086e528b7df8bc4acbcdf780e87efe6a5954006407e3a30ab3817a501",
+    "bytes": 1929
+  },
+  "ac_work/tree/DIRECT_SHARED_BOUND_PRECHECK_CONTROLS.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_BOUND_PRECHECK_CONTROLS.json",
+    "sha256": "510e155caae9351814e5444a482a837faafa98487c79a791e20bcbf94c70dc1d",
+    "bytes": 833
+  },
+  "ac_work/tree/verify_cb882_height_four_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_cb882_height_four_tree.py",
+    "sha256": "5f228ec256cb44c309d2a91f5c19130ae043b2d9b4bbeb4021192d657ce8df61",
+    "bytes": 12533
+  },
+  "ac_work/tree/C_HEIGHT_EXCLUSION_CONSEQUENCES_BINDING.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/C_HEIGHT_EXCLUSION_CONSEQUENCES_BINDING.json",
+    "sha256": "0ba7dd5ecd014197634b57df6c51b1d1fa1f8a258ff44f48464d4b8b0b55eebb",
+    "bytes": 7265
+  },
+  "ac_work/tree/verify_c887_ownerfree_physical_lazy_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_ownerfree_physical_lazy_tree.py",
+    "sha256": "a2579cba447f362eeb7a7861a0cb26254cd182b0949b0f384bb5c09a7cd318e0",
+    "bytes": 16978
+  },
+  "ac_work/tree/verify_cb882_shared_height_bounds_lazy_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_cb882_shared_height_bounds_lazy_tree.py",
+    "sha256": "f3e2611009f72cf5c3202417cd995b5ff7b05016a6395015f3aa67419b5f492b",
+    "bytes": 1396
+  },
+  "ac_work/tree/C887_WHOLE_HEIGHT_BOUND_STATE_BINDING.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/C887_WHOLE_HEIGHT_BOUND_STATE_BINDING.json",
+    "sha256": "b24a9fa7675eb4d2330518da7481e5bca75700928035d202eeb9bf964a4adf2d",
+    "bytes": 25796
+  },
+  "ac_work/tree/resume_c887_shared_height_bounds_each_round_lazy_tree_v2.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/resume_c887_shared_height_bounds_each_round_lazy_tree_v2.py",
+    "sha256": "3bbb1123c707142beaf20973e4869e48e6fbd6565e9231a8291f9e787f4386ba",
+    "bytes": 11073
+  },
+  "ac_work/tree/verify_cb882_height_four_lazy_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_cb882_height_four_lazy_tree.py",
+    "sha256": "3136ed9548603c8ff0f83f1667ce0c2b2a9f7ea1b1954d4564a045bd0d6027b9",
+    "bytes": 12790
+  },
+  "ac_work/tree/C887_DIRECT_SHARED_BOUND_FIRST_LAZY_EXACT_REPLAY.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/C887_DIRECT_SHARED_BOUND_FIRST_LAZY_EXACT_REPLAY.json",
+    "sha256": "1ed7e3f9aa119e9b6b9fc3716c052628770e09078ea78fa818fe3e2c0b92741d",
+    "bytes": 505776
+  },
+  "ac_work/tree/check_direct_shared_search_composition.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/check_direct_shared_search_composition.py",
+    "sha256": "eb8ca884e0caca785cce2bb84ce47e2a77dc44c784383a0adec1f0bc5c78554a",
+    "bytes": 5920
+  },
+  "ac_work/tree/verify_c887_shared_height_bounds_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_shared_height_bounds_tree.py",
+    "sha256": "1cc9239ba3862ecab43cd38412f9d127e637e8096996b586115557118c7a34eb",
+    "bytes": 2649
+  },
+  "ac_work/tree/DIRECT_SHARED_BOUND_ROUND_EXACT_CONTROLS.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_BOUND_ROUND_EXACT_CONTROLS.json",
+    "sha256": "ab9a5b3de9bcee638ff41dc4dc9c84689e80455bcaf9c6def45be9e823d470db",
+    "bytes": 4139
+  },
+  "ac_work/tree/prepare_cb882_direct_shared_bound_round.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/prepare_cb882_direct_shared_bound_round.py",
+    "sha256": "0fed214fcf6ecd5566dc33873ce0139bc9ccb1bd9660fb234cd5065d1d6f445f",
+    "bytes": 3137
+  },
+  "ac_work/tree/search_with_direct_shared_bound_round.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/search_with_direct_shared_bound_round.py",
+    "sha256": "bf3f6dd11059dacedafd22f6e601a6bab32380fd83ec16c774cffbed69f7f869",
+    "bytes": 2336
+  },
+  "ac_work/tree/prepare_c887_direct_shared_bound_round.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/prepare_c887_direct_shared_bound_round.py",
+    "sha256": "e6f483cf782ad9301bea3595266966f6ce8b2a38f5c4f4d8c2744a0c2ad84a8b",
+    "bytes": 4136
+  },
+  "ac_work/tree/independent_physical_sat_diagonal_replay.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/independent_physical_sat_diagonal_replay.py",
+    "sha256": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301",
+    "bytes": 13113
+  },
+  "ac_work/tree/physical_sat_diagonal_engine.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/physical_sat_diagonal_engine.py",
+    "sha256": "6157eb67662b97f8e13beaa3d3d726e68b8a3871a95cb991825596f47aa9fac5",
+    "bytes": 16981
+  },
+  "ac_work/tree/independent_c887_whole_height_bound_rows.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/independent_c887_whole_height_bound_rows.py",
+    "sha256": "f8d5766eb0deeb77f38e376741b60846b9e5c8205e490256ece56d19db73ceee",
+    "bytes": 5400
+  },
+  "ac_work/tree/CB882_DIRECT_SHARED_BOUND_FIRST_EXACT_REPLAY.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/CB882_DIRECT_SHARED_BOUND_FIRST_EXACT_REPLAY.json",
+    "sha256": "da2b6bcf09dd746f748920c0995aab9708b3b2af67c8411871fc5a0562b3c8b1",
+    "bytes": 706171
+  },
+  "ac_work/tree/DIRECT_SHARED_BOUND_ROUND_SOURCE_FREEZE.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_BOUND_ROUND_SOURCE_FREEZE.json",
+    "sha256": "8dd1468eeaed8afe8d7e809a4054b3ae1d033a31964f0fe29da57f2ecce8f6e5",
+    "bytes": 2218
+  },
+  "ac_work/tree/verify_c887_ownerfree_physical_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_ownerfree_physical_tree.py",
+    "sha256": "755f9ed05839e27c04e8687de2273f3bf415388c9ef6dbe9c96fb1c3b20cb7ad",
+    "bytes": 16818
+  },
+  "ac_work/tree/verify_cb882_height_consequence_four_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_cb882_height_consequence_four_tree.py",
+    "sha256": "2ddb505fcbdee35427589cce6fdf80b73c06594a9d785e1f320585fe2adc2001",
+    "bytes": 2508
+  },
+  "ac_work/tree/c887_whole_height_bound_rows.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/c887_whole_height_bound_rows.py",
+    "sha256": "7d354de7d1067f740997079295bd6309fe6c2582551d48b73434d13f61b64ed8",
+    "bytes": 891
+  },
+  "ac_work/tree/CB882_DIRECT_SHARED_BOUND_FIRST_LAZY_EXACT_REPLAY.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/CB882_DIRECT_SHARED_BOUND_FIRST_LAZY_EXACT_REPLAY.json",
+    "sha256": "b15f2ba97b70d86d128fd0d9edead7fd5be6238d8f23a524ed94c16ec6b7d0fd",
+    "bytes": 706545
+  },
+  "ac_work/tree/verify_c887_shared_height_bounds_lazy_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_shared_height_bounds_lazy_tree.py",
+    "sha256": "9b4915e2c6cd591ecfeb5ffe59be40259312368f8177714a98a9788a6accd4d1",
+    "bytes": 1749
+  },
+  "ac_work/tree/ac_c887_shared_height_bounds_runtime.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/ac_c887_shared_height_bounds_runtime.py",
+    "sha256": "fe41f11c3131ae28d3e7a919a5dee2fb373beaa324c7089a2a6c001257cf8fd9",
+    "bytes": 972
+  },
+  "ac_work/tree/resume_c887_direct_shared_height_each_round_lazy_tree_v3.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/resume_c887_direct_shared_height_each_round_lazy_tree_v3.py",
+    "sha256": "d674c59c7842884c8be9f74a96d153aa47bef40f00aa47d23113331f239286f1",
+    "bytes": 11853
+  },
+  "ac_work/tree/verify_c887_global_union_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_global_union_tree.py",
+    "sha256": "7a647885117d8b4bde1e42c4c485f0bf51dd8c893214c292b0e4f038c39f648e",
+    "bytes": 3275
+  },
+  "ac_work/tree/C887_DIRECT_SHARED_LAZY_READER_ACTUAL_ATTACHMENT.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/C887_DIRECT_SHARED_LAZY_READER_ACTUAL_ATTACHMENT.json",
+    "sha256": "de6a99099150fa7cbfb35dada121b64cdaf7ca04f0761fae89856fa9000ac946",
+    "bytes": 2835
+  },
+  "ac_work/tree/check_direct_shared_bound_round_controls.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/check_direct_shared_bound_round_controls.py",
+    "sha256": "d516d7f2b4ae190725f2b682d0b14c7ba0c5c82a63662df4b92246aefd12e27b",
+    "bytes": 7651
+  },
+  "ac_work/tree/cb882_component1_direct_shared_bound_round/manifest.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/cb882_component1_direct_shared_bound_round/manifest.json",
+    "sha256": "2e6d5068de3d06d4bf00da641cf170b107f9db2f6081a1d9e52a4b98d0f5615a",
+    "bytes": 11576
+  },
+  "ac_work/tree/cb882_component1_direct_shared_bound_round/PREVIOUS_COMPLETE_MANIFEST.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/cb882_component1_direct_shared_bound_round/PREVIOUS_COMPLETE_MANIFEST.json",
+    "sha256": "42588794c5adc7944866c7ded11e52f12dc894713e99bd745e1775cb3fc8c74d",
+    "bytes": 10896
+  },
+  "ac_work/tree/cb882_component1_direct_shared_bound_round/node_00000.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/cb882_component1_direct_shared_bound_round/node_00000.json",
+    "sha256": "cd7b8e300978870f334225c63756f718128fca044965728b1f72e2bd5cb59b6b",
+    "bytes": 324544
+  },
+  "ac_work/tree/c887_original_direct_shared_bound_round_fixture/manifest.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/c887_original_direct_shared_bound_round_fixture/manifest.json",
+    "sha256": "75b0864f6d18c26ac9520084fa1572a428a572c57d4603ab842fa79ce696a71d",
+    "bytes": 23458
+  },
+  "ac_work/tree/c887_original_direct_shared_bound_round_fixture/PREVIOUS_COMPLETE_MANIFEST.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/c887_original_direct_shared_bound_round_fixture/PREVIOUS_COMPLETE_MANIFEST.json",
+    "sha256": "4ef09829b906836ce9c9c837fccf76870633998e64e43d9ca6d7c88da5ce2b9d",
+    "bytes": 280658
+  },
+  "ac_work/tree/c887_original_direct_shared_bound_round_fixture/node_00000.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/c887_original_direct_shared_bound_round_fixture/node_00000.json",
+    "sha256": "b5805d851e4beb0685e42bce27a762a6726fd04c0ab08814d2bc91688fddeed1",
+    "bytes": 1614382
+  },
+  "d_work/A_C744_POST_A1_BOUNDS_ROOT_DESIGN_REVIEW.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_C744_POST_A1_BOUNDS_ROOT_DESIGN_REVIEW.json",
+    "sha256": "e16dc75b06abe2adbe357bed91623436b42cac3487da6488223673e899b13b5a",
+    "bytes": 2479
+  },
+  "d_work/A_C744_COMPONENT3_FIRST_POST_A1_BOUND_EXACT_REPLAY.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_C744_COMPONENT3_FIRST_POST_A1_BOUND_EXACT_REPLAY.json",
+    "sha256": "b3f388659ea027b029b2be4b077dfd14055391a45936deede58bc981890de936",
+    "bytes": 3951447
+  },
+  "d_work/A_C744_POST_A1_BOUNDS_ROOT_DESIGN_REVIEW.md": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_C744_POST_A1_BOUNDS_ROOT_DESIGN_REVIEW.md",
+    "sha256": "5a3530693dcc94b0116311887d827524174b564691a3a41b42d82bed6b722e04",
+    "bytes": 2720
+  },
+  "d_work/resume_a_component3_post_a1_bounds_round_tree_v11.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/resume_a_component3_post_a1_bounds_round_tree_v11.py",
+    "sha256": "815830e45514592210131b3baa4c48067b7116b88af6f00990054cf11b4e90ad",
+    "bytes": 12726
+  },
+  "d_work/A_c744_component3_post_a1_bound_whole_probe/manifest.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_c744_component3_post_a1_bound_whole_probe/manifest.json",
+    "sha256": "46352abf19a8466797167a27f7bb70f7c381463e32e693a51c745c0eba4d3b1a",
+    "bytes": 55310
+  },
+  "d_work/A_c744_component3_post_a1_bound_whole_probe/PREVIOUS_COMPLETE_MANIFEST.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_c744_component3_post_a1_bound_whole_probe/PREVIOUS_COMPLETE_MANIFEST.json",
+    "sha256": "b8efa9dc8f5456c912d104127cea0ab53423040891a2a31863f29718b3f038d4",
+    "bytes": 52171
+  },
+  "d_work/A_c744_component3_post_a1_bound_whole_probe/node_00000.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_c744_component3_post_a1_bound_whole_probe/node_00000.json",
+    "sha256": "0649950033bd35b20e88e271223377778f083c9e9f224e2887dcb84b38848fb0",
+    "bytes": 3333450
+  },
+  "ac_work/tree/ac_a_c744_component3_post_a1_bounds_runtime.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/ac_a_c744_component3_post_a1_bounds_runtime.py",
+    "sha256": "009910f743f069be19ea20d8ed491077db644a39916a0c429ab65376367e6420",
+    "bytes": 1253
+  },
+  "ac_work/tree/a_c744_component3_post_a1_bound_rows.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/a_c744_component3_post_a1_bound_rows.py",
+    "sha256": "3c74dfb03512df53a7859f3e14258d0f81e74a2e38d17caceb8cc2c8e1862747",
+    "bytes": 1037
+  },
+  "ac_work/tree/A_C744_COMPONENT3_SHARED_BOUND_STATE_BINDING.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_SHARED_BOUND_STATE_BINDING.json",
+    "sha256": "c27b8690fc4fcd096cfcc2efc8776c2b51106762e94ad724de7e57c2a78db574",
+    "bytes": 26355
+  },
+  "ac_work/tree/independent_a_c744_component3_post_a1_bound_rows.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/independent_a_c744_component3_post_a1_bound_rows.py",
+    "sha256": "c9f6acf45daa28efd21a281371eda4eec1f06a603e1f3407967f6beee44861b9",
+    "bytes": 9053
+  },
+  "ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_EXACT_CONTROLS.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_EXACT_CONTROLS.json",
+    "sha256": "99d9d1c82a510f6be7bd22fc1148a064874ce2bfe5a147364a8e3008879af5b6",
+    "bytes": 1561
+  },
+  "ac_work/tree/verify_a_c744_component3_post_a1_bounds_lazy_tree.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/verify_a_c744_component3_post_a1_bounds_lazy_tree.py",
+    "sha256": "4b94cd39d2b5141e60dc79cc37e7d9131b8ec8c9005abc515797d0162abdc67c",
+    "bytes": 3512
+  },
+  "ac_work/tree/A_C744_COMPONENT1_CLOSED_CONSEQUENCE_BINDING.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT1_CLOSED_CONSEQUENCE_BINDING.json",
+    "sha256": "5c46eb3c5e3c60e9e776dd52db041cff92d0718c12feb040b9ada0fc745a801a",
+    "bytes": 5015
+  },
+  "ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_SOURCE_FREEZE.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_SOURCE_FREEZE.json",
+    "sha256": "ccf8925ebd8ba7d0a59c539835ea05623e00181b5b1d70fe0668e2d7e676de0e",
+    "bytes": 1762
+  },
+  "ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_STATE_HAND_PROOF.md": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_STATE_HAND_PROOF.md",
+    "sha256": "7c5064ed0ae38bc8a9ac853baa99930c30b9cff867f6f3f7173fa37643f25e88",
+    "bytes": 3638
+  },
+  "ac_work/tree/check_a_c744_component3_post_a1_bound_controls.py": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/check_a_c744_component3_post_a1_bound_controls.py",
+    "sha256": "d74a4b77ec1b4f15283840d28cf83620938f9ec878bfd63ac9e2f1e8c737c722",
+    "bytes": 3956
+  },
+  "ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_STATE_BINDING.json": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/committed_recovery_064e4aa/research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_STATE_BINDING.json",
+    "sha256": "338e53440f35ab321c126d6050f9de36c89a0424141ea6e1f6ba2fa6b756c23d",
+    "bytes": 27283
+  }
+}

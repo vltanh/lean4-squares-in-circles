@@ -1,0 +1,1727 @@
+{
+  "status": "PASS_EXACT_COMMITTED_BYTES_RESTORED",
+  "commit": "064e4aa0444a20b79d108b4e6bfc12de3a12b9cb",
+  "prefixes": [
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint",
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint_manifest.json",
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2",
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2_manifest.json",
+    "research/nine/computer_assisted/native_shared_bound_progress_v1",
+    "research/nine/computer_assisted/native_shared_bound_progress_v1_manifest.json",
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1",
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1_manifest.json",
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1_review"
+  ],
+  "files": {
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/A1_THIN_PUBLICATION_PLAN.json": {
+      "git_blob": "80420fd936bca52ad536002258ac73315908fce4",
+      "mode": "100644",
+      "bytes": 975121,
+      "sha256": "28341cce0a7466fb0646eb6268eba5f917778e04315e6407f5f47f42f82ef81a"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/ARCHIVE_AUDIT.json": {
+      "git_blob": "868c93c30406d68e2d286754f1153119adba3e47",
+      "mode": "100644",
+      "bytes": 168924,
+      "sha256": "8bf63c71416c45d99b11e96c666a9bca3adf95ec3515de73d63a120861187a32"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/ARCHIVE_MANIFEST.json": {
+      "git_blob": "313392eeaacff8f5cd083c2a0c5d12609064436e",
+      "mode": "100644",
+      "bytes": 2748,
+      "sha256": "e07a65074d8ed90eb0afa5a1b3bfd99a488652475fd02ae181f5bee692a3cfe5"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/PUBLICATION_READY.json": {
+      "git_blob": "508842c6318c1aab6a7ca1fab4ace41f8d656513",
+      "mode": "100644",
+      "bytes": 1730,
+      "sha256": "aeb210d0092f77ce33f3a0c10505cd0d8d30bd90e363e67da502f59f7fb446bf"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/README.md": {
+      "git_blob": "d80773211115b1c0046a64f3ade58daf3c997f2a",
+      "mode": "100644",
+      "bytes": 4485,
+      "sha256": "cd3a23618027f35caae125e51998a0ba8aa0d70a9d66fcc14f83e16ad77329ed"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/TRANSPORT_AND_REPLAY.md": {
+      "git_blob": "3ac2deed70add59dcc8b546414de9f268856a116",
+      "mode": "100644",
+      "bytes": 8331,
+      "sha256": "26d655db13f1fec65a93796c0085220cb7361e1227c2425ae175f24de719456a"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/TRANSPORT_CONTROLS_V1.json": {
+      "git_blob": "9aa0df7e6e408c5355d498f28699bd059b871b8b",
+      "mode": "100644",
+      "bytes": 1618,
+      "sha256": "fdeb3a3ac0875d3cc887bc4f5b6681e566bb9146a995b07ebf18b6ea90a519b4"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/TRANSPORT_CONTROLS_V2.json": {
+      "git_blob": "7f3023445b14992173530f9671abe0342f2bf76b",
+      "mode": "100644",
+      "bytes": 1619,
+      "sha256": "29d4250e3552b0469a4aa15d7c9f71b1742be2e5b2157a975f6c0bd9ecab2efb"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/TRANSPORT_SOURCE_BINDINGS.json": {
+      "git_blob": "967734260d733fdcc35209ad758b3eb4d56a6ca4",
+      "mode": "100644",
+      "bytes": 15865,
+      "sha256": "5d8bf21b128699cfedeba6d3873dfeeadcce5dc31a41ad1119a67260e60ea019"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/V1_FAILURE_AND_V2_PAYLOAD_AUDIT.json": {
+      "git_blob": "1b6873c94a63a468c8073c61c4815e4424b035d8",
+      "mode": "100644",
+      "bytes": 2636,
+      "sha256": "effebdf7ff7911a30f9292fdceb1b59d27ebf69b0ac0c82486b0e916e7e6a47f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/archive_complete_a1_delta.log": {
+      "git_blob": "5a8e1154aadf98f3a0b12bd20fffb0861420d751",
+      "mode": "100644",
+      "bytes": 1535,
+      "sha256": "b7bf4a948879e1a4301264e1e65cfbcb5c7f05373abe9365c246705c54595751"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/archive_complete_a1_delta.py": {
+      "git_blob": "8ec0e4419b800bddfb781a2bcffc515a22d31a4a",
+      "mode": "100644",
+      "bytes": 6580,
+      "sha256": "37e60484c8d3f5e58232721a6432dea9a70c80b52a09d1049275c07f23a5363b"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/complete_a1_consequence_delta_v2.tar.xz.part001": {
+      "git_blob": "7b5e82276042257ab16e0413276261aa2ce2f5e7",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "3470bc9faefc27a52475dcb5b04f81cec7993292ef7e70991b3c7e154b9c5657"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/complete_a1_consequence_delta_v2.tar.xz.part002": {
+      "git_blob": "ef0ad30fcf79e5bc5fe22919a1de5fe1cab73daf",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "011c22df1c11ce112f2b3ad50df1351444bca70e3de597fce3f9719aca2e3108"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/complete_a1_consequence_delta_v2.tar.xz.part003": {
+      "git_blob": "76951b11ecf600a7e0ac2f23b5da4ff373bb09da",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "3ee1bb982ef47349fcddca2f627cc4a01f2c49a1e30ecc4ddf81a18c55959272"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/complete_a1_consequence_delta_v2.tar.xz.part004": {
+      "git_blob": "b2b0e20971ceb5b2f18d7324c89dc59615d240f0",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "15f85a32129c27ecf5d15a7df502e5828261a6a14a74d3115d228abf787cd49a"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/complete_a1_consequence_delta_v2.tar.xz.part005": {
+      "git_blob": "8c0a9ba035e8dc7381b86f21b302fdd934288afe",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "817f3c0ed2dc91b24304f61c0cd5536ed6a23ac6fa607f74a1ae6cdb00808ce1"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/complete_a1_consequence_delta_v2.tar.xz.part006": {
+      "git_blob": "cf6cd549ae8cf75900fc1273467b91557bda4d47",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "147a64f32ac7a350ecab2a7774eb6687d88211482c378cc8970a81fd083bed31"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/complete_a1_consequence_delta_v2.tar.xz.part007": {
+      "git_blob": "a967da081ebf98fe4efec842c80346a6250daf40",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "0623c9d4001edb2bf6c03edf85a9f86c363c96efe55f8df06a434af619feb59d"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/complete_a1_consequence_delta_v2.tar.xz.part008": {
+      "git_blob": "2c945f7a4c88f9001fb155f613d9b1924f72105e",
+      "mode": "100644",
+      "bytes": 4705216,
+      "sha256": "26ddd6df5a79004585408f848b2899e7d2454912840739ded7aea8c43429e4d2"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/delta_v2/DELTA_MANIFEST.json": {
+      "git_blob": "d3a0fbd4519bc427db95fef18bf1540fdf5d7c6f",
+      "mode": "100644",
+      "bytes": 128139,
+      "sha256": "70c971d00fb804d0765cce66ef540b3c79e18a0eed29b08d5f63793b94eedf4d"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/delta_v2/INPUT_MANIFEST.json": {
+      "git_blob": "f69c3ab9af3a8e97a82d4675bfdf42327eea0dc2",
+      "mode": "100644",
+      "bytes": 357977,
+      "sha256": "d8ca6d465aa3831e26d6d0149b8ce734a1043c51694f81a9ce9b9a4e3baaf965"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/delta_v2/README.md": {
+      "git_blob": "6d1ea9a3a7058620f0b406052f5c3ed7f1f95b59",
+      "mode": "100644",
+      "bytes": 2678,
+      "sha256": "f0b24cd42082cf41ff79e440e1eb024f138c9d16bae6ccccc71b29a24fdfb488"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/delta_v2/TRANSPORT_REVISION.json": {
+      "git_blob": "2e479372f88a98baf363a46c9defa9e12dcbd9d6",
+      "mode": "100644",
+      "bytes": 959,
+      "sha256": "f450682cfaa28b3963633284f00e772331a47be2a8b66797356bea4879e58496"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/delta_v2_MATERIALIZATION.json": {
+      "git_blob": "216de5291d92fe1c487043c3edec89119823b61d",
+      "mode": "100644",
+      "bytes": 557,
+      "sha256": "56324a95ce5afb2d88ad6d499c677402c6c0becc62822ed76c786b132c02e07a"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/failed_replay_v1/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay.log": {
+      "git_blob": "61ea95a2fc23147843036e36a2d5c9655ab7d379",
+      "mode": "100644",
+      "bytes": 2693,
+      "sha256": "917070f7642a61fa44d201f7f8ec364166a74baaeddaea7dc55d7c728fb6beb7"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/failed_replay_v1/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay_SOURCE_EXCLUSIONS/five_declaration.log": {
+      "git_blob": "89a174a0512e7bcb01c723868689bde47a9eac2b",
+      "mode": "100644",
+      "bytes": 4592,
+      "sha256": "058cd50c7c8ddae82f9db52941721da82ddca240912b8bad08f15219bead875f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/failed_replay_v1/actual_A3_consumer_with_fresh_complete_A1_source.log": {
+      "git_blob": "7a4259d34c31c2a43a5d1ff0318b48d61329a676",
+      "mode": "100644",
+      "bytes": 2174,
+      "sha256": "8e7bbd0d9f7cca21f8826f87dd17175a2890cea23318bb30fa1942e33a3eda1f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/failed_replay_v1/archived_diagnostic_reports/2edb70b687efcd1f07e824d2/positive-c744bc031d40ee64.json": {
+      "git_blob": "e960c5c7dc6a257c086ead44655e0a364f627049",
+      "mode": "100644",
+      "bytes": 24683,
+      "sha256": "5e41f79a377f133e4d3febdb530e3b8ed374dee4fb16523aecb564caff143c45"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A1_CONSEQUENCE_LITERAL_SCOPE_CONTROLS.json": {
+      "git_blob": "3e8e363823abbfa435594249ae20cb88fc07934f",
+      "mode": "100644",
+      "bytes": 2333,
+      "sha256": "28273c40c1aabc1cff29406c2dceda0e8dfcf00db723325d60dbbc580c2d8774"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY.json": {
+      "git_blob": "4fad9efda6db533baa5f4014e266e4bfbec433ca",
+      "mode": "100644",
+      "bytes": 1867356,
+      "sha256": "c1766b6dc98ef41dfc05d6499ed257100fa5cf1d634e26c361aee989abd0a17b"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay.json": {
+      "git_blob": "b3eb8f7773afe88cc639b088a2b2cd7cffe1c3e4",
+      "mode": "100644",
+      "bytes": 891972,
+      "sha256": "16cf7ecdaed399633ca3c72d926a5587599686eed18f7dd7a5f6770bba9c5ec1"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay.log": {
+      "git_blob": "f955cabd6f7921cd6dae3768d700c3ce58f722b0",
+      "mode": "100644",
+      "bytes": 1247,
+      "sha256": "1dccb1240a60e4e91d70358885f28cd22aae8e222a98f460c2d1830a301e8823"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay_SOURCE_EXCLUSIONS/complete_component0.json": {
+      "git_blob": "30b0121c625f7a2580d687cf2a56431851de6f77",
+      "mode": "100644",
+      "bytes": 91614,
+      "sha256": "8b20568a2badca7005d15360b746b98b1a6d71a1fd28134852f92e6504b9c5eb"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay_SOURCE_EXCLUSIONS/complete_component0.log": {
+      "git_blob": "cfc05028f6395232d2f842d6ce02566fef21f7ec",
+      "mode": "100644",
+      "bytes": 1225,
+      "sha256": "684f9e342ac21395814c8f652a8088e0c9d32b58cfab3e79675c84b68fd1f1b4"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay_SOURCE_EXCLUSIONS/five_declaration.json": {
+      "git_blob": "601c6fda161b2257289320ca762826d3878c5257",
+      "mode": "100644",
+      "bytes": 145337,
+      "sha256": "2a22643746246d6be6c2c5d5726f8b7079392dc85fb599c7751328cb79d0dec5"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPLETE_COMPONENT1_SOURCE/complete_component1_replay_SOURCE_EXCLUSIONS/five_declaration.log": {
+      "git_blob": "7e42d7b6803175f78faac5a0118eae6a1ae8df6c",
+      "mode": "100644",
+      "bytes": 1247,
+      "sha256": "265a8ae4241517c26249e1deff39c45f69a129fc69f05cb4393a85a0d4507afb"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPONENT3_ROOT_SOURCE/component3_root_replay.json": {
+      "git_blob": "5f833cd294adc9652c1b992c2322f141a06abd7f",
+      "mode": "100644",
+      "bytes": 382706,
+      "sha256": "a4bbd3863acbc285060a7b93086a9fdb6803f50499a3e9bd151fe028c65ecead"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPONENT3_ROOT_SOURCE/component3_root_replay.log": {
+      "git_blob": "4a3ad2560e8412095a1e04d8930a97a257199d59",
+      "mode": "100644",
+      "bytes": 1238,
+      "sha256": "dc76b3a36ecc0bd0e588bdcb4b08798cb6407365aef7782c9b5e85dbc950b1f8"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPONENT3_ROOT_SOURCE/component3_root_replay_SOURCE_EXCLUSIONS/complete_component0.json": {
+      "git_blob": "5eeb172ab93fc549cd4b33742436265900887c6e",
+      "mode": "100644",
+      "bytes": 91612,
+      "sha256": "af046784420ea9b696e422b90704437d4546723672a98cae971b4e06fe98677d"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPONENT3_ROOT_SOURCE/component3_root_replay_SOURCE_EXCLUSIONS/complete_component0.log": {
+      "git_blob": "996ab3128d39eea402eb097a82f75d1b6bfdf1f1",
+      "mode": "100644",
+      "bytes": 1225,
+      "sha256": "0f6ae701297841575becda822a77ccaf1a582790605cd0f53de039ef11ac988b"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPONENT3_ROOT_SOURCE/component3_root_replay_SOURCE_EXCLUSIONS/five_declaration.json": {
+      "git_blob": "49605e4ef62d70fc3aad15f83684c46255f70fec",
+      "mode": "100644",
+      "bytes": 145337,
+      "sha256": "972fc48e6ef37ca707e398a131706657f7bf6c9775ca82afd36dec3c4f48fd1f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_COMPONENT3_ROOT_SOURCE/component3_root_replay_SOURCE_EXCLUSIONS/five_declaration.log": {
+      "git_blob": "5887b46e60d84f2e937e0d5ebef0f24ed4186eaf",
+      "mode": "100644",
+      "bytes": 1248,
+      "sha256": "b22acad6317fb2e7978497b528538b96ac1384503fd72638cbf6ef25067472c1"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_SOURCE_EXCLUSIONS/complete_component0.json": {
+      "git_blob": "8cd26bcfc2959659c10eeb1107f711ba9be2e2e9",
+      "mode": "100644",
+      "bytes": 91615,
+      "sha256": "eec27a7cb336cbdb9c500b9c6dc11d90a7f479ca1044f7b8b0fa98158e5b875f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_SOURCE_EXCLUSIONS/complete_component0.log": {
+      "git_blob": "66e4674f1f34ea1bf8be574b12e7260e270a9688",
+      "mode": "100644",
+      "bytes": 1226,
+      "sha256": "b543f92f37b0e3fcdd841a54e7c8939452c4f66274f813a2e41743e827dd5c6c"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_SOURCE_EXCLUSIONS/five_declaration.json": {
+      "git_blob": "1da14fe478a2ce97712a5ec6430006e92c6f8610",
+      "mode": "100644",
+      "bytes": 145337,
+      "sha256": "d6595485b90edfd9e2090288fdf12c9b43d439418dc520b2707756a63f32938b"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/A3_ACTUAL_COMPLETE_A1_CONSEQUENCE_REPLAY_SOURCE_EXCLUSIONS/five_declaration.log": {
+      "git_blob": "de88d5726e16b48f5f08a923a4c7c6c2e27d97c7",
+      "mode": "100644",
+      "bytes": 1246,
+      "sha256": "dc40c64f9f281212a3ced1856e46b78aaebe59200aac440237cc8882c774f7d9"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/PORTABLE_RECEIPT.json": {
+      "git_blob": "a2d72b843205be87b671dc0bdbeb6c84b9bb07de",
+      "mode": "100644",
+      "bytes": 2373,
+      "sha256": "b4803409d7b163a8b4f8704ebfe4fd90d2f7edf9f7034b33cd1133cdf1d94d36"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/actual_A3_consumer_with_fresh_complete_A1_source.log": {
+      "git_blob": "190d1330dad0cd0dd44a4211806c8d92d8d3253e",
+      "mode": "100644",
+      "bytes": 1248,
+      "sha256": "038da285cd2b7afe4eea6fe8f9399097c64112387404a2be242c4f2d4b0f2a0f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/archived_diagnostic_reports/2edb70b687efcd1f07e824d2/positive-c744bc031d40ee64.json": {
+      "git_blob": "dd5882657c8e59d13f61a9d3bb38c5ccdb7f759c",
+      "mode": "100644",
+      "bytes": 24682,
+      "sha256": "52b4c76eb91d5c002fe9b5a3bece74d516f0bd60416770ab2c86bf86ea8d3765"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/archived_diagnostic_reports/8507e600623dc0a2f454e036/positive-c744bc031d40ee64.json": {
+      "git_blob": "b3aa83b93be243537e2b7f7e7c6e45a291e2d35b",
+      "mode": "100644",
+      "bytes": 26368,
+      "sha256": "491caaeecf21a41ef36a98cc1e09e9fd21bfa8bde3bbd73d22b0c93294ae7f7d"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/10.json": {
+      "git_blob": "36f5a68dc0f3352bc1fac10e83519568c98d6227",
+      "mode": "100644",
+      "bytes": 964,
+      "sha256": "1f2a5c3b30b97ec0e60a871c006c52af1b4055dc82a0f33cf7173d0a932fc848"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/11.json": {
+      "git_blob": "7e3c7fca31e136deb080f24fce0bf1aeeecfc0fd",
+      "mode": "100644",
+      "bytes": 964,
+      "sha256": "5d721e10c613a07399df4e70f1b3f2db9541b031bd3863a3677145dc81a85f11"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/12.json": {
+      "git_blob": "0603c87295c46799599da8c1e81008952174cb25",
+      "mode": "100644",
+      "bytes": 984,
+      "sha256": "fa6d1db5d956c5b37d64b1f4abde5f5f40a8100fc88ac0f458292fd71b090c6b"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/13.json": {
+      "git_blob": "085bf1656ee8ad7c1270483dd5dbefc79984103d",
+      "mode": "100644",
+      "bytes": 974,
+      "sha256": "60f7c0489444ec8c653537d1467f29cf171d2803ea3dd69b8e69a99355fb3450"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/14.json": {
+      "git_blob": "3f06609881ee0d50ec7774911bda2e81c823dd4f",
+      "mode": "100644",
+      "bytes": 963,
+      "sha256": "2003f778cafe85bcf3a950be271640098d8444e4c7517cdd8040a2a39b676733"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/15.json": {
+      "git_blob": "6176f01d7f7bd876b305649850a59ef00121e663",
+      "mode": "100644",
+      "bytes": 968,
+      "sha256": "30d25ebe030e163fe62a92d31dd8e5852340daa8df8fdd98276f4c9404a47ffb"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/16.json": {
+      "git_blob": "a15d088dfbfb76aad6e959e36ca2ad64a9cded87",
+      "mode": "100644",
+      "bytes": 965,
+      "sha256": "c43fa6b08ae69f818afc2b7966da3bcff64f5dbcfd46511aeb59fb5d75cf5cf2"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/17.json": {
+      "git_blob": "643bccd894059d3cd3373a0560c38a173a54a53e",
+      "mode": "100644",
+      "bytes": 965,
+      "sha256": "54dd6c396fc9d5647fefb7c17053967f9418976da278b7fdd64c1aa4d165a449"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/18.json": {
+      "git_blob": "615beeb79c598e07ee6085b20776805cb70379a3",
+      "mode": "100644",
+      "bytes": 972,
+      "sha256": "7f478d379df40153c517770589604e504e2b8d658dea735261fa1f6ff2924bca"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/19.json": {
+      "git_blob": "9979dd9dd3958f58e36a10d63a0e06c3aa249e21",
+      "mode": "100644",
+      "bytes": 964,
+      "sha256": "0cad4a7f36d8e28cea986ea6988b6cbcff98a9426c7727efd4fd9f838c812113"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/20.json": {
+      "git_blob": "50c314459c473baeb60a82cb50fb1ec1e4edf41f",
+      "mode": "100644",
+      "bytes": 968,
+      "sha256": "9dd42326f31aa0c2e904124773d8b764037feb0fdfdc72483338df4abefd3a8b"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/21.json": {
+      "git_blob": "820a4a306ef9b18cfbb720354b2623e3f51402e4",
+      "mode": "100644",
+      "bytes": 965,
+      "sha256": "387ac7f32b89f7651ef62b34bdadc3d9595e248849a7834406bd78ce40ab7f49"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/22.json": {
+      "git_blob": "a8491fafaf51985f9a26dcaf7b2abeecdc0a5669",
+      "mode": "100644",
+      "bytes": 963,
+      "sha256": "fbed8540d4fecb839a0046dcede87b484fd3f9c6a634a72f1229e199dcfb542a"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/23.json": {
+      "git_blob": "eef46b5775a88c5c7cf2c11e6a2309768fdefa0b",
+      "mode": "100644",
+      "bytes": 1006,
+      "sha256": "1c0355204268ad45e972c6033ff418acda19d9486f2da4f98fc93a467a05d190"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/5.json": {
+      "git_blob": "656f0f76628cfd48cd4183ec8893db33f6d83cee",
+      "mode": "100644",
+      "bytes": 994,
+      "sha256": "bf62cd73ffd21de9260fcbdd406d8b559304c666a4454a09f29b33c05b4bb7be"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/6.json": {
+      "git_blob": "1cf3a516ee7717fadfd56b3ad9603524e230194a",
+      "mode": "100644",
+      "bytes": 989,
+      "sha256": "80f2cea4dec7971944664aa4e052414c5822ba76c10ac3a56e70a608e55fce33"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/7.json": {
+      "git_blob": "154bd3d51c342b14d0f842721a640b066bd01936",
+      "mode": "100644",
+      "bytes": 973,
+      "sha256": "c548694293aac7473b3c0de29dca821c0e4309c8f4bae5ba25decd8f4989cf50"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/8.json": {
+      "git_blob": "3766111739cb2465b829232eb9d1814b60393c6a",
+      "mode": "100644",
+      "bytes": 965,
+      "sha256": "c671cb5ca7961cf72afb5280956643b539e21907cb1cab4af5c430305834897c"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/isolated_child_receipts/9.json": {
+      "git_blob": "41a4246927253852cb4d5162971500105484845c",
+      "mode": "100644",
+      "bytes": 966,
+      "sha256": "05efbb2aa1acd49818e921bc0272109ba2e3e982f89a07f96950b4dc8ce31d1f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/fresh_replay_v2/literal_scope_controls.log": {
+      "git_blob": "45215f5452e3f5e647bbc24fe44fd3674558dfae",
+      "mode": "100644",
+      "bytes": 1249,
+      "sha256": "4904cb2d4d8ce9d819b899e064d25efb6704393bd42df3053761e966fd490666"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/physical_proof/A_C744_COMPLETE_COMPONENT1_CONSEQUENCE_HAND_PROOF.md": {
+      "git_blob": "935e507dff2f523e9c3cea9294705bf3239313e5",
+      "mode": "100644",
+      "bytes": 5933,
+      "sha256": "a01409d00d876a72347eaf0673fd5ef918f999d2169d70b971f72821e2a8b838"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/physical_proof/A_C744_COMPONENT1_CLOSED_CONSEQUENCE_BINDING.json": {
+      "git_blob": "87d0bc474d117a747b7428126202833f3f78b9e5",
+      "mode": "100644",
+      "bytes": 5015,
+      "sha256": "5c46eb3c5e3c60e9e776dd52db041cff92d0718c12feb040b9ada0fc745a801a"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/physical_proof/A_C744_COMPONENT1_CLOSED_NEGATION_DERIVATION.md": {
+      "git_blob": "8e9d4e83aebb374321286b999b62204897198442",
+      "mode": "100644",
+      "bytes": 2144,
+      "sha256": "55db4636c9b448892ba65c0bb42083bb9cb5e4f2bc5265d36c0e23ec4b19719c"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/reference_ec6b94cb/REFERENCE_BINDING.json": {
+      "git_blob": "526080f920c82d95f9856a180207a23e0f65aa4c",
+      "mode": "100644",
+      "bytes": 2777,
+      "sha256": "53d8dcb0396ffc6ef128de5048f779bb559b5de25b2c0d2e133f176f96604bb4"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/reference_ec6b94cb/research/nine/A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md": {
+      "git_blob": "056571a9ae0daaac2006caf465637448d312a882",
+      "mode": "100644",
+      "bytes": 13911,
+      "sha256": "8c3b394f7ceebd9e15f3ad01bdd72b5950d30e86f7945172d7d77d5889a6cf58"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/reference_ec6b94cb/research/nine/A2_COVERAGE_AND_CLOSURE_CONTRACT.md": {
+      "git_blob": "fee00892707c15f65ec09bec697962eae2843e95",
+      "mode": "100644",
+      "bytes": 20682,
+      "sha256": "6ad5bd6d8e7cfc43de252db2e8954d0951d6fe0ebf77823f865e196215da5102"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/reference_ec6b94cb/research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/ARCHIVE_MANIFEST.json": {
+      "git_blob": "7060d566fc96e7d09c41d7872361ff3ebf287d72",
+      "mode": "100644",
+      "bytes": 1962,
+      "sha256": "343731ca252568a3032fe584cf5d389b4be7ae443869d700b842ecc7179a55f6"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/reference_ec6b94cb/research/nine/gates/A2_00100_FIXED_FRONTIER.json": {
+      "git_blob": "8550afc5bff2254e4791346fa8901b519150d3b7",
+      "mode": "100644",
+      "bytes": 445004,
+      "sha256": "6ddc611baf22570e70438c7b5efbd861169d13e1f04d3c40d14a5a8d4d05c92e"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/reference_ec6b94cb/research/nine/gates/A2_MASK_FRONTIER.json": {
+      "git_blob": "b5e99146af47323f4192416eed8491487f8b1133",
+      "mode": "100644",
+      "bytes": 11313,
+      "sha256": "c25e3c95b3f6c71463bc21d59a714a7e417bbd366176f8d06f73cb7c45f3f5ed"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/root_reviews/A_C744_A1_PORTABLE_V2_TRANSPORT_ROOT_REVIEW.json": {
+      "git_blob": "ab1a9639dee485fba0221956cb3fc74b8c53ef8f",
+      "mode": "100644",
+      "bytes": 936,
+      "sha256": "d0bef58fb3598b026c54b25c2018c377a6053588dd38786704a639d632cf714f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/root_reviews/A_C744_A1_PORTABLE_V2_TRANSPORT_ROOT_REVIEW.md": {
+      "git_blob": "9530b3264ebef008265ed28d211bb360d56f26da",
+      "mode": "100644",
+      "bytes": 1384,
+      "sha256": "043ee6303663a99c660bd61d353a629604265b2905f7f2a8b54887dedaf22d05"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/root_reviews/A_C744_COMPLETE_A1_THIN_ARCHIVE_ROOT_AUDIT.json": {
+      "git_blob": "cdf34aa8aa4e54f6f267f8f7ded58f579e1b4286",
+      "mode": "100644",
+      "bytes": 2857,
+      "sha256": "035c20092b24f1681f69bcd6c4a8f3867b38eed8e49c102781c7d0e6e85af228"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/root_reviews/A_C744_COMPLETE_A1_THIN_PACKET_ROOT_DESIGN_REVIEW.json": {
+      "git_blob": "1afe38e19208568b4a993b42e1857c8f0446ae20",
+      "mode": "100644",
+      "bytes": 884,
+      "sha256": "aa4ec4394ddaee82728e306d5cb171d10dc2308dbec96209c302195598d43725"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/root_reviews/A_C744_COMPLETE_A1_THIN_PACKET_ROOT_DESIGN_REVIEW.md": {
+      "git_blob": "f8a3e66ba903b78c47cdcabfd29ce0e22c99f85b",
+      "mode": "100644",
+      "bytes": 4481,
+      "sha256": "1362b585fba528ce27e862945c97adb5d774a33ad67ae6b5d4aae3c678420c83"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/root_reviews/audit_complete_a1_thin_archive_root.py": {
+      "git_blob": "f9a630a723f71af82f24d8e1916d28738057cdf2",
+      "mode": "100644",
+      "bytes": 7084,
+      "sha256": "8f9f288768976c5a04137499e6e9c72fb4a0704022dd88ae0e7c64df6cd54766"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/root_reviews/prepare_complete_a1_thin_publication.py": {
+      "git_blob": "c8d1c10ac50babec10a208366ea3617caf1ce3bf",
+      "mode": "100644",
+      "bytes": 11970,
+      "sha256": "cd4c00315264c6ba4f3836a92d2acf8a0be9c2d6ef1aa855a3c9eade5d60d2b4"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/source_transport_scripts/build_compact_a1_checkpoint.py": {
+      "git_blob": "b07eef88ee8ccd904f41df89ac6c0f558dc81e00",
+      "mode": "100644",
+      "bytes": 7467,
+      "sha256": "0d5ecd39b127e171de16769c745cbc0d506a02b8c5d15e4258225fcff7954efd"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/source_transport_scripts/materialize_a1_checkpoint.py": {
+      "git_blob": "8c03b74e1bc401b806ebd2d99f74fc9471f87db1",
+      "mode": "100644",
+      "bytes": 4026,
+      "sha256": "a51dc29692cbdaaf59b8d16264a26b5fc14db972ec8d2e05dbafd31cc894b63e"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/source_transport_scripts/prepare_compact_a1_checkpoint.py": {
+      "git_blob": "c9e0c6f3d54ba60b656ed3931b91440435a06fae",
+      "mode": "100644",
+      "bytes": 13045,
+      "sha256": "b9758507fd929345e811c34fc99a382c584c1f5ad7cba7ef5da4a49315e69d24"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/source_transport_scripts/replay_portable_a1_checkpoint_v1.py": {
+      "git_blob": "f5e0298bd5266242dbb90780fc74d0fd5441404e",
+      "mode": "100644",
+      "bytes": 24512,
+      "sha256": "ea95b9c4f7ed10f6ecfb99e9e5058d8845089c5686e2ce8fe5c99396fae970d5"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/source_transport_scripts/replay_portable_a1_checkpoint_v2.py": {
+      "git_blob": "e6e082f17d0381b78d42bde4d336a8fb43155f23",
+      "mode": "100644",
+      "bytes": 24585,
+      "sha256": "81436050b187d9085522a4175f85eed0334b5ad7c906186a6fa7a4a82638a06f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/source_transport_scripts/revise_a1_transport_v2.py": {
+      "git_blob": "20106a496a7110ac456c519aa75bee2a4ec329f3",
+      "mode": "100644",
+      "bytes": 6211,
+      "sha256": "457d5d3313d84311770d7dac544a39a02c9363e84778b0c0646610d6a7125bef"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2_manifest.json": {
+      "git_blob": "9089d37fe35bf27799cfc5f41e60029e700eefa4",
+      "mode": "100644",
+      "bytes": 21195,
+      "sha256": "1bda2d75a4e4de0f3a03639d3926a39a31d0be004a87946d6d2b7d7912e0fb3f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/ARCHIVE_MANIFEST.json": {
+      "git_blob": "7060d566fc96e7d09c41d7872361ff3ebf287d72",
+      "mode": "100644",
+      "bytes": 1962,
+      "sha256": "343731ca252568a3032fe584cf5d389b4be7ae443869d700b842ecc7179a55f6"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/PORTABLE_RECEIPT.json": {
+      "git_blob": "2869461ddc96badc464533525a81b7f8ca95b848",
+      "mode": "100644",
+      "bytes": 1284,
+      "sha256": "c55638832c0d0787867f4de5dcb0dd6516b4d801053d0df66f5960f3a76f16df"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/README.md": {
+      "git_blob": "eb6deb26c08ab30de98f8ffb7b293c95235d4612",
+      "mode": "100644",
+      "bytes": 5070,
+      "sha256": "c4d9a6ccee086a73fb178d284c65d44815d74e4340ff8ca620c7d4d310a618de"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/RELEASE_MANIFEST.json": {
+      "git_blob": "7a53736a09e5d484152ff0d13e1e499a0a75a531",
+      "mode": "100644",
+      "bytes": 244713,
+      "sha256": "35f9c488129aa4a4e8d168de6e07ebc2158f6d8968417ed4020b3b4e510bbbc2"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/a_c744_portable_open_checkpoint.tar.xz.part001": {
+      "git_blob": "a44cb6b1fbf1d57c8e805012c78b2b9994147b8a",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "dbc8d1d7d0abce82ed1fcac308d34cfc0b6245b02503d3f28ec88fc3ba54251f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/a_c744_portable_open_checkpoint.tar.xz.part002": {
+      "git_blob": "67adbc169b4dcb44dca1ab664231a735aa8a8252",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "8b5641c0dc2eea7ecbf5c6abfd1e6d8cbcc1eed36cc688c62be8b16ad28619c4"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/a_c744_portable_open_checkpoint.tar.xz.part003": {
+      "git_blob": "96f5980891a45b5a7dbc3b003cf660c71141b738",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "2c6e9da9c6c3192ad4780d91aea2d04db9d6f7f7f611034342953c6e8f27a93f"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/a_c744_portable_open_checkpoint.tar.xz.part004": {
+      "git_blob": "786c2b6e4b3de4f140e4c121d9ea96b831c4b805",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "bf0e64dbae1fd9e38e7ab933f63941b2f23a7cc750fb84ae396669e6aa65f816"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/a_c744_portable_open_checkpoint.tar.xz.part005": {
+      "git_blob": "b9d37453489d928aafd1ea24a2aeb3d0ab2b2cd5",
+      "mode": "100644",
+      "bytes": 8388608,
+      "sha256": "6bccc35c1ca004fe3b2443a734bd3bda83865cf09b34bccfe85f328fdab2e363"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/a_c744_portable_open_checkpoint.tar.xz.part006": {
+      "git_blob": "ab38c8a6d154ba0af4af96d5cb40da21a9f77de3",
+      "mode": "100644",
+      "bytes": 62448,
+      "sha256": "827e39d6c885994c05917e892abfaf360d7eeab8e7568555f848527ae4ad5eab"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/root_reviews/A_C744_COMPLEMENT_CONSEQUENCES_ROOT_REVIEW.md": {
+      "git_blob": "fba9b3b36305b6eff5a1628346ec8db1e586f676",
+      "mode": "100644",
+      "bytes": 2002,
+      "sha256": "620eef6b1706551d3f4acd0ee61f9c9cfbe73aa04defd87388e6d311133ae2b1"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/root_reviews/A_C744_COMPONENT3_FIRST_FOUR_PRODUCT_REPLAY.json": {
+      "git_blob": "7006463e0df10e06808052b69e8fe1fddd9bdfaa",
+      "mode": "100644",
+      "bytes": 480272,
+      "sha256": "a305059a8d0053de1c3d840d131c23a9fb7df724ee680d8042f6c9dacf7d8fb5"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/root_reviews/A_FOUR_PRODUCT_INTEGRATION_ROOT_REVIEW.md": {
+      "git_blob": "61a0315f62cf0a6de734b3193296c61e627e3c41",
+      "mode": "100644",
+      "bytes": 2338,
+      "sha256": "1fc355000d9427cb4a0a5775a0a8e7cb9478881b3b71b2f36ec3610309422f7e"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/root_reviews/A_PORTABLE_REPLAY_ROOT_DESIGN_REVIEW.md": {
+      "git_blob": "3fadc01b75be6c571a410a4dc9a51036e363df9d",
+      "mode": "100644",
+      "bytes": 2097,
+      "sha256": "c7f422f62576ec41f494ad554802a0b23c893f167239f89f937341ea8c208cec"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/root_reviews/CONTROLS.json": {
+      "git_blob": "dd61787c241064155ab4f4c41f7bce92f756f95d",
+      "mode": "100644",
+      "bytes": 2122,
+      "sha256": "d050720241ab3a03600150d15a357cafab832ac6cb849db8028c8bc355597dd9"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/root_reviews/check_portable_a_transport_controls.py": {
+      "git_blob": "0738d738f722154be668d1dcd9bb940ff9de25fd",
+      "mode": "100644",
+      "bytes": 5901,
+      "sha256": "51f39e4c13889980739aed9eb6bb7698b49ab415efc815403b5359cdab878711"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/root_reviews/review_a_c744_complement_consequences.json": {
+      "git_blob": "89b052d53462dd08cc2ba0de3bd6b3e81332cdbc",
+      "mode": "100644",
+      "bytes": 1011,
+      "sha256": "d6b171cbbe4a0d94e29f0f23bd675a228920592bb6e477e6ada08e0bbdaa5482"
+    },
+    "research/nine/computer_assisted/a2_00100_a_c744_portable_open_checkpoint/root_reviews/review_a_c744_complement_consequences.py": {
+      "git_blob": "3a797d394bcb99728a4d5caef7d4b2e1c75f7bfd",
+      "mode": "100644",
+      "bytes": 2957,
+      "sha256": "06727f03956871cd56a3dc081e906d76aa6e8d0ec022cf9b850d6980bf9274d0"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/CURRENT_FIXED_REGISTER_SNAPSHOT.json": {
+      "git_blob": "842fe7767063ad8b696253a19b9c76cf4ae228d8",
+      "mode": "100644",
+      "bytes": 447899,
+      "sha256": "3dfaff7a880ab358930fb0ea835a1fdbe9959711f3c08ac47ee9817e7c693dde"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/PUBLICATION_MANIFEST.json": {
+      "git_blob": "dcf503bf9418beaac15ed0284ef740c5134f2117",
+      "mode": "100644",
+      "bytes": 12004,
+      "sha256": "9293308c9d23acfaeefe88b6727c293a921a9d6f9384fd22722d5424c5a6821e"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/PUBLICATION_STATE.json": {
+      "git_blob": "4902dc1bf8ac450673340d058fcdc27bd8da0900",
+      "mode": "100644",
+      "bytes": 1858,
+      "sha256": "45b2982f6cc0a7658a3fdfcc49d9902a64207957a0ef6554afa95fd35f128fea"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/README.md": {
+      "git_blob": "2daf9bdcbe90aa119362273bca705e93bb5f05ec",
+      "mode": "100644",
+      "bytes": 4945,
+      "sha256": "a6dba825acaad579cf48d7122ca3c37c2d220a8b2781b6f054fc1df0d0ebe270"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/SOURCE_RECOVERY_AND_RECONCILIATION.json": {
+      "git_blob": "b3f199616ca29efb63b88bf8b83179eb6443e797",
+      "mode": "100644",
+      "bytes": 17938,
+      "sha256": "09242487c144bdf8fee64bac61808c1f8d42dfdcfcdb453f4dd36dd44cb723cb"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/plan/CONTINUATION_PLAN.md": {
+      "git_blob": "0fd3763ad71da501f08f032d73bb3c9ae36f1c9f",
+      "mode": "100644",
+      "bytes": 7489,
+      "sha256": "e12ba3e2c429779354f02263a969f2af19d9f3d00175584677ea28f655c765a5"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/plan/PLAN_BINDINGS.json": {
+      "git_blob": "e3bb873f9408bf0287acb538fa91f41d3efb5589",
+      "mode": "100644",
+      "bytes": 6322,
+      "sha256": "0fe9b64282a8adcc97896e8b0e0ced7d5ebb585a20dd4944052ea00d263d781f"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/plan/PLAN_METADATA_CHECK.json": {
+      "git_blob": "1d38b4c52b27e6d2662b476a5ce662a16c58ccfd",
+      "mode": "100644",
+      "bytes": 1426,
+      "sha256": "91f67927825aa8d27e06753700e53ea1bcd5879e0df3f73b511652a1fca08153"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/plan/check_current_reversal_classes.py": {
+      "git_blob": "b2cb54fc748ea9af8ff472573e8bb3d80dc2ddc9",
+      "mode": "100644",
+      "bytes": 3902,
+      "sha256": "727444fc8cfc1ea0b13675462c99f89a5f4dadc5369782709abf980914d3b7f3"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/prepare_all_mask_design_checkpoint_v1.py": {
+      "git_blob": "8f11bdfca33cd527a496a47df9bd2a419021c42b",
+      "mode": "100644",
+      "bytes": 10376,
+      "sha256": "bc0202ce8e47ed115565113e8a61db9fa74589e12f0c33b948e610db8ab185be"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/reviews/ALL_MASK_CONTINUATION_PLAN_INDEPENDENT_REVIEW.json": {
+      "git_blob": "0339608a1b20bd53adb383686d837ef9c7f0f0fa",
+      "mode": "100644",
+      "bytes": 8590,
+      "sha256": "220cfcb8871f65c69a7a73149da2f4a3848a96b37cfe64649f9a4900768bd9cb"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/reviews/ALL_MASK_CONTINUATION_PLAN_INDEPENDENT_REVIEW.md": {
+      "git_blob": "9d8124dd6d5889952dd8b7c342225ce77ca393d9",
+      "mode": "100644",
+      "bytes": 2509,
+      "sha256": "a18a4a5b4d911d489f07e725a6fc7516a33629f6de5fdaed035c0b94bb72df38"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/reviews/STRICT_011_PREPARED_ROOT_INDEPENDENT_REVIEW.json": {
+      "git_blob": "24d5df394bf74e15545733508a3d169c8e1c75ff",
+      "mode": "100644",
+      "bytes": 6404,
+      "sha256": "ef974eab78baf11ddf66082c446dbb9be24c9310e6540265be82c41762c5a918"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/reviews/STRICT_011_PREPARED_ROOT_INDEPENDENT_REVIEW.md": {
+      "git_blob": "97003b754e2c3c0d7846c9349ad56e0eca2bf8c2",
+      "mode": "100644",
+      "bytes": 4272,
+      "sha256": "fede05d806d43582fe766a5202cabbded58535d1fa4326cc9398925a5a4a1c9c"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/reviews/review_strict_011_prepared_root.py": {
+      "git_blob": "2b6c7134f23382062a3e696216a2c757c1ee7695",
+      "mode": "100644",
+      "bytes": 7629,
+      "sha256": "83626b94dd64f767f42d2b8f90f8bb2ec6903b509e5749fd55c32fa2e026dacb"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/review_tight_bounds_independent.py": {
+      "git_blob": "8cbae8ea89f6de9f09f4e7305d6e175be9ab896f",
+      "mode": "100644",
+      "bytes": 17065,
+      "sha256": "fc4afd4c1fa2ae2fabae656f1d55e1289b1cb92212ebd153b9cc20a3f79e7c3a"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py": {
+      "git_blob": "776e74a9661aa4a71f0978b91a0f3e89b5a7ee6c",
+      "mode": "100644",
+      "bytes": 59712,
+      "sha256": "ec1b7de7b15bcc9d89d12087bff974c68e6d056bdaae26b482d514027ec97993"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/verify_shared_bound.py": {
+      "git_blob": "8e24236a1a0f0905c72915b1c91638dfc84be0e2",
+      "mode": "100644",
+      "bytes": 21665,
+      "sha256": "8ab01fdffa3b8e2404036e8a92adb8c5b63da381c7e4e96b09da477c25e9d1c7"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/ac_work/tree/physical_sat_engine_snapshot.py": {
+      "git_blob": "eb291b4ef5330e6d478643480c5a491d1289348d",
+      "mode": "100644",
+      "bytes": 16239,
+      "sha256": "38d1162c40cd6494579f7793c6b10a54432ce999994f86b6726d2ca9e8022bc4"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/b_work/PHYSICAL_GRAM_SQUARE_SOURCE_PINS.json": {
+      "git_blob": "44393e4fab32836acf8442754054501250a3557c",
+      "mode": "100644",
+      "bytes": 1329,
+      "sha256": "e084a8bed463fdefb615e9925734048b987bd39ec5afb450aaa3b445db729b93"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/b_work/independent_owner_free_relative_support.py": {
+      "git_blob": "5ed1e858b91a5b2604e67dfd0cf51c35dfde5a19",
+      "mode": "100644",
+      "bytes": 2307,
+      "sha256": "a9279225ec2ee13b263f412b36b6d5de876a8bbdf8059a5bc1e0c12531995377"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/b_work/independent_physical_pair_frame_squares.py": {
+      "git_blob": "b4c1136f254aef8a45b5e1c9fa9e7e42b1412fe3",
+      "mode": "100644",
+      "bytes": 1293,
+      "sha256": "1a0d5a02f7de45491e8dee625b95fe72aa17be66867e202f91e2a354f23d66b0"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/b_work/independent_physical_projection_squares.py": {
+      "git_blob": "116a86497e4abb9dea0c16cb05d084f3cbe8cc15",
+      "mode": "100644",
+      "bytes": 1566,
+      "sha256": "c1274d245162b3e57c679039c3d31b6f4faebf25c46903de3649c1b68888df38"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/b_work/independent_physical_proxy_cover.py": {
+      "git_blob": "d7571ba4efe17f30ffb25dc669b578d05f6544c2",
+      "mode": "100644",
+      "bytes": 1552,
+      "sha256": "3b46b8a966c712e23894ae4cd7964355730f2bfe3c58a04871ade9d35ddf1277"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/b_work/independent_physical_sat_replay.py": {
+      "git_blob": "b2e01c4b2325b5952b6bc3e0ef631081c7463eef",
+      "mode": "100644",
+      "bytes": 12473,
+      "sha256": "1d069c90f289dce136e41afeb5d564ec7016ac06f58eeb733ca7552801b6fafc"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/b_work/owner_free_relative_support_snapshot.py": {
+      "git_blob": "23be0e4ccbc43274364b853613351f86be10ce0d",
+      "mode": "100644",
+      "bytes": 5367,
+      "sha256": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/b_work/physical_pair_frame_squares.py": {
+      "git_blob": "40a65b07eec2989c6b8f4fc98594df1b6f303fb6",
+      "mode": "100644",
+      "bytes": 1236,
+      "sha256": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/b_work/physical_projection_squares.py": {
+      "git_blob": "d2e7406a8c40beaa745af93b69d9462b6d20a84a",
+      "mode": "100644",
+      "bytes": 1168,
+      "sha256": "0a33acc6990ccc5f35439f0f641de987a08466b0e53a3bfa38de1dd2c2c8901d"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/d_work/D821_COMPLETE_LITERAL_TABLE_ROOT_AUDIT.json": {
+      "git_blob": "dbe1238d33e9f0a66a19857671bd9b78682e2ef5",
+      "mode": "100644",
+      "bytes": 63308,
+      "sha256": "7f5c37538f6836f377c270fb346f5dbbfaa45174f1a69d3d3c49e55558326f1c"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/d_work/adaptive_corner_disk/PREMISE_BINDINGS.json": {
+      "git_blob": "48bd062d246974389caaea36f3abb974292ea28f",
+      "mode": "100644",
+      "bytes": 1318,
+      "sha256": "413cec6bd90907e25002a0a08a34924c7de79e8179ac733ddb45b16a6f1d2271"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/d_work/adaptive_corner_disk/independent_physical_corner_disk_rows.py": {
+      "git_blob": "12da9b31d1cf214babe5e123f185bc11f7d9676d",
+      "mode": "100644",
+      "bytes": 1306,
+      "sha256": "924cb2943c161793d516bb44ca796b0659b0d2fb1cd6aafab3162b2e2a59b2aa"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/d_work/adaptive_corner_disk/physical_corner_disk_rows.py": {
+      "git_blob": "345ed01d14f34401e6a3099e4f2ab36a195f5cd3",
+      "mode": "100644",
+      "bytes": 1085,
+      "sha256": "633c549239f1893c37c382e1e6aac2eb54f36feb7332390e26f9bccceac286ba"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/d_work/cd402_work/cd402_original_runtime.py": {
+      "git_blob": "ae0abd64f3ab40aa3d9a8a39ec7d7324224ef5f6",
+      "mode": "100644",
+      "bytes": 2442,
+      "sha256": "4ddae80bf05087c9dd7205dfe92b684a7df70ad776dbd9b16099bba96d695e56"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/ORIGINAL_FOUR_ROW_MASK_TRANSFER_AND_CLOSED_ESCAPE_COVER.md": {
+      "git_blob": "fdcc34350e278d19a03ed0fd1558a00df7ae4a71",
+      "mode": "100644",
+      "bytes": 17388,
+      "sha256": "3a957218d94d997af4977e2a62011148e20da66409b1d8c97b81486144d5ad2f"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/d821_work/D821_COMPLETE_ORIGINAL_EXACT_REPLAY.json": {
+      "git_blob": "596043d9a81187cd1ce3cfd17fe45935a580dfa8",
+      "mode": "100644",
+      "bytes": 1514532,
+      "sha256": "c56785bc3953b85b2c3069bb8bf61ec655d3d174c652595cc6e25928ae0a53b4"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/other_mask_entrypoints/FRESH_11100_BOUNDARY_REPLAY.json": {
+      "git_blob": "b7a05bf157986dc721da676fc2a01af567cb494d",
+      "mode": "100644",
+      "bytes": 3189,
+      "sha256": "3cf92ede2c2d721284ba5b2d70c342c03e410a8cf1ef9503e502e5c72345c8aa"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/other_mask_entrypoints/FRESH_FOUR_BOUNDARY_REPLAY.json": {
+      "git_blob": "7e74b7d79ec2ac2c9537300f0cdfdafb7902ed28",
+      "mode": "100644",
+      "bytes": 14796,
+      "sha256": "67264682fe0f98d220873d90c1f9bb5348cc92936fa0bbf4a7eb9ce2c3fe5e60"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/other_mask_entrypoints/NEXT_MASK_ENTRY_POINTS.md": {
+      "git_blob": "30ce02a9cb0c553635c0cab0a9aceea98abd9af5",
+      "mode": "100644",
+      "bytes": 9125,
+      "sha256": "8aa0d10f2b3360237a211456c575274279310cb7c9dca2ebfa064af09cd13e01"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/other_mask_entrypoints/SOURCE_BINDINGS.json": {
+      "git_blob": "3f965cce191251f43cf8f7dc1ae84289552cfa2e",
+      "mode": "100644",
+      "bytes": 6364,
+      "sha256": "922b2aec0df9433ed080baf551d4847690c98d0311facd7d585e6e75dbe91ffe"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/other_mask_entrypoints/emit_fixed_mask.py": {
+      "git_blob": "2cee6f67da7303b208b97424670827d1f9f12b62",
+      "mode": "100644",
+      "bytes": 3682,
+      "sha256": "c01f8d7a0ddfcb0195b709decfa0118791c2c2321fc200384e94dd5393e8da05"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/other_mask_entrypoints/seven_original_all_open_masks_manifest.json": {
+      "git_blob": "92e91ed263ccb974a685f5165b377a442017562f",
+      "mode": "100644",
+      "bytes": 1282,
+      "sha256": "dbdffdc520597a76caa32dab7b972c8aa80d06f1f6d531e9df9da6b6720de0f9"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/other_mask_entrypoints/seven_original_all_open_masks_table.json": {
+      "git_blob": "88f797e1bc42bbd4120a3ee4c286c30f6801bd99",
+      "mode": "100644",
+      "bytes": 9283,
+      "sha256": "1e02d0418e341a45b8be88868ead1ba021190e3e9225a3f0b6021b69badaac5b"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/other_mask_entrypoints/verify_seven_original_table.py": {
+      "git_blob": "d8cad6302303b6bdf62da9a9d7de25db08e1777a",
+      "mode": "100644",
+      "bytes": 3138,
+      "sha256": "a74a7fc08ea1a0323e893d0b5f7310fe342adc65f4d952f3704185c57e5a1ae3"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/strict_011_actual_ab/ACCEPTED_DEPENDENCIES.json": {
+      "git_blob": "6b5380ac9159a4ea9d6892c8182ad62162e413ad",
+      "mode": "100644",
+      "bytes": 1673,
+      "sha256": "f1d5710c6adcab31313ab5afc3fea0623bbd157a826605c7705235b5945ea149"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/strict_011_actual_ab/PREMISE_BINDINGS.json": {
+      "git_blob": "4d9751e1d22f99d961ce67898e228b3f79f3a660",
+      "mode": "100644",
+      "bytes": 2074,
+      "sha256": "ab7b5f0bcd5545a34cefc4ce2bc5424960c16eae9b5fe424bac71656f8ff52f3"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/strict_011_actual_ab/STRICT_01100_APPLICATION_HAND_PROOF.md": {
+      "git_blob": "2c5abd98876187c92b45f57422ca0b89a851824b",
+      "mode": "100644",
+      "bytes": 3081,
+      "sha256": "39cfbd7762d7861f082894bdc6cd5fb906011bf2db599c0faaab7fc2ad5b247d"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/unit_corner_four_rectangles/PREMISE_BINDINGS.json": {
+      "git_blob": "9ea831f39713b00253a6d337ff21d30446110c1b",
+      "mode": "100644",
+      "bytes": 1486,
+      "sha256": "5fcef62cb21b38dcd42ed3c2bc1e913ff5f9125093eae4be557d92c0a56c2da1"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/unit_corner_four_rectangles/independent_physical_unit_four_corner_rows.py": {
+      "git_blob": "523320ac796ba366b382140051de2ff833354044",
+      "mode": "100644",
+      "bytes": 1506,
+      "sha256": "bfb6dc614269eaaa2c9f087cc7295c2598648d9349d76006b1e4aa08e66380a6"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/global_work/unit_corner_four_rectangles/physical_unit_four_corner_rows.py": {
+      "git_blob": "def5558e041590cd51e401a2dc3d3d4096d5e99d",
+      "mode": "100644",
+      "bytes": 1118,
+      "sha256": "87b1807d71442d558fd6eeaaed9b065d953cc6ca58908079e72b745cb2e227ac"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/repo/research/nine/A2_COVERAGE_AND_CLOSURE_CONTRACT.md": {
+      "git_blob": "fee00892707c15f65ec09bec697962eae2843e95",
+      "mode": "100644",
+      "bytes": 20682,
+      "sha256": "6ad5bd6d8e7cfc43de252db2e8954d0951d6fe0ebf77823f865e196215da5102"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/repo/research/nine/computer_assisted/strict_011_actual_AB_application_v1/PUBLICATION_MANIFEST.json": {
+      "git_blob": "a133dd8712e782faf0d5d9cf38dcb20e445f9538",
+      "mode": "100644",
+      "bytes": 4056,
+      "sha256": "1469421d4def83019d7d5120fb0fe480d9b0901857c83bd26f22ac4746642d6c"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/repo/research/nine/gates/A2_00100_FIXED_FRONTIER.json": {
+      "git_blob": "0b0f103bd4b951febfa59ebdfc0c7140cf1759c5",
+      "mode": "100644",
+      "bytes": 445968,
+      "sha256": "b805df8706151a4eb43bd8c0912205ffbfd67d8dfb582daf441717e04fd023dc"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/source_snapshot/repo/research/nine/gates/A2_MASK_FRONTIER.json": {
+      "git_blob": "b5e99146af47323f4192416eed8491487f8b1133",
+      "mode": "100644",
+      "bytes": 11313,
+      "sha256": "c25e3c95b3f6c71463bc21d59a714a7e417bbd366176f8d06f73cb7c45f3f5ed"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/strict011_design/FRESH_ROOT_SPEC_PREPARED.json": {
+      "git_blob": "8c6ebe78aaef076d5352f5a62c6ed211a1d4ca1e",
+      "mode": "100644",
+      "bytes": 71693,
+      "sha256": "14ec7613052f657fe3d2d3895b83b578ef0ef92c000e97bd34a582a69cae3d06"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/strict011_design/OPTIONAL_UNIVERSAL_CENTER_BOUND.json": {
+      "git_blob": "4ff4f34b0592ab8eca7a672e796425975c2b662d",
+      "mode": "100644",
+      "bytes": 358,
+      "sha256": "05d49956fe1f0db69cd9889466091d0b2af18cf70ec0d451e72634c3a4845444"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/strict011_design/OPTIONAL_UNIVERSAL_CENTER_BOUND.md": {
+      "git_blob": "2365f891283c275944c0d1621b860d8c8ee7cbfa",
+      "mode": "100644",
+      "bytes": 1435,
+      "sha256": "b1d5d06aca61bef6d351389dc1b3337270c8bf6bdb6707511a8da8cdccf9983c"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/strict011_design/ROOT_ADAPTER_DESIGN.md": {
+      "git_blob": "c21192a6e702677b24394c0d15cc77de110d6ac0",
+      "mode": "100644",
+      "bytes": 9044,
+      "sha256": "b993709fa1666285671ba4f8aa7be63c98f7f01e5f2b61e41970e32b63727a6c"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/strict011_design/SOURCE_MAP.json": {
+      "git_blob": "349d7bda0483893647617b5b8c2abac3ad318fa5",
+      "mode": "100644",
+      "bytes": 9503,
+      "sha256": "eebb35b564c98668d614b86f07c0aae18b761912e82f9fedfbfcfc525180265f"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/strict011_design/prepare_root_spec.py": {
+      "git_blob": "942562ced03dee6560d5de10c25a0466d308b284",
+      "mode": "100644",
+      "bytes": 4649,
+      "sha256": "cdb198a3729ac151984dd113d7b8533f3904c54cee0df0ee3f6b8f9a1be2b4b1"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1/verify_checkpoint.py": {
+      "git_blob": "1e25690f37f9b00d4e42b99625f7374089e960c9",
+      "mode": "100644",
+      "bytes": 4123,
+      "sha256": "d1a76c98f7dbe31c9bb766a436ef7c7306072f0cf84fd0af9f752a13a4de80b2"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1_review/ALL_MASK_STRICT011_CHECKPOINT_INDEPENDENT_REVIEW.json": {
+      "git_blob": "75f07effeee2dc85c58aadf6b69c6bc7763660bb",
+      "mode": "100644",
+      "bytes": 17298,
+      "sha256": "9bb86af050441980caaec54d34689cdbb11ea5d32db0ca71555c9e168b1efa60"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1_review/ALL_MASK_STRICT011_CHECKPOINT_INDEPENDENT_REVIEW.md": {
+      "git_blob": "27b5be564c3411208a8ab7a5a960c92ea568cd61",
+      "mode": "100644",
+      "bytes": 2835,
+      "sha256": "84336de07ab3de68b62206d5160a94503f815e62736021e4908f0b230dfc38ad"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1_review/FRESH_HISTORICAL_METADATA_REPLAY.json": {
+      "git_blob": "1d38b4c52b27e6d2662b476a5ce662a16c58ccfd",
+      "mode": "100644",
+      "bytes": 1426,
+      "sha256": "91f67927825aa8d27e06753700e53ea1bcd5879e0df3f73b511652a1fca08153"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1_review/PUBLICATION_REVIEW_MANIFEST.json": {
+      "git_blob": "5044332c37979f4db035f639b4aa987d966b8c30",
+      "mode": "100644",
+      "bytes": 1387,
+      "sha256": "b963e482a9caeef53a33069aa50bac9f81967a5e7b2f8e4ca294c950b7516052"
+    },
+    "research/nine/computer_assisted/all_masks_continuation_and_strict011_design_v1_review/review_all_mask_strict011_checkpoint.py": {
+      "git_blob": "815eff793dab176e36fcd1c2dfe07d659be93464",
+      "mode": "100644",
+      "bytes": 9134,
+      "sha256": "64dd1f522b037bb5d03b74d45729f7a48edda06fd7c54a620e28d922e29dba07"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/NATIVE_PROGRESS_CHECKPOINTS_ROOT_PUBLICATION_REVIEW.json": {
+      "git_blob": "f8acee6bdb2ce94b2affb2cf4cbbce5ce2f59d43",
+      "mode": "100644",
+      "bytes": 2606,
+      "sha256": "58212ba7a2d554f8c4d97abf406e1526b5f3e522e1b4746a3020fa249e872f97"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/NATIVE_PROGRESS_CHECKPOINTS_ROOT_PUBLICATION_REVIEW.md": {
+      "git_blob": "188b50a61f0597ccfad61f2b4000930fa4f9b90c",
+      "mode": "100644",
+      "bytes": 2085,
+      "sha256": "1c7da9c7a0f44b447c64fc1063ebb7c1c1e06a3ba0c9a168d2a868fa4bef26c9"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/PUBLICATION_MANIFEST.json": {
+      "git_blob": "1591bc3ab97e2c24668c4c28d97630d084dd497a",
+      "mode": "100644",
+      "bytes": 25419,
+      "sha256": "493bffd4744f4d0f158be73ad8688f3e7e18459a5c2c2fc45af294e51d401891"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/PUBLICATION_STATE.json": {
+      "git_blob": "0a4a3e1b7dccc954a82ddd6df3c21378fda52f2a",
+      "mode": "100644",
+      "bytes": 831,
+      "sha256": "283680a852eddee407dbb31990d2579af627f09c973b4d0efe2a378098e3363b"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/README.md": {
+      "git_blob": "a319f74bced77bd1fceb9178d8e581fd9ec8dce6",
+      "mode": "100644",
+      "bytes": 3294,
+      "sha256": "691433aa5075327eb391ba312fe4673330619bd5a7da752793d16dccb2190ade"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A3_POST_A1_NATIVE_HEADER_AUDIT.json": {
+      "git_blob": "e6ed051b0f3d01708e6efc0ef734e1c0b8bc0694",
+      "mode": "100644",
+      "bytes": 663,
+      "sha256": "f18bc4fd1110ba280242a9cb3d4c9ccae068606d197658fffe8db78e9c3fe354"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/CHECKPOINT.json": {
+      "git_blob": "64d2227feb1a18c2657c631475a9db0bd52582f9",
+      "mode": "100644",
+      "bytes": 2533,
+      "sha256": "f65ffdb8d4b5bd553b1b4795383cee13214255d46ef7866d6888cec22d73e46a"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/DEPENDENCIES.json": {
+      "git_blob": "11d29bc1c2bb838bab725a1e8ca8a2fa8b44a3d1",
+      "mode": "100644",
+      "bytes": 521246,
+      "sha256": "390f67b60c9190de5032d5395ab93ee9ec3cc680a09d2efa3bbc7e6f3c77a221"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/INPUT_MANIFEST.json": {
+      "git_blob": "69fcb5a77c1b402d8ce5766de2e7d59b3e1602d1",
+      "mode": "100644",
+      "bytes": 4908,
+      "sha256": "f8c70615d746fdf883936976bf723bc857a9dcd08015eea04ea0d96531d7bfc0"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/README.md": {
+      "git_blob": "bf750d0b745d60be143275f8f226b212cc656ce6",
+      "mode": "100644",
+      "bytes": 2071,
+      "sha256": "d497cee1446cf66a5fe92447523522e95c4e92f365f2a54f3411d4074c3078a9"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/SOURCE_PROVENANCE.json": {
+      "git_blob": "8967f2732fefc5db9c101bf2bd3aedd0b8db8978",
+      "mode": "100644",
+      "bytes": 6415,
+      "sha256": "b80212b428872efdf842ef6e5715f6fd0e7269889a3346144447cd02df308c53"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/build_native_progress_checkpoints.py": {
+      "git_blob": "2a90687e458a47794a891937550283a92bc2ac33",
+      "mode": "100644",
+      "bytes": 20146,
+      "sha256": "310ab7088db3271ab3461961327e808f1dc10c6dccf277908799f53f625609f9"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT1_CLOSED_CONSEQUENCE_BINDING.json": {
+      "git_blob": "87d0bc474d117a747b7428126202833f3f78b9e5",
+      "mode": "100644",
+      "bytes": 5015,
+      "sha256": "5c46eb3c5e3c60e9e776dd52db041cff92d0718c12feb040b9ada0fc745a801a"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_EXACT_CONTROLS.json": {
+      "git_blob": "a4fbc625f066605518a7453787e17a4fcfd4bfc4",
+      "mode": "100644",
+      "bytes": 1561,
+      "sha256": "99d9d1c82a510f6be7bd22fc1148a064874ce2bfe5a147364a8e3008879af5b6"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_SOURCE_FREEZE.json": {
+      "git_blob": "b2b694206e785cb86205b42140e91565724c81ef",
+      "mode": "100644",
+      "bytes": 1762,
+      "sha256": "ccf8925ebd8ba7d0a59c539835ea05623e00181b5b1d70fe0668e2d7e676de0e"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_STATE_BINDING.json": {
+      "git_blob": "b5911bef3ba6571eb9f718ffc7ca7515f6de5a44",
+      "mode": "100644",
+      "bytes": 27283,
+      "sha256": "338e53440f35ab321c126d6050f9de36c89a0424141ea6e1f6ba2fa6b756c23d"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_POST_A1_BOUND_STATE_HAND_PROOF.md": {
+      "git_blob": "8fdc274b4648ab73f408380ec7be7ceb9a58fe13",
+      "mode": "100644",
+      "bytes": 3638,
+      "sha256": "7c5064ed0ae38bc8a9ac853baa99930c30b9cff867f6f3f7173fa37643f25e88"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/A_C744_COMPONENT3_SHARED_BOUND_STATE_BINDING.json": {
+      "git_blob": "2c173518d7d9da2ee9434944cc2ea34ff1093284",
+      "mode": "100644",
+      "bytes": 26355,
+      "sha256": "c27b8690fc4fcd096cfcc2efc8776c2b51106762e94ad724de7e57c2a78db574"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/a_c744_component3_post_a1_bound_rows.py": {
+      "git_blob": "e2a375cbd800b95a4cd7036bcc3f0045dfd82175",
+      "mode": "100644",
+      "bytes": 1037,
+      "sha256": "3c74dfb03512df53a7859f3e14258d0f81e74a2e38d17caceb8cc2c8e1862747"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/ac_a_c744_component3_post_a1_bounds_runtime.py": {
+      "git_blob": "be994c9968481a154bf2f6d4858806077aa87f7e",
+      "mode": "100644",
+      "bytes": 1253,
+      "sha256": "009910f743f069be19ea20d8ed491077db644a39916a0c429ab65376367e6420"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/check_a_c744_component3_post_a1_bound_controls.py": {
+      "git_blob": "1ab3f2154c620d3e24ef7c05c50e8a207f76f584",
+      "mode": "100644",
+      "bytes": 3956,
+      "sha256": "d74a4b77ec1b4f15283840d28cf83620938f9ec878bfd63ac9e2f1e8c737c722"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/independent_a_c744_component3_post_a1_bound_rows.py": {
+      "git_blob": "7ab3bd2e37d1c9b53d9ae1a8c68f9bf5b7ef86dc",
+      "mode": "100644",
+      "bytes": 9053,
+      "sha256": "c9f6acf45daa28efd21a281371eda4eec1f06a603e1f3407967f6beee44861b9"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/tree/verify_a_c744_component3_post_a1_bounds_lazy_tree.py": {
+      "git_blob": "e7e3963246a4d25567e66c4a324669ce2d2b0cfe",
+      "mode": "100644",
+      "bytes": 3512,
+      "sha256": "4b94cd39d2b5141e60dc79cc37e7d9131b8ec8c9005abc515797d0162abdc67c"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/ac_work/verify_native_checkpoint_inventory.py": {
+      "git_blob": "aba66a859bdb5f45dc94b5821aa952b6de3aec0a",
+      "mode": "100644",
+      "bytes": 6075,
+      "sha256": "3a2e10184f6c7967919775a95a2f7f906c653099d7d9603cc985dc2500797d41"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_C744_COMPONENT3_FIRST_POST_A1_BOUND_EXACT_REPLAY.json": {
+      "git_blob": "6fdba79f9249c22064c724d47524587f0989b450",
+      "mode": "100644",
+      "bytes": 3951447,
+      "sha256": "b3f388659ea027b029b2be4b077dfd14055391a45936deede58bc981890de936"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_C744_POST_A1_BOUNDS_ROOT_DESIGN_REVIEW.json": {
+      "git_blob": "24e237e76e172ade28ae842708063bd49ba7810c",
+      "mode": "100644",
+      "bytes": 2479,
+      "sha256": "e16dc75b06abe2adbe357bed91623436b42cac3487da6488223673e899b13b5a"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_C744_POST_A1_BOUNDS_ROOT_DESIGN_REVIEW.md": {
+      "git_blob": "a5780af6410efcb300064daaa6cfe80a8c864e51",
+      "mode": "100644",
+      "bytes": 2720,
+      "sha256": "5a3530693dcc94b0116311887d827524174b564691a3a41b42d82bed6b722e04"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_c744_component3_post_a1_bound_whole_probe/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "git_blob": "46d95dd1f71b82135cdef19fe987fad8f1dcac06",
+      "mode": "100644",
+      "bytes": 52171,
+      "sha256": "b8efa9dc8f5456c912d104127cea0ab53423040891a2a31863f29718b3f038d4"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_c744_component3_post_a1_bound_whole_probe/manifest.json": {
+      "git_blob": "0d38c48e745a481c00338848e1d8bb59ba7d1e8c",
+      "mode": "100644",
+      "bytes": 55310,
+      "sha256": "46352abf19a8466797167a27f7bb70f7c381463e32e693a51c745c0eba4d3b1a"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/A_c744_component3_post_a1_bound_whole_probe/node_00000.json": {
+      "git_blob": "9022ab7bce462afe9d2040639e996a9e72e554fa",
+      "mode": "100644",
+      "bytes": 3333450,
+      "sha256": "0649950033bd35b20e88e271223377778f083c9e9f224e2887dcb84b38848fb0"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/native/d_work/resume_a_component3_post_a1_bounds_round_tree_v11.py": {
+      "git_blob": "9e2773f36afa432175f3a35bb2558b3a44b09499",
+      "mode": "100644",
+      "bytes": 12726,
+      "sha256": "815830e45514592210131b3baa4c48067b7116b88af6f00990054cf11b4e90ad"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/published_references/A_open_base_ARCHIVE_MANIFEST.json": {
+      "git_blob": "7060d566fc96e7d09c41d7872361ff3ebf287d72",
+      "mode": "100644",
+      "bytes": 1962,
+      "sha256": "343731ca252568a3032fe584cf5d389b4be7ae443869d700b842ecc7179a55f6"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/A_c744_component3_POST_A1_bounds_native_v1/published_references/complete_A1_delta_ARCHIVE_MANIFEST.json": {
+      "git_blob": "313392eeaacff8f5cd083c2a0c5d12609064436e",
+      "mode": "100644",
+      "bytes": 2748,
+      "sha256": "e07a65074d8ed90eb0afa5a1b3bfd99a488652475fd02ae181f5bee692a3cfe5"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/DIRECT_C_NATIVE_HEADER_AUDIT.json": {
+      "git_blob": "d302afcb0f49ec6ed1941581e642a299d2f64e84",
+      "mode": "100644",
+      "bytes": 654,
+      "sha256": "975e9a772e646e16f54b3369f01d78043d52383cbb75a19096e495ec89f73a05"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/PREPARED_CHECKPOINTS.json": {
+      "git_blob": "97a73be0c32d1aee582aef81303ca7987cb25c79",
+      "mode": "100644",
+      "bytes": 1344,
+      "sha256": "134a40b240ba16083335d381cef14c97ddad2cd67942c51a31a47ae0c47367d6"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/README.md": {
+      "git_blob": "ab4eddc82347506a12bf730483a0e70edafc6418",
+      "mode": "100644",
+      "bytes": 1980,
+      "sha256": "8f9225f1335ef0fae238a34c7a9b9df56822b66b4a90ea737755af40657e3c92"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/READY.json": {
+      "git_blob": "fa9f6af1d06af4e7dca76b7b6299f17d83ddd2a0",
+      "mode": "100644",
+      "bytes": 1735,
+      "sha256": "33aac7c72892f2589e1ace329563223cf691c48c6154c4c204230fda8dc2c410"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/RELEASE_INVENTORY.json": {
+      "git_blob": "c6d0f2a390fde67fc06d6ef7443695158e534fae",
+      "mode": "100644",
+      "bytes": 22469,
+      "sha256": "d5313c814e773a2109e1208c6daf032baf90af7d6161518a17cf5bec1baa7753"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/CHECKPOINT.json": {
+      "git_blob": "846ccfcddda1955cb8df478c4eea56cc70bab9da",
+      "mode": "100644",
+      "bytes": 4195,
+      "sha256": "0ff3e2efda4c78551f62891c1078404776a81080e3e2f2f58785c26aca1436bb"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/DEPENDENCIES.json": {
+      "git_blob": "6b1f64c7ddc5ebc4081f8f72456d228643f7460e",
+      "mode": "100644",
+      "bytes": 497955,
+      "sha256": "9e8886bf9154663b30820b3f6187db08a178e59678aa435a19209a3edd6138d1"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/INPUT_MANIFEST.json": {
+      "git_blob": "cc59931163bcb11b9bcc4e7947cd2e32dee00ddd",
+      "mode": "100644",
+      "bytes": 11500,
+      "sha256": "9cecace1cca845c20e44207baeb4cf5b0d9af3595ca8a1649241a7738bb3a633"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/README.md": {
+      "git_blob": "02f2739e1845a337c2dac200d7194592b5e3fbd5",
+      "mode": "100644",
+      "bytes": 2627,
+      "sha256": "9b376aa504a94c9ef705a53742f5da5222f175ab3acea11e8a691d9757cb249d"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/SOURCE_PROVENANCE.json": {
+      "git_blob": "04642a3abde1de5f3b92581d932b5b2cb5014141",
+      "mode": "100644",
+      "bytes": 17628,
+      "sha256": "4e56ee38425114ea4c50acc26430b6970c788384681c664c9b7db6d2a1b095bc"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/build_native_progress_checkpoints.py": {
+      "git_blob": "2a90687e458a47794a891937550283a92bc2ac33",
+      "mode": "100644",
+      "bytes": 20146,
+      "sha256": "310ab7088db3271ab3461961327e808f1dc10c6dccf277908799f53f625609f9"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/C887_DIRECT_SHARED_BOUND_FIRST_LAZY_EXACT_REPLAY.json": {
+      "git_blob": "cc8d9a81d36baef5acaa320b49ae62d84f24104f",
+      "mode": "100644",
+      "bytes": 505776,
+      "sha256": "1ed7e3f9aa119e9b6b9fc3716c052628770e09078ea78fa818fe3e2c0b92741d"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/C887_DIRECT_SHARED_LAZY_READER_ACTUAL_ATTACHMENT.json": {
+      "git_blob": "86a00dfcd16a96ea6a0314757c4dbef8e1059582",
+      "mode": "100644",
+      "bytes": 2835,
+      "sha256": "de6a99099150fa7cbfb35dada121b64cdaf7ca04f0761fae89856fa9000ac946"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/C887_WHOLE_HEIGHT_BOUND_STATE_BINDING.json": {
+      "git_blob": "de87b2c1b26261c0cb4f7bb52aab7dff0fc5ff5b",
+      "mode": "100644",
+      "bytes": 25796,
+      "sha256": "b24a9fa7675eb4d2330518da7481e5bca75700928035d202eeb9bf964a4adf2d"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/CB882_DIRECT_SHARED_BOUND_FIRST_EXACT_REPLAY.json": {
+      "git_blob": "0797c115207c674fe076d5c41a9caf2989648094",
+      "mode": "100644",
+      "bytes": 706171,
+      "sha256": "da2b6bcf09dd746f748920c0995aab9708b3b2af67c8411871fc5a0562b3c8b1"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/CB882_DIRECT_SHARED_BOUND_FIRST_LAZY_EXACT_REPLAY.json": {
+      "git_blob": "785710e03f37cb252a69b5ca6da4498b63ee3a89",
+      "mode": "100644",
+      "bytes": 706545,
+      "sha256": "b15f2ba97b70d86d128fd0d9edead7fd5be6238d8f23a524ed94c16ec6b7d0fd"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/CB882_DIRECT_SHARED_LAZY_READER_ACTUAL_ATTACHMENT.json": {
+      "git_blob": "d887bbb2c32e6f66bc18d11b1a2f19acb0cc3986",
+      "mode": "100644",
+      "bytes": 907,
+      "sha256": "62d7de0a19ac9d3c832fb77c10ce655c4d150f941f3094e48f0e5a701926260e"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/C_HEIGHT_EXCLUSION_CONSEQUENCES_BINDING.json": {
+      "git_blob": "095f2b6afa36f877f24dda625d6d70d59118787e",
+      "mode": "100644",
+      "bytes": 7265,
+      "sha256": "0ba7dd5ecd014197634b57df6c51b1d1fa1f8a258ff44f48464d4b8b0b55eebb"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_BOUND_PRECHECK_CONTROLS.json": {
+      "git_blob": "bad1870f081a7d82d916d602d4d1783e2bb6baba",
+      "mode": "100644",
+      "bytes": 833,
+      "sha256": "510e155caae9351814e5444a482a837faafa98487c79a791e20bcbf94c70dc1d"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_BOUND_ROUND_EXACT_CONTROLS.json": {
+      "git_blob": "0ad11c96bbb5e0c23235d16d8163cb955e0d07e6",
+      "mode": "100644",
+      "bytes": 4139,
+      "sha256": "ab9a5b3de9bcee638ff41dc4dc9c84689e80455bcaf9c6def45be9e823d470db"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_BOUND_ROUND_HAND_PROOF.md": {
+      "git_blob": "e4e79081a3334b54c2dc574b88bee8af3dcf3828",
+      "mode": "100644",
+      "bytes": 3318,
+      "sha256": "3df13de0570dab56907f7294ff0f1827640f62ea88efc08a42bce4bfd46a295b"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_BOUND_ROUND_SOURCE_FREEZE.json": {
+      "git_blob": "700cc8347570acfcfb541f292d8cdecadf28143b",
+      "mode": "100644",
+      "bytes": 2218,
+      "sha256": "8dd1468eeaed8afe8d7e809a4054b3ae1d033a31964f0fe29da57f2ecce8f6e5"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/DIRECT_SHARED_SEARCH_COMPOSITION_CONTROLS.json": {
+      "git_blob": "03a824bd7f12e9ddd607cfcd8690cb19c0fadc5c",
+      "mode": "100644",
+      "bytes": 897,
+      "sha256": "070ae62296d9c542b7653fa2bc3469f613888fec99b9a046f38966786e1248a1"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/ac_c887_shared_height_bounds_runtime.py": {
+      "git_blob": "5bee6b08b0c4c92e383a0798502fb322988f3222",
+      "mode": "100644",
+      "bytes": 972,
+      "sha256": "fe41f11c3131ae28d3e7a919a5dee2fb373beaa324c7089a2a6c001257cf8fd9"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/c887_original_direct_shared_bound_round_fixture/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "git_blob": "8d5562496c57ad03335ca089c33b17f1ae35797d",
+      "mode": "100644",
+      "bytes": 280658,
+      "sha256": "4ef09829b906836ce9c9c837fccf76870633998e64e43d9ca6d7c88da5ce2b9d"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/c887_original_direct_shared_bound_round_fixture/manifest.json": {
+      "git_blob": "6d6fb1e426659e88cae537ff99358ac5e5db70cf",
+      "mode": "100644",
+      "bytes": 23458,
+      "sha256": "75b0864f6d18c26ac9520084fa1572a428a572c57d4603ab842fa79ce696a71d"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/c887_original_direct_shared_bound_round_fixture/node_00000.json": {
+      "git_blob": "b7c7c408914c0ccba83d4d9741bf5a1ddb1b2ebf",
+      "mode": "100644",
+      "bytes": 1614382,
+      "sha256": "b5805d851e4beb0685e42bce27a762a6726fd04c0ab08814d2bc91688fddeed1"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/c887_whole_height_bound_rows.py": {
+      "git_blob": "1b04b3d4fe320ab440e115e0a4dd1a93824c7497",
+      "mode": "100644",
+      "bytes": 891,
+      "sha256": "7d354de7d1067f740997079295bd6309fe6c2582551d48b73434d13f61b64ed8"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/cb882_component1_direct_shared_bound_round/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "git_blob": "1f79de90caad0bf8f3f73f4aa6d9c79b90b262ba",
+      "mode": "100644",
+      "bytes": 10896,
+      "sha256": "42588794c5adc7944866c7ded11e52f12dc894713e99bd745e1775cb3fc8c74d"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/cb882_component1_direct_shared_bound_round/manifest.json": {
+      "git_blob": "ca70ce003c361447de79fa78574917303ad84422",
+      "mode": "100644",
+      "bytes": 11576,
+      "sha256": "2e6d5068de3d06d4bf00da641cf170b107f9db2f6081a1d9e52a4b98d0f5615a"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/cb882_component1_direct_shared_bound_round/node_00000.json": {
+      "git_blob": "f4e1c78f369160adf11c1fbfd724e11bf8ca9231",
+      "mode": "100644",
+      "bytes": 324544,
+      "sha256": "cd7b8e300978870f334225c63756f718128fca044965728b1f72e2bd5cb59b6b"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/check_direct_shared_bound_round_controls.py": {
+      "git_blob": "dccd18381713c58ed1941de8b6604624b5675768",
+      "mode": "100644",
+      "bytes": 7651,
+      "sha256": "d516d7f2b4ae190725f2b682d0b14c7ba0c5c82a63662df4b92246aefd12e27b"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/check_direct_shared_search_composition.py": {
+      "git_blob": "8cf9161614c8a8b1378f28614330da37023d2ea7",
+      "mode": "100644",
+      "bytes": 5920,
+      "sha256": "eb8ca884e0caca785cce2bb84ce47e2a77dc44c784383a0adec1f0bc5c78554a"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/direct_shared_bound_precheck.py": {
+      "git_blob": "c4c28e57e453b3b9e5b576078997033d13b80dc6",
+      "mode": "100644",
+      "bytes": 1929,
+      "sha256": "abce850086e528b7df8bc4acbcdf780e87efe6a5954006407e3a30ab3817a501"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/direct_shared_bound_round.py": {
+      "git_blob": "5d6913c53922062a2de8b901535032d782a40e36",
+      "mode": "100644",
+      "bytes": 6233,
+      "sha256": "be5a16d1106d37a47b1e21591a47b3f90dcf50839ebbf81ed30d0b74a8187d25"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/independent_c887_whole_height_bound_rows.py": {
+      "git_blob": "83374096562f3030936efbbfa096eea4cfb6a98e",
+      "mode": "100644",
+      "bytes": 5400,
+      "sha256": "f8d5766eb0deeb77f38e376741b60846b9e5c8205e490256ece56d19db73ceee"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/independent_physical_sat_diagonal_replay.py": {
+      "git_blob": "66ad9300c6d9438c522c9596d885555f050ecffd",
+      "mode": "100644",
+      "bytes": 13113,
+      "sha256": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/physical_sat_diagonal_engine.py": {
+      "git_blob": "94831006e8ba08497dd0aff0d042b043f9186fb1",
+      "mode": "100644",
+      "bytes": 16981,
+      "sha256": "6157eb67662b97f8e13beaa3d3d726e68b8a3871a95cb991825596f47aa9fac5"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/prepare_c887_direct_shared_bound_round.py": {
+      "git_blob": "8a173c21e6fce617fded056597c214476d7321da",
+      "mode": "100644",
+      "bytes": 4136,
+      "sha256": "e6f483cf782ad9301bea3595266966f6ce8b2a38f5c4f4d8c2744a0c2ad84a8b"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/prepare_cb882_direct_shared_bound_round.py": {
+      "git_blob": "24c65b0e0e50e46e6fb8bcd2113ec9b238e10fae",
+      "mode": "100644",
+      "bytes": 3137,
+      "sha256": "0fed214fcf6ecd5566dc33873ce0139bc9ccb1bd9660fb234cd5065d1d6f445f"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/resume_c887_direct_shared_height_each_round_lazy_tree_v3.py": {
+      "git_blob": "19ec1e3bb1ee58c9cc11eb9289797de6bf60aae0",
+      "mode": "100644",
+      "bytes": 11853,
+      "sha256": "d674c59c7842884c8be9f74a96d153aa47bef40f00aa47d23113331f239286f1"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/resume_c887_shared_height_bounds_each_round_lazy_tree_v2.py": {
+      "git_blob": "98ef029272b4250a0ecefd79ac3784e7e002423a",
+      "mode": "100644",
+      "bytes": 11073,
+      "sha256": "3bbb1123c707142beaf20973e4869e48e6fbd6565e9231a8291f9e787f4386ba"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/search_with_direct_shared_bound_round.py": {
+      "git_blob": "01136b0126b8c56c4dff2a29044e6238f5c6d5a8",
+      "mode": "100644",
+      "bytes": 2336,
+      "sha256": "bf3f6dd11059dacedafd22f6e601a6bab32380fd83ec16c774cffbed69f7f869"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_global_union_tree.py": {
+      "git_blob": "349264f2db95ac4e89d66c95f1ae4ce6b6b7b19c",
+      "mode": "100644",
+      "bytes": 3275,
+      "sha256": "7a647885117d8b4bde1e42c4c485f0bf51dd8c893214c292b0e4f038c39f648e"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_ownerfree_physical_lazy_tree.py": {
+      "git_blob": "6f421d3a2ff3c53cd54b9b0fcd316164843f2e79",
+      "mode": "100644",
+      "bytes": 16978,
+      "sha256": "a2579cba447f362eeb7a7861a0cb26254cd182b0949b0f384bb5c09a7cd318e0"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_ownerfree_physical_tree.py": {
+      "git_blob": "429819943c1ca6ce7ff8b3670b0604df108c9709",
+      "mode": "100644",
+      "bytes": 16818,
+      "sha256": "755f9ed05839e27c04e8687de2273f3bf415388c9ef6dbe9c96fb1c3b20cb7ad"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_shared_height_bounds_lazy_tree.py": {
+      "git_blob": "25e49923af95f9a2cab068225ac0acd04db9bc09",
+      "mode": "100644",
+      "bytes": 1749,
+      "sha256": "9b4915e2c6cd591ecfeb5ffe59be40259312368f8177714a98a9788a6accd4d1"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_c887_shared_height_bounds_tree.py": {
+      "git_blob": "c910f86e98936477288bcfec0cbce4ff86fcc94f",
+      "mode": "100644",
+      "bytes": 2649,
+      "sha256": "1cc9239ba3862ecab43cd38412f9d127e637e8096996b586115557118c7a34eb"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_cb882_height_consequence_four_tree.py": {
+      "git_blob": "38e57bd77ca83b064e942f5dc7c6d4b43c122940",
+      "mode": "100644",
+      "bytes": 2508,
+      "sha256": "2ddb505fcbdee35427589cce6fdf80b73c06594a9d785e1f320585fe2adc2001"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_cb882_height_four_lazy_tree.py": {
+      "git_blob": "e8fcd6bea3ae1ce7dba72b25ff08ad45df17cf6b",
+      "mode": "100644",
+      "bytes": 12790,
+      "sha256": "3136ed9548603c8ff0f83f1667ce0c2b2a9f7ea1b1954d4564a045bd0d6027b9"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_cb882_height_four_tree.py": {
+      "git_blob": "fa35b670a89a96ed035bcee2dbc78a1efaef2b1d",
+      "mode": "100644",
+      "bytes": 12533,
+      "sha256": "5f228ec256cb44c309d2a91f5c19130ae043b2d9b4bbeb4021192d657ce8df61"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/tree/verify_cb882_shared_height_bounds_lazy_tree.py": {
+      "git_blob": "a2d5c815572b8b5961fd5379d69569e166b0839e",
+      "mode": "100644",
+      "bytes": 1396,
+      "sha256": "f3e2611009f72cf5c3202417cd995b5ff7b05016a6395015f3aa67419b5f492b"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/ac_work/verify_native_checkpoint_inventory.py": {
+      "git_blob": "aba66a859bdb5f45dc94b5821aa952b6de3aec0a",
+      "mode": "100644",
+      "bytes": 6075,
+      "sha256": "3a2e10184f6c7967919775a95a2f7f906c653099d7d9603cc985dc2500797d41"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/b_work/C887_DIRECT_SHARED_SEARCH_V3_INDEPENDENT_REVIEW.json": {
+      "git_blob": "3ca3d0ed06cb6e08287878101b6acf3b43969d58",
+      "mode": "100644",
+      "bytes": 1822,
+      "sha256": "b86c5e9daabffea25b7f5fb6957078d43bdb10f04aa3fb414c409ad3f508df64"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/b_work/C887_DIRECT_SHARED_SEARCH_V3_INDEPENDENT_REVIEW.md": {
+      "git_blob": "6f0ac55cac72e2b55fee3d99f2d6dcee19d2ce4f",
+      "mode": "100644",
+      "bytes": 3499,
+      "sha256": "afd18453b6b8ea16146b66ebd52742a7d83fbe172b53e6d14c2d46d959b58a2f"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/b_work/C_AND_CB_LAZY_EXACT_REPLAY_INDEPENDENT_REVIEW.json": {
+      "git_blob": "ff4dbee2c6cfe4c31c719cd35b7fa405854e9cf0",
+      "mode": "100644",
+      "bytes": 2366,
+      "sha256": "c92a9af9c4fe0e4051889ba9596cadfad5f35843293de2f9038c0264eaf8b229"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/b_work/C_AND_CB_LAZY_EXACT_REPLAY_INDEPENDENT_REVIEW.md": {
+      "git_blob": "b81dd66e1ac97d9884bf1ea401624efdd2cf2fc2",
+      "mode": "100644",
+      "bytes": 2770,
+      "sha256": "05365d58cf856a3115dc11ce2b8e30415ac2ff5aeee852d3bc43c9b7ccb69ff8"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_EXACT_CONTROLS.json": {
+      "git_blob": "01a89459a611e03f0f8bcb993463778d5d374895",
+      "mode": "100644",
+      "bytes": 2487,
+      "sha256": "fc159a8d87041305b2579e5741774c7051702b81eded3cc9f61bf82d05a65c30"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_STATE_BINDING.json": {
+      "git_blob": "5eea115a0ac43d93642027d660af844dd099b298",
+      "mode": "100644",
+      "bytes": 27647,
+      "sha256": "f0e49cf500739a4c878ef34c5f420e5430ca22dd9e147986615a4c546554ee38"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_STATE_HAND_PROOF.md": {
+      "git_blob": "a66df9f5e925a7bcc45ad7aa83fb80bfdbe0b7ca",
+      "mode": "100644",
+      "bytes": 4318,
+      "sha256": "bec2b67456b5f22520d9767d5405949d68f9b06ece80c9ed85b572894bc7814f"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/SOURCE_FREEZE.json": {
+      "git_blob": "c57738bebbd31f858158dd16bee14eae516b2ac2",
+      "mode": "100644",
+      "bytes": 4793,
+      "sha256": "6ade847ccacb3a36eb4655394a32e35c7689384797aa14360e24b7104337831d"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/cb882_shared_height_bounds_runtime.py": {
+      "git_blob": "9682f6f92f7177cf3b1f4b1086a66a83f2c8210d",
+      "mode": "100644",
+      "bytes": 1231,
+      "sha256": "748b9bd4495a351de304028fcea07bbb6b7a2d26c7a30d5b0eea6d2cfc6dcb5a"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/cb882_whole_height_bound_rows.py": {
+      "git_blob": "937b4f8b5b6e310cb1d23136ab8771feaa0454cb",
+      "mode": "100644",
+      "bytes": 980,
+      "sha256": "dafa4d2cedacc0ca409195abcd45eba5b281561f9d1061de4b396a2e2e446200"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/independent_cb882_whole_height_bound_rows.py": {
+      "git_blob": "c14ca26a7656b9b8661897fc346010be101c1d4d",
+      "mode": "100644",
+      "bytes": 7268,
+      "sha256": "caeb30637c898182ed0fa7fe5a3454d9987650ec80f4a5db64975a2197f97955"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/native/d_work/cb882_shared_height_bounds/verify_cb882_shared_height_bounds_tree.py": {
+      "git_blob": "0a47dfb81cca0b8cd89f480d6814c77a573e8709",
+      "mode": "100644",
+      "bytes": 2664,
+      "sha256": "1e962a7619b6c997b655c74d2c0454f75128d71531bed57746b84e33d4e95433"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/published_references/A_open_base_ARCHIVE_MANIFEST.json": {
+      "git_blob": "7060d566fc96e7d09c41d7872361ff3ebf287d72",
+      "mode": "100644",
+      "bytes": 1962,
+      "sha256": "343731ca252568a3032fe584cf5d389b4be7ae443869d700b842ecc7179a55f6"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/direct_shared_bounds_and_C_lazy_readers_native_v1/published_references/C_height_delta_ARCHIVE_MANIFEST.json": {
+      "git_blob": "bcda5f072973d03c71dfd7391f0d9911e92807f4",
+      "mode": "100644",
+      "bytes": 1355,
+      "sha256": "8f9be5d565759fb3e04039983721eeb5f22ec7959e4c086090194bc6cfbf8e1c"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/outer_publication_notes/PUBLISHED_CB882_WHOLE_EIGHT_MANIFEST.json": {
+      "git_blob": "6e95d188854db09d36468e8f081ac6a7b553377b",
+      "mode": "100644",
+      "bytes": 81496,
+      "sha256": "837d41cbbc29b8dd969ff132356883aa80fec545260c2ccb67825cd7c6e59e57"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/outer_publication_notes/RELEASE_SOURCE_BINDINGS.json": {
+      "git_blob": "35377a9541cc4f1be6a614d1dfc8dd27714ede72",
+      "mode": "100644",
+      "bytes": 769,
+      "sha256": "2d533365ba9d6b7fc1a4d3864ae5121301bb2010cb711b7014cb199aa4d97ba9"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/outer_publication_notes/TRANSITIVE_CB882_PUBLICATION_REFERENCE.json": {
+      "git_blob": "5c56e7817d8007c88d968abe16326af3f9632240",
+      "mode": "100644",
+      "bytes": 818,
+      "sha256": "df783706d86259b2a5e640b12d317624dda8cbacecb8823ad996f8dfb9e45160"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/outer_publication_notes/build_native_progress_checkpoints.py": {
+      "git_blob": "2a90687e458a47794a891937550283a92bc2ac33",
+      "mode": "100644",
+      "bytes": 20146,
+      "sha256": "310ab7088db3271ab3461961327e808f1dc10c6dccf277908799f53f625609f9"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/outer_publication_notes/finalize_native_progress_checkpoint_release.py": {
+      "git_blob": "8160d6f7e83cd4d7bdfa9ca8b692fc9469b23122",
+      "mode": "100644",
+      "bytes": 8056,
+      "sha256": "a0c71b5ba316334f376d9dcda005258621646c3144b482a8fef33379f0201311"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/native_evidence/outer_publication_notes/verify_native_checkpoint_inventory.py": {
+      "git_blob": "aba66a859bdb5f45dc94b5821aa952b6de3aec0a",
+      "mode": "100644",
+      "bytes": 6075,
+      "sha256": "3a2e10184f6c7967919775a95a2f7f906c653099d7d9603cc985dc2500797d41"
+    },
+    "research/nine/computer_assisted/native_shared_bound_progress_v1/review_native_progress_checkpoints_root.py": {
+      "git_blob": "db46ffd79a486bd8c6f6ac0a493591582ee27003",
+      "mode": "100644",
+      "bytes": 7571,
+      "sha256": "4562537ce26c9db6fa66311ca374e49abe31505af1b2ef347dec1b34170f5f04"
+    }
+  },
+  "file_count": 284,
+  "bytes": 128712505,
+  "arithmetic_replayed": false,
+  "new_proof_credit": 0,
+  "lost_uncommitted_suffix_reconstructed": false,
+  "restorer_sha256": "86facbad369cf52413d4f408bb958467eca25de4a2832d84deba9d2c031f28a2"
+}
