@@ -201,7 +201,11 @@ outsider y<3/5-97/100=-37/100. Reflect y and label them U,V with
 \[
                             37/100<y_U\le y_V.
 \]
-The side-strip center cap proves y_U<9/16. Therefore the new low-center
+The independently proved signed side-pair cap in
+[ACTUAL_FOUR_FULL_SIDES.md](../ACTUAL_FOUR_FULL_SIDES.md), Section 2,
+gives y_U<7/16<9/16. That proof uses the asymmetric source's Section 2
+and a self-contained positive-normal argument; it does not invoke this
+extreme-main theorem. Therefore the low-center
 bound in [ORIENTED_SIDE_PAIR_CAP_AND_LOW_OUTSIDER_BAND_HAND_PROOF.md](ORIENTED_SIDE_PAIR_CAP_AND_LOW_OUTSIDER_BAND_HAND_PROOF.md)
 gives
 \[

@@ -405,6 +405,64 @@ at least one guard of (21) for every such triple, and likewise after
 vertical reflection. It does not prove that a suitable triple always
 exists.
 
+### 4.3. Complete consequences with the main cone comparisons retained
+
+The following hand theorems now extract that terminal on complete stated
+domains. They preserve all nine originals. The additional main cone
+comparisons mean \(|y_{i+1}-y_i|\le x_{i+1}-x_i\) for each consecutive
+pair of the same actual four-chain; they do not follow merely from
+actual projection separation.
+
+[ACTUAL_FOUR_FULL_SIDES.md](ACTUAL_FOUR_FULL_SIDES.md) excludes the full
+outsider count \((2,1,2)\), with two outsiders in each side column and
+one in the central strip. Its three main-height patterns are exhaustive.
+The proof supplies a signed side-pair cap at height \(7/16\), both
+zero-side inset bounds, and the same-original-frame argument forcing the
+central whole floor. No selected outsider three-chain is required.
+
+[ACTUAL_FOUR_230.md](ACTUAL_FOUR_230.md) excludes the normalized counts
+\((2,3,0)\) and \((0,3,2)\), when an original outsider cone three-chain
+is retained. Its central-endpoint lemma has a direct incircle proof with
+two convex endpoint checks. The theorem covers every vertical position of
+the third central original. Counts here are taken after the stated common
+center expansion; count invariance is not assumed.
+
+[ACTUAL_FOUR_140.md](ACTUAL_FOUR_140.md) excludes the normalized counts
+\((1,4,0)\) and \((0,4,1)\) under those same chain hypotheses. Its
+four-upper, three-upper/one-lower, and two-upper/two-lower central
+alternatives are exhaustive. The last alternative uses the selected
+middle's precise horizontal band to put both lower originals wholly
+beyond the established \(9/20\) central-strip cap; no general
+singleton-floor certificate is used.
+
+[ACTUAL_FOUR_CONE_TRIPLES.md](ACTUAL_FOUR_CONE_TRIPLES.md) extracts the
+five-square cap for count \((2,2,1)\) when the full-side main is in its
+middle position and both central outsiders are above both inner mains,
+with the reflected variants. It includes the complete low-side and
+coupled-cone floor lemmas. The two central originals are both used in the
+new physical-frame trap. The one-upper/one-lower complement remains open.
+
+The independent [central-height theorem](ACTUAL_FOUR_CENTRAL_BOUNDS.md)
+also excludes a lower central original whenever
+\(y_1\le-3/5\) and \(y_2\le-23/60\), with every reflected version.
+This theorem requires only the actual main chain. Its proof retains the
+correlated inset edges and one central frame against both main squares;
+all three surviving right-main separator alternatives are excluded by
+printed hand bounds. Section 9 of the same chapter also proves that a
+central original below either inner main forces that main's height above
+\(-9/10\), without a cone assumption or a second-main height assumption.
+
+The [nearby upper-central pair theorem](sources/UPPER_CENTRAL_PAIR_HALF_WIDTH_REPLACEMENT_HAND_PROOF.md)
+supplies another independently read hand input: two upper central originals
+with horizontal center gap at most \(1/2\) have a higher member whose
+whole floor exceeds \(2807/24000>1/10\). Its endpoint resource, two
+quartics, and concave scalar bound are all proved in the source.
+
+These results do not exhaust the domain in Section 1. In particular the
+main cone condition, the designated outsider cone chain where required,
+and every complementary occupancy and central-height alternative must
+still be retained. No unrestricted actual-four exclusion is asserted.
+
 ## 5. The precise surviving problem
 
 No argument above proves that a pair violating (18) exists. The

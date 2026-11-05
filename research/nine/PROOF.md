@@ -230,6 +230,9 @@ forces the other seven originals to meet one common central band. The
 note states the entire surviving predicate; it does not prove that domain
 empty. It now also excludes the upper and lower five-square callers of
 Section 3.1; the complementary geometric configurations remain in the
+domain. Section 4.3 of that analysis links the completed full-side and
+one-sided occupancy theorems, their exact additional cone hypotheses,
+and the new central-height exclusions. They do not exhaust the original
 domain. The [proof plan](PROOF_PLAN.md) keeps this research decision and
 the unrestricted closure open. Global equality classification remains a
 separate obligation.

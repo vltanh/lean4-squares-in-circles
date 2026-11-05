@@ -244,7 +244,10 @@ Suppose an actual four-chain has two right-side outsiders, both below
 the corresponding internal main M2, and suppose y_M2<=3/5.
 The physical clearance from the nearer main gives each outsider
 y<3/5-97/100=-37/100. Reflect y, and label their positive heights
-so y_U<=y_V. The side-strip 9/16 cap gives y_U<9/16. By (1),
+so y_U<=y_V. The independently proved signed side-pair cap in
+[ACTUAL_FOUR_FULL_SIDES.md](../ACTUAL_FOUR_FULL_SIDES.md), Section 2,
+gives y_U<7/16<9/16. Its proof uses only Section 2 of the present
+source, not this caller or the extreme-main theorem. By (1),
 \[
  l\le x_U<47/80<4/5,\qquad l\le x_V<u,
  \qquad 37/100<y_U\le y_V.

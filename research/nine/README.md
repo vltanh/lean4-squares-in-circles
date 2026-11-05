@@ -30,7 +30,12 @@ Read these documents in order:
    event cover, including persistent height four and simultaneous ties.
 6. [Actual-four-chain analysis](ACTUAL_FOUR_CHAIN.md): the fixed all-nine
    domain, a stronger endpoint budget, the common central band, and the
-   precise surviving geometric implication.
+   precise surviving geometric implication. Its Section 4.3 links the
+   complete [full-side theorem](ACTUAL_FOUR_FULL_SIDES.md),
+   [one-sided occupancy theorem](ACTUAL_FOUR_230.md),
+   [four-central occupancy theorem](ACTUAL_FOUR_140.md),
+   [two-upper-central caller and reusable floor lemmas](ACTUAL_FOUR_CONE_TRIPLES.md),
+   and [central-height exclusions](ACTUAL_FOUR_CENTRAL_BOUNDS.md).
 7. [Review of the earlier work](AUDIT.md): what to reuse, what failed, and
    what the old completion counts mean.
 8. [Mathematical sources](sources/README.md): the retained arguments and
@@ -60,5 +65,7 @@ is stated exactly and remains an explicit classical dependency. These
 chapters settle the proof inputs and coverage; the unrestricted geometric
 closure is still open. The complete five-square cap strengthens the
 available terminals and the surviving actual-four-chain predicate.
+Several whole occupancy domains with additional cone hypotheses are now
+excluded by hand; the remaining domains and hypotheses are kept explicit.
 Earlier computational results remain available in
 Git history; they are not silently promoted to self-contained paper proofs.

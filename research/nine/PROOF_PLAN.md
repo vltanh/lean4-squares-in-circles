@@ -142,6 +142,16 @@ every eligible triple, on both vertical sides. This is a stronger
 necessary condition; extracting such a triple throughout the domain
 remains unproved and does not change the status of G3 or G4.
 
+Section 4.3 records complete hand exclusions within that domain: the
+actual-and-cone full-side count \((2,1,2)\), and the normalized counts
+\((2,3,0)\), \((0,3,2)\), \((1,4,0)\), and \((0,4,1)\) with an
+outsider cone three-chain. The
+two-upper-central, full-side-middle \((2,2,1)\) caller and a stronger
+two-low-main exclusion are also proved, as are a one-main height bound
+and the nearby upper-central pair theorem. These are useful all-original
+theorems; their additional hypotheses and the remaining alternatives are
+explicit. They do not close the whole-domain gate G3.
+
 Use the weighted endpoint quantity \(W\), rather than requiring every weak
 edge to become an actual projection separation. Equation (3) of the draft
 retains both the projection losses and the positive surpluses. The latter
