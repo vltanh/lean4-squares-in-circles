@@ -6,6 +6,13 @@
 
 ## B16a: three more inherited regions, whole original still OPEN
 
+The [subsequent non-author review](computer_assisted/a2_00100_b16a_partial_checkpoints_non_author_review_20261105/B16_CHECKPOINTS_NONAUTHOR_REVIEW.md)
+accepts the exact published 75/203-node partial checkpoints. It independently
+checks all child unions, 99 new terminal arguments, old round prefixes and
+both archives; 89 positive weighted reserves are separately recomputed.
+Unchanged ancestral arithmetic is explicitly reused. This adds a scoped review,
+not an original-cell closure or a cold-portability claim.
+
 The [75-node native checkpoint](computer_assisted/a2_00100_b16a_75_native_checkpoint_20261105/README.md)
 has passed fresh independent exact arithmetic replay: 34 excluded terminal
 domains and 16 OPEN terminal domains in the same merged I21/I22 rectangle.
