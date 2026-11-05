@@ -1,0 +1,1601 @@
+{
+  "status": "PASS_FRESH_COMPLETE_FRONTIER_ATTACHMENT_THIRTEEN_OLD_DOMAINS",
+  "original_id": "negative-f14f5bc4eafdf50d",
+  "baseline_archive_sha256": "773d06284bc4a96815ee948c714bae563a661c93c29098d6b2a07c03345ea5de",
+  "baseline_manifest_sha256": "33b6b09891b8a9ff7432fcd8dcde390ba6d0c4d3b946363059ad4141f87b8384",
+  "current_manifest_sha256": "48d4fb429c905f58a13ca7e83780952d48147e53dc37844048e7bba98f79d77f",
+  "fresh_full_original_report_sha256": "f9a6182557232b14a10b9980cdb66c22166ad69566446a0ef9585ca43cb2d67f",
+  "original_parent_unchanged": true,
+  "original_path_unchanged": true,
+  "all_shared_closed_faces_retained": true,
+  "baseline_frontier_domains": 15,
+  "completed_baseline_frontier_domains": 13,
+  "unfinished_baseline_frontier_domains": [
+    209,
+    214
+  ],
+  "current_nodes": 537,
+  "current_excluded_leaves": 344,
+  "current_open_leaves": 12,
+  "domains": [
+    {
+      "baseline_leaf": 209,
+      "baseline_depth": 2,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 1,
+      "terminal_leaves": 1,
+      "excluded_leaves": 0,
+      "open_leaves": 1,
+      "complete_old_frontier_domain": false,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 210,
+      "baseline_depth": 2,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 1,
+      "terminal_leaves": 1,
+      "excluded_leaves": 1,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 212,
+      "baseline_depth": 3,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 1,
+      "terminal_leaves": 1,
+      "excluded_leaves": 1,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 213,
+      "baseline_depth": 3,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 1,
+      "terminal_leaves": 1,
+      "excluded_leaves": 1,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 214,
+      "baseline_depth": 3,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 45,
+      "terminal_leaves": 29,
+      "excluded_leaves": 18,
+      "open_leaves": 11,
+      "complete_old_frontier_domain": false,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 216,
+      "baseline_depth": 4,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 1,
+      "terminal_leaves": 1,
+      "excluded_leaves": 1,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 217,
+      "baseline_depth": 4,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 1,
+      "terminal_leaves": 1,
+      "excluded_leaves": 1,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 218,
+      "baseline_depth": 4,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 13,
+      "terminal_leaves": 11,
+      "excluded_leaves": 11,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 222,
+      "baseline_depth": 5,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 1,
+      "terminal_leaves": 1,
+      "excluded_leaves": 1,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 224,
+      "baseline_depth": 6,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 33,
+      "terminal_leaves": 24,
+      "excluded_leaves": 24,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            7,
+            "0"
+          ],
+          1
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 228,
+      "baseline_depth": 7,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 1,
+      "terminal_leaves": 1,
+      "excluded_leaves": 1,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            7,
+            "0"
+          ],
+          0
+        ],
+        [
+          "proxy",
+          [
+            4,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 334,
+      "baseline_depth": 9,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 15,
+      "terminal_leaves": 11,
+      "excluded_leaves": 11,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            7,
+            "0"
+          ],
+          0
+        ],
+        [
+          "proxy",
+          [
+            4,
+            8
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            8,
+            "0"
+          ],
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            4,
+            "0"
+          ],
+          1
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 336,
+      "baseline_depth": 10,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 77,
+      "terminal_leaves": 42,
+      "excluded_leaves": 42,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            7,
+            "0"
+          ],
+          0
+        ],
+        [
+          "proxy",
+          [
+            4,
+            8
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            8,
+            "0"
+          ],
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            4,
+            "0"
+          ],
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            6,
+            "0"
+          ],
+          1
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 347,
+      "baseline_depth": 13,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 1,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 1,
+      "terminal_leaves": 1,
+      "excluded_leaves": 1,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            7,
+            "0"
+          ],
+          0
+        ],
+        [
+          "proxy",
+          [
+            4,
+            8
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            8,
+            "0"
+          ],
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            4,
+            "0"
+          ],
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            6,
+            "0"
+          ],
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            6,
+            "-5999/36734"
+          ],
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            8,
+            "8546/46343"
+          ],
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            4,
+            "-18804/58519"
+          ],
+          0
+        ]
+      ]
+    },
+    {
+      "baseline_leaf": 348,
+      "baseline_depth": 13,
+      "original_initial_state_unchanged": true,
+      "saved_prefix_rounds_reused": 0,
+      "all_descendants_freshly_replayed": true,
+      "subtree_nodes": 11,
+      "terminal_leaves": 9,
+      "excluded_leaves": 9,
+      "open_leaves": 0,
+      "complete_old_frontier_domain": true,
+      "exact_path": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            5,
+            8
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          "proxy",
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            7,
+            "0"
+          ],
+          0
+        ],
+        [
+          "proxy",
+          [
+            4,
+            8
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          "angle_cut",
+          [
+            8,
+            "0"
+          ],
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            4,
+            "0"
+          ],
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            6,
+            "0"
+          ],
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            6,
+            "-5999/36734"
+          ],
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            8,
+            "8546/46343"
+          ],
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            4,
+            "-18804/58519"
+          ],
+          1
+        ]
+      ]
+    }
+  ],
+  "whole_original_proved": false,
+  "new_original_ledger_credit": 0,
+  "new_mask_ledger_credit": 0,
+  "fresh_native_replay": true,
+  "new_portable_replay": false
+}

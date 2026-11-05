@@ -1,0 +1,48 @@
+{
+  "schema": "bf14_thirteen_frontier_native_delta_archive_v1",
+  "archive": "bf14_thirteen_native_delta.tar.xz",
+  "archive_bytes": 29947036,
+  "archive_sha256": "f52fe90e436164da09dcc1503ab7d8838ce9a1f884e74c6566b21c8ed17779a4",
+  "parts": [
+    {
+      "file": "bf14_thirteen_native_delta.tar.xz.part001",
+      "bytes": 8388608,
+      "sha256": "fa4182daae9c9446971e10828f27b06caa0b0f2fe1f3e4cab9beb0be0e1ac6ce"
+    },
+    {
+      "file": "bf14_thirteen_native_delta.tar.xz.part002",
+      "bytes": 8388608,
+      "sha256": "a8e679e44497e82cd3352a2d4ab487b9f566099ca3fb83e2d3be82a868742153"
+    },
+    {
+      "file": "bf14_thirteen_native_delta.tar.xz.part003",
+      "bytes": 8388608,
+      "sha256": "3eb523458ccfaf8c2f716da447122c4448ca6098b55699db3fd0d272a854b225"
+    },
+    {
+      "file": "bf14_thirteen_native_delta.tar.xz.part004",
+      "bytes": 4781212,
+      "sha256": "e7e002e619fbb480f694a5e0d9effa65b493ec7ce49d11696f351e15be34f57b"
+    }
+  ],
+  "members_verified": 234,
+  "all_member_hashes_match": true,
+  "base_archive_sha256": "773d06284bc4a96815ee948c714bae563a661c93c29098d6b2a07c03345ea5de",
+  "prior_archive_sha256": "c6e8dfc170a3d88366a6cd6f0955302ca5f664c626790ca91387f84c42502cb6",
+  "current_native_paths": 854,
+  "novel_input_blobs": 228,
+  "completed_baseline_frontier_domains": 13,
+  "unfinished_baseline_frontier_domains": [
+    209,
+    214
+  ],
+  "nodes": 537,
+  "excluded_leaves": 344,
+  "open_leaves": 12,
+  "fresh_native_replay": true,
+  "new_portable_replay": false,
+  "whole_original_proved": false,
+  "new_original_ledger_credit": 0,
+  "new_mask_ledger_credit": 0,
+  "seconds": 151.16271253499872
+}
