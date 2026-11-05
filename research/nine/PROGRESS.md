@@ -21,6 +21,16 @@ independent manuscript review claim. **Zero new originals or masks:**
 entire merged rectangle excluded before assembly with its 14 proved quarters.
 No Lean, Lake, compilation or CI was run.
 
+The subsequent [finite physical H/I cover](computer_assisted/a2_00100_b16a_hi_cover_native_checkpoint_20261105/README.md)
+also passes fresh exact replay: 203 nodes, 115 excluded terminals and 47 OPEN
+terminals. All 16 eight-way unions are complete; their 128 children give 81
+exclusions but **zero additional completed inherited regions**. Every parent
+retains a survivor. The full source/input archive and exact frontier are saved;
+the phase-only tactic is stopped with no numerical search running. This grants
+zero original-cell or mask credit. The smaller 75-node cover remains available
+for a different approach; A-c744 is the next whole-original target under the
+active directive after this bounded B16 attempt.
+
 ## B7: seven complete components in a portable 1,011-domain cover
 
 The [latest B7 checkpoint](computer_assisted/a2_00100_b7_completed_components1011_checkpoint_v1/README.md)

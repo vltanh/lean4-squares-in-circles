@@ -16,10 +16,17 @@ cells, and their counts are not an effort or completion percentage.
 
 The packet preserves the full native input map, raw exact replay and verified
 archive. Its transitive published ancestry is still required; no standalone
-cold replay or independent manuscript review is claimed. Later H/I discovery
-is separate from this immutable checkpoint. **Zero original-cell or mask
-credit:** 224/231 and 8/32 remain CLOSED. Continue the entire merged rectangle,
-then assemble with all 14 established quarters. No Lean, Lake or CI.
+cold replay or independent manuscript review is claimed. The subsequent
+[finite H/I cover](computer_assisted/a2_00100_b16a_hi_cover_native_checkpoint_20261105/README.md)
+is separately exact-replayed: 203 nodes, 115 excluded terminals and 47 OPEN.
+Its 16 full eight-way unions exclude 81 alternatives, but every parent has a
+survivor; zero further inherited regions close. The phase-only tactic is
+stopped, with its complete frontier and recovery inputs saved and no numerical
+search running. **Zero original-cell or mask credit:** 224/231 and 8/32 remain
+CLOSED. The smaller 75-node cover remains an alternative starting point.
+Do not repeat the stopped phase-only H/I test without changed premises.
+Next try A-c744 under the active directive; B16 still needs its entire merged
+rectangle and all 14 established quarters assembled. No Lean, Lake or CI.
 
 ## B7: seven complete components in a portable 1,011-domain cover
 
