@@ -2,6 +2,26 @@
 
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Completed bounded A and B16 attempts
+
+The [finite A correlation continuation](computer_assisted/a_c744_finite_existing_correlations_v2/README.md)
+freshly checks twelve appended rounds, ten deductions and nineteen premises
+using only accepted height, pair-difference and endpoint rows. Six payloads
+change; all 165 initial states, prior rounds and complete alternatives remain.
+The cover still has 118 excluded and fourteen OPEN leaves. Stabilization is
+under the explicit 1/2000 rounded-improvement cutoff, not a claim that smaller
+gains are impossible. The compact 44-member delta passes fresh root extraction
+and exact byte/prefix verification. This bounded A tactic is stopped.
+
+The [two B16 bounded screens](computer_assisted/b16_two_bounded_negative_screens_v1/README.md)
+also stop without a complete parent exclusion. All 112 D/G alternatives over
+fourteen accepted OPEN states are checked; 45 alternatives are excluded and
+67 survive. A separate regional-bound screen improves sixteen intervals in
+six of thirteen candidate states but finds no terminal. Both retain their
+complete reports, source identities, observed exits and exact ancestry scope.
+No solver or new inequality family was used. No original or mask count changes;
+Bf14 remains the first complete-original target, followed by B16 and A.
+
 ## Fourteen additional C887 exclusions; completed 011 evidence preserved
 
 The [C887 interval-terminal continuation](computer_assisted/c887_fourteen_interval_terminal_continuation_v1/README.md)

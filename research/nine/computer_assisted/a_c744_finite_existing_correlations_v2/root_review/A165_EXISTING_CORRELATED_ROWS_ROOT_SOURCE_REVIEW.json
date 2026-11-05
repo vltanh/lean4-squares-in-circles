@@ -1,0 +1,31 @@
+{
+  "status": "PASS_ROOT_FINITE_A165_EXISTING_ROW_CONTINUATION_SOURCE_AND_COVER_REVIEW",
+  "source_binding_sha256": "f15fe302462cbf7b4b92e8559aadbc8044ff6b829acf53b84949ae8ad8182205",
+  "local_sources_read_in_full": [
+    "EXECUTION_PROTOCOL.json",
+    "HAND_ATTACHMENT.md",
+    "construct_continuation.py",
+    "ordinary_isolation.py",
+    "scope.py",
+    "verify_continuation.py"
+  ],
+  "external_pins_rehashed": 499,
+  "source_manifest_sha256": "4469ce8ceda7692f49faa58ece25872c0448fbd8fc86447acb6facf0cd4e2283",
+  "source_full165_report_sha256": "98bc7f287f1eb62e0a132437d808c48121a017317adde4ea9083f83364d2ad8f",
+  "physical_and_cover_review": [
+    "All non-bound premises already exist in the accepted adapter: the whole-original I64 height row and144 certified Cartesian pair-difference rows.",
+    "Exact coordinate isolation adds current original center endpoint rows with positive half,unit or double weights. The summed vector is the claimed signed coordinate and residual is zero.",
+    "Each ordinary round uses one immutable propagated state; subsequent rounds start from the preceding certified state. Rounding is outward on the unchanged grid.",
+    "The exact entry does not import the row-isolation producer and reconstructs every newly weighted row with the accepted adapter and unchanged CORE.",
+    "Only the fourteen retained OPEN leaf final states can change, by at most four rounds apiece. Every original initial state and old round prefix remains identical.",
+    "All nonleaf payloads, edge alternatives and child initial states remain unchanged. Complete source coverage is reused by exact identity, and all165 nodes,33unions and132leaf domains are traversed for fresh final status composition.",
+    "Historical old165 arithmetic is explicitly reused; only new suffix arithmetic is freshly replayed. No auxiliary,theorem family,split or path predicate is added."
+  ],
+  "maximum_rounds_per_leaf": 4,
+  "maximum_new_leaf_domains": 0,
+  "constructor_and_exact_gate_authorized": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "numerical_solves": 0,
+  "lean_lake_ci_run": false
+}

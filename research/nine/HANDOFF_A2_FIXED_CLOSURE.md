@@ -2,6 +2,19 @@
 
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [finite A correlation attempt](computer_assisted/a_c744_finite_existing_correlations_v2/README.md)
+is complete and stopped: twelve exact rounds improve six leaves but add no
+exclusion. Its 165-node cover remains 118 excluded / fourteen OPEN, with every
+initial state and prior round retained. The chosen 1/2000 rounded-improvement
+cutoff limits its stabilization statement. The 44-member delta, full fresh
+suffix report and independent root extraction/byte review are preserved.
+The [two bounded B16 screens](computer_assisted/b16_two_bounded_negative_screens_v1/README.md)
+are likewise stopped; neither closes a parent. Their seventeen-member archive
+retains all 112 D/G cases, 67 surviving alternatives, the separate thirteen-state
+regional-bound screen and both observed zero exits. These are reusable exact
+results, with zero original or mask credit. Continue Bf14 first; do not repeat
+these exhausted screens or resume 011 while the current mask remains OPEN.
+
 The [new C887 exact continuation](computer_assisted/c887_fourteen_interval_terminal_continuation_v1/README.md)
 retains all 91 nodes and eighteen complete covers, with seventeen excluded and
 fifty-six OPEN leaves after fourteen new interval terminals. Its packet

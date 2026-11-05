@@ -1,0 +1,133 @@
+{
+  "arithmetic_repeated_for_publication": false,
+  "cold_self_contained_proof_claimed": false,
+  "evidence": {
+    "archive_members": 44,
+    "archive_sha256": "d915c8d3c208e4e64eafc80f56ebf9c980b5a617e9bf6b701184571a47ec77ec",
+    "changed_payloads": [
+      151,
+      152,
+      154,
+      156,
+      157,
+      163
+    ],
+    "continued_manifest_sha256": "5c06610c0f8e4e317707b4f352277a2530d39e7f3cb63dfc5b03089571ccd98c",
+    "exact_report_sha256": "eee73dfe46135c506568026e92bb32e16cbbd5751bb26b87768504fe3175061d",
+    "excluded_leaves": 118,
+    "nodes": 165,
+    "observed_exact_gate_exit": 0,
+    "open_leaves": 14,
+    "proposal_cutoff": "1/2000 after outward2^-20 rounding",
+    "tactic_stopped": true,
+    "unchanged_payloads": 159
+  },
+  "external_published_dependencies_required": true,
+  "files": {
+    "CUTOFF_SCOPE_NOTE.md": {
+      "bytes": 658,
+      "sha256": "08dae94e37f617c61e2502b1936c4b72354d59fb728ef40e67bd1739f5e0d664"
+    },
+    "README.md": {
+      "bytes": 2510,
+      "sha256": "86771d854b6181a781caa2ab3ac198ddc732d2d515104dbc7b6c23f78522ab8b"
+    },
+    "delta/A165_CORRELATED_DELTA_ARCHIVE_INVENTORY_V2.json": {
+      "bytes": 7469,
+      "sha256": "7be1350a42c85db9e2c375f7f676d03ca2f1402529348f9aef0a7438c97d3bd7"
+    },
+    "delta/A165_CORRELATED_DELTA_BYTE_AUDIT_V2.json": {
+      "bytes": 441,
+      "sha256": "cf719be8d429cc34e0913a21f177a424a61d1776aa59ae87442679eae9757dc5"
+    },
+    "delta/A165_CORRELATED_DELTA_FRESH_EXTRACTION_V2.json": {
+      "bytes": 430,
+      "sha256": "9546e43e5c997e8e739231bc7af0e2b429eaed1ac8e739bac15d790ccd5a4dec"
+    },
+    "delta/A165_CORRELATED_EXISTING_CONTINUATION_EXACT_REPLAY_V2.json": {
+      "bytes": 197947,
+      "sha256": "eee73dfe46135c506568026e92bb32e16cbbd5751bb26b87768504fe3175061d"
+    },
+    "delta/A165_CORRELATED_EXISTING_OBSERVED_EXECUTION_V2.json": {
+      "bytes": 945,
+      "sha256": "fc17ba0b904a30da08c592a59de91feed0fd52440dea52fba870bbd27a76d529"
+    },
+    "delta/A165_CORRELATED_EXTRACTED_BYTE_AUDIT_V2.json": {
+      "bytes": 441,
+      "sha256": "cf719be8d429cc34e0913a21f177a424a61d1776aa59ae87442679eae9757dc5"
+    },
+    "delta/A165_CORRELATED_NATIVE_DELTA_READY_V2.json": {
+      "bytes": 2668,
+      "sha256": "932aab328ba3154392b9c234f8644933f45ef1faedadafbdbf4bec571e6d5309"
+    },
+    "delta/A165_CORRELATED_TRANSPORT_V2_FROM_PRIOR.diff": {
+      "bytes": 1134,
+      "sha256": "7acf774e89f04756d8df0af7159e3c5bf284d54bc8160183fd7c7ce391cec096"
+    },
+    "delta/a165_correlated_delta_transport_v2.py": {
+      "bytes": 7082,
+      "sha256": "97b249fdc0ba507e0d4cd68655ceef9c0046200e1a67ad74c00f70f16db0ae7c"
+    },
+    "delta/a165_existing_correlations_native_delta_v2.tar.xz": {
+      "bytes": 121024,
+      "sha256": "d915c8d3c208e4e64eafc80f56ebf9c980b5a617e9bf6b701184571a47ec77ec"
+    },
+    "delta/build_a165_correlated_native_delta_v2.py": {
+      "bytes": 6889,
+      "sha256": "5b9c538e79a87001619862ea9e6b29749ef0cc935df89041ef0b2f327b6db136"
+    },
+    "delta/materialize_a165_correlated_delta_v2.py": {
+      "bytes": 4948,
+      "sha256": "8533a0a2ae3a1cfc0fc2bd14cb62e9cd156d0653c00dfd87522a13f363cb3094"
+    },
+    "package_reviewed_evidence.py": {
+      "bytes": 10911,
+      "sha256": "07f1a14c5c38eda4daadce72186e59102a2b86086c6777aca085d32a816bebc7"
+    },
+    "peer_review/A165_CORRELATED_DELTA_INDEPENDENT_SOURCE_REVIEW.json": {
+      "bytes": 1773,
+      "sha256": "996314429e4dd22504134fe8b42c3b26765aa2d6691f5332c01fec525d12c563"
+    },
+    "peer_review/A165_CORRELATED_DELTA_INDEPENDENT_SOURCE_REVIEW.md": {
+      "bytes": 2374,
+      "sha256": "363d9a0d228c6d0516ba6fa8506dbb8cd220c500f7c4377f9398daf47a11651b"
+    },
+    "readable_evidence/DEPENDENCIES.json": {
+      "bytes": 744,
+      "sha256": "b851a1ba003d30d97e7af48ed7d62624703e485b4ba0ab7cd600464dfbff539c"
+    },
+    "readable_evidence/INPUT_MANIFEST.json": {
+      "bytes": 6922,
+      "sha256": "f3778cf2b2a583cdce4bacb8691add8a7d14b1d5a6c1256d6b7d0965fb8b1781"
+    },
+    "readable_evidence/README.md": {
+      "bytes": 1985,
+      "sha256": "efce038b2869707bb7d362e06735ffe21d5a10e2660c277b5bf3c3e699c8e291"
+    },
+    "readable_evidence/TREE_ASSEMBLY.json": {
+      "bytes": 32698,
+      "sha256": "84542ba1ed71d6de743a1628a1b9d24bcfe81efd6d10e0408be7e17d1b0c3458"
+    },
+    "root_review/A165_CORRELATED_DELTA_ROOT_BYTE_AND_PREFIX_AUDIT_V2.json": {
+      "bytes": 441,
+      "sha256": "cf719be8d429cc34e0913a21f177a424a61d1776aa59ae87442679eae9757dc5"
+    },
+    "root_review/A165_CORRELATED_DELTA_ROOT_FRESH_EXTRACTION_V2.json": {
+      "bytes": 430,
+      "sha256": "9546e43e5c997e8e739231bc7af0e2b429eaed1ac8e739bac15d790ccd5a4dec"
+    },
+    "root_review/A165_EXISTING_CORRELATED_ROWS_ROOT_SOURCE_REVIEW.json": {
+      "bytes": 2111,
+      "sha256": "d4400220e8953460cc67a3111bd16f727fc99e6b6480bff1d5b6ccd5b17e2bf5"
+    },
+    "root_review/A165_EXISTING_CORRELATED_ROWS_V2_ROOT_SOURCE_REVIEW.json": {
+      "bytes": 1171,
+      "sha256": "d99d3e89a786ee49f5f00293381c4a02ad4fa0d55728bd3b296676cd90fe710d"
+    }
+  },
+  "lean_lake_ci_run": false,
+  "new_masks": 0,
+  "new_original_cells": 0,
+  "schema": "completed_bounded_exact_attempt_preservation_v1",
+  "source_bytes_unchanged": true
+}

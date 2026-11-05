@@ -1,0 +1,89 @@
+{
+  "schema": "B16_two_bounded_negative_screens_archive_v1",
+  "members": {
+    "README.md": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/b16_bounded_negative_screens_v1/README.md",
+      "sha256": "2628953c33df9a48a42d5f1d194030cff9b34e5ede292d4f8ae8edff13b0767c",
+      "bytes": 3065
+    },
+    "build_archive.py": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/b16_bounded_negative_screens_v1/build_archive.py",
+      "sha256": "4c95d11e560ba585291042c03ad27a032e309c6f7640873f25f09ce5fc9c7d94",
+      "bytes": 5112
+    },
+    "dependencies/EXTERNAL_SNAPSHOT_EXIT.json": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/B16_EXTERNAL127_SNAPSHOT_V3_EXIT_RECEIPT.json",
+      "sha256": "fa032147e53f40cc73bc61ba34d56411603930f2db1c3a945094e8ce14c26429",
+      "bytes": 675
+    },
+    "dependencies/EXTERNAL_SNAPSHOT_RECEIPT.json": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/b16_external127_snapshot_v1/SNAPSHOT_RECEIPT.json",
+      "sha256": "4de9cda71a6b54e2c8fd9e02637c465a93509f668c20af77ccbdb033d4889c3b",
+      "bytes": 156625
+    },
+    "dg/OBSERVED_EXIT.json": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/B16_DG14_COMPLETE_EIGHT_SCREEN_V1_EXIT_RECEIPT.json",
+      "sha256": "69e9c66cf1dbd7444c6319c75c0e9d0f3e0cb7cf411802bb82def1107ed2386e",
+      "bytes": 681
+    },
+    "dg/SCREEN.json": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/B16_DG14_COMPLETE_EIGHT_SCREEN_V1.json",
+      "sha256": "4729b1bb2ddb7fbc45c19b69cad42bea58fbb23dd9fc5913ae386361310af396",
+      "bytes": 20693143
+    },
+    "dg/SCREEN.log": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/B16_DG14_COMPLETE_EIGHT_SCREEN_V1.log",
+      "sha256": "d29559ccaaaa9d9f27126922e46579b5390a9983d520b9c627af4c5b3264f35c",
+      "bytes": 2762
+    },
+    "dg/SOURCE_BINDING.json": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/b16_dg_exact_screen_v1/SOURCE_BINDING.json",
+      "sha256": "73e1d6129451b9a5c801894b5e532796c97feb3bd54760fdd228fb8d37867833",
+      "bytes": 2095
+    },
+    "dg/screen.py": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/b16_dg_exact_screen_v1/screen.py",
+      "sha256": "e6ba70428259ff072dad20fd1c1e8b25384e3220894d8c008995d6d54703ac9b",
+      "bytes": 9674
+    },
+    "intersection/OBSERVED_EXIT.json": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/B16_EXTERNAL127_ROOT_BOUND_SCREEN_V1_EXIT_RECEIPT.json",
+      "sha256": "1a8e813be70af89fdab07c074aedd132201095ed656df111221ff8f8a16d8481",
+      "bytes": 701
+    },
+    "intersection/SCREEN.json": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/B16_EXTERNAL127_ROOT_BOUND_SCREEN_V1.json",
+      "sha256": "5cc6e33cfa8e88e8339c4eae1e14be30f7e7b0efebdbae030d9f167e2e345133",
+      "bytes": 5585034
+    },
+    "intersection/SCREEN.log": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/B16_EXTERNAL127_ROOT_BOUND_SCREEN_V1.log",
+      "sha256": "af92479983c309f38637e03a699627a18abc33808e9541205e8e10d9c5a961c0",
+      "bytes": 2464
+    },
+    "intersection/SOURCE_BINDING.json": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/b16_external127_root_bound_screen_v1/SOURCE_BINDING.json",
+      "sha256": "2954f6e557296d661fbc5f8f3e241d20e67c5dcc4bfb6dc0b72395a76d81eadd",
+      "bytes": 3394
+    },
+    "intersection/screen.py": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/b16_external127_root_bound_screen_v1/screen.py",
+      "sha256": "6fc906cc70e341169cce739b41570ed0f4d8ad87a331d5fd1c85d5fb8be672e1",
+      "bytes": 10096
+    },
+    "source/existing_propagation_binding.json": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/b16_existing_propagation_screen_v1/SOURCE_BINDING.json",
+      "sha256": "568cf8f04fe4d26f329f71b9dc1a3d7d685ce6cd5465a3803724588fbea17a07",
+      "bytes": 1672
+    },
+    "source/existing_propagation_screen.py": {
+      "native_path": "/workspace/scratch/f9f48fcfb253/b_work/b16_existing_propagation_screen_v1/screen_repeated_propagation.py",
+      "sha256": "ce32949fa17f52c54fc0e9b24b59232584f8f23f48580f3c3165b079ba54bc61",
+      "bytes": 10185
+    }
+  },
+  "mathematical_credit": 0,
+  "self_contained_proof_claimed": false,
+  "native_dependencies_explicit": true,
+  "no_raw_tar_created": true
+}

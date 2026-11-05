@@ -1,0 +1,15 @@
+{
+  "status": "PASS_A165_CORRELATED_DELTA_BYTE_AND_PREFIX_VERIFICATION",
+  "input_manifest_sha256": "f3778cf2b2a583cdce4bacb8691add8a7d14b1d5a6c1256d6b7d0965fb8b1781",
+  "files": 44,
+  "nodes": 165,
+  "reused_payloads": 159,
+  "changed_payloads": 6,
+  "excluded_leaves": 118,
+  "open_leaves": 14,
+  "source_hashes_unchanged": true,
+  "arithmetic_replayed": false,
+  "cold_proof_claimed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}
