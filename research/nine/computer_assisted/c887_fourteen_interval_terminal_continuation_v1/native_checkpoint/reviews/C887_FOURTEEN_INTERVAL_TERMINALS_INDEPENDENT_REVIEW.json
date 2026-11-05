@@ -1,0 +1,39 @@
+{
+  "status": "PASS_INDEPENDENT_C887_FOURTEEN_INTERVAL_TERMINAL_SOURCE_REVIEW",
+  "source_binding_sha256": "3883125c8fc8bb01fde711577b858f365b6b24c10b0a0665625fe4d5ada7fa15",
+  "reviewed_files": {
+    "HAND_ATTACHMENT.md": "6ad0eb5095dc34ba3cd1a7b2bfff412dcfdbf4849f85f1ddb0de79a0f93acf39",
+    "attachment.py": "9a49726466ea70ca900f79403c7bd5ffdc224dba6af385d235c9444f7d4e882d",
+    "construct_continuation.py": "d40d3d6454101f41b52cff29dc225b8c31ae820445c487d6991fdda422eaa6f2",
+    "historical_leaf_source.py": "f55e45c0a20d89adb3bbeb29847f056419446a46a17af5aae693e5ce13871c70",
+    "verify_continuation.py": "6a0a51dbd0340ba87ae7c8e5bbb36aa6e2fbc7695df031b0cb1e515d2d091156"
+  },
+  "hand_review_sha256": "38aef9614c681ed7be0339c2c1cf95064ac74a2d26a9590269e5defca156bb7b",
+  "historical_helper_identical_to_accepted_three_terminal_helper": true,
+  "new_terminal_leaves": [
+    1,
+    3,
+    5,
+    11,
+    12,
+    17,
+    19,
+    22,
+    71,
+    73,
+    75,
+    84,
+    85,
+    87
+  ],
+  "unchanged_payloads": 77,
+  "expected_nodes": 91,
+  "expected_excluded_leaves": 17,
+  "expected_open_leaves": 56,
+  "constructor_run_by_reviewer": false,
+  "arithmetic_replayed": false,
+  "new_hull_family_used": false,
+  "actual_gate_pending": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

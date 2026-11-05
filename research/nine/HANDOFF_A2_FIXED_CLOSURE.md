@@ -2,6 +2,16 @@
 
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [new C887 exact continuation](computer_assisted/c887_fourteen_interval_terminal_continuation_v1/README.md)
+retains all 91 nodes and eighteen complete covers, with seventeen excluded and
+fifty-six OPEN leaves after fourteen new interval terminals. Its packet
+materializes directly against the published original base. The completed
+[strict-011 C-height first use](computer_assisted/strict_011_c_height_first_exact_cover_use_v1/README.md)
+is preserved with full fresh reports, but further 011 development is paused
+and its separate numerical pilot never launched. Bf14 remains first, using
+the corrected published 349-node checkpoint and all fifteen OPEN domains.
+No original or whole-mask count changes.
+
 The [retained A165 continuation](computer_assisted/a_c744_i64_retained_cover_continuation_v1/README.md)
 passes its full fresh consumer replay and leaves fourteen OPEN leaves, with
 three new internal exclusions. A separate first use of the accepted I64

@@ -1,0 +1,15 @@
+{
+  "schema": "fresh_full_strict011_C_height_context_tree_v1",
+  "root_document": {
+    "file": "root_document.json",
+    "sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b"
+  },
+  "root": 0,
+  "nodes": [
+    {
+      "id": 0,
+      "file": "nodes/node_000000_b9109dd2bf6365ec68913b34fa8efabc69fec44f00e16ce5280fabdea77dddc7.json",
+      "sha256": "b9109dd2bf6365ec68913b34fa8efabc69fec44f00e16ce5280fabdea77dddc7"
+    }
+  ]
+}

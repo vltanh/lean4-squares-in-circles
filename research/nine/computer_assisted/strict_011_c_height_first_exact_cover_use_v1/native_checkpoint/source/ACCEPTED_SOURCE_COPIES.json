@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "bytes": 11661,
+      "copied_as": "accepted_strengthened_wrapper.py",
+      "sha256": "48f09d6a110fc0a735dac12300cae363369298e2098e4ccf7110f1023673968c",
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict011_strengthened_tree_v1/verify_strengthened_complete_tree.py"
+    },
+    {
+      "bytes": 6317,
+      "copied_as": "strengthened_adapter.py",
+      "sha256": "eda928822b3a9af0ca002a3f9a5c1c7b124b04ad7ab3cb0f3e2407961f3df0dd",
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict011_strengthened_tree_v1/strengthened_adapter.py"
+    },
+    {
+      "bytes": 24060,
+      "copied_as": "accepted_base_discovery.py",
+      "sha256": "58a85d7976aff42bbda10137f0c951985c674e220568f93d9244dfdf1b92275e",
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict011_strengthened_discovery_v1/accepted_base_discovery.py"
+    },
+    {
+      "bytes": 3728,
+      "copied_as": "atomic_json_checkpoint.py",
+      "sha256": "2f17219f8689b343f7f1c29e7a314272bd5ace8d25fbee11f58cd20b44543eb3",
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict011_strengthened_discovery_v1/atomic_json_checkpoint.py"
+    }
+  ],
+  "numerical_solver_called": false,
+  "status": "PASS_EXACT_UNCHANGED_SOURCE_COPIES"
+}

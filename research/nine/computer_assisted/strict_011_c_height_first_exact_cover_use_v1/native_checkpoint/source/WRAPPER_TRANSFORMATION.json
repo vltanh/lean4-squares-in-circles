@@ -1,0 +1,112 @@
+{
+  "accepted_source_sha256": "48f09d6a110fc0a735dac12300cae363369298e2098e4ccf7110f1023673968c",
+  "automatic_mask_credit": 0,
+  "complete_change_list": [
+    {
+      "after": "Fresh strict011 complete tree with a separately gated C-height union.",
+      "before": "Fresh full strict011 exact 4/8/2 tree replay, with no legacy ancestry.",
+      "index": 0
+    },
+    {
+      "after": "The old 4/8/2 dispatch and base states are unchanged; explicit height contexts are inherited.",
+      "before": "The original whole-caller symmetry and complete 4/8/2 walk are unchanged.",
+      "index": 1
+    },
+    {
+      "after": "HEIGHT_CONTEXT_ADAPTER_SHA = 'f06d053b6f58f26c7ded2097f13f915f362c0bd93c821b4574694ed77b805533'\nSTRENGTHENED_ADAPTER_SHA =",
+      "before": "STRENGTHENED_ADAPTER_SHA =",
+      "index": 2
+    },
+    {
+      "after": "def verify(manifest_path, workspace, model_folder, corner_folder, guard_folder, scalar_output_folder, height_folder, height_scalar_output_folder):",
+      "before": "def verify(manifest_path, workspace, model_folder, corner_folder, guard_folder, scalar_output_folder):",
+      "index": 3
+    },
+    {
+      "after": "    for path, expected in adapter.binding_hashes().items():\n        pin(path, expected)\n    height_path = Path(__file__).resolve().parent/'height_context_adapter.py'\n    pin(height_path, HEIGHT_CONTEXT_ADAPTER_SHA)\n    H = read_module('strict011_height_context_attachment', height_path, HEIGHT_CONTEXT_ADAPTER_SHA)\n    height = H.Manager(adapter, I, height_folder, guard_folder, base_document, height_scalar_output_folder)\n    for path, expected in height.binding_hashes().items():\n        pin(path, expected)\n    manifest_hash = pin(manifest_path)",
+      "before": "    for path, expected in adapter.binding_hashes().items():\n        pin(path, expected)\n    manifest_hash = pin(manifest_path)",
+      "index": 4
+    },
+    {
+      "after": "assert manifest['schema'] == 'fresh_full_strict011_C_height_context_tree_v1'",
+      "before": "assert manifest['schema'] == 'fresh_full_strict011_strengthened_representative_tree_v1'",
+      "index": 5
+    },
+    {
+      "after": "    def walk(node_id, expected_state, height_context):",
+      "before": "    def walk(node_id, expected_state):",
+      "index": 6
+    },
+    {
+      "after": "        record = json.loads(path.read_text())\n        height.check_record_envelope(record, height_context)\n        height.assert_active_context(height_context)\n        adapter = height.adapter(height_context)\n        audit, state = G.check_record(record, expected_state, adapter)",
+      "before": "        record = json.loads(path.read_text())\n        audit, state = G.check_record(record, expected_state, adapter)",
+      "index": 7
+    },
+    {
+      "after": "        audits.append(dict(node=node_id, file=entry['file'], sha256=entry['sha256'], arithmetic=audit, height_context=deepcopy(height_context)))",
+      "before": "        audits.append(dict(node=node_id, file=entry['file'], sha256=entry['sha256'], arithmetic=audit))",
+      "index": 8
+    },
+    {
+      "after": "            if kind == H.HEIGHT_KIND:\n                height_successors = height.accept_union(node_id, state, height_context, split)\n                successors = [(child, child_state) for child, child_state, context in height_successors]\n                child_contexts = {child: context for child, child_state, context in height_successors}\n            elif kind in ('sat', 'proxy'):",
+      "before": "            if kind in ('sat', 'proxy'):",
+      "index": 9
+    },
+    {
+      "after": "            if kind != H.HEIGHT_KIND:\n                child_contexts = {child: deepcopy(height_context) for child, child_state in successors}\n            results = [walk(child, child_state, child_contexts[child]) for child, child_state in successors]",
+      "before": "            results = [walk(child, child_state) for child, child_state in successors]",
+      "index": 10
+    },
+    {
+      "after": "    complete = walk(manifest['root'], initial, None)",
+      "before": "    complete = walk(manifest['root'], initial)",
+      "index": 11
+    },
+    {
+      "after": "    assert 4*splits['proxy']+8*splits['sat']+2*splits['angle']+4*splits[H.HEIGHT_KIND] == len(entries)-1",
+      "before": "    assert 4*splits['proxy']+8*splits['sat']+2*splits['angle'] == len(entries)-1",
+      "index": 12
+    },
+    {
+      "after": "    strengthened_audit = adapter.final_audit()\n    height_audit = height.final_audit()",
+      "before": "    strengthened_audit = adapter.final_audit()",
+      "index": 13
+    },
+    {
+      "after": "'PASS_COMPLETE_STRICT011_C_HEIGHT_REPRESENTATIVE_PHYSICAL_TREE' if complete else 'PASS_COMPLETE_STRICT011_C_HEIGHT_REPRESENTATIVE_COVER_WITH_OPEN_DOMAINS'",
+      "before": "'PASS_COMPLETE_STRICT011_STRENGTHENED_REPRESENTATIVE_PHYSICAL_TREE' if complete else 'PASS_COMPLETE_STRICT011_STRENGTHENED_REPRESENTATIVE_COVER_WITH_OPEN_DOMAINS'",
+      "index": 14
+    },
+    {
+      "after": "normalized_root=True, conditional_theorem_used=(strengthened_audit['conditional_theorem_used'] or bool(height_audit['complete_height_unions'])),",
+      "before": "normalized_root=True, conditional_theorem_used=strengthened_audit['conditional_theorem_used'],",
+      "index": 15
+    },
+    {
+      "after": "        strengthened_attachment=strengthened_audit, height_cover_attachment=height_audit,",
+      "before": "        strengthened_attachment=strengthened_audit,",
+      "index": 16
+    },
+    {
+      "after": "    parser.add_argument('--scalar-output-folder', type=Path, required=True)\n    parser.add_argument('--height-folder', type=Path, required=True)\n    parser.add_argument('--height-scalar-output-folder', type=Path, required=True)",
+      "before": "    parser.add_argument('--scalar-output-folder', type=Path, required=True)",
+      "index": 17
+    },
+    {
+      "after": "                    args.guard_folder, args.scalar_output_folder, args.height_folder, args.height_scalar_output_folder)",
+      "before": "                    args.guard_folder, args.scalar_output_folder)",
+      "index": 18
+    }
+  ],
+  "height_context_adapter_sha256": "f06d053b6f58f26c7ded2097f13f915f362c0bd93c821b4574694ed77b805533",
+  "new_height_context_scope": "exact parent-derived record envelope, unchanged base state dictionary",
+  "new_source_sha256": "b5c42acacfb9ee8dff294a92913980e90083a05a2ad239414ea46eed7712354a",
+  "status": "PASS_EXPLICIT_NEW_HEIGHT_UNION_WRAPPER_TRANSFORMATION",
+  "unchanged_function_ASTs": [
+    "digest",
+    "read_module",
+    "local_file",
+    "pin"
+  ],
+  "unchanged_sat_proxy_angle_dispatch_AST": true
+}

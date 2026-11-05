@@ -1,0 +1,402 @@
+{
+  "complete_height_cover_replayed": false,
+  "declared_nodes": 19,
+  "fresh_scalar_replayed": false,
+  "local_excluded_leaves": 1,
+  "nodes": [
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": null,
+      "node": 0
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 1
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 1,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 2
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 2,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 3
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 3,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 4
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 4,
+        "reserve": "1/2",
+        "rounds": 0,
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 5
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 6
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 7
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 8
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 9
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 10
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 11
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 12
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 13
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 14
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 15
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 16
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 17
+    },
+    {
+      "arithmetic": {
+        "deductions": 0,
+        "numerical_discovery_fields_used": false,
+        "printed_rows_checked": 0,
+        "reserve": null,
+        "rounds": 0,
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "whole_mask_credit": 0,
+        "whole_original_credit": 0
+      },
+      "height_context": {
+        "branch": 0,
+        "caller_root_document_sha256": "f67d826cbf6098191ced2319ff35acdeb752579cf9d5f0ef8a59bde6e1969f8b",
+        "cover_binding_sha256": "06aba6fc518e44d1b859bccb9cc81b6ab57ef5b2df91970f654ba9fe8ab3fd79",
+        "kind": "strict011_C_height_domain_v1",
+        "origin_node": 0,
+        "parent_state_sha256": "22e7bdc8f0fa4d27c08e28e766beef177b810a4b117151d4e6547cbc0f1a1a2e"
+      },
+      "node": 18
+    }
+  ],
+  "real_optimizer_called": false,
+  "status": "PASS_LOCAL_NODE_AND_INHERITED_CONTEXT_CONTROLS_ONLY_GLOBAL_COVER_GATE_PENDING"
+}

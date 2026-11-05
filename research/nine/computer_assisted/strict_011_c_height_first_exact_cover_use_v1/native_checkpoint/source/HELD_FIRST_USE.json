@@ -1,0 +1,47 @@
+{
+  "argv": [
+    "python",
+    "-B",
+    "-S",
+    "-u",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_c_height_tree_v1/run_first_use_gate.py",
+    "--source-binding",
+    "7dfa1999689e52dbf68ed9a15c24f953339f8c3a8848046841db1c2e2ff0a7d3",
+    "--foundation",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_rebuilt_v3",
+    "--corner-folder",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_four_product_layer_v2",
+    "--guard-folder",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_universal_021_applications_v2",
+    "--height-folder",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_c_height_complement_note_v1",
+    "--output-folder",
+    "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/strict011_C_height_first_exact_use_v1"
+  ],
+  "cwd": "/workspace/scratch/f9f48fcfb253",
+  "expected_complete_unions": {
+    "strict011_C_height_four_way_v1": 1
+  },
+  "expected_deductions": 4,
+  "expected_exact_rounds": 4,
+  "expected_nodes": 5,
+  "expected_open_leaves": 4,
+  "expected_printed_rows": 8,
+  "first_use_manifest_sha256": "25386ddb8c58905045bdd76f84c5f6c9084ad25c9e5837ad3a00b1533795bd74",
+  "fresh_scalar_required": {
+    "coefficients": 43875,
+    "domains": 28,
+    "leaves": 351
+  },
+  "hand_chosen_exact_weights": true,
+  "log": "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/strict011_C_height_first_exact_use_v1.log",
+  "numerical_search_launched": false,
+  "optimizer_called": false,
+  "original_cell_credit": 0,
+  "root_source_review_required_before_execution": true,
+  "schema": "held_first_exact_C_height_complete_cover_use_v1",
+  "separate_real_LP_corner_gate_claimed": false,
+  "source_binding_sha256": "7dfa1999689e52dbf68ed9a15c24f953339f8c3a8848046841db1c2e2ff0a7d3",
+  "status": "PREPARED_NOT_EXECUTED_SOURCE_REVIEW_REQUIRED",
+  "whole_mask_credit": 0
+}

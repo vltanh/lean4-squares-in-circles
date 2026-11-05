@@ -1,0 +1,29 @@
+{
+  "status": "PASS_SOURCE_AND_PHYSICAL_DOMAIN_REVIEW_C887_THREE_EXISTING_TERMINALS",
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/b_work/c887_three_terminal_continuation_v1/HAND_ATTACHMENT.md": "63dc23313c441a5352fb9b6526d0bc5f7d7a1cb260412b4571f1d818d2687092",
+    "/workspace/scratch/f9f48fcfb253/b_work/c887_three_terminal_continuation_v1/build_continuation.py": "aafe412e9e938dcc1509dd89d8af64bafc7d657a881a6c153c368e742a1c1abf",
+    "/workspace/scratch/f9f48fcfb253/b_work/c887_three_terminal_continuation_v1/historical_leaf_source.py": "f55e45c0a20d89adb3bbeb29847f056419446a46a17af5aae693e5ce13871c70",
+    "/workspace/scratch/f9f48fcfb253/b_work/c887_three_terminal_continuation_v1/verify_continuation.py": "1b4ee36f87a2b0766a6c4f08a40bed98984e2974a767f4a2ddb240badcce2df4",
+    "/workspace/scratch/f9f48fcfb253/b_work/c887_three_terminal_continuation_v1/SOURCE_BINDING.json": "4f919c33418028f1fab2fcf82714552dcf3d1389664acd8524bd4106fa6dbba6",
+    "/tmp/c887_complete91_three_terminal_exact_v1_20261105/EXACT_REPLAY.json": "ab1f2aac0ad99539365df036ce3c884b6af2f7ebecc5c890fdd8b35df5f3a51a",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/verify_c887_ownerfree_physical_tree.py": "755f9ed05839e27c04e8687de2273f3bf415388c9ef6dbe9c96fb1c3b20cb7ad",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_physical_sat_diagonal_replay.py": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py": "ec1b7de7b15bcc9d89d12087bff974c68e6d056bdaae26b482d514027ec97993"
+  },
+  "hand_sha256": "4eccf17f88273b8649db8943a3b1060986599b1e0dcd46be9e3ad17b2d0c4424",
+  "reviewed_changed_leaves": [
+    29,
+    30,
+    64
+  ],
+  "retained_nodes": 91,
+  "unchanged_payloads": 88,
+  "fresh_gate_report_inspected": true,
+  "old_or_new_arithmetic_repeated": false,
+  "historical_full_source_reuse_explicit": true,
+  "complete_parent_and_4_8_2_coverage_preserved": true,
+  "original_still_open": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

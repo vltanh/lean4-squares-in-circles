@@ -1,0 +1,32 @@
+{
+  "argv": [
+    "python",
+    "-B",
+    "-S",
+    "-u",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_c_height_tree_v1/run_first_use_gate.py",
+    "--source-binding",
+    "7dfa1999689e52dbf68ed9a15c24f953339f8c3a8848046841db1c2e2ff0a7d3",
+    "--foundation",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_rebuilt_v3",
+    "--corner-folder",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_four_product_layer_v2",
+    "--guard-folder",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_universal_021_applications_v2",
+    "--height-folder",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict011_c_height_complement_note_v1",
+    "--output-folder",
+    "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/strict011_C_height_first_exact_use_v1"
+  ],
+  "cwd": "/workspace/scratch/f9f48fcfb253",
+  "exit_code": 0,
+  "finished_unix": 1793849304.4214764,
+  "launch_file_sha256": "1aa809f92bf1190e7c32eed913b1b555e638239dec81361648e82ee459232f31",
+  "log": "/workspace/scratch/f9f48fcfb253/repo/research/nine/.runs/strict011_C_height_first_exact_use_v1.log",
+  "log_sha256": "e230ff75e50496eafe82dfdcb4e3982a8daf35f9c0ce45929d37f87ff2d9875c",
+  "numerical_optimizer_called": false,
+  "root_source_review_sha256": "6df3db7f035b658ae9a772ecf3b477b9c04ed22c0015e740d5b45e3680c91fdb",
+  "source_binding_sha256": "7dfa1999689e52dbf68ed9a15c24f953339f8c3a8848046841db1c2e2ff0a7d3",
+  "started_unix": 1793849293.8250046,
+  "status": "OBSERVED_FROZEN_EXACT_C_HEIGHT_GATE_EXIT"
+}

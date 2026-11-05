@@ -1,0 +1,1 @@
+{"status": "PASS_COMPLETE_C88791_WITH_FOURTEEN_NEW_EXISTING_INTERVAL_TERMINALS", "report_sha256": "8ea1ae86b99d401b805951a15ba3f229f9cce4db7a81e126f70c13d1e6002ac7", "nodes": 91, "fresh_terminals": 14, "excluded_leaves": 17, "open_leaves": 56}

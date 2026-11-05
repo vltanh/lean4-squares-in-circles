@@ -1,0 +1,15 @@
+{
+  "status": "PASS_CONSTRUCTION_AND_NEW14_TERMINAL_GATE_OBSERVED_EXIT",
+  "constructor_session": 88208,
+  "constructor_observed_exit_code": 0,
+  "constructor_completion_tool_chunk": "b990a9",
+  "checker_session": 9160,
+  "checker_observed_exit_code": 0,
+  "checker_completion_tool_chunk": "aef913",
+  "exact_report_sha256": "8ea1ae86b99d401b805951a15ba3f229f9cce4db7a81e126f70c13d1e6002ac7",
+  "copied_source_count": 6,
+  "all_old_sources_unchanged": true,
+  "weighted_historical_arithmetic_replayed": false,
+  "new_hull_or_endpoint_family_used": false,
+  "numerical_solver_called": false
+}

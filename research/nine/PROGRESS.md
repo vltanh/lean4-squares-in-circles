@@ -2,6 +2,21 @@
 
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Fourteen additional C887 exclusions; completed 011 evidence preserved
+
+The [C887 interval-terminal continuation](computer_assisted/c887_fourteen_interval_terminal_continuation_v1/README.md)
+passes fresh replay of fourteen additional existing zero-round terminals and
+all eighteen complete parent-child covers. The retained 91-node tree now has
+seventeen excluded leaves and fifty-six OPEN leaves. Its compact packet
+includes all seventeen changed payloads against the published original base,
+with exact aliases for the other seventy-four. No new hull family is used.
+
+The already completed [strict-011 height-cover first use](computer_assisted/strict_011_c_height_first_exact_cover_use_v1/README.md)
+is preserved with its full fresh scalar and five-node exact reports. All four
+height alternatives replay successfully and remain OPEN. Further 011 work is
+paused; the numerical pilot waiter was stopped before launch. This checkpoint
+adds no original or mask closure and does not change the Bf14-first priority.
+
 ## Retained A cover replay and fresh whole-original C bounds
 
 The [A165 exact continuation](computer_assisted/a_c744_i64_retained_cover_continuation_v1/README.md)
