@@ -1,0 +1,26 @@
+{
+  "status": "PASS_INDEPENDENT_LOCAL_NEW_ROW_RECORD",
+  "audit": {
+    "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+    "rounds": 1,
+    "deductions": 232,
+    "printed_rows_checked": 529,
+    "reserve": null,
+    "numerical_discovery_fields_used": false,
+    "whole_original_credit": 0,
+    "whole_mask_credit": 0
+  },
+  "record": "/workspace/scratch/8446ce74729c/pr11/research/nine/.runs/c_family/CB882_NODE61_NEW_ROWS_BOUND1.json",
+  "sha256": "7684637d63a3b67325ab1e32936fcce7a421f51ec9d1e9bf7248a34dbbbba990",
+  "new_row_counts": {
+    "incircle": 1,
+    "rotating_tangent": 0,
+    "rotating_cone": 3
+  },
+  "original_ancestry_and_complete_cover_checked": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "rotating_family_review_required": true,
+  "numerical_modules_or_producers_imported": false,
+  "seconds": 2.009646720995079
+}
