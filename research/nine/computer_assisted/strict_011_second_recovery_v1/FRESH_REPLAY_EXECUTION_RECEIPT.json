@@ -1,0 +1,27 @@
+{
+  "checker_sha256": "723a4e4c4576d85af1a008dc56c6d9105969bd289ada3c243cf60efc74bec026",
+  "command": [
+    "python",
+    "-B",
+    "-S",
+    "-u",
+    "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/strict_011_discovery_first_use_v1/replay_first_real_use.py",
+    "--foundation",
+    "/workspace/scratch/f9f48fcfb253/global_work/strict_011_rebuilt_v3",
+    "--output",
+    "/workspace/scratch/f9f48fcfb253/global_work/recovery_second_reset_20261105/FRESH_PUBLISHED_FIRST_USE_REPLAY.json"
+  ],
+  "excluded_leaves": 1,
+  "fresh_report_sha256": "54748be981d6c3d94810dba1c33a1ce2caab2b9f907654569fed8265070d9034",
+  "later_lost_frontier_used": false,
+  "nodes": 5,
+  "numerical_solver_started": false,
+  "observed_exit_code": 0,
+  "open_leaves": 3,
+  "original_cell_credit": 0,
+  "reserve": "1/2",
+  "restoration_receipt_sha256": "fe9b4c33eb8d59f1fef735d2d179a0e1a4d59e7cf6ef8cf36b2e0f278c2c80cd",
+  "session_id": 88262,
+  "status": "PASS_FRESH_EXACT_PUBLISHED_PILOT_REPLAY_OBSERVED_EXIT",
+  "whole_mask_credit": 0
+}

@@ -1,0 +1,37 @@
+{
+  "dependencies": [
+    "58bb59bac06714502b9438e795d61588a5a45671",
+    "35ac6d675d74f013a59804ef5506b74b005b59d6"
+  ],
+  "files": {
+    "FRESH_PUBLISHED_FIRST_USE_REPLAY.json": {
+      "bytes": 14174,
+      "sha256": "54748be981d6c3d94810dba1c33a1ce2caab2b9f907654569fed8265070d9034"
+    },
+    "FRESH_REPLAY_EXECUTION_RECEIPT.json": {
+      "bytes": 1037,
+      "sha256": "a8ea1df46fcbc461424bc04a7e581c90a857e2918613c82fc64bc28560e928a6"
+    },
+    "PUBLISHED_STRICT011_RUNTIME_RESTORATION.json": {
+      "bytes": 159046,
+      "sha256": "fe9b4c33eb8d59f1fef735d2d179a0e1a4d59e7cf6ef8cf36b2e0f278c2c80cd"
+    },
+    "README.md": {
+      "bytes": 2772,
+      "sha256": "5aeb7c7808089e78a652937c4d99aee193813b2a6dade67701a1fed143328362"
+    },
+    "SURVIVING_PACKET_RECOVERY_INVENTORY.json": {
+      "bytes": 1188,
+      "sha256": "985a92df8879b446f643ad3b4a7e6ded58603bddc84a9270f07d592964a77b21"
+    },
+    "restore_published_strict011_runtime.py": {
+      "bytes": 4099,
+      "sha256": "13eb2cdcfce73fb86aa4e2ed599a25eafc56dc4900757cf3b5f7c0000401ff22"
+    }
+  },
+  "original_cell_credit": 0,
+  "runtime_copies_need_not_be_duplicated_in_git": true,
+  "schema": "strict011_second_reset_recovery_checkpoint_v1",
+  "status": "PUBLISHED_BYTES_RESTORED_AND_FRESH_EXACT_PILOT_PASS",
+  "whole_mask_credit": 0
+}

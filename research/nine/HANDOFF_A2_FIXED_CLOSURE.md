@@ -1,5 +1,17 @@
 # Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
+The [second strict-011 recovery](computer_assisted/strict_011_second_recovery_v1/README.md)
+restores 291 exact published inputs and freshly replays the complete five-node
+pilot. Missing later discovery records are not reconstructed from remembered
+results. The old growth process exited zero, but its output certificate files
+are unavailable. Use the published pilot as the verified continuation base.
+
+The [universal physical-row review](computer_assisted/universal_physical_rows_root_review_v1/README.md)
+records fresh incircle and center-cone literal controls, conditional weighted
+excerpt checks, and complete exact parity for the area-moment optimization.
+These necessary inequalities are ready for separately frozen integration;
+this review alone supplies no original ancestry or complete mask closure.
+
 The [first real strict 011/00 certificate](computer_assisted/strict_011_discovery_first_use_v1/README.md)
 passes exact replay and a fresh relocated replay with numerical imports
 blocked. Its complete five-node cover has one excluded branch and three

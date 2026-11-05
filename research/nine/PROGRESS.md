@@ -1,5 +1,24 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Recovered published inputs and reviewed universal physical rows
+
+The [second strict-011 recovery](computer_assisted/strict_011_second_recovery_v1/README.md)
+restores 291 exact published files after the workspace disappeared. The root
+rehashed every source/target pair, and a fresh complete exact replay of the
+published five-node pilot passes with reserve 1/2, one excluded branch and
+three OPEN siblings. The later uncommitted 33-node and growth frontiers are
+unavailable and are not used as continuation inputs. The growth process was
+observed to exit zero, but its missing report and records cannot be replaced
+by that exit status. Complete closure counts remain unchanged.
+
+The [universal physical-row root review](computer_assisted/universal_physical_rows_root_review_v1/README.md)
+accepts the incircle-distance chords and two original-frame center-support
+families after complete physical/source review and fresh exact controls.
+Saved weighted excerpts retain their explicit conditional provenance scope.
+A separate fresh comparison verifies all 6,144 exact area-moment literals
+from an optimized discovery assembler. New integrations still require the
+complete state ancestry, literal arithmetic and covering checks.
+
 ## First real strict 011/00 solver certificate
 
 The [strict 011/00 discovery checkpoint](computer_assisted/strict_011_discovery_first_use_v1/README.md)

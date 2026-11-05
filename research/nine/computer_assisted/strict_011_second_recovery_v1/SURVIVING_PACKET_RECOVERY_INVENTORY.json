@@ -1,0 +1,21 @@
+{
+  "corner_control_58319_observed_exit": 0,
+  "corner_control_receipt_retained": false,
+  "equality_height_gap_open": true,
+  "independent_retained_matches": [],
+  "later_tree_bytes_restored": false,
+  "manifest_sha256": "83cb6dacf09d87c6c62728a521d7c832a9098e1b50c1744f33da678452c4ef17",
+  "missing_uncommitted_C_attachment_binding_sha256": "64512b5c2183007e9da0e6b692c85fb729658b71d5f631bdc308dbaaccfa9e20",
+  "missing_uncommitted_HI_guard_binding_sha256": "7d0698b9fb18948a47933c7ca34c4e1f014a2352141f25787dc9b225e03fd39f",
+  "numeric_search_restarted": false,
+  "original_cell_credit": 0,
+  "published_first_use_commit": "35ac6d675d74f013a59804ef5506b74b005b59d6",
+  "published_foundation_commit": "58bb59bac06714502b9438e795d61588a5a45671",
+  "reconstruction_rule": "New artifacts with fresh controls and explicit provenance; do not replace missing receipts or invent later tree records.",
+  "status": "PASS_READ_ONLY_SURVIVING_011_PACKET_AND_RECOVERY_INVENTORY",
+  "surviving_first_use_packet": "/tmp/strict011_first_use_portable_mwngpeax/packet",
+  "tmp_metadata_files_checked": 47,
+  "verified_member_bytes": 1018915,
+  "verified_packet_members": 117,
+  "whole_mask_credit": 0
+}

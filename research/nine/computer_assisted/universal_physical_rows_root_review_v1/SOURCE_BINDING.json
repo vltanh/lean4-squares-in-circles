@@ -1,0 +1,154 @@
+{
+  "schema": "universal_physical_rows_root_review_source_binding_v1",
+  "source_commit": "600818c19a54f124aedbb67db7cc5044ba68ee0b",
+  "paths_relative_to": "research/nine/computer_assisted",
+  "files": {
+    "original_incircle_distance_chords_v1/EXACT_CONTROLS.json": {
+      "bytes": 496,
+      "sha256": "8500d4029b124e7cbf53541d8fed570a3c24002ff867d786df2a7278b2ee8200"
+    },
+    "original_incircle_distance_chords_v1/HAND_PROOF.md": {
+      "bytes": 1934,
+      "sha256": "54753f8c0c929f7e7716deb2d7c1d7386c45f84c784f94ffb94eb5f47d316e7e"
+    },
+    "original_incircle_distance_chords_v1/PREMISE_BINDINGS.json": {
+      "bytes": 646,
+      "sha256": "e875ac038b92f262c3ad0d97e0f56e3af6c21836a0ce3a3117d1ac0aed59345e"
+    },
+    "original_incircle_distance_chords_v1/README.md": {
+      "bytes": 1616,
+      "sha256": "be076da988db61b0fdea5989ab3619c1916194a11ce13af97482550f82ad72eb"
+    },
+    "original_incircle_distance_chords_v1/check_controls.py": {
+      "bytes": 1751,
+      "sha256": "ee445a48fcc218f3eb6e27d25a1a8b356bc5c863ec16e83c516e0c041fc6ef92"
+    },
+    "original_incircle_distance_chords_v1/independent_incircle_chords.py": {
+      "bytes": 1103,
+      "sha256": "022d3670929e707403f9457a31abca4494e2dcd0d79f88757d65c5e1f0b52ce9"
+    },
+    "original_incircle_distance_chords_v1/physical_incircle_chords.py": {
+      "bytes": 1159,
+      "sha256": "5202f4c0af9bf913ccb9729738e34b00a391559f274e049cfcc27e1f168ec8db"
+    },
+    "rotating_frame_center_cone_v1/ACTUAL_WEIGHTED_BOUND_RECORD.json.gz": {
+      "bytes": 186372,
+      "sha256": "27ef2e8c8030b8208941ba2be20fed8ebbdbe33823f674e195d9afb310b115e8"
+    },
+    "rotating_frame_center_cone_v1/ACTUAL_WEIGHTED_EXCERPT.json": {
+      "bytes": 9334,
+      "sha256": "b6db4e3bdf1d23061e033d2af500ab917dd48629a9d30a44f9fe20d1f67590ec"
+    },
+    "rotating_frame_center_cone_v1/ACTUAL_WEIGHTED_LOCAL_REPLAY.json": {
+      "bytes": 845,
+      "sha256": "160d037fa12f16601a9d97efb8363dc0dc510dfd0ebde7998c56338ebb43fc76"
+    },
+    "rotating_frame_center_cone_v1/HAND_PROOF.md": {
+      "bytes": 3051,
+      "sha256": "821d9428841d0917faa3fe28d8ce5decc231333ea4fd106273cda9615835e628"
+    },
+    "rotating_frame_center_cone_v1/PROVENANCE.json": {
+      "bytes": 2152,
+      "sha256": "3ebeb8db806edeecb443ca0fc27faa15540a51a8b5798be0ca0b11c6add153e8"
+    },
+    "rotating_frame_center_cone_v1/README.md": {
+      "bytes": 1620,
+      "sha256": "d52157c71414748eb1210e9ac22bd66cc0d0dc96484f88267dbe98ea9cf045ac"
+    },
+    "rotating_frame_center_cone_v1/VERIFY_REPORT.json": {
+      "bytes": 1331,
+      "sha256": "a1823b4aafadf16a7a00b05fe14435a4de4fbef3fd60016a2889b3cd9e064301"
+    },
+    "rotating_frame_center_cone_v1/independent_center_cone_rows.py": {
+      "bytes": 955,
+      "sha256": "1de8e432d1ebd65cb6ba3b7ac20193b2de4996e68568f5e6cc7c7056b85c869d"
+    },
+    "rotating_frame_center_cone_v1/physical_center_cone_rows.py": {
+      "bytes": 1573,
+      "sha256": "6562faa4623e674458034a569b0cbbfd457e1b5543b2cf3866932b9edfc55ac3"
+    },
+    "rotating_frame_center_cone_v1/verify_packet.py": {
+      "bytes": 8306,
+      "sha256": "dd68ce6c1899c991f10e663c5e8ad121d1468d06190a2264dc469fc034b3cfcb"
+    },
+    "general_center_cone_v1/ACTUAL_WEIGHTED_BOUND_RECORD.json.gz": {
+      "bytes": 184264,
+      "sha256": "5d5d130b4dd987c06d217a6cda90aae64f626ac950d755356b9dcfd487609035"
+    },
+    "general_center_cone_v1/ACTUAL_WEIGHTED_EXCERPT.json": {
+      "bytes": 6444,
+      "sha256": "74407c190265fa431768fe5cc26fbcfef0eef380a14effcada1f8f41b2585a7a"
+    },
+    "general_center_cone_v1/ACTUAL_WEIGHTED_LOCAL_REPLAY.json": {
+      "bytes": 873,
+      "sha256": "5aa9eb5763b07e68969c5af1532a89bd6d046511332f6d966e3849b47a95a3b2"
+    },
+    "general_center_cone_v1/GENERAL_CENTER_CONE_CONTROLS.json": {
+      "bytes": 1176,
+      "sha256": "f74e67a463ab29af5c56969d65315f90088e811a5476fcd4d31d9e1fe80c1acc"
+    },
+    "general_center_cone_v1/GENERAL_CENTER_CONE_HAND_PROOF.md": {
+      "bytes": 2317,
+      "sha256": "c5f5fc4a687c66457c03baee323bd9e391648a15ec8aeba3b9baab21e2ac24b1"
+    },
+    "general_center_cone_v1/PROVENANCE.json": {
+      "bytes": 1074,
+      "sha256": "e144f72ea3f901a62379a4bab41bc8cfbf29144de50f6ea341b29ecb13e317ea"
+    },
+    "general_center_cone_v1/README.md": {
+      "bytes": 1134,
+      "sha256": "d1222ee8893e6304161a0fd7f9865ca25e70e8061418899e6d99622bf7503dcd"
+    },
+    "general_center_cone_v1/VERIFY_REPORT.json": {
+      "bytes": 854,
+      "sha256": "177eb78e2bf7a493a7722dbe13d4c91bb76bed0ff36930805d1a84824c6dda50"
+    },
+    "general_center_cone_v1/independent_general_center_cone_rows.py": {
+      "bytes": 1262,
+      "sha256": "db58933d275991d0d4a9027a84844259a18f1cbe21b9ea60d7d3b5ea72459ca7"
+    },
+    "general_center_cone_v1/physical_general_center_cone_rows.py": {
+      "bytes": 1683,
+      "sha256": "4fb68a0b0e5ddac7cc8d3802ae675f3dcc9a7e9ff6c1e0484714593c940b1682"
+    },
+    "general_center_cone_v1/verify_general_center_cone_controls.py": {
+      "bytes": 3265,
+      "sha256": "6bb6a54f908b418d712594bbb9847a0bf52a1a3607ac8c8331269ea477e7485f"
+    },
+    "general_center_cone_v1/verify_packet.py": {
+      "bytes": 5711,
+      "sha256": "edf3bb89ca8a8fb3e40ec6c32113778e5bae8a959480cca2a40357d6ef67799b"
+    },
+    "exact_area_moment_assembly_v1/DISCOVERY_BENCHMARK.json": {
+      "bytes": 1225,
+      "sha256": "24cec7916eb93b8658da6258063e2df27334064c83a086ea291e37bcae5ce294"
+    },
+    "exact_area_moment_assembly_v1/EXACT_LITERAL_PARITY.json": {
+      "bytes": 1015,
+      "sha256": "2a2d3196d236d3dca8a712a428bf31773b0cd779f102a20bfa3a13bfba03bf3a"
+    },
+    "exact_area_moment_assembly_v1/PARITY_INPUTS.json": {
+      "bytes": 22198,
+      "sha256": "ad222e7281ce937dfa4bae5aa53a378c8f7085b0fa1ea928f937c3e196b79cac"
+    },
+    "exact_area_moment_assembly_v1/README.md": {
+      "bytes": 2751,
+      "sha256": "ab1aa256ce4226f13a69a53d9e813aa8cb7e09af09834f543adc20be0bfdfa16"
+    },
+    "exact_area_moment_assembly_v1/check_parity.py": {
+      "bytes": 1709,
+      "sha256": "9b28643767d2b446d71639595792483f8df56031fde4aa8f4e3e12b456b4b3a6"
+    },
+    "exact_area_moment_assembly_v1/fast_exact_area_moments.py": {
+      "bytes": 2357,
+      "sha256": "9afb26cad3032731902679f67a3ff166d44ba5d2a5684cf31f832da767edd071"
+    },
+    "exact_area_moment_assembly_v1/reference_square_area_moment_rows.py": {
+      "bytes": 2288,
+      "sha256": "d4d4b7a9bda2595693ea10e15821eedfb5681b9f1be32381179b20512d2700d1"
+    }
+  },
+  "source_files": 36,
+  "new_original_cells": 0,
+  "new_masks": 0
+}
