@@ -138,6 +138,12 @@ the terminal alone closes no original or mask.
 The [larger sharp terminal](CB882_ENLARGED_SHARP_TERMINAL.md) now
 allows twice the tilt for B,I,E,F,G, with all center-gap conditions
 retained and all six coefficients in its final corner sum positive.
+The [uniform one-tenth terminal](CB882_UNIFORM_SHARP_TERMINAL.md)
+now allows abs(beta)<=1/10 for all seven loaded originals. Its
+stronger physical support estimate retains the variation of absolute
+tilt and gives seven positive coefficients. Exact
+[relative-coordinate row certificates](CB882_SHARP_GUARD_ROW_CERTIFICATES.md)
+can establish its unchanged center guards directly.
 
 The foundation and extraction gates G1–G2 are complete at the manuscript
 level and have received independent reading. Greene's finite-poset theorem
