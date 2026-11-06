@@ -136,8 +136,8 @@ remains valid in that case.
 
 ## 4. A selected physical side axis
 
-Let Delta=c_T-c_P. A selected separating side axis owned by an
-original O is one of the signed forms
+Let Delta=c_T-c_P. A selected separating side axis owned by one
+of the two originals O in {P,T} is one of the signed forms
 
 \[
  \sigma(a_O\Delta_x+b_O\Delta_y),\qquad

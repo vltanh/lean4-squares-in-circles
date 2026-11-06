@@ -363,7 +363,9 @@ height routing must use further information, such as E,F,G and their
 physical pairs, or the ninth original I.
 
 The proved inequalities above do not identify the location or physical
-frame of I, force E above A or G above D, or imply the full guard of
-the local sharp terminal. Those routing obligations remain. Every
+frame of I or imply the full guard of the local sharp terminal.
+Separate arguments now establish [E above A](CB882_E_DOWN_TABLE.md)
+and [G above D](CB882_G_ABOVE_D.md); the remaining local-guard
+coverage obligation is still open. Every
 scalar comparison used here is displayed; no optimizer or
 finite-search result is a proof premise.

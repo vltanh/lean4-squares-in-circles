@@ -115,10 +115,17 @@ two rational estimates. A universal actual-square clearance bound,
 [downward-cone localization](CB882_GEOMETRIC_REDUCTION.md) gives
 x_H<-1/40, and the [A/E routing theorem](CB882_E_DOWN_ROUTING.md)
 proves y_A-g_A<-1/4 and reduces the E-below-A physical separator
-to three owned axes. E below A and the whole original remain open.
+to three owned axes. The complete
+[seven-case rational table](CB882_E_DOWN_TABLE.md) now excludes
+E below A. Its 1,111 literal rows, 308 bound deductions and seven
+contradiction sums received an
+[independent reconstruction from the manuscript](CB882_E_DOWN_REVIEW.md).
 The [B/F inset theorem](CB882_BF_VERTICAL.md) also excludes both
 horizontal B/F inset alternatives on the whole parent, by applying
 the physical outsider strip to the resulting long endpoint span.
+The [one-case E-up table](CB882_E_UP_F_ABOVE_B.md) excludes F below B
+in the surviving E order. Thus E above A, F above B and G above D
+are proved throughout Cb882; the remaining whole original is open.
 
 For the whole Cb882 attempt, a new
 [sharp local terminal](CB882_LOCAL_SHARP_TERMINAL.md) uses the actual
@@ -128,6 +135,9 @@ to lower B, and contradicts the original strict weak CD bit. It needs
 no endpoint tilt-toll theorem or archived certificate. The complete
 complement of its stated local guard remains a whole-cell obligation;
 the terminal alone closes no original or mask.
+The [larger sharp terminal](CB882_ENLARGED_SHARP_TERMINAL.md) now
+allows twice the tilt for B,I,E,F,G, with all center-gap conditions
+retained and all six coefficients in its final corner sum positive.
 
 The foundation and extraction gates G1–G2 are complete at the manuscript
 level and have received independent reading. Greene's finite-poset theorem

@@ -108,18 +108,27 @@ Their closed relaxations may be used in a finite table. A complete
 height split also permits the stronger row x_C-x_H>=11/12 on the
 child y_H>=y_C; the other child y_H<=y_C must be retained.
 
-The [complete G-order proof](CB882_G_ABOVE_D.md) excludes the entire
-lower-G alternative by two rational estimates and proves
-y_G-y_D>=g_D+g_G. The [A/E routing chapter](CB882_E_DOWN_ROUTING.md)
-also proves y_A-g_A<-1/4 on the whole parent. If E lies below A,
-it gives y_E<-1/4-g_E, x_E>-7/5, and a complete three-case cover
-of the physical A/E separating axis. That E-order alternative remains
-open; the G-order reduction does not exclude the whole original.
-Within that complete E-down alternative, the
-[endpoint estimate](CB882_E_DOWN_ENDPOINT.md) proves x_E+h_E>-11/16,
-and the [middle-height theorem](CB882_E_DOWN_F_ABOVE_B.md) proves
-y_F-y_B>=g_B+g_F. The latter excludes the entire lower B/F order
-by the two original C/F incircles.
+All three vertical orders are now proved on the entire parent:
+
+\[
+ y_E-y_A\ge g_A+g_E,\qquad
+ y_F-y_B\ge g_B+g_F,\qquad
+ y_G-y_D\ge g_D+g_G.
+\]
+
+The [G-order proof](CB882_G_ABOVE_D.md) excludes the lower-G
+alternative by two rational estimates. The
+[seven-terminal E-down table](CB882_E_DOWN_TABLE.md) proves E above A;
+its complete literal rows, weights and transitions have received an
+[independent reconstruction](CB882_E_DOWN_REVIEW.md). Its hand inputs
+are the [A/E routing theorem](CB882_E_DOWN_ROUTING.md), the
+[endpoint estimate](CB882_E_DOWN_ENDPOINT.md), and the
+[E-down middle-height theorem](CB882_E_DOWN_F_ABOVE_B.md).
+Finally the [one-terminal E-up table](CB882_E_UP_F_ABOVE_B.md)
+proves F above B in the surviving E order. The A/E routing theorem
+also gives y_A-g_A<-1/4 before either height order is chosen.
+These are whole-parent reductions; the remaining arrangement still
+requires exclusion.
 
 ## 3. Exact rational frame and support enclosures
 
@@ -243,11 +252,13 @@ Thus each endpoint inset pair has only its two vertical cases; both
 horizontal cases are excluded on the whole parent by a hand proof.
 The [G-order theorem](CB882_G_ABOVE_D.md) further excludes the lower
 G case, so the whole-parent row y_G-y_D>=g_D+g_G is now available.
-Both A/E height alternatives must still be covered.
+The seven-terminal E-down theorem likewise leaves only the upper A/E
+order on the whole parent.
 The [B/F inset theorem](CB882_BF_VERTICAL.md) similarly proves
 |y_F-y_B|>=g_B+g_F on the whole parent. Its two vertical alternatives
 are exhaustive, before either A/E height order is chosen. The proof
 uses the physical outsider strip under an endpoint span of h_P+h_T+2.
+The two middle-height theorems above then leave only F above B.
 Its small-tilt unary estimate additionally gives
 -x_A<=rho max(alpha_A) on every current A-angle interval.
 
@@ -352,7 +363,10 @@ If the proved endpoint difference box has maximum squared norm
 strictly below four, this is impossible. Identical frame ownership
 is required; merely close directions cannot be joined.
 
-The other complete terminal is the sharp local theorem. It can
+The other complete terminal is the
+[enlarged sharp local theorem](CB882_ENLARGED_SHARP_TERMINAL.md),
+which allows |beta|<=1/10 for B,I,E,F,G while retaining 1/20 for A,D.
+It can
 be invoked only when the current proved angle and center bounds
 imply its full guard. A numerical near-optimal pose is not such
 an implication.
