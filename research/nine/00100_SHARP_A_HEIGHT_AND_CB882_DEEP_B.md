@@ -1,8 +1,8 @@
-# Sharp left-main height and a downward-cone exclusion for \`001/00\`
+# Sharp left-main height and a downward-cone exclusion for `001/00`
 
 **Scope.** Original-nine physical squares; strict squared radius
-\`q<Q=1105/256\`; same prescribed cone 4+3 witness and marked bits
-\`001/00\`. All nine original frames, 36 pair conditions, and all
+`q<Q=1105/256`; same prescribed cone 4+3 witness and marked bits
+`001/00`. All nine original frames, 36 pair conditions, and all
 36 corners remain in the domain. We do not claim a whole-cell closure
 here. These are two **new continuous hand implications** inside the
 already frozen original-cell domains, not supplementary hypotheses.
@@ -79,7 +79,7 @@ or additional row condition has been assumed.
 
 ### C887 consequence
 
-For the frozen \`negative-887236b78100baf3\` first-satisfied
+For the frozen `negative-887236b78100baf3` first-satisfied
 escape, the selected original AB cone slack satisfies
 \[
  (x_B-x_A)+(y_B-y_A)=0.
@@ -94,7 +94,7 @@ This is a strict implication even on the AB diagonal face.
 ## 2. The entire low-B downward cone is impossible
 
 Use the previously hand-proved C-slant theorem on the unchanged
-\`001/00\` original domain with normalized \(y_D-y_C>2/3\):
+`001/00` original domain with normalized \(y_D-y_C>2/3\):
 \[
  \frac{29}{60}<x_C<\frac45,\qquad
  \text{no additional original }X\text{ has }
@@ -164,8 +164,8 @@ proposition without choosing H's frame. \(\square\)
 
 ### Complete Cb882 subdomain
 
-In the frozen \`negative-b882d8ade0cf9ea0\` cell, the
-literal first-satisfied \`alternate_four_escape(B,H)\` entry 3
+In the frozen `negative-b882d8ade0cf9ea0` cell, the
+literal first-satisfied `alternate_four_escape(B,H)` entry 3
 has primary row
 \[
  (x_H-x_B)+(y_H-y_B)\le0
