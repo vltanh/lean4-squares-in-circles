@@ -325,3 +325,58 @@ weak CD bit.
 The larger terminal is therefore proved on the entire guard (1).
 The complement of that guard still requires a complete separate cover;
 this chapter alone does not exclude the whole Cb882 original.
+
+## 7. Certifying the guard by linear inequalities
+
+A finite cover need not bound each center separately tightly enough
+to imply (1). It may instead prove the required center differences
+directly. This retains the correlations between the same original
+centers and uses the following ten linear targets:
+
+| Linear expression | Upper bound |
+|---|---:|
+| x_B-x_I | 0 |
+| x_I-x_D | 0 |
+| y_B-y_I | 1/20 |
+| y_I-y_B | 1/2 |
+| y_D-y_I | 1/10 |
+| y_I-y_D | 1/10 |
+| x_A-x_E | -1/3 |
+| x_E-x_A | 2/3 |
+| x_G-x_D | -1/3 |
+| x_D-x_G | 2/3 |
+
+Here is an exact certificate rule for a target v dot z<=b, where
+z contains the original center and frame variables in the
+[physical-frame row chapter](CB882_PHYSICAL_FRAME_ROWS.md). Suppose
+the current proved box is z_q in [L_q,U_q], and a nonnegative
+rational combination of necessary rows gives A dot z<=B. For any
+coefficient vector t put
+
+\[
+ \mathcal L(t)=\sum_q\min(t_q L_q,t_q U_q).
+\]
+
+For any positive rational M, the single rational comparison
+
+\[
+             Mb-\bigl(B-\mathcal L(A-Mv)\bigr)\ge0          \tag{13}
+\]
+
+proves the target: Mv dot z<=B-(A-Mv) dot z
+<=B-\mathcal L(A-Mv)<=Mb. The row sum and every residual minimum
+use the same already proved box. A target may also be checked
+directly from its box maximum
+sum_q max(v_q L_q,v_q U_q)<=b.
+
+In the surviving Cb882 height arrangement, the whole-parent
+theorems give y_E-y_A>=g_A+g_E>0 and
+y_G-y_D>=g_D+g_G>0. The actual AB, EF and FG links, the signs
+of A and D, and all physical pair and corner hypotheses are retained
+in the caller. Thus the ten displayed targets, together with the
+seven orientation bounds in (1), imply the entire guard. No
+additional center-order or orientation assumption is needed.
+
+Any finite use of this rule must print the actual row weights and
+the nonnegative reserve in (13) for every target not supplied by
+its proved box. A numerical objective value alone is insufficient.
