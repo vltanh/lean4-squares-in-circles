@@ -70,6 +70,45 @@ squares cannot both be discarded: an
 realizes every remaining historical mask with seven squares strictly below
 the proposed radius.
 
+For the current `001/00` frontier, a new
+[hand bound on the inner frame and downward cone](00100_INNER_FRAME_AND_DOWNWARD_CONE.md)
+gives h_B<259/480 and canonical |t_B|<1/12. It also excludes the entire
+Cb882 halfspace y_B<=-67/120. The needed nonpositive-D C-slant input
+is now proved by the three hand/table chapters below.
+The complementary Cb882 domain and every whole-original closure remain
+open; this adds no completed cell or mask. The new argument prints its
+rational arithmetic and has not received independent review.
+
+The [C-slant primary-axis chapter](00100_C_SLANT_PRIMARY_AXES.md) now
+replaces the primary-axis part for nonpositive D with direct hand
+inequalities and a complete 67-rectangle rational table. It uses the
+foundation's physical pair cap, without importing C-slant or G-order.
+The [upper-G secondary-axis chapter](00100_C_SLANT_SECONDARY_AXES.md)
+prints every rational coefficient rule and all 4,204 terminal combinations.
+The [lower-G complement](00100_C_SLANT_LOWER_COMPLEMENT.md) supplies
+all 1,039 remaining terminal combinations and the complete acyclic
+assembly. Together these prove C-slant for nonpositive D without the
+archived C-slant or G-order forests. Their full covers and rational
+arithmetic have been checked locally; no independent review is claimed.
+Positive-D C-slant, whole-original exclusions, and the unrestricted
+theorem remain open.
+
+The new [endpoint-inset lemma](00100_ENDPOINT_INSETS_ARE_VERTICAL.md)
+proves that both A/E and D/G must separate vertically through their
+actual contained insets throughout `001/00`. The A/E argument excludes
+the complete forward horizontal case by one physical pair cap and two
+short rational polynomial estimates. It uses only seven originals and
+requires neither C-slant nor a tilt-sign or height-order hypothesis.
+
+For the whole Cb882 attempt, a new
+[sharp local terminal](CB882_LOCAL_SHARP_TERMINAL.md) uses the actual
+AB and EFG links and four original boundary corners. Its continuous
+weighted argument covers the closed-Q boundary, including the freedom
+to lower B, and contradicts the original strict weak CD bit. It needs
+no endpoint tilt-toll theorem or archived certificate. The complete
+complement of its stated local guard remains a whole-cell obligation;
+the terminal alone closes no original or mask.
+
 The foundation and extraction gates G1–G2 are complete at the manuscript
 level and have received independent reading. Greene's finite-poset theorem
 is stated exactly and remains an explicit classical dependency. These
