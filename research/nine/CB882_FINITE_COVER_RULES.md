@@ -263,7 +263,7 @@ with upper endpoint below zero, or C-secondary case with lower endpoint
 above zero, is empty by the proved CD routing. The root endpoint orders and
 the F-above-B theorem justify their explicitly named hand terminals.
 
-## 5. The retained sharp and common-axis terminals
+## 5. Geometric terminals
 
 For a uniform sharp leaf, the full guard of
 [the uniform terminal](CB882_UNIFORM_SHARP_TERMINAL.md) is checked: all seven
@@ -304,6 +304,31 @@ This contradiction requires the same original owner, side axis, and signed
 normal after directing the edges; approximate agreement of two angles is
 insufficient. The current proof data use no
 rotated-four-chain terminal or other optional terminal family.
+
+Later whole-original covers may invoke the already proved
+[complete C-primary theorem](CB882_C_PRIMARY_COMPLETE.md) at a node
+retaining the physical choice `sat(2,3,2,0,+1)`. The full original
+Cb882 caller remains in scope, so that selected separator supplies the
+theorem's additional hypothesis. A C-angle sign alone does not suffice.
+The C-primary attachment itself uses no such terminal; this invocation
+is available only after its independent complete proof.
+
+Later covers may also use the proved
+[selected-separator interval terminal](SELECTED_SEPARATOR_BOX_TERMINAL.md).
+Such a leaf identifies a retained physical or inset separator and prints
+its rational projection upper bound U and required lower threshold L.
+The context's proved intervals give U by the signed-coordinate and
+four-product formulas of that lemma. The exact comparison U<L is the
+contradiction. Original owner and signed axis are retained; equality
+does not exclude a cell.
+
+The [aligned-owner CD terminal](00100_ZERO_C_PRIMARY_TERMINAL.md) applies
+when the selected positive CD axis is owned by an original whose angle
+interval is the singleton zero.
+A primary separator then gives x_D-x_C>=h_C+h_D; a secondary separator
+gives y_D-y_C>=h_C+h_D and the CD cone gives x_D-x_C>=y_D-y_C.
+Both contradict the original strict weak bit. A zero endpoint in a
+non-singleton interval does not satisfy this terminal.
 
 ## 6. Completion criterion for the attached table
 
