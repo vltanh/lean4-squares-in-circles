@@ -124,6 +124,23 @@ intervals as signed half-angle intervals directly. The relative-angle
 endpoint and possible-zero proof is unchanged. All original side-axis
 thresholds are at least R^-_{PT}>=1.
 
+One may retain the original signed components b_P,b_T instead of
+discarding their relation to the center rows. The
+[frame-coupled pair lemma](FRAME_COUPLED_PAIR_ROWS.md) proves
+
+\[
+ R_{PT}\ge1+k_{PT}|b_P-b_T|,\qquad
+ k_{PT}=\max\left\{0,\min_{w\in\{l_P,u_P\},\ v\in\{l_T,u_T\}}
+ \frac{1+wv-|w-v|}{2(1-wv)}\right\}.
+\]
+
+The four-endpoint minimum is valid even on the enlarged rational
+canonical boxes. In particular, if S is the upper squared-distance
+secant from Section 4, the two simultaneous rows
+S>=1+2k_PT(b_P-b_T) and S>=1-2k_PT(b_P-b_T) are necessary.
+These use the same physical frame components as the original corner
+inequalities; they do not introduce independently chosen frames.
+
 ## 4. Original physical rows at a current center box
 
 Every row below is a necessary inequality about the same originals.
