@@ -187,3 +187,11 @@ the F-up conclusion. The old Cb882 table itself remains limited to
 its stated caller; the new theorem supplies the broader proof.
 
 Neither improvement excludes an additional whole original.
+
+The subsequent [E-order theorem](00100_C_E_ABOVE_A.md) also
+proves E above A on C887, Cd402 and Cb882 without any H/I row.
+Its complete 38-leaf table uses the conditional E-down F-up lemma,
+so it does not assume its own endpoint-order conclusion. Together
+with the shared F-up and G-up proofs, all three C originals now
+retain E above A, F above B, and G above D before their extra-square
+conditions are used. Their remaining original exclusions stay open.

@@ -136,7 +136,13 @@ This supplies a fresh height-order reduction; Cd402 itself remains open.
 The [seven-original middle-height theorem](00100_C_F_ABOVE_B.md)
 also proves F above B throughout the nonnegative-A, nonpositive-D
 caller, without any H-order assumption. Its one-case table prints
-103 rows and 36 deductions. A new
+103 rows and 36 deductions. The new
+[seven-original E-order theorem](00100_C_E_ABOVE_A.md) proves E
+above A on the same whole caller, with 38 terminal cases and no
+H/I-dependent row. Its complete printed cover, rows, transitions
+and positive sums received independent reconstruction. Thus E, F
+and G are above A, B and D throughout C887, Cd402 and Cb882.
+A new
 [physical-chain terminal](CD402_PHYSICAL_CHAIN_SHARP_TERMINAL.md)
 uses A,H,I,D near the Cd402 equality arrangement; its full guard
 still needs a complete complementary cover.

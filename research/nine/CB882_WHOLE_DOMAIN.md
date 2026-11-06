@@ -138,6 +138,9 @@ abs(y_A)<1/4 and x_P+g_P>-15/16 for every P distinct from A.
 It excludes the leftward B/P inset alternative for every P distinct
 from A,B. These are further necessary rows of the unchanged
 Cb882 caller; its separate Cd402 H-up corollary is not imported.
+The [seven-original E-order proof](00100_C_E_ABOVE_A.md) likewise
+removes H/I dependence from E-up. Its complete 38-leaf table gives
+an alternative acyclic proof on the broader C-family caller.
 
 ## 3. Exact rational frame and support enclosures
 
