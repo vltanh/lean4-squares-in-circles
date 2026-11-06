@@ -1,10 +1,12 @@
-# A hand reduction of the seven-cell `001/00` frontier
+# A historical conditional reduction of the seven-cell `001/00` frontier
 
-**Status: one dependency removed from the critical path; zero new whole
-original cells certified closed.** This is a genuinely finite reduction of
-the frozen November 5 frontier. It neither changes the 231-cell register
-nor proves the full mask. No Lean compilation, CI, numerical search or
-certificate replay was used.
+**Status: conditional reduction; no new whole-original closure claimed.**
+This chapter records a reduction of the frozen November 5 frontier.
+Its boundary transfer requires valid complete proofs of every other
+archived alternate-chain sibling and their complete cover. Those proofs
+are not supplied here, so the reduction does not remove a current proof
+obligation or certify an archived closure count. No Lean compilation, CI,
+numerical search or certificate replay was used.
 
 ## 1. Exact existing problem
 
@@ -24,10 +26,10 @@ gives `y_D-y_C>2/3`, and the extra labels are sorted so `x_H<=x_I`.
 For the C prefix, D has nonpositive canonical tangent and A has
 nonnegative canonical tangent. Both zero-angle faces are retained.
 
-The frozen register contains the seven open IDs below, grouped by
+The archived register listed the seven open IDs below, grouped by
 their **exact three or four initial path choices**:
 
-| Prefix class | Original ID | Status |
+| Prefix class | Original ID | Archived status |
 |---|---|---|
 | Positive D, inward A,H,I,D variation | `positive-c744bc031d40ee64` | OPEN |
 | Negative D, alternate A,B,H,D branch 1 | `negative-887236b78100baf3` | OPEN |
@@ -37,8 +39,8 @@ their **exact three or four initial path choices**:
 | Negative D, F/H side branch 1 | `negative-462e78d2e2d8be05` | OPEN |
 | Negative D, F/H side branch 3 | `negative-16a2fc93c8d133f0` | OPEN |
 
-All original IDs and paths are unchanged. The old current-mask handoff
-has detailed, independently replayed partial evidence for each.
+All original IDs and paths are unchanged. The archived handoff records
+partial evidence for each; this chapter does not re-audit that evidence.
 No count of internal OPEN leaves is interpreted as a new original ID.
 
 ## 2. Strict-interiorization lemma for the unchanged physical mask
@@ -107,18 +109,18 @@ negative-d4021ade840b985c
 negative-b882d8ade0cf9ea0
 ```
 
-are excluded for strict `q<Q`. Together with the already accepted
-complete exclusions of every other branch of the frozen
-`alternate_four_escape([B,H])` union, this **automatically excludes**
-the entire original domain
+are excluded for strict `q<Q`. Assume also valid complete proofs of
+every other branch of the frozen `alternate_four_escape([B,H])` union
+and of its complete coverage. These assumptions together exclude the
+entire original domain
 
 ```
 negative-887236b78100baf3.
 ```
 
-In particular there are **six independent original-cell closure
-obligations**, rather than seven. Until d402 and b882 actually close,
-all three C original IDs remain OPEN in the frozen register.
+Under all these assumptions, C887 becomes a consequence of the other
+exclusions. The two named C-cell closures alone do not discharge the
+archived sibling obligations or remove C887 from the current worklist.
 
 *Proof.* The accepted alternate-four escape is a complete eight-case
 union. If none of its eight scalar slacks is nonpositive, its alternate
@@ -162,7 +164,7 @@ satisfied branch is one of 2,3,4,5,6,7. The exact archived
 has these exhaustive remaining original obligations under the common
 negative-D/nonnegative-A prefix:
 
-| Branch | Frozen original descendants | Existing accepted status |
+| Branch | Frozen original descendants | Archived status |
 |---|---:|---|
 | 2 | 1 | Cd402: OPEN |
 | 3 | 1 | Cb882: OPEN |
@@ -171,10 +173,12 @@ negative-D/nonnegative-A prefix:
 | 6 | 1 | CLOSED |
 | 7 | 29 | All CLOSED |
 
-The previously certified v13 excluded leaves complete the rest of
-each branch. If the full Cd402 and Cb882 originals are also proved
-empty, every branch 2–7 is impossible. That contradicts existence of
-the perturbed packing, and therefore of the original C887 packing. □
+The archive assigns v13 excluded leaves to the rest of each branch.
+The conditional argument requires complete proofs of those leaves as
+well, not only their archived labels. With every such sibling proof
+and the full Cd402 and Cb882 exclusions supplied, every branch 2–7
+is impossible. That contradicts existence of the perturbed packing,
+and therefore of the original C887 packing. □
 
 The proof uses a *nearby strict-radius packing*, not a claim that a
 counterexample in C887 itself satisfies a different branch. No
@@ -182,19 +186,13 @@ unproved equality-to-strict inference is made.
 
 ## 4. Consequence for the research queue
 
-This does **not** advance the certified count 224/231. It eliminates
-an independent C887 research task *conditional on closing Cd402 and
-Cb882*. It also shows why pursuing C887's own 43-node/24-node
-incomplete covers in parallel is avoidable: one may use the already
-closed branches and the uniform interiorization transfer.
-
-The remaining independent targets are A-c744; B7, B462 and B16a; and
-Cd402 plus Cb882. They remain continuously quantified nine-original
-problems, not a promise that six hand tables will automatically
-complete. Each requires a complete proof of its unchanged path
-predicate before any register closure is credited. The **next useful
-completion** is therefore a full Cd402 or Cb882 domain, because
-finishing both also discharges C887 for free.
+This historical reduction does not establish a current closure count
+or reduce the current worklist to six independent obligations. It
+offers a route to C887 only after the named C-cell exclusions and
+every other required archived sibling proof and complete cover have
+been supplied. Each remains a continuously quantified original-nine
+statement. The [transfer-scope audit](00100_REMAINING_ORIGINAL_TRANSFER_SCOPE.md),
+Section 4, records the same limitation.
 
 A universal exact alternative may supersede those individual tasks,
 but cannot be credited merely from a numerical residual, an archived
@@ -204,8 +202,8 @@ partial tree, or a selected-seven relaxation.
 ## 5. A direct physical exclusion inside the remaining Cb882 original
 
 This section proves a **complete continuous subdomain** of the unchanged
-Cb882 original, not the whole Cb882 cell. The parent cell and the
-224/231 ledger remain OPEN.
+Cb882 original, not the whole Cb882 cell. It gives no complete-original
+closure credit.
 
 **Lemma (downward-cone obstruction).** Let B,H be two original physical
 unit squares, disjoint in interior and contained in the Q-disk. Suppose
@@ -297,7 +295,7 @@ a future complete Cb882 table, but it earns no complete-original
 closure credit now.
 
 
-## 6. Stronger successor: C887 depends on Cd402 alone
+## 6. Stronger successor under the same sibling assumptions
 
 The subsequent full hand argument in
 [00100_SHARP_A_HEIGHT_AND_CB882_DEEP_B.md](00100_SHARP_A_HEIGHT_AND_CB882_DEEP_B.md)
@@ -306,11 +304,12 @@ C887 cone-tie then forces `y_B<-2/3`. It also proves from the original
 B/H incircles, the accepted C-slant theorem, and exact rational bounds
 that every Cb882 downward-cone branch has `y_B>-2/3`. Strict
 interiorization retains the first inequality, so the perturbed C887
-packing cannot enter Cb882 at all. The older Section 3 statement that
-**both** Cd402 and Cb882 closures would suffice is still true but is no
-longer optimal: **Cd402 closure alone would also close C887.**
+packing cannot enter Cb882 at all. Thus a full Cb882 exclusion is not
+needed in this stronger transfer. A full Cd402 exclusion still has
+to be combined with valid complete proofs of every other possible
+archived alternate-chain sibling and their complete cover.
 
-This is a conditional transfer, not proof that Cd402 or C887 is empty.
-The immutable count stays 224/231 CLOSED, seven OPEN. Both new direct
-estimates and the improved dependency were proved by hand; no computer
-search, Lean, or archived certificate replay was used.
+This is a conditional transfer, not proof that Cd402 or C887 is empty,
+and it certifies no archived closure count. The two direct estimates
+were proved by hand; no computer search, Lean, or archived certificate
+replay was used.

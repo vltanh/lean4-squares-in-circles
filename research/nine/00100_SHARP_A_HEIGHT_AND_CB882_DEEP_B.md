@@ -207,29 +207,17 @@ branches 0 and 1 cannot apply because the original AB cone slacks
 are both strictly positive. Branch 3 cannot apply: its exact
 primary and predecessor require the downward-cone condition
 excluded by (10)--(13) while \(y_B<-2/3\).
-The old frozen fixed-original register identifies branches
-4,5,6 and all 29 original descendants of branch 7 as
-already CLOSED. The only remaining possible branch is
-branch 2, namely **the exact original Cd402 cell**.
+The remaining alternate-chain siblings are labelled closed in the archived
+register, but their proofs and complete cover are not supplied by this
+chapter. The boundary argument therefore gives only this conditional
+transfer:
 
-Therefore we obtain the stronger conditional theorem:
+> If the entire Cd402 original is excluded, and valid complete proofs of
+> every other possible alternate-chain sibling are supplied, then C887
+> is excluded as well.
 
-> **If the entire Cd402 original-cell predicate is excluded at
-> strict \(q<Q\), then the C887 original-cell predicate is excluded
-> as well.**
-
-This shortens the independent seven-cell worklist to five
-obligations: A-c744, B7, B462, B16a, and Cd402 or Cb882?
-**Precisely:** the still independently necessary targets are
-A-c744, B7, B462, B16a, Cd402 and Cb882, i.e. **six**:
-the original C887 has no independent proof requirement after
-Cd402 is closed. The extra Cb882 domain still needs its own proof.
-The list is deliberately explicit to prevent a mistaken
-five-cell credit or a claim of Cb882 closure.
-
-The frozen ledger remains **224/231 original cells CLOSED and
-seven OPEN**; only the proof dependencies and the Cb882
-necessary height restriction have improved. No Lean, CI,
-numerical discovery, or archived certificate replay was used
-to derive these two hand estimates, and no independent review
-of this new chapter is claimed.
+Without those dependencies, this argument does not remove C887 from the
+current worklist or change a whole-original closure count. The
+[transfer-scope audit](00100_REMAINING_ORIGINAL_TRANSFER_SCOPE.md),
+Section 4, records this limitation. The hand implications proved here
+remain valid on their stated callers.
