@@ -73,9 +73,9 @@ parent choices) with
 
 and hence satisfies the same physical necessary inequality
 
-[
+\[
                  y_H-y_B\ge g_B+g_H.               \tag{1}
-]
+\]
 
 The only next H/I physical-inset alternative, for each recorded open
 path, is exactly one of these three:
