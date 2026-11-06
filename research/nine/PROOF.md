@@ -214,6 +214,30 @@ counterexample must have at least one weak main link in **every** chosen
 cone four-plus-three witness. This conclusion does not promote any cone
 link to an actual link.
 
+There is also a short sharp exclusion of `010/00`, independent of the
+occupancy arguments. Put eta_P=h_P+g_P-1>=0. Actual AB and CD,
+together with the BC cone and its inset gap, give
+
+\[
+ x_D-x_A-h_A-h_D\ge2+\eta_B+\eta_C.
+\]
+
+An actual EFG chain gives x_G-x_E-h_E-h_G>=1. The endpoint
+criterion (2) therefore excludes this caller below Q. If BC is
+strictly weak, B and C cannot both be aligned, so eta_B+eta_C>0
+and the same argument excludes even the closed Q-disk. The
+[full weak-middle argument](sources/COMPLETED_MIDDLE_LINK_SHARP_TERMINAL_HAND_PROOF.md)
+records the equality case and the physical inputs. This proof requires
+actual short links; it does not close `010/01`, `010/10`, or `010/11`.
+
+An [exact nearby family](NO_ACTUAL_FOUR_NEAR_OPTIMAL_FAMILY.md)
+shows why extracting a completely actual four-chain is a restrictive
+route: there are nine-square packings with no such chain in any direction
+and with containing squared radii tending to Q from above. Those examples
+have an outer-actual main chain and an actual short triple, and the
+preceding weak-middle inequality handles them sharply. They are not
+subcritical counterexamples.
+
 ## 5. The missing implication
 
 One sufficient research target is the following **unproved** statement:

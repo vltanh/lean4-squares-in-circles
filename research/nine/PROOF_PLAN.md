@@ -204,6 +204,15 @@ fixed masks requires some information involving an omitted original: an
 exact seven-square realization exists for every such mask. This does not
 prove that both extras are individually indispensable.
 
+A strengthened no-actual-four shortcut has now been ruled out by an
+[exact nine-square family](NO_ACTUAL_FOUR_NEAR_OPTIMAL_FAMILY.md): no
+actual four-chain exists in any direction, but the squared radii approach
+Q from above. Thus an exclusion based on that absence must be sharp;
+a fixed gap above Q, including the proposed 9/2 threshold, is false.
+The same family has actual outer main links and an actual short triple,
+so the existing weak-middle terminal applies. An extraction of that
+broader terminal remains a possible direction, with its coverage unproved.
+
 Start with one complete geometric domain. The actual-four-chain domain is
 a useful first candidate: its outsider strip, inner clearances and
 two-per-side marker bounds are already hand arguments. Analyze all five
