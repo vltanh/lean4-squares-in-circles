@@ -7,7 +7,7 @@ CD bit. It does not exclude that whole domain or supply the missing cover
 of the [local sharp terminal](CB882_LOCAL_SHARP_TERMINAL.md).
 
 The conclusions are stronger endpoint-coordinate bounds and the strict
-localization **x_H<0**. In particular, the latter is not restricted to
+localization **x_H<-1/40**. In particular, the latter is not restricted to
 the previously excluded low-B subdomain.
 
 Put Q=1105/256 and rho=91/60. Every corner is in the closed Q-disk;
@@ -199,13 +199,111 @@ For a finite continuation, a useful complete union is
 
 | Height case | Necessary further bounds |
 |---|---|
-| y_H<=y_C | x_H<0 |
+| y_H<=y_C | x_H<0 (strengthened to x_H<-1/40 in Section 4) |
 | y_H>=y_C | x_C-x_H>11/12 and x_H<-49/240 |
 
 All strict bounds may be weakened to closed inequalities when
 constructing a rational enclosure.
 
-## 4. A limitation of using only A,B,C,D,H for further height routing
+## 4. A uniform negative margin for H
+
+In fact the whole caller satisfies
+
+\[
+                            \boxed{x_H<-\frac1{40}.}          \tag{15}
+\]
+
+When y_H>=y_C, (13) is stronger. It remains to consider y_H<=y_C.
+Suppose, for a contradiction, that -1/40<=x_H<0, and put
+
+\[
+ p=x_C,\qquad X=x_C-x_H,\qquad Z=y_C-y_H\ge0.
+\]
+
+The whole-parent bounds and C-slant give
+
+\[
+ \frac{29}{60}<p<\frac{57}{80},\quad
+ 0<X\le p+\frac1{40},\quad
+ 0\le Z<\frac{623}{480}-\frac78p.                   \tag{16}
+\]
+
+The rightmost expression is positive on the displayed p interval.
+There are two exhaustive cases.
+
+If p>=11/20, the convex quadratic
+
+\[
+ f(p)=\left(p+\frac1{40}\right)^2+
+                  \left(\frac{623}{480}-\frac78p\right)^2
+\]
+
+is bounded by its maximum at the two endpoints of
+[11/20,57/80]. Their exact reserves below one are
+
+| p | 1-f(p) |
+|---|---:|
+| 11/20 | 7/2880 |
+| 57/80 | 4319/3686400 |
+
+Thus X^2+Z^2<1, contradicting the C/H incircles.
+
+If p<=11/20, the actual AB and BC links and x_A>-rho give
+x_C>h_C-1/60. Consequently h_C<p+1/60<=17/30. This implies
+|beta_C|<3/20. Indeed (sqrt(1-b^2)+b)/2 increases for
+0<=b<=1/sqrt(2); at b=3/20 it is greater than 17/30 because
+
+\[
+ \frac{\sqrt{391}+3}{40}>\frac{17}{30}
+ \quad\Longleftrightarrow\quad3\sqrt{391}>59,
+ \qquad3519>3481.
+\]
+
+Equation (16) now gives X<=23/40 and Z<7/8. Write C's canonical
+frame as (a,b),(-b,a), where |b|<3/20 and a>247/250. The latter
+follows from a^2>391/400>(247/250)^2, with squared reserve
+339/250000>0.
+
+As in Section 2, squared distance to the closed C square is a convex
+function of the displacement. Its maximum on
+[0,23/40] times [0,7/8] is therefore bounded by the maximum at
+the four vertices. Negating a displacement leaves that distance
+unchanged, so this box covers the displacement under consideration.
+At the origin the distance is zero. At the two axis vertices its
+squared distance is at most (3/40)^2 or (3/8)^2, respectively:
+the smaller physical coordinate is less than 1/2 and the larger
+does not exceed the corresponding axis length.
+
+At the remaining vertex put d=23/40 and z=7/8. Both physical
+coordinates U=ad+bz and V=az-bd are positive. They satisfy
+
+\[
+ U\le d+\frac3{20}z=\frac{113}{160}<1,\qquad
+ V\le z+\frac3{20}d=\frac{769}{800}<1.              \tag{17}
+\]
+
+Their positivity follows, for example, by replacing a below by
+247/250 and |b| above by 3/20. If either coordinate is at most
+1/2, (17) makes the squared distance strictly less than 1/4. If
+both exceed 1/2, the exact distance formula and a^2+b^2=1 give
+
+\[
+\begin{aligned}
+ (U-1/2)^2+(V-1/2)^2
+ &=d^2+z^2-a(d+z)-b(z-d)+\frac12\\
+ &<d^2+z^2-\frac{247}{250}(d+z)
+                   +\frac3{20}(z-d)+\frac12\\
+ &=\frac{4173}{20000}<\frac14.                    \tag{18}
+\end{aligned}
+\]
+
+Every vertex has squared distance less than 1/4. Convexity gives
+the same bound throughout the box, making H's open incircle meet
+C's open interior. Both p cases are impossible, proving (15) on
+the whole domain. The shared endpoint p=11/20 is retained in both
+cases.
+
+## 5. A limitation of using only A,B,C,D,H for further height routing
 
 The stronger proposed bound y_H<-3/4 cannot be obtained from just
 these five squares, their actual AB/BC links, all three main cones,

@@ -99,7 +99,7 @@ now supplies the additional necessary bounds
  x_B+h_B<1/16,\quad x_A+h_A+2h_B<1/16,\\
  x_A<-23/16,\quad x_B<-7/16,\quad x_C<57/80,\\
  y_B<743/1920,\quad y_B-y_H>203/240,\quad
- y_H<-881/1920,\quad x_H<0.
+ y_H<-881/1920,\quad x_H<-1/40.
 \end{gathered}
 \]
 
