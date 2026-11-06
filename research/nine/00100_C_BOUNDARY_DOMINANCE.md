@@ -199,3 +199,99 @@ finishing both also discharges C887 for free.
 A universal exact alternative may supersede those individual tasks,
 but cannot be credited merely from a numerical residual, an archived
 partial tree, or a selected-seven relaxation.
+
+
+## 5. A direct physical exclusion inside the remaining Cb882 original
+
+This section proves a **complete continuous subdomain** of the unchanged
+Cb882 original, not the whole Cb882 cell. The parent cell and the
+224/231 ledger remain OPEN.
+
+**Lemma (downward-cone obstruction).** Let B,H be two original physical
+unit squares, disjoint in interior and contained in the Q-disk. Suppose
+
+\[
+ |x_B|<31/60,\quad y_B\le-4/5,\qquad
+ y_H-y_B\le-|x_H-x_B|.
+ \tag{22}
+\]
+
+These hypotheses are impossible. Only the two original contained
+radius-half disks and their original corner containment are needed.
+
+*Proof.* Put \(a=|x_B|\), \(b=-y_B\), and
+\(w=c_H-c_B=(u,-t)\). Thus \(a<31/60\), \(b\ge4/5\),
+\(t\ge|u|\), and the original contained radius-half disks give
+\(s:=|w|=\sqrt{u^2+t^2}\ge1\). In particular
+\(t\ge s/\sqrt2\), while \(b-a\ge17/60>0\).
+Therefore
+
+\[
+ c_B\cdot w=x_Bu+bt
+ \ge-a|u|+bt
+ \ge(b-a)t
+ \ge(b-a)s/\sqrt2.
+\]
+
+It follows that
+
+\[
+\begin{aligned}
+ |c_H|^2
+ &=|c_B|^2+s^2+2c_B\cdot w\\
+ &\ge a^2+b^2+s^2+\sqrt2(b-a)s\\
+ &\ge1+a^2+b^2+\frac75(b-a).
+\end{aligned}
+\tag{23}
+\]
+
+The last step uses \(\sqrt2>7/5\), \(s\ge1\), and \(b-a>0\).
+The final right side decreases with \(a\) on \([0,31/60]\)
+because \(2a-7/5<0\), and increases with \(b\ge4/5\).
+Consequently
+
+\[
+ |c_H|^2
+ >1+(31/60)^2+(4/5)^2+(7/5)(4/5-31/60)
+ =\frac{8293}{3600}.
+\]
+
+But the original disk gives \(|c_H|<91/60\), so
+\[
+ |c_H|^2<\frac{8281}{3600},
+ \qquad
+ \frac{8293-8281}{3600}=\frac1{300}>0.
+\]
+This contradiction proves the lemma. \(\square\)
+
+**Corollary (an exact Cb882 cut).** Every hypothetical packing in the
+unchanged original cell \`negative-b882d8ade0cf9ea0\` must satisfy
+
+\[
+ \boxed{y_B>-4/5.}                                      \tag{24}
+\]
+
+Indeed, the *original* selected actual links AB and BC, together with
+the center bound, imply
+\(-31/60<x_B<31/60\). In the eight-entry escape union for the
+original A,B,H,D tuple, entry 3 is the closed primary inequality
+\[
+ (x_H-x_B)+(y_H-y_B)\le0.
+\]
+Its immediately preceding entry 2 was not selected; the archived
+first-satisfied path therefore retains the predecessor complement
+\[
+ (x_H-x_B)-(y_H-y_B)\ge0.
+\]
+Combining these two **literal original-path** inequalities yields
+\(y_H-y_B\le-|x_H-x_B|\), precisely the third hypothesis of the lemma.
+The margin \(1/300\) handles all contacts and equality faces.
+Thus the whole closed subdomain \(y_B\le-4/5\) is excluded, and the
+complete complement \(y_B>-4/5\) remains to be proved empty.
+
+This result is a new necessary constraint on the **same original nine
+physical squares**. It does not assume any independently chosen H
+orientation, remove I, change the escape path, or substitute an
+unproved optimizer bound. It can be installed as one hand terminal in
+a future complete Cb882 table, but it earns no complete-original
+closure credit now.
