@@ -4,6 +4,10 @@ User-directed scope freeze, 5 November 2026. This directive takes precedence
 over broader research suggestions in PROOF_PLAN.md. Baseline:
 `768d52ab2c09367011c487ad3b020fce0a2bd0ab`.
 
+The single working manuscript is [ACTUAL_FOUR_221.md](ACTUAL_FOUR_221.md).
+Its Section 8 is the fixed coverage ledger; Section 7 is the exact
+remaining predicate. The target is still OPEN.
+
 ## One fixed mathematical target
 
 Put Q = 1105/256 and l = 29/60. Retain nine original independently
@@ -65,10 +69,21 @@ If an attempted route fails, keep the same target and identify the exact
 missing implication or an exact obstruction to that route. This is not a
 license to mark the target closed or silently broaden the scope.
 
-## Baseline status
+## Current status
 
-**OPEN.** The five-square terminal and several related occupancy theorems
-are available. The complete (2,2,1) assembly, including all full-side main
-positions and the one-upper/one-lower central complement, is not yet
-supplied at the baseline commit. No new gate or global completion count
-is created by this directive.
+**OPEN.** The working manuscript now assembles every full-side-bottom
+case and its top reflection, using only printed hand proofs and the
+existing hand inputs. The two same-side middle cases use the already
+proved original-square theorem. The middle position with one central
+original above both mains and one below both remains unproved.
+
+Section 7 retains the entire original predicate and isolates two
+remaining alternatives: a high right shoulder with insufficient central
+whole floor, or a low right shoulder with sufficient central whole floor.
+It excludes their equality boundaries and their low-shoulder/bad-floor
+intersection, but it does not exclude either surviving alternative.
+
+The new arguments are author-checked manuscript derivations, not an
+independent review or kernel verification. No global gate or percentage
+is changed by this partial assembly. The complete (2,2,1) theorem remains
+the sole active target.
