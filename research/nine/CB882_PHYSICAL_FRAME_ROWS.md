@@ -57,6 +57,24 @@ w_0, unit-vector Cauchy--Schwarz also gives the tangent inequality
                        a(w_0)a_P+b(w_0)b_P\le1.          \tag{3}
 \]
 
+The same physical frame also lies on the unit-circle arc in the
+absolute coordinates (a_P,d_P), with absolute half-angle in [m,M].
+Applying the identical chord and tangent arguments gives
+
+\[
+ (a(m)+a(M))a_P+(b(m)+b(M))d_P
+                 \ge1+a(m)a(M)+b(m)b(M),                 \tag{2a}
+\]
+\[
+                       a(w_0)a_P+b(w_0)d_P\le1.          \tag{3a}
+\]
+
+These retain the relation between alpha and absolute beta even when
+the signed angle interval crosses zero. They introduce no new frame;
+a_P^2+d_P^2=1 holds for the same original square. The rational
+interval [m,M] may be slightly larger than the physical canonical
+interval, just as in (2).
+
 The lower bounds d_P>=b_P and d_P>=-b_P are always valid.
 When l>=0, d_P=b_P; when u<=0, d_P=-b_P. If l<0<u,
 convexity of absolute value gives its upper secant
