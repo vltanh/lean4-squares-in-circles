@@ -44,9 +44,9 @@ Cb882 escape inequality. Thus every Cd402 strict counterexample has
 ## Why the old rectangular guard was smaller
 
 The saved central leaf 505 used three bounds of magnitude at most 1/16.
-They imply V <= 3/16 < 23/100. But failing one of those three bounds does
-not imply V > 23/100. For example (a,b,c)=(0,1/16,0) fails a strict
-rectangular test while still having V=1/16.
+They imply V <= 3/16 < 23/100. But failing one of those three closed
+bounds does not imply V > 23/100. For example (a,b,c)=(0,1/10,0) lies
+outside that rectangle while still having V=1/10 < 23/100.
 
 The reduction below applies the whole accepted sharp theorem and retains
 its entire complement. It does not simply delete the old outer leaves.
