@@ -130,6 +130,15 @@ also gives y_A-g_A<-1/4 before either height order is chosen.
 These are whole-parent reductions; the remaining arrangement still
 requires exclusion.
 
+The later [seven-original F-order theorem](00100_C_F_ABOVE_B.md)
+proves F above B without the B/H downward cone, throughout the
+nonnegative-A, nonpositive-D caller. The
+[universal left-cap theorem](CD402_H_ABOVE_B.md) also gives
+abs(y_A)<1/4 and x_P+g_P>-15/16 for every P distinct from A.
+It excludes the leftward B/P inset alternative for every P distinct
+from A,B. These are further necessary rows of the unchanged
+Cb882 caller; its separate Cd402 H-up corollary is not imported.
+
 ## 3. Exact rational frame and support enclosures
 
 The [physical-frame row chapter](CB882_PHYSICAL_FRAME_ROWS.md) proves
@@ -363,13 +372,15 @@ If the proved endpoint difference box has maximum squared norm
 strictly below four, this is impossible. Identical frame ownership
 is required; merely close directions cannot be joined.
 
-The other complete terminal is the
-[enlarged sharp local theorem](CB882_ENLARGED_SHARP_TERMINAL.md),
-which allows |beta|<=1/10 for B,I,E,F,G while retaining 1/20 for A,D.
-It can
-be invoked only when the current proved angle and center bounds
-imply its full guard. A numerical near-optimal pose is not such
-an implication.
+The complete sharp terminals are the
+[enlarged local theorem](CB882_ENLARGED_SHARP_TERMINAL.md),
+the stronger [uniform one-tenth theorem](CB882_UNIFORM_SHARP_TERMINAL.md),
+and the [four-row guard catalogue](CB882_SHARP_GUARD_CATALOGUE.md).
+They can be invoked only when the current proved angle and center
+bounds, or explicit [relative-coordinate row sums](CB882_SHARP_GUARD_ROW_CERTIFICATES.md),
+imply the entire selected guard. Each catalogue row has its own
+angle and height thresholds, including two endpoint-height targets.
+A numerical near-optimal pose is not such an implication.
 
 ## 7. Exhaustive case operations and completion boundary
 

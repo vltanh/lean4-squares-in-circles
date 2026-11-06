@@ -20,7 +20,7 @@ Assume the complete guard
  |\beta_P|\le1/10\quad(P=B,I,E,F,G),\\
  x_A\le x_B\le x_I\le x_D,\qquad x_B-x_A\ge h_A+h_B,\\
  x_F-x_E\ge h_E+h_F,\qquad x_G-x_F\ge h_F+h_G,\\
- -1/20\le y_I-y_B\le3/4,\qquad |y_D-y_I|\le1/10,\\
+ -1/16\le y_I-y_B\le3/4,\qquad |y_D-y_I|\le1/10,\\
  1/3\le x_E-x_A\le2/3,\quad y_E>y_A,\\
  1/3\le x_D-x_G\le2/3,\quad y_G>y_D.
 \end{gathered}                                                    \tag{1}
@@ -140,13 +140,13 @@ inequality implies
 \]
 
 For BI the slope loss is at most
-max((3/4)P,(1/20)N)/a_0. Each of these two quantities is at
-most ((3/8)(T-delta)+delta/20)/a_0. For ID the loss is at
+max((3/4)P,(1/16)N)/a_0. Each of these two quantities is at
+most ((3/8)(T-delta)+delta/16)/a_0. For ID the loss is at
 most Z/(10a_0)<=((T-delta)/20+delta/10)/a_0. Thus the
 total loss is at most
 
 \[
-       \frac{17(T-\delta)}{40a_0}+\frac{3\delta}{20a_0}.
+       \frac{17(T-\delta)}{40a_0}+\frac{13\delta}{80a_0}.
 \]
 
 Combine the two instances of (4), these losses, and actual AB.
@@ -157,7 +157,7 @@ The result is
  x_D-x_A\ge{}&2+(\alpha_A+\alpha_B)/2+\beta_A/2
                               +(1/2-c-e)|b|\\
  &+k_D\delta+k_T(T-\delta)+e(V-\delta),\\
- k_D={}&c+e-3/(20a_0),\qquad k_T=c-17/(40a_0).
+ k_D={}&c+e-13/(80a_0),\qquad k_T=c-17/(40a_0).
 \end{aligned}                                                    \tag{7}
 \]
 
@@ -215,7 +215,7 @@ Every coefficient is positive:
 |---|---:|
 | K_A | 5131507/1276160 |
 | K_B | 11293/99700 |
-| K_D | 1385707151/3171257600 |
+| K_D | 468467151/3171257600 |
 | K_E | 142479/127616 |
 | K_F | 25569/3988 |
 | K_T | 7107/24850 |
@@ -253,9 +253,9 @@ we obtain x_C=1/2. Then x_D-x_C=1=h_C+h_D, contradicting
 the original strictly weak CD bit.
 
 The ten center-difference targets and residual-certificate rule in
-Section 7 of the larger terminal apply with one enlarged right side:
-the target y_I-y_B now has upper bound 3/4. The other nine
-right sides are unchanged. Together with
+Section 7 of the larger terminal apply with two enlarged right sides:
+the target y_B-y_I has upper bound 1/16, and y_I-y_B has
+upper bound 3/4. The other eight right sides are unchanged. Together with
 the seven uniform orientation bounds in (1), the original A,D
 signs, actual AB/EF/FG, and the proved E/G upper inset orders,
 they imply this entire guard. Any use of the enlarged terminal

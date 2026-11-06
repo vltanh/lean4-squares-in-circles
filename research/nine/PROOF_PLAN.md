@@ -2,9 +2,10 @@
 
 The target is the unrestricted sharp bound \(R^2\ge1105/256\), with the
 explicit attaining packing in [the proof draft](PROOF.md). The current work
-is mathematical exposition and proof. Lean, numerical searches and replay
-infrastructure are deferred. The eventual proof, including every finite
-table, must be checkable from the manuscript and its stated mathematical
+is mathematical exposition and proof. Lean work is deferred. Computer
+exploration may identify useful inequalities and cases; it is not a premise
+of the paper proof. The eventual proof, including every finite table,
+must be checkable from the manuscript and its stated mathematical
 inputs, without external scripts or archived certificate data. State each
 cited mathematical input precisely and track it as a dependency for later
 Lean formalization.
