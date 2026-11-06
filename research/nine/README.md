@@ -116,6 +116,9 @@ two rational estimates. A universal actual-square clearance bound,
 x_H<-1/40, and the [A/E routing theorem](CB882_E_DOWN_ROUTING.md)
 proves y_A-g_A<-1/4 and reduces the E-below-A physical separator
 to three owned axes. E below A and the whole original remain open.
+The [B/F inset theorem](CB882_BF_VERTICAL.md) also excludes both
+horizontal B/F inset alternatives on the whole parent, by applying
+the physical outsider strip to the resulting long endpoint span.
 
 For the whole Cb882 attempt, a new
 [sharp local terminal](CB882_LOCAL_SHARP_TERMINAL.md) uses the actual

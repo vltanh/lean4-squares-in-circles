@@ -232,6 +232,10 @@ horizontal cases are excluded on the whole parent by a hand proof.
 The [G-order theorem](CB882_G_ABOVE_D.md) further excludes the lower
 G case, so the whole-parent row y_G-y_D>=g_D+g_G is now available.
 Both A/E height alternatives must still be covered.
+The [B/F inset theorem](CB882_BF_VERTICAL.md) similarly proves
+|y_F-y_B|>=g_B+g_F on the whole parent. Its two vertical alternatives
+are exhaustive, before either A/E height order is chosen. The proof
+uses the physical outsider strip under an endpoint span of h_P+h_T+2.
 Its small-tilt unary estimate additionally gives
 -x_A<=rho max(alpha_A) on every current A-angle interval.
 
