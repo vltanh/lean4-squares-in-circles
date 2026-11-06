@@ -169,3 +169,21 @@ direct reuse of the C-family E-down table. The archived completion
 of selected I rectangles in B16a is partial evidence whose full
 ancestry and remaining complement must still be retained; its old
 rectangle counts are not a whole-original proof.
+
+## 5. Subsequent whole-parent improvements
+
+The [left-cap proof](CD402_H_ABOVE_B.md) now gives
+x_X+g_X>-15/16 for every original X distinct from A, together
+with abs(y_A)<1/4, throughout all seven callers. It also rules out
+the leftward B/X inset alternative for every X distinct from A,B.
+Combined with Cd402's exact diagonal escape, this proves H above B
+on that whole original without its archived continuation.
+
+The new [middle-height theorem](00100_C_F_ABOVE_B.md) proves
+F above B throughout C887, Cd402 and Cb882. Its fresh E-up/F-down
+table uses only A through G; the E-down implication was already
+transferred in Section 2. This removes the former H-dependence of
+the F-up conclusion. The old Cb882 table itself remains limited to
+its stated caller; the new theorem supplies the broader proof.
+
+Neither improvement excludes an additional whole original.

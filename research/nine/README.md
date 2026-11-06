@@ -133,6 +133,13 @@ the normalized `001/00` caller, together with abs(y_A)<1/4.
 It rules out every leftward B/X inset order and proves H above B
 on the whole Cd402 original from its exact diagonal condition.
 This supplies a fresh height-order reduction; Cd402 itself remains open.
+The [seven-original middle-height theorem](00100_C_F_ABOVE_B.md)
+also proves F above B throughout the nonnegative-A, nonpositive-D
+caller, without any H-order assumption. Its one-case table prints
+103 rows and 36 deductions. A new
+[physical-chain terminal](CD402_PHYSICAL_CHAIN_SHARP_TERMINAL.md)
+uses A,H,I,D near the Cd402 equality arrangement; its full guard
+still needs a complete complementary cover.
 
 For the whole Cb882 attempt, a new
 [sharp local terminal](CB882_LOCAL_SHARP_TERMINAL.md) uses the actual
@@ -152,6 +159,10 @@ tilt and gives seven positive coefficients. It also allows the
 B/I upward height gap to reach 3/4. Exact
 [relative-coordinate row certificates](CB882_SHARP_GUARD_ROW_CERTIFICATES.md)
 can establish its unchanged center guards directly.
+A [four-row guard catalogue](CB882_SHARP_GUARD_CATALOGUE.md)
+permits progressively larger tilts, through abs(beta)<=1/5, under
+explicitly tighter height conditions. Every row has a continuous
+proof and seven printed positive corner coefficients.
 
 The foundation and extraction gates G1–G2 are complete at the manuscript
 level and have received independent reading. Greene's finite-poset theorem
