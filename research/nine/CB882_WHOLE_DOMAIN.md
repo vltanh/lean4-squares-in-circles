@@ -375,6 +375,14 @@ If the proved endpoint difference box has maximum squared norm
 strictly below four, this is impossible. Identical frame ownership
 is required; merely close directions cannot be joined.
 
+There is also an exact [aligned-owner endpoint terminal](00100_ZERO_C_PRIMARY_TERMINAL.md).
+If the selected CD owner has a singleton zero-angle interval, its
+positive primary separation gives x_D-x_C>=h_C+h_D. Its positive
+secondary separation gives y_D-y_C>=h_C+h_D, and the CD cone gives
+x_D-x_C>=y_D-y_C. Both contradict the retained strictly weak CD
+condition. An interval merely containing zero does not meet this
+terminal's hypothesis.
+
 The complete sharp terminals are the
 [enlarged local theorem](CB882_ENLARGED_SHARP_TERMINAL.md),
 the stronger [uniform one-tenth theorem](CB882_UNIFORM_SHARP_TERMINAL.md),
