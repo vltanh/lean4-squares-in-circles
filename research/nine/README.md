@@ -108,6 +108,15 @@ the complete forward horizontal case by one physical pair cap and two
 short rational polynomial estimates. It uses only seven originals and
 requires neither C-slant nor a tilt-sign or height-order hypothesis.
 
+For the complete Cb882 caller, the
+[G-order theorem](CB882_G_ABOVE_D.md) now rules out G below D by
+two rational estimates. A universal actual-square clearance bound,
+|c_P-c_T|>=1+|h_P-h_T|, supplies the key comparison. The
+[downward-cone localization](CB882_GEOMETRIC_REDUCTION.md) gives
+x_H<-1/40, and the [A/E routing theorem](CB882_E_DOWN_ROUTING.md)
+proves y_A-g_A<-1/4 and reduces the E-below-A physical separator
+to three owned axes. E below A and the whole original remain open.
+
 For the whole Cb882 attempt, a new
 [sharp local terminal](CB882_LOCAL_SHARP_TERMINAL.md) uses the actual
 AB and EFG links and four original boundary corners. Its continuous

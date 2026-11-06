@@ -108,6 +108,14 @@ Their closed relaxations may be used in a finite table. A complete
 height split also permits the stronger row x_C-x_H>=11/12 on the
 child y_H>=y_C; the other child y_H<=y_C must be retained.
 
+The [complete G-order proof](CB882_G_ABOVE_D.md) excludes the entire
+lower-G alternative by two rational estimates and proves
+y_G-y_D>=g_D+g_G. The [A/E routing chapter](CB882_E_DOWN_ROUTING.md)
+also proves y_A-g_A<-1/4 on the whole parent. If E lies below A,
+it gives y_E<-1/4-g_E, x_E>-7/5, and a complete three-case cover
+of the physical A/E separating axis. That E-order alternative remains
+open; the G-order reduction does not exclude the whole original.
+
 ## 3. Exact rational frame and support enclosures
 
 Write a(w)=(1-w^2)/(1+w^2), b(w)=2w/(1+w^2),
@@ -159,6 +167,17 @@ S>=1+2k_PT(b_P-b_T) and S>=1-2k_PT(b_P-b_T) are necessary.
 These use the same physical frame components as the original corner
 inequalities; they do not introduce independently chosen frames.
 
+There is also a universal width comparison, proved in Section 2 of
+the [G-order chapter](CB882_G_ABOVE_D.md):
+
+\[
+ R_{PT}\ge1+|h_P-h_T|.
+\]
+
+Consequently the same squared-distance secant S satisfies both
+S>=1+2(h_P-h_T) and S>=1-2(h_P-h_T). The halfwidths here are
+the actual original frame quantities (alpha+|beta|)/2.
+
 ## 4. Original physical rows at a current center box
 
 Every row below is a necessary inequality about the same originals.
@@ -204,13 +223,15 @@ caps. The frame-sum row follows by bounding the whole horizontal
 span from x_A-h_A to x_D+h_D by 2r: its lower bound is
 2h_A+2h_B+(h_C+g_C)+(h_D+g_D)>=2h_A+2h_B+2.
 The C-slant row and x_H<=x_I remain present. Since x_G>0, the
-proved lower-right pocket exclusion also gives y_G>=y_C;
-this is not a G-order assumption y_G>=y_D.
+proved lower-right pocket exclusion also gives y_G>=y_C.
 
 The complete [endpoint-inset lemma](00100_ENDPOINT_INSETS_ARE_VERTICAL.md)
 also gives |y_E-y_A|>=g_A+g_E and |y_G-y_D|>=g_D+g_G.
 Thus each endpoint inset pair has only its two vertical cases; both
 horizontal cases are excluded on the whole parent by a hand proof.
+The [G-order theorem](CB882_G_ABOVE_D.md) further excludes the lower
+G case, so the whole-parent row y_G-y_D>=g_D+g_G is now available.
+Both A/E height alternatives must still be covered.
 Its small-tilt unary estimate additionally gives
 -x_A<=rho max(alpha_A) on every current A-angle interval.
 
