@@ -9,7 +9,25 @@ inputs, without external scripts or archived certificate data. State each
 cited mathematical input precisely and track it as a dependency for later
 Lean formalization.
 
-## Fixed target resolution
+## Complete actual-and-cone four-plus-three domain
+
+**CLOSED at the manuscript level:** nine original squares below the
+target radius cannot contain a horizontal four-chain whose links are
+both actual and center-cone, together with a disjoint horizontal
+center-cone three-chain. The [complete (1,3,1) chapter](ACTUAL_FOUR_131.md)
+finishes the outsider occupancy proof and assembles its six exhaustive
+counts, up to reflection, in Section 9. Neither short-chain link needs
+actual projection separation. Thus all four strict witness domains
+`000/00`, `000/01`, `000/10`, and `000/11` are excluded.
+
+The [independent coverage review](ACTUAL_CONE_COVERAGE_REVIEW.md) checks
+the six-count assembly, normalization and local caller guards. It does not
+claim an independent recheck of every inherited scalar proof. The remaining
+global task is to route witnesses with a weak main link; the extraction
+does not itself supply actual links. G3--G5 remain open for the unrestricted
+domains specified below.
+
+## Earlier fixed target resolution
 
 **CLOSED:** the complete (2,2,1) domain in
 [ACTIVE_221_DIRECTIVE.md](ACTIVE_221_DIRECTIVE.md) is excluded by
@@ -159,17 +177,18 @@ every eligible triple, on both vertical sides. This is a stronger
 necessary condition; extracting such a triple throughout the domain
 remains unproved and does not change the status of G3 or G4.
 
-Section 4.3 records complete hand exclusions within that domain: the
-actual-and-cone full-side count \((2,1,2)\), and the normalized counts
-\((2,3,0)\), \((0,3,2)\), \((1,4,0)\), and \((0,4,1)\) with an
-outsider cone three-chain. The complete fixed
-\((2,2,1)\) and reflected \((1,2,2)\) domains are now excluded by the
-single integrated [occupancy manuscript](ACTUAL_FOUR_221.md), including
-the one-upper/one-lower middle-main complement. The two-upper-central
-caller, stronger two-low-main exclusion, one-main height bound, and
-nearby upper-central pair theorem remain proved inputs. These are useful all-original
-theorems; their additional hypotheses and the remaining alternatives are
-explicit. They do not close the whole-domain gate G3.
+The completed [six-count assembly](ACTUAL_FOUR_131.md#9-complete-fixed-coverage-and-the-actual-cone-four-plus-three-corollary)
+now excludes this entire domain when the same actual main chain also
+satisfies its three cone comparisons and a disjoint outsider cone
+three-chain is retained. Side capacity leaves, up to reflection, exactly
+\((2,1,2),(2,2,1),(2,3,0),(1,3,1),(1,4,0),(0,5,0)\).
+The first five have complete hand contradictions; the last contradicts
+the selected cone triple's horizontal span. The
+[coverage review](ACTUAL_CONE_COVERAGE_REVIEW.md) records the exact callers
+and closed boundaries. The proof uses all nine originals and covers both
+statuses of each selected short link. It leaves open the unrestricted
+actual-four domain without the additional cone hypotheses and the
+unrestricted extracted domain with a weak main link; it does not close G3.
 
 Use the weighted endpoint quantity \(W\), rather than requiring every weak
 edge to become an actual projection separation. Equation (3) of the draft

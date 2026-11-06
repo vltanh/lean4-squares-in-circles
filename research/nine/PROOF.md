@@ -5,6 +5,9 @@ This is a partial paper proof. The complete
 [exhaustive extraction](EXTRACTION.md) are now written as separate chapters.
 The [five-square cap](FIVE_SQUARE_CAP.md) adds a complete terminal with
 all of its formerly computational scalar steps replaced by hand proofs.
+The [actual-and-cone four-plus-three theorem](ACTUAL_FOUR_131.md#9-complete-fixed-coverage-and-the-actual-cone-four-plus-three-corollary)
+also closes every extracted witness whose three main links are actual,
+without requiring either short link to be actual.
 Sections 1–4 below give their target, an attaining packing and the resulting
 proof interface. Section 5 identifies the missing global implication.
 No unrestricted lower bound is claimed.
@@ -200,6 +203,17 @@ Reversing both coordinate axes and simultaneously relabeling
 \(abc/de\) to \(cba/ed\). These are domains of a packing **and a chosen
 witness**. Different witnesses of the same packing may have different masks.
 
+The [six-count occupancy assembly](ACTUAL_FOUR_131.md#9-complete-fixed-coverage-and-the-actual-cone-four-plus-three-corollary)
+proves that all four strict domains `000/00`, `000/01`, `000/10`,
+and `000/11` are empty. Its caller retains all nine originals, all five
+cone comparisons, and actual separation on the three long-chain links.
+No actual separation is required on either short-chain link. Its
+[coverage review](ACTUAL_CONE_COVERAGE_REVIEW.md) checks the exact
+normalization and finite assembly. Consequently a hypothetical strict
+counterexample must have at least one weak main link in **every** chosen
+cone four-plus-three witness. This conclusion does not promote any cone
+link to an actual link.
+
 ## 5. The missing implication
 
 One sufficient research target is the following **unproved** statement:
@@ -232,12 +246,15 @@ empty. It now also excludes the upper and lower five-square callers of
 Section 3.1; the complementary geometric configurations remain in the
 domain. Section 4.3 of that analysis links the completed full-side and
 one-sided occupancy theorems, their exact additional cone hypotheses,
-and the central-height exclusions. The integrated
-[complete (2,2,1) theorem](ACTUAL_FOUR_221.md) now closes every
-full-side main position and central vertical placement under the fixed
-actual-and-cone main-chain and outsider-cone hypotheses, including
-the reflected (1,2,2) domain. Its normalization preserves the original
+and the central-height exclusions. The
+[complete (1,3,1) theorem](ACTUAL_FOUR_131.md) now finishes the
+outsider occupancy cover under the actual-and-cone main-chain and
+outsider-cone hypotheses, incorporating the
+[complete (2,2,1) theorem](ACTUAL_FOUR_221.md) and all reflected counts.
+A sufficiently small common center expansion preserves the chosen
 occupancy. These conditional exclusions do not exhaust the original
-domain. The [proof plan](PROOF_PLAN.md) keeps this research decision and
+actual-four domain without the cone hypotheses, or the extracted
+cone-four domain with a weak main link. The [proof plan](PROOF_PLAN.md)
+keeps this research decision and
 the unrestricted closure open. Global equality classification remains a
 separate obligation.

@@ -9,15 +9,20 @@ The present task is a pen-and-paper proof, with explicit finite tables where
 useful. Lean work is deferred. Numerical searches, certificate replay and
 archived success reports are not steps in the proposed paper proof.
 
-**Fixed (2,2,1) target: CLOSED.** The single
-[integrated manuscript](ACTUAL_FOUR_221.md) resolves the complete domain
-specified by [the active directive](ACTIVE_221_DIRECTIVE.md), including
-all full-side main positions, both central vertical placements, and
-the reflected (1,2,2) count. Its main four-chain has both actual projection
-separation and the stated cone comparisons, and the designated outsider
-triple retains only its cone comparisons. The closure is a hand-proof
-result under those explicit hypotheses; the unrestricted theorem remains
-open.
+**Actual-and-cone four-chain with a disjoint cone three-chain: CLOSED
+at the manuscript level.** The [complete (1,3,1) chapter](ACTUAL_FOUR_131.md)
+finishes the last occupancy type and assembles all six counts, up to
+horizontal reflection, in its Section 9. Thus every selected witness
+`000/**` is excluded: the three main links are actual, while either
+short link may still be weak. This includes the previously completed
+[(2,2,1) directive](ACTIVE_221_DIRECTIVE.md).
+
+The [independent coverage review](ACTUAL_CONE_COVERAGE_REVIEW.md) checks
+the assembly, normalization, caller hypotheses and boundaries. It is not
+a new independent verification of every supporting scalar argument.
+The unrestricted extraction gives only cone links; a weak main link
+therefore remains a genuine unresolved case, and the unrestricted theorem
+remains open.
 
 Read these documents in order:
 
@@ -45,6 +50,7 @@ Read these documents in order:
    [one-sided occupancy theorem](ACTUAL_FOUR_230.md),
    [four-central occupancy theorem](ACTUAL_FOUR_140.md),
    [complete (2,2,1) occupancy theorem](ACTUAL_FOUR_221.md),
+   [complete (1,3,1) theorem and six-count assembly](ACTUAL_FOUR_131.md),
    [two-upper-central caller and reusable floor lemmas](ACTUAL_FOUR_CONE_TRIPLES.md),
    and [central-height exclusions](ACTUAL_FOUR_CENTRAL_BOUNDS.md).
 7. [Review of the earlier work](AUDIT.md): what to reuse, what failed, and
@@ -77,7 +83,8 @@ Cb882 halfspace y_B<=-67/120. The needed nonpositive-D C-slant input
 is now proved by the three hand/table chapters below.
 The complementary Cb882 domain and every whole-original closure remain
 open; this adds no completed cell or mask. The new argument prints its
-rational arithmetic and has not received independent review.
+rational arithmetic; its [second-agent review](CB882_HAND_REVIEW.md)
+checks the physical implications and exact constants.
 
 The [C-slant primary-axis chapter](00100_C_SLANT_PRIMARY_AXES.md) now
 replaces the primary-axis part for nonpositive D with direct hand
@@ -89,7 +96,8 @@ The [lower-G complement](00100_C_SLANT_LOWER_COMPLEMENT.md) supplies
 all 1,039 remaining terminal combinations and the complete acyclic
 assembly. Together these prove C-slant for nonpositive D without the
 archived C-slant or G-order forests. Their full covers and rational
-arithmetic have been checked locally; no independent review is claimed.
+arithmetic have received an [independent second-agent reconstruction](CB882_HAND_REVIEW.md),
+including all 5,243 printed leaves.
 Positive-D C-slant, whole-original exclusions, and the unrestricted
 theorem remain open.
 
@@ -115,7 +123,9 @@ is stated exactly and remains an explicit classical dependency. These
 chapters settle the proof inputs and coverage; the unrestricted geometric
 closure is still open. The complete five-square cap strengthens the
 available terminals and the surviving actual-four-chain predicate.
-Several whole occupancy domains with additional cone hypotheses are now
-excluded by hand; the remaining domains and hypotheses are kept explicit.
+All outsider occupancy domains are now excluded when the same main chain
+is actual and cone, with a disjoint outsider cone triple. The weak-main
+domains and the unrestricted actual-four domain without those cone
+hypotheses remain explicit.
 Earlier computational results remain available in
 Git history; they are not silently promoted to self-contained paper proofs.
