@@ -1,5 +1,11 @@
 # Sharp left-main height and a downward-cone exclusion for `001/00`
 
+**Later strengthening:** the [inner-frame and downward-cone chapter](00100_INNER_FRAME_AND_DOWNWARD_CONE.md)
+proves h_B<259/480 and |t_B|<1/12 directly from the selected original
+links. Using the same stated C-slant input, it improves the necessary
+Cb882 bound below to y_B>-67/120. Neither chapter excludes the complete
+original cell.
+
 **Scope.** Original-nine physical squares; strict squared radius
 `q<Q=1105/256`; same prescribed cone 4+3 witness and marked bits
 `001/00`. All nine original frames, 36 pair conditions, and all
