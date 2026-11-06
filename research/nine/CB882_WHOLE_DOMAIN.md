@@ -236,8 +236,14 @@ identity. If z in [L,U] and t in [p,q], then
 The last line uses tz<=((p+q)/2)z+((q-p)/2)|z| and
 the upper secant of |z|. It therefore holds even when the
 actual slope and center difference are correlated. Replace the
-product in the chosen side-axis projection by (6). The resulting
-affine upper projection must still be at least the support
+product in the chosen side-axis projection by (6), taking
+z=s Delta_y for a primary axis and z=-s Delta_x for a secondary
+axis. The interval [L,U] must be the proved interval of this signed
+coordinate difference; negation changes [L,U] to [-U,-L]. Thus the
+product being replaced always has coefficient +1. In particular,
+one must not multiply an upper bound for t Delta_y or t Delta_x
+by a negative sign. The resulting affine upper projection must
+still be at least the support
 threshold. This is a necessary row over the entire closed box,
 without an approximation tolerance or an independent frame.
 
