@@ -4,9 +4,9 @@ User-directed scope freeze, 5 November 2026. This directive takes precedence
 over broader research suggestions in PROOF_PLAN.md. Baseline:
 `768d52ab2c09367011c487ad3b020fce0a2bd0ab`.
 
-The single working manuscript is [ACTUAL_FOUR_221.md](ACTUAL_FOUR_221.md).
-Its Section 8 is the fixed coverage ledger; Section 7 is the exact
-remaining predicate. The target is still OPEN.
+The single completed manuscript is [ACTUAL_FOUR_221.md](ACTUAL_FOUR_221.md).
+Its Section 7 is the complete coverage ledger; Appendices A--I print
+every new supporting hand proof and its exact use. The target is CLOSED.
 
 ## One fixed mathematical target
 
@@ -71,19 +71,25 @@ license to mark the target closed or silently broaden the scope.
 
 ## Current status
 
-**OPEN.** The working manuscript now assembles every full-side-bottom
-case and its top reflection, using only printed hand proofs and the
-existing hand inputs. The two same-side middle cases use the already
-proved original-square theorem. The middle position with one central
-original above both mains and one below both remains unproved.
+**CLOSED, 6 November 2026.** The integrated manuscript excludes every
+full-side bottom, middle, and top position and every upper/lower count
+of the two central originals, with all reflected cases included. The
+middle position with one central above both mains and one below is
+now proved, including both former low-right/good-floor and
+high-right/bad-floor alternatives.
 
-Section 7 retains the entire original predicate and isolates two
-remaining alternatives: a high right shoulder with insufficient central
-whole floor, or a low right shoulder with sufficient central whole floor.
-It excludes their equality boundaries and their low-shoulder/bad-floor
-intersection, but it does not exclude either surviving alternative.
+The small center expansion preserves the original occupancy. The final
+negative-central alternative retains both lower originals to force
+delta > 10907/43400 > 1/4, while the unchanged upper frame and genuine
+separators give delta < F(t,z) < 1/4. Both complete scalar rectangles,
+their boundary overlap, and the remaining slope tail have printed
+hand proofs. The positive-central alternatives and every original
+separator owner are covered separately.
 
-The new arguments are author-checked manuscript derivations, not an
-independent review or kernel verification. No global gate or percentage
-is changed by this partial assembly. The complete (2,2,1) theorem remains
-the sole active target.
+The geometric reductions, exact scalar arithmetic, and assembled
+whole-target coverage received independent hand reviews. No Lean
+compilation, CI, numerical search, mathematical program, or archived
+certificate replay was used. The theorem closes exactly this conditional
+(2,2,1) domain and its (1,2,2) reflection. The unrestricted nine-square
+theorem and its global equality classification remain open; no global
+proof gate is changed by this conditional closure.

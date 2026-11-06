@@ -9,6 +9,16 @@ The present task is a pen-and-paper proof, with explicit finite tables where
 useful. Lean work is deferred. Numerical searches, certificate replay and
 archived success reports are not steps in the proposed paper proof.
 
+**Fixed (2,2,1) target: CLOSED.** The single
+[integrated manuscript](ACTUAL_FOUR_221.md) resolves the complete domain
+specified by [the active directive](ACTIVE_221_DIRECTIVE.md), including
+all full-side main positions, both central vertical placements, and
+the reflected (1,2,2) count. Its main four-chain has both actual projection
+separation and the stated cone comparisons, and the designated outsider
+triple retains only its cone comparisons. The closure is a hand-proof
+result under those explicit hypotheses; the unrestricted theorem remains
+open.
+
 Read these documents in order:
 
 1. [Proof draft](PROOF.md): the physical model, attaining construction,
@@ -34,6 +44,7 @@ Read these documents in order:
    complete [full-side theorem](ACTUAL_FOUR_FULL_SIDES.md),
    [one-sided occupancy theorem](ACTUAL_FOUR_230.md),
    [four-central occupancy theorem](ACTUAL_FOUR_140.md),
+   [complete (2,2,1) occupancy theorem](ACTUAL_FOUR_221.md),
    [two-upper-central caller and reusable floor lemmas](ACTUAL_FOUR_CONE_TRIPLES.md),
    and [central-height exclusions](ACTUAL_FOUR_CENTRAL_BOUNDS.md).
 7. [Review of the earlier work](AUDIT.md): what to reuse, what failed, and

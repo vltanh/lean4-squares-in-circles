@@ -232,7 +232,12 @@ empty. It now also excludes the upper and lower five-square callers of
 Section 3.1; the complementary geometric configurations remain in the
 domain. Section 4.3 of that analysis links the completed full-side and
 one-sided occupancy theorems, their exact additional cone hypotheses,
-and the new central-height exclusions. They do not exhaust the original
+and the central-height exclusions. The integrated
+[complete (2,2,1) theorem](ACTUAL_FOUR_221.md) now closes every
+full-side main position and central vertical placement under the fixed
+actual-and-cone main-chain and outsider-cone hypotheses, including
+the reflected (1,2,2) domain. Its normalization preserves the original
+occupancy. These conditional exclusions do not exhaust the original
 domain. The [proof plan](PROOF_PLAN.md) keeps this research decision and
 the unrestricted closure open. Global equality classification remains a
 separate obligation.

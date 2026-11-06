@@ -440,7 +440,16 @@ five-square cap for count \((2,2,1)\) when the full-side main is in its
 middle position and both central outsiders are above both inner mains,
 with the reflected variants. It includes the complete low-side and
 coupled-cone floor lemmas. The two central originals are both used in the
-new physical-frame trap. The one-upper/one-lower complement remains open.
+new physical-frame trap. The integrated
+[ACTUAL_FOUR_221.md](ACTUAL_FOUR_221.md) now excludes the complete
+\((2,2,1)\) domain and its \((1,2,2)\) reflection under the same
+actual-and-cone main-chain and designated outsider-cone hypotheses.
+It covers all full-side main positions and closes the
+one-upper/one-lower complement as well. A sufficiently small common
+center expansion preserves the original column count. The chapter
+prints every new supporting proof, its exact use, and the exhaustive
+whole-target coverage ledger; its final negative-central contradiction
+retains both lower originals and every real upper-separator slope.
 
 The independent [central-height theorem](ACTUAL_FOUR_CENTRAL_BOUNDS.md)
 also excludes a lower central original whenever

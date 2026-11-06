@@ -9,6 +9,23 @@ inputs, without external scripts or archived certificate data. State each
 cited mathematical input precisely and track it as a dependency for later
 Lean formalization.
 
+## Fixed target resolution
+
+**CLOSED:** the complete (2,2,1) domain in
+[ACTIVE_221_DIRECTIVE.md](ACTIVE_221_DIRECTIVE.md) is excluded by
+[ACTUAL_FOUR_221.md](ACTUAL_FOUR_221.md). That single manuscript includes
+the complete bottom/middle/top cover, both central vertical counts and
+their reflections, the low-right caller, both positive-central physical
+directions, and the negative-central scalar contradiction. A sufficiently
+small center expansion preserves the original occupancy. Every supporting
+lemma has a stated use in that fixed target.
+
+The geometric reductions, final scalar bounds, and complete caller cover
+received independent hand reviews. No Lean compilation, CI, numerical
+search, mathematical program, or certificate replay was used. This resolves
+the fixed directive and its reflected (1,2,2) counterpart. G3--G5 and the
+unrestricted theorem retain the open status stated below.
+
 ## Gates and acceptance criteria
 
 These are fixed deliverables, not a percentage-complete estimate. A new
@@ -145,10 +162,12 @@ remains unproved and does not change the status of G3 or G4.
 Section 4.3 records complete hand exclusions within that domain: the
 actual-and-cone full-side count \((2,1,2)\), and the normalized counts
 \((2,3,0)\), \((0,3,2)\), \((1,4,0)\), and \((0,4,1)\) with an
-outsider cone three-chain. The
-two-upper-central, full-side-middle \((2,2,1)\) caller and a stronger
-two-low-main exclusion are also proved, as are a one-main height bound
-and the nearby upper-central pair theorem. These are useful all-original
+outsider cone three-chain. The complete fixed
+\((2,2,1)\) and reflected \((1,2,2)\) domains are now excluded by the
+single integrated [occupancy manuscript](ACTUAL_FOUR_221.md), including
+the one-upper/one-lower middle-main complement. The two-upper-central
+caller, stronger two-low-main exclusion, one-main height bound, and
+nearby upper-central pair theorem remain proved inputs. These are useful all-original
 theorems; their additional hypotheses and the remaining alternatives are
 explicit. They do not close the whole-domain gate G3.
 
