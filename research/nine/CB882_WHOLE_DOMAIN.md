@@ -90,6 +90,24 @@ For B, |tan(theta_B)|<1/12 and
 The actual canonical and B-slope restrictions remain in scope even
 where these rational intervals are slightly larger.
 
+The [whole-domain localization lemma](CB882_GEOMETRIC_REDUCTION.md)
+now supplies the additional necessary bounds
+
+\[
+\begin{gathered}
+ x_D-g_D<17/16,\quad x_C+g_C<17/16,\quad
+ x_B+h_B<1/16,\quad x_A+h_A+2h_B<1/16,\\
+ x_A<-23/16,\quad x_B<-7/16,\quad x_C<57/80,\\
+ y_B<743/1920,\quad y_B-y_H>203/240,\quad
+ y_H<-881/1920,\quad x_H<0.
+\end{gathered}
+\]
+
+These strengthen the initial enclosure without restricting the parent.
+Their closed relaxations may be used in a finite table. A complete
+height split also permits the stronger row x_C-x_H>=11/12 on the
+child y_H>=y_C; the other child y_H<=y_C must be retained.
+
 ## 3. Exact rational frame and support enclosures
 
 Write a(w)=(1-w^2)/(1+w^2), b(w)=2w/(1+w^2),
