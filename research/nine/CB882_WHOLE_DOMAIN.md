@@ -115,8 +115,20 @@ also proves y_A-g_A<-1/4 on the whole parent. If E lies below A,
 it gives y_E<-1/4-g_E, x_E>-7/5, and a complete three-case cover
 of the physical A/E separating axis. That E-order alternative remains
 open; the G-order reduction does not exclude the whole original.
+Within that complete E-down alternative, the
+[endpoint estimate](CB882_E_DOWN_ENDPOINT.md) proves x_E+h_E>-11/16,
+and the [middle-height theorem](CB882_E_DOWN_F_ABOVE_B.md) proves
+y_F-y_B>=g_B+g_F. The latter excludes the entire lower B/F order
+by the two original C/F incircles.
 
 ## 3. Exact rational frame and support enclosures
+
+The [physical-frame row chapter](CB882_PHYSICAL_FRAME_ROWS.md) proves
+the corresponding linear inequalities retaining each original's actual
+frame components, including original-corner halfplanes and the distance
+from another original's incircle to its physical square. These are
+continuous row-validity statements; a finite table must still display
+the complete case cover and its exact weighted contradictions.
 
 Write a(w)=(1-w^2)/(1+w^2), b(w)=2w/(1+w^2),
 h(w)=(a(w)+|b(w)|)/2. For a current signed interval [l,u], let
