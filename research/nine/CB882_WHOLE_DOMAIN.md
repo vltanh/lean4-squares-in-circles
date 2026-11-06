@@ -7,6 +7,12 @@ The [sharp local terminal](CB882_LOCAL_SHARP_TERMINAL.md) is complete.
 A complete attached cover of the remaining original domain is not yet
 claimed. Search-node totals and partial frontiers are not cell closures.
 
+The complete [positive C-primary alternative](CB882_C_PRIMARY_COMPLETE.md)
+is now excluded by its literal rational table and full case induction.
+The two secondary-axis alternatives remain open. The
+[shared cover rules](CB882_FINITE_COVER_RULES.md) state the exact root,
+row families, deductions and terminal conventions for that proof.
+
 ## 1. The unchanged original-nine predicate
 
 Retain nine independently oriented physical unit squares A--I, every

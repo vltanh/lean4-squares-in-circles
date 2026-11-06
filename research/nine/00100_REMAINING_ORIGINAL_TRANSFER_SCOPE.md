@@ -116,10 +116,10 @@ The following are specific to the downward B/H cone:
 
 The latter tables contain B/H downward-cone or downward-inset rows.
 Deleting those rows while retaining their certified deductions is
-invalid. Thus neither the whole Cb882 endpoint order E-up nor its
-whole-parent F-up conclusion has been proved for Cd402 by those
-tables. On Cd402, the E-down conditional F-up implication above is
-available; E-up/F-down remains a separate possibility.
+invalid. Those Cb882 tables therefore do not prove E-up or F-up
+for Cd402. The broader proofs in Section 5 establish both orders
+with fresh tables that use only A through G; those are the valid
+sources for the Cd402 conclusions.
 
 For A-c744, D is nonnegative. The present nonpositive-D C-slant,
 pocket exclusion, and G-up argument do not apply. The unconditional
@@ -129,8 +129,8 @@ normalized CD height and the same marked caller.
 
 ## 4. Cd402 is the closest direct successor
 
-Cd402 retains the same A/D signs as Cb882 and shares all its new
-whole-main-chain and endpoint reductions except those using H-down.
+Cd402 retains the same A/D signs as Cb882 and shares the whole-main-chain
+reductions and the E-up, F-up and G-up conclusions proved without H-down.
 Its exact changed input is the single halfplane
 y_H-y_B>=x_H-x_B. It is therefore the closest next original for a
 fresh complete hand/table proof.
@@ -146,9 +146,9 @@ verticality, and B/F verticality as proved necessary inequalities.
 The [thirteen-domain handoff](00100_CD402_THIRTEEN_FRONTIER_HANDOFF.md)
 reports that every surviving path in one archived continuation has
 y_H-y_B>=g_B+g_H. This is a property of those complete saved paths,
-not an initial Cd402 hypothesis. A fresh proof must either reproduce
-the preceding complete cover or prove that upward inset order on
-the whole original. The three reported H/I alternatives also retain
+not an initial Cd402 hypothesis supplied by that archive. The new
+left-cap proof in Section 5 establishes that upward inset order on
+the whole original. The three archived H/I alternatives still retain
 their full saved ancestry. The later four-original exclusion of
 saved leaf 480 and variation reductions do not remove that obligation.
 
@@ -195,3 +195,9 @@ so it does not assume its own endpoint-order conclusion. Together
 with the shared F-up and G-up proofs, all three C originals now
 retain E above A, F above B, and G above D before their extra-square
 conditions are used. Their remaining original exclusions stay open.
+
+Within Cb882, the [complete positive C-primary alternative](CB882_C_PRIMARY_COMPLETE.md)
+is now excluded with its full literal table. This result retains the
+downward B/H escape and the selected positive C-owned primary separator;
+it does not transfer to the other originals. Cb882's C-secondary and
+D-secondary alternatives remain open.

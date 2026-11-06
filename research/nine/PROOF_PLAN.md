@@ -28,6 +28,20 @@ global task is to route witnesses with a weak main link; the extraction
 does not itself supply actual links. G3--G5 remain open for the unrestricted
 domains specified below.
 
+## Complete positive C-primary alternative in Cb882
+
+**CLOSED at the manuscript level:** the full original Cb882 predicate
+together with a positive C-owned primary separator of C,D is impossible.
+The [conditional theorem](CB882_C_PRIMARY_COMPLETE.md) supplies the root
+reductions and the complete [literal table](cb882_c_primary/INDEX.md).
+Its 4,231 case nodes have no open leaf; the physical row formulas,
+positive rational sums and complete induction were independently checked
+from the printed manuscript.
+
+This closes one whole alternative of the three-case C/D axis cover.
+The C-secondary and D-secondary alternatives still require complete
+covers. The whole Cb882 original and the unrestricted gates remain open.
+
 ## Earlier fixed target resolution
 
 **CLOSED:** the complete (2,2,1) domain in

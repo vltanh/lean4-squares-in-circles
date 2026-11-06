@@ -170,6 +170,15 @@ permits progressively larger tilts, through abs(beta)<=1/5, under
 explicitly tighter height conditions. Every row has a continuous
 proof and seven printed positive corner coefficients.
 
+The [complete Cb882 positive C-primary alternative](CB882_C_PRIMARY_COMPLETE.md)
+is now closed. Its [literal appendices](cb882_c_primary/INDEX.md)
+retain the original nine-square caller and the explicit positive C-owned
+primary separator. The complete table has 4,231 case nodes and zero open
+leaves; every row, positive sum and case transition received independent
+reconstruction from the manuscript. The C-secondary and D-secondary
+alternatives remain open, so this does not yet close the whole Cb882
+original or an additional mask.
+
 The foundation and extraction gates G1–G2 are complete at the manuscript
 level and have received independent reading. Greene's finite-poset theorem
 is stated exactly and remains an explicit classical dependency. These
