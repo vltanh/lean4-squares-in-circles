@@ -20,7 +20,7 @@ Assume the complete guard
  |\beta_P|\le1/10\quad(P=B,I,E,F,G),\\
  x_A\le x_B\le x_I\le x_D,\qquad x_B-x_A\ge h_A+h_B,\\
  x_F-x_E\ge h_E+h_F,\qquad x_G-x_F\ge h_F+h_G,\\
- -1/20\le y_I-y_B\le1/2,\qquad |y_D-y_I|\le1/10,\\
+ -1/20\le y_I-y_B\le3/4,\qquad |y_D-y_I|\le1/10,\\
  1/3\le x_E-x_A\le2/3,\quad y_E>y_A,\\
  1/3\le x_D-x_G\le2/3,\quad y_G>y_D.
 \end{gathered}                                                    \tag{1}
@@ -112,16 +112,25 @@ Put b=beta_B, i=beta_I, delta=-beta_D>=0 and
 
 Both are lengths of paths on the real line, from 0 to -delta
 and from 0 to delta respectively. Hence T>=delta and V>=delta.
-Also, with P=max(b,i,0) and Z=max(abs(i),delta),
-T>=delta+2P and T>=Z.
+Also put P=max(b,i,0), N=max(-b,-i,0), and
+Z=max(abs(i),delta). Visiting the highest and lowest points of
+the signed path gives T>=delta+2P and T>=2N-delta. Thus
 
-The separator argument in Section 3 of the
-[larger terminal](CB882_ENLARGED_SHARP_TERMINAL.md) uses only the
-uniform bound abs(beta)<=1/10, alpha>=a_0, and the center conditions
-in (1). Explicitly, the incircles force both horizontal gaps BI,ID
-to be positive. A secondary normal has absolute projection at most
-(1/10)(91/30)+1/2=241/300<1; a negative primary normal has
-projection at most 1/20<1. The actual separator is therefore a
+\[
+ P\le(T-\delta)/2,\qquad
+ N\le(T+\delta)/2,\qquad Z\le(T+\delta)/2.
+\]
+
+For the last inequality, abs(i)<=N or abs(i)<=P according to
+its sign, and delta<=(T+delta)/2.
+
+The incircles force both horizontal gaps BI,ID to be positive.
+Actual AB gives x_B>=x_A+1>1-rho, where rho=91/60 is the
+proved universal center bound. Since x_B<=x_I<=x_D<rho, both
+horizontal gaps are smaller than 2rho-1=61/30. Therefore a
+secondary normal has absolute projection at most
+(1/10)(61/30)+3/4=143/150<1. A negative primary normal has
+projection at most 3/40<1. The actual separator is therefore a
 positive primary normal of one of the two physical owners. Its
 inequality implies
 
@@ -130,11 +139,14 @@ inequality implies
                     \qquad t_O=\beta_O/\alpha_O.        \tag{6}
 \]
 
-For BI the slope loss is at most P/(2a_0)+T/(20a_0),
-and for ID it is at most Z/(10a_0). Their sum is at most
+For BI the slope loss is at most
+max((3/4)P,(1/20)N)/a_0. Each of these two quantities is at
+most ((3/8)(T-delta)+delta/20)/a_0. For ID the loss is at
+most Z/(10a_0)<=((T-delta)/20+delta/10)/a_0. Thus the
+total loss is at most
 
 \[
-              \frac{T-\delta}{4a_0}+\frac{3T}{20a_0}.
+       \frac{17(T-\delta)}{40a_0}+\frac{3\delta}{20a_0}.
 \]
 
 Combine the two instances of (4), these losses, and actual AB.
@@ -145,7 +157,7 @@ The result is
  x_D-x_A\ge{}&2+(\alpha_A+\alpha_B)/2+\beta_A/2
                               +(1/2-c-e)|b|\\
  &+k_D\delta+k_T(T-\delta)+e(V-\delta),\\
- k_D={}&c+e-3/(20a_0),\qquad k_T=c-2/(5a_0).
+ k_D={}&c+e-3/(20a_0),\qquad k_T=c-17/(40a_0).
 \end{aligned}                                                    \tag{7}
 \]
 
@@ -206,7 +218,7 @@ Every coefficient is positive:
 | K_D | 1385707151/3171257600 |
 | K_E | 142479/127616 |
 | K_F | 25569/3988 |
-| K_T | 10741/12425 |
+| K_T | 7107/24850 |
 | K_V | 69/100 |
 
 These entries are obtained, respectively, from
@@ -241,7 +253,9 @@ we obtain x_C=1/2. Then x_D-x_C=1=h_C+h_D, contradicting
 the original strictly weak CD bit.
 
 The ten center-difference targets and residual-certificate rule in
-Section 7 of the larger terminal are unchanged. Together with
+Section 7 of the larger terminal apply with one enlarged right side:
+the target y_I-y_B now has upper bound 3/4. The other nine
+right sides are unchanged. Together with
 the seven uniform orientation bounds in (1), the original A,D
 signs, actual AB/EF/FG, and the proved E/G upper inset orders,
 they imply this entire guard. Any use of the enlarged terminal

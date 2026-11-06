@@ -272,3 +272,27 @@ the interval endpoints and chosen directions are rational. Their
 validity is pointwise on the entire stated intervals. The finite-cover
 bookkeeping and exact nonnegative row sums must be supplied separately
 for any claimed exclusion of an original domain.
+
+## 7. Whole-parent left-cap rows
+
+The five-row geometric proof in
+[the universal left-cap chapter](CD402_H_ABOVE_B.md) proves,
+throughout the normalized 001/00 caller and without any tilt sign
+or H-order hypothesis,
+
+\[
+ x_P+g_P>-15/16\quad(P\ne A),\qquad |y_A|<1/4.
+\]
+
+Hence their closed linear relaxations are necessary rows. The same
+chapter also excludes the leftward B/P inset order, for every
+P distinct from A,B:
+
+\[
+                   x_B-x_P<g_B+g_P.
+\]
+
+Its closed relaxation is another necessary linear row. In the
+variable order of Section 1 these rows use the original inset
+g_P, not a newly chosen proxy width. They may be used on Cb882
+without importing the separate Cd402-only conclusion H above B.

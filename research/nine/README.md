@@ -127,6 +127,13 @@ The [one-case E-up table](CB882_E_UP_F_ABOVE_B.md) excludes F below B
 in the surviving E order. Thus E above A, F above B and G above D
 are proved throughout Cb882; the remaining whole original is open.
 
+A new [five-row left-cap proof](CD402_H_ABOVE_B.md) gives
+x_X+g_X>-15/16 for every original X distinct from A, throughout
+the normalized `001/00` caller, together with abs(y_A)<1/4.
+It rules out every leftward B/X inset order and proves H above B
+on the whole Cd402 original from its exact diagonal condition.
+This supplies a fresh height-order reduction; Cd402 itself remains open.
+
 For the whole Cb882 attempt, a new
 [sharp local terminal](CB882_LOCAL_SHARP_TERMINAL.md) uses the actual
 AB and EFG links and four original boundary corners. Its continuous
@@ -141,7 +148,8 @@ retained and all six coefficients in its final corner sum positive.
 The [uniform one-tenth terminal](CB882_UNIFORM_SHARP_TERMINAL.md)
 now allows abs(beta)<=1/10 for all seven loaded originals. Its
 stronger physical support estimate retains the variation of absolute
-tilt and gives seven positive coefficients. Exact
+tilt and gives seven positive coefficients. It also allows the
+B/I upward height gap to reach 3/4. Exact
 [relative-coordinate row certificates](CB882_SHARP_GUARD_ROW_CERTIFICATES.md)
 can establish its unchanged center guards directly.
 

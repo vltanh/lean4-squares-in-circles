@@ -117,8 +117,9 @@ that configuration. The entire context is therefore excluded.
 The same ten targets also apply to the
 [uniform one-tenth terminal](CB882_UNIFORM_SHARP_TERMINAL.md). In
 that version, replace (3) by abs(beta_P)<=1/10 for all seven
-loaded originals, retaining beta_A>=0 and beta_D<=0. Every other
-hypothesis and every target stays the same. The terminal record
+loaded originals, retaining beta_A>=0 and beta_D<=0. Its IB upper
+height target also permits the larger right side 3/4. Every other
+hypothesis and target stays the same. The terminal record
 must identify which proved orientation guard it uses.
 
 ## 3. What a terminal record must contain
