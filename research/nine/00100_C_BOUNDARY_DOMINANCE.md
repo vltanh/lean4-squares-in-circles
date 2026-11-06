@@ -295,3 +295,22 @@ orientation, remove I, change the escape path, or substitute an
 unproved optimizer bound. It can be installed as one hand terminal in
 a future complete Cb882 table, but it earns no complete-original
 closure credit now.
+
+
+## 6. Stronger successor: C887 depends on Cd402 alone
+
+The subsequent full hand argument in
+[00100_SHARP_A_HEIGHT_AND_CB882_DEEP_B.md](00100_SHARP_A_HEIGHT_AND_CB882_DEEP_B.md)
+proves `|y_A|<1/3` in the complete original `001/00` mask. The frozen
+C887 cone-tie then forces `y_B<-2/3`. It also proves from the original
+B/H incircles, the accepted C-slant theorem, and exact rational bounds
+that every Cb882 downward-cone branch has `y_B>-2/3`. Strict
+interiorization retains the first inequality, so the perturbed C887
+packing cannot enter Cb882 at all. The older Section 3 statement that
+**both** Cd402 and Cb882 closures would suffice is still true but is no
+longer optimal: **Cd402 closure alone would also close C887.**
+
+This is a conditional transfer, not proof that Cd402 or C887 is empty.
+The immutable count stays 224/231 CLOSED, seven OPEN. Both new direct
+estimates and the improved dependency were proved by hand; no computer
+search, Lean, or archived certificate replay was used.
