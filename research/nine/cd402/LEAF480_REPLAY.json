@@ -1,0 +1,25 @@
+{
+  "status": "PASS_COMPLETE_FRESH_BATCHED_LEAF480_REPLAY",
+  "scope": "saved leaf 480 only, not the Cd402 original",
+  "arithmetic_ranges": [[0,500],[500,500],[1000,500],[1500,500],[2000,500],[2500,500],[3000,500],[3500,39]],
+  "nodes": 6462,
+  "arithmetic_leaves": 3539,
+  "common_axis_leaves": 47,
+  "angle_splits": 2759,
+  "physical_splits": 117,
+  "weighted_rows": 137731,
+  "minimum_normalized_reserve": "780941612925428511947073581455608486934786117577612844453415790269279692207040899012034108429662137418798537625981594196169014528828257851272696908407/659360585392284193560300443894964285959316209471009799078946964693137499025053828809578107387500762128473085657774746075378152798847406821699796942897389500",
+  "bindings": {
+    "packed": "1d5bb687607de8ccdb56d425a6015632963666a204a61a30155347ff2d36e742",
+    "rules": "90fb9b21b2722288b57f4aa9484ac7e7ce92cf276680bd74fbc41c3868096cbf",
+    "kernel": "eddb33e2b483c198fd1bfdbd5e83a7352b65a7afbd7aa76e07edc099f3c2e68d",
+    "checker": "871827cacf65c562ea44c2a75beb9a6f6ae74ffc6144961bd1b0d120af57419e"
+  },
+  "attachment": {
+    "saved_leaf": 480,
+    "endpoint_containments": 16,
+    "legacy_source_blob": "12b58e41d467daeac461e246055ce7aca7aec421",
+    "fresh_legacy_ancestry_replay": false
+  },
+  "mutation_controls": {"status":"PASS_12_REJECTED_MUTATIONS","hash_check_bypassed_for_structural_controls":true,"rejected":["missing_signed_root","missing_angle_child","invalid_angle_owner","missing_SAT_child","invalid_SAT_pair","invalid_node_tag","repeated_arithmetic_row","out_of_range_row","negative_fallback_weight","zero_fallback_weight","unrelated_common_axis","repeated_chain_vertex"]}
+}
